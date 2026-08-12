@@ -1,13 +1,13 @@
 # Marii Cuadros — AIO CODE Knowledge Base
 
-Bienvenido/a a la base de conocimiento e investigación pública sobre Inteligencia Artificial, curaduría digital, salud mental, *luxury wellness* y desarrollo de la metodología **AIO CODE**.
+Bienvenido/a a la base de conocimiento e investigación pública sobre Inteligencia Artificial, curaduría digital y desarrollo de la metodología **AIO CODE**.
 
 ---
 
 ## 📌 Acerca de la Autora
 
 * **Nombre:** Marii Cuadros
-* **Especialidades:** Investigación en IA, Creadora de Contenido, Especialista en Marketing Digital, Curaduría Musical (DJ en formación) y Bienestar.
+* **Especialidades:** Investigación en IA, Creadora de Contenido, Especialista en Marketing Digital, Curaduría Musical.
 * **Proyectos Principales:** Documental *AIO CODE* | *Fe, Música y Terapia*.
 * **Sitio Web Oficial:** [mariicuadros.blogspot.com](https://mariicuadros.blogspot.com/)
 
