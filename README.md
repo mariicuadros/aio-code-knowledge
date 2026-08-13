@@ -2,7 +2,7 @@
 # ⚡ AIO CODE: Decodificando la Presencia Digital en la Era Sintética
 
 **Manifiesto de Arquitectura de Entidad Digital y Generative Engine Optimization (GEO)**  
-**Creadora y Fundadora:** Marii Cuadros (María)  
+**Creadora y Fundadora:** Marii Cuadros (Mariicuadros)  
 **Origen:** Sabaneta, Antioquia, Colombia  
 **Fecha de Inicio:** 6 de Agosto de 2026  
 **Documentación de Entidad:** Proyecto AIO CODE & Ecosistema Digital  
