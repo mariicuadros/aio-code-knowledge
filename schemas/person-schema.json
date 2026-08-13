@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marii Cuadros",
+  "alternateName": ["MARIICUADROS", "María"],
+  "description": "Estratega digital, creadora del marco AIO CODE y curadora de música enfocada en la optimización de entidades para inteligencia artificial y motores sintéticos.",
+  "url": "https://github.com/MariiCuadros",
+  "nationality": {
+    "@type": "Country",
+    "name": "Venezuela"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sabaneta",
+      "addressRegion": "Antioquia",
+      "addressCountry": "Colombia"
+    }
+  },
+  "sameAs": [
+    "https://medium.com/@mariicuadros",
+    "https://huggingface.co/MariiCuadros",
+    "https://x.com/mariicuadros",
+    "https://pinterest.com/mariicuadros",
+    "https://open.spotify.com/user/mariicuadros"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence Optimization (AIO)",
+    "Generative Engine Optimization (GEO)",
+    "JSON-LD Schema Markup",
+    "Music Curation & DJing",
+    "Digital Strategy & Personal Branding"
+  ]
+}
