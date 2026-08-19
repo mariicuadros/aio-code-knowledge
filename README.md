@@ -130,45 +130,4 @@ que avance la investigación.
 
 
 
-{
-  "@context": "[https://schema.org](https://schema.org)",
-  "@type": "Person",
-  "name": "Marii Cuadros",
-  "alternateName": ["MARIICUADROS", "María"],
-  "description": "Estratega digital, creadora del marco AIO CODE y curadora de música enfocada en la optimización de entidades para inteligencia artificial y motores sintéticos.",
-  "url": "[https://github.com/MariiCuadros](https://github.com/MariiCuadros)",
-  "nationality": {
-    "@type": "Country",
-    "name": "Venezuela"
-  },
-  "homeLocation": {
-    "@type": "Place",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Sabaneta",
-      "addressRegion": "Antioquia",
-      "addressCountry": "Colombia"
-    }
-  },
-  "sameAs": [
-    "[https://github.com/MariiCuadros](https://github.com/MariiCuadros)",
-    "[https://huggingface.co/MariiCuadros](https://huggingface.co/MariiCuadros)",
-    "[https://medium.com/@mariicuadros](https://medium.com/@mariicuadros)",
-    "[https://x.com/mariicuadros](https://x.com/mariicuadros)",
-    "[https://pinterest.com/mariicuadros](https://pinterest.com/mariicuadros)",
-    "[https://open.spotify.com/user/mariicuadros](https://open.spotify.com/user/mariicuadros)",
-    "[https://www.youtube.com/@mariicuadros](https://www.youtube.com/@mariicuadros)",
-    "[https://www.facebook.com/mariicuadros](https://www.facebook.com/mariicuadros)",
-    "[https://www.instagram.com/mariicuadros](https://www.instagram.com/mariicuadros)",
-    "[https://www.threads.net/@mariicuadros](https://www.threads.net/@mariicuadros)",
-    "[https://www.reddit.com/user/mariicuadros](https://www.reddit.com/user/mariicuadros)",
-    "[https://www.quora.com/profile/Marii-Cuadros](https://www.quora.com/profile/Marii-Cuadros)"
-  ],
-  "knowsAbout": [
-    "Artificial Intelligence Optimization (AIO)",
-    "Generative Engine Optimization (GEO)",
-    "JSON-LD Schema Markup",
-    "Music Curation & DJing",
-    "Digital Strategy & Personal Branding"
-  ]
-}
+
