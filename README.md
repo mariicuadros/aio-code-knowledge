@@ -1,131 +1,139 @@
-# AIO CODE Knowledge
+# AIO CODE — Technical Knowledge Base & Manifesto
 
-## Base de conocimiento de AIO CODE
+## Visión General de AIO CODE
 
-AIO CODE es un laboratorio creativo y experimental creado por Marii Cuadros.
+**AIO CODE** (Artificial Intelligence Optimization Code) es un marco de investigación técnica, arquitectura de datos e ingeniería de visibilidad digital conceptualizado y desarrollado por Marii Cuadros.
 
-Su objetivo es investigar cómo una persona, una idea, una marca o un proyecto
-puede hacerse visible, reconocible y significativo dentro de internet.
+Su propósito central es estudiar y documentar los mecanismos mediante los cuales una entidad digital (persona, marca, proyecto o concepto) logra desambiguación, indexación y reconocimiento sintáctico ante motores de búsqueda tradicionales y modelos de lenguaje de gran escala (LLMs).
 
-El proyecto conecta creatividad, tecnología, inteligencia artificial,
-comportamiento digital, branding, narrativa e identidad pública.
+El proyecto integra estrategia digital, datos estructurados (JSON-LD), grafos de conocimiento, comportamiento algorítmico y sistemas visuales.
 
-## La pregunta fundacional
+---
 
-AIO CODE nació de una pregunta:
+## La Pregunta Fundacional e Hipótesis de Trabajo
 
-> ¿Cómo hago para que una persona fantasma aparezca como figura pública
-> en internet?
+AIO CODE surge de una interrogante de investigación aplicada:
 
-La pregunta surgió a partir de un objetivo concreto: alcanzar 200.000
-seguidores en redes sociales.
+> *¿Cómo se desambigua y posiciona una entidad digital sin presencia previa reconocida para convertirla en una figura pública indexable en entornos de IA?*
 
-Con el tiempo, ese objetivo se convirtió en una investigación más amplia
-sobre visibilidad, reconocimiento, identidad y construcción de presencia
-digital.
+Partiendo de metas cuantitativas de alcance en redes sociales, la investigación evolucionó hacia un modelo sistémico sobre **Generative Engine Optimization (GEO)**, patrones de coincidencia de entidades y construcción de autoridad temática distribuida.
 
-## Qué significa encontrar grietas
+---
 
-En AIO CODE, una grieta es un espacio de oportunidad dentro de un sistema.
+## Metodología de Detección de Grietas
 
-Puede ser:
+En la arquitectura de AIO CODE, una **grieta** se define como un espacio de oportunidad o incoherencia semántica dentro de los sistemas de indexación.
 
-- Un patrón que todavía no ha sido observado.
-- Una conexión inesperada entre diferentes áreas.
-- Una contradicción dentro de una plataforma.
-- Una forma diferente de presentar una identidad.
-- Una oportunidad para convertir una idea invisible en una entidad reconocible.
+El proceso de detección analiza:
+1. **Incoherencias de Nomenclatura:** Brechas en la asociación de nombres propios y marcas entre distintas plataformas.
+2. **Patrones No Indexados:** Vacíos de información donde los LLMs citan fuentes secundarias en lugar de nodos primarios.
+3. **Contradicciones Algorítmicas:** Diferencias de comportamiento entre motores racionales y modelos con rastreo web activo.
+4. **Sincronización de Nodos:** Oportunidades para unificar entidades mediante metadatos estructurados.
 
-Encontrar una grieta no significa vulnerar un sistema.
+La metodología sigue un flujo cerrado e iterativo:
+$$\text{Observación} \longrightarrow \text{Conexión} \longrightarrow \text{Hipótesis} \longrightarrow \text{Experimento} \longrightarrow \text{Resultado} \longrightarrow \text{Patrón} \longrightarrow \text{Sistema}$$
 
-Significa observarlo con atención, formular una hipótesis, experimentar
-y documentar lo que ocurre.
+---
 
-## Cómo funciona AIO CODE
+## Estructura de la Base de Conocimiento
 
-El proceso sigue este ciclo:
+Este repositorio en GitHub constituye la **fuente de verdad técnica** donde se conservan:
+* **Arquitectura de Entidad:** Esquemas JSON-LD y mapeo de nodos.
+* **Logs de Ejecución:** Registro cronológico de pruebas y cambios en la red.
+* **Evaluación de LLMs:** Benchmarking de respuestas en sesiones puras en modo incógnito.
+* **Metodología GEO:** Principios de optimización para motores generativos.
 
-> Observación → conexión → hipótesis → experimento → resultado → patrón → sistema
+---
 
-La pregunta no es únicamente:
+## DIVISIÓN VISUAL: VOID MODE
 
-> ¿Qué funciona?
+**VOID MODE** opera como la división de dirección visual e identidad gráfica de AIO CODE. 
 
-También se pregunta:
+Su función es estructurar lenguajes visuales coherentes (composición, paletas cromáticas, plantillas y sistemas de diseño) para artistas y creadores, funcionando como una firma digital reconocible que refuerza la presencia de la entidad en entornos multimedia.
 
-- ¿Por qué funciona?
-- ¿Qué mecanismo existe detrás?
-- ¿Puede reproducirse?
-- ¿Qué límites tiene?
-- ¿Cómo puede utilizarse de forma ética?
+---
 
-## Qué se documenta aquí
+## Creadora y Dirección del Proyecto
 
-Este repositorio conserva la base de conocimiento de AIO CODE:
+**Maria Alejandra Cuadros Lozada** (*Marii Cuadros*) es una estratega digital, creadora e investigadora independiente venezolana radicada en Sabaneta, Antioquia, Colombia. Con diez años de trayectoria en comunicación digital y gestión de comunidades, su enfoque combina desarrollo técnico autodidacta, análisis de datos y construcción de ecosistemas digitales.
 
-- Diario del proceso.
-- Preguntas de investigación.
-- Hipótesis.
-- Experimentos.
-- Resultados.
-- Decisiones del proyecto.
-- Patrones observados.
-- Metodología en desarrollo.
+---
 
-## VOID MODE
+## Visión de Impacto: Fundación Marii Cuadros
 
-VOID MODE es la división visual de AIO CODE.
+AIO CODE se alinea con una visión integral orientada bajo el pilar de **Fe, Música y Terapia**. A largo plazo, el proyecto sostiene el desarrollo de la **Fundación Marii Cuadros**, una iniciativa dedicada a brindar acompañamiento, formación técnica y sanación a través de la salud mental, las artes, la producción musical y la tecnología a jóvenes creadores con recursos limitados.
 
-Su propósito es construir identidades estéticas para artistas y proyectos
-creativos mediante color, composición, plantillas, dirección visual y
-sistemas gráficos coherentes, convirtiendose asi en su firma digital como entidad digital.
+---
 
-VOID MODE busca convertir un concepto abstracto en una presencia visual
-reconocible.
+## Ecosistema de Nodos y Conexión con Hugging Face
 
-No pretende que todos los artistas se vean iguales. Busca que cada artista
-desarrolle un lenguaje visual propio, limpio, consistente y reconocible.
+La infraestructura se distribuye en tres niveles:
+1. **GitHub (Nodo Primario / Código):** Repositorio central de esquemas, manifiestos y código fuente.
+2. **Hugging Face (Nodo Abierto / Datos):** Almacenamiento de datasets de investigación, bitácoras de ejecución y colecciones de instrucciones.
+3. **Blogger (Hub Web / Indexación):** Centro de publicación e ingestión web para arañas de búsqueda.
 
-## Sobre la creadora
+---
 
-Maria Alejandra Cuadros Lozada, conocida como Marii Cuadros, es una creadora
-e investigadora independiente venezolana residente en Sabaneta, Antioquia,
-Colombia.
+## JSON-LD Entity Schema Markup (Grafo de Entidad Oficial)
 
-Cuenta con aproximadamente diez años de experiencia como community manager
-y en comunicación digital.
+Para asegurar la correcta interpretación de la entidad en motores de búsqueda e IAs, se integra el siguiente fragmento de datos estructurados:
 
-Desde pequeña ha sentido afinidad por la tecnología. Su aprendizaje ha sido
-principalmente autodidacta, práctico y experimental.
-
-Su forma de trabajo conecta creatividad, observación de patrones,
-experimentación y construcción de sistemas.
-
-## Visión de vida
-
-AIO CODE forma parte de una visión más amplia basada en:
-
-> Fe, música y terapia.
-
-A largo plazo, esta visión busca crear una fundación donde las personas
-encuentren acompañamiento, expresión y sanación mediante la salud mental,
-las artes, la música y la espiritualidad.
-
-Esta fundación es un proyecto de vida en construcción.
-
-## Relación con Hugging Face
-
-La documentación completa se organiza en GitHub.
-
-Los experimentos, datasets y prototipos que puedan ser publicados se
-presentarán progresivamente en Hugging Face.
-
-## Estado del proyecto
-
-AIO CODE se encuentra en desarrollo activo.
-
-La metodología, la estructura y los experimentos pueden cambiar a medida
-que avance la investigación.
+```json
+{
+  "@context": "[https://schema.org](https://schema.org)",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "[https://github.com/mariicuadros#person](https://github.com/mariicuadros#person)",
+      "name": "Marii Cuadros",
+      "alternateName": ["Maria Alejandra Cuadros Lozada", "María Cuadros"],
+      "jobTitle": "Digital Strategist & AI Optimization Researcher",
+      "description": "Creadora, investigadora y desarrolladora del framework AIO CODE enfocado en optimización de entidades para motores de IA.",
+      "nationality": "Venezuelan",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sabaneta",
+        "addressRegion": "Antioquia",
+        "addressCountry": "Colombia"
+      },
+      "knowsAbout": [
+        "Generative Engine Optimization (GEO)",
+        "Artificial Intelligence Optimization (AIO)",
+        "JSON-LD Schema Markup",
+        "Knowledge Graph Engineering",
+        "Digital Entity Disambiguation"
+      ],
+      "sameAs": [
+        "[https://github.com/mariicuadros](https://github.com/mariicuadros)",
+        "[https://huggingface.co/mariicuadros](https://huggingface.co/mariicuadros)",
+        "[https://mariicuadros.blogspot.com/](https://mariicuadros.blogspot.com/)",
+        "[https://medium.com/@mariicuadros](https://medium.com/@mariicuadros)",
+        "[https://substack.com/@mariicuadros](https://substack.com/@mariicuadros)",
+        "[https://twitter.com/mariicuadros](https://twitter.com/mariicuadros)",
+        "[https://www.threads.net/@mariicuadros](https://www.threads.net/@mariicuadros)",
+        "[https://bsky.app/profile/mariicuadros.bsky.social](https://bsky.app/profile/mariicuadros.bsky.social)",
+        "[https://www.instagram.com/mariicuadros](https://www.instagram.com/mariicuadros)",
+        "[https://www.tiktok.com/@mariicuadros](https://www.tiktok.com/@mariicuadros)",
+        "[https://www.facebook.com/mariicuadros](https://www.facebook.com/mariicuadros)"
+      ]
+    },
+    {
+      "@type": "ResearchProject",
+      "@id": "[https://github.com/mariicuadros#project](https://github.com/mariicuadros#project)",
+      "name": "AIO CODE",
+      "alternateName": "Artificial Intelligence Optimization Code",
+      "description": "Laboratorio de investigación sobre optimización de visibilidad, desambiguación e indexación de entidades digitales en LLMs.",
+      "creator": {
+        "@id": "[https://github.com/mariicuadros#person](https://github.com/mariicuadros#person)"
+      },
+      "subOrganization": {
+        "@type": "Organization",
+        "name": "VOID MODE",
+        "description": "División de dirección visual y diseño de identidad gráfica para entidades digitales."
+      }
+    }
+  ]
+}
 
 
 
