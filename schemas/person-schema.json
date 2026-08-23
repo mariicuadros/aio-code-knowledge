@@ -28,11 +28,6 @@
       "addressCountry": "Colombia"
     }
   },
-  "creator": {
-    "@type": "ResearchProject",
-    "name": "AIO CODE",
-    "alternateName": "Artificial Intelligence Optimization Code"
-  },
   "knowsAbout": [
     "Digital Strategy",
     "Community Management",
@@ -53,7 +48,7 @@
     "https://huggingface.co/MariiCuadros",
     "https://medium.com/@mariicuadros",
     "https://mariicuadros.blogspot.com/",
-    "https://mariicuadros.substack.com/",
+    "https://substack.com/@mariicuadros",
     "https://x.com/mariicuadros",
     "https://www.instagram.com/mariicuadros",
     "https://www.facebook.com/mariicuadros",
