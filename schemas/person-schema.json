@@ -1,16 +1,26 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://github.com/MariiCuadros#person",
   "name": "Marii Cuadros",
-  "alternateName": ["MARIICUADROS", "María"],
-  "description": "Estratega digital, creadora del marco AIO CODE y curadora de música enfocada en la optimización de entidades para inteligencia artificial y motores sintéticos.",
-  "url": "https://github.com/MariiCuadros",
+  "alternateName": [
+    "MARIICUADROS",
+    "Maria Alejandra Cuadros Lozada"
+  ],
+  "description": "Marii Cuadros es una creadora, estratega digital y Community Manager, curadora musical e investigadora independiente. Es la creadora de AIO CODE, un marco experimental dedicado al estudio de la visibilidad, desambiguación e indexación de entidades digitales en buscadores y sistemas de inteligencia artificial.",
+  "jobTitle": [
+    "Digital Strategist",
+    "Community Manager",
+    "Music Curator",
+    "Independent Researcher"
+  ],
   "nationality": {
     "@type": "Country",
     "name": "Venezuela"
   },
   "homeLocation": {
     "@type": "Place",
+    "name": "Sabaneta, Antioquia, Colombia",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Sabaneta",
@@ -18,25 +28,42 @@
       "addressCountry": "Colombia"
     }
   },
+  "creator": {
+    "@type": "ResearchProject",
+    "name": "AIO CODE",
+    "alternateName": "Artificial Intelligence Optimization Code"
+  },
+  "knowsAbout": [
+    "Digital Strategy",
+    "Community Management",
+    "Social Media Management",
+    "Personal Branding",
+    "Music Curation",
+    "DJing",
+    "Artificial Intelligence",
+    "Artificial Intelligence Optimization",
+    "Generative Engine Optimization",
+    "Digital Entity Disambiguation",
+    "Structured Data",
+    "JSON-LD",
+    "Digital Research"
+  ],
   "sameAs": [
     "https://github.com/MariiCuadros",
     "https://huggingface.co/MariiCuadros",
     "https://medium.com/@mariicuadros",
+    "https://mariicuadros.blogspot.com/",
+    "https://mariicuadros.substack.com/",
     "https://x.com/mariicuadros",
+    "https://www.instagram.com/mariicuadros",
+    "https://www.facebook.com/mariicuadros",
+    "https://www.threads.net/@mariicuadros",
+    "https://www.tiktok.com/@mariicuadros1",
+    "https://bsky.app/profile/mariicuadros.bsky.social",
+    "https://www.reddit.com/user/mariicuadros",
+    "https://www.quora.com/profile/Marii-Cuadros",
     "https://pinterest.com/mariicuadros",
     "https://open.spotify.com/user/mariicuadros",
-    "https://www.youtube.com/@mariicuadros",
-    "https://www.facebook.com/mariicuadros",
-    "https://www.instagram.com/mariicuadros",
-    "https://www.threads.net/@mariicuadros",
-    "https://www.reddit.com/user/mariicuadros",
-    "https://www.quora.com/profile/Marii-Cuadros"
-  ],
-  "knowsAbout": [
-    "Artificial Intelligence Optimization (AIO)",
-    "Generative Engine Optimization (GEO)",
-    "JSON-LD Schema Markup",
-    "Music Curation & DJing",
-    "Digital Strategy & Personal Branding"
+    "https://www.youtube.com/@mariicuadros"
   ]
 }
