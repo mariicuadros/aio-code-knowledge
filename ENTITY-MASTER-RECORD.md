@@ -1,10 +1,3 @@
-Sí. Esta vez lo hacemos como **archivo Markdown completo**, pensado específicamente para estar en la raíz de `aio-code-knowledge`.
-
-Copia **todo** lo que está dentro del bloque en GitHub como:
-
-`ENTITY-MASTER-RECORD.md`
-
-````markdown
 # AIO CODE — ENTITY MASTER RECORD
 
 **Version:** 1.0  
