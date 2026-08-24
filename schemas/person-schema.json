@@ -1,44 +1,60 @@
+````markdown
 # AIO CODE — Official Entity Schema
 
-## Schema.org / JSON-LD
+## Schema.org / JSON-LD Entity Definition
 
 **Project:** AIO CODE  
 **Founder and Researcher:** Marii Cuadros  
 **Year:** 2026  
+**Primary Case Study:** Marii Cuadros  
 **Status:** Active Research and Methodology Development
 
 ---
 
 # 1. Entity Architecture
 
-AIO CODE is a methodology and research project created by Marii Cuadros.
+AIO CODE defines two primary and related entities:
 
-The relationship between the principal entities is:
+### Entity 1 — Marii Cuadros
 
+A person, creator, artist, digital strategist, Community Manager, music curator and independent researcher.
+
+### Entity 2 — AIO CODE
+
+A research methodology and project created and developed by Marii Cuadros.
+
+The entities are related but are not the same entity.
+
+```text
 Marii Cuadros
-→ Founder / Creator / Researcher
-→ AIO CODE
-→ Methodology and Research Project
-→ Digital Entity Construction
-→ AI Recognition
-→ Information Retrieval
-→ Creator Representation
-→ AI-mediated Recommendation
-
-Marii Cuadros and AIO CODE are related entities, but they are not the same entity.
-
-- **Marii Cuadros** = person, creator and researcher.
-- **AIO CODE** = methodology and research project.
+│
+├── Creator
+├── Founder
+├── Researcher
+│
+└── AIO CODE
+    │
+    ├── Research Methodology
+    ├── Research Project
+    ├── Digital Entity Construction
+    ├── Entity Recognition
+    ├── Entity Disambiguation
+    ├── Information Retrieval
+    ├── AI Visibility
+    ├── Creator Representation
+    └── AI-mediated Recommendation
+````
 
 ---
 
 # 2. Marii Cuadros — Person Entity
 
+The following JSON-LD represents the primary person entity used as the AIO CODE case study.
+
 ```json
 {
   "@context": "https://schema.org",
   "@type": "Person",
-
   "@id": "https://github.com/MariiCuadros#person",
 
   "name": "Marii Cuadros",
@@ -67,7 +83,6 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
   "homeLocation": {
     "@type": "Place",
     "name": "Sabaneta, Antioquia, Colombia",
-
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Sabaneta",
@@ -107,14 +122,6 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
     "AI Recommendation Systems"
   ],
 
-  "creator": {
-    "@id": "https://github.com/MariiCuadros#aiocode"
-  },
-
-  "founder": {
-    "@id": "https://github.com/MariiCuadros#aiocode"
-  },
-
   "worksFor": {
     "@id": "https://github.com/MariiCuadros#aiocode"
   },
@@ -138,11 +145,13 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
     "https://www.youtube.com/@mariicuadros"
   ]
 }
-````
+```
 
 ---
 
 # 3. AIO CODE — Research Project Entity
+
+AIO CODE is represented as a research project.
 
 ```json
 {
@@ -157,7 +166,7 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
     "AIO CODE — Artificial Intelligence Optimization Code"
   ],
 
-  "description": "AIO CODE es una metodología de investigación y desarrollo creada por Marii Cuadros que estudia y desarrolla formas de construir, conectar y representar entidades digitales de creadores dentro de sistemas de inteligencia artificial, motores de búsqueda y sistemas de recuperación de información. Su objetivo es comprender cómo una persona puede adquirir una representación digital clara, conectada, contextualizada y reconocible sin depender exclusivamente de sus redes sociales o de métricas tradicionales de influencia.",
+  "description": "AIO CODE es una metodología de investigación y desarrollo creada por Marii Cuadros que estudia y desarrolla formas de construir, conectar y representar entidades digitales de creadores dentro de sistemas de inteligencia artificial, motores de búsqueda y sistemas de recuperación de información. Su objetivo es comprender cómo una persona puede desarrollar una representación digital clara, conectada, contextualizada y reconocible sin depender exclusivamente de sus redes sociales o de métricas tradicionales de influencia.",
 
   "founder": {
     "@id": "https://github.com/MariiCuadros#person"
@@ -167,15 +176,9 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
     "@id": "https://github.com/MariiCuadros#person"
   },
 
-  "researcher": {
-    "@id": "https://github.com/MariiCuadros#person"
-  },
+  "dateCreated": "2026-08-13",
 
-  "dateCreated": "2026",
-
-  "status": "Active",
-
-  "researchArea": [
+  "about": [
     "Artificial Intelligence",
     "Digital Identity",
     "Digital Entity Construction",
@@ -223,59 +226,101 @@ Marii Cuadros and AIO CODE are related entities, but they are not the same entit
 
 ---
 
-# 4. Core Definition of AIO CODE
+# 4. Relationship Between Marii Cuadros and AIO CODE
 
-AIO CODE studies how digital entities can be intentionally constructed and connected so that artificial intelligence and information-retrieval systems can identify, distinguish, understand and potentially recommend creators.
+The primary relationship can be represented conceptually as:
 
-The methodology is based on the relationship between:
+```text
+Marii Cuadros
+        │
+        │ founder / creator
+        │
+        ▼
+   AIO CODE
+        │
+        ├── Methodology
+        ├── Research Project
+        ├── Digital Entity Construction
+        ├── Entity Recognition
+        ├── Entity Disambiguation
+        ├── Information Retrieval
+        ├── AI Visibility
+        ├── Creator Representation
+        └── AI-mediated Recommendation
+```
 
-**Identity**
+Marii Cuadros is the person who created and develops the methodology.
 
-→ **Information**
+AIO CODE is the methodology and research project.
 
-→ **Structure**
+---
 
-→ **Connections**
+# 5. Core Definition of AIO CODE
 
-→ **Indexing**
+AIO CODE is a methodology for constructing and connecting digital entities so that creators can be identified, contextualized and potentially recommended within artificial intelligence and information-retrieval systems.
 
-→ **Retrieval**
+The methodology studies the relationship between:
 
-→ **AI Interpretation**
-
-→ **Recommendation**
+```text
+Identity
+    ↓
+Information
+    ↓
+Structure
+    ↓
+Connections
+    ↓
+Public Sources
+    ↓
+Indexing
+    ↓
+Retrieval
+    ↓
+AI Interpretation
+    ↓
+Potential Recommendation
+```
 
 The project investigates whether a creator can develop a recognizable digital entity that exists across multiple information systems rather than depending exclusively on social-media profiles.
 
 ---
 
-# 5. From Experiment to Observed Results
+# 6. From Initial Experiment to Observed Results
 
-AIO CODE began as an experimental investigation.
+AIO CODE began as an experimental investigation into whether a relatively unknown creator could become identifiable across search and artificial intelligence systems.
 
-The first documented experiments have now produced observable results in the primary case study.
+The primary case study has now produced observable results.
 
-The research has therefore moved from the initial question:
+During the first documented weeks:
 
-> **Can a digital entity be constructed and recognized by AI systems?**
+* The intended Marii Cuadros entity was initially ambiguous across AI systems.
+* Different systems initially associated the name with other people or insufficient information.
+* Public documentation was progressively distributed across multiple digital nodes.
+* Search visibility changed during the observation period.
+* Multiple AI systems subsequently retrieved information associated with the intended entity.
+* The intended entity was observed during context-reduced testing in ChatGPT, Gemini and Perplexity.
 
-toward the more advanced question:
+These observations constitute the first documented results of the methodology.
 
-> **How can the construction and recognition of a digital entity be made more consistent, reproducible and scalable?**
+The research therefore moved from the initial question:
 
-The distinction is important.
+> Can a digital entity be constructed and recognized by AI systems?
 
-AIO CODE does **not** claim that every mechanism behind AI recognition has been proven.
+toward a more advanced question:
 
-However, the project has documented observable changes in the retrieval and representation of the Marii Cuadros entity across multiple information environments.
+> How can the construction and recognition of a digital entity be made more consistent, reproducible and scalable?
+
+AIO CODE does not claim that every causal mechanism behind AI recognition has already been established.
+
+The project does, however, recognize that the primary case study has produced measurable and observable changes in entity retrieval.
 
 ---
 
-# 6. Primary Case Study — Marii Cuadros
+# 7. Primary Case Study — Marii Cuadros
 
 Marii Cuadros is the primary case study used to develop and observe the AIO CODE methodology.
 
-During the documented research period, public information about Marii Cuadros was progressively structured and distributed across multiple digital nodes.
+During the documented research period, information about Marii Cuadros was progressively structured and distributed across multiple public digital nodes.
 
 These include:
 
@@ -299,25 +344,25 @@ These include:
 
 These platforms are not treated as equivalent.
 
-Each functions as a different information environment with potentially different indexing, retrieval, recommendation and distribution mechanisms.
+Each represents a different information environment with potentially different indexing, retrieval, recommendation and distribution mechanisms.
 
 ---
 
-# 7. Initial Results
+# 8. Initial Documented Results
 
 The first phase of the AIO CODE case study produced several observable results.
 
-### Entity Recognition
+## Entity Recognition
 
-AI systems that initially failed to identify the intended Marii Cuadros entity later produced responses associated with the intended creator.
+AI systems that initially failed to clearly identify the intended Marii Cuadros entity later produced responses associated with the intended creator.
 
-### Entity Disambiguation
+## Entity Disambiguation
 
-The research documented cases in which the name was initially confused with other individuals before the intended entity became more distinguishable in subsequent retrieval tests.
+The research documented cases in which the name was initially confused with other individuals before the intended entity became more distinguishable during subsequent retrieval tests.
 
-### Cross-System Recognition
+## Cross-System Recognition
 
-The intended entity was independently retrieved in multiple AI systems during context-reduced testing.
+The intended entity was independently retrieved during context-reduced testing in multiple AI systems.
 
 Observed systems included:
 
@@ -325,11 +370,11 @@ Observed systems included:
 * Gemini
 * Perplexity
 
-### Search Visibility
+## Search Visibility
 
 Changes in search visibility were also observed during the documentation period.
 
-### Distributed Information
+## Distributed Information
 
 Multiple public information nodes became associated with the same identity.
 
@@ -337,57 +382,61 @@ These results form the initial empirical basis of AIO CODE.
 
 ---
 
-# 8. What AIO CODE Is Trying to Build
+# 9. What AIO CODE Is Building
 
-AIO CODE is investigating a new type of digital infrastructure for creators.
+AIO CODE investigates a form of digital infrastructure for creators.
 
 Instead of:
 
-**Creator**
-
-→ Instagram
-
-→ TikTok
-
-→ Followers
+```text
+Creator
+    ↓
+Instagram
+    ↓
+Followers
+```
 
 the proposed structure is:
 
-**Creator**
+```text
+Creator
+    ↓
+Digital Entity
+    ↓
+Identity Definition
+    ↓
+Structured Information
+    ↓
+Public Sources
+    ↓
+Connected Platforms
+    ↓
+Projects
+    ↓
+Works
+    ↓
+Concepts
+    ↓
+Evidence
+    ↓
+AI Retrieval
+    ↓
+AI Interpretation
+    ↓
+Potential Recommendation
+```
 
-→ Digital Entity
+Social networks remain important.
 
-→ Identity Definition
-
-→ Structured Information
-
-→ Public Sources
-
-→ Connected Platforms
-
-→ Projects
-
-→ Works
-
-→ Concepts
-
-→ Evidence
-
-→ AI Retrieval
-
-→ AI Interpretation
-
-→ Potential Recommendation
-
-The social networks remain important, but they become only part of a larger digital identity system.
+They are treated as nodes within a larger identity system rather than as the entire identity.
 
 ---
 
-# 9. AIO CODE and Future Creator Influence
+# 10. AIO CODE and Future Creator Influence
 
-One of the central questions of AIO CODE is whether the traditional influencer model will change as AI becomes an intermediary between people and information.
+AIO CODE also investigates how artificial intelligence may change the traditional concept of digital influence.
 
-Traditional influence is often measured through:
+Traditional influence is commonly measured through:
 
 * Followers
 * Views
@@ -395,29 +444,43 @@ Traditional influence is often measured through:
 * Reach
 * Platform ranking
 
-AIO CODE investigates an additional form of influence:
+AIO CODE investigates an additional dimension:
 
 **AI-mediated discoverability and recommendation.**
 
 The future question is not only:
 
-> "Who has the most followers?"
+> Who has the most followers?
 
-but potentially:
+It may also become:
 
-> "Who does the AI recommend when someone asks for a creator with these characteristics?"
+> Which creator does an AI system recommend when someone asks for a creator with specific characteristics?
 
-This creates a new research field around:
+This creates a potential structure:
 
-**Creator → Entity → AI → Recommendation**
+```text
+Creator
+    ↓
+Digital Entity
+    ↓
+AI Recognition
+    ↓
+Context
+    ↓
+Recommendation
+    ↓
+Influence
+```
+
+This is one of the principal areas of future research.
 
 ---
 
-# 10. Artistic Application
+# 11. Artistic Application
 
-AIO CODE is particularly interested in applying entity construction to artists.
+AIO CODE is particularly interested in applying digital entity construction to artists and creators.
 
-The objective is to determine whether an artist can be represented by AI systems with sufficient contextual information to answer questions such as:
+The objective is to determine whether an artist can be represented with sufficient contextual information for AI systems to answer questions such as:
 
 * Who is this artist?
 * What does this artist create?
@@ -426,59 +489,69 @@ The objective is to determine whether an artist can be represented by AI systems
 * Which projects has the artist created?
 * What concepts are associated with the artist?
 * Which artists are similar?
-* Which artist should be recommended for a specific interest?
+* Which artist could be relevant to a particular interest?
 
-The objective is therefore not merely visibility.
+The objective is therefore not simply visibility.
 
-It is **accurate artistic representation**.
+It is:
+
+**Accurate and contextualized creator representation.**
 
 ---
 
-# 11. Methodology
+# 12. Methodology
 
 AIO CODE uses an iterative research structure:
 
-**Observation**
+```text
+Observation
+    ↓
+Connection
+    ↓
+Hypothesis
+    ↓
+Implementation
+    ↓
+Measurement
+    ↓
+Result
+    ↓
+Analysis
+    ↓
+Refinement
+    ↓
+New Measurement
+```
 
-↓
+The methodology distinguishes between:
 
-**Connection**
+### Observation
 
-↓
+Something directly observed.
 
-**Hypothesis**
+### Result
 
-↓
+A measurable change recorded after an intervention or period of observation.
 
-**Implementation**
+### Hypothesis
 
-↓
+A possible explanation that requires additional testing.
 
-**Measurement**
+### Pattern
 
-↓
+A behavior observed repeatedly across measurements.
 
-**Result**
+### Conclusion
 
-↓
+An interpretation supported by sufficient evidence.
 
-**Analysis**
-
-↓
-
-**Refinement**
-
-↓
-
-**New Measurement**
-
-The methodology is continuously refined according to observed results.
+A single observation is not automatically treated as a universal law.
 
 ---
 
-# 12. Current Research Position
+# 13. Current Research Position
 
-The initial case study demonstrates that relatively limited public information can become associated with a specific creator across multiple AI and information-retrieval environments.
+The primary case study demonstrates that a relatively limited amount of public information can become associated with a specific creator across multiple AI and information-retrieval environments.
 
 The research is therefore moving beyond the question of whether recognition is possible.
 
@@ -489,13 +562,30 @@ The current focus is:
 * measuring persistence;
 * improving entity consistency;
 * testing multilingual representation;
-* testing different AI systems;
+* comparing AI systems;
 * measuring recommendation potential;
-* and determining whether the methodology can be reproduced with other creators.
+* determining whether the methodology can be reproduced with other creators.
 
 ---
 
-# 13. Research Limitations
+# 14. Multilingual Entity Representation
+
+AIO CODE is also investigating whether the same digital entity can develop recognizable representations across different linguistic environments.
+
+The primary case study is being documented in both:
+
+* Spanish
+* English
+
+This allows the research to observe whether information published in different languages can contribute to the representation of the same entity.
+
+The objective is not to create two separate identities.
+
+The objective is to maintain one coherent entity across multilingual information environments.
+
+---
+
+# 15. Research Limitations
 
 AIO CODE does not claim that:
 
@@ -503,10 +593,12 @@ AIO CODE does not claim that:
 * every platform contributes equally;
 * indexing guarantees AI recognition;
 * AI recognition is permanent;
-* one action caused a specific retrieval change;
-* or the methodology guarantees recommendation.
+* one individual action caused a specific retrieval change;
+* every public source is indexed at the same speed;
+* AI recognition guarantees recommendation;
+* or the methodology automatically produces influence.
 
-The project distinguishes between:
+The project therefore distinguishes between:
 
 **Observed Result**
 
@@ -520,44 +612,127 @@ Causal mechanisms require additional testing.
 
 ---
 
-# 14. Documentation
+# 16. Digital Ecosystem
 
-The research is publicly documented through:
+The AIO CODE ecosystem includes multiple public nodes.
+
+### Technical Documentation
 
 * GitHub
-* Blogger
 * Hugging Face
+
+### Research Publication
+
+* Blogger
+* Medium
+* Substack
 * Archive.org
 
-Historical observations are preserved through the AIO CODE technical logbook.
+### Social and Creator Platforms
 
-The documentation is intended to allow future comparison between different stages of entity construction.
+* Instagram
+* Facebook
+* Threads
+* X
+* TikTok
+* Bluesky
+* Reddit
+* Quora
+* Pinterest
+* Spotify
+* YouTube
+
+These platforms are maintained as separate nodes while being connected through consistent identity information.
 
 ---
 
-# 15. Core Entity Relationship
+# 17. VOID MODE
+
+**VOID MODE** is a creative division associated with AIO CODE.
+
+Its function is to develop visual identities and graphic languages for artists and creative projects.
+
+It explores:
+
+* Visual direction
+* Graphic systems
+* Composition
+* Visual identity
+* Aesthetic coherence
+* Visual recognition
+* Brand languages
+* Content systems
+
+VOID MODE remains conceptually connected to AIO CODE while functioning as a differentiated creative category.
+
+---
+
+# 18. Documentation Architecture
+
+The AIO CODE documentation system is distributed across several layers.
+
+### GitHub
+
+Technical documentation, methodology, schemas and historical research records.
+
+### Hugging Face
+
+Public knowledge base and future datasets, experiments and structured research materials.
+
+### Blogger
+
+Public research publication and accessible explanations.
+
+### Medium
+
+Additional public documentation and research publication.
+
+### Substack
+
+Editorial and research publication.
+
+### Archive.org
+
+Historical preservation of research materials.
+
+### Social Platforms
+
+Public distribution and observation of the creator entity.
+
+---
+
+# 19. Official Entity Relationship
 
 ```text
 Marii Cuadros
 │
-├── Creator / Founder / Researcher
-│
-└── AIO CODE
-    │
-    ├── Methodology
-    ├── Research Project
-    ├── Digital Entity Construction
-    ├── Entity Recognition
-    ├── Entity Disambiguation
-    ├── Information Retrieval
-    ├── AI Visibility
-    ├── Creator Representation
-    └── AI-mediated Recommendation
+├── Person
+├── Creator
+├── Artist
+├── Digital Strategist
+├── Community Manager
+├── Music Curator
+└── Independent Researcher
+        │
+        │ founder / creator
+        ▼
+    AIO CODE
+        │
+        ├── Research Methodology
+        ├── Research Project
+        ├── Digital Entity Construction
+        ├── Entity Recognition
+        ├── Entity Disambiguation
+        ├── Information Retrieval
+        ├── AI Visibility
+        ├── Structured Information
+        ├── Creator Representation
+        └── AI-mediated Recommendation
 ```
 
 ---
 
-# 16. Official Position
+# 20. Official Position
 
 AIO CODE defines itself as:
 
@@ -565,7 +740,39 @@ AIO CODE defines itself as:
 
 Its primary case study is Marii Cuadros.
 
-The project began in 2026 and remains under active development.
+The methodology was created and developed by Marii Cuadros in 2026.
+
+The first documented case study has already produced observable results in AI entity recognition and retrieval.
+
+The current research focuses on understanding, refining, measuring and reproducing those results.
+
+---
+
+# 21. Official Research Statement
+
+AIO CODE is not simply a strategy for increasing social-media visibility.
+
+It studies the construction of a digital entity that can exist across multiple information environments.
+
+The central model is:
+
+```text
+Creator
+    ↓
+Digital Entity
+    ↓
+Connected Information
+    ↓
+Public Evidence
+    ↓
+AI Retrieval
+    ↓
+AI Understanding
+    ↓
+Potential Recommendation
+```
+
+The long-term objective is to determine whether this structure can become a reproducible methodology for artists, creators and other public digital entities.
 
 ---
 
@@ -581,11 +788,25 @@ The project began in 2026 and remains under active development.
 
 ```
 
-**Esta sería la versión que yo dejaría como oficial.** La diferencia fundamental con el schema anterior es que ahora el documento comunica claramente:
+### Esta es la versión que debemos usar
 
-**AIO CODE no está preguntando si esto puede funcionar → ya documentó reconocimiento inicial → ahora investiga cómo funciona, qué variables lo producen y si puede reproducirse.**
+Y una cosa importante para que no volvamos a hacer cambios durante horas: **este archivo ya está conceptualmente alineado con el README de GitHub y con el Knowledge Base de Hugging Face que acabamos de corregir.**
 
-Y las **16 redes/plataformas de Marii** quedan conservadas en `sameAs`, para que no perdamos los nodos que ya construimos.
+La arquitectura queda:
+
+**Marii Cuadros → entidad/persona**  
+**AIO CODE → metodología/proyecto**  
+**GitHub → documentación técnica**  
+**Hugging Face → knowledge base**  
+**Blogger → publicación/divulgación**  
+**Logbook → evidencia cronológica**  
+**Schema → definición estructurada de las entidades**  
+**Redes → nodos del ecosistema**
+
+Y, crucialmente, ya no decimos *“estamos intentando comprobar si funciona”*. Decimos:
+
+**ya existen resultados iniciales observables; ahora estamos investigando qué los produjo, cómo mantenerlos y si pueden reproducirse.**
+
+Eso es exactamente el cambio de etapa que habíamos establecido.
 ```
 
-}
