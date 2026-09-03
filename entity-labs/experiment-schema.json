@@ -1,1 +1,101 @@
-
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE Entity Lab Experiment",
+  "description": "Schema for controlled experiments designed to investigate entity recognition, resolution, representation, retrieval, citation, and recommendation behavior.",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "date",
+    "entity_id",
+    "observation_reference",
+    "hypothesis",
+    "intervention",
+    "expected_result",
+    "status"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "observation_reference": {
+      "type": "string"
+    },
+    "system": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "research_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "hypothesis": {
+      "type": "string"
+    },
+    "intervention": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_result": {
+      "type": "string"
+    },
+    "observed_result": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "result": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "confidence": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Observed",
+        "Corroborated",
+        "Hypothesized",
+        "Verified",
+        "Unknown",
+        null
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planned",
+        "active",
+        "completed",
+        "under_analysis",
+        "closed"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
