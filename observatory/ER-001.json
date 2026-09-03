@@ -1,0 +1,18 @@
+{
+  "observation_id": "ER-001",
+  "date": "2026-09-02",
+  "entity_id": "MC-001",
+  "system": "Google Search",
+  "query": "Marii Cuadros",
+  "language": "Spanish",
+  "context": "Incognito search",
+  "environment": "Google Search incognito",
+  "observation_type": "entity_resolution_issue",
+  "observed_result": "The search surfaced an association with Maria Luisa Cuadros instead of consistently resolving to the canonical entity Marii Cuadros.",
+  "resolution_status": "inconsistent",
+  "sources": [],
+  "stage": "Entity Resolution",
+  "interpretation": "This may indicate an entity-resolution or disambiguation issue. The cause is not established.",
+  "confidence": "Observed",
+  "status": "under_observation"
+}
