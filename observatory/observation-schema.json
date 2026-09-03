@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE Observation",
+  "description": "Schema for structured observations recorded by the AIO CODE Observatory.",
+  "type": "object",
+  "required": [
+    "observation_id",
+    "date",
+    "entity_id",
+    "system",
+    "observed_result",
+    "stage",
+    "confidence",
+    "status"
+  ],
+  "properties": {
+    "observation_id": { "type": "string" },
+    "date": { "type": "string", "format": "date" },
+    "entity_id": { "type": "string" },
+    "system": { "type": "string" },
+    "query": { "type": ["string", "null"] },
+    "language": { "type": ["string", "null"] },
+    "context": { "type": ["string", "null"] },
+    "observed_result": { "type": "string" },
+    "resolution_status": { "type": ["string", "null"] },
+    "sources": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stage": {
+      "type": "string",
+      "enum": [
+        "Indexation",
+        "Retrieval",
+        "Entity Resolution",
+        "Entity Representation",
+        "Citation",
+        "Recommendation",
+        "Unknown"
+      ]
+    },
+    "interpretation": { "type": ["string", "null"] },
+    "confidence": {
+      "type": "string",
+      "enum": ["Observed", "Corroborated", "Hypothesized", "Verified", "Unknown"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "under_observation", "closed"]
+    }
+  },
+  "additionalProperties": false
+}
