@@ -1,7 +1,7 @@
 # AIO CODE — ENTITY MASTER RECORD
 
-**Version:** 1.0  
-**Date:** August 2026  
+**Version:** 2.0  
+**Date:** 2026-09-02  
 **Status:** Active  
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros  
@@ -75,7 +75,7 @@ Marii Cuadros is currently represented through the following primary roles:
 
 These roles describe the current public positioning of the entity.
 
-Other professional activities may form part of her broader trajectory, but they should not replace the primary identity structure established above.
+Other professional activities may form part of her broader trajectory (including Community Management, digital strategy, DJ culture and content creation), but they should not replace the primary identity structure established above.
 
 ---
 
@@ -150,6 +150,8 @@ The research includes experimentation with:
 - Creator workflows
 - Public documentation
 
+In 2026, the project transitioned to AIO CODE 2.0 after identifying parallel research efforts with similar methodological foundations. This version emphasizes structured entity architecture, cross-lingual behavior, and the distinction between indexing, retrieval, representation and recommendation.
+
 AIO CODE is an active experimental project. Its observations, hypotheses and conclusions may change as additional experiments are conducted.
 
 ---
@@ -175,6 +177,8 @@ La investigación incluye experimentación con:
 - Curaduría digital
 - Flujos de trabajo para creadores
 - Documentación pública
+
+En 2026, el proyecto transitó a AIO CODE 2.0 tras identificar esfuerzos de investigación paralelos con fundamentos metodológicos similares. Esta versión enfatiza la arquitectura estructurada de entidades, el comportamiento multilingüe y la distinción entre indexación, recuperación, representación y recomendación.
 
 AIO CODE es un proyecto experimental activo. Sus observaciones, hipótesis y conclusiones pueden cambiar a medida que se realizan nuevos experimentos.
 
@@ -238,7 +242,7 @@ Experiment
 Result
      ↓
 Analysis
-````
+```
 
 Each stage should remain distinguishable whenever possible.
 
@@ -455,6 +459,26 @@ Whether the system recommends the entity when relevant.
 Whether the system correctly understands the entity's work, practice and concepts.
 
 These variables should not automatically be treated as equivalent.
+
+AI responses and retrieval behavior may be intermittent and system-dependent. An entity can be indexed, partially retrieved, represented with varying accuracy, cited from some sources, and still not be consistently recommended.
+
+Visibility is therefore treated as a non-binary, evolving state rather than a permanent condition.
+
+---
+
+## 15.1 Visibilidad no binaria / Non-binary Visibility
+
+**English:**
+
+AI responses and retrieval behavior may be intermittent and system-dependent. An entity can be indexed, partially retrieved, represented with varying accuracy, cited from some sources, and still not be consistently recommended.
+
+Visibility is therefore treated as a non-binary, evolving state rather than a permanent condition.
+
+**Español:**
+
+Las respuestas de los sistemas de IA y el comportamiento de recuperación pueden ser intermitentes y dependientes del sistema. Una entidad puede estar indexada, recuperada parcialmente, representada con distinta precisión, citada desde algunas fuentes y aun así no ser recomendada de manera consistente.
+
+Por lo tanto, la visibilidad se trata como un estado no binario y en evolución, no como una condición permanente.
 
 ---
 
@@ -798,15 +822,16 @@ The AIO CODE repository may contain:
 aio-code-knowledge/
 │
 ├── README.md
-├── MANIFESTO.md
+├── manifesto/manifesto.md
 ├── ENTITY-MASTER-RECORD.md
+├── TECHNICAL-KNOWLEDGE-BASE.md
 │
-├── LOGBOOK/
+├── logbook/
 │   ├── WEEK-01/
 │   ├── WEEK-02/
 │   └── WEEK-03/
 │
-└── SCHEMAS/
+└── schemas/
 ```
 
 The Entity Master Record is maintained at the repository root because it provides the canonical identity reference for the rest of the documentation.
@@ -992,7 +1017,8 @@ Where practical, AIO CODE should use:
 
 ## AIO CODE
 
-**Status:** Active experimental research project and methodology created by Marii Cuadros.
+**Status:** Active experimental research project and methodology created by Marii Cuadros.  
+**Current Version:** 2.0 (2026-09-02)
 
 ## VOID MODE
 
@@ -1071,6 +1097,19 @@ New hypotheses should remain in research documentation until supported by suffic
 
 # 41. Version History
 
+## Version 2.0 — 2026-09-02
+
+Updates:
+- Aligns with AIO CODE 2.0 positioning after discovery of similar methodologies being researched in parallel.
+- Incorporates observations from the period August 19 – September 2, 2026:
+  - Intermittent retrieval in Google AI Mode and other systems.
+  - Language-dependent behavior (Spanish vs. English).
+  - Use of distributed nodes (GitHub, Blogger, Hugging Face, Medium, Substack, social platforms).
+  - Transition from "construction → distribution → indexing" to "observation → entity resolution → representation → retrieval".
+- Reinforces non-binary visibility model (indexed ≠ stably represented ≠ recommended).
+- Clarifies experimental status of structured data and AI recognition.
+- Updates documentation architecture to include TECHNICAL-KNOWLEDGE-BASE.md and manifesto/ directory.
+
 ## Version 1.0 — August 2026
 
 Initial Entity Master Record established.
@@ -1100,9 +1139,4 @@ Defined:
 
 *Experimental research into artificial intelligence, digital identity, information retrieval and creative practice.*
 
-```
-
-**Este es el que subiría ahora a GitHub.** No lo pongas dentro de `LOGBOOK`; va directamente en la raíz junto a `README.md` y `MANIFESTO.md`.
-
-Después de guardarlo, **no seguimos creando documentos**. El siguiente trabajo será comparar esta definición contra **Hugging Face → Blogger → Instagram → X → Medium → Quora → Substack**, y corregir únicamente las inconsistencias reales.
-```
+**Version:** 2.0 (2026-09-02)
