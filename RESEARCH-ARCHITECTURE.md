@@ -1,38 +1,218 @@
 # AIO CODE — Research Architecture
 
-**Version:** 1.1  
-**Status:** Active  
-**Last Updated:** 2026-09-03
+**Version:** 3.0  
+**Updated:** 2026-09-03  
+**Status:** Active
 
-## Purpose
+## 1. Purpose
 
-This document defines how AIO CODE connects entity identity, observations, experiments, measurements, evidence classification, and findings.
+AIO CODE combines an **entity architecture** with an **observational research architecture**.
 
-AIO CODE studies how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities.
+The entity architecture defines what exists and how entities relate. The research architecture records what external systems do with those entities and measures changes over time.
 
----
-
-## 1. Canonical Entities
+## 2. Canonical Entities
 
 ```text
-MC-001 — Marii Cuadros
-Entity Type: Person
-
-AIO-001 — AIO CODE
-Entity Type: ResearchProject
+MC-001 — Marii Cuadros       Person
+NUX-001 — NUX                DigitalCreativeEntity
+AIO-001 — AIO CODE           ResearchProject
 ```
 
-Canonical relationship:
+Canonical relationships:
 
 ```text
 MC-001 → creator_of → AIO-001
+MC-001 → develops → NUX-001
 ```
 
-The entities are distinct.
+## 3. Two-Layer Architecture
 
----
+### Layer A — Entity Knowledge
 
-## 2. Research Pipeline
+```text
+Entity Passport
+      ↓
+Entity Master Record
+      ↓
+Content Registry
+      ↓
+Social Entity Map
+      ↓
+Claim Ledger
+      ↓
+Entity Graph
+```
+
+This layer answers:
+
+> **What is the entity, what belongs to it, what does it connect to, and what claims are documented about it?**
+
+### Layer B — Research and Measurement
+
+```text
+AI + Social Baseline
+      ↓
+Observatory
+      ↓
+Entity Labs
+      ↓
+Metrics
+      ↓
+Evidence Classification
+      ↓
+Findings
+```
+
+This layer answers:
+
+> **How do external systems represent, retrieve, resolve, cite and recommend the entity, and how does that change over time?**
+
+## 4. Complete System
+
+```text
+                         AIO CODE
+                            │
+              ┌─────────────┴─────────────┐
+              │                           │
+       ENTITY KNOWLEDGE              RESEARCH SYSTEM
+              │                           │
+      Entity Passports              AI + Social Baseline
+              ↓                           ↓
+      Content Registries              Observatory
+              ↓                           ↓
+      Social Entity Map               Entity Labs
+              ↓                           ↓
+        Claim Ledger                   Metrics
+              ↓                           ↓
+        Entity Graph                Evidence / Ethics
+              └─────────────┬─────────────┘
+                            ↓
+                         Findings
+```
+
+## 5. Entity Passport Standard
+
+Each primary entity passport should contain, where applicable:
+
+- Entity ID
+- Canonical Name
+- Aliases
+- Entity Type
+- Description
+- Roles
+- Projects
+- Relationships
+- Platforms
+- Official Sources
+- Languages
+- Timeline
+- Version
+- Status
+
+The passport is the canonical identity layer. It must not be used to rewrite historical observations.
+
+## 6. Content Architecture
+
+Content is organized per entity so that Marii Cuadros and NUX do not become semantically mixed.
+
+```text
+entity/content/
+├── MC-001/
+│   ├── content-registry.json
+│   ├── platforms.json
+│   └── spotify-playlists.json
+│
+└── NUX-001/
+    ├── content-registry.json
+    └── platforms.json
+```
+
+New content domains can be added as separate registries without changing entity IDs.
+
+## 7. Claim Ledger
+
+The Claim Ledger records:
+
+```text
+Claim ID
+Entity ID
+Claim
+Source
+Date
+Evidence Status
+```
+
+Claims may be:
+
+- defined;
+- observed;
+- corroborated;
+- verified;
+- hypothesized;
+- unknown;
+- superseded.
+
+A claim's status is claim-specific.
+
+## 8. Entity Graph
+
+The Entity Graph is the machine-readable representation of relationships between canonical entities and future documented nodes.
+
+```text
+Node → Relationship → Node
+```
+
+It prevents accidental identity collapse and makes relationships explicit.
+
+## 9. Social Entity Map
+
+The Social Entity Map records platform-level representations.
+
+For each platform node, record when available:
+
+- platform;
+- profile/page name;
+- entity ID;
+- URL;
+- language;
+- content role;
+- official status;
+- first observed;
+- last verified;
+- status;
+- notes.
+
+A social profile is a representation node, not proof of AI recognition.
+
+## 10. AI + Social Baseline
+
+The baseline establishes the pre-intervention state of each entity across relevant AI systems, search environments and social platforms.
+
+A baseline record should preserve:
+
+```text
+Date
+Entity
+System / Platform
+Environment
+Query / Prompt
+Language
+Observed Representation
+Recognition
+Disambiguation
+Accuracy
+Sources / Citations
+Relationship Retrieval
+Recommendation
+Evidence Status
+Notes
+```
+
+Historical baseline records are immutable research evidence.
+
+## 11. Research Pipeline
+
+AIO CODE uses the following external-system pipeline:
 
 ```text
 Indexation
@@ -48,68 +228,12 @@ Citation
 Recommendation
 ```
 
-These stages are related but must be measured separately.
+These are separate stages. Success at one stage does not imply success at another.
+
+## 12. Operational Research Cycle
 
 ```text
-Indexed
-   ≠
-Retrieved
-   ≠
-Correctly Resolved
-   ≠
-Correctly Represented
-   ≠
-Correctly Cited
-   ≠
-Recommended
-```
-
----
-
-## 3. Research Architecture
-
-```text
-ENTITY
-   ↓
-OBSERVATORY
-   ↓
-ENTITY LABS
-   ↓
-METRICS
-   ↓
-ETHICS
-   ↓
-FINDINGS
-```
-
-### Entity
-Defines the canonical entities, relationships and identity boundaries.
-
-### Observatory
-Records what external systems actually produce.
-
-### Entity Labs
-Investigates research questions and possible explanations through structured experiments.
-
-### Metrics
-Measures defined outcomes and changes from baseline.
-
-### Ethics
-Determines how evidence, uncertainty, interventions and claims must be handled.
-
-### Findings
-Publishes evidence-backed conclusions when the evidence is sufficient.
-
----
-
-## 4. Research Lifecycle
-
-```text
-Define Entity
-    ↓
-Observe System
-    ↓
-Record Observation
+Observation
     ↓
 Research Question
     ↓
@@ -131,203 +255,83 @@ Interpretation
     ↓
 Finding
     ↓
-Preservation
+Replication / Refinement
 ```
 
-Not every observation requires an experiment. Not every experiment produces a finding. Not every finding establishes causation.
-
----
-
-## 5. Evidence Model
-
-AIO CODE uses:
-
-- **Observed** — directly recorded under defined conditions.
-- **Corroborated** — supported by multiple independent observations, systems, measurements, or sources.
-- **Verified** — sufficiently supported for the specific claim being evaluated.
-- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
-- **Unknown** — insufficient evidence.
-
-Core distinction:
+## 13. Evidence Model
 
 ```text
-Observed Fact
-     ≠
-Corroborated Evidence
-     ≠
-Verified Finding
-     ≠
-Interpretation
-     ≠
-Hypothesis
-     ≠
-Causal Conclusion
+Observed
+Corroborated
+Verified
+Hypothesized
+Unknown
 ```
 
-Evidence determines claim strength.
+These states must not be collapsed.
 
----
+> **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
 
-## 6. Traceability
+The project may have established observations and corroborated findings even when the underlying mechanism remains unknown.
 
-Significant research claims should be traceable through:
+## 14. Current Case — Marii Cuadros
+
+Observation `ER-001` records an entity-resolution issue in Google Search under an incognito Spanish-language condition on September 2, 2026: an association with **Maria Luisa Cuadros** was surfaced instead of consistently resolving to **Marii Cuadros**.
+
+The observation is established. Its cause is not established.
+
+Experiment `EXP-001` investigates whether strengthening canonical identity signals and cross-source consistency may improve consistent resolution.
+
+## 15. Repository Map
 
 ```text
-Entity ID
-   ↓
-Observation ID
-   ↓
-Experiment ID
-   ↓
-Measurement ID
-   ↓
-Metric ID
-   ↓
-Evidence Classification
-   ↓
-Finding
+entity/
+    Canonical entity passports and per-entity content
+
+observatory/
+    External-system observations and schemas
+
+entity-labs/
+    Experiments and hypotheses
+
+metrics/
+    Measurement definitions and protocols
+
+ethics/
+    Evidence classification and research integrity
+
+logbook/
+    Chronological research record
+
+schemas/
+    Machine-readable schemas
+
+claim-ledger.json
+    Claim registry
+
+entity-graph.json
+    Relationship graph
+
+social-entity-map.json
+    Platform representation map
+
+ai-social-baseline.json
+    AI + social baseline
 ```
 
-Where applicable, records also preserve system ID, prompt ID, source ID, date, language, environment, search mode and intervention.
+## 16. Source-of-Truth Rules
 
----
+1. Entity IDs remain stable.
+2. Canonical names are changed only deliberately and with version history.
+3. Historical observations are never silently rewritten.
+4. Claims reference sources and dates.
+5. External-system observations belong in the Observatory.
+6. Hypotheses belong in Entity Labs.
+7. Measurements belong in Metrics.
+8. Evidence strength determines claim strength.
+9. A platform presence does not prove AI recognition.
+10. Temporal association does not prove causation.
 
-## 7. Current Observation — ER-001
+## 17. Final Architecture Principle
 
-```text
-Entity: MC-001 — Marii Cuadros
-System: Google Search
-Environment: Incognito
-Language: Spanish
-Observed representation: Maria Luisa Cuadros
-Stage: Entity Resolution
-Evidence: Observed
-Status: Under Observation
-Cause: Not Established
-```
-
-This is an observed entity-resolution issue. The competing representation is not incorporated into the canonical entity.
-
----
-
-## 8. Current Experiment — EXP-001
-
-**Domain:** Entity Resolution
-
-**Research question:** Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
-
-**Hypothesis:** Consistency may improve entity resolution.
-
-The hypothesis does not establish causation.
-
-Current state:
-
-```text
-Baseline: Not yet formally recorded
-Post-intervention measurement: Not yet recorded
-Measured improvement: Not established
-Causal effect: Not established
-```
-
----
-
-## 9. Measurement Architecture
-
-```text
-Baseline
-   ↓
-Intervention
-   ↓
-Post-Intervention Measurement
-   ↓
-Comparison
-   ↓
-Change
-   ↓
-Interpretation
-```
-
-A measured change does not automatically establish that an intervention caused the change.
-
-Historical measurements must not be rewritten to improve apparent performance.
-
----
-
-## 10. Source Architecture
-
-Canonical research sources include:
-
-```text
-GitHub
-   → Technical Documentation
-
-Blogger
-   → Public Documentation
-
-Hugging Face
-   → Structured Research Artifacts
-```
-
-Additional public platforms may be used as observational or distribution environments. Their presence does not imply equal evidentiary status or causal influence.
-
----
-
-## 11. Structured Dataset
-
-The Hugging Face research dataset contains structured records for:
-
-```text
-entities
-relationships
-claims
-entity-resolution
-sources
-research-manifest
-observatory
-systems
-prompt-registry
-experiments
-experiment-registry
-metrics
-metric-registry
-ethics
-ethics-registry
-```
-
-These records form the machine-readable research layer.
-
----
-
-## 12. Current Module Status
-
-| Module | Status |
-|---|---|
-| Entity | Active |
-| Observatory | Active |
-| Entity Labs | Active |
-| Metrics | Active |
-| Ethics | Active |
-| Findings | Not yet active as formal publication layer |
-
----
-
-## 13. Core Rules
-
-> **Identity before visibility.**
-
-> **Observation before interpretation.**
-
-> **Measurement before improvement claims.**
-
-> **Evidence before conclusions.**
-
-> **Evidence determines the strength of the claim.**
-
----
-
-**Project:** AIO CODE  
-**Full Name:** Artificial Intelligence Optimization Code  
-**Document:** Research Architecture  
-**Version:** 1.1  
-**Status:** Active  
-**Updated:** 2026-09-03
+> **Define the entity. Connect the evidence. Observe the systems. Measure the change. Preserve the history.**
