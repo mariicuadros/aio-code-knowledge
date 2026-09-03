@@ -1,22 +1,38 @@
 {
   "graph": "AIO CODE Entity Graph",
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-09-03",
   "nodes": [
     {
       "entity_id": "MC-001",
       "canonical_name": "Marii Cuadros",
-      "entity_type": "Person"
+      "entity_type": "Person",
+      "passport": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+      "content_registry": "entity/content/MC-001/content-registry.json",
+      "platform_registry": "entity/content/MC-001/platforms.json"
     },
     {
       "entity_id": "AIO-001",
       "canonical_name": "AIO CODE",
-      "entity_type": "ResearchProject"
+      "entity_type": "ResearchProject",
+      "passport": "entity/ENTITY-PASSPORT-AIO-CODE.md",
+      "content_registry": "entity/content/AIO-001/content-registry.json",
+      "platform_registry": "entity/content/AIO-001/platforms.json",
+      "research_layers": [
+        "observatory/",
+        "entity-labs/",
+        "metrics/",
+        "ethics/",
+        "logbook/"
+      ]
     },
     {
       "entity_id": "NUX-001",
       "canonical_name": "NUX",
-      "entity_type": "DigitalCreativeEntity"
+      "entity_type": "DigitalCreativeEntity",
+      "passport": "entity/ENTITY-PASSPORT-NUX.md",
+      "content_registry": "entity/content/NUX-001/content-registry.json",
+      "platform_registry": "entity/content/NUX-001/platforms.json"
     }
   ],
   "edges": [
@@ -25,7 +41,8 @@
       "from": "MC-001",
       "relationship": "creator_of",
       "to": "AIO-001",
-      "status": "active"
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
     },
     {
       "relationship_id": "REL-002",
@@ -33,8 +50,10 @@
       "relationship": "develops",
       "to": "NUX-001",
       "status": "active",
-      "note": "Relationship is established as the current project architecture; finer creative-role semantics may be refined as evidence is documented."
+      "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
+      "note": "NUX is a distinct entity. The broader creative role semantics may be refined as documented evidence accumulates."
     }
   ],
-  "graph_rule": "Entities remain distinct unless an explicit relationship is recorded. An alias is not a separate entity unless entity resolution establishes it as such."
+  "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity.",
+  "ecosystem_rule": "Each canonical entity may have its own connected ecosystem of platforms, content, projects, sources and relationships. Empty registries represent known architectural slots, not invented assets."
 }
