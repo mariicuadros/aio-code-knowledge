@@ -1,0 +1,28 @@
+{
+  "experiment_id": "EXP-001",
+  "date": "2026-09-03",
+  "project_entity_id": "AIO-001",
+  "entity_id": "MC-001",
+  "observation_reference": "ER-001",
+  "system": "Google Search",
+  "prompt_reference": "PROMPT-004",
+  "research_question": "Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.",
+  "hypothesis": "Consistency may improve entity resolution, but the current architecture does not establish causation.",
+  "intervention": "Maintain and strengthen consistent canonical identity signals across the AIO CODE entity records, GitHub documentation, structured datasets and public documentation.",
+  "variables": [
+    "canonical_name_consistency",
+    "cross_source_agreement",
+    "structured_entity_representation",
+    "relationship_consistency",
+    "source_distribution",
+    "search_environment",
+    "language",
+    "query",
+    "time_between_intervention_and_measurement"
+  ],
+  "expected_result": "Future measurement may show more consistent resolution to Marii Cuadros and reduced competing association with Maria Luisa Cuadros.",
+  "observed_result": null,
+  "result": null,
+  "confidence": null,
+  "status": "planned"
+}
