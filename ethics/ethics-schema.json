@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE Ethics Record Schema",
+  "description": "Schema for recording research ethics, evidence classification, responsible research practices, and claim boundaries within AIO CODE.",
+  "type": "object",
+  "required": [
+    "ethics_id",
+    "date",
+    "entity_id",
+    "principle",
+    "description",
+    "status"
+  ],
+  "properties": {
+    "ethics_id": {
+      "type": "string",
+      "description": "Unique identifier for the ethics record."
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "entity_id": {
+      "type": "string",
+      "description": "Identifier of the entity to which the ethics record applies."
+    },
+    "experiment_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observation_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "measurement_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "principle": {
+      "type": "string",
+      "description": "Research principle or ethical boundary being applied."
+    },
+    "description": {
+      "type": "string"
+    },
+    "evidence_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Observed",
+        "Corroborated",
+        "Hypothesized",
+        "Verified",
+        "Unknown",
+        null
+      ]
+    },
+    "claim_type": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Observed Fact",
+        "Corroborated Evidence",
+        "Verified Finding",
+        "Interpretation",
+        "Hypothesis",
+        "Causal Conclusion",
+        "Unknown",
+        null
+      ]
+    },
+    "risk_level": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "low",
+        "moderate",
+        "high",
+        "unknown",
+        null
+      ]
+    },
+    "responsible_practice": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "historical_state_preserved": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "uncertainty_preserved": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "under_review",
+        "closed",
+        "archived"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
