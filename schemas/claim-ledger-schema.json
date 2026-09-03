@@ -17,6 +17,8 @@
           "entity_id": {"type": "string"},
           "claim": {"type": "string"},
           "source": {"type": "string"},
+          "source_ref": {"type": "string"},
+          "evidence_refs": {"type": "array", "items": {"type": "string"}},
           "date": {"type": "string", "format": "date"},
           "status": {"enum": ["defined", "observed", "corroborated", "verified", "hypothesized", "unknown", "superseded"]}
         },
