@@ -1,6 +1,16 @@
 {
   "entity_id": "NUX-001",
   "entity_name": "NUX",
-  "version": "1.0",
-  "platforms": []
+  "version": "1.1",
+  "purpose": "Registry of platform representation nodes associated with the NUX-001 canonical entity.",
+  "platforms": [
+    {"platform_id":"NUX-PLAT-001","platform_name":"Instagram","canonical_entity_id":"NUX-001","official_status":"to_verify","status":"planned"},
+    {"platform_id":"NUX-PLAT-002","platform_name":"TikTok","canonical_entity_id":"NUX-001","official_status":"to_verify","status":"planned"},
+    {"platform_id":"NUX-PLAT-003","platform_name":"YouTube","canonical_entity_id":"NUX-001","official_status":"to_verify","status":"planned"},
+    {"platform_id":"NUX-PLAT-004","platform_name":"X","canonical_entity_id":"NUX-001","official_status":"to_verify","status":"planned"},
+    {"platform_id":"NUX-PLAT-005","platform_name":"Facebook","canonical_entity_id":"NUX-001","official_status":"to_verify","status":"planned"},
+    {"platform_id":"NUX-PLAT-006","platform_name":"Spotify","canonical_entity_id":"NUX-001","content_role":"music","official_status":"to_verify","status":"planned"}
+  ],
+  "rule": "NUX platform records are independent representation nodes and must never be treated as aliases of MC-001.",
+  "data_integrity": "Planned or unverified platform records are architectural slots only. They do not assert that a public profile currently exists."
 }
