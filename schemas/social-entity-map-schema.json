@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE Social Entity Map",
+  "type": "object",
+  "required": ["map", "version", "entities", "platforms"],
+  "properties": {
+    "map": {"type": "string"},
+    "version": {"type": "string"},
+    "updated": {"type": "string", "format": "date"},
+    "entities": {"type": "array"},
+    "platforms": {"type": "array"}
+  },
+  "additionalProperties": true
+}
