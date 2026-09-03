@@ -1,74 +1,54 @@
 # AIO CODE — Research Architecture
 
+**Version:** 1.1  
+**Status:** Active  
+**Last Updated:** 2026-09-03
+
 ## Purpose
 
-This document defines the complete research architecture of AIO CODE.
+This document defines how AIO CODE connects entity identity, observations, experiments, measurements, evidence classification, and findings.
 
-It describes how entity identity, observations, experiments, measurements, evidence classification, and research findings connect within a single research system.
-
-AIO CODE is designed as a structured research framework for studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and recommend digital entities.
+AIO CODE studies how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities.
 
 ---
 
-# 1. Canonical Research Entity
-
-The primary research project is:
-
-```text
-AIO-001 — AIO CODE
-````
-
-### Canonical name
-
-AIO CODE
-
-### Full name
-
-Artificial Intelligence Optimization Code
-
-### Entity type
-
-ResearchProject
-
-### Creator
+## 1. Canonical Entities
 
 ```text
 MC-001 — Marii Cuadros
+Entity Type: Person
+
+AIO-001 — AIO CODE
+Entity Type: ResearchProject
 ```
 
-### Canonical relationship
+Canonical relationship:
 
 ```text
-MC-001
-  ↓ creator_of
-AIO-001
+MC-001 → creator_of → AIO-001
 ```
+
+The entities are distinct.
 
 ---
 
-# 2. Research Pipeline
-
-The AIO CODE research pipeline is:
+## 2. Research Pipeline
 
 ```text
 Indexation
-     ↓
+    ↓
 Retrieval
-     ↓
+    ↓
 Entity Resolution
-     ↓
+    ↓
 Entity Representation
-     ↓
+    ↓
 Citation
-     ↓
+    ↓
 Recommendation
 ```
 
-These stages are related but distinct.
-
-A result at one stage does not automatically establish a result at another stage.
-
-For example:
+These stages are related but must be measured separately.
 
 ```text
 Indexed
@@ -86,290 +66,111 @@ Recommended
 
 ---
 
-# 3. Research Architecture
-
-The complete AIO CODE architecture is:
+## 3. Research Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │       ENTITY        │
-                    │ Identity Definition │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │     OBSERVATORY     │
-                    │  System Observation │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │    ENTITY LABS      │
-                    │    Experiments      │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │      METRICS        │
-                    │    Measurement      │
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │       ETHICS        │
-                    │ Evidence & Integrity│
-                    └──────────┬──────────┘
-                               ↓
-                    ┌─────────────────────┐
-                    │      FINDINGS       │
-                    │ Research Conclusions│
-                    └─────────────────────┘
+ENTITY
+   ↓
+OBSERVATORY
+   ↓
+ENTITY LABS
+   ↓
+METRICS
+   ↓
+ETHICS
+   ↓
+FINDINGS
 ```
 
----
+### Entity
+Defines the canonical entities, relationships and identity boundaries.
 
-# 4. Module Responsibilities
-
-## Entity
-
-Defines what is being studied.
-
-The Entity layer establishes:
-
-* canonical identity
-* canonical name
-* entity type
-* defining attributes
-* relationships
-* canonical claims
-* authoritative sources
-
-Primary identifiers include:
-
-```text
-MC-001 — Marii Cuadros
-AIO-001 — AIO CODE
-```
-
----
-
-## Observatory
-
+### Observatory
 Records what external systems actually produce.
 
-The Observatory answers:
+### Entity Labs
+Investigates research questions and possible explanations through structured experiments.
 
-> What happened?
+### Metrics
+Measures defined outcomes and changes from baseline.
 
-It records:
+### Ethics
+Determines how evidence, uncertainty, interventions and claims must be handled.
 
-* system
-* query or prompt
-* environment
-* date
-* language
-* search mode
-* observed result
-* research stage
-* evidence state
-
-The Observatory does not establish why a result occurred.
+### Findings
+Publishes evidence-backed conclusions when the evidence is sufficient.
 
 ---
 
-## Entity Labs
-
-Investigates possible explanations through structured experiments.
-
-Entity Labs answers:
-
-> What might explain the observed behavior?
-
-The experimental model is:
+## 4. Research Lifecycle
 
 ```text
-Observation
-     ↓
+Define Entity
+    ↓
+Observe System
+    ↓
+Record Observation
+    ↓
+Research Question
+    ↓
 Hypothesis
-     ↓
-Intervention
-     ↓
+    ↓
 Experiment
-     ↓
-Result
-     ↓
-Confidence
-```
-
-Entity Labs must distinguish expected results from observed results.
-
----
-
-## Metrics
-
-Measures research outcomes.
-
-Metrics answers:
-
-> Did the measured state change?
-
-The measurement model is:
-
-```text
+    ↓
 Baseline
-     ↓
+    ↓
 Intervention
-     ↓
-Post-Intervention Measurement
-     ↓
-Comparison
-     ↓
-Change
-```
-
-Metrics do not automatically establish causation.
-
----
-
-## Ethics
-
-Defines the integrity boundaries governing the research.
-
-Ethics answers:
-
-> What can we legitimately claim from the available evidence?
-
-Ethics governs:
-
-* evidence classification
-* research integrity
-* historical preservation
-* reproducibility
-* traceability
-* responsible intervention
-* uncertainty
-* causal claims
-* public communication
-
----
-
-## Findings
-
-Findings represent conclusions supported by the research record.
-
-A finding should only be produced after the relevant evidence has been evaluated.
-
-```text
-Observation
-     ↓
-Experiment
-     ↓
+    ↓
 Measurement
-     ↓
+    ↓
+Comparison
+    ↓
 Evidence Classification
-     ↓
+    ↓
+Interpretation
+    ↓
 Finding
+    ↓
+Preservation
 ```
+
+Not every observation requires an experiment. Not every experiment produces a finding. Not every finding establishes causation.
 
 ---
 
-# 5. Research Lifecycle
+## 5. Evidence Model
 
-The complete research lifecycle is:
+AIO CODE uses:
 
-```text
-1. Define Entity
-       ↓
-2. Observe System
-       ↓
-3. Record Observation
-       ↓
-4. Identify Research Question
-       ↓
-5. Form Hypothesis
-       ↓
-6. Design Experiment
-       ↓
-7. Establish Baseline
-       ↓
-8. Apply Intervention
-       ↓
-9. Measure Outcome
-       ↓
-10. Compare With Baseline
-       ↓
-11. Classify Evidence
-       ↓
-12. Interpret Result
-       ↓
-13. Establish Finding
-       ↓
-14. Preserve Research Record
-```
+- **Observed** — directly recorded under defined conditions.
+- **Corroborated** — supported by multiple independent observations, systems, measurements, or sources.
+- **Verified** — sufficiently supported for the specific claim being evaluated.
+- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
+- **Unknown** — insufficient evidence.
 
-Not every observation requires an experiment.
-
-Not every experiment produces a finding.
-
-Not every finding establishes causation.
-
----
-
-# 6. Evidence Model
-
-AIO CODE uses the following evidence states:
-
-```text
-Observed
-Corroborated
-Verified
-Hypothesized
-Unknown
-```
-
-### Observed
-
-Directly recorded under defined conditions.
-
-### Corroborated
-
-Supported by multiple independent observations, systems, measurements, or sources.
-
-### Verified
-
-Sufficiently supported for the specific claim being evaluated.
-
-### Hypothesized
-
-A proposed explanation, mechanism, or expected relationship that remains insufficiently established.
-
-### Unknown
-
-Insufficient evidence to establish the relevant claim.
-
----
-
-# 7. Research Integrity Model
-
-AIO CODE maintains the distinction:
+Core distinction:
 
 ```text
 Observed Fact
-      ≠
+     ≠
 Corroborated Evidence
-      ≠
+     ≠
 Verified Finding
-      ≠
+     ≠
 Interpretation
-      ≠
+     ≠
 Hypothesis
-      ≠
+     ≠
 Causal Conclusion
 ```
 
-The strength of a research claim must not exceed the strength of its supporting evidence.
+Evidence determines claim strength.
 
 ---
 
-# 8. Traceability Model
+## 6. Traceability
 
-Every significant research conclusion should be traceable through the architecture.
+Significant research claims should be traceable through:
 
 ```text
 Entity ID
@@ -387,374 +188,130 @@ Evidence Classification
 Finding
 ```
 
-Where applicable, records should also reference:
-
-* system ID
-* prompt ID
-* source ID
-* date
-* language
-* environment
-* search mode
-* intervention
+Where applicable, records also preserve system ID, prompt ID, source ID, date, language, environment, search mode and intervention.
 
 ---
 
-# 9. Current Research Observation
-
-AIO CODE currently contains a documented entity-resolution observation:
+## 7. Current Observation — ER-001
 
 ```text
-Observation ID:
-ER-001
-
-Entity:
-MC-001 — Marii Cuadros
-
-System:
-Google Search
-
-Environment:
-Incognito
-
-Language:
-Spanish
-
-Observed representation:
-Maria Luisa Cuadros
+Entity: MC-001 — Marii Cuadros
+System: Google Search
+Environment: Incognito
+Language: Spanish
+Observed representation: Maria Luisa Cuadros
+Stage: Entity Resolution
+Evidence: Observed
+Status: Under Observation
+Cause: Not Established
 ```
 
-The observation indicates a possible entity-resolution or disambiguation issue.
+This is an observed entity-resolution issue. The competing representation is not incorporated into the canonical entity.
 
-The observation itself is recorded.
+---
 
-The underlying cause remains under investigation.
+## 8. Current Experiment — EXP-001
 
-Therefore:
+**Domain:** Entity Resolution
+
+**Research question:** Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
+
+**Hypothesis:** Consistency may improve entity resolution.
+
+The hypothesis does not establish causation.
+
+Current state:
 
 ```text
-Observed:
-The competing representation appeared.
-
-Not established:
-The exact mechanism that produced the association.
+Baseline: Not yet formally recorded
+Post-intervention measurement: Not yet recorded
+Measured improvement: Not established
+Causal effect: Not established
 ```
 
 ---
 
-# 10. Current Experimental Path
-
-The current experimental path is:
+## 9. Measurement Architecture
 
 ```text
-ER-001
-   ↓
-EXP-001
-   ↓
-Canonical Identity Consistency
-   ↓
-Future Baseline
+Baseline
    ↓
 Intervention
    ↓
 Post-Intervention Measurement
    ↓
 Comparison
+   ↓
+Change
+   ↓
+Interpretation
 ```
 
-### Experiment
+A measured change does not automatically establish that an intervention caused the change.
 
-```text
-EXP-001
-```
-
-### Research domain
-
-Entity Resolution
-
-### Research question
-
-Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
-
-### Current hypothesis
-
-Consistency may improve entity resolution.
-
-The causal relationship is not assumed.
+Historical measurements must not be rewritten to improve apparent performance.
 
 ---
 
-# 11. Current Measurement State
+## 10. Source Architecture
 
-The Metrics module is operational.
-
-However, no post-intervention measurement has yet been entered for EXP-001.
-
-Therefore:
-
-```text
-Baseline:
-Not yet formally recorded
-
-Post-intervention measurement:
-Not yet recorded
-
-Measured improvement:
-Not established
-
-Causal effect:
-Not established
-```
-
-The absence of a measurement is itself part of the current research state.
-
----
-
-# 12. Source Architecture
-
-AIO CODE maintains distributed canonical research sources:
+Canonical research sources include:
 
 ```text
 GitHub
-   ↓
-Technical Documentation
+   → Technical Documentation
 
 Blogger
-   ↓
-Public Documentation
+   → Public Documentation
 
 Hugging Face
-   ↓
-Structured Research Artifacts
+   → Structured Research Artifacts
 ```
 
-These sources serve complementary roles.
-
-Consistency across sources is treated as a research variable, not as proof of system behavior.
+Additional public platforms may be used as observational or distribution environments. Their presence does not imply equal evidentiary status or causal influence.
 
 ---
 
-# 13. Structured Dataset Architecture
+## 11. Structured Dataset
 
-The Hugging Face dataset contains structured representations for:
+The Hugging Face research dataset contains structured records for:
 
 ```text
-entities.json
-relationships.json
-claims.json
-entity-resolution.json
-sources.json
-research-manifest.json
-observatory.json
-systems.json
-prompt-registry.json
-experiments.json
-experiment-registry.json
-metrics.json
-metric-registry.json
-ethics.json
-ethics-registry.json
+entities
+relationships
+claims
+entity-resolution
+sources
+research-manifest
+observatory
+systems
+prompt-registry
+experiments
+experiment-registry
+metrics
+metric-registry
+ethics
+ethics-registry
 ```
 
-The dataset functions as a machine-readable research representation.
+These records form the machine-readable research layer.
 
 ---
 
-# 14. GitHub Architecture
+## 12. Current Module Status
 
-The GitHub repository contains:
-
-```text
-entity/
-observatory/
-entity-labs/
-metrics/
-ethics/
-logbook/
-schemas/
-```
-
-Additional root-level research documents include:
-
-```text
-AI-REPRESENTATION-PROTOCOL.md
-ENTITY-MASTER-RECORD.md
-TECHNICAL-KNOWLEDGE-BASE.md
-RESEARCH-ARCHITECTURE.md
-manifiesto.md
-README.md
-```
+| Module | Status |
+|---|---|
+| Entity | Active |
+| Observatory | Active |
+| Entity Labs | Active |
+| Metrics | Active |
+| Ethics | Active |
+| Findings | Not yet active as formal publication layer |
 
 ---
 
-# 15. Research State Model
-
-AIO CODE distinguishes between:
-
-```text
-Defined
-     ↓
-Observed
-     ↓
-Corroborated
-     ↓
-Experimented
-     ↓
-Measured
-     ↓
-Verified
-     ↓
-Interpreted
-     ↓
-Published
-```
-
-These states are not necessarily linear.
-
-A research item may remain:
-
-```text
-Observed
-```
-
-without becoming:
-
-```text
-Verified
-```
-
-A hypothesis may remain:
-
-```text
-Hypothesized
-```
-
-until sufficient evidence exists.
-
----
-
-# 16. Current Architecture Status
-
-### Entity layer
-
-Status:
-
-```text
-Active
-```
-
-Canonical entities and relationships are defined.
-
-### Observatory
-
-Status:
-
-```text
-Active
-```
-
-Observation architecture and system registry are defined.
-
-### Entity Labs
-
-Status:
-
-```text
-Active
-```
-
-Experiment architecture and EXP-001 are defined.
-
-### Metrics
-
-Status:
-
-```text
-Active
-```
-
-Measurement architecture and metric registry are defined.
-
-### Ethics
-
-Status:
-
-```text
-Active
-```
-
-Research principles, evidence classification, research integrity, and ethics registry are defined.
-
-### Findings
-
-Status:
-
-```text
-Not yet active as a formal publication layer
-```
-
-The current architecture is preparing the system for evidence-backed findings.
-
----
-
-# 17. Research Architecture Principle
-
-AIO CODE separates five fundamental questions:
-
-```text
-ENTITY
-What is being studied?
-
-OBSERVATORY
-What happened?
-
-ENTITY LABS
-What might explain it?
-
-METRICS
-Did the measured state change?
-
-ETHICS
-What can we legitimately claim?
-```
-
-The resulting finding must emerge from these layers rather than bypassing them.
-
----
-
-# 18. Central Research Model
-
-The complete model is:
-
-```text
-WHAT EXISTS
-     ↓
-ENTITY
-
-WHAT HAPPENED
-     ↓
-OBSERVATORY
-
-WHAT MIGHT EXPLAIN IT
-     ↓
-ENTITY LABS
-
-WHAT CHANGED
-     ↓
-METRICS
-
-WHAT CAN BE CLAIMED
-     ↓
-ETHICS
-
-WHAT WAS LEARNED
-     ↓
-FINDINGS
-```
-
----
-
-# 19. Core AIO CODE Rule
+## 13. Core Rules
 
 > **Identity before visibility.**
 
@@ -768,16 +325,9 @@ FINDINGS
 
 ---
 
-## Status
-
-**Project:** AIO CODE
-**Full Name:** Artificial Intelligence Optimization Code
-**Document:** Research Architecture
-**Version:** 1.0
-**Status:** Active
-**Created:** 2026-09-02
-
-AIO CODE — Artificial Intelligence Optimization Code
-
-```
-
+**Project:** AIO CODE  
+**Full Name:** Artificial Intelligence Optimization Code  
+**Document:** Research Architecture  
+**Version:** 1.1  
+**Status:** Active  
+**Updated:** 2026-09-03
