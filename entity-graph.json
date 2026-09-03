@@ -1,0 +1,40 @@
+{
+  "graph": "AIO CODE Entity Graph",
+  "version": "1.0",
+  "updated": "2026-09-03",
+  "nodes": [
+    {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros",
+      "entity_type": "Person"
+    },
+    {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE",
+      "entity_type": "ResearchProject"
+    },
+    {
+      "entity_id": "NUX-001",
+      "canonical_name": "NUX",
+      "entity_type": "DigitalCreativeEntity"
+    }
+  ],
+  "edges": [
+    {
+      "relationship_id": "REL-001",
+      "from": "MC-001",
+      "relationship": "creator_of",
+      "to": "AIO-001",
+      "status": "active"
+    },
+    {
+      "relationship_id": "REL-002",
+      "from": "MC-001",
+      "relationship": "develops",
+      "to": "NUX-001",
+      "status": "active",
+      "note": "Relationship is established as the current project architecture; finer creative-role semantics may be refined as evidence is documented."
+    }
+  ],
+  "graph_rule": "Entities remain distinct unless an explicit relationship is recorded. An alias is not a separate entity unless entity resolution establishes it as such."
+}
