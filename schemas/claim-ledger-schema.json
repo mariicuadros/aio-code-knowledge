@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE Claim Ledger",
+  "type": "object",
+  "required": ["dataset", "version", "claims"],
+  "properties": {
+    "dataset": {"type": "string"},
+    "version": {"type": "string"},
+    "updated": {"type": "string", "format": "date"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "entity_id", "claim", "source", "date", "status"],
+        "properties": {
+          "claim_id": {"type": "string"},
+          "entity_id": {"type": "string"},
+          "claim": {"type": "string"},
+          "source": {"type": "string"},
+          "date": {"type": "string", "format": "date"},
+          "status": {"enum": ["defined", "observed", "corroborated", "verified", "hypothesized", "unknown", "superseded"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
