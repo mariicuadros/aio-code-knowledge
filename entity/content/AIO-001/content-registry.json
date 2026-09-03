@@ -1,0 +1,42 @@
+{
+  "entity_id": "AIO-001",
+  "entity_name": "AIO CODE",
+  "version": "1.0",
+  "status": "active",
+  "purpose": "Registry for research, documentation and public information assets belonging to the AIO-001 canonical research project.",
+  "content_domains": [
+    "research_documentation",
+    "methodology",
+    "experiments",
+    "observations",
+    "metrics",
+    "findings",
+    "datasets",
+    "publications",
+    "educational_content",
+    "video",
+    "social_content"
+  ],
+  "node_types": [
+    "Article",
+    "ResearchExperiment",
+    "Observation",
+    "Dataset",
+    "Metric",
+    "Finding",
+    "Documentation",
+    "Video",
+    "Post"
+  ],
+  "platforms": [],
+  "items": [],
+  "research_layers": [
+    "observatory/",
+    "entity-labs/",
+    "metrics/",
+    "ethics/",
+    "logbook/"
+  ],
+  "rule": "AIO CODE research artifacts are resources belonging to the AIO-001 ecosystem. They are not interchangeable with the identity of MC-001 or NUX-001.",
+  "evidence_rule": "Research artifacts may provide evidence when their provenance, method, date and evidence status are documented."
+}
