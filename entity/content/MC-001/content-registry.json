@@ -1,0 +1,20 @@
+{
+  "entity_id": "MC-001",
+  "entity_name": "Marii Cuadros",
+  "version": "1.0",
+  "status": "active",
+  "purpose": "Registry for content and public creative assets belonging to the Marii Cuadros entity.",
+  "content_domains": [
+    "social_content",
+    "music_curation",
+    "DJ",
+    "visual_content",
+    "long_form",
+    "research_content",
+    "video",
+    "playlists"
+  ],
+  "platforms": [],
+  "items": [],
+  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source and status are documented."
+}
