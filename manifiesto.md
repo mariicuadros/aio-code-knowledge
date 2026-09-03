@@ -2,6 +2,12 @@
 
 ## Una investigación sobre identidad, inteligencia artificial y visibilidad digital
 
+**Versión:** 2.0  
+**Última actualización:** 2026-09-02  
+**Autor:** Marii Cuadros
+
+---
+
 AIO CODE nace de una pregunta:
 
 > **¿Qué ocurre cuando una identidad digital se construye deliberadamente como un sistema coherente de información y posteriormente es observada por motores de búsqueda y sistemas de inteligencia artificial?**
@@ -78,6 +84,8 @@ Una entidad debe mantener una representación consistente de:
 
 La optimización, cuando exista, debe construirse sobre una identidad real y verificable.
 
+Durante el período agosto–septiembre 2026, una de las hipótesis más relevantes fue que **la mezcla de contenidos demasiado heterogéneos podía estar afectando la coherencia percibida del ecosistema social**, lo que llevó a una limpieza y reestructuración temática del contenido.
+
 ---
 
 # IV. La información debe poder rastrearse
@@ -95,6 +103,8 @@ Por eso AIO CODE documenta:
 - qué resultado apareció.
 
 La documentación forma parte del experimento.
+
+El registro cronológico de observaciones, intervenciones y resultados se mantiene en la bitácora del proyecto (logbook).
 
 ---
 
@@ -124,6 +134,8 @@ Una interpretación respaldada por suficiente evidencia.
 
 Esta distinción es fundamental para el desarrollo del proyecto.
 
+Durante el período analizado, se observaron cambios en la recuperación de la entidad después de reorganizaciones de la arquitectura de información (agosto 22–24), pero estos se tratan como **hipótesis experimentales**, no como causalidades establecidas.
+
 ---
 
 # VI. Cada sistema puede comportarse de manera diferente
@@ -135,6 +147,15 @@ Por lo tanto:
 > **Un resultado observado en un sistema no debe considerarse automáticamente reproducible en otro.**
 
 AIO CODE estudia las diferencias entre sistemas como parte del experimento.
+
+En el período agosto–septiembre 2026 se observaron comportamientos distintos entre:
+
+- Google (AI Mode / incógnito);
+- Gemini;
+- ChatGPT;
+- Perplexity;
+
+incluyendo diferencias por idioma (español vs. inglés) y por tipo de fuentes utilizadas (Medium, Blogger, perfiles sociales, repositorios).
 
 ---
 
@@ -152,6 +173,8 @@ Por esta razón, las pruebas del proyecto procuran diferenciar entre:
 - información que aparece en búsquedas independientes.
 
 Esta distinción permite diseñar experimentos más controlados.
+
+Durante el período, en varios sistemas la información sobre Marii Cuadros y AIO CODE apareció principalmente tras consultas explícitas, lo que sugiere un reconocimiento aún dependiente de contexto más que una recuperación totalmente independiente.
 
 ---
 
@@ -172,6 +195,8 @@ El proyecto no asume que su implementación produzca automáticamente reconocimi
 
 Su función dentro del experimento es evaluar si una representación explícita y coherente puede facilitar determinadas formas de descubrimiento, asociación o recuperación de información.
 
+La arquitectura distribuida del proyecto (GitHub, Blogger, Hugging Face, Medium, Substack, redes sociales, Archive.org) se considera parte de esta capa experimental de representación.
+
 ---
 
 # IX. La red de nodos
@@ -180,16 +205,18 @@ AIO CODE experimenta con una identidad distribuida entre diferentes plataformas.
 
 Cada nodo puede cumplir una función diferente:
 
-- documentación;
-- publicación;
-- comunicación;
-- experimentación;
-- distribución;
-- archivo;
-- representación profesional;
-- expresión creativa.
+- documentación (GitHub, Hugging Face);
+- publicación (Blogger, Medium, Substack);
+- comunicación (Instagram, Facebook, Threads, X, Bluesky);
+- experimentación (TikTok, YouTube, Reddit, Quora);
+- distribución (redes sociales, newsletters);
+- archivo (Archive.org, repositorios);
+- representación profesional (perfiles, portafolios);
+- expresión creativa (VOID MODE, NUX, proyectos artísticos).
 
 La investigación observa qué ocurre cuando esos nodos mantienen relaciones consistentes.
+
+Hacia septiembre 2026, el ecosistema incluye múltiples nodos activos en español e inglés, con contenido programado y una estrategia diferenciada por plataforma y sistema de IA.
 
 ---
 
@@ -204,6 +231,10 @@ La tecnología es una herramienta.
 La identidad pertenece a la persona.
 
 La información debe permanecer fiel a ella.
+
+Marii Cuadros es el caso de estudio principal: creadora, artista, modelo digital, Community Manager, curadora musical, música y cultura DJ, creadora de contenido e investigadora independiente.
+
+AIO CODE busca que estas dimensiones coexistan en una representación digital coherente, sin reducir la identidad a una sola categoría.
 
 ---
 
@@ -224,6 +255,8 @@ Su identidad reúne diferentes dimensiones:
 
 AIO CODE estudia cómo estas diferentes dimensiones pueden coexistir dentro de una representación digital coherente sin reducir la identidad de la persona a una sola categoría.
 
+Durante el período agosto–septiembre 2026, se consolidó la infraestructura de contenido (mensual, programado) y se introdujeron nuevas entidades creativas (como NUX) dentro del mismo ecosistema, manteniendo a Marii como entidad central.
+
 ---
 
 # XII. La investigación permanece abierta
@@ -238,6 +271,8 @@ Cada experimento puede cambiar la metodología.
 
 El proyecto está diseñado para evolucionar con la evidencia.
 
+Las observaciones de inestabilidad en la aparición de la entidad en distintos sistemas (agosto–septiembre 2026) no se interpretan como fallos, sino como **señales de que la visibilidad es un estado no binario**: una entidad puede estar indexada, ser recuperada, representada parcialmente, citada y aun así no ser recomendada de manera estable.
+
 ---
 
 # XIII. Principio de transparencia
@@ -249,6 +284,8 @@ Los experimentos que no produzcan el resultado esperado también deben documenta
 Una metodología únicamente registra aquello que confirma sus expectativas.
 
 Una investigación registra también aquello que las contradice.
+
+Las desapariciones temporales, las diferencias por idioma y los comportamientos intermitentes en distintos sistemas forman parte del registro oficial del proyecto.
 
 ---
 
@@ -267,6 +304,18 @@ También es:
 > **“¿Cómo es representada mi identidad cuando un sistema intenta explicar quién soy?”**
 
 AIO CODE investiga esa pregunta.
+
+El período agosto–septiembre 2026 marca la transición desde:
+
+- **construcción → distribución → indexación**
+
+hacia:
+
+- **observación → resolución de entidad → representación → recuperación**
+
+con miras a una siguiente fase de:
+
+- **intervención controlada → comparación → medición de cambios**.
 
 ---
 
@@ -293,4 +342,5 @@ Y la investigación permanece abierta.
 **AIO CODE**  
 *Experimental research into AI, digital identity and information systems.*
 
-**Created by Marii Cuadros — 2026**
+**Created by Marii Cuadros — 2026**  
+**Current version:** 2.0 (2026-09-02)
