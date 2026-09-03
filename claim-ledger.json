@@ -1,23 +1,17 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-09-03",
   "purpose": "Track canonical and research claims by entity, source, date and evidence status.",
-  "status_values": [
-    "defined",
-    "observed",
-    "corroborated",
-    "verified",
-    "hypothesized",
-    "unknown",
-    "superseded"
-  ],
+  "status_values": ["defined","observed","corroborated","verified","hypothesized","unknown","superseded"],
   "claims": [
     {
       "claim_id": "CLAIM-001",
       "entity_id": "MC-001",
       "claim": "The canonical public name is Marii Cuadros.",
       "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": ["entity/ENTITY-PASSPORT-MARII-CUADROS.md"],
       "date": "2026-09-03",
       "status": "defined"
     },
@@ -26,6 +20,8 @@
       "entity_id": "AIO-001",
       "claim": "The canonical project name is AIO CODE.",
       "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": ["entity/ENTITY-PASSPORT-AIO-CODE.md"],
       "date": "2026-09-03",
       "status": "defined"
     },
@@ -34,6 +30,8 @@
       "entity_id": "MC-001",
       "claim": "Marii Cuadros is the creator of AIO CODE.",
       "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": ["entity/ENTITY-PASSPORT-MARII-CUADROS.md","entity/ENTITY-PASSPORT-AIO-CODE.md","entity-graph.json"],
       "date": "2026-09-03",
       "status": "defined"
     },
@@ -42,8 +40,11 @@
       "entity_id": "NUX-001",
       "claim": "NUX is a distinct digital creative entity developed in association with Marii Cuadros.",
       "source": "NUX Entity Passport",
+      "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
+      "evidence_refs": ["entity-graph.json","entity/content/NUX-001/content-registry.json"],
       "date": "2026-09-03",
       "status": "defined"
     }
-  ]
+  ],
+  "integrity_rule": "Every claim must identify its canonical entity and trace back to a source. Research claims should additionally reference observations, experiments or measurements when those exist. A defined canonical claim is not automatically an externally verified finding."
 }
