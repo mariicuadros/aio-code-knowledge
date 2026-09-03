@@ -7,8 +7,40 @@
     "graph": {"type": "string"},
     "version": {"type": "string"},
     "updated": {"type": "string", "format": "date"},
-    "nodes": {"type": "array", "items": {"type": "object", "required": ["entity_id", "canonical_name", "entity_type"], "properties": {"entity_id": {"type": "string"}, "canonical_name": {"type": "string"}, "entity_type": {"type": "string"}}, "additionalProperties": false}},
-    "edges": {"type": "array", "items": {"type": "object", "required": ["relationship_id", "from", "relationship", "to", "status"], "properties": {"relationship_id": {"type": "string"}, "from": {"type": "string"}, "relationship": {"type": "string"}, "to": {"type": "string"}, "status": {"type": "string"}, "note": {"type": "string"}}, "additionalProperties": false}}
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["entity_id", "canonical_name", "entity_type"],
+        "properties": {
+          "entity_id": {"type": "string"},
+          "canonical_name": {"type": "string"},
+          "entity_type": {"type": "string"},
+          "passport": {"type": "string"},
+          "content_registry": {"type": "string"},
+          "platform_registry": {"type": "string"},
+          "research_layers": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["relationship_id", "from", "relationship", "to", "status"],
+        "properties": {
+          "relationship_id": {"type": "string"},
+          "from": {"type": "string"},
+          "relationship": {"type": "string"},
+          "to": {"type": "string"},
+          "status": {"type": "string"},
+          "source_ref": {"type": "string"},
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
   },
   "additionalProperties": false
 }
