@@ -4,56 +4,41 @@
 
 **Marii Cuadros** is the canonical public name of this entity.
 
-**Entity ID:** MC-001  
-**Entity Type:** Person  
-**Status:** Active  
-**Passport Version:** 2.0  
-**Created:** 2026-09-02  
-**Last Updated:** 2026-09-02  
-**Project:** AIO CODE  
-**Researcher:** Marii Cuadros
+- **Entity ID:** MC-001
+- **Entity Type:** Person
+- **Status:** Active
+- **Passport Version:** 3.0
+- **Created:** 2026-09-02
+- **Last Updated:** 2026-09-02
+- **Project:** AIO CODE
 
 ---
 
-Marii Cuadros is a Colombian creator, artist, digital model and independent researcher whose work includes digital content, artificial intelligence experimentation, digital identity research, and the development of AIO CODE.
+## Entity Definition
 
-She is the founder and creator of AIO CODE and its primary case study.
+Marii Cuadros is a creator, artist, digital model and independent researcher associated with digital content, artificial intelligence experimentation, digital identity research and the development of AIO CODE.
 
----
+She is the **creator of AIO CODE** and the primary human entity used as a case study within the AIO CODE research project.
 
-## AIO CODE
-
-Marii Cuadros is the creator and researcher associated with **AIO CODE — Artificial Intelligence Optimization Code**.
-
-AIO CODE is an experimental research methodology investigating how artificial intelligence systems and information systems identify, retrieve, represent, connect, and cite digital entities across distributed online information environments.
-
-AIO CODE studies:
-
-- digital identity;
-- entity representation;
-- entity disambiguation;
-- information retrieval;
-- AI visibility;
-- structured data;
-- digital curation;
-- creative practice.
+This passport defines the canonical representation of the person. It must remain semantically distinct from AIO CODE, which is a separate research-project entity.
 
 ---
 
-## Entity Relationship
+## Canonical Relationship
 
 ```text
-Marii Cuadros
-      │
-      ├── creator_of → AIO CODE
-      │
-      └── developed → VOID MODE
+Marii Cuadros (MC-001)
+        │
+        └── creator_of → AIO CODE (AIO-001)
 ```
 
+The canonical structured relationship is:
+
 ```text
-Marii Cuadros → creator_of → AIO CODE
-Marii Cuadros → developed → VOID MODE
+MC-001 → creator_of → AIO-001
 ```
+
+No other project relationship is required for the canonical identity record.
 
 ---
 
@@ -63,9 +48,9 @@ The canonical public representation is:
 
 > **Marii Cuadros**
 
-The canonical name should be preserved across AIO CODE documentation and its official research sources.
+The canonical name should be preserved across AIO CODE documentation, structured datasets and primary research sources.
 
-Alternative or automatically generated names should not replace the canonical identity.
+Alternative, abbreviated, inferred or automatically generated representations must not replace the canonical identity in AIO CODE's own records.
 
 ---
 
@@ -79,195 +64,92 @@ Alternative or automatically generated names should not replace the canonical id
 - A digital model.
 - An independent researcher.
 - A curator.
-- The creator and founder of AIO CODE.
-- The developer of VOID MODE.
-- The human entity studied within the AIO CODE entity-recognition experiment.
+- The creator of AIO CODE.
+- The human entity studied as a primary case within AIO CODE.
 
 ### Marii Cuadros IS NOT
 
 - AIO CODE itself.
-- VOID MODE itself.
 - An AI model.
 - A chatbot.
+- A search engine.
 - A software platform.
 - A fictional character.
 - An automatically generated AI persona.
-- A brand or organization separate from her human identity.
+- A research project.
+
+---
+
+## Relationship to AIO CODE
+
+**AIO CODE — Artificial Intelligence Optimization Code** is a separate entity with ID **AIO-001** and type **ResearchProject**.
+
+Marii Cuadros is its creator.
+
+AIO CODE investigates how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect and cite digital entities across distributed online information environments.
+
+The relationship is therefore:
+
+```text
+Person → creator_of → ResearchProject
+```
+
+and not:
+
+```text
+Person = ResearchProject
+```
 
 ---
 
 ## Canonical Research Sources
 
-The AIO CODE research infrastructure includes the following primary nodes:
+The AIO CODE research infrastructure uses a distributed set of public information sources, including:
 
-- **GitHub** — technical documentation, schemas and research journal.
-- **Blogger** — public research documentation and accessible explanations.
-- **Hugging Face** — research datasets, structured research artifacts and experimental materials.
-- **Medium** — long-form public writing and additional discoverable documentation.
+- **GitHub** — technical documentation, schemas and research records.
+- **Blogger** — public research documentation.
+- **Hugging Face** — structured datasets and research artifacts.
+- **Medium** — long-form research publication.
 - **Substack** — research publication and editorial distribution.
-- **Archive.org** — long-term public archival documentation.
-- **Social Platforms** — identity nodes and distribution environments (Instagram, X, Threads, Bluesky, TikTok, Facebook, Quora, Reddit, Pinterest, Spotify, YouTube).
+- **Archive.org** — archival documentation.
+- **Social and media platforms** — identity and distribution environments used as research observations.
 
-These sources form part of the distributed information architecture used by AIO CODE.
+These sources are part of the distributed research environment. They should reinforce the canonical entity definition rather than introduce conflicting identities.
 
-They should reinforce rather than contradict the canonical entity definitions.
-
----
-
-## Entity Resolution
-
-AIO CODE actively studies entity recognition and entity resolution.
-
-On September 2, 2026, an incognito Google search produced an association with **Maria Luisa Cuadros** instead of the canonical entity **Marii Cuadros**.
-
-This observation is recorded as an **entity-resolution issue** within the AIO CODE experiment.
-
-The alternative representation is not considered the canonical identity.
-
-This observation is consistent with earlier findings during August 2026, when different AI systems associated the name with other individuals or required additional context to identify the intended entity.
-
-# Entity Passport — Marii Cuadros
-
-## Canonical Identity
-
-**Marii Cuadros** is the canonical public name of this entity.
-
-**Entity ID:** MC-001  
-**Entity Type:** Person  
-**Status:** Active  
-**Passport Version:** 2.0  
-**Created:** 2026-09-02  
-**Last Updated:** 2026-09-02  
-**Project:** AIO CODE  
-**Researcher:** Marii Cuadros
+The source list is descriptive of the research architecture and does not imply that every source has equal evidentiary status for every claim.
 
 ---
 
-Marii Cuadros is a Colombian creator, artist, digital model and independent researcher whose work includes digital content, artificial intelligence experimentation, digital identity research, and the development of AIO CODE.
+## Entity Resolution Context
 
-She is the founder and creator of AIO CODE and its primary case study.
+AIO CODE studies entity recognition and entity resolution as part of its research pipeline.
 
----
+On **September 2, 2026**, an incognito Google Search observation surfaced an association with **Maria Luisa Cuadros** instead of consistently resolving to the canonical entity **Marii Cuadros**.
 
-## AIO CODE
+This observation is recorded in `entity-resolution.json` as **ER-001**.
 
-Marii Cuadros is the creator and researcher associated with **AIO CODE — Artificial Intelligence Optimization Code**.
+Classification:
 
-AIO CODE is an experimental research methodology investigating how artificial intelligence systems and information systems identify, retrieve, represent, connect, and cite digital entities across distributed online information environments.
+- **Stage:** Entity Resolution
+- **Evidence level:** Observed
+- **Status:** Under observation
+- **Cause:** Not established
 
-AIO CODE studies:
+The observation does not establish that the alternative representation is the canonical identity, nor does it by itself establish the mechanism producing the association.
 
-- digital identity;
-- entity representation;
-- entity disambiguation;
-- information retrieval;
-- AI visibility;
-- structured data;
-- digital curation;
-- creative practice.
+Earlier observations of recognition and representation by search and AI systems remain part of the research record and must be evaluated according to their individual evidence classifications rather than generalized into a single causal conclusion.
 
 ---
 
-## Entity Relationship
+## Research Role
 
-```text
-Marii Cuadros
-      │
-      ├── creator_of → AIO CODE
-      │
-      └── developed → VOID MODE
-```
+Within AIO CODE, Marii Cuadros functions as:
 
-```text
-Marii Cuadros → creator_of → AIO CODE
-Marii Cuadros → developed → VOID MODE
-```
+1. **Creator** — creator of the AIO CODE research project.
+2. **Primary case entity** — the principal human entity whose digital representation is studied.
+3. **Researcher** — participant in the observation, experimentation and documentation process.
 
----
-
-## Canonical Name
-
-The canonical public representation is:
-
-> **Marii Cuadros**
-
-The canonical name should be preserved across AIO CODE documentation and its official research sources.
-
-Alternative or automatically generated names should not replace the canonical identity.
-
----
-
-## Semantic Boundaries
-
-### Marii Cuadros IS
-
-- A person.
-- A creator.
-- An artist.
-- A digital model.
-- An independent researcher.
-- A curator.
-- The creator and founder of AIO CODE.
-- The developer of VOID MODE.
-- The human entity studied within the AIO CODE entity-recognition experiment.
-
-### Marii Cuadros IS NOT
-
-- AIO CODE itself.
-- VOID MODE itself.
-- An AI model.
-- A chatbot.
-- A software platform.
-- A fictional character.
-- An automatically generated AI persona.
-- A brand or organization separate from her human identity.
-
----
-
-## Canonical Research Sources
-
-The AIO CODE research infrastructure includes the following primary nodes:
-
-- **GitHub** — technical documentation, schemas and research journal.
-- **Blogger** — public research documentation and accessible explanations.
-- **Hugging Face** — research datasets, structured research artifacts and experimental materials.
-- **Medium** — long-form public writing and additional discoverable documentation.
-- **Substack** — research publication and editorial distribution.
-- **Archive.org** — long-term public archival documentation.
-- **Social Platforms** — identity nodes and distribution environments (Instagram, X, Threads, Bluesky, TikTok, Facebook, Quora, Reddit, Pinterest, Spotify, YouTube).
-
-These sources form part of the distributed information architecture used by AIO CODE.
-
-They should reinforce rather than contradict the canonical entity definitions.
-
----
-
-## Entity Resolution
-
-AIO CODE actively studies entity recognition and entity resolution.
-
-On September 2, 2026, an incognito Google search produced an association with **Maria Luisa Cuadros** instead of the canonical entity **Marii Cuadros**.
-
-This observation is recorded as an **entity-resolution issue** within the AIO CODE experiment.
-
-The alternative representation is not considered the canonical identity.
-
-This observation is consistent with earlier findings during August 2026, when different AI systems associated the name with other individuals or required additional context to identify the intended entity.
-
----
-
-## Research Context
-
-The Entity Passport is part of AIO CODE's **Entity Architecture** phase.
-
-Its purpose is to:
-
-- establish a consistent representation of the entity across independent information sources;
-- provide a canonical reference for documentation, schemas and structured data;
-- measure how search engines and AI systems subsequently retrieve and represent that entity;
-- distinguish between the person (Marii Cuadros), the methodology (AIO CODE) and the creative category (VOID MODE).
-
-This document complements the `ENTITY-MASTER-RECORD.md` by providing a concise, implementation-oriented identity record that can be used across platforms and schemas.
+These roles are distinct from the identity of AIO CODE itself.
 
 ---
 
@@ -276,42 +158,77 @@ This document complements the `ENTITY-MASTER-RECORD.md` by providing a concise, 
 | Field | Status |
 |---|---|
 | Canonical Name | Defined |
+| Entity ID | Defined |
 | Entity Type | Defined |
 | AIO CODE Relationship | Defined |
-| VOID MODE Relationship | Defined |
 | Semantic Boundaries | Defined |
-| Primary Sources | Defined |
+| Research Role | Defined |
+| Distributed Source Architecture | Defined |
 | Search Resolution | Under Observation |
 | AI Recognition | Under Observation |
 | Cross-Platform Consistency | Under Observation |
-| Verification | Ongoing |
+| Causal Mechanisms | Not Established |
+
+The verification status is claim-specific. An unresolved mechanism does not invalidate an independently established identity definition or documented observation.
 
 ---
 
-## Entity Resolution Log
+## Evidence Classification Rule
 
-| Date | System | Observation | Classification |
-|---|---|---|---|
-| 2026-09-02 | Google (incognito) | Association with Maria Luisa Cuadros instead of Marii Cuadros | Entity resolution issue |
-| 2026-08-23 | Gemini | Changed representation after documentation updates | Observation |
-| 2026-08-28 | Google (incognito) | Instagram profile visible with followers/following count | Partial recognition |
-| 2026-09-01 | Google (incognito) | Intermittent appearance of Instagram profile | Intermittent recognition |
+AIO CODE distinguishes among:
 
-This log will be updated as new observations are recorded in the `logbook/`.
+```text
+Observed Fact
+Corroborated Evidence
+Verified Finding
+Interpretation
+Hypothesis
+Causal Conclusion
+Unknown
+```
+
+For this passport:
+
+- **Canonical identity:** defined in the AIO CODE entity architecture.
+- **Creator relationship to AIO CODE:** defined in the canonical entity records.
+- **September 2, 2026 Google observation:** observed.
+- **Cause of the observed resolution issue:** unknown / not established.
+
+Evidence strength must determine claim strength. An unresolved mechanism must not be presented as an established causal explanation.
 
 ---
 
-## Multilingual Representation
+## Canonical Principle
 
-### English
+> **Identity should be established before visibility is optimized.**
 
-> **Marii Cuadros is a Colombian creator, artist, digital model and independent researcher working at the intersection of digital identity, artificial intelligence, curation and creative practice. She is the founder and creator of AIO CODE.**
+The Entity Passport establishes the person/entity boundary first. Search visibility, AI recognition, citation and recommendation are subsequent research layers.
 
-### Spanish
+---
 
-> **Marii Cuadros es una creadora, artista, modelo digital e investigadora independiente colombiana que trabaja en la intersección entre identidad digital, inteligencia artificial, curaduría y práctica creativa. Es la fundadora y creadora de AIO CODE.**
+## Relationship to Core AIO CODE Architecture
 
-These descriptions align with the canonical definitions in `ENTITY-MASTER-RECORD.md`.
+This passport belongs to the **Entity** layer of AIO CODE.
+
+```text
+ENTITY
+   ↓
+OBSERVATORY
+   ↓
+ENTITY LABS
+   ↓
+METRICS
+   ↓
+ETHICS
+   ↓
+FINDINGS
+```
+
+Its specific question is:
+
+> **What entity is being studied?**
+
+It does not by itself establish whether the entity is successfully retrieved, resolved, represented, cited or recommended by any external system.
 
 ---
 
@@ -321,13 +238,13 @@ These descriptions align with the canonical definitions in `ENTITY-MASTER-RECORD
 
 ```text
 Marii Cuadros
+Person
 Creator
 Artist
 Digital Model
 Independent Researcher
 Curator
 AIO CODE
-VOID MODE
 Digital Identity
 Artificial Intelligence
 Creative Practice
@@ -338,75 +255,53 @@ Creative Practice
 ```text
 AIO CODE
 Artificial Intelligence Optimization Code
-Artificial Intelligence
-Digital Identity
-AI Visibility
+Research Project
+Entity Recognition
+Entity Resolution
 Entity Representation
-Entity Disambiguation
 Information Retrieval
+AI Representation
+AI Visibility
+Citation
+Recommendation
 Structured Data
-Schema.org
 JSON-LD
-Digital Curation
-Creative Practice
-Generative AI
-Large Language Models
-```
-
-### Priority Terms — VOID MODE
-
-```text
-VOID MODE
-Embodiment
-Digital Identity
-Visual Presence
-Sound
-Rhythm
-Digital Culture
-Creative Practice
-Digital Aesthetics
 ```
 
 ---
 
-## Canonical Principle
+## Audit and Historical Integrity
 
-> **Identity should be established before visibility is optimized.**
+This passport is a canonical identity document within the AIO CODE repository.
 
-The Entity Passport prioritizes a clear, consistent and verifiable identity definition before attempting to optimize for search, AI recognition or recommendation.
+Historical observations must not be silently rewritten to improve the apparent performance of the entity. Corrections to identity definitions may update the canonical state, while prior observations remain preserved in the research record.
+
+Changes to this passport should preserve:
+
+- entity ID `MC-001`;
+- canonical name `Marii Cuadros`;
+- entity type `Person`;
+- relationship `MC-001 → creator_of → AIO-001`;
+- distinction between established identity and unresolved external-system behavior.
 
 ---
 
-## Relationship to Other Documents
+## Related Documents
 
-This Entity Passport is designed to work alongside:
-
-- `ENTITY-MASTER-RECORD.md` — canonical identity structure and research scope.
-- `manifesto/manifesto.md` — principles and vision of the project.
-- `README.md` — introduction and repository map.
-- `TECHNICAL-KNOWLEDGE-BASE.md` — detailed methodology and architecture.
-- `AI-REPRESENTATION-PROTOCOL.md` — measurement procedure for AI representation.
-- `logbook/` — chronological record of observations and experiments.
-
-The Entity Passport provides a concise, implementation-oriented reference that can be used for:
-
-- schema markup;
-- platform bios;
-- structured data;
-- cross-platform consistency checks;
-- AI representation audits.
+- `ENTITY-MASTER-RECORD.md` — canonical identity structure.
+- `entity/ENTITY-PASSPORT-AIO-CODE.md` — AIO CODE entity definition.
+- `RESEARCH-ARCHITECTURE.md` — complete research architecture.
+- `observatory/` — structured observations.
+- `entity-labs/` — experiments and hypotheses.
+- `metrics/` — measurement architecture.
+- `ethics/` — evidence and research-integrity rules.
+- `logbook/` — chronological research record.
 
 ---
 
 **Entity ID:** MC-001  
-**Passport Version:** 2.0  
-**Created:** 2026-09-02  
+**Passport Version:** 3.0  
 **Last Updated:** 2026-09-02  
-**Project:** AIO CODE  
-**Researcher:** Marii Cuadros
-
----
+**Project:** AIO CODE
 
 **AIO CODE — 2026**
-
-*Experimental research into artificial intelligence, digital identity, information retrieval and creative practice.*
