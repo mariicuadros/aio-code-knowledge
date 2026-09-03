@@ -1,0 +1,37 @@
+name: Sync to Hugging Face
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data-export/**'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: Clone Hugging Face dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git clone https://$HF_TOKEN@huggingface.co/datasets/mariicuadros/aio-code-entities hf-dataset
+      
+      - name: Sync data-export to Hugging Face
+        run: |
+          rsync -av --delete data-export/ hf-dataset/
+      
+      - name: Commit and push to Hugging Face
+        working-directory: hf-dataset
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Sync from GitHub: ${{ github.sha }}" || echo "No changes to commit"
+          git push https://$HF_TOKEN@huggingface.co/datasets/mariicuadros/aio-code-entities main
