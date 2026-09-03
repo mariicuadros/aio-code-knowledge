@@ -1,0 +1,16 @@
+{
+  "entity_id": "AIO-001",
+  "entity_name": "AIO CODE",
+  "version": "1.0",
+  "purpose": "Registry of platform representation nodes associated with the AIO-001 research project.",
+  "platforms": [
+    {"platform_id":"AIO-PLAT-001","platform_name":"GitHub","canonical_entity_id":"AIO-001","content_role":"technical_documentation","official_status":"official","status":"active"},
+    {"platform_id":"AIO-PLAT-002","platform_name":"Hugging Face","canonical_entity_id":"AIO-001","content_role":"structured_research_data","official_status":"official","status":"active"},
+    {"platform_id":"AIO-PLAT-003","platform_name":"Blogger","canonical_entity_id":"AIO-001","content_role":"public_documentation","official_status":"official","status":"active"},
+    {"platform_id":"AIO-PLAT-004","platform_name":"YouTube","canonical_entity_id":"AIO-001","content_role":"research_documentary","official_status":"to_verify","status":"to_verify"},
+    {"platform_id":"AIO-PLAT-005","platform_name":"Instagram","canonical_entity_id":"AIO-001","content_role":"research_distribution","official_status":"to_verify","status":"to_verify"},
+    {"platform_id":"AIO-PLAT-006","platform_name":"TikTok","canonical_entity_id":"AIO-001","content_role":"research_distribution","official_status":"to_verify","status":"to_verify"}
+  ],
+  "rule": "Platform presence is a representation node. It does not prove external recognition, citation or recommendation.",
+  "data_integrity": "Only verified URLs and official status should be added. Unverified entries are architectural slots and not claims of current public presence."
+}
