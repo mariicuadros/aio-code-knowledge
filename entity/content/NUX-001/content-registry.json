@@ -1,18 +1,32 @@
 {
   "entity_id": "NUX-001",
   "entity_name": "NUX",
-  "version": "1.0",
+  "version": "1.1",
   "status": "active",
-  "purpose": "Registry for content and creative assets belonging to the NUX entity.",
+  "purpose": "Registry for content and creative assets belonging to the NUX-001 canonical entity.",
   "content_domains": [
     "social_content",
     "visual_content",
+    "image_archives",
     "music",
     "video",
     "narrative",
-    "character_content"
+    "character_content",
+    "creative_projects"
+  ],
+  "node_types": [
+    "Post",
+    "ShortVideo",
+    "LongVideo",
+    "ImageObject",
+    "MusicAsset",
+    "Article",
+    "CreativeProject",
+    "NarrativeAsset"
   ],
   "platforms": [],
   "items": [],
-  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source and status are documented."
+  "rule": "NUX content assets are separate resource nodes connected to NUX-001. They must never be collapsed into MC-001 or AIO-001.",
+  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source, publication state and evidentiary status are documented.",
+  "data_integrity": "Empty items represent assets not yet catalogued. No content URL, publication date or creative fact is invented."
 }
