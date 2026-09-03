@@ -1,6 +1,25 @@
 {
   "entity_id": "MC-001",
   "entity_name": "Marii Cuadros",
-  "version": "1.0",
-  "platforms": []
+  "version": "1.1",
+  "purpose": "Registry of platform representation nodes associated with the MC-001 canonical entity.",
+  "platforms": [
+    {"platform_id":"MC-PLAT-001","platform_name":"Instagram","profile_or_page_name":"mariicuadros","canonical_entity_id":"MC-001","url":"https://www.instagram.com/mariicuadros","official_status":"official","status":"active"},
+    {"platform_id":"MC-PLAT-002","platform_name":"TikTok","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-003","platform_name":"YouTube","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-004","platform_name":"X","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-005","platform_name":"Threads","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-006","platform_name":"Bluesky","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-007","platform_name":"Facebook","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-008","platform_name":"Pinterest","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-009","platform_name":"LinkedIn","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-010","platform_name":"Spotify","canonical_entity_id":"MC-001","content_role":"music_curation","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-011","platform_name":"GitHub","canonical_entity_id":"MC-001","content_role":"technical_research","official_status":"official","status":"active"},
+    {"platform_id":"MC-PLAT-012","platform_name":"Hugging Face","canonical_entity_id":"MC-001","content_role":"structured_research","official_status":"official","status":"active"},
+    {"platform_id":"MC-PLAT-013","platform_name":"Blogger","canonical_entity_id":"MC-001","content_role":"public_documentation","official_status":"official","status":"active"},
+    {"platform_id":"MC-PLAT-014","platform_name":"Medium","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-015","platform_name":"Substack","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"}
+  ],
+  "rule": "A platform record describes a representation node. It does not by itself prove external entity resolution, AI recognition, citation or recommendation.",
+  "data_integrity": "Only verified URLs and verified official status should be promoted from to_verify/unverified to active/official. No URL is invented for unverified platforms."
 }
