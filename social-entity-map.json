@@ -1,0 +1,39 @@
+{
+  "map": "AIO CODE Social Entity Map",
+  "version": "1.0",
+  "updated": "2026-09-03",
+  "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
+  "entities": [
+    {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros",
+      "platforms": []
+    },
+    {
+      "entity_id": "NUX-001",
+      "canonical_name": "NUX",
+      "platforms": []
+    },
+    {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE",
+      "platforms": []
+    }
+  ],
+  "platform_record_fields": [
+    "platform_id",
+    "platform_name",
+    "profile_or_page_name",
+    "canonical_entity_id",
+    "url",
+    "language",
+    "content_role",
+    "official_status",
+    "first_observed",
+    "last_verified",
+    "status",
+    "notes"
+  ],
+  "platforms": [],
+  "rule": "A platform presence is a representation node, not proof of entity resolution by an external AI or search system."
+}
