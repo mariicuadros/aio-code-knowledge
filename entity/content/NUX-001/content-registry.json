@@ -1,0 +1,18 @@
+{
+  "entity_id": "NUX-001",
+  "entity_name": "NUX",
+  "version": "1.0",
+  "status": "active",
+  "purpose": "Registry for content and creative assets belonging to the NUX entity.",
+  "content_domains": [
+    "social_content",
+    "visual_content",
+    "music",
+    "video",
+    "narrative",
+    "character_content"
+  ],
+  "platforms": [],
+  "items": [],
+  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source and status are documented."
+}
