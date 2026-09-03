@@ -1,20 +1,34 @@
 {
   "entity_id": "MC-001",
   "entity_name": "Marii Cuadros",
-  "version": "1.0",
+  "version": "1.1",
   "status": "active",
-  "purpose": "Registry for content and public creative assets belonging to the Marii Cuadros entity.",
+  "purpose": "Registry for content and public creative assets belonging to the MC-001 canonical entity.",
   "content_domains": [
     "social_content",
     "music_curation",
     "DJ",
     "visual_content",
+    "image_archives",
+    "video",
     "long_form",
     "research_content",
-    "video",
+    "projects",
     "playlists"
+  ],
+  "node_types": [
+    "Post",
+    "ShortVideo",
+    "LongVideo",
+    "ImageObject",
+    "Article",
+    "Playlist",
+    "ResearchProject",
+    "CreativeProject"
   ],
   "platforms": [],
   "items": [],
-  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source and status are documented."
+  "rule": "Content assets are separate resource nodes connected to MC-001 through documented relationships. They are not automatically sameAs identity nodes.",
+  "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source, publication state and evidentiary status are documented.",
+  "data_integrity": "Empty items represent assets not yet catalogued. No content URL, publication date or ownership claim should be invented."
 }
