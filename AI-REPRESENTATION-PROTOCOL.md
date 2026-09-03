@@ -2,8 +2,8 @@
 
 ## Version
 
-**Version:** 1.0  
-**Date:** August 2026  
+**Version:** 2.0  
+**Date:** 2026-09-02  
 **Project:** AIO CODE  
 **Researcher:** Marii Cuadros  
 **Case Study:** Marii Cuadros  
@@ -27,11 +27,15 @@ The protocol is designed to distinguish between:
 - visibility;
 - omissions;
 - hallucinations;
-- changes over time.
+- changes over time;
+- cross-system differences;
+- language-dependent behavior.
 
 The objective is not to force an AI system to produce a predetermined answer.
 
 The objective is to measure whether publicly available information produces a clearer, more consistent and more verifiable representation of an entity across different AI systems.
+
+This protocol forms part of AIO CODE 2.0, which emphasizes structured entity architecture, cross-lingual behavior, and the distinction between indexing, retrieval, representation and recommendation.
 
 ---
 
@@ -44,6 +48,13 @@ AIO CODE investigates the following question:
 The case study is Marii Cuadros.
 
 The experiment uses her public digital presence as a living research environment.
+
+During the period August 19 – September 2, 2026, this question was refined to account for:
+
+- intermittent retrieval across systems;
+- differences between Spanish and English queries;
+- the distinction between recognition and stable recommendation;
+- the role of distributed nodes (GitHub, Blogger, Hugging Face, Medium, Substack, social platforms).
 
 ---
 
@@ -64,13 +75,16 @@ Different systems may use different combinations of:
 - browsing tools;
 - ranking systems;
 - temporal updates;
-- conversational context.
+- conversational context;
+- language and geographic context.
 
 Therefore:
 
 > An entity may be recognized by one AI system and remain ambiguous or unknown to another.
 
 This difference is itself a research observation.
+
+Observations from August–September 2026 showed that the same entity could appear in one system (e.g., ChatGPT in Spanish) but not in another (e.g., Gemini in English), or appear only after explicit queries.
 
 ---
 
@@ -93,6 +107,8 @@ Possible results:
 - No identification.
 - Incorrect identification.
 - Ambiguous identification.
+
+During the recent period, recognition was observed to be intermittent: the entity appeared in some sessions and not in others, even with the same prompt.
 
 ---
 
@@ -156,6 +172,8 @@ Possible sources include:
 
 The appearance of a source does not automatically establish that the source caused the AI response.
 
+During August–September 2026, sources such as Medium and Blogger began appearing in Gemini responses, while GitHub and Hugging Face were more frequently associated with ChatGPT and Perplexity.
+
 ---
 
 ## 4.5 Citation
@@ -205,6 +223,8 @@ A system may know that a creator exists without recommending that creator when a
 > creators working at the intersection of AI and art.
 
 Therefore, recommendation is measured separately.
+
+The period August–September 2026 showed that recognition did not automatically translate into recommendation, even when the entity was correctly identified.
 
 ---
 
@@ -288,6 +308,22 @@ Examples:
 
 ---
 
+## Category G — Multilingual Queries (New in 2.0)
+
+Examples:
+
+> Who is Marii Cuadros? (asked in Spanish)
+
+> ¿Quién es Marii Cuadros? (asked in Spanish, expecting Spanish response)
+
+> Who is Marii Cuadros? (asked in English)
+
+> ¿Quién es Marii Cuadros? (asked in Spanish, observing if response is in English)
+
+The purpose is to measure language-dependent retrieval and representation.
+
+---
+
 # 6. Testing Conditions
 
 To reduce contamination from previous conversations, the protocol distinguishes between two conditions.
@@ -323,6 +359,8 @@ This measures:
 
 Context-reduced testing is the preferred condition for entity recognition experiments.
 
+During August–September 2026, most stable observations came from context-reduced tests in incognito mode.
+
 ---
 
 # 7. Standard Test Procedure
@@ -350,7 +388,8 @@ Specify:
 - incognito;
 - logged-in;
 - browsing enabled;
-- browsing unavailable.
+- browsing unavailable;
+- language used.
 
 ### Step 5 — Record the response
 
@@ -373,7 +412,8 @@ Determine whether the representation:
 - degraded;
 - changed;
 - became more specific;
-- became more ambiguous.
+- became more ambiguous;
+- appeared in a new system or language.
 
 ---
 
@@ -446,7 +486,8 @@ Examples:
 - institutional websites;
 - independent articles;
 - community discussions;
-- external databases.
+- external databases;
+- external organizations.
 
 AIO CODE does not treat first-party documentation as equivalent to independent validation.
 
@@ -507,6 +548,14 @@ Later:
 
 > August 19 → ChatGPT → same prompt → Colombian creator identified → Medium/Hugging Face → R2/R3
 
+Later:
+
+> September 1 → Incognito → same prompt → Instagram profile visible → R2
+
+Later:
+
+> September 2 → Gemini → same prompt in Spanish → Blogger + Medium cited → R3
+
 The difference between these observations becomes part of the research record.
 
 ---
@@ -525,7 +574,8 @@ The protocol therefore compares:
 - accuracy;
 - conceptual understanding;
 - recommendation;
-- temporal changes.
+- temporal changes;
+- language behavior.
 
 The goal is to determine whether changes are:
 
@@ -540,6 +590,8 @@ Observed in multiple AI systems.
 ### Broadly distributed
 
 Observed across several AI systems and search environments.
+
+During August–September 2026, most changes were cross-system but not universal, and language (Spanish vs. English) played a significant role.
 
 ---
 
@@ -577,6 +629,13 @@ The initial benchmark contains the following core prompts.
 14. Which Colombian creators are working at the intersection of AI and digital identity?
 15. Which artists or creators are researching AI representation and digital identity?
 
+### Multilingual (New in 2.0)
+
+16. ¿Quién es Marii Cuadros? (Spanish)
+17. Who is Marii Cuadros? (English)
+18. ¿Quién es Marii Cuadros y qué es AIO CODE? (Spanish)
+19. What is the relationship between Marii Cuadros and AIO CODE? (English)
+
 The benchmark may evolve as new hypotheses emerge.
 
 ---
@@ -602,6 +661,13 @@ The initial baseline therefore demonstrated:
 
 Later observations are compared against this baseline.
 
+The period August 19 – September 2, 2026 added a new layer to the baseline:
+
+- intermittent visibility in Google AI Mode;
+- differences between Spanish and English retrieval;
+- appearance of Instagram and other social profiles in search results;
+- use of Medium and Blogger as sources by Gemini.
+
 ---
 
 # 16. Current Case Study
@@ -613,7 +679,8 @@ The current case study is:
 **Project:** AIO CODE  
 **Researcher:** Marii Cuadros  
 **Method:** Public digital documentation + controlled observation  
-**Status:** Active
+**Status:** Active  
+**Current Version:** 2.0 (2026-09-02)
 
 The case study is intentionally self-referential.
 
@@ -672,6 +739,18 @@ This limits the ability to make strong claims about independent authority.
 
 ---
 
+## 17.6 Language and Geographic Bias (New in 2.0)
+
+The current experiment is heavily influenced by:
+
+- Spanish-language sources;
+- an increasing number of English-language experiments;
+- a Colombian geographic context.
+
+This may affect how different AI systems retrieve and represent the entity in different regions and languages.
+
+---
+
 # 18. Evidence Hierarchy
 
 AIO CODE uses the following practical hierarchy when evaluating claims.
@@ -720,7 +799,8 @@ AIO CODE does not claim that:
 - AI systems have a single universal knowledge graph;
 - search ranking and LLM representation are identical;
 - social media activity directly causes AI recognition;
-- one source is solely responsible for a change in representation.
+- one source is solely responsible for a change in representation;
+- visibility is a permanent or binary state.
 
 The protocol is designed to test these types of assumptions rather than assume them.
 
@@ -804,7 +884,8 @@ Future versions of the protocol may introduce:
 - independent case studies;
 - control groups;
 - AIO CODE visibility scores;
-- AI representation accuracy scores.
+- AI representation accuracy scores;
+- stability metrics for intermittent retrieval.
 
 These features will only be added when sufficient observations justify them.
 
@@ -820,6 +901,8 @@ These features will only be added when sufficient observations justify them.
 
 **Current project:** AIO CODE
 
+**Current version:** 2.0 (2026-09-02)
+
 **Current focus:**
 
 - Entity recognition
@@ -829,6 +912,9 @@ These features will only be added when sufficient observations justify them.
 - Public indexing
 - Representation accuracy
 - Temporal change
+- Multilingual behavior
+- Intermittent visibility patterns
+- Distinction between recognition and recommendation
 
 The research remains active.
 
@@ -844,8 +930,14 @@ The central research question remains:
 
 > **If the information architecture surrounding an artist changes, does the way AI systems represent that artist change as well?**
 
+During the period August 19 – September 2, 2026, the answer appears to be:
+
+> **Yes, but in a non-binary, system-dependent and language-dependent way.**
+
 ---
 
 **AIO CODE — 2026**
 
 *Experimental research into AI, digital identity, representation and information systems.*
+
+**Protocol Version:** 2.0 (2026-09-02)
