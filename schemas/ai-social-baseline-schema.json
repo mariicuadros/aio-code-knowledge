@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIO CODE AI + Social Baseline",
+  "type": "object",
+  "required": ["dataset", "version", "entities", "records"],
+  "properties": {
+    "dataset": {"type": "string"},
+    "version": {"type": "string"},
+    "baseline_date": {"type": "string", "format": "date"},
+    "purpose": {"type": "string"},
+    "entities": {"type": "array"},
+    "measurement_fields": {"type": "array", "items": {"type": "string"}},
+    "records": {"type": "array"},
+    "status": {"type": "string"}
+  },
+  "additionalProperties": false
+}
