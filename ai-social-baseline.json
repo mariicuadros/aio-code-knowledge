@@ -1,0 +1,41 @@
+{
+  "dataset": "AIO CODE AI + Social Baseline",
+  "version": "1.0",
+  "baseline_date": "2026-09-03",
+  "purpose": "Establish the pre-intervention state of canonical entities across AI systems, search environments and social platforms.",
+  "entities": [
+    {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros"
+    },
+    {
+      "entity_id": "NUX-001",
+      "canonical_name": "NUX"
+    },
+    {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE"
+    }
+  ],
+  "measurement_fields": [
+    "baseline_id",
+    "date",
+    "entity_id",
+    "system_or_platform",
+    "environment",
+    "query_or_prompt",
+    "language",
+    "observed_representation",
+    "recognition",
+    "disambiguation",
+    "accuracy",
+    "sources_or_citations",
+    "relationship_retrieval",
+    "recommendation",
+    "evidence_status",
+    "notes"
+  ],
+  "records": [],
+  "status": "open",
+  "rule": "Baseline records preserve the state observed at measurement time. Later interventions must not overwrite historical baseline records."
+}
