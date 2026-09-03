@@ -1,0 +1,34 @@
+{
+  "manifest": "AIO CODE Controlled Data Export",
+  "version": "1.0",
+  "updated": "2026-09-03",
+  "source_of_truth": "GitHub repository mariicuadros/aio-code-knowledge",
+  "downstream_targets": ["Hugging Face"],
+  "policy": "Only listed machine-readable sources may be synchronized automatically. Documentation is not mirrored wholesale.",
+  "sources": [
+    "entity-graph.json",
+    "social-entity-map.json",
+    "claim-ledger.json",
+    "ai-social-baseline.json",
+    "observatory/observation-schema.json",
+    "observatory/ER-001.json",
+    "entity-labs/experiment-schema.json",
+    "entity-labs/EXP-001.json",
+    "metrics/metric-schema.json",
+    "entity/content/MC-001/content-registry.json",
+    "entity/content/MC-001/platforms.json",
+    "entity/content/MC-001/spotify-playlists.json",
+    "entity/content/NUX-001/content-registry.json",
+    "entity/content/NUX-001/platforms.json",
+    "entity/content/AIO-001/content-registry.json",
+    "entity/content/AIO-001/platforms.json"
+  ],
+  "integrity_rules": [
+    "Preserve canonical entity IDs.",
+    "Do not invent URLs or platform presence.",
+    "Do not overwrite historical observations with later measurements.",
+    "Do not treat planned records as observed facts.",
+    "Do not treat platform presence as proof of AI recognition.",
+    "Do not treat defined canonical claims as externally verified findings."
+  ]
+}
