@@ -1,24 +1,12 @@
 {
   "map": "AIO CODE Social Entity Map",
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-09-03",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
-    {
-      "entity_id": "MC-001",
-      "canonical_name": "Marii Cuadros",
-      "platforms": []
-    },
-    {
-      "entity_id": "NUX-001",
-      "canonical_name": "NUX",
-      "platforms": []
-    },
-    {
-      "entity_id": "AIO-001",
-      "canonical_name": "AIO CODE",
-      "platforms": []
-    }
+    {"entity_id":"MC-001","canonical_name":"Marii Cuadros","platform_registry":"entity/content/MC-001/platforms.json"},
+    {"entity_id":"NUX-001","canonical_name":"NUX","platform_registry":"entity/content/NUX-001/platforms.json"},
+    {"entity_id":"AIO-001","canonical_name":"AIO CODE","platform_registry":"entity/content/AIO-001/platforms.json"}
   ],
   "platform_record_fields": [
     "platform_id",
@@ -35,5 +23,6 @@
     "notes"
   ],
   "platforms": [],
-  "rule": "A platform presence is a representation node, not proof of entity resolution by an external AI or search system."
+  "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
+  "data_integrity": "Do not duplicate or invent platform URLs here. Verified platform records should be maintained in the entity-specific registries and reflected here through their registry references."
 }
