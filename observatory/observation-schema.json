@@ -14,18 +14,63 @@
     "status"
   ],
   "properties": {
-    "observation_id": { "type": "string" },
-    "date": { "type": "string", "format": "date" },
-    "entity_id": { "type": "string" },
-    "system": { "type": "string" },
-    "query": { "type": ["string", "null"] },
-    "language": { "type": ["string", "null"] },
-    "context": { "type": ["string", "null"] },
-    "observed_result": { "type": "string" },
-    "resolution_status": { "type": ["string", "null"] },
+    "observation_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "system": {
+      "type": "string"
+    },
+    "query": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "language": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observation_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed_result": {
+      "type": "string"
+    },
+    "resolution_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "sources": {
       "type": "array",
-      "items": { "type": "string" }
+      "items": {
+        "type": "string"
+      }
     },
     "stage": {
       "type": "string",
@@ -39,14 +84,29 @@
         "Unknown"
       ]
     },
-    "interpretation": { "type": ["string", "null"] },
+    "interpretation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "confidence": {
       "type": "string",
-      "enum": ["Observed", "Corroborated", "Hypothesized", "Verified", "Unknown"]
+      "enum": [
+        "Observed",
+        "Corroborated",
+        "Hypothesized",
+        "Verified",
+        "Unknown"
+      ]
     },
     "status": {
       "type": "string",
-      "enum": ["active", "under_observation", "closed"]
+      "enum": [
+        "active",
+        "under_observation",
+        "closed"
+      ]
     }
   },
   "additionalProperties": false
