@@ -1,38 +1,63 @@
-# AIO CODE — Technical Knowledge Base
+# AIO CODE
 
-**Artificial Intelligence Optimization Code**
+## Artificial Intelligence Optimization Code
 
-**Version:** 2.1  
-**Updated:** 2026-09-03  
-**Creator:** Marii Cuadros
+**Research Project · Entity Architecture · AI Representation · Information Retrieval**
 
-> **AIO CODE is a research project and experimental framework investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities.**
+AIO CODE is a research project and experimental framework investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend digital entities.
 
-## What is AIO CODE?
+> **Identity should be established before visibility is optimized.**
 
-AIO CODE studies the relationship between digital identity, structured information, distributed public sources, information retrieval and AI representation.
-
-The canonical research entity is:
-
-```text
-AIO-001 — AIO CODE
-Entity Type: ResearchProject
-```
-
-The primary human case entity is:
+## Canonical Entities
 
 ```text
 MC-001 — Marii Cuadros
-Entity Type: Person
+NUX-001 — NUX
+AIO-001 — AIO CODE
 ```
 
-Canonical relationship:
+The entities are distinct and connected through explicit relationships.
 
 ```text
 MC-001 → creator_of → AIO-001
+MC-001 → develops → NUX-001
 ```
 
-Marii Cuadros and AIO CODE are separate entities.
+## Architecture
+
+AIO CODE has two connected layers.
+
+### Entity Knowledge Layer
+
+```text
+Entity Passports
+      ↓
+Entity Master Record
+      ↓
+Content Registries
+      ↓
+Social Entity Map
+      ↓
+Claim Ledger
+      ↓
+Entity Graph
+```
+
+### Research Layer
+
+```text
+AI + Social Baseline
+      ↓
+Observatory
+      ↓
+Entity Labs
+      ↓
+Metrics
+      ↓
+Ethics / Evidence
+      ↓
+Findings
+```
 
 ## Research Pipeline
 
@@ -50,134 +75,99 @@ Citation
 Recommendation
 ```
 
-These stages are distinct. Observation at one stage does not automatically establish the next stage.
-
-## Research Architecture
+## Research Method
 
 ```text
-ENTITY
-   ↓
-OBSERVATORY
-   ↓
-ENTITY LABS
-   ↓
-METRICS
-   ↓
-ETHICS
-   ↓
-FINDINGS
-```
-
-- **Entity** — defines canonical identity and relationships.
-- **Observatory** — records external-system observations.
-- **Entity Labs** — investigates research questions and hypotheses.
-- **Metrics** — measures defined changes against baselines.
-- **Ethics** — governs evidence, integrity, uncertainty and claims.
-- **Findings** — formal publication layer for evidence-backed conclusions.
-
-## Current Research Position
-
-AIO CODE has already produced documented observations across search and AI systems. These observations are not treated as mere hypotheses simply because their mechanisms remain under investigation.
-
-At the same time, the project does not infer causation from temporal association alone.
-
-The current evidence model is:
-
-```text
-Observed
-Corroborated
-Verified
-Hypothesized
-Unknown
-```
-
-Core distinction:
-
-```text
-Observed Fact
-     ≠
-Corroborated Evidence
-     ≠
-Verified Finding
-     ≠
-Interpretation
-     ≠
+Observation
+    ↓
+Research Question
+    ↓
 Hypothesis
-     ≠
-Causal Conclusion
+    ↓
+Experiment
+    ↓
+Baseline
+    ↓
+Intervention
+    ↓
+Measurement
+    ↓
+Comparison
+    ↓
+Evidence Classification
+    ↓
+Interpretation
+    ↓
+Finding
+    ↓
+Replication / Refinement
 ```
 
-## Current Observation
+## Evidence Model
 
-On September 2, 2026, an incognito Google Search observation surfaced an association with **Maria Luisa Cuadros** instead of consistently resolving to **Marii Cuadros**.
+AIO CODE distinguishes:
 
-This is recorded as **ER-001** at the Entity Resolution stage. The observation is established; the underlying cause is not established.
+- **Observed** — directly recorded.
+- **Corroborated** — supported by multiple independent observations, systems, measurements or sources.
+- **Verified** — sufficiently supported for a specific claim.
+- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
+- **Unknown** — insufficient evidence.
 
-## Current Experiment
+> **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
 
-**EXP-001 — Canonical Identity Consistency and Entity Resolution**
+## Current Research Case
 
-Research question: whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
+The primary human case entity is **Marii Cuadros (MC-001)**.
 
-Current state:
+The current entity-resolution observation `ER-001` records an incognito Google Search result in Spanish on September 2, 2026 that surfaced an association with **Maria Luisa Cuadros** rather than consistently resolving to **Marii Cuadros**. The observation is established; the cause is not established.
 
-```text
-Baseline: Not yet formally recorded
-Post-intervention measurement: Not yet recorded
-Measured improvement: Not established
-Causal effect: Not established
-```
+`EXP-001` investigates whether stronger canonical identity signals and cross-source consistency may improve consistent entity resolution.
 
 ## Repository Structure
 
 ```text
 entity/
-    Entity Passports
+├── ENTITY-PASSPORT-MARII-CUADROS.md
+├── ENTITY-PASSPORT-NUX.md
+├── ENTITY-PASSPORT-AIO-CODE.md
+└── content/
+    ├── MC-001/
+    └── NUX-001/
 
 observatory/
-    Structured Observations
-
 entity-labs/
-    Experiments and Hypotheses
-
 metrics/
-    Measurement Architecture
-
 ethics/
-    Evidence and Research Integrity
-
 logbook/
-    Chronological Research Record
-
 schemas/
-    Machine-Readable Entity Definitions
+
+ENTITY-MASTER-RECORD.md
+RESEARCH-ARCHITECTURE.md
+AI-REPRESENTATION-PROTOCOL.md
+TECHNICAL-KNOWLEDGE-BASE.md
+manifiesto.md
+claim-ledger.json
+entity-graph.json
+social-entity-map.json
+ai-social-baseline.json
 ```
 
-Root documents:
+## Structured Research Data
 
-- `ENTITY-MASTER-RECORD.md` — canonical entity structure.
-- `RESEARCH-ARCHITECTURE.md` — complete research architecture.
-- `TECHNICAL-KNOWLEDGE-BASE.md` — technical research context.
-- `AI-REPRESENTATION-PROTOCOL.md` — AI representation testing protocol.
-- `manifiesto.md` — conceptual manifesto.
-
-## Structured Research Dataset
-
-The machine-readable research dataset is maintained separately on Hugging Face and includes entity, relationship, claim, observation, experiment, metric and ethics records.
+Machine-readable datasets are maintained in the AIO CODE structured-data environment. GitHub contains the versioned research architecture and canonical documentation; structured dataset mirrors may be maintained in Hugging Face and other connected infrastructure.
 
 ## Research Integrity
 
 AIO CODE follows these rules:
 
-> **Identity before visibility.**
-
-> **Observation before interpretation.**
-
-> **Measurement before improvement claims.**
-
-> **Evidence before conclusions.**
-
-> **Evidence determines the strength of the claim.**
+1. Identity before visibility.
+2. Observation before interpretation.
+3. Measurement before improvement claims.
+4. Evidence before conclusions.
+5. Historical observations are preserved.
+6. Platform presence does not prove AI recognition.
+7. Source appearance does not prove causation.
+8. Evidence strength determines claim strength.
 
 ## Status
 
@@ -186,4 +176,5 @@ AIO CODE follows these rules:
 **Entity ID:** AIO-001  
 **Creator:** Marii Cuadros  
 **Status:** Active Research Project  
+**Version:** 3.0  
 **Updated:** 2026-09-03
