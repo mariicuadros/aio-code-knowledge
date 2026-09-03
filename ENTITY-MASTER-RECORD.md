@@ -1,157 +1,202 @@
 # AIO CODE — Entity Master Record
 
-**Version:** 2.1  
+**Version:** 3.0  
 **Status:** Active  
 **Updated:** 2026-09-03  
 **Project:** AIO CODE  
-**Creator:** Marii Cuadros  
-**Primary Case Entity:** MC-001 — Marii Cuadros
+**Creator:** Marii Cuadros
 
 ## 1. Purpose
 
-This document defines the canonical entity structure used by AIO CODE. It is the source-of-truth reference for entity identity, entity type, canonical relationships and semantic boundaries.
+This document defines the canonical entity layer of AIO CODE. It is the source-of-truth reference for entity identity, semantic boundaries, canonical relationships and the structure used to connect each entity to its content, platforms, claims and research observations.
 
-The current canonical entity set contains two primary entities:
+## 2. Canonical Entity Set
+
+The current canonical entity set contains three primary entities:
 
 ```text
 MC-001 — Marii Cuadros
+NUX-001 — NUX
 AIO-001 — AIO CODE
 ```
 
-Other creative projects or concepts may exist in the broader ecosystem, but they are not automatically canonical entities in the AIO CODE research dataset.
+These entities are distinct. A relationship between entities must be explicit; an alias does not automatically create a new entity.
 
-## 2. Canonical Entity — Marii Cuadros
+## 3. Entity Registry
 
-- **Entity ID:** MC-001
+### MC-001 — Marii Cuadros
+
 - **Entity Type:** Person
 - **Canonical Name:** Marii Cuadros
-- **Status:** Active
+- **Role in AIO CODE:** Creator, researcher and primary human case entity
+- **Passport:** `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
+- **Content Registry:** `entity/content/MC-001/content-registry.json`
 
-Canonical description:
+### NUX-001 — NUX
 
-> **Marii Cuadros is a Venezuelan-born creator and researcher associated with AIO CODE.**
+- **Entity Type:** DigitalCreativeEntity
+- **Canonical Name:** NUX
+- **Role in ecosystem:** Distinct digital creative entity developed in association with Marii Cuadros
+- **Passport:** `entity/ENTITY-PASSPORT-NUX.md`
+- **Content Registry:** `entity/content/NUX-001/content-registry.json`
 
-Marii Cuadros is the human creator, researcher and primary case entity of the project.
+### AIO-001 — AIO CODE
 
-### Semantic boundaries
-
-Marii Cuadros is a person and is not AIO CODE itself, an AI model, chatbot, search engine, software platform or research project.
-
-## 3. Canonical Entity — AIO CODE
-
-- **Entity ID:** AIO-001
 - **Entity Type:** ResearchProject
 - **Canonical Name:** AIO CODE
 - **Full Name:** Artificial Intelligence Optimization Code
-- **Status:** Active
+- **Role in ecosystem:** Research project and experimental framework
+- **Passport:** `entity/ENTITY-PASSPORT-AIO-CODE.md`
 
-Canonical description:
-
-> **AIO CODE is a research project investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities.**
-
-AIO CODE is not a person, AI model, chatbot, search engine, social media platform, SEO agency or generative AI system.
-
-## 4. Canonical Relationship
+## 4. Canonical Relationships
 
 ```text
 MC-001 — Marii Cuadros
-        │
-        └── creator_of → AIO-001 — AIO CODE
+   │
+   ├── creator_of → AIO-001 — AIO CODE
+   │
+   └── develops → NUX-001 — NUX
 ```
 
-This relationship is recorded as `REL-001` in `relationships.json`.
+Canonical relationship records are maintained in `relationships.json` and mirrored in `entity-graph.json`.
 
-## 5. Research Scope
+## 5. Entity Passport Standard
 
-AIO CODE currently investigates:
+Every primary entity passport should maintain, where applicable:
 
-- Entity Recognition
-- Entity Resolution
-- Entity Disambiguation
-- Entity Representation
-- Information Retrieval
-- Citation Behavior
-- AI Representation
-- Search Behavior
-- Structured Data
-- Distributed Information Architecture
-- Cross-Platform Consistency
-- Multilingual Representation
-- Recommendation Behavior
+- Entity ID
+- Canonical Name
+- Aliases
+- Entity Type
+- Description
+- Roles
+- Projects
+- Relationships
+- Platforms
+- Official Sources
+- Languages
+- Timeline
+- Version
+- Status
 
-Research pipeline:
+The passport defines the entity. It does not substitute for the evidence systems that measure external recognition or retrieval.
+
+## 6. Entity Content Layer
+
+Each entity receives its own content namespace. Content is organized by entity rather than mixed into the master identity record.
 
 ```text
-Indexation
-    ↓
-Retrieval
-    ↓
-Entity Resolution
-    ↓
-Entity Representation
-    ↓
-Citation
-    ↓
-Recommendation
+entity/content/
+├── MC-001/
+│   ├── content-registry.json
+│   ├── platforms.json
+│   └── spotify-playlists.json
+│
+└── NUX-001/
+    ├── content-registry.json
+    └── platforms.json
 ```
 
-## 6. Research Method
+Additional content registries can be added without changing the canonical entity IDs.
 
-The operational research cycle is:
+## 7. Claim Ledger
+
+`claim-ledger.json` tracks claims by:
 
 ```text
-Observation
-    ↓
-Research Question
-    ↓
-Hypothesis
-    ↓
-Experiment
-    ↓
-Baseline
-    ↓
-Intervention
-    ↓
-Measurement
-    ↓
-Comparison
-    ↓
-Evidence Classification
-    ↓
-Interpretation
-    ↓
-Finding
+Claim → Entity → Source → Date → Evidence Status
 ```
 
-Not every observation requires an experiment, and not every experiment produces a finding.
+The ledger separates canonical definitions from observations, hypotheses and verified findings.
 
-## 7. Evidence Model
+## 8. Entity Graph
+
+`entity-graph.json` is the machine-readable relationship layer connecting entities and their explicit relationships.
+
+```text
+Entities + Relationships → Entity Graph
+```
+
+The graph must not collapse distinct entities into a single identity merely because they are associated.
+
+## 9. Social Entity Map
+
+`social-entity-map.json` records how each entity is represented across public platforms.
+
+A social profile is treated as a representation node. Its existence does not by itself prove successful AI recognition, entity resolution, citation or recommendation.
+
+## 10. AI + Social Baseline
+
+`ai-social-baseline.json` establishes the pre-intervention state across AI systems, search environments and social platforms.
+
+Baseline records preserve:
+
+- date;
+- entity;
+- system/platform;
+- environment;
+- query/prompt;
+- language;
+- representation;
+- recognition;
+- disambiguation;
+- accuracy;
+- citations/sources;
+- relationship retrieval;
+- recommendation;
+- evidence status.
+
+Historical baseline records must not be overwritten by later interventions.
+
+## 11. Research Architecture
+
+The entity layer feeds the research architecture:
+
+```text
+ENTITY PASSPORTS
+        ↓
+ENTITY MASTER RECORD
+        ↓
+CONTENT + PLATFORM NODES
+        ↓
+SOCIAL ENTITY MAP
+        ↓
+CLAIM LEDGER
+        ↓
+ENTITY GRAPH
+        ↓
+OBSERVATORY
+        ↓
+ENTITY LABS
+        ↓
+AI + SOCIAL BASELINE
+        ↓
+METRICS
+        ↓
+ETHICS
+        ↓
+FINDINGS
+```
+
+## 12. Evidence Integrity
 
 AIO CODE distinguishes:
 
-- **Observed** — directly recorded under defined conditions.
-- **Corroborated** — supported by multiple independent observations, systems, measurements or sources.
-- **Verified** — sufficiently supported for the specific claim.
-- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
-- **Unknown** — insufficient evidence.
+```text
+Observed
+Corroborated
+Verified
+Hypothesized
+Unknown
+```
 
 Core rule:
 
-```text
-Evidence strength → Claim strength
-```
+> **Evidence strength determines claim strength.**
 
-Established observations must not be downgraded merely because their mechanisms remain unknown.
+A canonical identity definition can be established even when an external system's mechanism remains unknown. Conversely, a temporal association does not establish causation.
 
-## 8. Current Research Evidence
-
-The research record contains documented observations of AI and search-system behavior, including entity recognition, retrieval and representation changes across systems and time.
-
-These are evaluated according to their individual evidence classifications.
-
-The project does not claim that a specific intervention caused every observed change without appropriate experimental evidence.
-
-## 9. Current Entity-Resolution Observation
+## 13. Current Entity-Resolution Observation
 
 ```text
 Observation ID: ER-001
@@ -166,70 +211,17 @@ Status: Under Observation
 Cause: Not Established
 ```
 
-The competing representation is recorded as an observation and is not incorporated into the canonical identity.
+The competing representation remains an observation and is not added as a canonical alias without separate evidence establishing that relationship.
 
-## 10. Current Experiment
-
-```text
-Experiment ID: EXP-001
-Domain: Entity Resolution
-Status: Planned
-```
-
-Research question:
-
-> Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
-
-Current hypothesis:
-
-> Consistency may improve entity resolution.
-
-This is a hypothesis, not an established causal conclusion.
-
-## 11. Structured Representation
-
-The canonical structured records are maintained in:
-
-```text
-entities.json
-relationships.json
-claims.json
-entity-resolution.json
-sources.json
-research-manifest.json
-```
-
-Research observations, experiments, measurements and ethics records are maintained in their respective modules.
-
-## 12. Source Architecture
-
-Primary research sources are:
-
-- GitHub — technical documentation and versioned research records.
-- Blogger — public research documentation.
-- Hugging Face — structured research artifacts and datasets.
-
-Additional public platforms may serve as observational or distribution environments. Their presence does not imply equal evidentiary status.
-
-## 13. Identity Principle
-
-> **Identity should be established before visibility is optimized.**
-
-The canonical entity definition must remain stable while external system behavior is observed independently.
-
-## 14. Integrity Principle
-
-> **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
-
-Claims must remain proportional to the evidence supporting them.
-
-## 15. Related Documents
+## 14. Related Documents
 
 - `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
+- `entity/ENTITY-PASSPORT-NUX.md`
 - `entity/ENTITY-PASSPORT-AIO-CODE.md`
-- `RESEARCH-ARCHITECTURE.md`
-- `AI-REPRESENTATION-PROTOCOL.md`
-- `TECHNICAL-KNOWLEDGE-BASE.md`
+- `entity-graph.json`
+- `claim-ledger.json`
+- `social-entity-map.json`
+- `ai-social-baseline.json`
 - `observatory/`
 - `entity-labs/`
 - `metrics/`
@@ -238,7 +230,7 @@ Claims must remain proportional to the evidence supporting them.
 
 ---
 
-**Canonical Entity Set:** MC-001, AIO-001  
+**Canonical Entity Set:** MC-001, NUX-001, AIO-001  
 **Project:** AIO CODE  
-**Version:** 2.1  
+**Version:** 3.0  
 **Updated:** 2026-09-03
