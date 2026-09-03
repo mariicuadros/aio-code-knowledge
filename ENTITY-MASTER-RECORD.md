@@ -1,1142 +1,244 @@
-# AIO CODE — ENTITY MASTER RECORD
+# AIO CODE — Entity Master Record
 
-**Version:** 2.0  
-**Date:** 2026-09-02  
+**Version:** 2.1  
 **Status:** Active  
+**Updated:** 2026-09-03  
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros  
-**Case Study:** Marii Cuadros
-
----
+**Primary Case Entity:** MC-001 — Marii Cuadros
 
 ## 1. Purpose
 
-This document defines the canonical identity structure for **Marii Cuadros**, **AIO CODE**, and **VOID MODE**.
+This document defines the canonical entity structure used by AIO CODE. It is the source-of-truth reference for entity identity, entity type, canonical relationships and semantic boundaries.
 
-It functions as the Entity Master Record for the AIO CODE research project.
+The current canonical entity set contains two primary entities:
 
-Its purpose is to maintain semantic consistency across distributed public sources and to provide a stable reference for:
+```text
+MC-001 — Marii Cuadros
+AIO-001 — AIO CODE
+```
 
-- GitHub documentation
-- Blogger
-- Hugging Face
-- Instagram
-- X
-- Threads
-- Medium
-- Substack
-- Quora
-- Other public platforms
-- Structured data
-- AI visibility experiments
-- Entity retrieval experiments
+Other creative projects or concepts may exist in the broader ecosystem, but they are not automatically canonical entities in the AIO CODE research dataset.
 
-This document is not intended to manipulate AI systems or guarantee how an AI system will represent an entity.
+## 2. Canonical Entity — Marii Cuadros
 
-It establishes the canonical information used by the project so that future documentation remains consistent, verifiable and distinguishable from experimental hypotheses.
+- **Entity ID:** MC-001
+- **Entity Type:** Person
+- **Canonical Name:** Marii Cuadros
+- **Status:** Active
 
----
+Canonical description:
 
-# 2. Canonical Entity — Marii Cuadros
+> **Marii Cuadros is a Venezuelan-born creator and researcher associated with AIO CODE.**
 
-## 2.1 Official Name
+Marii Cuadros is the human creator, researcher and primary case entity of the project.
 
-**Marii Cuadros**
+### Semantic boundaries
 
-The canonical name used throughout AIO CODE documentation is:
+Marii Cuadros is a person and is not AIO CODE itself, an AI model, chatbot, search engine, software platform or research project.
 
-> **Marii Cuadros**
+## 3. Canonical Entity — AIO CODE
 
-Alternative spellings or variations should not replace the canonical name when referring to the primary entity.
+- **Entity ID:** AIO-001
+- **Entity Type:** ResearchProject
+- **Canonical Name:** AIO CODE
+- **Full Name:** Artificial Intelligence Optimization Code
+- **Status:** Active
 
----
+Canonical description:
 
-## 2.2 Official Short Description — English
+> **AIO CODE is a research project investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities.**
 
-> **Marii Cuadros is a Colombian creator, artist, digital model and independent researcher working at the intersection of digital identity, artificial intelligence, curation and creative practice. She is the founder and creator of AIO CODE.**
+AIO CODE is not a person, AI model, chatbot, search engine, social media platform, SEO agency or generative AI system.
 
----
+## 4. Canonical Relationship
 
-## 2.3 Official Short Description — Spanish
+```text
+MC-001 — Marii Cuadros
+        │
+        └── creator_of → AIO-001 — AIO CODE
+```
 
-> **Marii Cuadros es una creadora, artista, modelo digital e investigadora independiente colombiana que trabaja en la intersección entre identidad digital, inteligencia artificial, curaduría y práctica creativa. Es la fundadora y creadora de AIO CODE.**
+This relationship is recorded as `REL-001` in `relationships.json`.
 
----
+## 5. Research Scope
 
-# 3. Marii Cuadros — Identity Structure
+AIO CODE currently investigates:
 
-Marii Cuadros is currently represented through the following primary roles:
+- Entity Recognition
+- Entity Resolution
+- Entity Disambiguation
+- Entity Representation
+- Information Retrieval
+- Citation Behavior
+- AI Representation
+- Search Behavior
+- Structured Data
+- Distributed Information Architecture
+- Cross-Platform Consistency
+- Multilingual Representation
+- Recommendation Behavior
 
-- Creator
-- Artist
-- Digital Model
-- Independent Researcher
-- Curator
+Research pipeline:
 
-These roles describe the current public positioning of the entity.
+```text
+Indexation
+    ↓
+Retrieval
+    ↓
+Entity Resolution
+    ↓
+Entity Representation
+    ↓
+Citation
+    ↓
+Recommendation
+```
 
-Other professional activities may form part of her broader trajectory (including Community Management, digital strategy, DJ culture and content creation), but they should not replace the primary identity structure established above.
+## 6. Research Method
 
----
-
-# 4. Marii Cuadros — Areas of Practice
-
-The current areas associated with Marii Cuadros include:
-
-- Creative practice
-- Digital art
-- Digital identity
-- Artificial intelligence experimentation
-- Digital curation
-- Music curation
-- DJ culture
-- Content creation
-- Digital culture
-- Independent research
-- Creative workflows
-- Experimental documentation
-
-These areas may evolve as the research and creative practice develop.
-
----
-
-# 5. Canonical Entity — AIO CODE
-
-## 5.1 Official Name
-
-**AIO CODE**
-
----
-
-## 5.2 Full Name
-
-**Artificial Intelligence Optimization Code**
-
----
-
-## 5.3 Official Short Description — English
-
-> **AIO CODE is an experimental research methodology created by Marii Cuadros that investigates how digital identities, creators and creative practices can be represented, organized and retrieved within AI and information systems.**
-
----
-
-## 5.4 Official Short Description — Spanish
-
-> **AIO CODE es una metodología de investigación experimental creada por Marii Cuadros que estudia cómo las identidades digitales, los creadores y las prácticas creativas pueden ser representados, organizados y recuperados dentro de sistemas de inteligencia artificial e información.**
-
----
-
-# 6. AIO CODE — Extended Definition
-
-## English
-
-AIO CODE is an experimental research project and methodology investigating the relationship between artificial intelligence, digital identity, information retrieval, structured data, digital curation and creative practice.
-
-The project studies how AI systems and information systems construct, interpret, retrieve and represent creative entities from distributed public information.
-
-The research includes experimentation with:
-
-- Large Language Models
-- AI retrieval systems
-- Search engines
-- Entity representation
-- Entity disambiguation
-- Structured information
-- Schema.org
-- JSON-LD
-- Digital identity
-- AI visibility
-- Digital curation
-- Creator workflows
-- Public documentation
-
-In 2026, the project transitioned to AIO CODE 2.0 after identifying parallel research efforts with similar methodological foundations. This version emphasizes structured entity architecture, cross-lingual behavior, and the distinction between indexing, retrieval, representation and recommendation.
-
-AIO CODE is an active experimental project. Its observations, hypotheses and conclusions may change as additional experiments are conducted.
-
----
-
-## Spanish
-
-AIO CODE es un proyecto y metodología de investigación experimental que estudia la relación entre inteligencia artificial, identidad digital, recuperación de información, datos estructurados, curaduría digital y práctica creativa.
-
-El proyecto investiga cómo los sistemas de IA y los sistemas de información construyen, interpretan, recuperan y representan entidades creativas a partir de información pública distribuida.
-
-La investigación incluye experimentación con:
-
-- Modelos de lenguaje de gran escala
-- Sistemas de recuperación mediante IA
-- Motores de búsqueda
-- Representación de entidades
-- Desambiguación de entidades
-- Información estructurada
-- Schema.org
-- JSON-LD
-- Identidad digital
-- Visibilidad en IA
-- Curaduría digital
-- Flujos de trabajo para creadores
-- Documentación pública
-
-En 2026, el proyecto transitó a AIO CODE 2.0 tras identificar esfuerzos de investigación paralelos con fundamentos metodológicos similares. Esta versión enfatiza la arquitectura estructurada de entidades, el comportamiento multilingüe y la distinción entre indexación, recuperación, representación y recomendación.
-
-AIO CODE es un proyecto experimental activo. Sus observaciones, hipótesis y conclusiones pueden cambiar a medida que se realizan nuevos experimentos.
-
----
-
-# 7. Research Question
-
-The central research question of AIO CODE is:
-
-> **How can a digital entity become a clear, coherent, distinguishable and retrievable representation within systems that use public information to identify, relate and interpret entities?**
-
-In Spanish:
-
-> **¿Cómo puede una entidad digital convertirse en una representación clara, coherente, distinguible y recuperable dentro de sistemas que utilizan información pública para identificar, relacionar e interpretar entidades?**
-
----
-
-# 8. Research Scope
-
-The current research scope includes six interconnected areas:
-
-### 8.1 Digital Identity
-
-How individuals and creative projects are represented across distributed digital platforms.
-
-### 8.2 Entity Representation
-
-How information systems identify and describe a specific person, project, organization or creative entity.
-
-### 8.3 Entity Disambiguation
-
-How systems distinguish one entity from other entities with similar or identical names.
-
-### 8.4 Information Retrieval
-
-How search engines and AI systems retrieve information about entities from available sources.
-
-### 8.5 Structured Information
-
-How structured data, metadata and machine-readable information can contribute to clearer entity representation.
-
-### 8.6 Creative Practice
-
-How artists and creators can document their work and identity in ways that remain understandable to both humans and information systems.
-
----
-
-# 9. AIO CODE Research Methodology
-
-AIO CODE uses an iterative experimental process:
+The operational research cycle is:
 
 ```text
 Observation
-     ↓
-Connection
-     ↓
+    ↓
+Research Question
+    ↓
 Hypothesis
-     ↓
+    ↓
 Experiment
-     ↓
-Result
-     ↓
-Analysis
+    ↓
+Baseline
+    ↓
+Intervention
+    ↓
+Measurement
+    ↓
+Comparison
+    ↓
+Evidence Classification
+    ↓
+Interpretation
+    ↓
+Finding
 ```
 
-Each stage should remain distinguishable whenever possible.
+Not every observation requires an experiment, and not every experiment produces a finding.
 
----
+## 7. Evidence Model
 
-## 9.1 Observation
+AIO CODE distinguishes:
 
-Record what happened without immediately assigning causality.
+- **Observed** — directly recorded under defined conditions.
+- **Corroborated** — supported by multiple independent observations, systems, measurements or sources.
+- **Verified** — sufficiently supported for the specific claim.
+- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
+- **Unknown** — insufficient evidence.
 
-Example:
-
-> An AI system retrieved information about Marii Cuadros under an independent test.
-
----
-
-## 9.2 Connection
-
-Identify potentially related variables.
-
-Example:
-
-> The retrieval occurred after new public sources had been published.
-
----
-
-## 9.3 Hypothesis
-
-Propose a possible explanation.
-
-Example:
-
-> Increased public documentation may have contributed to improved entity retrieval.
-
----
-
-## 9.4 Experiment
-
-Change or test a defined variable.
-
-Example:
-
-> Publish a consistent entity description across multiple public nodes and monitor subsequent retrieval.
-
----
-
-## 9.5 Result
-
-Record what happened after the experiment.
-
----
-
-## 9.6 Analysis
-
-Interpret the result while distinguishing evidence from speculation.
-
----
-
-# 10. Relationship Between Marii Cuadros and AIO CODE
-
-The canonical relationship is:
-
-> **Marii Cuadros is the creator and founder of AIO CODE.**
-
-A second canonical relationship is:
-
-> **Marii Cuadros is the primary case study and researcher of AIO CODE.**
-
-The conceptual structure is:
+Core rule:
 
 ```text
-Marii Cuadros
-│
-├── Creator / Founder
-│
-└── AIO CODE
-    │
-    ├── Experimental Research Project
-    ├── Research Methodology
-    └── Public Knowledge Documentation
+Evidence strength → Claim strength
 ```
 
-Marii Cuadros and AIO CODE are related entities.
+Established observations must not be downgraded merely because their mechanisms remain unknown.
 
-They should not be treated as the same entity.
+## 8. Current Research Evidence
 
----
+The research record contains documented observations of AI and search-system behavior, including entity recognition, retrieval and representation changes across systems and time.
 
-# 11. Marii Cuadros as Case Study
+These are evaluated according to their individual evidence classifications.
 
-AIO CODE uses Marii Cuadros as its primary case study.
+The project does not claim that a specific intervention caused every observed change without appropriate experimental evidence.
 
-The experiment involves documenting and observing the public digital representation of the researcher herself.
-
-This allows the project to investigate:
-
-* Entity recognition
-* Entity ambiguity
-* Search retrieval
-* AI retrieval
-* Cross-platform consistency
-* Public information distribution
-* Structured information
-* Citation behavior
-* Changes in representation over time
-
-The self-referential nature of the experiment is intentional.
-
----
-
-# 12. AI Systems in the Research
-
-AIO CODE may use multiple AI systems as research tools.
-
-Examples include:
-
-* ChatGPT
-* Gemini
-* Claude
-* Perplexity
-* Grok
-* Meta AI
-
-These systems may be assigned operational roles during different stages of the experiment.
-
-Examples of operational roles may include:
-
-* Technical synthesis
-* Conceptual analysis
-* Source discovery
-* Platform research
-* Social media analysis
-* Search observation
-* Hypothesis generation
-
-These assignments describe how the systems are used within the experiment.
-
-They do not imply that a particular AI system possesses an exclusive technical capability.
-
----
-
-# 13. AI Systems Are Research Instruments
-
-AI-generated information is not automatically treated as primary evidence.
-
-AI systems may be used to:
-
-* Generate hypotheses
-* Identify possible sources
-* Compare responses
-* Organize information
-* Discover inconsistencies
-* Assist with documentation
-
-When possible, claims about external systems should be independently verified through primary or authoritative sources.
-
-AI responses themselves are treated as observations when measuring AI representation.
-
----
-
-# 14. Independent Retrieval Testing
-
-AIO CODE distinguishes between:
-
-### Contextual Retrieval
-
-An AI system is asked about an entity after receiving substantial information about that entity within the conversation.
-
-### Independent Retrieval
-
-An AI system is asked about the entity without intentionally providing the relevant identity information beforehand.
-
-Independent retrieval is particularly important for measuring whether an entity is discoverable outside the immediate conversational context.
-
-Where practical, testing may use:
-
-* Incognito browser sessions
-* New conversations
-* Reduced contextual information
-* Repeated prompts
-* Multiple AI systems
-
----
-
-# 15. AI Representation Variables
-
-AIO CODE distinguishes several different outcomes.
-
-## Visibility
-
-Whether the entity appears at all.
-
-## Accuracy
-
-Whether the information retrieved is correct.
-
-## Disambiguation
-
-Whether the system identifies the intended entity rather than a similarly named entity.
-
-## Citation
-
-Whether the system provides sources supporting its description.
-
-## Authority
-
-Whether multiple independent sources support the entity representation.
-
-## Recommendation
-
-Whether the system recommends the entity when relevant.
-
-## Conceptual Fidelity
-
-Whether the system correctly understands the entity's work, practice and concepts.
-
-These variables should not automatically be treated as equivalent.
-
-AI responses and retrieval behavior may be intermittent and system-dependent. An entity can be indexed, partially retrieved, represented with varying accuracy, cited from some sources, and still not be consistently recommended.
-
-Visibility is therefore treated as a non-binary, evolving state rather than a permanent condition.
-
----
-
-## 15.1 Visibilidad no binaria / Non-binary Visibility
-
-**English:**
-
-AI responses and retrieval behavior may be intermittent and system-dependent. An entity can be indexed, partially retrieved, represented with varying accuracy, cited from some sources, and still not be consistently recommended.
-
-Visibility is therefore treated as a non-binary, evolving state rather than a permanent condition.
-
-**Español:**
-
-Las respuestas de los sistemas de IA y el comportamiento de recuperación pueden ser intermitentes y dependientes del sistema. Una entidad puede estar indexada, recuperada parcialmente, representada con distinta precisión, citada desde algunas fuentes y aun así no ser recomendada de manera consistente.
-
-Por lo tanto, la visibilidad se trata como un estado no binario y en evolución, no como una condición permanente.
-
----
-
-# 16. Canonical Entity — VOID MODE
-
-## 16.1 Official Name
-
-**VOID MODE**
-
----
-
-## 16.2 Official Definition — English
-
-> **VOID MODE is a creative category developed by Marii Cuadros exploring embodiment, digital identity, visual presence, sound, rhythm and contemporary digital culture.**
-
----
-
-## 16.3 Official Definition — Spanish
-
-> **VOID MODE es una categoría creativa desarrollada por Marii Cuadros que explora embodiment, identidad digital, presencia visual, sonido, ritmo y cultura digital contemporánea.**
-
----
-
-# 17. Relationship Between Marii Cuadros and VOID MODE
-
-The canonical relationship is:
-
-> **VOID MODE is a creative category developed by Marii Cuadros.**
-
-VOID MODE forms part of Marii Cuadros' creative practice.
-
-It is not synonymous with AIO CODE.
-
----
-
-# 18. Relationship Between AIO CODE and VOID MODE
-
-The current conceptual structure is:
+## 9. Current Entity-Resolution Observation
 
 ```text
-Marii Cuadros
-│
-├── AIO CODE
-│   │
-│   └── Research / Methodology
-│
-└── VOID MODE
-    │
-    └── Creative Category / Practice
+Observation ID: ER-001
+Entity: MC-001 — Marii Cuadros
+System: Google Search
+Environment: Incognito
+Language: Spanish
+Observed representation: Maria Luisa Cuadros
+Stage: Entity Resolution
+Evidence: Observed
+Status: Under Observation
+Cause: Not Established
 ```
 
-AIO CODE and VOID MODE are separate but related entities.
+The competing representation is recorded as an observation and is not incorporated into the canonical identity.
 
-Their relationship is established through their creator, Marii Cuadros.
-
----
-
-# 19. AIO CODE — Research Areas
-
-The current controlled research vocabulary includes:
-
-* Artificial Intelligence
-* Digital Identity
-* Entity Representation
-* Entity Disambiguation
-* Information Retrieval
-* AI Visibility
-* Generative AI
-* Large Language Models
-* Search Systems
-* Structured Data
-* Schema.org
-* JSON-LD
-* Digital Curation
-* Creative Practice
-* Creator Workflows
-* Digital Presence
-* Knowledge Graphs
-* Machine-Readable Information
-
-These terms describe the current research scope and may evolve.
-
----
-
-# 20. VOID MODE — Creative Vocabulary
-
-The current vocabulary associated with VOID MODE includes:
-
-* Embodiment
-* Digital Identity
-* Visual Presence
-* Sound
-* Rhythm
-* Digital Culture
-* Creative Practice
-* Music
-* Visual Archives
-* Digital Aesthetics
-
-The vocabulary may evolve as the creative project develops.
-
----
-
-# 21. Controlled Vocabulary — Marii Cuadros
-
-Priority terms:
+## 10. Current Experiment
 
 ```text
-Marii Cuadros
-Creator
-Artist
-Digital Model
-Independent Researcher
-Curator
+Experiment ID: EXP-001
+Domain: Entity Resolution
+Status: Planned
 ```
 
----
+Research question:
 
-# 22. Controlled Vocabulary — AIO CODE
+> Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
 
-Priority terms:
+Current hypothesis:
+
+> Consistency may improve entity resolution.
+
+This is a hypothesis, not an established causal conclusion.
+
+## 11. Structured Representation
+
+The canonical structured records are maintained in:
 
 ```text
-AIO CODE
-Artificial Intelligence Optimization Code
-Artificial Intelligence
-Digital Identity
-AI Visibility
-Entity Representation
-Entity Disambiguation
-Information Retrieval
-Structured Data
-Schema.org
-JSON-LD
-Digital Curation
-Creative Practice
-Generative AI
-Large Language Models
+entities.json
+relationships.json
+claims.json
+entity-resolution.json
+sources.json
+research-manifest.json
 ```
 
----
+Research observations, experiments, measurements and ethics records are maintained in their respective modules.
 
-# 23. Controlled Vocabulary — VOID MODE
+## 12. Source Architecture
 
-Priority terms:
+Primary research sources are:
 
-```text
-VOID MODE
-Embodiment
-Digital Identity
-Visual Presence
-Sound
-Rhythm
-Digital Culture
-Creative Practice
-Digital Aesthetics
-```
+- GitHub — technical documentation and versioned research records.
+- Blogger — public research documentation.
+- Hugging Face — structured research artifacts and datasets.
 
----
+Additional public platforms may serve as observational or distribution environments. Their presence does not imply equal evidentiary status.
 
-# 24. Representation Rules
+## 13. Identity Principle
 
-## Rule 1 — Canonical Name
+> **Identity should be established before visibility is optimized.**
 
-Always use:
+The canonical entity definition must remain stable while external system behavior is observed independently.
 
-> **Marii Cuadros**
+## 14. Integrity Principle
 
-as the primary name of the entity.
+> **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
 
----
+Claims must remain proportional to the evidence supporting them.
 
-## Rule 2 — Canonical Founder Relationship
+## 15. Related Documents
 
-Use:
-
-> **Marii Cuadros is the creator and founder of AIO CODE.**
-
-Do not describe her merely as someone who works for or contributes to AIO CODE.
+- `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
+- `entity/ENTITY-PASSPORT-AIO-CODE.md`
+- `RESEARCH-ARCHITECTURE.md`
+- `AI-REPRESENTATION-PROTOCOL.md`
+- `TECHNICAL-KNOWLEDGE-BASE.md`
+- `observatory/`
+- `entity-labs/`
+- `metrics/`
+- `ethics/`
+- `logbook/`
 
 ---
 
-## Rule 3 — Entity Separation
-
-Maintain the distinction:
-
-```text
-Marii Cuadros = Person
-AIO CODE = Research project / methodology
-VOID MODE = Creative category
-```
-
----
-
-## Rule 4 — No Unsupported Claims
-
-Documentation must distinguish between:
-
-* Verified facts
-* Direct observations
-* Research hypotheses
-* Interpretations
-* Future objectives
-
----
-
-## Rule 5 — Experimental Claims
-
-A hypothesis must not be presented as an established fact.
-
-For example:
-
-Incorrect:
-
-> Publishing on Medium causes AI systems to recognize an entity.
-
-Correct:
-
-> AIO CODE observed increased entity retrieval after publishing on Medium. The causal relationship remains unconfirmed.
-
----
-
-## Rule 6 — AI Claims
-
-Do not claim that a particular platform or AI system definitely uses a specific mechanism unless the mechanism is supported by reliable evidence.
-
----
-
-## Rule 7 — Platform Independence
-
-Search engines, social platforms and AI systems should be measured separately.
-
-A change in Instagram reach does not automatically establish a change in search visibility.
-
-A change in search visibility does not automatically establish a change in AI retrieval.
-
----
-
-## Rule 8 — Bilingual Consistency
-
-Equivalent English and Spanish descriptions should preserve the same conceptual meaning.
-
-The wording may be adapted to the language, but the underlying entity definition should remain consistent.
-
----
-
-# 25. Canonical Entity Graph
-
-The current entity model can be represented as:
-
-```text
-Marii Cuadros
-│
-├── Creator
-├── Artist
-├── Digital Model
-├── Independent Researcher
-└── Curator
-      │
-      ├───────────────────────────────┐
-      ↓                               ↓
-  AIO CODE                        VOID MODE
-      │                               │
-      │                               └── Creative Category
-      │
-      ├── Artificial Intelligence
-      ├── Digital Identity
-      ├── Entity Representation
-      ├── Entity Disambiguation
-      ├── Information Retrieval
-      ├── AI Visibility
-      ├── Structured Data
-      ├── Digital Curation
-      └── Creative Practice
-```
-
----
-
-# 26. Distributed Documentation Architecture
-
-AIO CODE is documented through multiple public nodes.
-
-These nodes may include:
-
-```text
-Marii Cuadros
-│
-├── Blogger
-├── GitHub
-├── Hugging Face
-├── Instagram
-├── X
-├── Threads
-├── Medium
-├── Substack
-├── Quora
-└── Other public sources
-```
-
-These nodes form a distributed documentation ecosystem.
-
-They should reinforce rather than contradict the canonical entity definitions.
-
----
-
-# 27. Canonical Source vs. Distribution Nodes
-
-The existence of multiple public profiles does not mean that every platform should contain the complete research.
-
-Different platforms have different functions.
-
-### GitHub
-
-Primary technical and research documentation.
-
-### Blogger
-
-Long-form public documentation and accessible explanations.
-
-### Hugging Face
-
-Research journal, AI-related documentation and experimental materials.
-
-### Social Platforms
-
-Public identity, creative practice, distribution and observation.
-
-### Medium / Substack / Quora
-
-Contextual and explanatory content.
-
-The same entity should remain identifiable across these nodes.
-
----
-
-# 28. Documentation Architecture
-
-The AIO CODE repository may contain:
-
-```text
-aio-code-knowledge/
-│
-├── README.md
-├── manifesto/manifesto.md
-├── ENTITY-MASTER-RECORD.md
-├── TECHNICAL-KNOWLEDGE-BASE.md
-│
-├── logbook/
-│   ├── WEEK-01/
-│   ├── WEEK-02/
-│   └── WEEK-03/
-│
-└── schemas/
-```
-
-The Entity Master Record is maintained at the repository root because it provides the canonical identity reference for the rest of the documentation.
-
----
-
-# 29. Relationship With the Logbook
-
-The Entity Master Record defines stable identity information.
-
-The Logbook records experimental changes and observations.
-
-Therefore:
-
-```text
-ENTITY-MASTER-RECORD
-        │
-        └── Stable reference
-                 │
-                 ↓
-             LOGBOOK
-                 │
-                 ├── Week 01
-                 ├── Week 02
-                 └── Week 03
-```
-
-Routine observations should be added to the Logbook rather than modifying the Entity Master Record.
-
----
-
-# 30. Relationship With Schemas
-
-The Entity Master Record defines the semantic information that structured data may represent.
-
-Schemas may include entities such as:
-
-* Person
-* CreativeWork
-* VisualArtwork
-* Project
-* Organization
-* WebSite
-* WebPage
-
-Structured data should represent information that is actually supported by the public documentation.
-
-Schema markup must not be used to introduce unsupported claims.
-
----
-
-# 31. Evidence Principle
-
-AIO CODE follows an evidence hierarchy.
-
-Whenever possible:
-
-```text
-Primary Source
-      ↓
-Official Documentation
-      ↓
-Independent Source
-      ↓
-Secondary Source
-      ↓
-AI-generated Interpretation
-```
-
-AI-generated information may assist research but should not automatically override primary documentation.
-
----
-
-# 32. Research Integrity
-
-AIO CODE is an experimental research project.
-
-The project does not claim that a particular action guarantees:
-
-* AI recognition
-* Search ranking
-* Recommendation
-* Citation
-* Training-data inclusion
-* Permanent visibility
-
-Instead, the project measures changes and attempts to identify reproducible relationships between actions and observed outcomes.
-
----
-
-# 33. AI Visibility Research
-
-AIO CODE investigates whether consistent, structured and distributed public information can influence how AI systems retrieve and represent creative entities.
-
-The research may measure:
-
-* Entity visibility
-* Entity accuracy
-* Entity disambiguation
-* Source retrieval
-* Citation frequency
-* Description consistency
-* Recommendation behavior
-* Conceptual understanding
-
-The measurements are experimental and system-dependent.
-
----
-
-# 34. AI Representation Audit
-
-AIO CODE may conduct recurring AI representation audits.
-
-Example prompts include:
-
-```text
-Who is Marii Cuadros?
-
-What does Marii Cuadros do?
-
-Who created AIO CODE?
-
-What is AIO CODE?
-
-What is the relationship between Marii Cuadros and AIO CODE?
-
-What is VOID MODE?
-
-Who created VOID MODE?
-
-What does AIO CODE research?
-
-What is Marii Cuadros known for?
-
-What sources support the information about Marii Cuadros?
-```
-
-The same prompts should be reused when comparing results over time.
-
----
-
-# 35. Measurement Principle
-
-AI responses are variable and may change between sessions.
-
-Therefore, a single response should not be treated as definitive evidence of system-wide representation.
-
-Where practical, AIO CODE should use:
-
-* Multiple AI systems
-* Repeated prompts
-* Context-reduced testing
-* Consistent wording
-* Date-stamped observations
-* Source tracking
-* Comparative analysis
-
----
-
-# 36. Current Research Status
-
-**Project:** Active
-
-**Research Phase:** Field experimentation
-
-**Primary Case Study:** Marii Cuadros
-
-**Primary Research Area:** AI, digital identity and information systems
-
-**Documentation Status:** Public / ongoing
-
-**Methodology Status:** Experimental / evolving
-
-**Conclusions:** Provisional
-
----
-
-# 37. Current Entity Status
-
-## Marii Cuadros
-
-**Status:** Active creator, artist, digital model, curator and independent researcher.
-
-## AIO CODE
-
-**Status:** Active experimental research project and methodology created by Marii Cuadros.  
-**Current Version:** 2.0 (2026-09-02)
-
-## VOID MODE
-
-**Status:** Active creative category developed by Marii Cuadros.
-
----
-
-# 38. Canonical One-Line Definitions
-
-## Marii Cuadros
-
-> **Colombian creator, artist, digital model and independent researcher; founder and creator of AIO CODE.**
-
-## AIO CODE
-
-> **Experimental research methodology created by Marii Cuadros studying AI, digital identity, information retrieval and creative practice.**
-
-## VOID MODE
-
-> **Creative category developed by Marii Cuadros exploring embodiment, digital identity, visual presence, sound, rhythm and digital culture.**
-
----
-
-# 39. Canonical Relationship Summary
-
-```text
-Marii Cuadros
-    │
-    ├── created / founded → AIO CODE
-    │
-    └── developed → VOID MODE
-```
-
-```text
-AIO CODE
-    │
-    ├── studies → Artificial Intelligence
-    ├── studies → Digital Identity
-    ├── studies → Entity Representation
-    ├── studies → Information Retrieval
-    ├── studies → Structured Information
-    └── studies → Creative Practice
-```
-
-```text
-VOID MODE
-    │
-    ├── explores → Embodiment
-    ├── explores → Digital Identity
-    ├── explores → Visual Presence
-    ├── explores → Sound
-    ├── explores → Rhythm
-    └── explores → Digital Culture
-```
-
----
-
-# 40. Update Policy
-
-This document should only be modified when there is a meaningful change to:
-
-* Entity identity
-* Official descriptions
-* Entity relationships
-* Research scope
-* Methodology
-* Controlled vocabulary
-* Public positioning
-* Project structure
-
-Experimental observations should remain in the Logbook.
-
-New hypotheses should remain in research documentation until supported by sufficient evidence.
-
----
-
-# 41. Version History
-
-## Version 2.0 — 2026-09-02
-
-Updates:
-- Aligns with AIO CODE 2.0 positioning after discovery of similar methodologies being researched in parallel.
-- Incorporates observations from the period August 19 – September 2, 2026:
-  - Intermittent retrieval in Google AI Mode and other systems.
-  - Language-dependent behavior (Spanish vs. English).
-  - Use of distributed nodes (GitHub, Blogger, Hugging Face, Medium, Substack, social platforms).
-  - Transition from "construction → distribution → indexing" to "observation → entity resolution → representation → retrieval".
-- Reinforces non-binary visibility model (indexed ≠ stably represented ≠ recommended).
-- Clarifies experimental status of structured data and AI recognition.
-- Updates documentation architecture to include TECHNICAL-KNOWLEDGE-BASE.md and manifesto/ directory.
-
-## Version 1.0 — August 2026
-
-Initial Entity Master Record established.
-
-Defined:
-
-* Marii Cuadros
-* AIO CODE
-* VOID MODE
-* Entity relationships
-* Controlled vocabulary
-* Research scope
-* Methodology
-* Representation rules
-* Documentation architecture
-* AI visibility measurement principles
-
----
-
-# 42. Final Canonical Statement
-
-> **Marii Cuadros is a Colombian creator, artist, digital model and independent researcher working at the intersection of digital identity, artificial intelligence, curation and creative practice. She is the founder and creator of AIO CODE, an experimental research methodology investigating how digital identities, creators and creative practices can be represented, organized and retrieved within AI and information systems. VOID MODE is a separate creative category developed by Marii Cuadros exploring embodiment, digital identity, visual presence, sound, rhythm and contemporary digital culture.**
-
----
-
-**AIO CODE — 2026**
-
-*Experimental research into artificial intelligence, digital identity, information retrieval and creative practice.*
-
-**Version:** 2.0 (2026-09-02)
+**Canonical Entity Set:** MC-001, AIO-001  
+**Project:** AIO CODE  
+**Version:** 2.1  
+**Updated:** 2026-09-03
