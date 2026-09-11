@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Canonical registry of official ecosystem surfaces. Public metadata only; never store credentials or recovery secrets here.",
+  "entities": [
+    {"entity_id": "MC-001", "entity_name": "Marii Cuadros", "role": "Person"},
+    {"entity_id": "AIO-001", "entity_name": "AIO CODE", "role": "Research Project"},
+    {"entity_id": "NUX-001", "entity_name": "NUX", "role": "Narrative entity"},
+    {"entity_id": "TWIN-MC-001", "entity_name": "Twin MC-001", "role": "Digital representation"}
+  ],
+  "accounts": [],
+  "required_fields": [
+    "platform",
+    "handle_or_channel",
+    "canonical_url",
+    "entity_id",
+    "purpose",
+    "status",
+    "recovery_owner"
+  ],
+  "security_rule": "Credentials, recovery codes, private emails, phone numbers and identity documents must never be committed to this repository."
+}
