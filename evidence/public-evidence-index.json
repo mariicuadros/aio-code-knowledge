@@ -2,11 +2,16 @@
   "archive": "AIO CODE Evidence Archive",
   "entity_id": "AIO-001",
   "creator_entity_id": "MC-001",
-  "policy": "Original historical media remains restricted unless explicitly approved for public release.",
+  "visibility_policy": {
+    "public_designation": "Only explicitly approved evidence may be placed in evidence/public/.",
+    "historical_designation": "Evidence in evidence/historical/ is not designated for public release.",
+    "technical_note": "This repository is public, so historical files remain technically accessible through GitHub. True private originals must be stored outside this repository."
+  },
   "public_records": [
     {
       "evidence_id": "AIO-EVD-0002",
-      "filename": "AIO-EVD-0002_2026-08-07_initial-development",
+      "filename": "AIO-EVD-0002_2026-08-07_initial-development.jpg.png",
+      "path": "evidence/public/AIO-EVD-0002_2026-08-07_initial-development.jpg.png",
       "date": "2026-08-07",
       "type": "visual_evidence",
       "description": "Early development documentation associated with the construction of AIO CODE.",
@@ -18,8 +23,10 @@
       "causal_claim": false
     }
   ],
-  "restricted_media": {
-    "status": "private",
-    "description": "All other original photographs and videos from the historical development archive remain restricted/private."
+  "historical_records": {
+    "count": 25,
+    "path": "evidence/historical/",
+    "visibility": "not_designated_for_public_release",
+    "description": "All other AIO-EVD visual records currently present in the repository are organized here as historical evidence. Private originals should additionally be preserved outside the public repository."
   }
 }
