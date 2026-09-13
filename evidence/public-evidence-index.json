@@ -1,0 +1,25 @@
+{
+  "archive": "AIO CODE Evidence Archive",
+  "entity_id": "AIO-001",
+  "creator_entity_id": "MC-001",
+  "policy": "Original historical media remains restricted unless explicitly approved for public release.",
+  "public_records": [
+    {
+      "evidence_id": "AIO-EVD-0002",
+      "filename": "AIO-EVD-0002_2026-08-07_initial-development",
+      "date": "2026-08-07",
+      "type": "visual_evidence",
+      "description": "Early development documentation associated with the construction of AIO CODE.",
+      "related_entity": "AIO-001",
+      "visibility": "public",
+      "status": "designated_for_publication",
+      "observed_fact": "The image documents an early stage of the project's development.",
+      "interpretation": "It may support the historical development timeline.",
+      "causal_claim": false
+    }
+  ],
+  "restricted_media": {
+    "status": "private",
+    "description": "All other original photographs and videos from the historical development archive remain restricted/private."
+  }
+}
