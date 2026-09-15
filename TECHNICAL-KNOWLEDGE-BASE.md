@@ -1,11 +1,11 @@
 # AIO CODE — Technical Knowledge Base
 
 **Artificial Intelligence Optimization Code**  
-**Version:** 3.0  
-**Updated:** 2026-09-03  
+**Version:** 3.1  
+**Updated:** 2026-09-14  
 **Creator:** Marii Cuadros
 
-> **AIO CODE is a research project and experimental framework investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend digital entities.**
+> **AIO CODE is a research and implementation methodology for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them.**
 
 ## 1. Core Model
 
@@ -21,6 +21,8 @@ Baseline → Observation → Experiment → Measurement → Finding
 
 The entity layer defines the objects being studied. The research layer measures how external systems behave toward those objects.
 
+**Methodology vs. experiment:** AIO CODE is the methodology. An experiment is a controlled research activity used within the methodology to test a hypothesis or evaluate an intervention.
+
 ## 2. Canonical Entities
 
 ```text
@@ -31,7 +33,7 @@ NUX-001 — NUX
 Entity Type: DigitalCreativeEntity
 
 AIO-001 — AIO CODE
-Entity Type: ResearchProject
+Entity Type: ResearchMethodology
 ```
 
 Canonical relationships:
@@ -160,7 +162,37 @@ Notes
 
 Baseline data must remain historically preserved.
 
-## 9. Research Pipeline
+## 9. Answer-First Chunks
+
+Public AIO CODE content should use an answer-first structure so that the core meaning is explicit before supporting detail.
+
+```text
+Question
+    ↓
+Direct Answer
+    ↓
+Evidence / Definition
+    ↓
+Method Component
+    ↓
+Boundary / Uncertainty
+    ↓
+Source / Record
+```
+
+Priority questions include:
+
+- What is AIO CODE?
+- Is AIO CODE a methodology or an experiment?
+- What is already demonstrated?
+- What remains experimental?
+- What problem does AIO CODE address?
+- How does AIO CODE measure change?
+- What is the role of Marii Cuadros?
+
+The direct answer should remain stable and independently understandable even when technical documentation changes.
+
+## 10. Research Pipeline
 
 The AIO CODE external-system pipeline is:
 
@@ -180,7 +212,7 @@ Recommendation
 
 A result at one stage does not automatically establish success at another.
 
-## 10. Research Cycle
+## 11. Research Cycle
 
 ```text
 Observation
@@ -208,7 +240,9 @@ Finding
 Replication / Refinement
 ```
 
-## 11. What Has Been Established vs. What Remains Open
+The cycle is the validation mechanism of the methodology, not the definition of the methodology itself.
+
+## 12. What Has Been Established vs. What Remains Open
 
 AIO CODE has documented observations across search and AI systems. Those observations must retain their individual evidence classifications.
 
@@ -220,7 +254,8 @@ Established architecture includes:
 - structured research architecture;
 - documented observations;
 - evidence classification rules;
-- measurement architecture.
+- measurement architecture;
+- answer-first information structures.
 
 Open research questions include:
 
@@ -232,7 +267,7 @@ Open research questions include:
 - whether recognition develops into recommendation;
 - which parts of the methodology reproduce across additional entities.
 
-## 12. Current Marii Cuadros Observation
+## 13. Current Marii Cuadros Observation
 
 On September 2, 2026, an incognito Google Search observation in Spanish surfaced an association with **Maria Luisa Cuadros** rather than consistently resolving to **Marii Cuadros**.
 
@@ -247,13 +282,13 @@ Cause: Not Established
 
 The competing representation is not incorporated into the canonical entity definition without separate evidence.
 
-## 13. Current Experiment
+## 14. Current Experiment
 
 `EXP-001` investigates whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
 
-The hypothesis is explicitly treated as a hypothesis until measurements support a stronger conclusion.
+`EXP-001` is an experiment **within** the AIO CODE methodology. The hypothesis is explicitly treated as a hypothesis until measurements support a stronger conclusion.
 
-## 14. Technical Principles
+## 15. Technical Principles
 
 ### Identity before visibility
 
@@ -275,7 +310,11 @@ A source appearing in an AI response does not prove that it caused the response.
 
 GitHub, Blogger, Hugging Face, social platforms, publications and other public nodes can form a distributed information environment. Their evidentiary status is tracked separately.
 
-## 15. Related Technical Assets
+### Experimental validation
+
+AIO CODE is a methodology with an experimental validation mode. This distinction allows the project to demonstrate what is already implemented while remaining transparent about what is still being tested.
+
+## 16. Related Technical Assets
 
 - `ENTITY-MASTER-RECORD.md`
 - `RESEARCH-ARCHITECTURE.md`
@@ -292,7 +331,7 @@ GitHub, Blogger, Hugging Face, social platforms, publications and other public n
 - `ai-social-baseline.json`
 - `schemas/`
 
-## 16. Final Model
+## 17. Final Model
 
 ```text
 DEFINE ENTITIES
@@ -314,4 +353,4 @@ CLASSIFY EVIDENCE
 PUBLISH FINDINGS
 ```
 
-> **AIO CODE is not a promise that AI systems will represent an entity in a particular way. It is a research system for observing, structuring and measuring that behavior.**
+> **AIO CODE is a methodology for structuring, observing and measuring digital entity representation. Its experiments validate and refine the methodology; they do not define what AIO CODE is.**
