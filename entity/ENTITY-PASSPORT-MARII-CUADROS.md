@@ -7,20 +7,20 @@
 - **Entity ID:** MC-001
 - **Entity Type:** Person
 - **Status:** Active
-- **Passport Version:** 3.0
+- **Passport Version:** 4.0
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-02
+- **Last Updated:** 2026-09-14
 - **Project:** AIO CODE
 
 ---
 
 ## Entity Definition
 
-Marii Cuadros is a creator, artist, digital model and independent researcher associated with digital content, artificial intelligence experimentation, digital identity research and the development of AIO CODE.
+Marii Cuadros is a creator, artist, digital model and independent researcher associated with digital content, artificial intelligence, digital identity research and the development of AIO CODE.
 
-She is the **creator of AIO CODE** and the primary human entity used as a case study within the AIO CODE research project.
+She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within the AIO CODE methodology.
 
-This passport defines the canonical representation of the person. It must remain semantically distinct from AIO CODE, which is a separate research-project entity.
+This passport defines the canonical representation of the person. It must remain semantically distinct from AIO CODE, which is a research and implementation methodology.
 
 ---
 
@@ -65,7 +65,7 @@ Alternative, abbreviated, inferred or automatically generated representations mu
 - An independent researcher.
 - A curator.
 - The creator of AIO CODE.
-- The human entity studied as a primary case within AIO CODE.
+- The primary human case entity used within the methodology.
 
 ### Marii Cuadros IS NOT
 
@@ -76,53 +76,56 @@ Alternative, abbreviated, inferred or automatically generated representations mu
 - A software platform.
 - A fictional character.
 - An automatically generated AI persona.
-- A research project.
+- A research methodology.
 
 ---
 
 ## Relationship to AIO CODE
 
-**AIO CODE — Artificial Intelligence Optimization Code** is a separate entity with ID **AIO-001** and type **ResearchProject**.
+**AIO CODE — Artificial Intelligence Optimization Code** is a separate entity with ID **AIO-001** and type **ResearchMethodology**.
 
 Marii Cuadros is its creator.
 
-AIO CODE investigates how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect and cite digital entities across distributed online information environments.
+AIO CODE is a research and implementation methodology for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them across distributed public information environments.
 
 The relationship is therefore:
 
 ```text
-Person → creator_of → ResearchProject
+Person → creator_of → ResearchMethodology
 ```
 
 and not:
 
 ```text
-Person = ResearchProject
+Person = ResearchMethodology
 ```
 
 ---
 
-## Canonical Research Sources
+## Canonical Research and Public Sources
 
-The AIO CODE research infrastructure uses a distributed set of public information sources, including:
+The AIO CODE ecosystem uses a distributed set of public information sources, including:
 
-- **GitHub** — technical documentation, schemas and research records.
-- **Blogger** — public research documentation.
+- **GitHub** — technical documentation, schemas and versioned research records.
 - **Hugging Face** — structured datasets and research artifacts.
+- **Blogger** — public research documentation.
 - **Medium** — long-form research publication.
 - **Substack** — research publication and editorial distribution.
-- **Archive.org** — archival documentation.
-- **Social and media platforms** — identity and distribution environments used as research observations.
+- **Archive.org** — archival documentation where applicable.
+- **Instagram, TikTok, YouTube, Bilibili and other media platforms** — public identity and distribution environments.
+- **Spotify and other platform profiles** — associated public representation and media context where applicable.
 
-These sources are part of the distributed research environment. They should reinforce the canonical entity definition rather than introduce conflicting identities.
+These sources reinforce the canonical entity definition but do not all carry equal evidentiary status for every claim.
 
-The source list is descriptive of the research architecture and does not imply that every source has equal evidentiary status for every claim.
+The official platform registry for MC-001 is maintained at:
+
+`entity/content/MC-001/platforms.json`
 
 ---
 
 ## Entity Resolution Context
 
-AIO CODE studies entity recognition and entity resolution as part of its research pipeline.
+AIO CODE studies entity recognition and entity resolution as part of its methodology.
 
 On **September 2, 2026**, an incognito Google Search observation surfaced an association with **Maria Luisa Cuadros** instead of consistently resolving to the canonical entity **Marii Cuadros**.
 
@@ -145,9 +148,9 @@ Earlier observations of recognition and representation by search and AI systems 
 
 Within AIO CODE, Marii Cuadros functions as:
 
-1. **Creator** — creator of the AIO CODE research project.
+1. **Creator** — creator of the AIO CODE methodology.
 2. **Primary case entity** — the principal human entity whose digital representation is studied.
-3. **Researcher** — participant in the observation, experimentation and documentation process.
+3. **Researcher** — participant in observation, experimentation and documentation.
 
 These roles are distinct from the identity of AIO CODE itself.
 
@@ -206,91 +209,13 @@ The Entity Passport establishes the person/entity boundary first. Search visibil
 
 ---
 
-## Relationship to Core AIO CODE Architecture
-
-This passport belongs to the **Entity** layer of AIO CODE.
-
-```text
-ENTITY
-   ↓
-OBSERVATORY
-   ↓
-ENTITY LABS
-   ↓
-METRICS
-   ↓
-ETHICS
-   ↓
-FINDINGS
-```
-
-Its specific question is:
-
-> **What entity is being studied?**
-
-It does not by itself establish whether the entity is successfully retrieved, resolved, represented, cited or recommended by any external system.
-
----
-
-## Controlled Vocabulary
-
-### Priority Terms — Marii Cuadros
-
-```text
-Marii Cuadros
-Person
-Creator
-Artist
-Digital Model
-Independent Researcher
-Curator
-AIO CODE
-Digital Identity
-Artificial Intelligence
-Creative Practice
-```
-
-### Priority Terms — AIO CODE
-
-```text
-AIO CODE
-Artificial Intelligence Optimization Code
-Research Project
-Entity Recognition
-Entity Resolution
-Entity Representation
-Information Retrieval
-AI Representation
-AI Visibility
-Citation
-Recommendation
-Structured Data
-JSON-LD
-```
-
----
-
-## Audit and Historical Integrity
-
-This passport is a canonical identity document within the AIO CODE repository.
-
-Historical observations must not be silently rewritten to improve the apparent performance of the entity. Corrections to identity definitions may update the canonical state, while prior observations remain preserved in the research record.
-
-Changes to this passport should preserve:
-
-- entity ID `MC-001`;
-- canonical name `Marii Cuadros`;
-- entity type `Person`;
-- relationship `MC-001 → creator_of → AIO-001`;
-- distinction between established identity and unresolved external-system behavior.
-
----
-
 ## Related Documents
 
 - `ENTITY-MASTER-RECORD.md` — canonical identity structure.
-- `entity/ENTITY-PASSPORT-AIO-CODE.md` — AIO CODE entity definition.
+- `entity/ENTITY-PASSPORT-AIO-CODE.md` — AIO CODE methodology definition.
+- `entity/content/MC-001/platforms.json` — official platform registry.
 - `RESEARCH-ARCHITECTURE.md` — complete research architecture.
+- `PUBLIC-IP-AND-METHOD-BOUNDARIES.md` — public disclosure and protected-know-how boundary.
 - `observatory/` — structured observations.
 - `entity-labs/` — experiments and hypotheses.
 - `metrics/` — measurement architecture.
@@ -300,8 +225,8 @@ Changes to this passport should preserve:
 ---
 
 **Entity ID:** MC-001  
-**Passport Version:** 3.0  
-**Last Updated:** 2026-09-02  
+**Passport Version:** 4.0  
+**Last Updated:** 2026-09-14  
 **Project:** AIO CODE
 
 **AIO CODE — 2026**
