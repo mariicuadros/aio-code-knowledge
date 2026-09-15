@@ -1,21 +1,23 @@
 # AIO CODE — Research Architecture
 
-**Version:** 3.0  
-**Updated:** 2026-09-03  
-**Status:** Active
+**Version:** 3.1  
+**Updated:** 2026-09-14  
+**Status:** Active Methodology
 
 ## 1. Purpose
 
-AIO CODE combines an **entity architecture** with an **observational research architecture**.
+AIO CODE is a **research and implementation methodology** combining an entity architecture with an observational research architecture.
 
 The entity architecture defines what exists and how entities relate. The research architecture records what external systems do with those entities and measures changes over time.
+
+The methodology is implemented and demonstrable. Its validation remains iterative and experimental: individual hypotheses, interventions, signals and outcomes continue to be tested and refined.
 
 ## 2. Canonical Entities
 
 ```text
 MC-001 — Marii Cuadros       Person
 NUX-001 — NUX                DigitalCreativeEntity
-AIO-001 — AIO CODE           ResearchProject
+AIO-001 — AIO CODE           ResearchMethodology
 ```
 
 Canonical relationships:
@@ -210,7 +212,40 @@ Notes
 
 Historical baseline records are immutable research evidence.
 
-## 11. Research Pipeline
+## 11. Answer-First Information Architecture
+
+Public-facing AIO CODE documentation should lead with direct answers before technical detail. This supports both human comprehension and machine retrieval.
+
+Recommended chunk structure:
+
+```text
+Question
+    ↓
+Direct Answer
+    ↓
+Definition / Evidence
+    ↓
+Relevant Method Component
+    ↓
+Uncertainty / Boundary
+    ↓
+Source or Record
+```
+
+Core answer-first questions include:
+
+- What is AIO CODE?
+- Is AIO CODE a methodology or an experiment?
+- What is already demonstrated?
+- What remains experimental?
+- What problem does AIO CODE address?
+- How does AIO CODE measure change?
+- What is the role of Marii Cuadros?
+- What evidence supports current findings?
+
+The direct answer must remain semantically stable even when the supporting documentation grows.
+
+## 12. Research Pipeline
 
 AIO CODE uses the following external-system pipeline:
 
@@ -230,7 +265,7 @@ Recommendation
 
 These are separate stages. Success at one stage does not imply success at another.
 
-## 12. Operational Research Cycle
+## 13. Operational Research Cycle
 
 ```text
 Observation
@@ -258,7 +293,9 @@ Finding
 Replication / Refinement
 ```
 
-## 13. Evidence Model
+**Methodology vs. experiment:** AIO CODE is the methodology. `Experiment` is a controlled activity inside the methodology used for validation and refinement.
+
+## 14. Evidence Model
 
 ```text
 Observed
@@ -272,17 +309,17 @@ These states must not be collapsed.
 
 > **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
 
-The project may have established observations and corroborated findings even when the underlying mechanism remains unknown.
+The methodology may have established observations and corroborated findings even when the underlying mechanism remains unknown.
 
-## 14. Current Case — Marii Cuadros
+## 15. Current Case — Marii Cuadros
 
 Observation `ER-001` records an entity-resolution issue in Google Search under an incognito Spanish-language condition on September 2, 2026: an association with **Maria Luisa Cuadros** was surfaced instead of consistently resolving to **Marii Cuadros**.
 
 The observation is established. Its cause is not established.
 
-Experiment `EXP-001` investigates whether strengthening canonical identity signals and cross-source consistency may improve consistent resolution.
+Experiment `EXP-001` investigates whether strengthening canonical identity signals and cross-source consistency may improve consistent resolution. `EXP-001` is validation work **within** the AIO CODE methodology; it does not define AIO CODE itself.
 
-## 15. Repository Map
+## 16. Repository Map
 
 ```text
 entity/
@@ -319,7 +356,7 @@ ai-social-baseline.json
     AI + social baseline
 ```
 
-## 16. Source-of-Truth Rules
+## 17. Source-of-Truth Rules
 
 1. Entity IDs remain stable.
 2. Canonical names are changed only deliberately and with version history.
@@ -331,7 +368,8 @@ ai-social-baseline.json
 8. Evidence strength determines claim strength.
 9. A platform presence does not prove AI recognition.
 10. Temporal association does not prove causation.
+11. Experiments validate and refine the methodology; they do not define the methodology.
 
-## 17. Final Architecture Principle
+## 18. Final Architecture Principle
 
 > **Define the entity. Connect the evidence. Observe the systems. Measure the change. Preserve the history.**
