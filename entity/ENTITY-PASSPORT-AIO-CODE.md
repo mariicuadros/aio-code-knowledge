@@ -2,23 +2,27 @@
 
 ## Canonical Identity
 
-**AIO CODE** is the canonical public name of this research project.
+**AIO CODE** is the canonical public name of this methodology.
 
 - **Entity ID:** AIO-001
-- **Entity Type:** ResearchProject
+- **Entity Type:** ResearchMethodology
 - **Status:** Active
-- **Passport Version:** 3.0
+- **Passport Version:** 3.1
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-03
+- **Last Updated:** 2026-09-14
 - **Creator:** Marii Cuadros
 
 ---
 
 ## Definition
 
-**AIO CODE — Artificial Intelligence Optimization Code** is a research project and experimental framework investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend digital entities across distributed public information environments.
+**AIO CODE — Artificial Intelligence Optimization Code** is a **research and implementation methodology** for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend them across distributed public information environments.
 
-AIO CODE is not an AI model, chatbot, search engine, social platform, SEO agency, person, or generative AI system.
+The methodology is implemented through a documented entity architecture, evidence model, observatory, baseline, measurement system, and structured validation cycle.
+
+AIO CODE is not itself an experiment. Experiments are controlled research activities performed within the methodology to test hypotheses, evaluate interventions, and refine the methodology over time.
+
+AIO CODE is not an AI model, chatbot, search engine, social platform, person, or generative AI system.
 
 ---
 
@@ -72,9 +76,9 @@ These stages are distinct. Success at one stage does not automatically establish
 
 ---
 
-## Research Architecture
+## Methodology Architecture
 
-The AIO CODE research system is organized as:
+The AIO CODE system is organized as:
 
 ```text
 ENTITY
@@ -106,7 +110,30 @@ Measures changes under defined conditions.
 Controls evidence classification, research integrity, uncertainty, and claim strength.
 
 ### Findings
-Will contain evidence-backed conclusions when the relevant evidence is sufficient.
+Contains evidence-backed conclusions when the relevant evidence is sufficient.
+
+---
+
+## Current Demonstration and Ongoing Validation
+
+AIO CODE already has a functioning documented architecture: canonical entity records, entity separation, content registries, relationship mapping, evidence classification, observational records, baseline structures, and a measurement workflow.
+
+This means the methodology is **implemented and demonstrable**, while specific mechanisms and outcomes remain subject to ongoing experimental validation.
+
+The word **experimental** therefore describes the validation mode of the methodology, not its ontological status. AIO CODE is the methodology; experiments are how selected hypotheses within it are tested.
+
+---
+
+## Answer-First Definition
+
+**What is AIO CODE?**  
+A research and implementation methodology for building, structuring, observing and measuring digital entity representation across AI systems and search engines.
+
+**Is AIO CODE an experiment?**  
+No. AIO CODE is the methodology. Individual experiments operate inside it.
+
+**Why does it remain experimental?**  
+Because the methodology is actively validated and refined against real external systems, while individual signals, causal mechanisms and reproducibility remain open research questions.
 
 ---
 
@@ -151,6 +178,8 @@ The competing representation is an observation, not part of the canonical identi
 
 **EXP-001 — Canonical Identity Consistency and Entity Resolution**
 
+This is an experiment **within the AIO CODE methodology**.
+
 Research question:
 
 > Whether strengthening canonical identity signals and cross-source consistency may improve consistent entity resolution in Google Search.
@@ -169,14 +198,15 @@ No post-intervention measurement has yet established improvement for EXP-001.
 
 ### AIO CODE IS
 
-- A research project.
-- An experimental framework.
-- A study of entity recognition, resolution, representation and retrieval.
-- A study of AI and search-system behavior.
+- A research methodology.
+- An implementation methodology.
 - A structured research architecture.
+- A system for entity definition, observation, measurement and evidence classification.
+- A methodology validated through experiments and iterative refinement.
 
 ### AIO CODE IS NOT
 
+- An experiment by itself.
 - A person.
 - An AI model.
 - A chatbot.
@@ -218,8 +248,9 @@ Supporting rules:
 ---
 
 **Entity ID:** AIO-001  
-**Entity Type:** ResearchProject  
-**Passport Version:** 3.0  
-**Last Updated:** 2026-09-03  
+**Entity Type:** ResearchMethodology  
+**Passport Version:** 3.1  
+**Last Updated:** 2026-09-14  
 **Project:** AIO CODE  
-**Creator:** Marii Cuadros
+**Creator:** Marii Cuadros  
+**Validation Mode:** Experimental / Iterative
