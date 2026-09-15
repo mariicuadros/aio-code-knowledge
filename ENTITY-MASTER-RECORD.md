@@ -1,18 +1,18 @@
 # AIO CODE — Entity Master Record
 
-**Version:** 3.0  
+**Version:** 4.0  
 **Status:** Active  
-**Updated:** 2026-09-03  
+**Updated:** 2026-09-14  
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros
 
 ## 1. Purpose
 
-This document defines the canonical entity layer of AIO CODE. It is the source-of-truth reference for entity identity, semantic boundaries, canonical relationships and the structure used to connect each entity to its content, platforms, claims and research observations.
+This document defines the canonical entity layer of AIO CODE. It is the source-of-truth reference for entity identity, semantic boundaries, canonical relationships and the structure used to connect each entity to its content, platforms, claims, public proof artifacts and research observations.
 
 ## 2. Canonical Entity Set
 
-The current canonical entity set contains three primary entities:
+The current canonical entity set contains three distinct primary entities:
 
 ```text
 MC-001 — Marii Cuadros
@@ -20,7 +20,7 @@ NUX-001 — NUX
 AIO-001 — AIO CODE
 ```
 
-These entities are distinct. A relationship between entities must be explicit; an alias does not automatically create a new entity.
+These entities are distinct. A relationship between entities must be explicit; an association or alias does not automatically create a new entity.
 
 ## 3. Entity Registry
 
@@ -31,6 +31,7 @@ These entities are distinct. A relationship between entities must be explicit; a
 - **Role in AIO CODE:** Creator, researcher and primary human case entity
 - **Passport:** `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - **Content Registry:** `entity/content/MC-001/content-registry.json`
+- **Platform Registry:** `entity/content/MC-001/platforms.json`
 
 ### NUX-001 — NUX
 
@@ -39,14 +40,21 @@ These entities are distinct. A relationship between entities must be explicit; a
 - **Role in ecosystem:** Distinct digital creative entity developed in association with Marii Cuadros
 - **Passport:** `entity/ENTITY-PASSPORT-NUX.md`
 - **Content Registry:** `entity/content/NUX-001/content-registry.json`
+- **Platform Registry:** `entity/content/NUX-001/platforms.json`
 
 ### AIO-001 — AIO CODE
 
-- **Entity Type:** ResearchProject
+- **Entity Type:** ResearchMethodology
 - **Canonical Name:** AIO CODE
 - **Full Name:** Artificial Intelligence Optimization Code
-- **Role in ecosystem:** Research project and experimental framework
+- **Role in ecosystem:** Research and implementation methodology for digital entity structuring, observation, measurement and AI/search representation
+- **Status:** Active and implemented
+- **Validation Mode:** Experimental / iterative
 - **Passport:** `entity/ENTITY-PASSPORT-AIO-CODE.md`
+- **Platform Registry:** `entity/content/AIO-001/platforms.json`
+- **Public IP and Method Boundaries:** `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`
+
+AIO CODE is the methodology. Experiments are controlled validation activities conducted within the methodology and must not be confused with the identity or type of AIO CODE itself.
 
 ## 4. Canonical Relationships
 
@@ -78,6 +86,7 @@ Every primary entity passport should maintain, where applicable:
 - Timeline
 - Version
 - Status
+- Evidence and verification boundaries
 
 The passport defines the entity. It does not substitute for the evidence systems that measure external recognition or retrieval.
 
@@ -92,8 +101,11 @@ entity/content/
 │   ├── platforms.json
 │   └── spotify-playlists.json
 │
-└── NUX-001/
-    ├── content-registry.json
+├── NUX-001/
+│   ├── content-registry.json
+│   └── platforms.json
+│
+└── AIO-001/
     └── platforms.json
 ```
 
@@ -121,7 +133,7 @@ The graph must not collapse distinct entities into a single identity merely beca
 
 ## 9. Social Entity Map
 
-`social-entity-map.json` records how each entity is represented across public platforms.
+`social-entity-map.json` records how each entity is represented across public platforms, including official social profiles, media channels, research repositories and public contact points where applicable.
 
 A social profile is treated as a representation node. Its existence does not by itself prove successful AI recognition, entity resolution, citation or recommendation.
 
@@ -196,7 +208,17 @@ Core rule:
 
 A canonical identity definition can be established even when an external system's mechanism remains unknown. Conversely, a temporal association does not establish causation.
 
-## 13. Current Entity-Resolution Observation
+## 13. Public Methodology and IP Boundary
+
+AIO CODE publicly documents its identity, definition, architecture, evidence model, public artifacts, version history and demonstrable research records. Proprietary operational details are intentionally excluded from public repositories.
+
+The governing principle is:
+
+> **The methodology is public; the complete operational playbook is not.**
+
+The public boundary is documented in `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`.
+
+## 14. Current Entity-Resolution Observation
 
 ```text
 Observation ID: ER-001
@@ -213,15 +235,18 @@ Cause: Not Established
 
 The competing representation remains an observation and is not added as a canonical alias without separate evidence establishing that relationship.
 
-## 14. Related Documents
+## 15. Related Documents
 
 - `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - `entity/ENTITY-PASSPORT-NUX.md`
 - `entity/ENTITY-PASSPORT-AIO-CODE.md`
+- `entity/content/MC-001/platforms.json`
+- `entity/content/AIO-001/platforms.json`
 - `entity-graph.json`
 - `claim-ledger.json`
 - `social-entity-map.json`
 - `ai-social-baseline.json`
+- `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`
 - `observatory/`
 - `entity-labs/`
 - `metrics/`
@@ -232,5 +257,5 @@ The competing representation remains an observation and is not added as a canoni
 
 **Canonical Entity Set:** MC-001, NUX-001, AIO-001  
 **Project:** AIO CODE  
-**Version:** 3.0  
-**Updated:** 2026-09-03
+**Version:** 4.0  
+**Updated:** 2026-09-14
