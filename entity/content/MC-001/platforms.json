@@ -1,8 +1,8 @@
 {
   "entity_id": "MC-001",
   "entity_name": "Marii Cuadros",
-  "version": "1.1",
-  "purpose": "Registry of platform representation nodes associated with the MC-001 canonical entity.",
+  "version": "1.2",
+  "purpose": "Registry of public platform representation nodes associated with the MC-001 canonical entity.",
   "platforms": [
     {"platform_id":"MC-PLAT-001","platform_name":"Instagram","profile_or_page_name":"mariicuadros","canonical_entity_id":"MC-001","url":"https://www.instagram.com/mariicuadros","official_status":"official","status":"active"},
     {"platform_id":"MC-PLAT-002","platform_name":"TikTok","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
@@ -18,8 +18,9 @@
     {"platform_id":"MC-PLAT-012","platform_name":"Hugging Face","canonical_entity_id":"MC-001","content_role":"structured_research","official_status":"official","status":"active"},
     {"platform_id":"MC-PLAT-013","platform_name":"Blogger","canonical_entity_id":"MC-001","content_role":"public_documentation","official_status":"official","status":"active"},
     {"platform_id":"MC-PLAT-014","platform_name":"Medium","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-015","platform_name":"Substack","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"}
+    {"platform_id":"MC-PLAT-015","platform_name":"Substack","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"},
+    {"platform_id":"MC-PLAT-016","platform_name":"Bilibili","url":"https://www.bilibili.tv/en/space/2024087771","canonical_entity_id":"MC-001","content_role":"international_video_distribution","official_status":"official","status":"active"}
   ],
   "rule": "A platform record describes a representation node. It does not by itself prove external entity resolution, AI recognition, citation or recommendation.",
-  "data_integrity": "Only verified URLs and verified official status should be promoted from to_verify/unverified to active/official. No URL is invented for unverified platforms."
+  "data_integrity": "Only verified URLs and verified official status should be promoted from to_verify/unverified to active/official."
 }
