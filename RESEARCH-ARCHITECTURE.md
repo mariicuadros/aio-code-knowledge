@@ -1,7 +1,7 @@
 # AIO CODE — Research Architecture
 
-**Version:** 3.1  
-**Updated:** 2026-09-14  
+**Version:** 3.2  
+**Updated:** 2026-09-15  
 **Status:** Active Methodology
 
 ## 1. Purpose
@@ -43,11 +43,13 @@ Social Entity Map
 Claim Ledger
       ↓
 Entity Graph
+      ↓
+Provenance Graph
 ```
 
 This layer answers:
 
-> **What is the entity, what belongs to it, what does it connect to, and what claims are documented about it?**
+> **What is the entity, what belongs to it, what does it connect to, what works are associated with it, and what claims are documented about it?**
 
 ### Layer B — Research and Measurement
 
@@ -87,6 +89,8 @@ This layer answers:
         Claim Ledger                   Metrics
               ↓                           ↓
         Entity Graph                Evidence / Ethics
+              ↓                           ↓
+      Provenance Graph
               └─────────────┬─────────────┘
                             ↓
                          Findings
@@ -131,7 +135,41 @@ entity/content/
 
 New content domains can be added as separate registries without changing entity IDs.
 
-## 7. Claim Ledger
+AI-assisted music, audiovisual works and other hybrid creator assets may also be documented through the Provenance Architecture.
+
+## 7. Provenance Architecture
+
+The Provenance Architecture documents the origin, evolution, attribution, publication history and evidence associated with creator-generated and AI-assisted works.
+
+It introduces a **Provenance Graph** connecting:
+
+```text
+Creator / Entity
+      ↓
+Creative Work
+      ↓
+Creation Event
+      ↓
+Tools / Services
+      ↓
+Human Contributions
+      ↓
+Version History
+      ↓
+Master / Final Asset
+      ↓
+Publication
+      ↓
+Distribution
+      ↓
+Evidence
+```
+
+The Provenance Architecture distinguishes contractual/platform rights, legally recognized rights, human creative contribution, AI generation/assistance, chronology and evidence. It does not itself create copyright or guarantee legal enforcement.
+
+See `PROVENANCE-ARCHITECTURE.md` for the detailed standard.
+
+## 8. Claim Ledger
 
 The Claim Ledger records:
 
@@ -156,7 +194,7 @@ Claims may be:
 
 A claim's status is claim-specific.
 
-## 8. Entity Graph
+## 9. Entity Graph
 
 The Entity Graph is the machine-readable representation of relationships between canonical entities and future documented nodes.
 
@@ -166,7 +204,9 @@ Node → Relationship → Node
 
 It prevents accidental identity collapse and makes relationships explicit.
 
-## 9. Social Entity Map
+The Entity Graph can connect canonical entities to documented content, provenance records and evidence without collapsing those different concepts into one identity.
+
+## 10. Social Entity Map
 
 The Social Entity Map records platform-level representations.
 
@@ -186,7 +226,7 @@ For each platform node, record when available:
 
 A social profile is a representation node, not proof of AI recognition.
 
-## 10. AI + Social Baseline
+## 11. AI + Social Baseline
 
 The baseline establishes the pre-intervention state of each entity across relevant AI systems, search environments and social platforms.
 
@@ -212,7 +252,7 @@ Notes
 
 Historical baseline records are immutable research evidence.
 
-## 11. Answer-First Information Architecture
+## 12. Answer-First Information Architecture
 
 Public-facing AIO CODE documentation should lead with direct answers before technical detail. This supports both human comprehension and machine retrieval.
 
@@ -242,10 +282,12 @@ Core answer-first questions include:
 - How does AIO CODE measure change?
 - What is the role of Marii Cuadros?
 - What evidence supports current findings?
+- What is the Provenance Architecture?
+- How does AIO CODE document AI-assisted creative works?
 
 The direct answer must remain semantically stable even when the supporting documentation grows.
 
-## 12. Research Pipeline
+## 13. Research Pipeline
 
 AIO CODE uses the following external-system pipeline:
 
@@ -265,7 +307,7 @@ Recommendation
 
 These are separate stages. Success at one stage does not imply success at another.
 
-## 13. Operational Research Cycle
+## 14. Operational Research Cycle
 
 ```text
 Observation
@@ -295,7 +337,7 @@ Replication / Refinement
 
 **Methodology vs. experiment:** AIO CODE is the methodology. `Experiment` is a controlled activity inside the methodology used for validation and refinement.
 
-## 14. Evidence Model
+## 15. Evidence Model
 
 ```text
 Observed
@@ -311,7 +353,7 @@ These states must not be collapsed.
 
 The methodology may have established observations and corroborated findings even when the underlying mechanism remains unknown.
 
-## 15. Current Case — Marii Cuadros
+## 16. Current Case — Marii Cuadros
 
 Observation `ER-001` records an entity-resolution issue in Google Search under an incognito Spanish-language condition on September 2, 2026: an association with **Maria Luisa Cuadros** was surfaced instead of consistently resolving to **Marii Cuadros**.
 
@@ -319,7 +361,7 @@ The observation is established. Its cause is not established.
 
 Experiment `EXP-001` investigates whether strengthening canonical identity signals and cross-source consistency may improve consistent resolution. `EXP-001` is validation work **within** the AIO CODE methodology; it does not define AIO CODE itself.
 
-## 16. Repository Map
+## 17. Repository Map
 
 ```text
 entity/
@@ -354,9 +396,12 @@ social-entity-map.json
 
 ai-social-baseline.json
     AI + social baseline
+
+PROVENANCE-ARCHITECTURE.md
+    Provenance and creator-work evidence standard
 ```
 
-## 17. Source-of-Truth Rules
+## 18. Source-of-Truth Rules
 
 1. Entity IDs remain stable.
 2. Canonical names are changed only deliberately and with version history.
@@ -369,7 +414,8 @@ ai-social-baseline.json
 9. A platform presence does not prove AI recognition.
 10. Temporal association does not prove causation.
 11. Experiments validate and refine the methodology; they do not define the methodology.
+12. Provenance records must describe human and AI contributions accurately and must not manufacture authorship or rights claims.
 
-## 18. Final Architecture Principle
+## 19. Final Architecture Principle
 
-> **Define the entity. Connect the evidence. Observe the systems. Measure the change. Preserve the history.**
+> **Define the entity. Connect the evidence. Observe the systems. Measure the change. Preserve the history. Document the origin.**
