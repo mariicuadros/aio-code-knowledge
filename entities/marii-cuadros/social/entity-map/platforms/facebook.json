@@ -1,0 +1,9 @@
+{
+  "entity_id": "MC-001",
+  "entity": "Marii Cuadros",
+  "platform": "Facebook",
+  "role": "public_social_identity",
+  "status": "observed",
+  "media_archive": "entities/marii-cuadros/media/facebook/",
+  "evidence_source": "entities/marii-cuadros/evidence/sources/facebook-marii-cuadros.json"
+}
