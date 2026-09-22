@@ -1,0 +1,30 @@
+{
+  "entity": "Marii Cuadros",
+  "entity_id": "MC-001",
+  "platform": "Facebook",
+  "collection": "posts",
+  "status": "observed",
+  "source": "Facebook public profile/page",
+  "asset_count": 15,
+  "assets": [
+    "AIOCODE-VOIDMODE-FRANK-02-10.png",
+    "AIOCODE-VOIDMODE-FRANK-05-10.png",
+    "AIOCODE-VOIDMODE-FRANK-07-10.png",
+    "AIOCODE-VOIDMODE-FRANK-09-10.png",
+    "AIOCODE-VOIDMODE-FRANK-12-10.png",
+    "AIOCODE-VOIDMODE-FRANK-14-10.png",
+    "AIOCODE-VOIDMODE-FRANK-16-10.png",
+    "AIOCODE-VOIDMODE-FRANK-19-10.png",
+    "AIOCODE-VOIDMODE-FRANK-21-10.png",
+    "AIOCODE-VOIDMODE-FRANK-23-10.png",
+    "AIOCODE-VOIDMODE-FRANK-26-10.png",
+    "AIOCODE-VOIDMODE-FRANK-28-09.png",
+    "AIOCODE-VOIDMODE-FRANK-28-10.png",
+    "AIOCODE-VOIDMODE-FRANK-30-09.png",
+    "AIOCODE-VOIDMODE-FRANK-30-10.png"
+  ],
+  "notes": [
+    "The repository records filenames and provenance; it does not assert publication dates from filename tokens alone.",
+    "Visual interpretation and post-level claims require inspection of the original Facebook source."
+  ]
+}
