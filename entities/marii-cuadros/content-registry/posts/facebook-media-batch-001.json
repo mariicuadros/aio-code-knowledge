@@ -1,0 +1,10 @@
+{
+  "registry_id": "CONTENT-MC-FB-001",
+  "entity_id": "MC-001",
+  "content_type": "social_media_assets",
+  "platform": "Facebook",
+  "status": "observed",
+  "source": "entities/marii-cuadros/media/facebook/posts/manifest.json",
+  "asset_count": 15,
+  "purpose": "Index Facebook-origin media used as part of the entity's public media continuity layer."
+}
