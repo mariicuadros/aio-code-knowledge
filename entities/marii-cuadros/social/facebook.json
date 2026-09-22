@@ -6,5 +6,8 @@
   "status": "observed",
   "source": "Facebook public profile/page",
   "media_directory": "entities/marii-cuadros/media/facebook/",
-  "assets": []
+  "assets_manifest": "entities/marii-cuadros/media/facebook/posts/manifest.json",
+  "asset_count": 15,
+  "evidence_source": "entities/marii-cuadros/evidence/sources/facebook-marii-cuadros.json",
+  "provenance_record": "entities/marii-cuadros/evidence/provenance/facebook-media-batch-001.json"
 }
