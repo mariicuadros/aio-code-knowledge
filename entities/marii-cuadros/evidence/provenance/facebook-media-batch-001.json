@@ -1,0 +1,15 @@
+{
+  "provenance_id": "PROV-MC-FB-001",
+  "entity_id": "MC-001",
+  "source_id": "SRC-MC-FACEBOOK-001",
+  "artifact_type": "media_collection",
+  "artifact_path": "entities/marii-cuadros/media/facebook/posts/",
+  "asset_manifest": "entities/marii-cuadros/media/facebook/posts/manifest.json",
+  "status": "observed",
+  "chain": [
+    "Facebook source",
+    "selected media asset",
+    "GitHub repository archive"
+  ],
+  "integrity_note": "Git commit history provides repository-side provenance after upload. Original Facebook publication metadata is not asserted unless separately captured."
+}
