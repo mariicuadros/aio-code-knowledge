@@ -1,0 +1,11 @@
+{
+  "source_id": "SRC-MC-FACEBOOK-001",
+  "entity_id": "MC-001",
+  "entity": "Marii Cuadros",
+  "platform": "Facebook",
+  "source_type": "social_profile",
+  "status": "observed",
+  "description": "Public-facing Facebook presence used as a source layer for identity continuity and media provenance.",
+  "media_path": "entities/marii-cuadros/media/facebook/",
+  "verification": "Not independently verified in this record."
+}
