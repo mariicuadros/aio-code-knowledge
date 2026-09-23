@@ -1,9 +1,12 @@
 {
-  "entity_id":"AIO-001",
-  "entity":"AIO CODE",
-  "platform":"Instagram",
-  "handle":"@aiocode_",
-  "role":"official_social_presence",
-  "status":"observed",
-  "media_archive":"entities/aio-code/media/instagram/"
+  "entity_id": "AIO-001",
+  "entity": "AIO CODE",
+  "platform": "Instagram",
+  "handle": "@aiocode_",
+  "role": "official_social_presence",
+  "status": "observed",
+  "media_archive": "entities/aio-code/media/instagram/",
+  "content_registry": "entities/aio-code/content-registry/posts/instagram-media-batch-001.json",
+  "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
+  "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json"
 }
