@@ -1,10 +1,18 @@
 {
-  "entity":"AIO CODE",
-  "entity_id":"AIO-001",
-  "platform":"Instagram",
-  "handle":"@aiocode_",
-  "purpose":"Public social identity and methodology communication",
-  "status":"observed",
-  "media_directory":"entities/aio-code/media/instagram/",
-  "evidence_source":"entities/aio-code/evidence/sources/instagram-aiocode.json"
+  "entity": "AIO CODE",
+  "entity_id": "AIO-001",
+  "platform": "Instagram",
+  "handle": "@aiocode_",
+  "purpose": "Official public social identity and methodology communication",
+  "status": "observed",
+  "media_directory": "entities/aio-code/media/instagram/",
+  "post_media_directory": "entities/aio-code/media/instagram/posts/",
+  "reel_media_directory": "entities/aio-code/media/instagram/reels/",
+  "carousel_media_directory": "entities/aio-code/media/instagram/carousels/",
+  "story_media_directory": "entities/aio-code/media/instagram/stories/",
+  "profile_media_directory": "entities/aio-code/media/instagram/profile/",
+  "content_registry": "entities/aio-code/content-registry/posts/instagram-media-batch-001.json",
+  "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
+  "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
+  "asset_count": "not yet catalogued"
 }
