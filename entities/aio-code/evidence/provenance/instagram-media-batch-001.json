@@ -1,0 +1,10 @@
+{
+  "provenance_id":"PROV-AIO-IG-001",
+  "entity_id":"AIO-001",
+  "source_id":"SRC-AIO-INSTAGRAM-001",
+  "artifact_type":"instagram_media_collection",
+  "artifact_path":"entities/aio-code/media/instagram/",
+  "status":"observed",
+  "chain":["Instagram @aiocode_ source","selected media asset","GitHub repository archive"],
+  "integrity_note":"Original Instagram publication metadata should be captured separately before being treated as verified evidence."
+}
