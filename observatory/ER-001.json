@@ -8,11 +8,11 @@
   "context": "Incognito search",
   "environment": "Google Search incognito",
   "observation_type": "entity_resolution_issue",
-  "observed_result": "The search surfaced an association with Maria Luisa Cuadros instead of consistently resolving to the canonical entity Marii Cuadros.",
+  "observed_result": "The search surfaced a different person/entity with a similar name instead of consistently resolving to the canonical entity Marii Cuadros.",
   "resolution_status": "inconsistent",
   "sources": [],
   "stage": "Entity Resolution",
-  "interpretation": "This may indicate an entity-resolution or disambiguation issue. The cause is not established.",
+  "interpretation": "Historical entity-resolution observation. The competing person's exact name is preserved only in a historical evidence record and is not an alias, alternate name, sameAs relation, or canonical data for MC-001.",
   "confidence": "Observed",
   "status": "under_observation"
 }
