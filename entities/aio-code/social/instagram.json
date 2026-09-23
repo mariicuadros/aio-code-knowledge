@@ -14,5 +14,8 @@
   "content_registry": "entities/aio-code/content-registry/posts/instagram-media-batch-001.json",
   "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
   "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
-  "asset_count": "not yet catalogued"
+  "asset_count": "not yet catalogued",
+  "carousel_status": "uploaded_to_instagram",
+  "carousel_registry": "entities/aio-code/content-registry/carousels/instagram-carousel-batch-001.json",
+  "notes": "Instagram carousels have been uploaded by the owner. Individual asset filenames/IDs are not yet catalogued in the repository; no filenames or publication dates are inferred."
 }
