@@ -1,0 +1,10 @@
+{
+  "entity":"AIO CODE",
+  "entity_id":"AIO-001",
+  "platform":"Instagram",
+  "handle":"@aiocode_",
+  "purpose":"Public social identity and methodology communication",
+  "status":"observed",
+  "media_directory":"entities/aio-code/media/instagram/",
+  "evidence_source":"entities/aio-code/evidence/sources/instagram-aiocode.json"
+}
