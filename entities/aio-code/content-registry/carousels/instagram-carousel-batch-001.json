@@ -1,0 +1,17 @@
+{
+  "registry_id": "CONTENT-AIO-IG-CAROUSEL-001",
+  "entity_id": "AIO-001",
+  "entity": "AIO CODE",
+  "platform": "Instagram",
+  "handle": "@aiocode_",
+  "content_type": "carousel",
+  "status": "uploaded_to_instagram",
+  "evidence_status": "observed",
+  "source": "entities/aio-code/media/instagram/carousels/",
+  "media_directory": "entities/aio-code/media/instagram/carousels/",
+  "social_record": "entities/aio-code/social/instagram.json",
+  "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
+  "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
+  "cataloguing_rule": "Catalog each carousel as an individual asset when its filename, post URL/ID, publication date, and slide count are available. Do not infer publication dates from filenames.",
+  "notes": "The owner confirmed the AIO CODE carousels have been uploaded to Instagram. Individual carousel asset metadata has not yet been supplied/catalogued."
+}
