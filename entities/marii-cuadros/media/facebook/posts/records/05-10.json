@@ -1,0 +1,21 @@
+{
+  "photo_id": "05-10",
+  "entity_id": "MC-001",
+  "entity": "Marii Cuadros",
+  "platform": "Facebook",
+  "asset_type": "photo",
+  "date_label": "05-10",
+  "original_filename": "AIOCODE-VOIDMODE-FRANK-05-10.png",
+  "source_path": "entities/marii-cuadros/media/facebook/posts/AIOCODE-VOIDMODE-FRANK-05-10.png",
+  "source": "Facebook public profile/page",
+  "evidence_status": "observed",
+  "date_semantics": "photo date/ID supplied by the user from the original asset naming",
+  "year": "unknown",
+  "provenance_ref": "entities/marii-cuadros/evidence/provenance/facebook-media-batch-001.json",
+  "content_registry_ref": "entities/marii-cuadros/content-registry/posts/facebook-media-batch-001.json",
+  "notes": [
+    "The DD-MM token is treated as the photo ID/date label.",
+    "No calendar year is inferred from the filename.",
+    "Publication timestamp requires independent Facebook metadata."
+  ]
+}
