@@ -127,9 +127,9 @@ The official platform registry for MC-001 is maintained at:
 
 AIO CODE studies entity recognition and entity resolution as part of its methodology.
 
-On **September 2, 2026**, an incognito Google Search observation surfaced an association with **Maria Luisa Cuadros** instead of consistently resolving to the canonical entity **Marii Cuadros**.
+On **September 2, 2026**, an incognito Google Search observation surfaced an association with **a different person/entity with a similar name** instead of consistently resolving to the canonical entity **Marii Cuadros**.
 
-This observation is recorded in `entity-resolution.json` as **ER-001**.
+This observation is recorded in `observatory/ER-001.json` as **ER-001** and `entities/marii-cuadros/technical/schema/disambiguation.json`.
 
 Classification:
 
@@ -155,6 +155,10 @@ Within AIO CODE, Marii Cuadros functions as:
 These roles are distinct from the identity of AIO CODE itself.
 
 ---
+
+## Disambiguation Control
+
+MC-001 has no alternate name for the confusable person/entity. Similar-name results must not be merged into MC-001. The canonical machine-readable disambiguation rules are maintained in `entities/marii-cuadros/technical/schema/disambiguation.json`, and the canonical JSON-LD identity record is `entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld`.
 
 ## Verification Status
 
