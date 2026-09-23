@@ -23,8 +23,12 @@
     "AIOCODE-VOIDMODE-FRANK-30-09.png",
     "AIOCODE-VOIDMODE-FRANK-30-10.png"
   ],
+  "photo_id_rule": "The DD-MM token in each original filename is the photo ID/date label supplied for that asset.",
+  "records_directory": "entities/marii-cuadros/media/facebook/posts/records/",
   "notes": [
-    "The repository records filenames and provenance; it does not assert publication dates from filename tokens alone.",
-    "Visual interpretation and post-level claims require inspection of the original Facebook source."
+    "The DD-MM token is treated as the photo ID/date label.",
+    "No year is inferred from the filename.",
+    "Facebook publication timestamps require independent source metadata.",
+    "Original filenames are preserved."
   ]
 }
