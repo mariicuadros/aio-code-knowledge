@@ -226,14 +226,14 @@ Entity: MC-001 — Marii Cuadros
 System: Google Search
 Environment: Incognito
 Language: Spanish
-Observed representation: Maria Luisa Cuadros
+Observed representation: a different person/entity with a similar name
 Stage: Entity Resolution
 Evidence: Observed
 Status: Under Observation
 Cause: Not Established
 ```
 
-The competing representation remains an observation and is not added as a canonical alias without separate evidence establishing that relationship.
+A confusable representation remains an observation and is not a canonical alias, alternateName, or sameAs relationship.
 
 ## 15. Related Documents
 
