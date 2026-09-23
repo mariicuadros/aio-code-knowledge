@@ -1,0 +1,10 @@
+{
+  "source_id":"SRC-AIO-INSTAGRAM-001",
+  "entity_id":"AIO-001",
+  "entity":"AIO CODE",
+  "platform":"Instagram",
+  "handle":"@aiocode_",
+  "source_type":"official_social_profile",
+  "status":"observed",
+  "description":"Official Instagram presence used to communicate AIO CODE methodology and maintain public entity continuity."
+}
