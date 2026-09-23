@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MC-001 Entity Disambiguation Rules",
+  "type": "object",
+  "entity_id": "MC-001",
+  "canonical_name": "Marii Cuadros",
+  "entity_type": "Person",
+  "canonical_rule": "Only the exact canonical entity record identifies MC-001. Similar names must not be promoted to aliases or sameAs relationships without independent evidence.",
+  "alternate_names": [],
+  "same_as_policy": "Only confirmed first-party identifiers may be listed as sameAs.",
+  "negative_merge_rule": "Do not merge MC-001 with another person merely because of a similar name, surname, search result, citation, image, or third-party association.",
+  "confusable_entity_policy": "Known confusable names are treated as entity-resolution observations, not identity attributes of MC-001.",
+  "source_of_truth": "ENTITY-MASTER-RECORD.md",
+  "evidence_record": "observatory/ER-001.json"
+}
