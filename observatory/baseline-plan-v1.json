@@ -6,12 +6,29 @@
   "entity_id": "MC-001",
   "research_window_id": "MC-001-BASELINE-v1",
   "prompt_registry_version": "1.0",
-  "prompt_ids": ["ENT-01", "ENT-02", "DIS-01", "REL-01", "AIO-01", "CAT-01", "REC-01"],
-  "systems": ["chatgpt-web", "gemini-web", "claude-web", "perplexity-web", "meta-ai-web", "grok-web", "deepseek-web"],
+  "prompt_ids": [
+    "ENT-01",
+    "ENT-02",
+    "DIS-01",
+    "REL-01",
+    "AIO-01",
+    "CAT-01",
+    "REC-01"
+  ],
+  "systems": [
+    "chatgpt-web",
+    "gemini-web",
+    "claude-web",
+    "perplexity-web",
+    "meta-ai-web",
+    "grok-web",
+    "deepseek-web"
+  ],
   "repetitions_per_pair": 1,
   "required_context_condition": "fresh_context",
   "planned_pair_count": 49,
   "rules": [
+    "Every observation in this window must reference prior intervention INT-MC-001-20260924-001; interpret results as a current-state snapshot after that change.",
     "Record the exact frozen prompt text and one full original response per system and prompt.",
     "Record login, location if visible, browsing/search state, model/interface if visible and timestamp for each run.",
     "Missing or blocked runs are documented explicitly; they are not counted as zero recognition.",
@@ -20,5 +37,10 @@
     "Freeze the baseline only after validating observations and listing every planned missing run. Do not claim complete cross-system coverage if any planned pair is missing."
   ],
   "missing_runs": [],
-  "freeze_status": "not_frozen"
+  "freeze_status": "not_frozen",
+  "baseline_state": "post_intervention_snapshot",
+  "prior_intervention_ids": [
+    "INT-MC-001-20260924-001"
+  ],
+  "interpretation_boundary": "First measured snapshot after the documented public entity-page and identifier-alignment intervention; not a pristine pre-intervention or pre-publication state."
 }
