@@ -32,6 +32,10 @@ def prepare_freeze() -> dict:
             raise ValueError(f"Unexpected or duplicated baseline pair: {pair}")
         if row["entity_id"] != plan["entity_id"] or row["context_condition"] != plan["required_context_condition"]:
             raise ValueError(f"Incorrect entity/context in {file}")
+        required_interventions = set(plan.get("prior_intervention_ids", []))
+        recorded_interventions = set(row.get("related_intervention_ids", []))
+        if not required_interventions.issubset(recorded_interventions):
+            raise ValueError(f"Required prior intervention IDs missing in {file}")
         if row["prompt_text"] != by_id[row["prompt_id"]]["text"] or row["prompt_registry_version"] != prompts["version"]:
             raise ValueError(f"Prompt changed in {file}")
         if not row["observed_result"].strip() or row["evaluation"].get("entity_resolution") not in (0, 1, 2) or row["evaluation"].get("citation_quality") not in (0, 1, 2):
