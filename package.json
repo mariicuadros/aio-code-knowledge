@@ -1,0 +1,16 @@
+{
+  "name": "aio-code-knowledge",
+  "version": "1.0.0",
+  "description": "**Research Methodology · Entity Architecture · Evidence · AI Representation · Information Retrieval**",
+  "scripts": {
+    "check:gateway": "node scripts/validate_gateway.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariicuadros/aio-code-knowledge.git"
+  },
+  "private": true,
+  "dependencies": {
+    "ai": "^7.0.113"
+  }
+}

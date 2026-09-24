@@ -25,3 +25,10 @@ jobs:
         run: python -m rag.evaluate
       - name: Check published evidence index freshness
         run: python scripts/build_public_rag.py --check
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate gated AI SDK route
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run check:gateway

@@ -22,6 +22,26 @@ evidence lookup, not an LLM answer endpoint. Rebuild its index with
 commit both the index and its source updates. CI checks the recorded source
 blobs and passage count.
 
+The Vercel AI SDK route at `POST /api/answer` is private and disabled by
+default. It reads the same committed public index, retrieves up to five
+passages, and generates a draft that requires claim-by-claim review. It never
+publishes a generated answer to the site or updates the Observatory. To
+activate it for an owner-only trial, set the following **Production** project
+environment variables in Vercel, then redeploy:
+
+* `AIO_RAG_ENABLED=1`
+* `AIO_RAG_ADMIN_TOKEN` = a unique random secret (at least 32 characters;
+  never store it in Git or send it in chat)
+* `AIO_RAG_MODEL` = an exact, currently available AI Gateway model ID
+
+Vercel functions can authenticate to AI Gateway using project OIDC, without
+an API key. The route only accepts a bearer token matching the admin secret,
+and does not call a paid model for empty evidence, invalid requests, or while
+disabled. If the project has no available AI Gateway credits or OIDC is not
+enabled, model calls will fail without altering the evidence search. Do not
+expose the admin secret in a public browser form. Run `npm run check:gateway`
+to check source recall and access guards without making any model calls.
+
 The `ask` command currently returns candidate evidence and its exact source
 references. A source hit alone does not establish that the passage answers
 the question. Unsupported questions must receive `No hay evidencia
