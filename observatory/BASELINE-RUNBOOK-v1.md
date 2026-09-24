@@ -1,8 +1,9 @@
 # AIO CODE — first measured Observatory window
 
 `baseline-plan-v1.json` defines **49 system × prompt pairs** for MC-001. This
-is the first measured snapshot once collected; earlier content and changes
-already happened, so it cannot be described as a pristine pre-launch state.
+is the first measured snapshot after `INT-MC-001-20260924-001` (public entity
+page and identifier alignment). It is a post-intervention current-state snapshot,
+not a pristine pre-change or pre-launch baseline.
 
 For each pair, open a fresh conversation in the named system. Copy the exact
 text for its prompt ID from `prompt-registry-v1.json`. Save the unedited full
@@ -17,10 +18,11 @@ python -m observatory.capture --system chatgpt-web --entity-id MC-001 \
   --prompt-id ENT-01 --window MC-001-BASELINE-v1 \
   --login-state logged_out --context fresh_context --search-state unknown \
   --environment "web desktop browser" \
+  --intervention INT-MC-001-20260924-001 \
   --response-file /path/to/raw-answer.txt
 ```
 
-The tool writes `observatory/runs/OBS-*.json`. Inspect the output before
+The tool writes `observatory/runs/OBS-*.json` and records the linked intervention ID. Use the same ID for every planned pair. Inspect the output before
 publication; do not record client data, private chats, or contact details.
 Evaluate each observation manually with `RECOGNITION-RUBRIC-v1.md` and add
 the coded dimensions to its `evaluation` object without changing the raw
