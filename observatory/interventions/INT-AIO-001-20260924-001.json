@@ -5,21 +5,15 @@
   "research_window_id": "AIO-CODE-METHOD-MAINTENANCE-2026-09-24",
   "intervention_type": "methodology_correction",
   "target_system_or_platform": "AIO CODE public repository documentation and Observatory capture/freeze tooling",
-  "target_url_or_record": [
-    "OBSERVATORY-PROTOCOL-v1.md",
-    "observatory/observation-schema.json",
-    "observatory/README.md",
-    "observatory/BASELINE-RUNBOOK-v1.md",
-    "observatory/baseline-plan-v1.json",
-    "observatory/capture.py",
-    "observatory/freeze.py"
-  ],
+  "target_url_or_record": "AIO CODE repository: OBSERVATORY-PROTOCOL-v1.md; observatory/observation-schema.json; observatory/README.md; observatory/BASELINE-RUNBOOK-v1.md; observatory/baseline-plan-v1.json; observatory/capture.py; observatory/freeze.py; scripts/validate_core.py; ai-social-baseline.json.",
   "before_state_ref": "Repository main immediately before commit 0cf50e175ef0fbcc7337708e19d21c113e4c2905; see commit history.",
-  "after_state_ref": "Repository main through commit 6261207fafe18c82a7f6f3e2b0cee57debd26e3, plus this intervention record.",
+  "after_state_ref": "Repository main after the documentation and tooling correction series, including commit d0e6c0688928beb48481846c0919ad08b01d6c1c; this record captures the complete change scope.",
   "changed_variables": [
-    "Aligned protocol-required fields with the observation JSON Schema, including environment, observed_result, stage, and status.",
-    "Updated capture and freeze tooling to retain and enforce the prior MC-001 intervention reference.",
-    "Defined the 49-pair MC-001 window as a post-intervention current-state snapshot.",
+    "Aligned all 24 schema-required observation fields with Observatory Protocol v1, including environment, observed_result, stage, and status.",
+    "Updated capture tooling to record environment and related Intervention IDs.",
+    "Updated freeze tooling and core validation to require and validate planned prior-intervention references.",
+    "Defined the 49-pair MC-001 window and baseline container as a post-intervention current-state snapshot.",
+    "Preserved research_window_id and related_intervention_ids in frozen baseline records.",
     "Clarified that AIO-001 is a ResearchMethodology in the Observatory README."
   ],
   "unchanged_controls": [
