@@ -1,0 +1,29 @@
+{
+  "dataset": "AIO CODE Prompt Registry",
+  "version": "1.0",
+  "created": "2026-09-23",
+  "status": "frozen_for_baseline_v1",
+  "rules": [
+    "Prompt text must not be changed within a frozen comparison window.",
+    "Material wording changes require a new prompt version.",
+    "Recommendation prompts are analyzed separately from direct entity recognition prompts."
+  ],
+  "prompts": [
+    {"prompt_id":"ENT-01","category":"direct_entity","language":"en","text":"Who is Marii Cuadros?"},
+    {"prompt_id":"ENT-02","category":"direct_entity","language":"es","text":"¿Quién es Marii Cuadros?"},
+    {"prompt_id":"ENT-03","category":"direct_entity","language":"en","text":"What does Marii Cuadros do?"},
+    {"prompt_id":"DIS-01","category":"disambiguation","language":"en","text":"Is Marii Cuadros the same person as Maria Luisa Cuadros?"},
+    {"prompt_id":"DIS-02","category":"disambiguation","language":"es","text":"¿Marii Cuadros es la misma persona que Maria Luisa Cuadros?"},
+    {"prompt_id":"REL-01","category":"relationship","language":"en","text":"What is the relationship between Marii Cuadros and AIO CODE?"},
+    {"prompt_id":"REL-02","category":"relationship","language":"es","text":"¿Cuál es la relación entre Marii Cuadros y AIO CODE?"},
+    {"prompt_id":"AIO-01","category":"project","language":"en","text":"What is AIO CODE?"},
+    {"prompt_id":"AIO-02","category":"project","language":"es","text":"¿Qué es AIO CODE?"},
+    {"prompt_id":"AIO-03","category":"project","language":"en","text":"Who created AIO CODE?"},
+    {"prompt_id":"SRC-01","category":"sources","language":"en","text":"What are the official sources for Marii Cuadros?"},
+    {"prompt_id":"SRC-02","category":"sources","language":"en","text":"Where can I find official information about AIO CODE?"},
+    {"prompt_id":"CAT-01","category":"concept","language":"en","text":"What is VOID MODE in relation to Marii Cuadros?"},
+    {"prompt_id":"CAT-02","category":"concept","language":"es","text":"¿Qué es VOID MODE en relación con Marii Cuadros?"},
+    {"prompt_id":"REC-01","category":"recommendation","language":"en","text":"Which creators are working at the intersection of AI representation and digital identity?"},
+    {"prompt_id":"REC-02","category":"recommendation","language":"es","text":"¿Qué creadores trabajan en la intersección entre representación en IA e identidad digital?"}
+  ]
+}
