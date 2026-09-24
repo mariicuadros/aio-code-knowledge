@@ -1,0 +1,46 @@
+{
+  "intervention_id": "INT-AIO-001-20260924-001",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-24T15:56:35.475Z",
+  "research_window_id": "AIO-CODE-METHOD-MAINTENANCE-2026-09-24",
+  "intervention_type": "methodology_correction",
+  "target_system_or_platform": "AIO CODE public repository documentation and Observatory capture/freeze tooling",
+  "target_url_or_record": [
+    "OBSERVATORY-PROTOCOL-v1.md",
+    "observatory/observation-schema.json",
+    "observatory/README.md",
+    "observatory/BASELINE-RUNBOOK-v1.md",
+    "observatory/baseline-plan-v1.json",
+    "observatory/capture.py",
+    "observatory/freeze.py"
+  ],
+  "before_state_ref": "Repository main immediately before commit 0cf50e175ef0fbcc7337708e19d21c113e4c2905; see commit history.",
+  "after_state_ref": "Repository main through commit 6261207fafe18c82a7f6f3e2b0cee57debd26e3, plus this intervention record.",
+  "changed_variables": [
+    "Aligned protocol-required fields with the observation JSON Schema, including environment, observed_result, stage, and status.",
+    "Updated capture and freeze tooling to retain and enforce the prior MC-001 intervention reference.",
+    "Defined the 49-pair MC-001 window as a post-intervention current-state snapshot.",
+    "Clarified that AIO-001 is a ResearchMethodology in the Observatory README."
+  ],
+  "unchanged_controls": [
+    "Canonical entity IDs and canonical names.",
+    "Frozen Prompt Registry v1.0 and its prompt wording."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Improve procedural consistency and traceability. This is a methodology correction and is not expected to alter or demonstrate external AI/search recognition.",
+  "evidence_refs": [
+    "observatory/baseline-plan-v1.json",
+    "observatory/observation-schema.json",
+    "OBSERVATORY-PROTOCOL-v1.md"
+  ],
+  "operator": "AIO CODE repository maintenance",
+  "reversibility": "Git revert.",
+  "confounders_known_at_time_of_change": [
+    "INT-MC-001-20260924-001 is an earlier public entity-page and identifier-alignment intervention.",
+    "No empirical Observatory baseline has been frozen.",
+    "Third-party model and crawler behavior is not established by repository changes."
+  ],
+  "status": "completed_documentation_only"
+}
