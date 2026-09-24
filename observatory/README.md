@@ -18,7 +18,7 @@ The Observatory may observe any canonical entity defined in the AIO CODE entity 
 
 - `MC-001` — Marii Cuadros — Person
 - `NUX-001` — NUX — DigitalCreativeEntity
-- `AIO-001` — AIO CODE — ResearchProject
+- `AIO-001` — AIO CODE — ResearchMethodology
 
 The presence of an entity in the Observatory means it is an observation target. It does not imply that every entity has already been measured.
 
@@ -43,7 +43,7 @@ Evidence / Source
 ↓
 Interpretation
 ↓
-Confidence
+Evidence state (separate from confidence)
 ```
 
 ## Research Pipeline
@@ -66,7 +66,7 @@ These stages remain distinct research variables.
 
 ## Current Structured Observation
 
-`ER-001` records a September 2, 2026 Google Search observation for `MC-001` in Spanish/incognito context. The observation is classified as **Observed** and remains under observation. The cause of the competing representation is not established.
+`ER-001` records a September 2, 2026 Google Search observation for `MC-001` in Spanish/incognito context. It is a legacy historical record, not a record conforming to the later benchmark observation schema. The observation is classified as **Observed** and remains under observation. The cause of the competing representation is not established. Current benchmark runs follow `OBSERVATORY-PROTOCOL-v1.md` and `observation-schema.json`.
 
 ## Relationship With Research Components
 

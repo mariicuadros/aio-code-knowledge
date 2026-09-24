@@ -14,7 +14,7 @@
     {
       "entity_id": "AIO-001",
       "canonical_name": "AIO CODE",
-      "entity_type": "ResearchProject",
+      "entity_type": "ResearchMethodology",
       "passport": "entity/ENTITY-PASSPORT-AIO-CODE.md",
       "content_registry": "entity/content/AIO-001/content-registry.json",
       "platform_registry": "entity/content/AIO-001/platforms.json",

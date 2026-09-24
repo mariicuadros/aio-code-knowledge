@@ -1,27 +1,42 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "AIO CODE Claim Ledger",
+  "title": "AIO CODE Claim Ledger v2",
   "type": "object",
-  "required": ["dataset", "version", "claims"],
+  "required": ["dataset", "version", "claims", "claim_type_values", "claim_status_values", "evidence_state_values", "governing_standard"],
   "properties": {
     "dataset": {"type": "string"},
     "version": {"type": "string"},
     "updated": {"type": "string", "format": "date"},
+    "purpose": {"type": "string"},
+    "claim_type_values": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "claim_status_values": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_state_values": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "governing_standard": {"type": "string"},
+    "integrity_rules": {"type": "array", "items": {"type": "string"}},
     "claims": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["claim_id", "entity_id", "claim", "source", "date", "status"],
+        "required": ["claim_id", "entity_id", "claim_type", "claim", "source", "source_ref", "evidence_refs", "date", "claim_status", "evidence_state", "verification_rule_id", "verification_scope"],
         "properties": {
           "claim_id": {"type": "string"},
           "entity_id": {"type": "string"},
+          "claim_type": {"enum": ["canonical_definition", "research_observation", "research_finding", "hypothesis", "commercial_statement", "operational_rule"]},
           "claim": {"type": "string"},
           "source": {"type": "string"},
           "source_ref": {"type": "string"},
           "evidence_refs": {"type": "array", "items": {"type": "string"}},
           "date": {"type": "string", "format": "date"},
-          "status": {"enum": ["defined", "observed", "corroborated", "verified", "hypothesized", "unknown", "superseded"]}
+          "claim_status": {"enum": ["draft", "active", "superseded", "withdrawn"]},
+          "evidence_state": {"enum": ["unknown", "hypothesized", "observed", "corroborated", "verified"]},
+          "verification_rule_id": {"type": ["string", "null"]},
+          "verification_scope": {"type": ["string", "null"]},
+          "verified_by": {"type": "string"},
+          "verification_date": {"type": "string", "format": "date"},
+          "known_limitations": {"type": "array", "items": {"type": "string"}}
         },
+        "if": {"properties": {"evidence_state": {"const": "verified"}}, "required": ["evidence_state"]},
+        "then": {"required": ["verified_by", "verification_date", "known_limitations"], "properties": {"verification_rule_id": {"type": "string", "minLength": 1}, "verification_scope": {"type": "string", "minLength": 1}, "evidence_refs": {"minItems": 1}}},
         "additionalProperties": false
       }
     }

@@ -9,6 +9,8 @@
 **Case Study:** Marii Cuadros  
 **Status:** Active Experimental Protocol
 
+**Current benchmark governance:** `OBSERVATORY-PROTOCOL-v1.md`, `RECOGNITION-RUBRIC-v1.md` and `prompt-registry-v1.json` supersede this document's illustrative prompt list and single R0–R5 ladder for new benchmark comparisons. Its August–September observations remain historical narrative; they are not a frozen, complete `MC-001 BASELINE v1` dataset.
+
 ---
 
 # 1. Purpose
@@ -659,7 +661,7 @@ The initial baseline therefore demonstrated:
 
 > Entity ambiguity existed before the digital documentation network became more structured.
 
-Later observations are compared against this baseline.
+These historical observations provide context, but cannot support a controlled before/after comparison without the original full response snapshots and documented test conditions. The current `ai-social-baseline.json` remains `not_frozen` with no empirical records.
 
 The period August 19 – September 2, 2026 added a new layer to the baseline:
 

@@ -177,6 +177,12 @@ Its `records` array must be populated through standardized Observatory runs befo
 
 **An empty record set is not a zero result and is not a completed baseline.**
 
+## Internal RAG readiness
+
+See `RAG-READINESS-AUDIT-2026-09-24.md`. This repository contains potential source material, but no governed retrieval corpus, index, answer service or RAG evaluation is implemented. Public source files do not determine how third-party AI systems retrieve information.
+
+Before the controlled Hugging Face export, `scripts/validate_core.py` checks the current JSON schemas and key canonical cross-references. Historical `ER-001` remains a legacy observation and is not silently converted to the new benchmark schema. Repository-only corrections are recorded in `governance/methodology-change-log.md`.
+
 ## Intervention governance
 
 `INTERVENTION-PROTOCOL-v1.md` establishes the rule:

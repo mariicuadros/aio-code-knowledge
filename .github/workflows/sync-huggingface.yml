@@ -15,6 +15,11 @@ jobs:
       - name: Checkout GitHub source of truth
         uses: actions/checkout@v6
 
+      - name: Validate canonical data contracts
+        run: |
+          python -m pip install 'jsonschema>=4.23,<5'
+          python scripts/validate_core.py
+
       - name: Validate export manifest
         shell: bash
         run: |

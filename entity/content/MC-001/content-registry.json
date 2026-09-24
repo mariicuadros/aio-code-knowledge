@@ -28,6 +28,8 @@
   ],
   "platforms": [],
   "items": [],
+  "operational_registry_refs": ["entities/marii-cuadros/content-registry/posts/facebook-media-batch-001.json", "entities/marii-cuadros/media/facebook/posts/manifest.json"],
+  "inventory_note": "This canonical registry is not an exhaustive inventory. Operational records exist at the referenced paths. Their filename date tokens are asset labels and must not be interpreted as verified publication dates.",
   "rule": "Content assets are separate resource nodes connected to MC-001 through documented relationships. They are not automatically sameAs identity nodes.",
   "evidence_rule": "Content records describe published or planned assets and must not be treated as independent evidence for claims unless their source, publication state and evidentiary status are documented.",
   "data_integrity": "Empty items represent assets not yet catalogued. No content URL, publication date or ownership claim should be invented."

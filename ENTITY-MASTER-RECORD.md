@@ -66,7 +66,7 @@ MC-001 — Marii Cuadros
    └── develops → NUX-001 — NUX
 ```
 
-Canonical relationship records are maintained in `relationships.json` and mirrored in `entity-graph.json`.
+Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. There is no separate root-level `relationships.json` source of truth.
 
 ## 5. Entity Passport Standard
 
@@ -139,7 +139,7 @@ A social profile is treated as a representation node. Its existence does not by 
 
 ## 10. AI + Social Baseline
 
-`ai-social-baseline.json` establishes the pre-intervention state across AI systems, search environments and social platforms.
+`ai-social-baseline.json` is the container for a dated observation baseline across AI systems, search environments and social platforms. Its empirical `records` array is currently empty and its freeze status is `not_frozen`; it does not yet establish a measured pre-intervention state. Earlier public activity cannot be reconstructed as though it had not happened. A later baseline must identify its actual cutoff date and the interventions it precedes.
 
 Baseline records preserve:
 

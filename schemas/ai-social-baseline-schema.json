@@ -2,16 +2,26 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AIO CODE AI + Social Baseline",
   "type": "object",
-  "required": ["dataset", "version", "entities", "records"],
+  "required": ["dataset", "version", "baseline_target", "entities", "primary_baseline_entity", "prompt_registry_ref", "prompt_registry_version", "observatory_protocol_ref", "representation_rubric_ref", "measurement_fields", "records", "freeze", "rules"],
   "properties": {
     "dataset": {"type": "string"},
     "version": {"type": "string"},
-    "baseline_date": {"type": "string", "format": "date"},
+    "updated": {"type": "string", "format": "date"},
+    "baseline_target": {"type": "string"},
     "purpose": {"type": "string"},
-    "entities": {"type": "array"},
+    "important_note": {"type": "string"},
+    "entities": {"type": "array", "items": {"type": "object", "required": ["entity_id", "canonical_name"], "properties": {"entity_id": {"type": "string"}, "canonical_name": {"type": "string"}}, "additionalProperties": false}},
+    "primary_baseline_entity": {"type": "string"},
+    "prompt_registry_ref": {"type": "string"},
+    "prompt_registry_version": {"type": "string"},
+    "observatory_protocol_ref": {"type": "string"},
+    "representation_rubric_ref": {"type": "string"},
     "measurement_fields": {"type": "array", "items": {"type": "string"}},
-    "records": {"type": "array"},
-    "status": {"type": "string"}
+    "records": {"type": "array", "items": {"type": "object", "required": ["observation_id", "timestamp", "entity_id", "system", "prompt_id", "prompt_registry_version", "response_snapshot_or_ref"], "properties": {"observation_id": {"type": "string"}, "timestamp": {"type": "string", "format": "date-time"}, "entity_id": {"type": "string"}, "system": {"type": "string"}, "prompt_id": {"type": "string"}, "prompt_registry_version": {"type": "string"}, "response_snapshot_or_ref": {"type": "string", "minLength": 1}}, "additionalProperties": true}},
+    "freeze": {"type": "object", "required": ["status", "frozen_at", "freeze_id", "required_before_freeze"], "properties": {"status": {"enum": ["not_frozen", "frozen"]}, "frozen_at": {"type": ["string", "null"], "format": "date-time"}, "freeze_id": {"type": ["string", "null"]}, "required_before_freeze": {"type": "array", "items": {"type": "string"}}}, "if": {"properties": {"status": {"const": "frozen"}}}, "then": {"properties": {"frozen_at": {"type": "string"}, "freeze_id": {"type": "string", "minLength": 1}}}, "additionalProperties": false},
+    "rules": {"type": "array", "items": {"type": "string"}}
   },
+  "if": {"properties": {"freeze": {"properties": {"status": {"const": "frozen"}}}}},
+  "then": {"properties": {"records": {"minItems": 1}}},
   "additionalProperties": false
 }

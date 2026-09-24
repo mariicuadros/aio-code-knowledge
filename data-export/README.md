@@ -20,7 +20,7 @@ tags:
 
 The **AIO CODE Entity Dataset** is a structured research dataset produced by the AIO CODE project. It records canonical entities, relationships, claims, observations, experiments, metrics, platform representations, and selected content-ecosystem records used to study how digital entities are represented and resolved across AI systems and search environments.
 
-AIO CODE is a research project focused on the pipeline:
+AIO CODE is a research and implementation methodology studied through a research project. It focuses on the pipeline:
 
 ```text
 Indexation → Retrieval → Entity Resolution → Entity Representation → Citation → Recommendation
@@ -49,7 +49,7 @@ The controlled export currently includes records covering:
 - canonical entity graph
 - social/entity mapping
 - claim ledger
-- AI/social baseline records
+- AI/social baseline container (empirical `records` currently empty and not frozen)
 - entity-resolution observations
 - experiment definitions and records
 - metric definitions
@@ -60,7 +60,7 @@ The controlled export currently includes records covering:
 Canonical entities currently represented include:
 
 - **MC-001 — Marii Cuadros** — Person
-- **AIO-001 — AIO CODE** — ResearchProject
+- **AIO-001 — AIO CODE** — ResearchMethodology
 - **NUX-001 — NUX** — DigitalCreativeEntity
 
 Canonical entities remain distinct. Relationships connect entities but do not collapse their identities.
