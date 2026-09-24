@@ -33,6 +33,7 @@ def make_record(args, response: str) -> dict:
         "country_or_location_context_if_relevant": args.location,
         "logged_in_state": args.login_state, "context_condition": args.context,
         "browsing_or_search_state_if_visible": args.search_state,
+        "environment": args.environment,
         "observed_result": response,
         "response_snapshot_or_ref": f"observatory/runs/{observation_id}.json#observed_result",
         "sources_or_citations": args.citation or [], "stage": args.stage,
@@ -53,6 +54,7 @@ def main() -> None:
     parser.add_argument("--login-state", required=True, choices=["logged_in", "logged_out", "unknown"])
     parser.add_argument("--context", required=True, choices=["fresh_context", "contextual", "incognito_or_private", "unknown_context"])
     parser.add_argument("--search-state", required=True, choices=["enabled", "disabled", "unknown"])
+    parser.add_argument("--environment", required=True, help="Observation environment, e.g. web desktop browser, mobile app, or search engine")
     parser.add_argument("--stage", default="Entity Representation", choices=["Indexation", "Retrieval", "Entity Resolution", "Entity Representation", "Citation", "Recommendation", "Unknown"])
     parser.add_argument("--citation", action="append", help="Cited URL, repeated for multiple citations")
     parser.add_argument("--location", default=None)
