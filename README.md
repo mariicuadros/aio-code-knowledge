@@ -179,7 +179,9 @@ Its `records` array must be populated through standardized Observatory runs befo
 
 ## Internal RAG readiness
 
-See `RAG-READINESS-AUDIT-2026-09-24.md`. This repository contains potential source material, but no governed retrieval corpus, index, answer service or RAG evaluation is implemented. Public source files do not determine how third-party AI systems retrieve information.
+See `RAG-READINESS-AUDIT-2026-09-24.md` for the initial gap assessment. A first **local, public-only lexical retrieval prototype** is now in `rag/`: an exact corpus allowlist, source/commit citations, 24 frozen acceptance questions, and an optional model-assisted draft generator. The source retrieval check currently finds an approved gold source in the first five results for 21/21 cases with a declared gold source. This is not a correctness or abstention score. No hosted answer service or independently validated generated answers exist yet. Public files do not determine how third-party AI systems retrieve information.
+
+The Observatory has a planned 49-pair first measurement window and local capture/report tools in `observatory/`. No system responses have been collected into the v1 baseline; its empirical status remains **not frozen**.
 
 Before the controlled Hugging Face export, `scripts/validate_core.py` checks the current JSON schemas and key canonical cross-references. Historical `ER-001` remains a legacy observation and is not silently converted to the new benchmark schema. Repository-only corrections are recorded in `governance/methodology-change-log.md`.
 

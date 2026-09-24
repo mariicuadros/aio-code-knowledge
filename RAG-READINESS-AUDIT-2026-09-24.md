@@ -53,3 +53,7 @@ Start with a small **read-only, public corpus and local lexical search** to prov
 ## Next gate
 
 RAG is **conceptually feasible** with current materials, but is **not implemented or validated**. The next reviewable artifact is a source manifest and a small question set, followed by a retrieval prototype and measured results. Do not build a full platform or claim RAG readiness before those tests pass.
+
+## Addendum — same-day prototype progress
+
+After this initial audit, `rag/corpus-manifest-v0.json`, `rag/evaluation-v0.json` and `rag/engine.py` were added. The local lexical retriever and CI contract find a listed gold source in top five for 21/21 cases that declare one. Three other unknown cases deliberately have no gold source; the fourth unknown case points to the empty baseline status file. This result measures **retrieval only**. Answer correctness, semantic citation support, abstention on all unknown questions, model integration, public hosting, access control, and cross-system Observatory results remain unverified or incomplete. Preserve the original inventory above as the earlier snapshot.

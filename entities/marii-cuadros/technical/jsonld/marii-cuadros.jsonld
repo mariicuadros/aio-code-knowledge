@@ -1,7 +1,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://aio-code.vercel.app/entities/marii-cuadros#MC-001",
+  "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001",
   "name": "Marii Cuadros",
   "description": "Venezuelan-born creator, artist, digital model and independent researcher; creator of AIO CODE.",
   "identifier": {
@@ -9,7 +9,7 @@
     "propertyID": "AIO-CODE-ENTITY-ID",
     "value": "MC-001"
   },
-  "url": "https://aio-code.vercel.app/",
+  "url": "https://aio-code.vercel.app/entities/marii-cuadros/",
   "sameAs": [
     "https://www.instagram.com/mariicuadros"
   ],

@@ -68,6 +68,29 @@ def main():
         check(item["entity_id"] in nodes, "Claim references an unknown entity")
         for ref in [item["source_ref"], *item["evidence_refs"]]:
             check((ROOT / ref).is_file(), f"Claim source/evidence path missing: {ref}")
+    manifest = read("rag/corpus-manifest-v0.json")
+    suite = read("rag/evaluation-v0.json")
+    allowlist = [item["path"] for item in manifest["allowlist"]]
+    check(len(allowlist) == len(set(allowlist)), "Duplicate approved RAG source")
+    for path in allowlist:
+        check((ROOT / path).is_file(), f"Missing approved RAG source: {path}")
+    check(suite["corpus_manifest_ref"] == "rag/corpus-manifest-v0.json", "Incorrect RAG corpus ref")
+    check(len(suite["cases"]) == len({case["case_id"] for case in suite["cases"]}), "Duplicate RAG question ID")
+    for case in suite["cases"]:
+        check(set(case["gold_source_paths"]).issubset(allowlist), f"Unapproved gold source: {case['case_id']}")
+        check(set(case["relevant_claim_ids"]).issubset(claim_ids), f"Unknown gold claim: {case['case_id']}")
+    baseline_plan = read("observatory/baseline-plan-v1.json")
+    check(baseline_plan["prompt_registry_version"] == prompts["version"], "Baseline plan prompt version mismatch")
+    check(set(baseline_plan["prompt_ids"]).issubset(prompt_ids), "Unknown baseline prompt ID")
+    check(baseline_plan["planned_pair_count"] == len(baseline_plan["systems"]) * len(baseline_plan["prompt_ids"]) * baseline_plan["repetitions_per_pair"], "Incorrect planned baseline denominator")
+    for path in sorted((ROOT / "observatory/runs").glob("*.json")):
+        record = read(str(path.relative_to(ROOT)))
+        Draft202012Validator(obs_schema, format_checker=FormatChecker()).validate(record)
+        check(record["prompt_id"] in prompt_ids, f"Unknown prompt ID: {path}")
+        check(record["prompt_text"] == next(p["text"] for p in prompts["prompts"] if p["prompt_id"] == record["prompt_id"]), f"Prompt text changed: {path}")
+        check(record["prompt_registry_version"] == prompts["version"], f"Prompt version changed: {path}")
+        check(record["entity_id"] in nodes, f"Unknown observed entity: {path}")
+    print(f"Public RAG corpus and {len(suite['cases'])} gold questions valid.")
     print("Canonical cross-references valid. Legacy ER-001 kept unchanged.")
 
 

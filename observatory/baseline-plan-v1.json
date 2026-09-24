@@ -1,0 +1,24 @@
+{
+  "plan_id": "MC-001-BL-PLAN-v1",
+  "status": "planned_not_measured",
+  "created": "2026-09-24",
+  "scope": "First observed snapshot, not a reconstructable pre-publication state",
+  "entity_id": "MC-001",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "prompt_registry_version": "1.0",
+  "prompt_ids": ["ENT-01", "ENT-02", "DIS-01", "REL-01", "AIO-01", "CAT-01", "REC-01"],
+  "systems": ["chatgpt-web", "gemini-web", "claude-web", "perplexity-web", "meta-ai-web", "grok-web", "deepseek-web"],
+  "repetitions_per_pair": 1,
+  "required_context_condition": "fresh_context",
+  "planned_pair_count": 49,
+  "rules": [
+    "Record the exact frozen prompt text and one full original response per system and prompt.",
+    "Record login, location if visible, browsing/search state, model/interface if visible and timestamp for each run.",
+    "Missing or blocked runs are documented explicitly; they are not counted as zero recognition.",
+    "Recommendation prompts are reported separately from direct recognition.",
+    "A one-run snapshot does not support a stability claim; add repeat-run plan before measuring stability.",
+    "Freeze the baseline only after validating observations and listing every planned missing run. Do not claim complete cross-system coverage if any planned pair is missing."
+  ],
+  "missing_runs": [],
+  "freeze_status": "not_frozen"
+}

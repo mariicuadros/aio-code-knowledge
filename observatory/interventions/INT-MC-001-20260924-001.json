@@ -1,0 +1,29 @@
+{
+  "intervention_id": "INT-MC-001-20260924-001",
+  "entity_id": "MC-001",
+  "timestamp": "2026-09-24T01:58:42.514Z",
+  "research_window_id": "pre-first-measured-baseline",
+  "intervention_type": "bundled_public_entity_page_and_identifier_alignment",
+  "target_system_or_platform": "AIO CODE public website and JSON-LD",
+  "target_url_or_record": "https://aio-code.vercel.app/entities/marii-cuadros/",
+  "before_state_ref": "GitHub aio-code-knowledge commit a07380d3dd239462c7261eccf81b7391dea95386",
+  "after_state_ref": "entities/marii-cuadros/index.html; entities/nux/index.html; index.html; schemas/person-schema.json; entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld",
+  "changed_variables": [
+    "Published entity pages for MC-001 and NUX-001",
+    "Aligned MC-001 and AIO-001 @id values across existing JSON-LD",
+    "Added page links and sitemap entries"
+  ],
+  "unchanged_controls": [],
+  "related_claim_ids": ["CLAIM-001", "CLAIM-003", "CLAIM-004"],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": "HYP-MC-DISAMBIGUATION-001",
+  "expected_effect": "Potentially clearer human and machine navigation; no observed effect claimed.",
+  "evidence_refs": ["entity-graph.json", "claim-ledger.json"],
+  "operator": "AIO CODE repository maintenance",
+  "reversibility": "Git revert and website redeploy",
+  "confounders_known_at_time_of_change": [
+    "No empirical Observatory baseline was frozen before this change.",
+    "Site deployment timing, crawler discovery and external model behavior have not been verified."
+  ],
+  "status": "prepared_unmeasured"
+}

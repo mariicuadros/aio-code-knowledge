@@ -3,12 +3,12 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://github.com/mariicuadros/aio-code-knowledge#MC-001",
+      "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001",
       "name": "Marii Cuadros",
       "description": "Venezuelan-born creator and researcher associated with AIO CODE.",
       "jobTitle": ["Creator", "Artist", "Digital Model", "Independent Researcher", "Curator"],
       "creatorOf": {
-        "@id": "https://github.com/mariicuadros/aio-code-knowledge#AIO-001"
+        "@id": "https://aio-code.vercel.app/#AIO-001"
       },
       "sameAs": [
         "https://github.com/MariiCuadros",
@@ -18,12 +18,12 @@
     },
     {
       "@type": "ResearchProject",
-      "@id": "https://github.com/mariicuadros/aio-code-knowledge#AIO-001",
+      "@id": "https://aio-code.vercel.app/#AIO-001",
       "name": "AIO CODE",
       "alternateName": "Artificial Intelligence Optimization Code",
       "description": "Research project investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, and cite digital entities.",
       "founder": {
-        "@id": "https://github.com/mariicuadros/aio-code-knowledge#MC-001"
+        "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001"
       },
       "creator": {
         "@id": "https://github.com/mariicuadros/aio-code-knowledge#MC-001"

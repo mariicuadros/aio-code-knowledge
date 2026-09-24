@@ -1,0 +1,25 @@
+name: Validate public RAG corpus and retrieval
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Check syntax and approved sources
+        run: |
+          python -m compileall -q rag
+          python scripts/validate_site.py
+          python -m rag.cli ask '¿Qué es AIO CODE?' > /dev/null
+      - name: Check frozen gold-source questions
+        run: python -m rag.evaluate

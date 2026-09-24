@@ -16,3 +16,11 @@ The changes here repair AIO CODE's own documentation and data contracts. They ar
 - **Cross-repository change:** the personal `marii-cuadros/README.md` definition is aligned separately; record its commit ID alongside this one.
 
 No existing historical observation, prompt text or content publication date is rewritten by this correction.
+
+## METH-20260924-002 — Public RAG and first Observatory measurement tools
+
+- **Recorded:** 2026-09-24; the publishing commit records the precise time.
+- **Scope:** approved public corpus, lexical retrieval, pinned source citations, 24 question retrieval set, optional review-only generation, first-baseline measurement plan and capture/report/freeze tools.
+- **Status:** local implementation with source retrieval validation; external AI measurements and generated-answer support evaluation have not yet happened.
+- **Website:** public entity pages and JSON-LD ID alignment are a material public exposure change recorded separately under `observatory/interventions/INT-MC-001-20260924-001.json`.
+- **Evidence boundary:** neither a corpus hit nor a new entity page proves that external AI recognizes or cites the entity.
