@@ -3,7 +3,7 @@
   "@type": "Person",
   "@id": "https://aio-code.vercel.app/entities/marii-cuadros#MC-001",
   "name": "Marii Cuadros",
-  "description": "Colombian creator, artist, digital model and independent researcher; creator of AIO CODE.",
+  "description": "Venezuelan-born creator, artist, digital model and independent researcher; creator of AIO CODE.",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "AIO-CODE-ENTITY-ID",
