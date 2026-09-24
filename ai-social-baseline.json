@@ -3,12 +3,21 @@
   "version": "1.1",
   "updated": "2026-09-23",
   "baseline_target": "MC-001 BASELINE v1",
-  "purpose": "Container and specification for pre-intervention baseline observations across AI systems, search environments and relevant platforms.",
-  "important_note": "This file is not yet a frozen empirical baseline because no baseline observation records have been populated. An empty records array must never be interpreted as zero visibility, zero recognition, or completed measurement.",
+  "purpose": "Container and specification for the first dated empirical snapshot across AI systems, search environments and relevant platforms, measured after the prior interventions declared in the baseline plan.",
+  "important_note": "This is not a pristine pre-intervention or pre-publication baseline. No empirical observation records have been populated; an empty records array must never be interpreted as zero visibility, zero recognition, or completed measurement.",
   "entities": [
-    {"entity_id": "MC-001", "canonical_name": "Marii Cuadros"},
-    {"entity_id": "NUX-001", "canonical_name": "NUX"},
-    {"entity_id": "AIO-001", "canonical_name": "AIO CODE"}
+    {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros"
+    },
+    {
+      "entity_id": "NUX-001",
+      "canonical_name": "NUX"
+    },
+    {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE"
+    }
   ],
   "primary_baseline_entity": "MC-001",
   "prompt_registry_ref": "prompt-registry-v1.json",
@@ -33,7 +42,9 @@
     "sources_or_citations",
     "evaluation",
     "evidence_state",
-    "notes"
+    "notes",
+    "research_window_id",
+    "related_intervention_ids"
   ],
   "records": [],
   "freeze": {
@@ -52,6 +63,7 @@
     "Historical baseline records must never be overwritten by later interventions.",
     "Missing data is not zero.",
     "A baseline is frozen only after empirical observation records exist.",
-    "Prompt Registry version must remain fixed for direct before/after comparisons."
+    "Prompt Registry version must remain fixed for direct before/after comparisons.",
+    "This snapshot follows the prior interventions declared in observatory/baseline-plan-v1.json; it cannot be used as a pre-change comparison for those interventions."
   ]
 }
