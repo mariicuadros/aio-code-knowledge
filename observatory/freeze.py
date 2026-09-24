@@ -13,6 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def prepare_freeze() -> dict:
     plan = json.loads((ROOT / "observatory/baseline-plan-v1.json").read_text(encoding="utf-8"))
+    required_interventions = set(plan.get("prior_intervention_ids", []))
+    intervention_files = sorted((ROOT / "observatory/interventions").glob("*.json"))
+    available_interventions = {
+        json.loads(path.read_text(encoding="utf-8"))["intervention_id"]
+        for path in intervention_files
+    }
+    if not required_interventions.issubset(available_interventions):
+        raise ValueError("Baseline plan references an unknown prior intervention ID")
     baseline_path = ROOT / "ai-social-baseline.json"
     baseline = json.loads(baseline_path.read_text(encoding="utf-8"))
     if baseline["freeze"]["status"] != "not_frozen" or baseline["records"]:
@@ -32,7 +40,6 @@ def prepare_freeze() -> dict:
             raise ValueError(f"Unexpected or duplicated baseline pair: {pair}")
         if row["entity_id"] != plan["entity_id"] or row["context_condition"] != plan["required_context_condition"]:
             raise ValueError(f"Incorrect entity/context in {file}")
-        required_interventions = set(plan.get("prior_intervention_ids", []))
         recorded_interventions = set(row.get("related_intervention_ids", []))
         if not required_interventions.issubset(recorded_interventions):
             raise ValueError(f"Required prior intervention IDs missing in {file}")
