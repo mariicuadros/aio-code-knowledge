@@ -1,0 +1,144 @@
+{
+  "title": "AIO CODE controlled public RAG corpus",
+  "version": "0.1.0",
+  "created": "2026-09-24",
+  "status": "prototype_contract",
+  "source_repository": "mariicuadros/aio-code-knowledge",
+  "purpose": "First-party public evidence reference for an AIO CODE operated, read-only assistant. Not a test of recognition by third-party AI.",
+  "policy": "Deny all paths except exact allowlist; resolve from a pinned repository commit; never infer third-party recognition from first-party records.",
+  "allowlist": [
+    {
+      "path": "ENTITY-MASTER-RECORD.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "AIO-METHODOLOGY-SPEC-v1.md",
+      "role": "methodology",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "EVIDENCE-STANDARD-v1.md",
+      "role": "evidence_rules",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-AIO-CODE.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-NUX.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "entity-graph.json",
+      "role": "canonical_relationships",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "claim-ledger.json",
+      "role": "claim_records",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "RECOGNITION-RUBRIC-v1.md",
+      "role": "evaluation_rules",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "OBSERVATORY-PROTOCOL-v1.md",
+      "role": "observation_rules",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "INTERVENTION-PROTOCOL-v1.md",
+      "role": "intervention_rules",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "ai-social-baseline.json",
+      "role": "baseline_status_only",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Only freeze status, baseline target, important note and count of records; never treat planned fields as observations."
+    },
+    {
+      "path": "entities/marii-cuadros/technical/schema/disambiguation.json",
+      "role": "disambiguation_rules",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    }
+  ],
+  "required_index_metadata": [
+    "source_path",
+    "source_url",
+    "commit_sha",
+    "document_version_or_unknown",
+    "entity_id_or_null",
+    "claim_ids_or_empty",
+    "published_at_or_unknown",
+    "retrieved_at",
+    "visibility",
+    "evidence_state_or_not_applicable",
+    "canonical_or_historical",
+    "section_or_record_locator"
+  ],
+  "claim_rules": [
+    "Answer current facts only from active claims and current canonical records.",
+    "A first-party definition is not independent corroboration.",
+    "Superseded, withdrawn, draft and historical claims are excluded from current-fact answers unless explicitly requested with dated context.",
+    "If eligible evidence is insufficient, abstain: No hay evidencia suficiente.",
+    "Include exact source path, section or record locator, and commit SHA in internal citations; verify every asserted claim against the supplied passage."
+  ],
+  "update_rules": [
+    "Pin and record the repository commit for every index build.",
+    "On commit change, rebuild and atomically replace the index; never leave withdrawn claims current.",
+    "Keep previous index versions solely for explicitly dated historical queries.",
+    "Do not index private client data in the public corpus."
+  ],
+  "excluded_by_default": [
+    "evidence/historical/**",
+    "observatory/ER-001.json",
+    "observatory/observations/**",
+    "entity-labs/**",
+    "logbook/**",
+    "media/**",
+    "entities/**/media/**",
+    "entities/**/platforms.json",
+    "planned or unverified profiles",
+    "private client records",
+    "draft or superseded claim text as current truth",
+    "any path not in the exact allowlist"
+  ],
+  "next_gate": "Measure retrieval and answer support against rag/evaluation-v0.json before adding embeddings, a hosted model, or a public answer endpoint."
+}
