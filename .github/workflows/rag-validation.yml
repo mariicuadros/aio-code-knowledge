@@ -23,3 +23,5 @@ jobs:
           python -m rag.cli ask '¿Qué es AIO CODE?' > /dev/null
       - name: Check frozen gold-source questions
         run: python -m rag.evaluate
+      - name: Check published evidence index freshness
+        run: python scripts/build_public_rag.py --check

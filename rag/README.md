@@ -12,7 +12,15 @@ Run from the repository root:
 python -m rag.cli ask '¿Qué es AIO CODE?'
 python -m rag.evaluate
 python scripts/validate_core.py
+python scripts/build_public_rag.py --check
 ```
+
+The `/rag/` page serves `public-index-v0.json` as a read-only search of the
+approved passages with links to their exact Git versions. It is a public
+evidence lookup, not an LLM answer endpoint. Rebuild its index with
+`python scripts/build_public_rag.py` after approved source files change and
+commit both the index and its source updates. CI checks the recorded source
+blobs and passage count.
 
 The `ask` command currently returns candidate evidence and its exact source
 references. A source hit alone does not establish that the passage answers
