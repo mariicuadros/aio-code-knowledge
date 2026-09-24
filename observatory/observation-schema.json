@@ -17,6 +17,7 @@
     "logged_in_state",
     "context_condition",
     "browsing_or_search_state_if_visible",
+    "environment",
     "observed_result",
     "response_snapshot_or_ref",
     "sources_or_citations",
@@ -29,48 +30,158 @@
     "status"
   ],
   "properties": {
-    "observation_id": {"type": "string", "minLength": 1},
-    "timestamp": {"type": "string", "format": "date-time"},
-    "entity_id": {"type": "string"},
-    "system": {"type": "string"},
-    "system_interface_or_model_if_visible": {"type": ["string", "null"]},
-    "prompt_id": {"type": "string"},
-    "prompt_registry_version": {"type": "string"},
-    "prompt_text": {"type": "string"},
-    "language": {"type": "string"},
-    "country_or_location_context_if_relevant": {"type": ["string", "null"]},
-    "logged_in_state": {"type": ["string", "null"]},
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "system": {
+      "type": "string"
+    },
+    "system_interface_or_model_if_visible": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "prompt_id": {
+      "type": "string"
+    },
+    "prompt_registry_version": {
+      "type": "string"
+    },
+    "prompt_text": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "country_or_location_context_if_relevant": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "logged_in_state": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "context_condition": {
       "type": "string",
-      "enum": ["fresh_context", "contextual", "incognito_or_private", "unknown_context"]
+      "enum": [
+        "fresh_context",
+        "contextual",
+        "incognito_or_private",
+        "unknown_context"
+      ]
     },
-    "browsing_or_search_state_if_visible": {"type": ["string", "null"]},
-    "environment": {"type": ["string", "null"]},
-    "observation_type": {"type": ["string", "null"]},
-    "observed_result": {"type": "string"},
-    "response_snapshot_or_ref": {"type": "string", "minLength": 1, "description": "Full response text or immutable reference to its snapshot; a benchmark run cannot omit the raw output."},
-    "resolution_status": {"type": ["string", "null"]},
-    "sources_or_citations": {"type": "array", "items": {"type": "string"}},
+    "browsing_or_search_state_if_visible": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "environment": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observation_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "observed_result": {
+      "type": "string"
+    },
+    "response_snapshot_or_ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Full response text or immutable reference to its snapshot; a benchmark run cannot omit the raw output."
+    },
+    "resolution_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources_or_citations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "stage": {
       "type": "string",
-      "enum": ["Indexation", "Retrieval", "Entity Resolution", "Entity Representation", "Citation", "Recommendation", "Unknown"]
+      "enum": [
+        "Indexation",
+        "Retrieval",
+        "Entity Resolution",
+        "Entity Representation",
+        "Citation",
+        "Recommendation",
+        "Unknown"
+      ]
     },
     "evaluation": {
       "type": "object",
       "additionalProperties": true
     },
-    "interpretation": {"type": ["string", "null"]},
+    "interpretation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
     "evidence_state": {
       "type": "string",
-      "enum": ["unknown", "hypothesized", "observed", "corroborated", "verified"]
+      "enum": [
+        "unknown",
+        "hypothesized",
+        "observed",
+        "corroborated",
+        "verified"
+      ]
     },
-    "confidence_note": {"type": ["string", "null"]},
-    "research_window_id": {"type": "string", "minLength": 1},
-    "related_intervention_ids": {"type": "array", "items": {"type": "string"}},
-    "confounder_ids": {"type": "array", "items": {"type": "string"}},
+    "confidence_note": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "research_window_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "related_intervention_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "confounder_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "status": {
       "type": "string",
-      "enum": ["active", "under_observation", "closed"]
+      "enum": [
+        "active",
+        "under_observation",
+        "closed"
+      ]
     }
   },
   "additionalProperties": false
