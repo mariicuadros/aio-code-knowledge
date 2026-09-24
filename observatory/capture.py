@@ -38,7 +38,7 @@ def make_record(args, response: str) -> dict:
         "response_snapshot_or_ref": f"observatory/runs/{observation_id}.json#observed_result",
         "sources_or_citations": args.citation or [], "stage": args.stage,
         "evaluation": {}, "evidence_state": "observed",
-        "research_window_id": args.window, "related_intervention_ids": [], "confounder_ids": [],
+        "research_window_id": args.window, "related_intervention_ids": args.intervention or [], "confounder_ids": [],
         "status": "under_observation",
     }
 
@@ -55,6 +55,7 @@ def main() -> None:
     parser.add_argument("--context", required=True, choices=["fresh_context", "contextual", "incognito_or_private", "unknown_context"])
     parser.add_argument("--search-state", required=True, choices=["enabled", "disabled", "unknown"])
     parser.add_argument("--environment", required=True, help="Observation environment, e.g. web desktop browser, mobile app, or search engine")
+    parser.add_argument("--intervention", action="append", help="Related Intervention ID, repeat for multiple interventions")
     parser.add_argument("--stage", default="Entity Representation", choices=["Indexation", "Retrieval", "Entity Resolution", "Entity Representation", "Citation", "Recommendation", "Unknown"])
     parser.add_argument("--citation", action="append", help="Cited URL, repeated for multiple citations")
     parser.add_argument("--location", default=None)
