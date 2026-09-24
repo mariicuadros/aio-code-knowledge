@@ -32,8 +32,11 @@ Every benchmark observation MUST include:
 - `context_condition`
 - `browsing_or_search_state_if_visible`
 - `response_snapshot_or_ref`
+- `observed_result`
 - `sources_or_citations`
 - `evaluation`
+- `stage`
+- `status`
 - `evidence_state`
 - `research_window_id`
 - `related_intervention_ids`
