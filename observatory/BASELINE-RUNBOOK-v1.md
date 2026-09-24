@@ -6,7 +6,7 @@ already happened, so it cannot be described as a pristine pre-launch state.
 
 For each pair, open a fresh conversation in the named system. Copy the exact
 text for its prompt ID from `prompt-registry-v1.json`. Save the unedited full
-answer in a local UTF-8 text file. Record the visible model/interface, environment (for example web desktop browser
+answer in a local UTF-8 text file. Record the visible model/interface and environment (for example, a desktop browser
 or mobile app), whether the account was logged in, search mode, citations, location
 if relevant, and time. Use the same conditions for comparable later runs.
 
@@ -16,6 +16,7 @@ From the repository root, capture a result with:
 python -m observatory.capture --system chatgpt-web --entity-id MC-001 \
   --prompt-id ENT-01 --window MC-001-BASELINE-v1 \
   --login-state logged_out --context fresh_context --search-state unknown \
+  --environment "web desktop browser" \
   --response-file /path/to/raw-answer.txt
 ```
 
