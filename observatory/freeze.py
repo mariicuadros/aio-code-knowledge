@@ -60,13 +60,13 @@ def prepare_freeze() -> dict:
         raise ValueError("No empirical runs; cannot freeze an empty baseline")
     now = datetime.now(timezone.utc)
     baseline["records"] = [
-        {key: row[key] for key in ("observation_id", "timestamp", "entity_id", "system", "prompt_id", "prompt_registry_version", "response_snapshot_or_ref")}
+        {key: row[key] for key in ("observation_id", "timestamp", "entity_id", "system", "prompt_id", "prompt_registry_version", "response_snapshot_or_ref", "research_window_id", "related_intervention_ids")}
         for _, row in sorted(runs.items())
     ]
     baseline["freeze"].update(status="frozen", frozen_at=now.isoformat(),
                               freeze_id=plan["research_window_id"] + "-" + now.strftime("%Y%m%d"))
     baseline["updated"] = now.date().isoformat()
-    baseline["important_note"] = f"Empirical snapshot: {len(runs)}/{len(expected)} planned pairs observed; {len(declared_missing)} explicitly missing. No causal or stability claim."
+    baseline["important_note"] = f"Post-intervention snapshot after {', '.join(sorted(required_interventions))}: {len(runs)}/{len(expected)} planned pairs observed; {len(declared_missing)} explicitly missing. This is not a pre-change comparison. No causal or stability claim."
     baseline["coverage"] = {"plan_id": plan["plan_id"], "planned_pairs": len(expected),
                             "observed_pairs": len(runs), "missing_pairs": [
                                 {"system": s, "prompt_id": p, "reason": reason}
