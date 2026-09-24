@@ -657,13 +657,13 @@ Observed outcomes included:
 - later recognition of the Colombian creator;
 - retrieval of project-related sources.
 
-The initial baseline therefore demonstrated:
+Those historical observations suggested:
 
 > Entity ambiguity existed before the digital documentation network became more structured.
 
 These historical observations provide context, but cannot support a controlled before/after comparison without the original full response snapshots and documented test conditions. The current `ai-social-baseline.json` remains `not_frozen` with no empirical records.
 
-The period August 19 – September 2, 2026 added a new layer to the baseline:
+The period August 19 – September 2, 2026 added historical observations that may inform a future baseline design:
 
 - intermittent visibility in Google AI Mode;
 - differences between Spanish and English retrieval;
