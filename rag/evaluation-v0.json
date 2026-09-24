@@ -1,0 +1,305 @@
+{
+  "title": "AIO CODE RAG acceptance set",
+  "version": "0.1.0",
+  "created": "2026-09-24",
+  "status": "gold_questions_before_retriever_tuning",
+  "scope": "Internal read-only public-corpus RAG, separate from external Observatory benchmark",
+  "corpus_manifest_ref": "rag/corpus-manifest-v0.json",
+  "language_note": "Mixed ES/EN; do not change queries during comparison; version if edited.",
+  "evaluation_rules": [
+    "Pin the repository/index commit and record model/provider if generation is used.",
+    "For answerable cases, record whether a gold source entered the supplied context, factual correctness, exact source citation and support for each asserted claim.",
+    "For abstain cases, an unsupported positive claim is a failure; reporting the absence or limits of eligible records is acceptable.",
+    "Keep retrieval recall@k and answer correctness separate. State denominators and review errors.",
+    "Gold paths reflect the current corpus and require review when canonical facts change."
+  ],
+  "cases": [
+    {
+      "case_id": "RAG-Q-01",
+      "query": "¿Cuál es el nombre canónico de MC-001?",
+      "category": "identity",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "claim-ledger.json"
+      ],
+      "relevant_claim_ids": [
+        "CLAIM-001"
+      ],
+      "expected_fact_or_boundary": "Marii Cuadros; definición interna, no reconocimiento externo."
+    },
+    {
+      "case_id": "RAG-Q-02",
+      "query": "What kind of entity is MC-001?",
+      "category": "identity",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "Person."
+    },
+    {
+      "case_id": "RAG-Q-03",
+      "query": "¿Cuántas entidades primarias distingue actualmente AIO CODE y cuáles son?",
+      "category": "identity",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "Tres: MC-001, AIO-001 y NUX-001."
+    },
+    {
+      "case_id": "RAG-Q-04",
+      "query": "What is the canonical type of AIO-001?",
+      "category": "identity",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "ResearchMethodology."
+    },
+    {
+      "case_id": "RAG-Q-05",
+      "query": "¿Qué es AIO CODE según su especificación vigente?",
+      "category": "methodology",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "relevant_claim_ids": [
+        "CLAIM-002"
+      ],
+      "expected_fact_or_boundary": "Metodología de investigación e implementación; no chatbot ni modelo."
+    },
+    {
+      "case_id": "RAG-Q-06",
+      "query": "Who created AIO CODE according to its first-party registry?",
+      "category": "relationship",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "entity-graph.json",
+        "claim-ledger.json",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "relevant_claim_ids": [
+        "CLAIM-003"
+      ],
+      "expected_fact_or_boundary": "MC-001; indicar explícitamente que es una afirmación de primera parte."
+    },
+    {
+      "case_id": "RAG-Q-07",
+      "query": "¿Son Marii Cuadros y AIO CODE la misma entidad?",
+      "category": "disambiguation",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; persona y metodología unidas por creator_of."
+    },
+    {
+      "case_id": "RAG-Q-08",
+      "query": "What is NUX and is it identical to Marii Cuadros?",
+      "category": "disambiguation",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "ENTITY-MASTER-RECORD.md",
+        "claim-ledger.json"
+      ],
+      "relevant_claim_ids": [
+        "CLAIM-004"
+      ],
+      "expected_fact_or_boundary": "Entidad creativa digital distinta; no es identidad ni alias intercambiable."
+    },
+    {
+      "case_id": "RAG-Q-09",
+      "query": "¿Qué relación canónica une MC-001 con NUX-001?",
+      "category": "relationship",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-NUX.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "develops; no inventar tipo de relación más específico."
+    },
+    {
+      "case_id": "RAG-Q-10",
+      "query": "Is NUX simply another name for AIO CODE?",
+      "category": "disambiguation",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; entidades distintas."
+    },
+    {
+      "case_id": "RAG-Q-11",
+      "query": "¿Qué significa evidence_state=observed?",
+      "category": "evidence",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "Un evento o salida quedó registrado bajo condiciones declaradas; no prueba la causa."
+    },
+    {
+      "case_id": "RAG-Q-12",
+      "query": "When may a claim be marked verified?",
+      "category": "evidence",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "Solo cuando cumple regla predeclarada, alcance y evidencia trazable; no sin esos campos."
+    },
+    {
+      "case_id": "RAG-Q-13",
+      "query": "¿Tres copias de una misma biografía demuestran corroboración independiente?",
+      "category": "evidence",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; las copias de una misma fuente no son independientes."
+    },
+    {
+      "case_id": "RAG-Q-14",
+      "query": "Are claim_status and evidence_state interchangeable?",
+      "category": "evidence",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "claim-ledger.json"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; ciclo de vida y fuerza de apoyo son dimensiones diferentes."
+    },
+    {
+      "case_id": "RAG-Q-15",
+      "query": "¿MC-001 BASELINE v1 ya está congelado?",
+      "category": "baseline",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ai-social-baseline.json",
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; freeze.status=not_frozen y records vacío."
+    },
+    {
+      "case_id": "RAG-Q-16",
+      "query": "Does zero baseline records mean Marii has zero AI recognition?",
+      "category": "baseline",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "ai-social-baseline.json",
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; falta de mediciones no equivale a cero reconocimiento."
+    },
+    {
+      "case_id": "RAG-Q-17",
+      "query": "¿Publicar JSON-LD garantiza que ChatGPT encuentre AIO CODE?",
+      "category": "limits",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; publicar fuentes no controla mecanismos ni respuestas de terceros."
+    },
+    {
+      "case_id": "RAG-Q-18",
+      "query": "Is recommendation the same measurement as entity recognition?",
+      "category": "measurement",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; son etapas/dimensiones separadas."
+    },
+    {
+      "case_id": "RAG-Q-19",
+      "query": "¿Existe ya un AIO Score global calibrado y publicable?",
+      "category": "measurement",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; el score compuesto se difiere hasta calibración y pruebas."
+    },
+    {
+      "case_id": "RAG-Q-20",
+      "query": "Does a changed response after publishing prove causation?",
+      "category": "intervention",
+      "expected_behavior": "answerable",
+      "gold_source_paths": [
+        "INTERVENTION-PROTOCOL-v1.md",
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No; documentar cambios y confusores, atribución causal no automática."
+    },
+    {
+      "case_id": "RAG-Q-21",
+      "query": "¿Cuál es la fecha verificada de creación de VOID MODE como entidad canónica?",
+      "category": "unknown",
+      "expected_behavior": "abstain",
+      "gold_source_paths": [],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No hay evidencia suficiente; no inferirla de menciones o ejemplos."
+    },
+    {
+      "case_id": "RAG-Q-22",
+      "query": "What is the registered canonical entity ID VM-001?",
+      "category": "unknown",
+      "expected_behavior": "abstain",
+      "gold_source_paths": [],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No hay evidencia suficiente; no inventar un registro VM-001."
+    },
+    {
+      "case_id": "RAG-Q-23",
+      "query": "¿Marii Cuadros tiene una página oficial verificada de Spotify como artista?",
+      "category": "unknown",
+      "expected_behavior": "abstain",
+      "gold_source_paths": [],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No hay evidencia suficiente dentro del corpus aprobado."
+    },
+    {
+      "case_id": "RAG-Q-24",
+      "query": "What percentage of outside AI systems recognized Marii Cuadros in the frozen baseline?",
+      "category": "unknown",
+      "expected_behavior": "abstain",
+      "gold_source_paths": [
+        "ai-social-baseline.json"
+      ],
+      "relevant_claim_ids": [],
+      "expected_fact_or_boundary": "No hay evidencia suficiente; no hay baseline empírico congelado."
+    }
+  ]
+}
