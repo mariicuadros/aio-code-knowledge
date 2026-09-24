@@ -28,7 +28,7 @@
   "required_context_condition": "fresh_context",
   "planned_pair_count": 49,
   "rules": [
-    "Every observation in this window must reference prior intervention INT-MC-001-20260924-001; interpret results as a current-state snapshot after that change.",
+    "Every observation in this window must reference both prior intervention IDs for provenance; interpret results as a current-state snapshot after the MC-001 public page change. The AIO-001 methodology correction is not an entity-performance treatment.",
     "Record the exact frozen prompt text and one full original response per system and prompt.",
     "Record login, location if visible, browsing/search state, model/interface if visible and timestamp for each run.",
     "Missing or blocked runs are documented explicitly; they are not counted as zero recognition.",
@@ -40,7 +40,8 @@
   "freeze_status": "not_frozen",
   "baseline_state": "post_intervention_snapshot",
   "prior_intervention_ids": [
-    "INT-MC-001-20260924-001"
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
   ],
-  "interpretation_boundary": "First measured snapshot after the documented public entity-page and identifier-alignment intervention; not a pristine pre-intervention or pre-publication state."
+  "interpretation_boundary": "First measured snapshot after the documented public entity-page change for MC-001 and the methodology-only correction recorded for AIO-001; not a pristine pre-intervention or pre-publication state. The methodology correction is not an entity-performance treatment."
 }
