@@ -1,50 +1,86 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "1.1",
-  "updated": "2026-09-03",
-  "purpose": "Track canonical and research claims by entity, source, date and evidence status.",
-  "status_values": ["defined","observed","corroborated","verified","hypothesized","unknown","superseded"],
+  "version": "2.0",
+  "updated": "2026-09-23",
+  "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
+  "claim_type_values": [
+    "canonical_definition",
+    "research_observation",
+    "research_finding",
+    "hypothesis",
+    "commercial_statement",
+    "operational_rule"
+  ],
+  "claim_status_values": ["draft", "active", "superseded", "withdrawn"],
+  "evidence_state_values": ["unknown", "hypothesized", "observed", "corroborated", "verified"],
   "claims": [
     {
       "claim_id": "CLAIM-001",
       "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
       "claim": "The canonical public name is Marii Cuadros.",
       "source": "AIO CODE Entity Master Record",
       "source_ref": "ENTITY-MASTER-RECORD.md",
       "evidence_refs": ["entity/ENTITY-PASSPORT-MARII-CUADROS.md"],
       "date": "2026-09-03",
-      "status": "defined"
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Canonical first-party entity registry definition; not independent public recognition."
     },
     {
       "claim_id": "CLAIM-002",
       "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
       "claim": "The canonical project name is AIO CODE.",
       "source": "AIO CODE Entity Master Record",
       "source_ref": "ENTITY-MASTER-RECORD.md",
       "evidence_refs": ["entity/ENTITY-PASSPORT-AIO-CODE.md"],
       "date": "2026-09-03",
-      "status": "defined"
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Canonical first-party entity registry definition."
     },
     {
       "claim_id": "CLAIM-003",
       "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
       "claim": "Marii Cuadros is the creator of AIO CODE.",
       "source": "AIO CODE Entity Master Record",
       "source_ref": "ENTITY-MASTER-RECORD.md",
-      "evidence_refs": ["entity/ENTITY-PASSPORT-MARII-CUADROS.md","entity/ENTITY-PASSPORT-AIO-CODE.md","entity-graph.json"],
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "entity-graph.json"
+      ],
       "date": "2026-09-03",
-      "status": "defined"
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party authorship/creator claim recorded by the project; independent corroboration is tracked separately."
     },
     {
       "claim_id": "CLAIM-004",
       "entity_id": "NUX-001",
+      "claim_type": "canonical_definition",
       "claim": "NUX is a distinct digital creative entity developed in association with Marii Cuadros.",
       "source": "NUX Entity Passport",
       "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
-      "evidence_refs": ["entity-graph.json","entity/content/NUX-001/content-registry.json"],
+      "evidence_refs": ["entity-graph.json", "entity/content/NUX-001/content-registry.json"],
       "date": "2026-09-03",
-      "status": "defined"
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Canonical first-party creative-entity definition."
     }
   ],
-  "integrity_rule": "Every claim must identify its canonical entity and trace back to a source. Research claims should additionally reference observations, experiments or measurements when those exist. A defined canonical claim is not automatically an externally verified finding."
+  "integrity_rules": [
+    "claim_status and evidence_state are separate dimensions and must never be collapsed.",
+    "A canonical definition is not automatically independent external validation.",
+    "Every claim must identify its canonical entity and trace to source/evidence references.",
+    "Promotion to verified requires a declared verification rule, scope, verifier, date and evidence references.",
+    "Research findings must remain traceable to observations, measurements and experiments where applicable."
+  ],
+  "governing_standard": "EVIDENCE-STANDARD-v1.md"
 }
