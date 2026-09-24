@@ -6,10 +6,10 @@ The AIO CODE Observatory is the structured observation layer of **AIO-001**. It 
 
 The Observatory does not replace the chronological logbook. It provides the structured analytical record that can later feed experiments, measurements and findings.
 
-## Canonical Research Project
+## Canonical Methodology
 
 ```text
-AIO-001 — AIO CODE
+AIO-001 — AIO CODE (ResearchMethodology)
         │
         └── research layer → Observatory
 ```
