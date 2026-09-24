@@ -81,6 +81,12 @@ def main():
         check(set(case["relevant_claim_ids"]).issubset(claim_ids), f"Unknown gold claim: {case['case_id']}")
     baseline_plan = read("observatory/baseline-plan-v1.json")
     check(baseline_plan["prompt_registry_version"] == prompts["version"], "Baseline plan prompt version mismatch")
+    intervention_files = sorted((ROOT / "observatory/interventions").glob("*.json"))
+    known_interventions = {
+        json.loads(path.read_text(encoding="utf-8"))["intervention_id"]
+        for path in intervention_files
+    }
+    check(set(baseline_plan.get("prior_intervention_ids", [])).issubset(known_interventions), "Baseline plan references an unknown prior intervention ID")
     check(set(baseline_plan["prompt_ids"]).issubset(prompt_ids), "Unknown baseline prompt ID")
     check(baseline_plan["planned_pair_count"] == len(baseline_plan["systems"]) * len(baseline_plan["prompt_ids"]) * baseline_plan["repetitions_per_pair"], "Incorrect planned baseline denominator")
     for path in sorted((ROOT / "observatory/runs").glob("*.json")):
