@@ -30,6 +30,7 @@ Every benchmark observation MUST include:
 - `country_or_location_context_if_relevant`
 - `logged_in_state`
 - `context_condition`
+- `environment` (use an explicit unknown or null state when not observable)
 - `browsing_or_search_state_if_visible`
 - `response_snapshot_or_ref`
 - `observed_result`
