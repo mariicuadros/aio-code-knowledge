@@ -2,187 +2,247 @@
 
 ## Artificial Intelligence Optimization Code
 
-**Research Methodology · Entity Architecture · AI Representation · Information Retrieval**
+**Research Methodology · Entity Architecture · Evidence · AI Representation · Information Retrieval**
 
-AIO CODE is a **research and implementation methodology** for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them.
+**Canonical Entity:** `AIO-001`  
+**Canonical Type:** `ResearchMethodology`  
+**Creator:** Marii Cuadros  
+**Current Stage:** Pre-pilot evidence and replication preparation  
+**Methodology Spec:** `AIO-METHODOLOGY-SPEC-v1.md`
 
-The methodology is already implemented through a documented entity architecture, evidence model, observatory, measurement system and reproducible research workflow. Its implementation remains experimental in the sense that specific signals, interventions and outcomes continue to be tested and refined across systems, languages and entities.
+> **Identity before visibility. Evidence before conclusions. Replication before generalization.**
 
-> **Identity should be established before visibility is optimized.**
+## What is AIO CODE?
 
-## Answer-First Summary
+AIO CODE is a **research and implementation methodology** for structuring digital entities, documenting claims and relationships, and observing how third-party AI/search systems retrieve, resolve, represent, cite and potentially recommend those entities over time.
 
-**What is AIO CODE?**  
-AIO CODE is a research and implementation methodology for building, structuring, observing and measuring how digital entities are represented by AI systems and search engines.
+AIO CODE does **not** control third-party AI systems and does **not** guarantee recognition, ranking, citation or recommendation.
 
-**Is AIO CODE an experiment?**  
-No. AIO CODE is the methodology. Experiments are one component used to validate, refine and extend the methodology.
+## What is already implemented?
 
-**Why does AIO CODE still use the term “experiment”?**  
-Because the methodology includes controlled experiments and ongoing observation. The experimental field tests specific hypotheses; it does not define the entire methodology.
+The repository includes:
 
-**What is already demonstrated?**  
-The project has a functioning entity architecture, canonical entity records, structured content registries, relationship mapping, evidence classification, an observatory, baseline records and a documented measurement workflow.
+- canonical entity passports and an Entity Master Record;
+- entity and platform relationship mapping;
+- Claim Ledger;
+- AI Observatory;
+- Entity Labs;
+- metrics and measurement protocols;
+- Provenance Architecture;
+- evidence and ethics rules;
+- operational per-entity workspaces;
+- content registries;
+- prompt and baseline infrastructure.
 
-**What remains under research?**  
-The contribution of individual signals, cross-platform interactions, retrieval timing, multilingual stability, causal relationships and the reproducibility of specific outcomes across additional entities and systems.
+## What remains under validation?
 
-**What is the role of Marii Cuadros?**  
-Marii Cuadros (MC-001) is the primary human case entity and creator of AIO CODE (AIO-001). The case provides a real-world environment in which the methodology can be implemented and observed.
+- contribution of individual public signals;
+- retrieval/indexing timing;
+- cross-platform effects;
+- multilingual stability;
+- reproducibility across additional entities;
+- relationship between representation and recommendation;
+- causal effects of specific interventions;
+- commercial willingness to pay and recurring-monitoring value.
 
-## Canonical Entities
+## Canonical entities
 
 ```text
-MC-001 — Marii Cuadros
-NUX-001 — NUX
-AIO-001 — AIO CODE
+MC-001 — Marii Cuadros — Person
+NUX-001 — NUX — DigitalCreativeEntity
+AIO-001 — AIO CODE — ResearchMethodology
 ```
 
-The entities are distinct and connected through explicit relationships.
+Canonical relationships currently include:
 
 ```text
 MC-001 → creator_of → AIO-001
 MC-001 → develops → NUX-001
 ```
 
-## Architecture
+## Repository source-of-truth rule
 
-AIO CODE has two connected layers.
+The repository intentionally contains two related namespaces:
 
-### Entity Knowledge Layer
+### `/entity/`
 
-```text
-Entity Passports
-      ↓
-Entity Master Record
-      ↓
-Content Registries
-      ↓
-Social Entity Map
-      ↓
-Claim Ledger
-      ↓
-Entity Graph
-```
+Canonical cross-entity identity specifications and passports.
 
-### Research and Validation Layer
+### `/entities/<entity-slug>/`
+
+Operational per-entity workspaces containing implementation records such as content, observatory data, evidence, provenance and platform-specific artifacts.
+
+**Operational workspaces MUST reference canonical identity and MUST NOT silently redefine it.**
+
+## Current methodology pipeline
 
 ```text
-AI + Social Baseline
-      ↓
-Observatory
-      ↓
-Entity Labs
-      ↓
-Metrics
-      ↓
-Ethics / Evidence
-      ↓
-Findings
-```
-
-## Research Pipeline
-
-```text
-Indexation
+Canonical Entity
     ↓
-Retrieval
+Claims + Evidence
     ↓
-Entity Resolution
+Relationships + Content + Provenance
     ↓
-Entity Representation
+Platform Representations
     ↓
-Citation
-    ↓
-Recommendation
-```
-
-## Methodology Cycle
-
-```text
-Observation
-    ↓
-Research Question
-    ↓
-Hypothesis
-    ↓
-Experiment
-    ↓
-Baseline
+Baseline Observation
     ↓
 Intervention
+    ↓
+Post-Intervention Observation
     ↓
 Measurement
     ↓
 Comparison
-    ↓
-Evidence Classification
-    ↓
-Interpretation
     ↓
 Finding
     ↓
 Replication / Refinement
 ```
 
-**Important distinction:** the methodology is AIO CODE; an **experiment** is a controlled research activity performed within the methodology.
+## External-system stages
 
-## Evidence Model
-
-AIO CODE distinguishes:
-
-- **Observed** — directly recorded.
-- **Corroborated** — supported by multiple independent observations, systems, measurements or sources.
-- **Verified** — sufficiently supported for a specific claim.
-- **Hypothesized** — proposed explanation or expected relationship not sufficiently established.
-- **Unknown** — insufficient evidence.
-
-> **Observed fact ≠ interpretation ≠ hypothesis ≠ causal conclusion.**
-
-## Current Research Case
-
-The primary human case entity is **Marii Cuadros (MC-001)**.
-
-The current entity-resolution observation `ER-001` records an incognito Google Search result in Spanish on September 2, 2026 that surfaced an association with **Maria Luisa Cuadros** rather than consistently resolving to **Marii Cuadros**. The observation is established; the cause is not established.
-
-`EXP-001` is an experiment **within the AIO CODE methodology**. It investigates whether stronger canonical identity signals and cross-source consistency may improve consistent entity resolution.
-
-## Repository Structure
+AIO CODE treats these as separate research variables:
 
 ```text
-entity/
-├── ENTITY-PASSPORT-MARII-CUADROS.md
-├── ENTITY-PASSPORT-NUX.md
-├── ENTITY-PASSPORT-AIO-CODE.md
-└── content/
-    ├── MC-001/
-    └── NUX-001/
-
-observatory/
-entity-labs/
-metrics/
-ethics/
-logbook/
-schemas/
-
-ENTITY-MASTER-RECORD.md
-RESEARCH-ARCHITECTURE.md
-AI-REPRESENTATION-PROTOCOL.md
-TECHNICAL-KNOWLEDGE-BASE.md
-manifiesto.md
-claim-ledger.json
-entity-graph.json
-social-entity-map.json
-ai-social-baseline.json
+Indexation
+Retrieval
+Entity Resolution
+Entity Representation
+Citation
+Recommendation
 ```
 
-## Structured Research Data
+Success at one stage does not prove success at another.
 
-Machine-readable datasets are maintained in the AIO CODE structured-data environment. GitHub contains the versioned research architecture and canonical documentation; structured dataset mirrors may be maintained in Hugging Face and other connected infrastructure.
+## Evidence model
 
-## Methodology Integrity
+Evidence governance is defined in `EVIDENCE-STANDARD-v1.md`.
 
-AIO CODE follows these rules:
+Evidence states:
+
+- `unknown`
+- `hypothesized`
+- `observed`
+- `corroborated`
+- `verified`
+
+Claim lifecycle is separate:
+
+- `draft`
+- `active`
+- `superseded`
+- `withdrawn`
+
+> **First-party definition ≠ independent validation. Observation ≠ explanation. Correlation ≠ causation. Recognition ≠ recommendation.**
+
+## Representation measurement
+
+`RECOGNITION-RUBRIC-v1.md` replaces a single recognition ladder as the primary measurement framework.
+
+AIO CODE now evaluates separate dimensions including:
+
+- entity resolution;
+- disambiguation;
+- identity accuracy;
+- attribute accuracy;
+- relationship accuracy;
+- official-source discovery;
+- citation quality;
+- hallucination;
+- completeness;
+- consistency;
+- cross-system agreement;
+- recommendation (separate dimension).
+
+A global commercial **AIO Score is deferred** until benchmark calibration and reliability testing exist.
+
+## Observatory
+
+The Observatory is governed by `OBSERVATORY-PROTOCOL-v1.md`.
+
+It records what external systems did under documented conditions. It does not claim access to private model weights, knowledge graphs, crawler pipelines or internal entity-resolution mechanisms unless such behavior is independently documented by the provider.
+
+## Frozen Prompt Registry
+
+`prompt-registry-v1.json` is the first frozen benchmark prompt registry for Baseline v1 preparation.
+
+Material prompt wording changes require a new prompt version.
+
+## Baseline status
+
+`ai-social-baseline.json` currently contains the baseline **specification/container**, but the empirical record set is not yet frozen.
+
+Its `records` array must be populated through standardized Observatory runs before `MC-001 BASELINE v1` can be declared complete.
+
+**An empty record set is not a zero result and is not a completed baseline.**
+
+## Intervention governance
+
+`INTERVENTION-PROTOCOL-v1.md` establishes the rule:
+
+> **No material experimental change without an Intervention ID or Confounder Log entry.**
+
+Changes observed after an intervention may be temporally associated with it without proving causation.
+
+## Pilot governance
+
+External pilots are governed by `PILOT-PROTOCOL-v1.md`.
+
+The recommended initial pilot cohort is three structurally different external entities. The pilot validates whether the methodology is executable, traceable, comparable and useful—not whether AIO CODE can force third-party systems to return predetermined answers.
+
+## Provenance
+
+`PROVENANCE-ARCHITECTURE.md` documents creator/work origin, versions, human contribution, AI assistance, distribution and evidence history.
+
+Provenance documentation does not itself create copyright or guarantee ownership/enforcement.
+
+## Current primary case
+
+`MC-001 — Marii Cuadros` is the primary longitudinal human reference case.
+
+Historical observations, including entity-resolution errors, are preserved rather than rewritten.
+
+MC-001 is a reference case; it is not sufficient by itself to establish general validity.
+
+## Pre-pilot audit
+
+See `AUDIT-2026-09-23.md`.
+
+The audit identified the current critical path:
+
+```text
+Freeze
+  ↓
+Define
+  ↓
+Baseline
+  ↓
+Intervene
+  ↓
+Observe
+  ↓
+Measure
+  ↓
+Compare
+  ↓
+Replicate
+```
+
+## Core standards
+
+- `AIO-METHODOLOGY-SPEC-v1.md`
+- `EVIDENCE-STANDARD-v1.md`
+- `RECOGNITION-RUBRIC-v1.md`
+- `OBSERVATORY-PROTOCOL-v1.md`
+- `INTERVENTION-PROTOCOL-v1.md`
+- `PILOT-PROTOCOL-v1.md`
+- `prompt-registry-v1.json`
+- `claim-ledger.json`
+- `observatory/observation-schema.json`
+- `PROVENANCE-ARCHITECTURE.md`
+
+## Methodology integrity rules
 
 1. Identity before visibility.
 2. Observation before interpretation.
@@ -192,16 +252,25 @@ AIO CODE follows these rules:
 6. Platform presence does not prove AI recognition.
 7. Source appearance does not prove causation.
 8. Evidence strength determines claim strength.
-9. Experiments are used to validate and refine the methodology; they do not define its identity.
+9. Recommendation is separate from recognition/retrieval.
+10. Missing data is not zero.
+11. A baseline is not complete until empirical records exist and are frozen.
+12. Material interventions are traceable by ID.
+13. First-party definitions are not automatically independent validation.
+14. Replication is required before broad generalization.
 
-## Status
+## Current validation path
 
-**Project:** AIO CODE  
-**Full Name:** Artificial Intelligence Optimization Code  
-**Entity ID:** AIO-001  
-**Creator:** Marii Cuadros  
-**Type:** Research and Implementation Methodology  
-**Validation Mode:** Experimental / Iterative  
-**Status:** Active  
-**Version:** 3.1  
-**Updated:** 2026-09-14
+```text
+AIO CODE 0 — Architecture
+        ↓
+AIO CODE 1 — Evidence
+        ↓
+AIO CODE 2 — Replication
+        ↓
+AIO CODE 3 — Market Validation
+        ↓
+AIO CODE 4 — Product
+```
+
+**Current focus: AIO CODE 1 — Evidence.**
