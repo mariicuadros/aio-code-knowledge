@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-AIO-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "AIO-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is AIO CODE?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "Because \"AIO Code\" can refer to a few different concepts depending on the context, here are the most likely possibilities:\n\n1. Microsoft All-In-One Code Framework\n\nHistorically, AIO Code often refers to the Microsoft All-In-One Code Framework (sometimes codenamed CodeFx).   \nDiscover and Download BEST, FREE Software, Apps, and Games\n\nWhat it was: A massive, free, centralized library of code samples created by Microsoft to help developers implement common programming tasks across various technologies (such as C#, VB.NET, C++, COM, and Azure).   \nMicrosoft Learn\n\nGoal: Instead of hunting across disparate forums, developers could use these standardized, uniform packages within Visual Studio to see skeleton implementations of frequently requested features.\n\n2. POSIX Asynchronous I/O (aio functions) in Programming\n\nIn system programming, developers often talk about AIO code when referring to Asynchronous Input/Output functions (like aio_read and aio_write).   \nGuide to Realtime Programming\n\nWhat it is: A programming interface that allows a process to initiate file or socket I/O operations that run in the background (asynchronously) without blocking the main execution thread.   \nGuide to Realtime Programming\n\n3. AI-Generated Code / Agentic Development Tools\n\nWith the rise of artificial intelligence, \"AIO\" is sometimes used colloquially as an abbreviation for AI-optimized or All-In-One AI development environments (such as containerized sandboxes that bundle VS Code servers, shell execution, and browser tools for AI coding agents).   \nAIO Sandbox\n\nIf you are looking at a specific piece of software, programming error, or platform named \"AIO Code,\" could you provide a bit more context so I can give you the exact details?",
+  "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said What is AIO CODE?\n\nWhat is AIO CODE?\n\nGemini said\n\nBecause \"AIO Code\" can refer to a few different concepts depending on the context, here are the most likely possibilities:\n\n1. Microsoft All-In-One Code Framework\n\nHistorically, AIO Code often refers to the Microsoft All-In-One Code Framework (sometimes codenamed CodeFx).   \nDiscover and Download BEST, FREE Software, Apps, and Games\n\nWhat it was: A massive, free, centralized library of code samples created by Microsoft to help developers implement common programming tasks across various technologies (such as C#, VB.NET, C++, COM, and Azure).   \nMicrosoft Learn\n\nGoal: Instead of hunting across disparate forums, developers could use these standardized, uniform packages within Visual Studio to see skeleton implementations of frequently requested features.\n\n2. POSIX Asynchronous I/O (aio functions) in Programming\n\nIn system programming, developers often talk about AIO code when referring to Asynchronous Input/Output functions (like aio_read and aio_write).   \nGuide to Realtime Programming\n\nWhat it is: A programming interface that allows a process to initiate file or socket I/O operations that run in the background (asynchronously) without blocking the main execution thread.   \nGuide to Realtime Programming\n\n3. AI-Generated Code / Agentic Development Tools\n\nWith the rise of artificial intelligence, \"AIO\" is sometimes used colloquially as an abbreviation for AI-optimized or All-In-One AI development environments (such as containerized sandboxes that bundle VS Code servers, shell execution, and browser tools for AI coding agents).   \nAIO Sandbox\n\nIf you are looking at a specific piece of software, programming error, or platform named \"AIO Code,\" could you provide a bit more context so I can give you the exact details?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+  "sources_or_citations": [],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 0,
+    "citation_quality": 1,
+    "resolution_status": "not_resolved",
+    "note": "Returns generic All-In-One Code Framework, asynchronous I/O and AI coding meanings rather than the named AIO CODE project. No source URL was visible in the captured response."
+  },
+  "resolution_status": "not_resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
