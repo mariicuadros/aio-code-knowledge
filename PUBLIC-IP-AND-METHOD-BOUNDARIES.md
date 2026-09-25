@@ -1,6 +1,6 @@
 # AIO CODE — Public IP and Method Boundaries
 
-**Version:** 1.0  
+**Version:** 1.1  
 **Status:** Active  
 **Owner / Creator:** Marii Cuadros  
 **Project Entity:** AIO-001 — AIO CODE
@@ -37,12 +37,33 @@ The following are intentionally not disclosed in public documentation unless exp
 - Client data, private datasets, confidential observations and non-public experiments.
 - Undisclosed platform-specific tactics intended to influence retrieval, ranking, recommendation or representation.
 - Proprietary code or implementation details not required to understand the public methodology.
+- Private recovery evidence, account-recovery records and incident-response material.
+- Non-public contracts, commercial terms, pricing, usage-rights records and brand negotiations.
+- Non-public analytics, revenue attribution, commercial signals and client-specific performance data.
+
+## Repository Boundary
+
+AIO CODE uses a strict public/private repository boundary.
+
+### Public source of truth
+
+`mariicuadros/aio-code-knowledge` is the public source of truth for intentionally disclosed AIO CODE knowledge, including public methodology, entity architecture, provenance records, public schemas, public case-study evidence and selected implementation documentation.
+
+### Private operational vault
+
+A separate private repository, designated `aio-code-vault`, is reserved for confidential operational material such as recovery records, contracts, private rights records, commercial data, non-public brand materials, incident records and protected know-how.
+
+The private vault must not be treated as a password manager or secrets store.
+
+### Secrets boundary
+
+Passwords, API keys, private keys, authentication tokens, 2FA recovery codes, session credentials and comparable secrets must never be committed to either the public repository or the private vault. They must remain in an appropriate secrets/password-management system outside Git version control.
 
 ## Disclosure Principle
 
 AIO CODE publishes enough information to establish authorship, existence, architecture, scope, methodology and evidence of implementation without publishing the operational recipe used to obtain every result.
 
-> **The methodology is public; the complete operational playbook is not.**
+> **The methodology may be public; the complete operational playbook is not.**
 
 ## Evidence and Trust
 
@@ -80,6 +101,10 @@ Public Findings
 Provenance / Version History
 ```
 
+## Repository Security Rule
+
+No confidential operational artifact may be placed in `aio-code-knowledge` merely because it supports a public claim. Public evidence should reference, summarize or hash protected source material where appropriate rather than disclose the protected material itself.
+
 ## Final Rule
 
-AIO CODE must remain sufficiently transparent to be credible and sufficiently bounded to protect proprietary implementation knowledge.
+AIO CODE must remain sufficiently transparent to be credible and sufficiently bounded to protect proprietary implementation knowledge, commercial leverage and operational security.
