@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/schemas/aio-commerce-v1.schema.json",
+  "title": "AIO CODE Commerce Register v1",
+  "type": "object",
+  "required": [
+    "registry_id",
+    "version",
+    "updated",
+    "primary_public_brand",
+    "entity_ids",
+    "status_values",
+    "records",
+    "rules"
+  ],
+  "properties": {
+    "registry_id": {
+      "const": "AIO-COMMERCE-v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "primary_public_brand": {
+      "const": "AIO CODE"
+    },
+    "entity_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status_values": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "ORGANIC",
+          "GIFT",
+          "PAID",
+          "AFF",
+          "OWN"
+        ]
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "asset_id",
+          "asset_type",
+          "commercial_status",
+          "rights_state",
+          "disclosure_state",
+          "commercial_signal",
+          "revenue_attribution",
+          "record_status"
+        ],
+        "properties": {
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "asset_type": {
+            "enum": [
+              "music_track",
+              "music_playlist",
+              "brand_campaign",
+              "content_asset"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string"
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uri"
+          },
+          "commercial_status": {
+            "enum": [
+              "ORGANIC",
+              "GIFT",
+              "PAID",
+              "AFF",
+              "OWN",
+              "unknown"
+            ]
+          },
+          "brand_relation": {
+            "type": "string"
+          },
+          "product_placement": {
+            "type": "string"
+          },
+          "cta": {
+            "type": "string"
+          },
+          "rights_state": {
+            "enum": [
+              "cleared",
+              "restricted",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "disclosure_state": {
+            "enum": [
+              "reviewed",
+              "required",
+              "not_required",
+              "unknown",
+              "not_applicable"
+            ]
+          },
+          "commercial_signal": {
+            "type": "string"
+          },
+          "revenue_attribution": {
+            "type": "string"
+          },
+          "record_status": {
+            "enum": [
+              "planned",
+              "active",
+              "published",
+              "withdrawn"
+            ]
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
