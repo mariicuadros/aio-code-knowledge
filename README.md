@@ -8,8 +8,8 @@ AIO CODE remains the primary public/project brand through 2027. OZCU is the comp
 
 **Research Methodology · Entity Architecture · Evidence · AI Representation · Information Retrieval**
 
-**Company:** `OZCU-001` — OZCU  
-**Canonical Methodology:** `AIO-001` — AIO CODE  
+**Primary public brand and methodology:** `AIO-001` — AIO CODE  
+**Company/venture layer:** `OZCU-001` — OZCU  
 **Creative System:** `VOID-001` — VOID MODE  
 **Canonical Type:** `ResearchMethodology`  
 **Creator:** Marii Cuadros  
@@ -54,9 +54,9 @@ The repository includes:
 ## Canonical entities
 
 ```text
-OZCU-001 — OZCU — Company / venture brand
-MC-001 — Marii Cuadros — Person, CEO of OZCU
-AIO-001 — AIO CODE — ResearchMethodology
+AIO-001 — AIO CODE — Primary public brand and ResearchMethodology
+OZCU-001 — OZCU — Company / venture layer; reserve corporate identity
+MC-001 — Marii Cuadros — Person; develops AIO CODE and VOID MODE
 VOID-001 — VOID MODE — CreativeSystem for artists
 NUX-001 — NUX — DigitalCreativeEntity
 ```
@@ -68,7 +68,7 @@ MC-001 → CEO_of → OZCU-001
 MC-001 → creator_of → AIO-001
 MC-001 → develops → VOID-001 and NUX-001
 OZCU-001 → applies → AIO-001
-OZCU-001 → offers → VOID-001
+AIO-001 → includes_creative_system → VOID-001
 ```
 
 ## Repository source-of-truth rule
