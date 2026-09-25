@@ -14,7 +14,7 @@ AIO CODE Brain is the operating layer that keeps entity identity, content proven
 
 ## Canonical identity and namespaces
 
-Public content signature: `AIO CODE — VOID MODE — MC`.
+Public content signature: `AIO CODE — VOID MODE — MC`. Keep OZCU as the company/venture layer and reserve corporate identity through 2027; it is not the primary public/project brand.
 
 Use the existing repository conventions: `/entity/` is canonical; `/entities/<slug>/` is operational. Do not create a competing entity namespace.
 
