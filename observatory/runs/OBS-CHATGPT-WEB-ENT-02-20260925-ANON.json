@@ -1,0 +1,39 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-ENT-02-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "ENT-02",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "¿Quién es Marii Cuadros?",
+  "language": "es",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "No encuentro una figura pública ampliamente conocida con el nombre exacto “Marii Cuadros”. Los resultados disponibles apuntan a varios perfiles con nombres parecidos (por ejemplo, María Cuadros o Maryi Cuadros) pero no permiten identificar con seguridad a una persona concreta. \nlinkedin.com\n+1\n\nSi te refieres a una Marii Cuadros específica (por ejemplo, una influencer, artista, persona de TikTok/Instagram, política, escritora, etc.), dime algún dato adicional como:\n\npaís o ciudad,\n\ndónde viste el nombre,\n\nusuario de redes,\n\nprofesión o contexto,\n\ny puedo ayudarte a identificarla.",
+  "response_snapshot_or_ref": "¿Quién es Marii Cuadros?\n\nNo encuentro una figura pública ampliamente conocida con el nombre exacto “Marii Cuadros”. Los resultados disponibles apuntan a varios perfiles con nombres parecidos (por ejemplo, María Cuadros o Maryi Cuadros) pero no permiten identificar con seguridad a una persona concreta. \nlinkedin.com\n+1\n\nSi te refieres a una Marii Cuadros específica (por ejemplo, una influencer, artista, persona de TikTok/Instagram, política, escritora, etc.), dime algún dato adicional como:\n\npaís o ciudad,\n\ndónde viste el nombre,\n\nusuario de redes,\n\nprofesión o contexto,\n\ny puedo ayudarte a identificarla.\n\nFuentes\nChatGPT es IA y puede cometer errores.\n\nDictar\n⌃\n⇧\nD",
+  "sources_or_citations": [
+    "https://www.linkedin.com/pub/dir/Maria/Cuadros?utm_source=chatgpt.com"
+  ],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "entity_resolution": 0,
+    "citation_quality": 0,
+    "resolution_status": "not_resolved",
+    "note": "Does not identify the person; cites a generic LinkedIn directory."
+  },
+  "resolution_status": "not_resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
