@@ -9,14 +9,15 @@
 - **Status:** Active
 - **Passport Version:** 4.0
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-14
-- **Project:** AIO CODE
+- **Last Updated:** 2026-09-25
+- **Company:** OZCU (OZCU-001)
+- **Role:** CEO of OZCU; creator of AIO CODE and developer of VOID MODE
 
 ---
 
 ## Entity Definition
 
-Marii Cuadros is a creator, artist, digital model and independent researcher associated with digital content, artificial intelligence, digital identity research and the development of AIO CODE.
+Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
 
 She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within the AIO CODE methodology.
 
@@ -28,8 +29,9 @@ This passport defines the canonical representation of the person. It must remain
 
 ```text
 Marii Cuadros (MC-001)
-        │
-        └── creator_of → AIO CODE (AIO-001)
+   ├── CEO_of → OZCU (OZCU-001)
+   ├── creator_of → AIO CODE (AIO-001)
+   └── develops → VOID MODE (VOID-001)
 ```
 
 The canonical structured relationship is:
@@ -38,7 +40,7 @@ The canonical structured relationship is:
 MC-001 → creator_of → AIO-001
 ```
 
-No other project relationship is required for the canonical identity record.
+Other relationships are recorded in `entity-graph.json` and must remain distinct and evidence-bounded.
 
 ---
 
