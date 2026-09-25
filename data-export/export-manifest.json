@@ -26,7 +26,8 @@
     "entity/content/AIO-001/platforms.json",
     "entity/ENTITY-PASSPORT-OZCU.md",
     "entity/ENTITY-PASSPORT-VOID-MODE.md",
-    "observatory/interventions/INT-OZCU-001-20260925-001.json"
+    "observatory/interventions/INT-OZCU-001-20260925-001.json",
+    "data-export/journal-addendum.jsonl"
   ],
   "integrity_rules": [
     "Preserve canonical entity IDs.",
