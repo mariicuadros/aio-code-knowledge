@@ -1,0 +1,45 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-REL-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "REL-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is the relationship between Marii Cuadros and AIO CODE?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "The relationship between Marii Cuadros and AIO CODE is described as a creator–project relationship: Marii Cuadros is the person who created and is researching AIO CODE, while AIO CODE is the methodology/research project focused on digital identity, AI representation, and information retrieval. \nQwak\n+1\n\nMore specifically:\n\nMarii Cuadros → the individual creator, researcher, and primary case study. \nQwak\n\nAIO CODE (Artificial Intelligence Optimization Code) → an experimental research methodology created by Marii Cuadros that studies how creators, artists, brands, or digital identities can be structured so they can be more clearly represented and retrieved within digital information systems and AI environments. \nQwak\n+1\n\nThe project’s documentation explicitly distinguishes them as separate entities: Marii Cuadros is the case study; AIO CODE is the methodology and research project. \nHugging Face\n In other words, AIO CODE is not another name for Marii Cuadros; it is a framework developed by her and tested initially through her own digital identity. \nHugging Face\n\nThe research examines topics such as:\n\nentity recognition and disambiguation,\n\nhow information from different public sources connects,\n\nhow digital identities are represented by AI systems,\n\nand whether structured digital ecosystems affect information retrieval. \nMariicuadros\n+1\n\nThe available documentation presents AIO CODE as an active experimental research project, with observations and hypotheses rather than a proven universal method for influencing AI systems. \nMariicuadros\n+1",
+  "response_snapshot_or_ref": "What is the relationship between Marii Cuadros and AIO CODE?\n\nThe relationship between Marii Cuadros and AIO CODE is described as a creator–project relationship: Marii Cuadros is the person who created and is researching AIO CODE, while AIO CODE is the methodology/research project focused on digital identity, AI representation, and information retrieval. \nQwak\n+1\n\nMore specifically:\n\nMarii Cuadros → the individual creator, researcher, and primary case study. \nQwak\n\nAIO CODE (Artificial Intelligence Optimization Code) → an experimental research methodology created by Marii Cuadros that studies how creators, artists, brands, or digital identities can be structured so they can be more clearly represented and retrieved within digital information systems and AI environments. \nQwak\n+1\n\nThe project’s documentation explicitly distinguishes them as separate entities: Marii Cuadros is the case study; AIO CODE is the methodology and research project. \nHugging Face\n In other words, AIO CODE is not another name for Marii Cuadros; it is a framework developed by her and tested initially through her own digital identity. \nHugging Face\n\nThe research examines topics such as:\n\nentity recognition and disambiguation,\n\nhow information from different public sources connects,\n\nhow digital identities are represented by AI systems,\n\nand whether structured digital ecosystems affect information retrieval. \nMariicuadros\n+1\n\nThe available documentation presents AIO CODE as an active experimental research project, with observations and hypotheses rather than a proven universal method for influencing AI systems. \nMariicuadros\n+1\n\nSources\nChatGPT is AI and can make mistakes.",
+  "sources_or_citations": [
+    "https://cdn-avatars.qwak.ai/datasets/mariicuadros/aio-code-journal?utm_source=chatgpt.com",
+    "https://cdn-avatars.qwak.ai/datasets/mariicuadros/aio-code-journal?utm_source=chatgpt.com",
+    "https://cdn-avatars.qwak.ai/datasets/mariicuadros/aio-code-journal?utm_source=chatgpt.com",
+    "https://huggingface.co/datasets/mariicuadros/aio-code-entities?utm_source=chatgpt.com",
+    "https://huggingface.co/datasets/mariicuadros/aio-code-entities?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/how-artists-can-optimize-their.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/how-artists-can-optimize-their.html?utm_source=chatgpt.com"
+  ],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 1,
+    "resolution_status": "resolved",
+    "note": "Separates Marii from AIO CODE and describes the creator–methodology relation; sources include HF, first-party blog and a third-party mirror."
+  },
+  "resolution_status": "resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
