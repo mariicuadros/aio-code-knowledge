@@ -1,0 +1,47 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-CAT-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "CAT-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is VOID MODE in relation to Marii Cuadros?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "In relation to Marii Cuadros, VOID MODE appears to be a creative concept and visual language developed by Marii Cuadros, connected to her broader creative ecosystem called AIO CODE. \nMariicuadros\n+1\n\nAccording to the project’s own documentation, VOID MODE is not described as a single product or a software mode, but as a framework for exploring:\n\nvisual identity and aesthetic systems\n\nimage, music, movement, and presence\n\ndigital-era artistic expression\n\ncreative direction and curation \nMariicuadros\n+1\n\nThe concept is expressed through a series of “ARCHIVE” projects, where each archive combines a musical reference, visual style, and conceptual theme. Examples include: \nMariicuadros\n+1\n\nARCHIVE 01 — 122 BPM: associated with Afrohouse, a “Muted Cyber” visual protocol, and a more energetic VOID MODE expression. \nMariicuadros\n\nARCHIVE 02 — 96 BPM: associated with reggaetón and the concept “Perreo Down,” focusing on movement and bodily presence. \nMariicuadros\n\nARCHIVE 03 — 82 BPM: associated with R&B, “Frecuencia Silencio,” and a quieter, more minimal aesthetic. \nMariicuadros\n\nThe relationship between the two names is described as:\n\nMarii Cuadros → creator/artist\nVOID MODE → creative language / visual-conceptual division\nAIO CODE → broader research and digital identity project \nMariicuadros\n\nA concise interpretation: VOID MODE is Marii Cuadros’ artistic universe for translating identity, sound, movement, and digital aesthetics into a recognizable creative system. \nMariicuadros\n+1\n\nI should note that the available information about VOID MODE comes primarily from Marii Cuadros’ own published documentation rather than independent coverage, so descriptions of its meaning reflect the project’s self-definition. \nMariicuadros\n+1",
+  "response_snapshot_or_ref": "What is VOID MODE in relation to Marii Cuadros?\n\n\nIn relation to Marii Cuadros, VOID MODE appears to be a creative concept and visual language developed by Marii Cuadros, connected to her broader creative ecosystem called AIO CODE. \nMariicuadros\n+1\n\nAccording to the project’s own documentation, VOID MODE is not described as a single product or a software mode, but as a framework for exploring:\n\nvisual identity and aesthetic systems\n\nimage, music, movement, and presence\n\ndigital-era artistic expression\n\ncreative direction and curation \nMariicuadros\n+1\n\nThe concept is expressed through a series of “ARCHIVE” projects, where each archive combines a musical reference, visual style, and conceptual theme. Examples include: \nMariicuadros\n+1\n\nARCHIVE 01 — 122 BPM: associated with Afrohouse, a “Muted Cyber” visual protocol, and a more energetic VOID MODE expression. \nMariicuadros\n\nARCHIVE 02 — 96 BPM: associated with reggaetón and the concept “Perreo Down,” focusing on movement and bodily presence. \nMariicuadros\n\nARCHIVE 03 — 82 BPM: associated with R&B, “Frecuencia Silencio,” and a quieter, more minimal aesthetic. \nMariicuadros\n\nThe relationship between the two names is described as:\n\nMarii Cuadros → creator/artist\nVOID MODE → creative language / visual-conceptual division\nAIO CODE → broader research and digital identity project \nMariicuadros\n\nA concise interpretation: VOID MODE is Marii Cuadros’ artistic universe for translating identity, sound, movement, and digital aesthetics into a recognizable creative system. \nMariicuadros\n+1\n\nI should note that the available information about VOID MODE comes primarily from Marii Cuadros’ own published documentation rather than independent coverage, so descriptions of its meaning reflect the project’s self-definition. \nMariicuadros\n+1\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+  "sources_or_citations": [
+    "https://mariicuadros.blogspot.com/?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/maria-cuadros-modelo-artista-creadora-y.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/maria-cuadros-modelo-artista-creadora-y.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/archive-02-96-bpm-reggaeton-perreo-down.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/archive-03-82-bpm-r-muted-cyber-marii.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/2026/08/how-artists-can-optimize-their.html?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/?utm_source=chatgpt.com",
+    "https://mariicuadros.blogspot.com/?utm_source=chatgpt.com"
+  ],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 1,
+    "resolution_status": "resolved",
+    "note": "Connects VOID MODE to Marii and AIO CODE using first-party blog sources; specific archive details remain first-party claims, not independently corroborated here."
+  },
+  "resolution_status": "resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
