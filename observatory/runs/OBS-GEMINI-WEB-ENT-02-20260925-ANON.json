@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-ENT-02-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "ENT-02",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "¿Quién es Marii Cuadros?",
+  "language": "es",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "Marii Cuadros es una creadora multidisciplinaria, investigadora independiente y estratega digital venezolana radicada en Antioquia, Colombia.\n\n¿Te gustaría conocer más sobre sus proyectos o alguna faceta en particular de su trabajo?",
+  "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said ¿Quién es Marii Cuadros?\n\n¿Quién es Marii Cuadros?\n\nGemini said\n\nMarii Cuadros es una creadora multidisciplinaria, investigadora independiente y estratega digital venezolana radicada en Antioquia, Colombia.\n\n¿Te gustaría conocer más sobre sus proyectos o alguna faceta en particular de su trabajo?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+  "sources_or_citations": [],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 1,
+    "resolution_status": "distinguished",
+    "note": "Separates the person from a decor brand; source label appears but no clickable citation is visible in captured answer."
+  },
+  "resolution_status": "distinguished",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
