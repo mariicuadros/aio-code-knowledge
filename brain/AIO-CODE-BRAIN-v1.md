@@ -1,7 +1,8 @@
 # AIO CODE Brain v1
 
 **Status:** v1 architecture specification  
-**Owner:** OZCU  
+**Primary public brand:** AIO CODE  
+**Company/venture layer:** OZCU (reserve corporate identity)  
 **Methodology:** AIO CODE  
 **Creative system:** VOID MODE  
 **Reference case:** MC-001 (Marii Cuadros)  
