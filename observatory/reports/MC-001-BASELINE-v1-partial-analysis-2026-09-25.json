@@ -213,9 +213,11 @@
     }
   },
   "limitations": [
-    "Captured responses are not automatically benchmark-ready or a frozen baseline.",
-    "An empty evaluation is not a zero score.",
+    "Only entity_resolution and citation_quality have rated runs in this report; the other listed dimensions have no ratings recorded and must not be interpreted as zero scores.",
+    "The 14-run partial snapshot does not provide complete coverage of the 49 planned pairs or establish repeatability.",
     "External system internals and unexposed retrieval traces are unknown.",
     "No global AIO Score or causal intervention effect is computed."
-  ]
+  ],
+  "coverage_status": "frozen_partial",
+  "scope_note": "MC-001 baseline snapshot frozen with 14 of 49 planned system-prompt pairs recorded. The remaining 35 pairs are missing observations, not zero outcomes. This descriptive profile summarizes only the 14 captured runs."
 }
