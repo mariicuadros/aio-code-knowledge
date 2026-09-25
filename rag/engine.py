@@ -31,7 +31,7 @@ ES_EN = {
 }
 WORDS = re.compile(r"[a-z0-9]+", re.I)
 CLAIMS = re.compile(r"CLAIM-\d+")
-ENTITIES = re.compile(r"\b(?:MC-001|AIO-001|NUX-001)\b")
+ENTITIES = re.compile(r"\b(?:MC-001|AIO-001|NUX-001|OZCU-001|VOID-001)\b")
 
 
 def tokens(value: str) -> list[str]:
