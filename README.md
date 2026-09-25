@@ -188,7 +188,7 @@ Material prompt wording changes require a new prompt version.
 
 See `RAG-READINESS-AUDIT-2026-09-24.md` for the initial gap assessment. A first **local, public-only lexical retrieval prototype** is now in `rag/`: an exact corpus allowlist, source/commit citations, 24 frozen acceptance questions, and an optional model-assisted draft generator. The source retrieval check currently finds an approved gold source in the first five results for 21/21 cases with a declared gold source. This is not a correctness or abstention score. No hosted answer service or independently validated generated answers exist yet. Public files do not determine how third-party AI systems retrieve information.
 
-The Observatory has a planned 49-pair first measurement window and local capture/report tools in `observatory/`. No system responses have been collected into the v1 baseline; its empirical status remains **not frozen**.
+The Observatory has a planned 49-pair first measurement window and local capture/report tools in `observatory/`. `MC-001-BASELINE-v1-20260925` is frozen **partially at 14/49**, with 35 pairs documented as missing. It is not complete coverage or a causal comparison. The separate OZCU post-intervention window is also prepared but awaits its 28 platform captures.
 
 Before the controlled Hugging Face export, `scripts/validate_core.py` checks the current JSON schemas and key canonical cross-references. Historical `ER-001` remains a legacy observation and is not silently converted to the new benchmark schema. Repository-only corrections are recorded in `governance/methodology-change-log.md`.
 
@@ -256,6 +256,11 @@ Replicate
 - `claim-ledger.json`
 - `observatory/observation-schema.json`
 - `PROVENANCE-ARCHITECTURE.md`
+- `brain/AIO-CODE-BRAIN-v1.md`
+- `brain/templates/README.md`
+- `semantic/search-map-v1.json`
+- `commerce/commerce-register-v1.json`
+- `product/checker-v0.1-spec.md`
 
 ## Methodology integrity rules
 
