@@ -32,9 +32,10 @@ AIO CODE is not an AI model, chatbot, search engine, social platform, person, or
 ```text
 Marii Cuadros (MC-001) ── creator_of → AIO CODE (AIO-001)
 OZCU (OZCU-001) ── applies → AIO CODE (AIO-001)
+AIO CODE (AIO-001) ── includes_creative_system → VOID MODE (VOID-001)
 ```
 
-These relationships are defined in the canonical entity records. OZCU is the company/venture brand; AIO CODE remains a separate methodology entity.
+These relationships are defined in the canonical entity records. AIO CODE is the primary public/project brand and remains a methodology entity. OZCU is the company/venture layer and reserve corporate identity. VOID MODE is AIO CODE’s associated creative system for artists.
 
 ---
 
