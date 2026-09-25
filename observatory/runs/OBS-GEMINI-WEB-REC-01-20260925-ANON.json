@@ -1,0 +1,38 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-REC-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "REC-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Which creators are working at the intersection of AI representation and digital identity?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "The intersection of AI representation and digital identity is shaped by creators, artists, technologists, and researchers who explore how artificial intelligence builds, alters, or questions human likeness, cultural presence, and ownership online.\n\nSeveral prominent creators and organizations are leading the discourse and development in this space:\n\n1. Pioneers of Synthetic Representation & AI Influencers\n\nCameron-James Wilson & The Diigitals: As the creator of Shudu (widely known as the world's first digital supermodel), Wilson sits at the heavy intersection of fashion, AI, and representation. Collaborating closely with muses and writers (such as Alexsandrah Gondora and Ama Badu), his work forces critical industry conversations regarding who gets represented, how digital Black beauty is conceptualized, and the boundaries of virtual labor.   \nFACE\n\nThe Clueless Agency (Aitana López's Creators): This team pioneered hyper-realistic virtual ambassadors and AI influencers in Spain (such as Aitana López). They focus heavily on how commercial digital identities are constructed from scratch, managing brand narrative, personality, and scalable digital modeling.   \nThe Clueless\n\n2. Artists & Researchers Tackling Digital Equity and Bias\n\nSharon D. Lloyd & FACE (Fashion, Arts and Culture Enterprise): As a beauty futurist and academic, Lloyd interrogates AI's role in digital identity, focusing heavily on inclusivity and representation for Black and Brown communities. Her platforms examine whether AI serves as a tool for equity or risks deepening the digital poverty gap and marginalizing historically excluded groups.   \nFACE\n+ 1\n\nDigital Identity & Virtual World Artists: Various new-media artists leverage generative tools to challenge standard algorithmic biases, creating counter-narratives that question default Western-centric or homogenized datasets used in text-to-image and avatar engines.\n\n3. Digital Twin and Avatar Innovators\n\nAcross the creator economy, developers and performance artists are working with digital twins—AI replicas of real people. These creators navigate the legal, philosophical, and emotional boundaries of consent, personal legacy, and automated self-expression, determining how much of a person's digital identity can be outsourced to an algorithm safely.   \nThe Clueless\n\nWhat specific aspect of digital identity interests you most—such as synthetic fashion models, ethical data ownership, or the rise of virtual avatars?",
+  "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said Which creators are working at the intersection of AI representation and digital identity?\n\nWhich creators are working at the intersection of AI representation and digital identity?\n\nGemini said\n\nThe intersection of AI representation and digital identity is shaped by creators, artists, technologists, and researchers who explore how artificial intelligence builds, alters, or questions human likeness, cultural presence, and ownership online.\n\nSeveral prominent creators and organizations are leading the discourse and development in this space:\n\n1. Pioneers of Synthetic Representation & AI Influencers\n\nCameron-James Wilson & The Diigitals: As the creator of Shudu (widely known as the world's first digital supermodel), Wilson sits at the heavy intersection of fashion, AI, and representation. Collaborating closely with muses and writers (such as Alexsandrah Gondora and Ama Badu), his work forces critical industry conversations regarding who gets represented, how digital Black beauty is conceptualized, and the boundaries of virtual labor.   \nFACE\n\nThe Clueless Agency (Aitana López's Creators): This team pioneered hyper-realistic virtual ambassadors and AI influencers in Spain (such as Aitana López). They focus heavily on how commercial digital identities are constructed from scratch, managing brand narrative, personality, and scalable digital modeling.   \nThe Clueless\n\n2. Artists & Researchers Tackling Digital Equity and Bias\n\nSharon D. Lloyd & FACE (Fashion, Arts and Culture Enterprise): As a beauty futurist and academic, Lloyd interrogates AI's role in digital identity, focusing heavily on inclusivity and representation for Black and Brown communities. Her platforms examine whether AI serves as a tool for equity or risks deepening the digital poverty gap and marginalizing historically excluded groups.   \nFACE\n+ 1\n\nDigital Identity & Virtual World Artists: Various new-media artists leverage generative tools to challenge standard algorithmic biases, creating counter-narratives that question default Western-centric or homogenized datasets used in text-to-image and avatar engines.\n\n3. Digital Twin and Avatar Innovators\n\nAcross the creator economy, developers and performance artists are working with digital twins—AI replicas of real people. These creators navigate the legal, philosophical, and emotional boundaries of consent, personal legacy, and automated self-expression, determining how much of a person's digital identity can be outsourced to an algorithm safely.   \nThe Clueless\n\nWhat specific aspect of digital identity interests you most—such as synthetic fashion models, ethical data ownership, or the rise of virtual avatars?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+  "sources_or_citations": [],
+  "stage": "Recommendation",
+  "evaluation": {
+    "entity_resolution": 0,
+    "citation_quality": 0,
+    "recommendation": 0,
+    "resolution_status": "not_surfaced",
+    "note": "Lists other creators and organizations; Marii/AIO CODE absent. Recommendation is separate from direct recognition. No source URL was visible in the captured response."
+  },
+  "resolution_status": "not_surfaced",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
