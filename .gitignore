@@ -3,3 +3,35 @@ __pycache__/
 .env
 .env.*
 node_modules/
+
+# AIO CODE security boundary — never commit private operational material here
+/private/
+/vault/
+/recovery/
+/contracts-private/
+/brands-private/
+/commercial-private/
+/incidents-private/
+/credentials/
+/secrets/
+
+# Common sensitive files
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.token
+*.secret
+*.secrets
+*.credentials
+*.recovery
+*.backup-codes
+
+# Local/private exports
+*.private.json
+*.private.yaml
+*.private.yml
+*.private.csv
+*.private.md
