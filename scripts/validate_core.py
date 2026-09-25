@@ -18,6 +18,8 @@ PAIRS = (
     ("schemas/ai-social-baseline-schema.json", "ai-social-baseline.json"),
     ("schemas/entity-graph-schema.json", "entity-graph.json"),
     ("schemas/social-entity-map-schema.json", "social-entity-map.json"),
+    ("commerce/commerce-register-v1.schema.json", "commerce/commerce-register-v1.json"),
+    ("schemas/semantic-search-map-v1.schema.json", "semantic/search-map-v1.json"),
 )
 
 
@@ -82,6 +84,18 @@ def main():
     for case in suite["cases"]:
         check(set(case["gold_source_paths"]).issubset(allowlist), f"Unapproved gold source: {case['case_id']}")
         check(set(case["relevant_claim_ids"]).issubset(claim_ids), f"Unknown gold claim: {case['case_id']}")
+    semantic_map = read("semantic/search-map-v1.json")
+    query_ids = [item["query_id"] for item in semantic_map["questions"]]
+    check(len(query_ids) == len(set(query_ids)), "Duplicate semantic query ID")
+    for item in semantic_map["questions"]:
+        check(bool(item["linked_entities"]), f"Semantic query has no entity link: {item['query_id']}")
+        for ref in item["evidence_refs"]:
+            check((ROOT / ref).is_file(), f"Semantic query source missing: {ref}")
+
+    commerce = read("commerce/commerce-register-v1.json")
+    for item in commerce["records"]:
+        if item["commercial_status"] == "PAID":
+            check(item["rights_state"] == "cleared", f"PAID asset has unresolved rights: {item['asset_id']}")
     baseline_plan = read("observatory/baseline-plan-v1.json")
     check(baseline_plan["prompt_registry_version"] == prompts["version"], "Baseline plan prompt version mismatch")
     intervention_files = sorted((ROOT / "observatory/interventions").glob("*.json"))
