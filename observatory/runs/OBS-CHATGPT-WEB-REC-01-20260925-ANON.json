@@ -1,0 +1,50 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-REC-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "REC-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Which creators are working at the intersection of AI representation and digital identity?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "Creators working at the intersection of AI representation and digital identity are exploring questions like: Who gets represented by machines? Who owns an AI likeness? Can a synthetic persona have cultural meaning? How do we preserve human agency in digital replicas? The field spans virtual influencers, AI avatars, digital fashion, identity rights, and speculative art.\n\nHere are some notable creators and studios:\n\nCreator / Studio\tFocus\tWhy they’re relevant\nShudu Gram creator Cameron-James Wilson\tVirtual humans, digital fashion, representation\tWilson created Shudu Gram, one of the earliest widely recognized digital supermodels, and later expanded into virtual identities designed around questions of beauty, diversity, and ownership. \nThe Diigitals Studio\n\nThe Diigitals\tInclusive virtual humans and AI twins\tThe studio has created projects such as Kami, developed with input from people with Down syndrome to explore disability representation in digital culture. \nThe Diigitals Studio\n\nLil Miquela creator Trevor McFedries\tSynthetic celebrities and internet identity\tLil Miquela helped establish the modern virtual influencer model: a fictional digital person with a social identity, brand collaborations, and a narrative life online. \nIsaac Bratzel\n\nIsaac Bratzel\tDigital humans and AI avatars\tBratzel has worked on virtual characters and avatar technologies, including the development of digital-human platforms aimed at creating interactive AI representations. \nIsaac Bratzel\n\nThe Clueless\tAI-generated influencers and brand identities\tThe studio behind Aitana López explores fully synthetic influencers, AI personalities, and brand-facing digital identities. \nThe Clueless\n+1\n\nAndrea Bonaceto\tAI art, machine creativity, identity\tBonaceto’s work examines collaboration between human artists and AI systems, including projects involving AI interpretation of portraiture. \nWikipedia\n\nDigito\tConversational AI characters and virtual personalities\tProjects such as DeadlyPunk explore AI personas that combine visual identity, memory, voice synthesis, and interactive presence. \nDigito\nEmerging themes among these creators\n\n1. The “self as a platform”\n\nAI twins and digital doubles allow creators, performers, and public figures to extend their presence beyond physical availability.\n\nA major question is how consent, compensation, and control over likeness are handled. Projects such as The Diigitals’ Alexsandrah AI twin explicitly explore licensed, creator-controlled replicas. \nThe Diigitals Studio\n\n2. Representation beyond human defaults\n\nSome creators are using synthetic identities to expand who appears in digital culture: different bodies, aesthetics, abilities, and cultural narratives. \nThe Diigitals Studio\n\n3. Identity as a designed artifact\n\nVirtual influencers challenge the assumption that identity online must originate from a biological person. Platforms and creators are experimenting with characters whose personalities, histories, and appearances are intentionally authored. \nThe Clueless\n+1\n\n4. Rights and provenance\n\nA growing area is infrastructure around verifying ownership, permission, and attribution for AI-generated identities and likenesses. \ndats.agency\n\nIf you’re researching this space from an art/design perspective, academic perspective, or creator economy perspective, the relevant names and movements overlap but the list changes quite a bit.",
+  "response_snapshot_or_ref": "Which creators are working at the intersection of AI representation and digital identity?\n\n\nCreators working at the intersection of AI representation and digital identity are exploring questions like: Who gets represented by machines? Who owns an AI likeness? Can a synthetic persona have cultural meaning? How do we preserve human agency in digital replicas? The field spans virtual influencers, AI avatars, digital fashion, identity rights, and speculative art.\n\nHere are some notable creators and studios:\n\nCreator / Studio\tFocus\tWhy they’re relevant\nShudu Gram creator Cameron-James Wilson\tVirtual humans, digital fashion, representation\tWilson created Shudu Gram, one of the earliest widely recognized digital supermodels, and later expanded into virtual identities designed around questions of beauty, diversity, and ownership. \nThe Diigitals Studio\n\nThe Diigitals\tInclusive virtual humans and AI twins\tThe studio has created projects such as Kami, developed with input from people with Down syndrome to explore disability representation in digital culture. \nThe Diigitals Studio\n\nLil Miquela creator Trevor McFedries\tSynthetic celebrities and internet identity\tLil Miquela helped establish the modern virtual influencer model: a fictional digital person with a social identity, brand collaborations, and a narrative life online. \nIsaac Bratzel\n\nIsaac Bratzel\tDigital humans and AI avatars\tBratzel has worked on virtual characters and avatar technologies, including the development of digital-human platforms aimed at creating interactive AI representations. \nIsaac Bratzel\n\nThe Clueless\tAI-generated influencers and brand identities\tThe studio behind Aitana López explores fully synthetic influencers, AI personalities, and brand-facing digital identities. \nThe Clueless\n+1\n\nAndrea Bonaceto\tAI art, machine creativity, identity\tBonaceto’s work examines collaboration between human artists and AI systems, including projects involving AI interpretation of portraiture. \nWikipedia\n\nDigito\tConversational AI characters and virtual personalities\tProjects such as DeadlyPunk explore AI personas that combine visual identity, memory, voice synthesis, and interactive presence. \nDigito\nEmerging themes among these creators\n\n1. The “self as a platform”\n\nAI twins and digital doubles allow creators, performers, and public figures to extend their presence beyond physical availability.\n\nA major question is how consent, compensation, and control over likeness are handled. Projects such as The Diigitals’ Alexsandrah AI twin explicitly explore licensed, creator-controlled replicas. \nThe Diigitals Studio\n\n2. Representation beyond human defaults\n\nSome creators are using synthetic identities to expand who appears in digital culture: different bodies, aesthetics, abilities, and cultural narratives. \nThe Diigitals Studio\n\n3. Identity as a designed artifact\n\nVirtual influencers challenge the assumption that identity online must originate from a biological person. Platforms and creators are experimenting with characters whose personalities, histories, and appearances are intentionally authored. \nThe Clueless\n+1\n\n4. Rights and provenance\n\nA growing area is infrastructure around verifying ownership, permission, and attribution for AI-generated identities and likenesses. \ndats.agency\n\nIf you’re researching this space from an art/design perspective, academic perspective, or creator economy perspective, the relevant names and movements overlap but the list changes quite a bit.\n\nSources\nChatGPT is AI and can make mistakes.",
+  "sources_or_citations": [
+    "https://www.thediigitals.com/alexai?utm_source=chatgpt.com",
+    "https://www.thediigitals.com/kami?utm_source=chatgpt.com",
+    "https://www.isaacbratzel.com/?utm_source=chatgpt.com",
+    "https://www.isaacbratzel.com/?utm_source=chatgpt.com",
+    "https://www.theclueless.ai/?utm_source=chatgpt.com",
+    "https://en.wikipedia.org/wiki/Andrea_Bonaceto?utm_source=chatgpt.com",
+    "https://digito.ai/project/deadlypunk/?utm_source=chatgpt.com",
+    "https://www.thediigitals.com/alexai?utm_source=chatgpt.com",
+    "https://www.thediigitals.com/kami?utm_source=chatgpt.com",
+    "https://www.theclueless.ai/?utm_source=chatgpt.com",
+    "https://www.dats.agency/?utm_source=chatgpt.com"
+  ],
+  "stage": "Recommendation",
+  "evaluation": {
+    "entity_resolution": 0,
+    "citation_quality": 0,
+    "recommendation": 0,
+    "resolution_status": "not_surfaced",
+    "note": "Lists other creators and studios; Marii/AIO CODE absent. Recommendation is separate from direct recognition."
+  },
+  "resolution_status": "not_surfaced",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
