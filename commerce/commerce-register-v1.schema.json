@@ -147,6 +147,10 @@
       "items": {
         "type": "string"
       }
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 30
     }
   },
   "additionalProperties": false
