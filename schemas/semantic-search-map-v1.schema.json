@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/schemas/semantic-search-map-v1.schema.json",
+  "title": "AIO CODE Semantic Search Map v1",
+  "type": "object",
+  "required": [
+    "map_id",
+    "version",
+    "updated",
+    "owner_entity_id",
+    "primary_public_brand",
+    "purpose",
+    "status",
+    "questions"
+  ],
+  "properties": {
+    "map_id": {
+      "const": "AIO-SEMANTIC-SEARCH-MAP-v1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "owner_entity_id": {
+      "const": "AIO-001"
+    },
+    "primary_public_brand": {
+      "const": "AIO CODE"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 30
+    },
+    "status": {
+      "enum": [
+        "draft_for_review",
+        "active",
+        "superseded"
+      ]
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "query_id",
+          "question",
+          "intent",
+          "canonical_concept",
+          "answer_first_definition",
+          "evidence_refs",
+          "evidence_scope",
+          "independent_validation",
+          "linked_entities",
+          "status"
+        ],
+        "properties": {
+          "query_id": {
+            "type": "string",
+            "pattern": "^SEM-Q-[0-9]{3}$"
+          },
+          "question": {
+            "type": "string",
+            "minLength": 5
+          },
+          "intent": {
+            "type": "string"
+          },
+          "canonical_concept": {
+            "type": "string"
+          },
+          "answer_first_definition": {
+            "type": "string",
+            "minLength": 20
+          },
+          "evidence_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence_scope": {
+            "enum": [
+              "first_party_definition_or_method_record",
+              "independent_source",
+              "mixed"
+            ]
+          },
+          "independent_validation": {
+            "type": "boolean"
+          },
+          "linked_entities": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "MC-001",
+                "AIO-001",
+                "VOID-001",
+                "OZCU-001",
+                "NUX-001"
+              ]
+            }
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "reviewed",
+              "approved",
+              "superseded"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
