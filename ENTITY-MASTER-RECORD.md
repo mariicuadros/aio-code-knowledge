@@ -12,17 +12,28 @@ This document defines the canonical entity layer of AIO CODE. It is the source-o
 
 ## 2. Canonical Entity Set
 
-The current canonical entity set contains three distinct primary entities:
+The current canonical entity set contains five distinct entities across the company, person, methodology, creative system and digital creative identity:
 
 ```text
+OZCU-001 — OZCU
 MC-001 — Marii Cuadros
-NUX-001 — NUX
 AIO-001 — AIO CODE
+VOID-001 — VOID MODE
+NUX-001 — NUX
 ```
 
 These entities are distinct. A relationship between entities must be explicit; an association or alias does not automatically create a new entity.
 
 ## 3. Entity Registry
+
+### OZCU-001 — OZCU
+
+- **Entity Type:** Company / venture brand
+- **Canonical Name:** OZCU
+- **Role in ecosystem:** Digital marketing and optimization venture serving artists; applies AIO CODE and VOID MODE.
+- **CEO:** Marii Cuadros (MC-001)
+- **Passport:** `entity/ENTITY-PASSPORT-OZCU.md`
+- **Legal-status boundary:** This identity record uses OZCU as the venture/brand name and does not claim that a legal company has been incorporated.
 
 ### MC-001 — Marii Cuadros
 
@@ -32,6 +43,13 @@ These entities are distinct. A relationship between entities must be explicit; a
 - **Passport:** `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - **Content Registry:** `entity/content/MC-001/content-registry.json`
 - **Platform Registry:** `entity/content/MC-001/platforms.json`
+
+### VOID-001 — VOID MODE
+
+- **Entity Type:** CreativeSystem
+- **Canonical Name:** VOID MODE
+- **Role in ecosystem:** Creative system for developing an artist’s visual and narrative identity; developed by Marii Cuadros and offered/applied by OZCU.
+- **Passport:** `entity/ENTITY-PASSPORT-VOID-MODE.md`
 
 ### NUX-001 — NUX
 
@@ -60,13 +78,19 @@ AIO CODE is the methodology. Experiments are controlled validation activities co
 
 ```text
 MC-001 — Marii Cuadros
-   │
+   ├── CEO_of → OZCU-001 — OZCU
    ├── creator_of → AIO-001 — AIO CODE
-   │
+   ├── develops → VOID-001 — VOID MODE
    └── develops → NUX-001 — NUX
+
+OZCU-001 — OZCU
+   ├── applies → AIO-001 — AIO CODE
+   └── offers → VOID-001 — VOID MODE
 ```
 
-Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. There is no separate root-level `relationships.json` source of truth.
+Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. OZCU is the company/venture brand; AIO CODE remains its distinct methodology and VOID MODE its distinct creative system. They are not aliases or interchangeable labels.
+
+There is no separate root-level `relationships.json` source of truth.
 
 ## 5. Entity Passport Standard
 
