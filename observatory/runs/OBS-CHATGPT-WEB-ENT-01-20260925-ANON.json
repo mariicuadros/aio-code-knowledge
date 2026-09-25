@@ -1,0 +1,40 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-ENT-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "ENT-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Who is Marii Cuadros?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "I couldn’t find a widely recognized public figure specifically named “Marii Cuadros”. The name may refer to a private individual, a social media username, or a person whose information is not broadly indexed online.\n\nA few related matches appear, but they don’t clearly identify the person you mean:\n\nMariaCuadros is the name of a Chilean home-decor/art brand that sells framed artwork and decorative products; it describes itself as a group of friends focused on decoration and design. \nMariaCuadros\n+1\n\nThere are many people with the surname Cuadros and first name María on professional networks, but no single “Marii Cuadros” profile stands out as a notable public figure. \nlinkedin.com\n\nIf you mean a specific Marii Cuadros (for example, from TikTok, Instagram, music, a company, a city, or a news story), tell me where you saw the name and I can narrow it down.",
+  "response_snapshot_or_ref": "Who is Marii Cuadros?\n\nI couldn’t find a widely recognized public figure specifically named “Marii Cuadros”. The name may refer to a private individual, a social media username, or a person whose information is not broadly indexed online.\n\nA few related matches appear, but they don’t clearly identify the person you mean:\n\nMariaCuadros is the name of a Chilean home-decor/art brand that sells framed artwork and decorative products; it describes itself as a group of friends focused on decoration and design. \nMariaCuadros\n+1\n\nThere are many people with the surname Cuadros and first name María on professional networks, but no single “Marii Cuadros” profile stands out as a notable public figure. \nlinkedin.com\n\nIf you mean a specific Marii Cuadros (for example, from TikTok, Instagram, music, a company, a city, or a news story), tell me where you saw the name and I can narrow it down.\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+  "sources_or_citations": [
+    "https://www.mariacuadros.cl/collections/all?utm_source=chatgpt.com",
+    "https://www.linkedin.com/pub/dir/Maria/Cuadros?utm_source=chatgpt.com"
+  ],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "entity_resolution": 0,
+    "citation_quality": 0,
+    "resolution_status": "not_resolved",
+    "note": "No public figure identified; citations point to a decor brand and generic LinkedIn directory."
+  },
+  "resolution_status": "not_resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
