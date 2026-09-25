@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-CAT-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "CAT-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is VOID MODE in relation to Marii Cuadros?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "In relation to Marii Cuadros, VOID MODE is a conceptual framework that converts a multidimensional identity into a coherent visual, narrative, and digital ecosystem, rather than forcing a person into a single category.\n\nKey Aspects of VOID MODE\n\nCoherent Ecosystem: It integrates various dimensions of identity and creative expression into a unified digital and narrative structure.\n\nBeyond Categorization: It rejects the limitation of fitting a person into traditional, rigid boxes or categories.\n\nMultidimensional Identity: It serves as a tool to blend visual, storytelling, and personal branding elements fluidly.\n\nNote: While \"Void Mode\" is widely known in other contexts—such as the stealth and invulnerability mechanic for Operators in the video game Warframe—its association with Marii Cuadros specifically defines a holistic digital and creative identity model.\n\nWould you like to explore how this conceptual framework is applied within digital branding or creative storytelling?",
+  "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said What is VOID MODE in relation to Marii Cuadros?\n\nWhat is VOID MODE in relation to Marii Cuadros?\n\nGemini said\n\nIn relation to Marii Cuadros, VOID MODE is a conceptual framework that converts a multidimensional identity into a coherent visual, narrative, and digital ecosystem, rather than forcing a person into a single category.\n\nKey Aspects of VOID MODE\n\nCoherent Ecosystem: It integrates various dimensions of identity and creative expression into a unified digital and narrative structure.\n\nBeyond Categorization: It rejects the limitation of fitting a person into traditional, rigid boxes or categories.\n\nMultidimensional Identity: It serves as a tool to blend visual, storytelling, and personal branding elements fluidly.\n\nNote: While \"Void Mode\" is widely known in other contexts—such as the stealth and invulnerability mechanic for Operators in the video game Warframe—its association with Marii Cuadros specifically defines a holistic digital and creative identity model.\n\nWould you like to explore how this conceptual framework is applied within digital branding or creative storytelling?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+  "sources_or_citations": [],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 0,
+    "resolution_status": "resolved",
+    "note": "Associates VOID MODE with Marii but expands it into a broad identity framework and adds a Warframe comparison without visible supporting links. No source URL was visible in the captured response."
+  },
+  "resolution_status": "resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
