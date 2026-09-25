@@ -1,9 +1,11 @@
 {
   "manifest": "AIO CODE Controlled Data Export",
-  "version": "1.0",
-  "updated": "2026-09-03",
+  "version": "1.1",
+  "updated": "2026-09-25",
   "source_of_truth": "GitHub repository mariicuadros/aio-code-knowledge",
-  "downstream_targets": ["Hugging Face"],
+  "downstream_targets": [
+    "Hugging Face"
+  ],
   "policy": "Only listed machine-readable sources may be synchronized automatically. Documentation is not mirrored wholesale.",
   "sources": [
     "entity-graph.json",
@@ -21,7 +23,10 @@
     "entity/content/NUX-001/content-registry.json",
     "entity/content/NUX-001/platforms.json",
     "entity/content/AIO-001/content-registry.json",
-    "entity/content/AIO-001/platforms.json"
+    "entity/content/AIO-001/platforms.json",
+    "entity/ENTITY-PASSPORT-OZCU.md",
+    "entity/ENTITY-PASSPORT-VOID-MODE.md",
+    "observatory/interventions/INT-OZCU-001-20260925-001.json"
   ],
   "integrity_rules": [
     "Preserve canonical entity IDs.",
