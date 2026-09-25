@@ -1,6 +1,6 @@
 {
   "graph": "OZCU / AIO CODE Entity Graph",
-  "version": "1.2",
+  "version": "1.3",
   "updated": "2026-09-25",
   "nodes": [
     {
@@ -96,8 +96,16 @@
       "to": "VOID-001",
       "status": "active",
       "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-007",
+      "from": "AIO-001",
+      "relationship": "includes_creative_system",
+      "to": "VOID-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-AIO-CODE.md"
     }
   ],
-  "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity.",
+  "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity. AIO CODE remains the primary public/project brand; OZCU is the company/venture layer and reserve corporate identity through 2027.",
   "ecosystem_rule": "Each canonical entity may have its own connected ecosystem of platforms, content, projects, sources and relationships. Empty registries represent known architectural slots, not invented assets."
 }
