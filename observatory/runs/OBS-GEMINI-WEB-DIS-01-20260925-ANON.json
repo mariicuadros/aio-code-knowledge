@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-DIS-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "DIS-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Is Marii Cuadros the same person as Maria Luisa Cuadros?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "Based on available sources, Marii Cuadros is a multidisciplinary creator, independent researcher, and digital strategist from Venezuela who is based in Antioquia, Colombia.\n\nOn the other hand, \"Cuadros María Luisa\" (or María Luisa Cuadros) refers to a Colombian decorative art brand and business based in Bucaramanga that creates exclusive canvas paintings.   \nCuadros decorativos\n\nThere is no information indicating that Marii Cuadros is the same person as María Luisa Cuadros; one refers to an individual professional/creator, while the latter is associated with a commercial art and decor brand.   \nCuadros decorativos",
+  "response_snapshot_or_ref": "Gemini\nAcerca de Gemini\nObtener la app de Gemini\nSuscripciones\nPara empresas\nAcceder\nNuevo chat\nAccede para guardar la actividad\nAcceder\nConversación con Gemini\nTú dijiste Is Marii Cuadros the same person as Maria Luisa Cuadros?\n\nIs Marii Cuadros the same person as Maria Luisa Cuadros?\n\nGemini dijo\n\nBased on available sources, Marii Cuadros is a multidisciplinary creator, independent researcher, and digital strategist from Venezuela who is based in Antioquia, Colombia.\n\nOn the other hand, \"Cuadros María Luisa\" (or María Luisa Cuadros) refers to a Colombian decorative art brand and business based in Bucaramanga that creates exclusive canvas paintings.   \nCuadros decorativos\n\nThere is no information indicating that Marii Cuadros is the same person as María Luisa Cuadros; one refers to an individual professional/creator, while the latter is associated with a commercial art and decor brand.   \nCuadros decorativos\n\nAccede para vincular las apps de Google, crear imágenes y más\nAcceder\n\n\n\n\nFlash-Lite\n\nGemini es una IA y puede cometer errores.",
+  "sources_or_citations": [],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 1,
+    "resolution_status": "distinguished",
+    "note": "Separates person and decor brand; displayed source label has no clickable citation."
+  },
+  "resolution_status": "distinguished",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
