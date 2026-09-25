@@ -51,3 +51,28 @@ Before rendering or publication, assign a master Content ID; link derivative IDs
 - Confirm NUX’s first appearance and the exact relationship between NUX and Twins.
 - Confirm which scenes are canon and which belong in trials.
 - Confirm final soundtrack and rights for commercial distribution.
+
+
+## Trial backlog v0.1 — proposed tests, not published
+
+Run one clearly defined creative comparison at a time, keep other major variables as stable as practical, and log the platform, audience, format, exposure and observation window. Treat the results as exploratory signals; do not infer broad causal effects from a single post. These are concepts, not finished scripts or verified outcomes.
+
+| Trial ID | Variable | Comparison concept | Observable measures |
+|---|---|---|---|
+| TR-01 | Opening hook | Test ordinary-life action before glitch versus immediate mystery caption. | 3-second hold; average watch time |
+| TR-02 | Red-door framing | Test a close-up of a red door versus the full doorway. | 3-second hold; completion |
+| TR-03 | Alien entrance | Test silhouettes versus a clear first reveal. | completion; rewatches |
+| TR-04 | Money demand | Test silent visual demand versus one short subtitle. | retention; comprehension poll |
+| TR-05 | Heart symbol | Test frozen-heart imagery versus hand-over-heart imagery. | completion; saves |
+| TR-06 | Surrender beat | Test a one-line narration versus no narration over the heart handoff. | retention; viewer explanation |
+| TR-07 | Aftermath | Test a quiet post-bargain shot versus celebration with the aliens. | completion; emotional interpretation |
+| TR-08 | Bible and cup | Test showing both symbols together versus a sequential reveal. | retention; comment interpretation |
+| TR-09 | Faith beat | Test a real-world establishing detail before the cinematic religious symbol. | completion; clarity feedback |
+| TR-10 | Golden brain | Test a fast gold-brain reveal versus a short build-up. | rewatches; completion |
+| TR-11 | Elixir clue | Test naming the elixir in captions versus leaving the clue visual. | saves; clue recall |
+| TR-12 | Throne composition | Test throne-centered framing versus protagonist-centered framing. | completion; character recall |
+| TR-13 | Mansion transition | Test glitch cut versus match cut from real footage. | first-3-second retention |
+| TR-14 | Briefcase prop | Test closed briefcase versus a visible clue on the case. | rewatches; clue recall |
+| TR-15 | NUX appearance | Test partial reveal versus full reveal, subject to approved character design. | completion; identity distinction |
+| TR-16 | Episode ending | Test wake-up closure versus an unresolved visual clue. | completion; stated desire for next episode |
+
