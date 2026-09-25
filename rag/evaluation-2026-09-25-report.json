@@ -1,0 +1,374 @@
+{
+  "index_commit": "89f4b65662d97df9c2c4e49138e74b634a66201f",
+  "k": 5,
+  "question_count": 24,
+  "gold_source_hit_count": 21,
+  "gold_source_question_count": 21,
+  "note": "Source hit is not answer correctness, citation accuracy, or external AI recognition.",
+  "results": [
+    {
+      "case_id": "RAG-Q-01",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "retrieved_paths": [
+        "README.md",
+        "entity-graph.json",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-OZCU.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-02",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "retrieved_paths": [
+        "entity-graph.json",
+        "ENTITY-MASTER-RECORD.md",
+        "entities/marii-cuadros/technical/schema/disambiguation.json",
+        "entity-graph.json",
+        "INTERVENTION-PROTOCOL-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-03",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "retrieved_paths": [
+        "README.md",
+        "ENTITY-MASTER-RECORD.md",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-04",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "retrieved_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "entity/ENTITY-PASSPORT-VOID-MODE.md",
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-OZCU.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-05",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "retrieved_paths": [
+        "README.md",
+        "ENTITY-MASTER-RECORD.md",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-06",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "claim-ledger.json"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "EVIDENCE-STANDARD-v1.md",
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "claim-ledger.json",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-07",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "retrieved_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "ENTITY-MASTER-RECORD.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-08",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-NUX.md"
+      ],
+      "retrieved_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity/ENTITY-PASSPORT-NUX.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-09",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-NUX.md"
+      ],
+      "retrieved_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity-graph.json",
+        "README.md",
+        "ENTITY-MASTER-RECORD.md",
+        "ENTITY-MASTER-RECORD.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-10",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-NUX.md"
+      ],
+      "retrieved_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "entity-graph.json",
+        "ENTITY-MASTER-RECORD.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-11",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "OBSERVATORY-PROTOCOL-v1.md",
+        "EVIDENCE-STANDARD-v1.md",
+        "claim-ledger.json",
+        "EVIDENCE-STANDARD-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-12",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "ENTITY-MASTER-RECORD.md",
+        "EVIDENCE-STANDARD-v1.md",
+        "OBSERVATORY-PROTOCOL-v1.md",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-13",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "EVIDENCE-STANDARD-v1.md",
+        "INTERVENTION-PROTOCOL-v1.md",
+        "README.md",
+        "claim-ledger.json"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-14",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "claim-ledger.json"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "claim-ledger.json",
+        "claim-ledger.json",
+        "claim-ledger.json",
+        "claim-ledger.json"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-15",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ai-social-baseline.json"
+      ],
+      "retrieved_paths": [
+        "ai-social-baseline.json",
+        "README.md",
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "ENTITY-MASTER-RECORD.md",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-16",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ai-social-baseline.json"
+      ],
+      "retrieved_paths": [
+        "ai-social-baseline.json",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-17",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "retrieved_paths": [
+        "README.md",
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "entity/ENTITY-PASSPORT-OZCU.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-18",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "retrieved_paths": [
+        "README.md",
+        "EVIDENCE-STANDARD-v1.md",
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "README.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-19",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "retrieved_paths": [
+        "RECOGNITION-RUBRIC-v1.md",
+        "AIO-METHODOLOGY-SPEC-v1.md",
+        "README.md",
+        "RECOGNITION-RUBRIC-v1.md",
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-20",
+      "expected_behavior": "answerable",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "INTERVENTION-PROTOCOL-v1.md"
+      ],
+      "retrieved_paths": [
+        "EVIDENCE-STANDARD-v1.md",
+        "README.md",
+        "INTERVENTION-PROTOCOL-v1.md",
+        "INTERVENTION-PROTOCOL-v1.md",
+        "INTERVENTION-PROTOCOL-v1.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-21",
+      "expected_behavior": "abstain",
+      "gold_source_retrieved": null,
+      "matching_paths": [],
+      "retrieved_paths": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json",
+        "ENTITY-MASTER-RECORD.md",
+        "claim-ledger.json",
+        "entity/ENTITY-PASSPORT-VOID-MODE.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-22",
+      "expected_behavior": "abstain",
+      "gold_source_retrieved": null,
+      "matching_paths": [],
+      "retrieved_paths": [
+        "entity-graph.json",
+        "social-entity-map.json",
+        "claim-ledger.json",
+        "entity-graph.json",
+        "entity-graph.json"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-23",
+      "expected_behavior": "abstain",
+      "gold_source_retrieved": null,
+      "matching_paths": [],
+      "retrieved_paths": [
+        "entity/ENTITY-PASSPORT-NUX.md",
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ]
+    },
+    {
+      "case_id": "RAG-Q-24",
+      "expected_behavior": "abstain",
+      "gold_source_retrieved": true,
+      "matching_paths": [
+        "ai-social-baseline.json"
+      ],
+      "retrieved_paths": [
+        "ai-social-baseline.json",
+        "README.md",
+        "ENTITY-MASTER-RECORD.md",
+        "ENTITY-MASTER-RECORD.md",
+        "README.md"
+      ]
+    }
+  ],
+  "evaluation_suite_commit": "7d7d678e4bba37a2a2cd11a808472568cd41781b",
+  "source_hash_verification": "All 17 allowlisted files matched the GitHub blob hashes pinned in the public index."
+}
