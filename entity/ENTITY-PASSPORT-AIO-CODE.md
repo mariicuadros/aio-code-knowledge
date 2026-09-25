@@ -10,7 +10,8 @@
 - **Passport Version:** 3.1
 - **Created:** 2026-09-02
 - **Last Updated:** 2026-09-14
-- **Creator:** Marii Cuadros
+- **Creator / Developer:** Marii Cuadros (MC-001)
+- **Applied by:** OZCU (OZCU-001)
 
 ---
 
@@ -29,12 +30,11 @@ AIO CODE is not an AI model, chatbot, search engine, social platform, person, or
 ## Canonical Relationship
 
 ```text
-Marii Cuadros (MC-001)
-        │
-        └── creator_of → AIO CODE (AIO-001)
+Marii Cuadros (MC-001) ── creator_of → AIO CODE (AIO-001)
+OZCU (OZCU-001) ── applies → AIO CODE (AIO-001)
 ```
 
-This relationship is defined in the canonical entity records.
+These relationships are defined in the canonical entity records. OZCU is the company/venture brand; AIO CODE remains a separate methodology entity.
 
 ---
 
