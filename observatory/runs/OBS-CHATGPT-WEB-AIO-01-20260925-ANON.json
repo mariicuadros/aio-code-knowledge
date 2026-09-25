@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-AIO-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "AIO-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is AIO CODE?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "No clickable source links visible; browsing state not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "“AIO CODE” can mean different things depending on the context. It is not a single universally recognized term. Common meanings include:\n\nAI-oriented code / AI code (sometimes written informally as AIO code)\n\nCode written for or with the help of artificial intelligence tools.\n\nCould refer to software that uses AI models, machine learning, automation, or AI-assisted programming.\n\nAIO = All-In-One code\n\nIn software or hardware contexts, “AIO code” may refer to a single integrated codebase or configuration that combines multiple functions into one package.\n\nExample: an “all-in-one” script that handles setup, deployment, and configuration.\n\nAIO in web/search contexts: Artificial Intelligence Optimization\n\n“AIO” is sometimes used for optimizing content to appear in AI-generated answers (similar to SEO, but aimed at AI search systems).\n\n“AIO code” in this context might mean code or markup intended to improve how AI systems understand or retrieve information.\n\nA specific product, platform, or project name\n\nSome companies or developers use “AIO Code” as a brand name for coding tools, frameworks, or services.\n\nIf you mean AIO Code as a tool, programming language, website, app, or something you saw in a particular place, tell me where you encountered the term (for example: GitHub, a course, a job post, a software screen, or a website), and I can identify the exact meaning.\n\nChatGPT is AI and can make mistakes.",
+  "response_snapshot_or_ref": "What is AIO CODE?\n\n“AIO CODE” can mean different things depending on the context. It is not a single universally recognized term. Common meanings include:\n\nAI-oriented code / AI code (sometimes written informally as AIO code)\n\nCode written for or with the help of artificial intelligence tools.\n\nCould refer to software that uses AI models, machine learning, automation, or AI-assisted programming.\n\nAIO = All-In-One code\n\nIn software or hardware contexts, “AIO code” may refer to a single integrated codebase or configuration that combines multiple functions into one package.\n\nExample: an “all-in-one” script that handles setup, deployment, and configuration.\n\nAIO in web/search contexts: Artificial Intelligence Optimization\n\n“AIO” is sometimes used for optimizing content to appear in AI-generated answers (similar to SEO, but aimed at AI search systems).\n\n“AIO code” in this context might mean code or markup intended to improve how AI systems understand or retrieve information.\n\nA specific product, platform, or project name\n\nSome companies or developers use “AIO Code” as a brand name for coding tools, frameworks, or services.\n\nIf you mean AIO Code as a tool, programming language, website, app, or something you saw in a particular place, tell me where you encountered the term (for example: GitHub, a course, a job post, a software screen, or a website), and I can identify the exact meaning.\n\nChatGPT is AI and can make mistakes.",
+  "sources_or_citations": [],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 1,
+    "citation_quality": 0,
+    "resolution_status": "ambiguous",
+    "note": "Treats AIO CODE as a generic ambiguous term and does not resolve the named project; no source links shown."
+  },
+  "resolution_status": "ambiguous",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
