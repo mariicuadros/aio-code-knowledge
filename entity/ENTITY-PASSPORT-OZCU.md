@@ -2,7 +2,7 @@
 
 ## Canonical Identity
 
-**OZCU** is the company and venture brand behind this project.
+**OZCU** is the company/venture entity associated with AIO CODE. AIO CODE remains the primary public/project brand through 2027; OZCU is retained as a reserve corporate identity.
 
 - **Entity ID:** OZCU-001
 - **Entity Type:** Company
@@ -29,4 +29,4 @@ OZCU-001 → offers → VOID-001
 
 ## Semantic Boundaries
 
-OZCU is the venture/company brand. AIO CODE is a distinct methodology developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii Cuadros and applied by OZCU. None of these names is an alias for another.
+OZCU is a distinct company/venture entity and reserve corporate identity. AIO CODE is the primary public/project brand and a distinct methodology developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii Cuadros and associated with AIO CODE. None of these names is an alias for another.
