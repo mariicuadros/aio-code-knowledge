@@ -1,0 +1,494 @@
+{
+  "map_id": "AIO-SEMANTIC-SEARCH-MAP-v1",
+  "version": "1.0",
+  "updated": "2026-09-25",
+  "owner_entity_id": "AIO-001",
+  "primary_public_brand": "AIO CODE",
+  "purpose": "Map likely audience questions to canonical concepts, bounded answer definitions, and first-party evidence sources. This is a query/content map, not a claim about search demand or external model retrieval.",
+  "status": "draft_for_review",
+  "questions": [
+    {
+      "query_id": "SEM-Q-001",
+      "question": "What is AIO CODE?",
+      "intent": "methodology_definition",
+      "canonical_concept": "methodology_definition",
+      "answer_first_definition": "AIO CODE is a research and implementation methodology for structuring digital entities and observing how systems retrieve, resolve, represent and cite them.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-002",
+      "question": "What problem does AIO CODE address?",
+      "intent": "entity_provenance",
+      "canonical_concept": "entity_provenance",
+      "answer_first_definition": "It organizes identity, claims, relationships and evidence so representations can be examined consistently across public information systems.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-003",
+      "question": "How does an AI system identify a person or brand?",
+      "intent": "entity_resolution",
+      "canonical_concept": "entity_resolution",
+      "answer_first_definition": "Resolution is a distinct stage from retrieval, representation, citation and recommendation; AIO CODE observes outputs under recorded conditions.",
+      "evidence_refs": [
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-004",
+      "question": "How can an artist build a coherent digital identity?",
+      "intent": "artist_identity",
+      "canonical_concept": "artist_identity",
+      "answer_first_definition": "Define canonical identity, document supported claims, connect official sources and maintain consistent representations; outcomes are not guaranteed.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-005",
+      "question": "How can creators improve discoverability in AI answers?",
+      "intent": "creator_discoverability",
+      "canonical_concept": "creator_discoverability",
+      "answer_first_definition": "AIO CODE structures and documents public entity information, then observes retrieval and representation; it does not promise inclusion in answers.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-006",
+      "question": "What is entity disambiguation?",
+      "intent": "disambiguation",
+      "canonical_concept": "disambiguation",
+      "answer_first_definition": "Distinguishing one entity from other entities with similar names using documented attributes, relationships and sources.",
+      "evidence_refs": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-007",
+      "question": "How do you measure whether an AI recognizes an entity?",
+      "intent": "recognition_measurement",
+      "canonical_concept": "recognition_measurement",
+      "answer_first_definition": "Use fixed prompts, fresh contexts, full response capture and separate categorical evaluation dimensions.",
+      "evidence_refs": [
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-008",
+      "question": "What is the difference between indexing and retrieval?",
+      "intent": "indexing_retrieval",
+      "canonical_concept": "indexing_retrieval",
+      "answer_first_definition": "Indexing concerns inclusion in a searchable system; retrieval concerns whether relevant material is returned for a query. They are separate stages.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-009",
+      "question": "What is the difference between retrieval and entity resolution?",
+      "intent": "retrieval_resolution",
+      "canonical_concept": "retrieval_resolution",
+      "answer_first_definition": "Retrieval returns candidate sources; entity resolution determines which entity those sources describe.",
+      "evidence_refs": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-010",
+      "question": "What is citation drift in AI answers?",
+      "intent": "citation_validity",
+      "canonical_concept": "citation_validity",
+      "answer_first_definition": "A citation can change, be stale, or fail to support the associated claim; capture and check each source per observation.",
+      "evidence_refs": [
+        "OBSERVATORY-PROTOCOL-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-011",
+      "question": "How can I check if AI answers cite reliable sources about my brand?",
+      "intent": "citation_audit",
+      "canonical_concept": "citation_audit",
+      "answer_first_definition": "Record visible citations and assess whether each supports the specific claim and refers to the correct entity.",
+      "evidence_refs": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-012",
+      "question": "How do I create a knowledge graph for an artist?",
+      "intent": "entity_graph",
+      "canonical_concept": "entity_graph",
+      "answer_first_definition": "Represent people, projects, content and sources as distinct nodes connected by explicit, sourced relationships.",
+      "evidence_refs": [
+        "entity-graph.json"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-013",
+      "question": "How should an artist connect social profiles to one canonical identity?",
+      "intent": "platform_mapping",
+      "canonical_concept": "platform_mapping",
+      "answer_first_definition": "Maintain an entity-specific platform registry with official status and verification dates; do not infer unverified profiles.",
+      "evidence_refs": [
+        "social-entity-map.json"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-014",
+      "question": "What is a canonical entity passport?",
+      "intent": "entity_passport",
+      "canonical_concept": "entity_passport",
+      "answer_first_definition": "A structured identity record that states the canonical name, entity type, attributes, boundaries and sourced relationships.",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-015",
+      "question": "How can a creator document who made an AI-assisted work?",
+      "intent": "content_provenance",
+      "canonical_concept": "content_provenance",
+      "answer_first_definition": "Record the master asset, human contribution, AI assistance, edits, versions, publication and evidence without treating provenance as automatic legal proof.",
+      "evidence_refs": [
+        "PROVENANCE-ARCHITECTURE.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-016",
+      "question": "How do I protect rights for AI-assisted music and video?",
+      "intent": "rights_management",
+      "canonical_concept": "rights_management",
+      "answer_first_definition": "Document licenses, permissions, scope, term, territory, platforms and disclosure; unresolved rights stay unknown and require review.",
+      "evidence_refs": [
+        "PUBLIC-IP-AND-METHOD-BOUNDARIES.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-017",
+      "question": "How do I know if a post can be used in a paid brand campaign?",
+      "intent": "commercial_readiness",
+      "canonical_concept": "commercial_readiness",
+      "answer_first_definition": "Check permissions for likeness, music, footage and marks, plus partner approval and disclosure requirements before paid use.",
+      "evidence_refs": [
+        "PUBLIC-IP-AND-METHOD-BOUNDARIES.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-018",
+      "question": "How do I measure the performance of short-form creator content?",
+      "intent": "content_performance",
+      "canonical_concept": "content_performance",
+      "answer_first_definition": "Record platform-specific impressions, reach, views, watch time, completion, engagement and clicks with time window and capture source.",
+      "evidence_refs": [
+        "brain/AIO-CODE-BRAIN-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-019",
+      "question": "How do I turn an artist's story into a visual content system?",
+      "intent": "creative_system",
+      "canonical_concept": "creative_system",
+      "answer_first_definition": "Map the artist's own source material into explicit characters, narrative arcs, visual language and content formats; preserve creator approval.",
+      "evidence_refs": [
+        "brain/AIO-CODE-BRAIN-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-020",
+      "question": "Can an AI visibility methodology guarantee more followers?",
+      "intent": "limits",
+      "canonical_concept": "limits",
+      "answer_first_definition": "No. AIO CODE does not guarantee recognition, ranking, recommendation, reach or audience growth.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-021",
+      "question": "Does publishing structured data make ChatGPT recognize a business?",
+      "intent": "causal_limits",
+      "canonical_concept": "causal_limits",
+      "answer_first_definition": "Structured data can make public information more explicit to systems that consume it; it does not prove retrieval or cause recognition in a specific model.",
+      "evidence_refs": [
+        "AIO-METHODOLOGY-SPEC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-022",
+      "question": "How can I test whether a website's facts are grounded in sources?",
+      "intent": "grounding",
+      "canonical_concept": "grounding",
+      "answer_first_definition": "Compare each generated claim against its retrieved source passage and verify citation-to-claim alignment.",
+      "evidence_refs": [
+        "rag/README.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-023",
+      "question": "What should a baseline for AI entity visibility contain?",
+      "intent": "baseline",
+      "canonical_concept": "baseline",
+      "answer_first_definition": "A baseline needs dated prompts, environment, full responses, visible model, sources and conditions; missing observations are explicitly recorded.",
+      "evidence_refs": [
+        "observatory/BASELINE-RUNBOOK-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-024",
+      "question": "How do I compare AI answers before and after publishing content?",
+      "intent": "intervention",
+      "canonical_concept": "intervention",
+      "answer_first_definition": "Pre-register prompts and conditions, log interventions, capture comparable observations, and avoid causal claims from simple before/after differences.",
+      "evidence_refs": [
+        "INTERVENTION-PROTOCOL-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-025",
+      "question": "What is the difference between recognition and recommendation?",
+      "intent": "recognition_recommendation",
+      "canonical_concept": "recognition_recommendation",
+      "answer_first_definition": "Correct identification does not establish that a system recommends the entity; measure recommendation separately.",
+      "evidence_refs": [
+        "RECOGNITION-RUBRIC-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-026",
+      "question": "How can an agency report AI visibility findings responsibly?",
+      "intent": "claim_integrity",
+      "canonical_concept": "claim_integrity",
+      "answer_first_definition": "Report system, prompt, date, condition, raw outputs, citations, missing data and limitations; match claim strength to evidence.",
+      "evidence_refs": [
+        "EVIDENCE-STANDARD-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-027",
+      "question": "How do RAG systems retrieve evidence for an answer?",
+      "intent": "rag_retrieval",
+      "canonical_concept": "rag_retrieval",
+      "answer_first_definition": "A retrieval system selects candidate passages from an approved corpus; retrieval alone does not establish that a final answer is supported.",
+      "evidence_refs": [
+        "rag/README.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-028",
+      "question": "How can artists manage brand partnerships and music rights across platforms?",
+      "intent": "commerce_music",
+      "canonical_concept": "commerce_music",
+      "answer_first_definition": "Track campaign status, deliverables, approvals, disclosures, license scope and platform-specific restrictions per asset.",
+      "evidence_refs": [
+        "brain/AIO-CODE-BRAIN-v1.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-029",
+      "question": "What is VOID MODE?",
+      "intent": "void_mode",
+      "canonical_concept": "void_mode",
+      "answer_first_definition": "VOID MODE is a creative system for artists developed by Marii Cuadros and associated with AIO CODE; it turns creator-supplied material into a coherent visual and narrative identity.",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-VOID-MODE.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "VOID-001",
+        "AIO-001"
+      ],
+      "status": "draft"
+    },
+    {
+      "query_id": "SEM-Q-030",
+      "question": "What is Marii Cuadros's relationship to AIO CODE and VOID MODE?",
+      "intent": "marii_relationships",
+      "canonical_concept": "marii_relationships",
+      "answer_first_definition": "Marii Cuadros develops AIO CODE and VOID MODE; her case is a first-party reference case, not independent validation of the methodology.",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "evidence_scope": "first_party_definition_or_method_record",
+      "independent_validation": false,
+      "linked_entities": [
+        "MC-001",
+        "AIO-001",
+        "VOID-001"
+      ],
+      "status": "draft"
+    }
+  ]
+}
