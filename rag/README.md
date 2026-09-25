@@ -63,3 +63,8 @@ When approved files change, re-run the evaluator using a clean Git checkout.
 The index refuses modified allowlisted files to avoid silently mixing commits.
 This deliberately small approach lets us detect when graph/vector retrieval
 offers measurable improvement before introducing another data store.
+
+
+## OZCU corpus rebuild — 2026-09-25
+
+After the canonical identity update, the approved corpus contains OZCU, AIO CODE and VOID MODE records. The public index is pinned to source commit 89f4b65662d97df9c2c4e49138e74b634a66201f and contains 177 passages from 17 allowlisted files. The frozen 24-query retrieval suite returned all 21 applicable gold sources (21/21); the three cases without gold sources are abstention cases. This is source retrieval performance only, not answer correctness or third-party recognition. See rag/evaluation-2026-09-25-report.json.
