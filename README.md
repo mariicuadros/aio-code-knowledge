@@ -1,10 +1,18 @@
 # AIO CODE
 
+## AIO CODE, developed and applied at OZCU
+
+OZCU is the company brand and venture behind this work. It applies AIO CODE as its methodology and VOID MODE as a creative system for artists. Marii Cuadros is OZCU’s CEO and develops both AIO CODE and VOID MODE.
+
+The name OZCU here identifies the venture/brand; this repository does not assert that a legal company has been incorporated.
+
 ## Artificial Intelligence Optimization Code
 
 **Research Methodology · Entity Architecture · Evidence · AI Representation · Information Retrieval**
 
-**Canonical Entity:** `AIO-001`  
+**Company:** `OZCU-001` — OZCU  
+**Canonical Methodology:** `AIO-001` — AIO CODE  
+**Creative System:** `VOID-001` — VOID MODE  
 **Canonical Type:** `ResearchMethodology`  
 **Creator:** Marii Cuadros  
 **Current Stage:** Pre-pilot evidence and replication preparation  
@@ -48,16 +56,21 @@ The repository includes:
 ## Canonical entities
 
 ```text
-MC-001 — Marii Cuadros — Person
-NUX-001 — NUX — DigitalCreativeEntity
+OZCU-001 — OZCU — Company / venture brand
+MC-001 — Marii Cuadros — Person, CEO of OZCU
 AIO-001 — AIO CODE — ResearchMethodology
+VOID-001 — VOID MODE — CreativeSystem for artists
+NUX-001 — NUX — DigitalCreativeEntity
 ```
 
 Canonical relationships currently include:
 
 ```text
+MC-001 → CEO_of → OZCU-001
 MC-001 → creator_of → AIO-001
-MC-001 → develops → NUX-001
+MC-001 → develops → VOID-001 and NUX-001
+OZCU-001 → applies → AIO-001
+OZCU-001 → offers → VOID-001
 ```
 
 ## Repository source-of-truth rule
