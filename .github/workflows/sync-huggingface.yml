@@ -73,7 +73,7 @@ jobs:
           PY
 
       - name: Install Hugging Face Hub client
-        run: python -m pip install --upgrade huggingface_hub
+        run: python -m pip install --upgrade huggingface_hub PyYAML
 
       - name: Verify Hugging Face authentication and dataset access
         env:
@@ -97,7 +97,8 @@ jobs:
           repo_id = "mariicuadros/aio-code-entities"
           try:
               info = api.dataset_info(repo_id=repo_id)
-              print(f"Dataset access confirmed: {info.id}")
+              journal_info = api.dataset_info(repo_id="mariicuadros/aio-code-journal")
+              print(f"Dataset access confirmed: {info.id}; journal access confirmed: {journal_info.id}")
           except Exception as exc:
               print(f"Dataset access check failed: {type(exc).__name__}: {exc}")
               raise
@@ -137,4 +138,32 @@ jobs:
               commit_message="Sync controlled OZCU / AIO CODE export from GitHub",
           )
           print("Controlled export uploaded successfully")
+          PY
+
+
+      - name: Prepare append-only Hugging Face journal update
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          set -euo pipefail
+          mkdir -p hf-journal-export/data
+          cp data-export/journal-addendum.jsonl hf-journal-export/data/research-journal-addendum.jsonl
+          python scripts/prepare_hf_journal_card.py --output hf-journal-export/README.md
+
+      - name: Upload append-only journal update
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi
+
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          api.upload_folder(
+              repo_id="mariicuadros/aio-code-journal",
+              repo_type="dataset",
+              folder_path="hf-journal-export",
+              commit_message="Append dated OZCU / AIO CODE journal records",
+          )
+          print("Append-only journal update uploaded successfully")
           PY
