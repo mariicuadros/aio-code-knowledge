@@ -49,17 +49,18 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf hf-export
-          mkdir -p hf-export
+          mkdir -p hf-export/source-artifacts
           cp data-export/README.md hf-export/README.md
-          cp data-export/export-manifest.json hf-export/export-manifest.json
+          cp data-export/export-manifest.json hf-export/source-artifacts/export-manifest.json
 
           python - <<'PY'
           import json
           import shutil
+          import subprocess
           from pathlib import Path
 
           manifest = json.loads(Path("data-export/export-manifest.json").read_text(encoding="utf-8"))
-          destination = Path("hf-export")
+          destination = Path("hf-export/source-artifacts")
 
           for source in manifest["sources"]:
               src = Path(source)
@@ -67,7 +68,8 @@ jobs:
               dst.parent.mkdir(parents=True, exist_ok=True)
               shutil.copy2(src, dst)
 
-          print(f"Built controlled export with {len(manifest['sources'])} source files")
+          subprocess.run(["python", "scripts/build_hf_entities.py", "--output", "hf-export/data/entities.jsonl"], check=True)
+          print(f"Built controlled export with {len(manifest['sources'])} source files and canonical entity rows")
           PY
 
       - name: Install Hugging Face Hub client
@@ -131,7 +133,8 @@ jobs:
               repo_id="mariicuadros/aio-code-entities",
               repo_type="dataset",
               folder_path="hf-export",
-              commit_message="Sync controlled AIO CODE export from GitHub",
+              delete_patterns=["entities.json"],
+              commit_message="Sync controlled OZCU / AIO CODE export from GitHub",
           )
           print("Controlled export uploaded successfully")
           PY
