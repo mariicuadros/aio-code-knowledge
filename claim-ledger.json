@@ -1,7 +1,7 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "2.0",
-  "updated": "2026-09-23",
+  "version": "2.1",
+  "updated": "2026-09-25",
   "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
   "claim_type_values": [
     "canonical_definition",
@@ -11,8 +11,19 @@
     "commercial_statement",
     "operational_rule"
   ],
-  "claim_status_values": ["draft", "active", "superseded", "withdrawn"],
-  "evidence_state_values": ["unknown", "hypothesized", "observed", "corroborated", "verified"],
+  "claim_status_values": [
+    "draft",
+    "active",
+    "superseded",
+    "withdrawn"
+  ],
+  "evidence_state_values": [
+    "unknown",
+    "hypothesized",
+    "observed",
+    "corroborated",
+    "verified"
+  ],
   "claims": [
     {
       "claim_id": "CLAIM-001",
@@ -21,7 +32,9 @@
       "claim": "The canonical public name is Marii Cuadros.",
       "source": "AIO CODE Entity Master Record",
       "source_ref": "ENTITY-MASTER-RECORD.md",
-      "evidence_refs": ["entity/ENTITY-PASSPORT-MARII-CUADROS.md"],
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
       "date": "2026-09-03",
       "claim_status": "active",
       "evidence_state": "observed",
@@ -35,9 +48,11 @@
       "claim": "The canonical project name is AIO CODE.",
       "source": "AIO CODE Entity Master Record",
       "source_ref": "ENTITY-MASTER-RECORD.md",
-      "evidence_refs": ["entity/ENTITY-PASSPORT-AIO-CODE.md"],
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
       "date": "2026-09-03",
-      "claim_status": "active",
+      "claim_status": "superseded",
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "Canonical first-party entity registry definition."
@@ -67,12 +82,83 @@
       "claim": "NUX is a distinct digital creative entity developed in association with Marii Cuadros.",
       "source": "NUX Entity Passport",
       "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
-      "evidence_refs": ["entity-graph.json", "entity/content/NUX-001/content-registry.json"],
+      "evidence_refs": [
+        "entity-graph.json",
+        "entity/content/NUX-001/content-registry.json"
+      ],
       "date": "2026-09-03",
       "claim_status": "active",
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "Canonical first-party creative-entity definition."
+    },
+    {
+      "claim_id": "CLAIM-005",
+      "entity_id": "OZCU-001",
+      "claim_type": "canonical_definition",
+      "claim": "OZCU is the company/venture brand behind the digital marketing and optimization project for artists.",
+      "source": "OZCU canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party definition of the venture brand; does not assert legal incorporation or independent market validation."
+    },
+    {
+      "claim_id": "CLAIM-006",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros is CEO of OZCU.",
+      "source": "OZCU canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party role statement recorded by the venture; not independent corporate registry verification."
+    },
+    {
+      "claim_id": "CLAIM-007",
+      "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
+      "claim": "AIO CODE is a research and implementation methodology developed by Marii Cuadros and applied by OZCU.",
+      "source": "AIO CODE canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-AIO-CODE.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party methodology definition and relationship; not independent evidence of external recognition or effectiveness."
+    },
+    {
+      "claim_id": "CLAIM-008",
+      "entity_id": "VOID-001",
+      "claim_type": "canonical_definition",
+      "claim": "VOID MODE is a creative system for artists developed by Marii Cuadros and applied by OZCU.",
+      "source": "VOID MODE canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-VOID-MODE.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party definition and relationship; not a demonstrated commercial outcome."
     }
   ],
   "integrity_rules": [
