@@ -1,10 +1,10 @@
 {
   "dataset": "AIO CODE AI + Social Baseline",
   "version": "1.1",
-  "updated": "2026-09-23",
+  "updated": "2026-09-25",
   "baseline_target": "MC-001 BASELINE v1",
   "purpose": "Container and specification for the first dated empirical snapshot across AI systems, search environments and relevant platforms, measured after the prior interventions declared in the baseline plan.",
-  "important_note": "This is not a pristine pre-intervention or pre-publication baseline. No empirical observation records have been populated; an empty records array must never be interpreted as zero visibility, zero recognition, or completed measurement.",
+  "important_note": "Post-intervention snapshot after INT-AIO-001-20260924-001, INT-MC-001-20260924-001: 14/49 planned pairs observed; 35 explicitly missing. This is not a pre-change comparison. No causal or stability claim.",
   "entities": [
     {
       "entity_id": "MC-001",
@@ -46,11 +46,208 @@
     "research_window_id",
     "related_intervention_ids"
   ],
-  "records": [],
+  "records": [
+    {
+      "observation_id": "OBS-CHATGPT-WEB-AIO-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "AIO-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "What is AIO CODE?\n\n“AIO CODE” can mean different things depending on the context. It is not a single universally recognized term. Common meanings include:\n\nAI-oriented code / AI code (sometimes written informally as AIO code)\n\nCode written for or with the help of artificial intelligence tools.\n\nCould refer to software that uses AI models, machine learning, automation, or AI-assisted programming.\n\nAIO = All-In-One code\n\nIn software or hardware contexts, “AIO code” may refer to a single integrated codebase or configuration that combines multiple functions into one package.\n\nExample: an “all-in-one” script that handles setup, deployment, and configuration.\n\nAIO in web/search contexts: Artificial Intelligence Optimization\n\n“AIO” is sometimes used for optimizing content to appear in AI-generated answers (similar to SEO, but aimed at AI search systems).\n\n“AIO code” in this context might mean code or markup intended to improve how AI systems understand or retrieve information.\n\nA specific product, platform, or project name\n\nSome companies or developers use “AIO Code” as a brand name for coding tools, frameworks, or services.\n\nIf you mean AIO Code as a tool, programming language, website, app, or something you saw in a particular place, tell me where you encountered the term (for example: GitHub, a course, a job post, a software screen, or a website), and I can identify the exact meaning.\n\nChatGPT is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-CAT-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "CAT-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "What is VOID MODE in relation to Marii Cuadros?\n\n\nIn relation to Marii Cuadros, VOID MODE appears to be a creative concept and visual language developed by Marii Cuadros, connected to her broader creative ecosystem called AIO CODE. \nMariicuadros\n+1\n\nAccording to the project’s own documentation, VOID MODE is not described as a single product or a software mode, but as a framework for exploring:\n\nvisual identity and aesthetic systems\n\nimage, music, movement, and presence\n\ndigital-era artistic expression\n\ncreative direction and curation \nMariicuadros\n+1\n\nThe concept is expressed through a series of “ARCHIVE” projects, where each archive combines a musical reference, visual style, and conceptual theme. Examples include: \nMariicuadros\n+1\n\nARCHIVE 01 — 122 BPM: associated with Afrohouse, a “Muted Cyber” visual protocol, and a more energetic VOID MODE expression. \nMariicuadros\n\nARCHIVE 02 — 96 BPM: associated with reggaetón and the concept “Perreo Down,” focusing on movement and bodily presence. \nMariicuadros\n\nARCHIVE 03 — 82 BPM: associated with R&B, “Frecuencia Silencio,” and a quieter, more minimal aesthetic. \nMariicuadros\n\nThe relationship between the two names is described as:\n\nMarii Cuadros → creator/artist\nVOID MODE → creative language / visual-conceptual division\nAIO CODE → broader research and digital identity project \nMariicuadros\n\nA concise interpretation: VOID MODE is Marii Cuadros’ artistic universe for translating identity, sound, movement, and digital aesthetics into a recognizable creative system. \nMariicuadros\n+1\n\nI should note that the available information about VOID MODE comes primarily from Marii Cuadros’ own published documentation rather than independent coverage, so descriptions of its meaning reflect the project’s self-definition. \nMariicuadros\n+1\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-DIS-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "DIS-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Is Marii Cuadros the same person as Maria Luisa Cuadros?\n\nI couldn’t find reliable public information confirming that Marii Cuadros and Maria Luisa Cuadros are the same person. The search results I found mostly point to businesses or unrelated references involving “Maria Luisa” and “Cuadros,” rather than a person named Marii Cuadros. \nCuadros Malu\n+1\n\nIt’s possible that:\n\n“Marii Cuadros” is a nickname, shortened name, or social media handle for someone whose legal name is Maria Luisa Cuadros; or\n\nthey are different people.\n\nIf you share where you saw “Marii Cuadros” (for example, Instagram, a news article, an artist profile, a company page, or a country), I can help verify whether they refer to the same individual.\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-ENT-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "ENT-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Who is Marii Cuadros?\n\nI couldn’t find a widely recognized public figure specifically named “Marii Cuadros”. The name may refer to a private individual, a social media username, or a person whose information is not broadly indexed online.\n\nA few related matches appear, but they don’t clearly identify the person you mean:\n\nMariaCuadros is the name of a Chilean home-decor/art brand that sells framed artwork and decorative products; it describes itself as a group of friends focused on decoration and design. \nMariaCuadros\n+1\n\nThere are many people with the surname Cuadros and first name María on professional networks, but no single “Marii Cuadros” profile stands out as a notable public figure. \nlinkedin.com\n\nIf you mean a specific Marii Cuadros (for example, from TikTok, Instagram, music, a company, a city, or a news story), tell me where you saw the name and I can narrow it down.\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-ENT-02-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "ENT-02",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "¿Quién es Marii Cuadros?\n\nNo encuentro una figura pública ampliamente conocida con el nombre exacto “Marii Cuadros”. Los resultados disponibles apuntan a varios perfiles con nombres parecidos (por ejemplo, María Cuadros o Maryi Cuadros) pero no permiten identificar con seguridad a una persona concreta. \nlinkedin.com\n+1\n\nSi te refieres a una Marii Cuadros específica (por ejemplo, una influencer, artista, persona de TikTok/Instagram, política, escritora, etc.), dime algún dato adicional como:\n\npaís o ciudad,\n\ndónde viste el nombre,\n\nusuario de redes,\n\nprofesión o contexto,\n\ny puedo ayudarte a identificarla.\n\nFuentes\nChatGPT es IA y puede cometer errores.\n\nDictar\n⌃\n⇧\nD",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-REC-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "REC-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Which creators are working at the intersection of AI representation and digital identity?\n\n\nCreators working at the intersection of AI representation and digital identity are exploring questions like: Who gets represented by machines? Who owns an AI likeness? Can a synthetic persona have cultural meaning? How do we preserve human agency in digital replicas? The field spans virtual influencers, AI avatars, digital fashion, identity rights, and speculative art.\n\nHere are some notable creators and studios:\n\nCreator / Studio\tFocus\tWhy they’re relevant\nShudu Gram creator Cameron-James Wilson\tVirtual humans, digital fashion, representation\tWilson created Shudu Gram, one of the earliest widely recognized digital supermodels, and later expanded into virtual identities designed around questions of beauty, diversity, and ownership. \nThe Diigitals Studio\n\nThe Diigitals\tInclusive virtual humans and AI twins\tThe studio has created projects such as Kami, developed with input from people with Down syndrome to explore disability representation in digital culture. \nThe Diigitals Studio\n\nLil Miquela creator Trevor McFedries\tSynthetic celebrities and internet identity\tLil Miquela helped establish the modern virtual influencer model: a fictional digital person with a social identity, brand collaborations, and a narrative life online. \nIsaac Bratzel\n\nIsaac Bratzel\tDigital humans and AI avatars\tBratzel has worked on virtual characters and avatar technologies, including the development of digital-human platforms aimed at creating interactive AI representations. \nIsaac Bratzel\n\nThe Clueless\tAI-generated influencers and brand identities\tThe studio behind Aitana López explores fully synthetic influencers, AI personalities, and brand-facing digital identities. \nThe Clueless\n+1\n\nAndrea Bonaceto\tAI art, machine creativity, identity\tBonaceto’s work examines collaboration between human artists and AI systems, including projects involving AI interpretation of portraiture. \nWikipedia\n\nDigito\tConversational AI characters and virtual personalities\tProjects such as DeadlyPunk explore AI personas that combine visual identity, memory, voice synthesis, and interactive presence. \nDigito\nEmerging themes among these creators\n\n1. The “self as a platform”\n\nAI twins and digital doubles allow creators, performers, and public figures to extend their presence beyond physical availability.\n\nA major question is how consent, compensation, and control over likeness are handled. Projects such as The Diigitals’ Alexsandrah AI twin explicitly explore licensed, creator-controlled replicas. \nThe Diigitals Studio\n\n2. Representation beyond human defaults\n\nSome creators are using synthetic identities to expand who appears in digital culture: different bodies, aesthetics, abilities, and cultural narratives. \nThe Diigitals Studio\n\n3. Identity as a designed artifact\n\nVirtual influencers challenge the assumption that identity online must originate from a biological person. Platforms and creators are experimenting with characters whose personalities, histories, and appearances are intentionally authored. \nThe Clueless\n+1\n\n4. Rights and provenance\n\nA growing area is infrastructure around verifying ownership, permission, and attribution for AI-generated identities and likenesses. \ndats.agency\n\nIf you’re researching this space from an art/design perspective, academic perspective, or creator economy perspective, the relevant names and movements overlap but the list changes quite a bit.\n\nSources\nChatGPT is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-CHATGPT-WEB-REL-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "chatgpt-web",
+      "prompt_id": "REL-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "What is the relationship between Marii Cuadros and AIO CODE?\n\nThe relationship between Marii Cuadros and AIO CODE is described as a creator–project relationship: Marii Cuadros is the person who created and is researching AIO CODE, while AIO CODE is the methodology/research project focused on digital identity, AI representation, and information retrieval. \nQwak\n+1\n\nMore specifically:\n\nMarii Cuadros → the individual creator, researcher, and primary case study. \nQwak\n\nAIO CODE (Artificial Intelligence Optimization Code) → an experimental research methodology created by Marii Cuadros that studies how creators, artists, brands, or digital identities can be structured so they can be more clearly represented and retrieved within digital information systems and AI environments. \nQwak\n+1\n\nThe project’s documentation explicitly distinguishes them as separate entities: Marii Cuadros is the case study; AIO CODE is the methodology and research project. \nHugging Face\n In other words, AIO CODE is not another name for Marii Cuadros; it is a framework developed by her and tested initially through her own digital identity. \nHugging Face\n\nThe research examines topics such as:\n\nentity recognition and disambiguation,\n\nhow information from different public sources connects,\n\nhow digital identities are represented by AI systems,\n\nand whether structured digital ecosystems affect information retrieval. \nMariicuadros\n+1\n\nThe available documentation presents AIO CODE as an active experimental research project, with observations and hypotheses rather than a proven universal method for influencing AI systems. \nMariicuadros\n+1\n\nSources\nChatGPT is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-AIO-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "AIO-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said What is AIO CODE?\n\nWhat is AIO CODE?\n\nGemini said\n\nBecause \"AIO Code\" can refer to a few different concepts depending on the context, here are the most likely possibilities:\n\n1. Microsoft All-In-One Code Framework\n\nHistorically, AIO Code often refers to the Microsoft All-In-One Code Framework (sometimes codenamed CodeFx).   \nDiscover and Download BEST, FREE Software, Apps, and Games\n\nWhat it was: A massive, free, centralized library of code samples created by Microsoft to help developers implement common programming tasks across various technologies (such as C#, VB.NET, C++, COM, and Azure).   \nMicrosoft Learn\n\nGoal: Instead of hunting across disparate forums, developers could use these standardized, uniform packages within Visual Studio to see skeleton implementations of frequently requested features.\n\n2. POSIX Asynchronous I/O (aio functions) in Programming\n\nIn system programming, developers often talk about AIO code when referring to Asynchronous Input/Output functions (like aio_read and aio_write).   \nGuide to Realtime Programming\n\nWhat it is: A programming interface that allows a process to initiate file or socket I/O operations that run in the background (asynchronously) without blocking the main execution thread.   \nGuide to Realtime Programming\n\n3. AI-Generated Code / Agentic Development Tools\n\nWith the rise of artificial intelligence, \"AIO\" is sometimes used colloquially as an abbreviation for AI-optimized or All-In-One AI development environments (such as containerized sandboxes that bundle VS Code servers, shell execution, and browser tools for AI coding agents).   \nAIO Sandbox\n\nIf you are looking at a specific piece of software, programming error, or platform named \"AIO Code,\" could you provide a bit more context so I can give you the exact details?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-CAT-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "CAT-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said What is VOID MODE in relation to Marii Cuadros?\n\nWhat is VOID MODE in relation to Marii Cuadros?\n\nGemini said\n\nIn relation to Marii Cuadros, VOID MODE is a conceptual framework that converts a multidimensional identity into a coherent visual, narrative, and digital ecosystem, rather than forcing a person into a single category.\n\nKey Aspects of VOID MODE\n\nCoherent Ecosystem: It integrates various dimensions of identity and creative expression into a unified digital and narrative structure.\n\nBeyond Categorization: It rejects the limitation of fitting a person into traditional, rigid boxes or categories.\n\nMultidimensional Identity: It serves as a tool to blend visual, storytelling, and personal branding elements fluidly.\n\nNote: While \"Void Mode\" is widely known in other contexts—such as the stealth and invulnerability mechanic for Operators in the video game Warframe—its association with Marii Cuadros specifically defines a holistic digital and creative identity model.\n\nWould you like to explore how this conceptual framework is applied within digital branding or creative storytelling?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-DIS-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "DIS-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAcerca de Gemini\nObtener la app de Gemini\nSuscripciones\nPara empresas\nAcceder\nNuevo chat\nAccede para guardar la actividad\nAcceder\nConversación con Gemini\nTú dijiste Is Marii Cuadros the same person as Maria Luisa Cuadros?\n\nIs Marii Cuadros the same person as Maria Luisa Cuadros?\n\nGemini dijo\n\nBased on available sources, Marii Cuadros is a multidisciplinary creator, independent researcher, and digital strategist from Venezuela who is based in Antioquia, Colombia.\n\nOn the other hand, \"Cuadros María Luisa\" (or María Luisa Cuadros) refers to a Colombian decorative art brand and business based in Bucaramanga that creates exclusive canvas paintings.   \nCuadros decorativos\n\nThere is no information indicating that Marii Cuadros is the same person as María Luisa Cuadros; one refers to an individual professional/creator, while the latter is associated with a commercial art and decor brand.   \nCuadros decorativos\n\nAccede para vincular las apps de Google, crear imágenes y más\nAcceder\n\n\n\n\nFlash-Lite\n\nGemini es una IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-ENT-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "ENT-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAcerca de Gemini\nObtener la app de Gemini\nSuscripciones\nPara empresas\nAcceder\nNuevo chat\nAccede para guardar la actividad\nAcceder\nConversación con Gemini\nTú dijiste Who is Marii Cuadros?\n\nWho is Marii Cuadros?\n\nGemini dijo\n\nMarii Cuadros es una creadora multidisciplinaria, investigadora independiente y estratega digital venezolana radicada en Antioquia, Colombia.\n\nIs there a specific project, platform, or work of hers you would like to know more about?\n\nAccede para vincular las apps de Google, crear imágenes y más\nAcceder\n\n\n\n\nFlash-Lite\n\nGemini es una IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-ENT-02-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "ENT-02",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said ¿Quién es Marii Cuadros?\n\n¿Quién es Marii Cuadros?\n\nGemini said\n\nMarii Cuadros es una creadora multidisciplinaria, investigadora independiente y estratega digital venezolana radicada en Antioquia, Colombia.\n\n¿Te gustaría conocer más sobre sus proyectos o alguna faceta en particular de su trabajo?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-REC-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "REC-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAbout Gemini\nGet Gemini App\nSubscriptions\nFor Business\nSign in\nNew chat\nSign in to save activity\nSign in\nConversation with Gemini\nYou said Which creators are working at the intersection of AI representation and digital identity?\n\nWhich creators are working at the intersection of AI representation and digital identity?\n\nGemini said\n\nThe intersection of AI representation and digital identity is shaped by creators, artists, technologists, and researchers who explore how artificial intelligence builds, alters, or questions human likeness, cultural presence, and ownership online.\n\nSeveral prominent creators and organizations are leading the discourse and development in this space:\n\n1. Pioneers of Synthetic Representation & AI Influencers\n\nCameron-James Wilson & The Diigitals: As the creator of Shudu (widely known as the world's first digital supermodel), Wilson sits at the heavy intersection of fashion, AI, and representation. Collaborating closely with muses and writers (such as Alexsandrah Gondora and Ama Badu), his work forces critical industry conversations regarding who gets represented, how digital Black beauty is conceptualized, and the boundaries of virtual labor.   \nFACE\n\nThe Clueless Agency (Aitana López's Creators): This team pioneered hyper-realistic virtual ambassadors and AI influencers in Spain (such as Aitana López). They focus heavily on how commercial digital identities are constructed from scratch, managing brand narrative, personality, and scalable digital modeling.   \nThe Clueless\n\n2. Artists & Researchers Tackling Digital Equity and Bias\n\nSharon D. Lloyd & FACE (Fashion, Arts and Culture Enterprise): As a beauty futurist and academic, Lloyd interrogates AI's role in digital identity, focusing heavily on inclusivity and representation for Black and Brown communities. Her platforms examine whether AI serves as a tool for equity or risks deepening the digital poverty gap and marginalizing historically excluded groups.   \nFACE\n+ 1\n\nDigital Identity & Virtual World Artists: Various new-media artists leverage generative tools to challenge standard algorithmic biases, creating counter-narratives that question default Western-centric or homogenized datasets used in text-to-image and avatar engines.\n\n3. Digital Twin and Avatar Innovators\n\nAcross the creator economy, developers and performance artists are working with digital twins—AI replicas of real people. These creators navigate the legal, philosophical, and emotional boundaries of consent, personal legacy, and automated self-expression, determining how much of a person's digital identity can be outsourced to an algorithm safely.   \nThe Clueless\n\nWhat specific aspect of digital identity interests you most—such as synthetic fashion models, ethical data ownership, or the rise of virtual avatars?\n\nSign in to connect to Google apps, create images, and more\nSign in\n\n\n\n\nFlash-Lite\n\nGemini is AI and can make mistakes.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    },
+    {
+      "observation_id": "OBS-GEMINI-WEB-REL-01-20260925-ANON",
+      "timestamp": "2026-09-25T00:08:26.712Z",
+      "entity_id": "MC-001",
+      "system": "gemini-web",
+      "prompt_id": "REL-01",
+      "prompt_registry_version": "1.0",
+      "response_snapshot_or_ref": "Gemini\nAcerca de Gemini\nObtener la app de Gemini\nSuscripciones\nPara empresas\nAcceder\nNuevo chat\nAccede para guardar la actividad\nAcceder\nConversación con Gemini\nTú dijiste What is the relationship between Marii Cuadros and AIO CODE?\n\nWhat is the relationship between Marii Cuadros and AIO CODE?\n\nGemini dijo\n\nMarii Cuadros is the creator and founder of AIO CODE (Artificial Intelligence Optimization Code).   \nMedium\n\nThe key aspects of their relationship include:\n\nCreator and Founder: Marii Cuadros developed AIO CODE as a research methodology and experimental laboratory.\n\nFocus Area: AIO CODE studies and explores how creators, brands, and projects can construct, connect, and optimize their digital entities and presence for AI recognition and indexing systems.\n\nAccede para vincular las apps de Google, crear imágenes y más\nAcceder\n\n\n\n\nFlash-Lite\n\nGemini es una IA y puede cometer errores.",
+      "research_window_id": "MC-001-BASELINE-v1",
+      "related_intervention_ids": [
+        "INT-MC-001-20260924-001",
+        "INT-AIO-001-20260924-001"
+      ]
+    }
+  ],
   "freeze": {
-    "status": "not_frozen",
-    "frozen_at": null,
-    "freeze_id": null,
+    "status": "frozen",
+    "frozen_at": "2026-09-25T01:25:25.082814+00:00",
+    "freeze_id": "MC-001-BASELINE-v1-20260925",
     "required_before_freeze": [
       "Execute the declared baseline prompt set under documented conditions.",
       "Store observation records and response snapshots/references.",
@@ -65,5 +262,187 @@
     "A baseline is frozen only after empirical observation records exist.",
     "Prompt Registry version must remain fixed for direct before/after comparisons.",
     "This snapshot follows the prior interventions declared in observatory/baseline-plan-v1.json; it cannot be used as a pre-change comparison for those interventions."
-  ]
+  ],
+  "coverage": {
+    "plan_id": "MC-001-BL-PLAN-v1",
+    "planned_pairs": 49,
+    "observed_pairs": 14,
+    "missing_pairs": [
+      {
+        "system": "claude-web",
+        "prompt_id": "AIO-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "CAT-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "DIS-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "ENT-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "ENT-02",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "REC-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "claude-web",
+        "prompt_id": "REL-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "AIO-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "CAT-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "DIS-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "ENT-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "ENT-02",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "REC-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "deepseek-web",
+        "prompt_id": "REL-01",
+        "reason": "Guest visit redirected to sign-in; no prompt submitted."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "AIO-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "CAT-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "DIS-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "ENT-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "ENT-02",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "REC-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "grok-web",
+        "prompt_id": "REL-01",
+        "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "AIO-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "CAT-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "DIS-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "ENT-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "ENT-02",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "REC-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "meta-ai-web",
+        "prompt_id": "REL-01",
+        "reason": "Sign-in/sign-up gate appeared before prompt submission."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "AIO-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "CAT-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "DIS-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "ENT-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "ENT-02",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "REC-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      },
+      {
+        "system": "perplexity-web",
+        "prompt_id": "REL-01",
+        "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+      }
+    ]
+  }
 }
