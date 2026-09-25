@@ -1,6 +1,6 @@
 {
   "title": "AIO CODE controlled public RAG corpus",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "created": "2026-09-24",
   "status": "prototype_contract",
   "source_repository": "mariicuadros/aio-code-knowledge",
@@ -19,7 +19,7 @@
       "role": "methodology",
       "visibility": "public",
       "canonical_or_historical": "canonical_current",
-      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+      "extract": "Approved methodology definition and role context for OZCU; retain section or record ID and source boundaries."
     },
     {
       "path": "EVIDENCE-STANDARD-v1.md",
@@ -97,6 +97,34 @@
       "visibility": "public",
       "canonical_or_historical": "canonical_current",
       "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "README.md",
+      "role": "project_identity_overview",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages describing OZCU, AIO CODE, VOID MODE and their entity boundaries."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-OZCU.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-VOID-MODE.md",
+      "role": "canonical_identity",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved passages or records only; retain section or record ID and source boundaries."
+    },
+    {
+      "path": "social-entity-map.json",
+      "role": "platform_representations",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved entity inventory and verified platform representation records; do not infer unverified profiles."
     }
   ],
   "required_index_metadata": [
@@ -140,5 +168,6 @@
     "draft or superseded claim text as current truth",
     "any path not in the exact allowlist"
   ],
-  "next_gate": "Measure retrieval and answer support against rag/evaluation-v0.json before adding embeddings, a hosted model, or a public answer endpoint."
+  "next_gate": "Measure retrieval and answer support against rag/evaluation-v0.json before adding embeddings, a hosted model, or a public answer endpoint.",
+  "updated": "2026-09-25"
 }
