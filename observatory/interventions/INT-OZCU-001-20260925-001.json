@@ -1,0 +1,43 @@
+{
+  "intervention_id": "INT-OZCU-001-20260925-001",
+  "entity_id": "OZCU-001",
+  "timestamp": "2026-09-25T01:32:45Z",
+  "research_window_id": "OZCU-ENTITY-INTRODUCTION-2026-09-25",
+  "intervention_type": "canonical_identity_and_relationship_update",
+  "target_system_or_platform": "AIO CODE public repository and approved public RAG sources",
+  "target_url_or_record": "Repository paths: README.md; ENTITY-MASTER-RECORD.md; entity-graph.json; social-entity-map.json; canonical passports for OZCU, AIO CODE, Marii Cuadros and VOID MODE.",
+  "before_state_ref": "GitHub main immediately before the identity update series; preceding baseline freeze commit e071ea770855db7a1f2e2e3ed1711dff854a4997.",
+  "after_state_ref": "GitHub main after the identity update series, commit 0f9c280caac698d5ab68924806e99ebe8fc06b1b.",
+  "changed_variables": [
+    "Added OZCU-001 as the OZCU company/venture brand and recorded Marii Cuadros as CEO.",
+    "Clarified AIO CODE (AIO-001) as OZCU's methodology, developed by Marii Cuadros.",
+    "Added VOID MODE (VOID-001) as a distinct creative system for artists, developed by Marii Cuadros and applied by OZCU.",
+    "Updated canonical entity records, graph relationships, social-map entity inventory and passports.",
+    "Recorded that public sources do not yet establish legal incorporation and do not guarantee third-party recognition."
+  ],
+  "unchanged_controls": [
+    "MC-001 baseline v1 was already frozen as a partial 14/49 post-intervention snapshot.",
+    "Frozen prompt registry v1.0 and previously captured observations were not changed by this identity update."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Improve first-party semantic clarity between OZCU, AIO CODE, Marii Cuadros and VOID MODE. This does not establish indexing, external AI recognition, or causality.",
+  "evidence_refs": [
+    "README.md",
+    "ENTITY-MASTER-RECORD.md",
+    "entity-graph.json",
+    "social-entity-map.json",
+    "entity/ENTITY-PASSPORT-OZCU.md",
+    "entity/ENTITY-PASSPORT-AIO-CODE.md",
+    "entity/ENTITY-PASSPORT-VOID-MODE.md"
+  ],
+  "operator": "Marii Cuadros / project operator",
+  "reversibility": "Git revert of the referenced commits.",
+  "confounders_known_at_time_of_change": [
+    "The prior MC-001 snapshot contains 14 observed and 35 missing pairs and was measured after two earlier interventions.",
+    "The intervention ID was assigned after these repository commits rather than before them; this timing deviation is disclosed, not backdated as prospective registration.",
+    "No post-update third-party Observatory runs have yet been captured."
+  ],
+  "status": "completed_documentation_only"
+}
