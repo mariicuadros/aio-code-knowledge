@@ -8,7 +8,7 @@
       "entity_id": "OZCU-001",
       "canonical_name": "OZCU",
       "platform_registry": null,
-      "notes": "Venture/company brand; no official platform profile is recorded in this map yet."
+      "notes": "Company/venture layer and reserve corporate identity; AIO CODE remains the primary public/project brand through 2027. No official OZCU profile is recorded in this map yet."
     },
     {
       "entity_id": "MC-001",
@@ -85,5 +85,5 @@
     "email": "aiocodeadmin@gmail.com"
   },
   "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
-  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. OZCU is the venture/company brand; AIO CODE is its methodology; VOID MODE is its creative system for artists. Do not infer platform profiles that have not been verified."
+  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and methodology through 2027; OZCU is the company/venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified."
 }
