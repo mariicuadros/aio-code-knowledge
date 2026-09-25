@@ -1,5 +1,6 @@
 # AIO CODE — Methodology Specification v1
 
+**Company context:** OZCU-001 (OZCU)
 **Entity:** AIO-001  
 **Version:** 1.0  
 **Date:** 2026-09-23  
@@ -7,7 +8,7 @@
 
 ## 1. Definition
 
-AIO CODE is a **research and implementation methodology** for structuring digital entities, documenting claims and relationships, and observing how third-party AI/search systems retrieve, resolve, represent, cite and potentially recommend those entities over time.
+AIO CODE is the methodology developed by Marii Cuadros and applied by OZCU. It is a **research and implementation methodology** for structuring digital entities, documenting claims and relationships, and observing how third-party AI/search systems retrieve, resolve, represent, cite and potentially recommend those entities over time.
 
 AIO CODE does not control third-party AI systems and does not guarantee their outputs.
 
