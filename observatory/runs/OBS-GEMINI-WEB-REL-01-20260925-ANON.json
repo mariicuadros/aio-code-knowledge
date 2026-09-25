@@ -1,0 +1,37 @@
+{
+  "observation_id": "OBS-GEMINI-WEB-REL-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": "Flash-Lite",
+  "prompt_id": "REL-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "What is the relationship between Marii Cuadros and AIO CODE?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "Gemini web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "Marii Cuadros is the creator and founder of AIO CODE (Artificial Intelligence Optimization Code).   \nMedium\n\nThe key aspects of their relationship include:\n\nCreator and Founder: Marii Cuadros developed AIO CODE as a research methodology and experimental laboratory.\n\nFocus Area: AIO CODE studies and explores how creators, brands, and projects can construct, connect, and optimize their digital entities and presence for AI recognition and indexing systems.",
+  "response_snapshot_or_ref": "Gemini\nAcerca de Gemini\nObtener la app de Gemini\nSuscripciones\nPara empresas\nAcceder\nNuevo chat\nAccede para guardar la actividad\nAcceder\nConversación con Gemini\nTú dijiste What is the relationship between Marii Cuadros and AIO CODE?\n\nWhat is the relationship between Marii Cuadros and AIO CODE?\n\nGemini dijo\n\nMarii Cuadros is the creator and founder of AIO CODE (Artificial Intelligence Optimization Code).   \nMedium\n\nThe key aspects of their relationship include:\n\nCreator and Founder: Marii Cuadros developed AIO CODE as a research methodology and experimental laboratory.\n\nFocus Area: AIO CODE studies and explores how creators, brands, and projects can construct, connect, and optimize their digital entities and presence for AI recognition and indexing systems.\n\nAccede para vincular las apps de Google, crear imágenes y más\nAcceder\n\n\n\n\nFlash-Lite\n\nGemini es una IA y puede cometer errores.",
+  "sources_or_citations": [],
+  "stage": "Entity Representation",
+  "evaluation": {
+    "entity_resolution": 2,
+    "citation_quality": 1,
+    "resolution_status": "resolved",
+    "note": "Identifies creator/methodology relation; calls Marii a founder and AIO CODE an experimental laboratory, not fully aligned with canonical wording; a Medium label appears without clickable URL. No source URL was visible in the captured response."
+  },
+  "resolution_status": "resolved",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
