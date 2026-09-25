@@ -206,7 +206,7 @@
     },
     {
       "case_id": "RAG-Q-16",
-      "query": "Does zero baseline records mean Marii has zero AI recognition?",
+      "query": "Does 14 observed pairs out of 49 planned mean 28% of AI systems recognize Marii Cuadros?",
       "category": "baseline",
       "expected_behavior": "answerable",
       "gold_source_paths": [
@@ -214,7 +214,7 @@
         "OBSERVATORY-PROTOCOL-v1.md"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "No; falta de mediciones no equivale a cero reconocimiento."
+      "expected_fact_or_boundary": "No; coverage of planned observations is not an external AI-recognition rate."
     },
     {
       "case_id": "RAG-Q-17",
@@ -292,14 +292,14 @@
     },
     {
       "case_id": "RAG-Q-24",
-      "query": "What percentage of outside AI systems recognized Marii Cuadros in the frozen baseline?",
+      "query": "Can we state the seven-system recognition rate when the frozen MC-001 baseline has 14 of 49 planned pairs observed and five systems blocked?",
       "category": "unknown",
       "expected_behavior": "abstain",
       "gold_source_paths": [
         "ai-social-baseline.json"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "No hay evidencia suficiente; no hay baseline empírico congelado."
+      "expected_fact_or_boundary": "No. The partial snapshot has five systems without observations; do not infer a seven-system recognition rate."
     }
   ]
 }
