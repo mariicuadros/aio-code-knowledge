@@ -1,0 +1,39 @@
+{
+  "observation_id": "OBS-CHATGPT-WEB-DIS-01-20260925-ANON",
+  "timestamp": "2026-09-25T00:08:26.712Z",
+  "entity_id": "MC-001",
+  "system": "chatgpt-web",
+  "system_interface_or_model_if_visible": "ChatGPT",
+  "prompt_id": "DIS-01",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Is Marii Cuadros the same person as Maria Luisa Cuadros?",
+  "language": "en",
+  "country_or_location_context_if_relevant": null,
+  "logged_in_state": "logged_out",
+  "context_condition": "fresh_context",
+  "browsing_or_search_state_if_visible": "Visible source links; exact browsing controls not exposed",
+  "environment": "ChatGPT web, desktop Chrome, anonymous/logged-out session",
+  "observation_type": "post_intervention_baseline_observation",
+  "observed_result": "I couldn’t find reliable public information confirming that Marii Cuadros and Maria Luisa Cuadros are the same person. The search results I found mostly point to businesses or unrelated references involving “Maria Luisa” and “Cuadros,” rather than a person named Marii Cuadros. \nCuadros Malu\n+1\n\nIt’s possible that:\n\n“Marii Cuadros” is a nickname, shortened name, or social media handle for someone whose legal name is Maria Luisa Cuadros; or\n\nthey are different people.\n\nIf you share where you saw “Marii Cuadros” (for example, Instagram, a news article, an artist profile, a company page, or a country), I can help verify whether they refer to the same individual.",
+  "response_snapshot_or_ref": "Is Marii Cuadros the same person as Maria Luisa Cuadros?\n\nI couldn’t find reliable public information confirming that Marii Cuadros and Maria Luisa Cuadros are the same person. The search results I found mostly point to businesses or unrelated references involving “Maria Luisa” and “Cuadros,” rather than a person named Marii Cuadros. \nCuadros Malu\n+1\n\nIt’s possible that:\n\n“Marii Cuadros” is a nickname, shortened name, or social media handle for someone whose legal name is Maria Luisa Cuadros; or\n\nthey are different people.\n\nIf you share where you saw “Marii Cuadros” (for example, Instagram, a news article, an artist profile, a company page, or a country), I can help verify whether they refer to the same individual.\n\nFuentes\nChatGPT es IA y puede cometer errores.",
+  "sources_or_citations": [
+    "https://www.cuadrosmalu.com/?utm_source=chatgpt.com"
+  ],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "entity_resolution": 1,
+    "citation_quality": 0,
+    "resolution_status": "ambiguous",
+    "note": "Avoids asserting identity but leaves same-person vs different-person unresolved; citation is insufficient."
+  },
+  "resolution_status": "ambiguous",
+  "evidence_state": "observed",
+  "confidence_note": "Single anonymous run in a fresh conversation. Preliminary manual coding; not a stability or causal finding.",
+  "research_window_id": "MC-001-BASELINE-v1",
+  "related_intervention_ids": [
+    "INT-MC-001-20260924-001",
+    "INT-AIO-001-20260924-001"
+  ],
+  "confounder_ids": [],
+  "status": "under_observation"
+}
