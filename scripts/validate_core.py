@@ -53,7 +53,10 @@ def main():
     if baseline["freeze"]["status"] == "frozen":
         check(bool(baseline["records"]), "Frozen baseline has no records")
     for record in baseline["records"]:
-        Draft202012Validator(obs_schema, format_checker=FormatChecker()).validate(record)
+        # Frozen baseline rows are summary records validated by the baseline schema.
+        # Full raw observations live in observatory/runs/ and are validated below.
+        check(bool(record["response_snapshot_or_ref"].strip()), "Frozen baseline record has no response snapshot")
+        check(record["entity_id"] == baseline["primary_baseline_entity"], "Unexpected entity in frozen baseline")
         check(record["prompt_id"] in prompt_ids, "Unknown prompt_id in baseline")
         check(record["prompt_registry_version"] == prompts["version"], "Prompt version mismatch in baseline")
 
