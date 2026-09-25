@@ -36,7 +36,183 @@
     "A one-run snapshot does not support a stability claim; add repeat-run plan before measuring stability.",
     "Freeze the baseline only after validating observations and listing every planned missing run. Do not claim complete cross-system coverage if any planned pair is missing."
   ],
-  "missing_runs": [],
+  "missing_runs": [
+    {
+      "system": "claude-web",
+      "prompt_id": "ENT-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "ENT-02",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "DIS-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "REL-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "AIO-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "CAT-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "REC-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "ENT-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "ENT-02",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "DIS-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "REL-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "AIO-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "CAT-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "REC-01",
+      "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "ENT-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "ENT-02",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "DIS-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "REL-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "AIO-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "CAT-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "REC-01",
+      "reason": "Sign-in/sign-up gate appeared before prompt submission."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "ENT-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "ENT-02",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "DIS-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "REL-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "AIO-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "CAT-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "REC-01",
+      "reason": "Guest interface accepted initial text but required sign-up before returning an answer; no response captured."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "ENT-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "ENT-02",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "DIS-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "REL-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "AIO-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "CAT-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "REC-01",
+      "reason": "Guest visit redirected to sign-in; no prompt submitted."
+    }
+  ],
   "freeze_status": "not_frozen",
   "baseline_state": "post_intervention_snapshot",
   "prior_intervention_ids": [
