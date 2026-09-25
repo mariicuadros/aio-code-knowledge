@@ -1,0 +1,221 @@
+{
+  "report_type": "descriptive_observatory_profile",
+  "baseline_status": "frozen",
+  "baseline_record_count": 14,
+  "captured_run_count": 14,
+  "planned_baseline_pairs": 49,
+  "observed_baseline_pairs": 14,
+  "missing_baseline_pairs": [
+    {
+      "system": "claude-web",
+      "prompt_id": "AIO-01"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "CAT-01"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "DIS-01"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "ENT-01"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "ENT-02"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "REC-01"
+    },
+    {
+      "system": "claude-web",
+      "prompt_id": "REL-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "AIO-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "CAT-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "DIS-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "ENT-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "ENT-02"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "REC-01"
+    },
+    {
+      "system": "deepseek-web",
+      "prompt_id": "REL-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "AIO-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "CAT-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "DIS-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "ENT-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "ENT-02"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "REC-01"
+    },
+    {
+      "system": "grok-web",
+      "prompt_id": "REL-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "AIO-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "CAT-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "DIS-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "ENT-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "ENT-02"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "REC-01"
+    },
+    {
+      "system": "meta-ai-web",
+      "prompt_id": "REL-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "AIO-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "CAT-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "DIS-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "ENT-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "ENT-02"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "REC-01"
+    },
+    {
+      "system": "perplexity-web",
+      "prompt_id": "REL-01"
+    }
+  ],
+  "systems": {
+    "chatgpt-web": {
+      "observation_count": 7,
+      "dimensions": {
+        "entity_resolution": {
+          "rated_runs": 7,
+          "grade_counts": {
+            "0": 3,
+            "1": 2,
+            "2": 2
+          }
+        },
+        "disambiguation": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "identity_accuracy": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "relationship_accuracy": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "citation_quality": {
+          "rated_runs": 7,
+          "grade_counts": {
+            "0": 5,
+            "1": 2
+          }
+        }
+      }
+    },
+    "gemini-web": {
+      "observation_count": 7,
+      "dimensions": {
+        "entity_resolution": {
+          "rated_runs": 7,
+          "grade_counts": {
+            "0": 2,
+            "2": 5
+          }
+        },
+        "disambiguation": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "identity_accuracy": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "relationship_accuracy": {
+          "rated_runs": 0,
+          "grade_counts": {}
+        },
+        "citation_quality": {
+          "rated_runs": 7,
+          "grade_counts": {
+            "0": 3,
+            "1": 4
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Captured responses are not automatically benchmark-ready or a frozen baseline.",
+    "An empty evaluation is not a zero score.",
+    "External system internals and unexposed retrieval traces are unknown.",
+    "No global AIO Score or causal intervention effect is computed."
+  ]
+}
