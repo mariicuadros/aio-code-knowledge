@@ -2,7 +2,7 @@
 
 **Version:** 4.0  
 **Status:** Active  
-**Updated:** 2026-09-14  
+**Updated:** 2026-09-25  
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros
 
@@ -261,6 +261,8 @@ A confusable representation remains an observation and is not a canonical alias,
 
 ## 15. Related Documents
 
+- `entity/ENTITY-PASSPORT-OZCU.md`
+- `entity/ENTITY-PASSPORT-VOID-MODE.md`
 - `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - `entity/ENTITY-PASSPORT-NUX.md`
 - `entity/ENTITY-PASSPORT-AIO-CODE.md`
@@ -279,7 +281,7 @@ A confusable representation remains an observation and is not a canonical alias,
 
 ---
 
-**Canonical Entity Set:** MC-001, NUX-001, AIO-001  
-**Project:** AIO CODE  
-**Version:** 4.0  
-**Updated:** 2026-09-14
+**Canonical Entity Set:** OZCU-001, MC-001, AIO-001, VOID-001, NUX-001  
+**Company / venture brand:** OZCU  
+**Version:** 4.1  
+**Updated:** 2026-09-25
