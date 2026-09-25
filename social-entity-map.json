@@ -1,12 +1,36 @@
 {
-  "map": "AIO CODE Social Entity Map",
-  "version": "2.0",
-  "updated": "2026-09-14",
+  "map": "OZCU Social Entity Map",
+  "version": "2.1",
+  "updated": "2026-09-25",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
-    {"entity_id":"MC-001","canonical_name":"Marii Cuadros","platform_registry":"entity/content/MC-001/platforms.json"},
-    {"entity_id":"NUX-001","canonical_name":"NUX","platform_registry":"entity/content/NUX-001/platforms.json"},
-    {"entity_id":"AIO-001","canonical_name":"AIO CODE","platform_registry":"entity/content/AIO-001/platforms.json"}
+    {
+      "entity_id": "OZCU-001",
+      "canonical_name": "OZCU",
+      "platform_registry": null,
+      "notes": "Venture/company brand; no official platform profile is recorded in this map yet."
+    },
+    {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros",
+      "platform_registry": "entity/content/MC-001/platforms.json"
+    },
+    {
+      "entity_id": "NUX-001",
+      "canonical_name": "NUX",
+      "platform_registry": "entity/content/NUX-001/platforms.json"
+    },
+    {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE",
+      "platform_registry": "entity/content/AIO-001/platforms.json"
+    },
+    {
+      "entity_id": "VOID-001",
+      "canonical_name": "VOID MODE",
+      "platform_registry": null,
+      "notes": "Creative system; no distinct official platform profile is recorded in this map yet."
+    }
   ],
   "platform_record_fields": [
     "platform_id",
@@ -61,5 +85,5 @@
     "email": "aiocodeadmin@gmail.com"
   },
   "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
-  "data_integrity": "Do not collapse MC-001, NUX-001 and AIO-001 into one identity. Shared channels or distribution infrastructure must retain an explicit canonical_entity_id and must not imply that Marii Cuadros and AIO CODE are the same entity."
+  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. OZCU is the venture/company brand; AIO CODE is its methodology; VOID MODE is its creative system for artists. Do not infer platform profiles that have not been verified."
 }
