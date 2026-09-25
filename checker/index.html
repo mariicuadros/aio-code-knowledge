@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Free AIO CODE self-check for entity documentation and provenance readiness. It does not query AI systems or predict visibility.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://aio-code.vercel.app/checker/">
+<title>AIO CODE Entity Readiness Check v0.1</title>
+<style>
+:root{color-scheme:dark;--bg:#0b0b0d;--panel:#141417;--border:#303036;--text:#f4f4f5;--muted:#b2b2bb;--accent:#b7a4ff;--good:#9fe3bf;--warn:#ffd37f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:900px;margin:auto;padding:36px 22px 70px}a{color:var(--accent)}header{padding:30px 0 20px;border-bottom:1px solid var(--border)}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-size:.78rem}h1{font-size:clamp(2.2rem,6vw,4rem);letter-spacing:-.04em;line-height:1.02;margin:.6rem 0}h2{font-size:1.35rem;margin:0 0 14px}p{color:var(--muted)}.notice{border-left:3px solid var(--warn);padding:14px 16px;background:#1b1914;border-radius:6px;color:#f0e3c7;margin:22px 0}.group{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;margin:16px 0}.item{padding:15px 0;border-top:1px solid var(--border)}.item:first-of-type{border-top:0}.item p{margin:4px 0 12px}.options{display:flex;gap:10px;flex-wrap:wrap}.options label{border:1px solid var(--border);padding:7px 11px;border-radius:999px;cursor:pointer;color:var(--muted)}input{accent-color:var(--accent)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}button{font:inherit;background:var(--accent);color:#16131f;border:0;border-radius:8px;padding:11px 16px;font-weight:700;cursor:pointer}button.secondary{background:transparent;border:1px solid var(--border);color:var(--text)}#report{display:none;background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;margin-top:20px}.result{padding:13px 0;border-top:1px solid var(--border)}.result strong{display:block}.badge{color:var(--good)}.gap{color:var(--warn)}footer{font-size:.85rem;border-top:1px solid var(--border);padding-top:18px;color:var(--muted)}@media print{body{background:white;color:#111}main{max-width:none;padding:0}.group,.notice,#report{background:white;color:#111;border:1px solid #aaa}.actions,header nav{display:none!important}.item p,footer{color:#333}a{color:#111}}@media(max-width:560px){main{padding:22px 15px}.group{padding:16px}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<nav><a href="/">← AIO CODE home</a></nav>
+<div class="eyebrow">AIO CODE · Free self-check · v0.1</div>
+<h1>Entity readiness check</h1>
+<p>Review the records and processes behind a public digital identity. This checklist helps surface documentation gaps so you can decide what to improve next.</p>
+</header>
+<div class="notice"><strong>Important:</strong> This is a creator-entered self-assessment. It does not query ChatGPT, Google, or other AI/search systems, verify your answers, issue a score, or predict visibility. It is not a legal clearance.</div>
+<form id="checklist" aria-label="Entity readiness checklist"></form>
+<div class="actions"><button id="make-report" type="button">Create my report</button><button class="secondary" id="print-report" type="button" disabled>Print / save report</button><button class="secondary" id="reset" type="reset" form="checklist">Clear answers</button></div>
+<section id="report" aria-live="polite"></section>
+<footer>Answers stay in this page session. This prototype sends no form data and stores no answers. <a href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/product/checker-v0.1-spec.md">Read the product limits</a>.</footer>
+</main>
+<script>
+const groups=[
+{title:"1. Identity and boundaries",items:[
+["canonical","Do you have one canonical name and stable ID for each person, brand, method, and creative project?"],
+["boundaries","Are related people, projects, characters, and products defined as separate entities where appropriate?"],
+["relations","Are creator, owner, parent, and applied-by relationships explicit and supported by sources?"]]},
+{title:"2. Public source and structured identity",items:[
+["home","Is there a public page that clearly defines the entity and its relationship to related entities?"],
+["schema","Does the page use accurate structured data that matches the visible page and canonical records?"],
+["crawl","Have you checked that the public page is accessible to crawlers and linked from a sitemap or index page?"]]},
+{title:"3. Claims and evidence",items:[
+["claims","Are important public claims recorded with an evidence source and status?"],
+["sourcefit","Have you checked that each source supports the exact claim and describes the correct entity?"],
+["history","Are dates, versions, changes, and superseded claims preserved instead of silently overwritten?"]]},
+{title:"4. Cross-platform representation",items:[
+["profiles","Are official profiles mapped to the right entity with URLs and a last-verified date?"],
+["consistency","Do names, descriptions, and key relationships agree across the official sources you control?"],
+["ambiguity","Have you documented aliases, similar names, and known entity-confusion risks?"]]},
+{title:"5. Content provenance and rights",items:[
+["provenance","Can each published asset be linked to its master, derivatives, edits, platform, and publication record?"],
+["permissions","Are permissions for likeness, voice, music, footage, and third-party marks documented for the intended use?"],
+["disclosure","Are campaign disclosures and AI-generation disclosures reviewed where applicable?"]]},
+{title:"6. Observation readiness",items:[
+["protocol","Do you have fixed prompts and a written protocol for recording external system outputs?"],
+["raw","Do you preserve full responses, visible citations, dates, models/interfaces, and session conditions?"],
+["limits","Do your reports distinguish retrieval, entity resolution, grounding, citation validity, and recommendation?"]]}
+];
+const labels={yes:"Yes",partial:"Partly",no:"No",unknown:"Unknown"};
+const form=document.getElementById("checklist");
+for(const [gi,g] of groups.entries()){
+ const section=document.createElement("section");section.className="group";
+ const h=document.createElement("h2");h.textContent=g.title;section.appendChild(h);
+ for(const [id,prompt] of g.items){
+  const item=document.createElement("div");item.className="item";
+  const p=document.createElement("p");p.textContent=prompt;item.appendChild(p);
+  const opts=document.createElement("div");opts.className="options";opts.setAttribute("role","radiogroup");opts.setAttribute("aria-label",prompt);
+  for(const [v,label] of Object.entries(labels)){
+   const l=document.createElement("label");const input=document.createElement("input");input.type="radio";input.name=id;input.value=v;input.required=true;input.setAttribute("aria-label",label+" — "+prompt);l.append(input,document.createTextNode(" "+label));opts.appendChild(l)
+  }
+  item.appendChild(opts);section.appendChild(item)
+ }
+ form.appendChild(section)
+}
+document.getElementById("make-report").addEventListener("click",()=>{
+ if(!form.reportValidity()){form.querySelector(":invalid").focus();return}
+ const answers=new FormData(form);const report=document.getElementById("report");report.innerHTML="";
+ const title=document.createElement("h2");title.textContent="Your entity readiness report";report.appendChild(title);
+ const intro=document.createElement("p");intro.textContent="Self-reported checklist · Generated "+new Date().toLocaleString()+" · No external AI/search systems were queried.";report.appendChild(intro);
+ for(const g of groups){
+  const values=g.items.map(([id])=>answers.get(id));const yes=values.filter(v=>v==="yes").length;const partial=values.filter(v=>v==="partial").length;const gap=values.length-yes-partial;
+  const row=document.createElement("div");row.className="result";
+  const strong=document.createElement("strong");strong.textContent=g.title+" — "+yes+"/"+values.length+" marked Yes";row.appendChild(strong);
+  const detail=document.createElement("span");detail.className=gap?"gap":"badge";detail.textContent=gap?partial+" Partly · "+values.filter(v=>v==="no").length+" No · "+values.filter(v=>v==="unknown").length+" Unknown":"No unresolved items in this section";row.appendChild(detail);
+  const list=document.createElement("ul");
+  for(const [i,[id,q]] of g.items.entries()){if(values[i]!=="yes"){const li=document.createElement("li");li.textContent=labels[values[i]]+": "+q;list.appendChild(li)}}
+  if(list.children.length)row.appendChild(list);report.appendChild(row)
+ }
+ const end=document.createElement("p");end.textContent="Use the gaps above to plan documentation work. This report is not an audit, certification, validated score, legal review, or prediction of how external systems will respond.";report.appendChild(end);
+ report.style.display="block";document.getElementById("print-report").disabled=false;report.scrollIntoView({behavior:"smooth"})
+});
+document.getElementById("print-report").addEventListener("click",()=>window.print());
+document.getElementById("reset").addEventListener("click",()=>{document.getElementById("report").style.display="none";document.getElementById("print-report").disabled=true});
+</script>
+</body></html>
