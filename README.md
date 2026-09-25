@@ -1,10 +1,8 @@
 # AIO CODE
 
-## AIO CODE, developed and applied at OZCU
+## AIO CODE — primary methodology and public brand
 
-OZCU is the company brand and venture behind this work. It applies AIO CODE as its methodology and VOID MODE as a creative system for artists. Marii Cuadros is OZCU’s CEO and develops both AIO CODE and VOID MODE.
-
-The name OZCU here identifies the venture/brand; this repository does not assert that a legal company has been incorporated.
+AIO CODE remains the primary public/project brand through 2027. OZCU is the company/venture layer and a reserve corporate identity; it does not replace or demote AIO CODE. Marii Cuadros develops AIO CODE and VOID MODE. VOID MODE is AIO CODE’s creative system for artists. This repository does not assert that a legal company has been incorporated.
 
 ## Artificial Intelligence Optimization Code
 
@@ -184,11 +182,7 @@ Material prompt wording changes require a new prompt version.
 
 ## Baseline status
 
-`ai-social-baseline.json` currently contains the baseline **specification/container**, but the empirical record set is not yet frozen.
-
-Its `records` array must be populated through standardized Observatory runs before `MC-001 BASELINE v1` can be declared complete.
-
-**An empty record set is not a zero result and is not a completed baseline.**
+`MC-001-BASELINE-v1-20260925` is frozen **partially**: 14 of 49 planned observations are recorded; 35 pairs are documented as missing. It is not complete coverage, a stability finding, or a causal comparison. The 35 missing observations are not zero results. See the frozen snapshot and its missing-pair register.
 
 ## Internal RAG readiness
 
