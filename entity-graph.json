@@ -1,8 +1,14 @@
 {
-  "graph": "AIO CODE Entity Graph",
-  "version": "1.1",
-  "updated": "2026-09-03",
+  "graph": "OZCU / AIO CODE Entity Graph",
+  "version": "1.2",
+  "updated": "2026-09-25",
   "nodes": [
+    {
+      "entity_id": "OZCU-001",
+      "canonical_name": "OZCU",
+      "entity_type": "Company",
+      "passport": "entity/ENTITY-PASSPORT-OZCU.md"
+    },
     {
       "entity_id": "MC-001",
       "canonical_name": "Marii Cuadros",
@@ -33,6 +39,12 @@
       "passport": "entity/ENTITY-PASSPORT-NUX.md",
       "content_registry": "entity/content/NUX-001/content-registry.json",
       "platform_registry": "entity/content/NUX-001/platforms.json"
+    },
+    {
+      "entity_id": "VOID-001",
+      "canonical_name": "VOID MODE",
+      "entity_type": "CreativeSystem",
+      "passport": "entity/ENTITY-PASSPORT-VOID-MODE.md"
     }
   ],
   "edges": [
@@ -52,6 +64,38 @@
       "status": "active",
       "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
       "note": "NUX is a distinct entity. The broader creative role semantics may be refined as documented evidence accumulates."
+    },
+    {
+      "relationship_id": "REL-003",
+      "from": "MC-001",
+      "relationship": "CEO_of",
+      "to": "OZCU-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-004",
+      "from": "MC-001",
+      "relationship": "develops",
+      "to": "VOID-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-005",
+      "from": "OZCU-001",
+      "relationship": "applies",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-006",
+      "from": "OZCU-001",
+      "relationship": "offers",
+      "to": "VOID-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
     }
   ],
   "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity.",
