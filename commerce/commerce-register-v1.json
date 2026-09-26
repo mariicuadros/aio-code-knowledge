@@ -1,6 +1,6 @@
 {
   "registry_id": "AIO-COMMERCE-v1",
-  "version": "1.0",
+  "version": "1.1",
   "updated": "2026-09-25",
   "primary_public_brand": "AIO CODE",
   "entity_ids": [
@@ -8,54 +8,68 @@
     "AIO-001",
     "VOID-001"
   ],
-  "purpose": "Record commercial context, brand relationships, placements, music/playlists, calls to action, rights, commercial signals, and revenue attribution without inferring permissions or results.",
+  "purpose": "Record commercial context, brand relationships, placements, music/playlists, calls to action, rights, commercial signals, and revenue attribution without inferring permissions, sponsorship or results.",
   "status_values": [
+    "NONE",
     "ORGANIC",
+    "SPEC",
     "GIFT",
     "PAID",
     "AFF",
     "OWN"
   ],
+  "relationship_rules": [
+    "features_brand is not sponsored_by",
+    "uses_product is not endorses_product",
+    "SPEC is independent speculative creative and is not commissioned_by_brand unless separately verified",
+    "A brand co-occurrence must not be interpreted as a commercial relationship without evidence"
+  ],
   "records": [
     {
       "asset_id": "M01",
       "asset_type": "music_track",
-      "title": "unknown",
+      "title": "DIOS 33",
+      "creator_entity": "MC-001",
+      "generation_or_production_note": "Created with Suno assistance; detailed human contribution and commercial-use rights evidence must be recorded before PAIDREADY use.",
       "platform": "unknown",
       "url": null,
-      "commercial_status": "unknown",
-      "brand_relation": "unknown",
-      "product_placement": "unknown",
+      "commercial_status": "OWN",
+      "brand_relation": "NONE",
+      "product_placement": "not_applicable",
       "cta": "unknown",
-      "rights_state": "unknown",
+      "rights_state": "review_required",
       "disclosure_state": "unknown",
       "commercial_signal": "not_collected",
       "revenue_attribution": "not_collected",
       "record_status": "planned",
-      "note": "Asset identifier mentioned in project planning; title, source, link, license, and publication state are not verified in this repository."
+      "note": "Known project music asset. User describes current version as usable/semi-human; formal license and human-authorship evidence are not yet recorded in the public repository."
     },
     {
       "asset_id": "PL01",
       "asset_type": "music_playlist",
       "title": "unknown",
-      "platform": "unknown",
+      "creator_or_curator_entity": "MC-001",
+      "purpose": "Music curation identity and cross-promotion with songs used in content.",
+      "platform": "Spotify",
       "url": null,
-      "commercial_status": "unknown",
-      "brand_relation": "unknown",
-      "product_placement": "unknown",
+      "commercial_status": "OWN",
+      "brand_relation": "NONE",
+      "product_placement": "not_applicable",
       "cta": "unknown",
-      "rights_state": "unknown",
+      "rights_state": "not_applicable_for_playlist_ownership; individual track use remains platform/rightsholder dependent",
       "disclosure_state": "unknown",
       "commercial_signal": "not_collected",
       "revenue_attribution": "not_collected",
       "record_status": "planned",
-      "note": "Playlist identifier mentioned in project planning; title, source, link, rights, and publication state are not verified in this repository."
+      "note": "Playlist name and URL pending. Playlist is treated as a curation asset, not evidence of ownership of included third-party recordings."
     }
   ],
   "rules": [
     "A blank or unknown rights field is not permission.",
-    "Do not mark PAIDREADY while material rights, partner approval, or disclosure requirements are unknown.",
-    "Revenue attribution requires a defined source and measurement window; do not infer revenue from views, engagement, or a CTA.",
-    "Keep platform metrics and commercial terms scoped to the individual asset or campaign."
+    "Do not mark PAIDREADY while material rights, partner approval, commercial-use permission, or disclosure requirements are unknown.",
+    "Revenue attribution requires a defined source and measurement window; do not infer revenue from views, engagement or a CTA.",
+    "Keep platform metrics and commercial terms scoped to the individual asset or campaign.",
+    "Organic product presence must not imply sponsorship or endorsement.",
+    "Brand-facing speculative work must use SPEC until a real commercial relationship is verified."
   ]
 }
