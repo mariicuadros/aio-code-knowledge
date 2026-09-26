@@ -1,6 +1,6 @@
 # AIO CODE Brain v1 — record templates
 
-Use one file per record or one row per content item in a compatible table. Keep raw observations separate from analysis. Replace example placeholders; use `unknown`, `not_collected`, or `not_applicable` where appropriate. Never invent evidence or rights.
+Use one file per record or one row per content item in a compatible table. Keep raw observations separate from analysis. Replace example placeholders; use `unknown`, `not_collected`, or `not_applicable` where appropriate. Never invent evidence, permissions or rights.
 
 ## 1. Content Provenance Graph
 
@@ -11,13 +11,16 @@ entity_ids: ["MC-001", "VOID-001"]
 parent_content_id: null
 master_asset_id: "[stable master asset ID]"
 platform_derivative_ids: []
-content_type: "CANON | TRIAL | LIFE | EDIT | SPEC"
+content_type: "CANON | TRAILER | LIFE | CUT | EDITORIAL | STORY | DOC | SHORT | TRIAL | SPEC"
+subject: "MARIA | MARII | NUX | TWINS | FRANK | AGGIN | ALIENS | ENSEMBLE"
+lens: "REAL | VOID | HYBRID"
+narrative_function: "SEED | TEASE | BRIDGE | EXPAND | REVEAL | CALLBACK | PAYOFF | STANDALONE"
 hook: "[opening hook]"
-objective: "[intended viewer action or understanding]"
+objective: "DISCOVERY | SEARCH | RETENTION | LORE | MUSIC | BRAND | CONVERSION | OTHER"
 language: "es"
-platform: "[platform]"
+platform: "[TT | IG | FB | PT | YT | BI | OTHER]"
 created_at: "[ISO-8601]"
-first_seen_at: "[ISO-8601]"
+first_seen_at: "[ISO-8601 or not_collected]"
 published_at: null
 intervention_id: "[INT-...]"
 changeset_id: "[CHG-...]"
@@ -26,7 +29,8 @@ fingerprint:
   value: "[hash or not_collected]"
 source_evidence_refs: []
 rights_record_id: "[RIGHTS-...]"
-status: "draft | approved | published | withdrawn"
+authorship_record_id: "[AUTH-...]"
+status: "draft | approved | published | withdrawn | archived"
 owner: "MC-001"
 ```
 
@@ -57,6 +61,7 @@ record_type: performance_observation
 observation_id: "[PERF-...]"
 content_id: "[Content ID]"
 platform: "[platform]"
+measurement_label: "1h | 6h | 24h | 72h | 7d | 30d | custom"
 measurement_window:
   start: "[ISO-8601]"
   end: "[ISO-8601]"
@@ -67,12 +72,22 @@ metrics:
   reach: null
   views: null
   watch_time_seconds: null
+  average_watch_time_seconds: null
   completion_rate: null
+  retention_points: []
   likes: null
   comments: null
   shares: null
   saves: null
+  profile_visits: null
+  follows: null
+  search_actions: null
   clicks: null
+commercial_signals:
+  brand_mentions: null
+  brand_or_agency_inquiries: null
+  product_questions: null
+  music_or_playlist_actions: null
 notes: "[context; mark unavailable metrics]"
 ```
 
@@ -82,12 +97,23 @@ notes: "[context; mark unavailable metrics]"
 record_type: content_genome
 genome_id: "[GENOME-...]"
 content_id: "[Content ID]"
-format: "[e.g., vertical video]"
-hook_type: "[question / reveal / conflict / other]"
+content_type: "[controlled content type]"
+subject: "[controlled narrative subject]"
+lens: "REAL | VOID | HYBRID"
+narrative_function: "[controlled narrative function]"
+format: "[vertical / horizontal / hybrid / carousel / still / other]"
+hook_type: "[confession / gossip / contradiction / question / mystery / reveal / aspirational / absurd / other]"
+open_question: "[unresolved audience question or not_applicable]"
+theme: "[identity / power / desire / loss / faith / transformation / ambition / love / fear / betrayal / self / other]"
+emotion: "[dominant emotion]"
 narrative_beats: []
 visual_elements: []
 audio_elements: []
+pause_type: "NONE | REACTION | TENSION | REVEAL | INTIMACY | UNCERTAINTY"
+loop_design: "true | false | not_applicable"
 call_to_action: "[CTA or not_applicable]"
+search_intent: "[query/theme or not_applicable]"
+brand_verticals: []
 intended_audience: "[audience]"
 language: "es"
 source_of_description: "creator annotation"
@@ -99,8 +125,14 @@ source_of_description: "creator annotation"
 record_type: commerce_music_brand
 commerce_record_id: "[COM-...]"
 content_id: "[Content ID]"
-status: "ORGANIC | GIFT | PAID | AFF | OWN"
+status: "NONE | ORGANIC | SPEC | GIFT | PAID | AFF | OWN"
 brand_or_partner: "not_applicable"
+brand_vertical: "not_applicable"
+brand_presence:
+  relation: "NONE | ORGANIC | SPEC | GIFT | PAID | AFF | OWN"
+  placement: "BACKGROUND | PROP | WARDROBE | DIALOGUE | HERO | OTHER | not_applicable"
+  prominence: "LOW | MEDIUM | HIGH | not_applicable"
+  authorization: "unknown | not_required | verified | not_verified"
 campaign_or_brief_ref: "not_applicable"
 deliverable: "not_applicable"
 disclosure_required: "unknown"
@@ -113,6 +145,7 @@ usage:
   paid_amplification: "unknown"
 music:
   track_or_asset: "not_applicable"
+  relation: "TREND | CATALOG | OWNTRACK | PLAYLIST | OTHER | not_applicable"
   version: "not_applicable"
   rights_holder_or_source: "unknown"
   license_evidence_ref: "unknown"
@@ -120,14 +153,15 @@ music:
   term: "unknown"
   platform_restrictions: []
   commercial_use: "unknown"
-paidready_checklist_state: "not_assessed"
+commercial_readiness: "ORGANIC_ONLY | BRANDREADY | PAIDREADY | REVIEW | RESTRICTED"
 ```
 
-## 6. Rights and Disclosure
+## 6. Rights, Disclosure and Human Authorship
 
 ```yaml
-record_type: rights_disclosure
+record_type: rights_disclosure_authorship
 rights_record_id: "[RIGHTS-...]"
+authorship_record_id: "[AUTH-...]"
 content_id: "[Content ID]"
 asset_components:
   image_likeness: "unknown"
@@ -144,7 +178,21 @@ permissions:
   editing_allowed: "unknown"
   paid_use_allowed: "unknown"
   revocation_or_contact: "unknown"
-ai_generation_or_alteration: "unknown"
+ai_generation_or_alteration:
+  used: "unknown"
+  tools: []
+  components: []
+  disclosure_required: "unknown"
+human_authorship:
+  concept: "unknown"
+  writing: "unknown"
+  performance: "unknown"
+  direction: "unknown"
+  selection_arrangement: "unknown"
+  editing_compositing: "unknown"
+  music_creation_or_selection: "unknown"
+  final_creative_decisions: "unknown"
+  evidence_refs: []
 disclosure:
   required: "unknown"
   basis: "unknown"
@@ -177,6 +225,14 @@ owner: "MC-001"
 updated_at: "[ISO-8601]"
 ```
 
+## Decision state
+
+After sufficient observation, a content record may receive one of these operational decisions:
+
+`SCALE`, `ITERATE`, `REPACKAGE`, `RETEST`, `ARCHIVE`.
+
+The decision must reference recorded observations. It must not be treated as proof of causation.
+
 ## Readiness rule
 
-`BRANDREADY` and `PAIDREADY` are internal checklist outcomes, not guarantees. Do not assign either while material rights, approvals, or disclosure fields remain `unknown`. Keep each platform's performance metrics separate.
+`BRANDREADY` and `PAIDREADY` are internal checklist outcomes, not guarantees. Do not assign either while material rights, approvals, disclosure requirements or commercial-use permissions remain `unknown`. Keep each platform's performance metrics separate.
