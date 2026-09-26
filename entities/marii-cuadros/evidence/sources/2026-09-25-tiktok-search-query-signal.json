@@ -1,0 +1,49 @@
+{
+  "record_id": "MC-EV-TT-SEARCH-20260925-001",
+  "entity_id": "MC-001",
+  "entity_name": "Marii Cuadros",
+  "platform": "TikTok",
+  "evidence_type": "platform_analytics_screenshot",
+  "signal_type": "search_query_signal",
+  "observed_date": "2026-09-25",
+  "recorded_date": "2026-09-25",
+  "source": {
+    "origin": "user-provided TikTok analytics screenshot",
+    "screen": "Estadisticas > Resumen > Consultas de busqueda",
+    "local_evidence_filename": "image(5).png",
+    "sha256": "d0719968e5dedc8d6c4dd0398549942eb8a69043bfc8a1ab972c83cb64c03602",
+    "device_clock_visible": "06:47"
+  },
+  "visible_search_queries": [
+    {"query": "Marai cuadros", "displayed_share": "16.7%"},
+    {"query": "mariii cuadro", "displayed_share": "16.7%"},
+    {"query": "maria_cuadros1", "displayed_share": "16.7%"},
+    {"query": "mari cuadro", "displayed_share": "16.7%"},
+    {"query": "Mari cuadros", "displayed_share": "16.7%"}
+  ],
+  "observation": "TikTok Analytics visibly reports multiple search-query variants related to the Marii/Maria Cuadros name and handle family.",
+  "interpretation_boundary": {
+    "supported": [
+      "TikTok Analytics is attributing some discovery/search activity to name or handle variants associated with MC-001.",
+      "The visible queries include misspellings and spelling variants, which are useful inputs for the semantic/search map."
+    ],
+    "not_supported_by_this_screenshot_alone": [
+      "The absolute number of searches.",
+      "The number of unique people who searched.",
+      "That all searches were intentional searches for MC-001 rather than another similarly named target.",
+      "That AIO CODE caused the search activity.",
+      "That the five visible rows are the complete query list."
+    ]
+  },
+  "brain_links": {
+    "layer": "SEARCH",
+    "recommended_uses": [
+      "semantic-search-map",
+      "performance-ledger",
+      "entity-lift tracking",
+      "baseline/pre-content evidence"
+    ]
+  },
+  "status": "OBSERVED",
+  "notes": "Preserve as pre-VOID-MODE/pre-new-content search evidence. Future snapshots should record the same TikTok analytics panel to compare query diversity, branded-query share, spelling normalization and post-publication entity lift."
+}
