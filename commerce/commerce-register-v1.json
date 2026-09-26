@@ -56,12 +56,12 @@
       "brand_relation": "NONE",
       "product_placement": "not_applicable",
       "cta": "unknown",
-      "rights_state": "not_applicable_for_playlist_ownership; individual track use remains platform/rightsholder dependent",
+      "rights_state": "not_applicable",
       "disclosure_state": "unknown",
       "commercial_signal": "not_collected",
       "revenue_attribution": "not_collected",
       "record_status": "planned",
-      "note": "Playlist name and URL pending. Playlist is treated as a curation asset, not evidence of ownership of included third-party recordings."
+      "note": "Playlist ownership rights do not apply; individual track use remains subject to platform and rightsholder terms. Playlist name and URL are pending. The playlist is a curation asset, not evidence of ownership of included third-party recordings."
     }
   ],
   "rules": [

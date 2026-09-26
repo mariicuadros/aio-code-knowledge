@@ -37,7 +37,9 @@
       "type": "array",
       "items": {
         "enum": [
+          "NONE",
           "ORGANIC",
+          "SPEC",
           "GIFT",
           "PAID",
           "AFF",
@@ -75,6 +77,18 @@
           "title": {
             "type": "string"
           },
+          "creator_entity": {
+            "type": "string"
+          },
+          "creator_or_curator_entity": {
+            "type": "string"
+          },
+          "generation_or_production_note": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
           "platform": {
             "type": "string"
           },
@@ -87,7 +101,9 @@
           },
           "commercial_status": {
             "enum": [
+              "NONE",
               "ORGANIC",
+              "SPEC",
               "GIFT",
               "PAID",
               "AFF",
@@ -109,7 +125,8 @@
               "cleared",
               "restricted",
               "unknown",
-              "not_applicable"
+              "not_applicable",
+              "review_required"
             ]
           },
           "disclosure_state": {
@@ -143,6 +160,12 @@
       }
     },
     "rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relationship_rules": {
       "type": "array",
       "items": {
         "type": "string"

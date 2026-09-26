@@ -1,6 +1,6 @@
 {
   "plan_id": "MC-001-BL-PLAN-v1",
-  "status": "planned_not_measured",
+  "status": "partially_measured",
   "created": "2026-09-24",
   "scope": "First observed snapshot, not a reconstructable pre-publication state",
   "entity_id": "MC-001",
@@ -213,7 +213,7 @@
       "reason": "Guest visit redirected to sign-in; no prompt submitted."
     }
   ],
-  "freeze_status": "not_frozen",
+  "freeze_status": "frozen_partial",
   "baseline_state": "post_intervention_snapshot",
   "prior_intervention_ids": [
     "INT-MC-001-20260924-001",
