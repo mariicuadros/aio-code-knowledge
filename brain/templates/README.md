@@ -1,5 +1,10 @@
 # AIO CODE Brain v1 — record templates
 
+These are the original narrative templates, retained for provenance. For executable
+JSON fields, required metadata, vocabularies and explicit conversion rules, use
+[the v1 contract](../contracts/README.md). Do not copy placeholder strings into
+final records or treat these YAML sketches as machine-valid records.
+
 Use one file per record or one row per content item in a compatible table. Keep raw observations separate from analysis. Replace example placeholders; use `unknown`, `not_collected`, or `not_applicable` where appropriate. Never invent evidence, permissions or rights.
 
 ## 1. Content Provenance Graph

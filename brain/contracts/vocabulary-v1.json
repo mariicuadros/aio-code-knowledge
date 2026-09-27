@@ -1,0 +1,175 @@
+{
+  "version": "1.0.0",
+  "status": "implementation_of_frozen_brain_v1",
+  "terms": {
+    "content_type": {
+      "CANON": "Pieza principal de una obra o serie.",
+      "TRAILER": "Avance de una obra.",
+      "LIFE": "Vida cotidiana.",
+      "CUT": "Extracto derivado.",
+      "EDITORIAL": "Pieza editorial.",
+      "STORY": "Historia de plataforma.",
+      "DOC": "Documento o proceso.",
+      "SHORT": "Formato breve.",
+      "TRIAL": "Prueba creativa.",
+      "SPEC": "Pieza especulativa; no acredita encargo."
+    },
+    "commercial_relationship": {
+      "NONE": "Sin relación comercial declarada.",
+      "ORGANIC": "Presencia o mención espontánea sin contraprestación declarada; no implica patrocinio.",
+      "SPEC": "Propuesta independiente no encargada.",
+      "GIFT": "Producto, servicio o beneficio recibido; no equivale a ausencia de publicidad.",
+      "PAID": "Relación remunerada documentada; no equivale a permisos de uso.",
+      "AFF": "Relación de afiliación o comisión.",
+      "OWN": "Promoción de un proyecto o producto propio; no prueba propiedad de cada componente.",
+      "unknown": "Relación todavía no determinada."
+    },
+    "lens": {
+      "REAL": "Perspectiva real.",
+      "VOID": "Representación simbólica o narrativa.",
+      "HYBRID": "Combinación de perspectivas."
+    },
+    "narrative_function": {
+      "SEED": "Introducir una pista.",
+      "TEASE": "Anticipar.",
+      "BRIDGE": "Conectar piezas.",
+      "EXPAND": "Ampliar contexto.",
+      "REVEAL": "Revelar.",
+      "CALLBACK": "Retomar un elemento previo.",
+      "PAYOFF": "Resolver una preparación narrativa.",
+      "STANDALONE": "Pieza autónoma."
+    },
+    "pause_type": {
+      "NONE": "none",
+      "REACTION": "reaction",
+      "TENSION": "tension",
+      "REVEAL": "reveal",
+      "INTIMACY": "intimacy",
+      "UNCERTAINTY": "uncertainty"
+    },
+    "objective": {
+      "DISCOVERY": "discovery",
+      "SEARCH": "search",
+      "RETENTION": "retention",
+      "LORE": "lore",
+      "MUSIC": "music",
+      "BRAND": "brand",
+      "CONVERSION": "conversion",
+      "OTHER": "other"
+    },
+    "readiness": {
+      "ORGANIC_ONLY": "Uso orgánico previsto; no certifica derechos.",
+      "BRANDREADY": "Revisión operativa documentada para contexto de marca.",
+      "PAIDREADY": "Revisión operativa documentada para uso pagado.",
+      "REVIEW": "Necesita revisión.",
+      "RESTRICTED": "Uso restringido."
+    },
+    "metric_state": {
+      "observed": "Valor capturado; cero es un resultado posible.",
+      "not_collected": "No se capturó.",
+      "not_available": "La fuente no lo ofrece o no fue accesible.",
+      "not_applicable": "La métrica no aplica en ese contexto."
+    },
+    "rights_state": {
+      "unknown": "Sin determinar.",
+      "review_required": "Revisión pendiente.",
+      "cleared": "Permiso documentado dentro de un alcance; requiere evidencia.",
+      "restricted": "Uso limitado o impedido.",
+      "not_applicable": "No aplica al componente."
+    },
+    "disclosure_status": {
+      "unknown": "Requisito sin determinar.",
+      "required": "Requisito identificado, aún sin satisfacer.",
+      "satisfied": "Divulgación documentada.",
+      "not_required": "Revisión determinó que no se requiere.",
+      "not_applicable": "No aplica."
+    },
+    "permission_state": {
+      "unknown": "Sin evidencia suficiente.",
+      "allowed": "Permitido dentro del alcance documentado.",
+      "denied": "No permitido.",
+      "not_applicable": "No aplica."
+    },
+    "decision_state": {
+      "SCALE": "scale",
+      "ITERATE": "iterate",
+      "REPACKAGE": "repackage",
+      "RETEST": "retest",
+      "ARCHIVE": "archive"
+    },
+    "distribution_mode": {
+      "organic": "Distribución sin inversión publicitaria registrada.",
+      "paid": "Distribución con inversión publicitaria registrada; no determina quién pagó por crear la pieza.",
+      "mixed": "Combina distribución orgánica y pagada.",
+      "unknown": "Distribución sin determinar."
+    },
+    "hook_type": {
+      "confession": "confession",
+      "gossip": "gossip",
+      "contradiction": "contradiction",
+      "question": "question",
+      "mystery": "mystery",
+      "reveal": "reveal",
+      "aspirational": "aspirational",
+      "absurd": "absurd",
+      "other": "other"
+    },
+    "format": {
+      "vertical": "vertical",
+      "horizontal": "horizontal",
+      "hybrid": "hybrid",
+      "carousel": "carousel",
+      "still": "still",
+      "other": "other"
+    },
+    "theme": {
+      "identity": "identity",
+      "power": "power",
+      "desire": "desire",
+      "loss": "loss",
+      "faith": "faith",
+      "transformation": "transformation",
+      "ambition": "ambition",
+      "love": "love",
+      "fear": "fear",
+      "betrayal": "betrayal",
+      "self": "self",
+      "other": "other"
+    }
+  },
+  "reference_profiles": {
+    "MC-001": {
+      "narrative_subjects": [
+        "MARIA",
+        "MARII",
+        "NUX",
+        "TWINS",
+        "FRANK",
+        "AGGIN",
+        "ALIENS",
+        "ENSEMBLE"
+      ],
+      "public_signature": [
+        "AIO CODE",
+        "VOID MODE",
+        "MC"
+      ]
+    }
+  },
+  "platform_aliases": {
+    "TT": "TikTok",
+    "IG": "Instagram",
+    "FB": "Facebook",
+    "PT": "Pinterest",
+    "YT": "YouTube",
+    "BI": "Bilibili",
+    "SP": "Spotify",
+    "OTHER": "Other"
+  },
+  "rules": [
+    "Narrative subjects and signatures belong to case profiles, not a closed global entity namespace.",
+    "Commercial relationship, paid distribution, rights and disclosure are separate dimensions.",
+    "Terms describe internal records, not legal determinations.",
+    "Platform strings preserve source labels; aliases are documented and never silently normalized."
+  ]
+}

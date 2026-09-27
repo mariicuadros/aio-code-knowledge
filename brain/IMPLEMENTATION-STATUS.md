@@ -8,9 +8,9 @@ not a new architecture or a declaration that Brain v1 is fully operational.
 | Identity and references | Canonical contracts validated; duplicate IDs, missing graph sources/passports and unknown commerce creators rejected |
 | VOID MODE definition | Expanded ecosystem definition propagated to passport and CLAIM-009; CLAIM-008 retained as superseded |
 | Controlled public RAG | 178 passages, 17 sources; 21/21 applicable gold-source hits across 24 cases; source recall only |
-| Manual Performance Ledger | First private executable slice prepared in aio-code-vault; publication linkage, missingness, UTC windows and source references validated |
-| Brain templates | Seven documented templates exist; full interoperable machine-readable schemas remain pending |
-| Rights and disclosure preflight | Documented; no automated clearance decision implemented |
+| Manual Performance Ledger | Private Ledger validates all seven record types using an offline pinned copy of the shared contracts |
+| Brain templates | Seven executable JSON Schema definitions, controlled dictionaries, synthetic examples and offline cross-record validation prepared |
+| Rights and disclosure preflight | Record-completeness gates for rights/disclosure readiness implemented; legal/policy validity and publication approval remain human checks |
 | Meta/TikTok/YouTube ingestion | Not implemented in this cut |
 | Vercel generation | Local static and access-guard checks only; production deployment and generated answer support unverified |
 | External Observatory | Historical MC-001 baseline remains frozen partial 14/49; no new observations collected |
