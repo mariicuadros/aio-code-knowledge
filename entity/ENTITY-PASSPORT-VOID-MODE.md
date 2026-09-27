@@ -13,7 +13,7 @@
 
 ## Definition
 
-VOID MODE helps an artist develop a coherent visual and narrative identity from the artist’s own creative material. OZCU applies the system in digital marketing and artist development work. It complements AIO CODE, which structures and observes entity representation across information environments.
+VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the reserve company/venture layer.
 
 ## Canonical Relationships
 
@@ -21,6 +21,7 @@ VOID MODE helps an artist develop a coherent visual and narrative identity from 
 MC-001 → develops → VOID-001
 OZCU-001 → offers → VOID-001
 OZCU-001 → applies → AIO-001
+AIO-001 → includes_creative_system → VOID-001
 ```
 
 VOID MODE is not a person, AI model, company, or synonym for AIO CODE. Specific services and outcomes should be documented as they are tested.

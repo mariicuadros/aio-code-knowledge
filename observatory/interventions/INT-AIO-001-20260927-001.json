@@ -1,0 +1,20 @@
+{
+  "intervention_id": "INT-AIO-001-20260927-001",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-27T18:05:48.406607+00:00",
+  "status": "planned",
+  "intervention_type": "methodology_integrity_and_brain_implementation",
+  "before_state_ref": "688b382a17eafcc1456f37647615eaa5b05ea3a5",
+  "scope": [
+    "canonical VOID MODE definition",
+    "cross-reference validation",
+    "manual private Performance Ledger"
+  ],
+  "expected_effect": "Consistent first-party records and validated manual data; no external recognition or causal effect claimed.",
+  "unchanged_controls": [
+    "Frozen MC-001 baseline 14/49",
+    "Prompt Registry v1",
+    "raw Observatory runs"
+  ],
+  "operator": "Codex at Marii Cuadros request"
+}
