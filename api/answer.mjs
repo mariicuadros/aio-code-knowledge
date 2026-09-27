@@ -13,7 +13,7 @@ const df = new Map();for(const e of entries)for(const t of e.counts.keys())df.se
 
 export function retrieve(query,limit=5){
   const terms=new Set(tokens(query));for(const t of [...terms])for(const a of aliases[t]||[])terms.add(a);
-  const ids=new Set(query.match(/\b(?:MC-001|AIO-001|NUX-001)\b/g)||[]);
+  const ids=new Set(query.match(/\b(?:MC-001|AIO-001|NUX-001|OZCU-001|VOID-001)\b/g)||[]);
   return entries.map(e=>{
     let score=0;
     for(const t of terms){const freq=e.counts.get(t)||0;if(freq)score+=Math.log(1+(entries.length-(df.get(t)||0)+.5)/((df.get(t)||0)+.5))*freq*2.2/(freq+1.2*(.25+.75*e.length/Math.max(1,avg)))}

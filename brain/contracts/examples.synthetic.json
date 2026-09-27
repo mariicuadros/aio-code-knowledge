@@ -1,0 +1,197 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "content_provenance",
+    "content_id": "TEST-CONTENT",
+    "entity_ids": [
+      "TEST-ORG"
+    ],
+    "parent_content_id": null,
+    "master_asset_id": "TEST-MASTER",
+    "content_type": "DOC",
+    "commercial_relationship": "NONE",
+    "rights_status": "unknown",
+    "status": "published",
+    "fingerprint_sha256": null,
+    "published_at": "2026-09-27T09:00:00Z",
+    "platform": "test",
+    "publication_ref": "synthetic-publication",
+    "intervention_id": "TEST-INT",
+    "rights_record_id": "TEST-RIGHTS",
+    "authorship_record_id": "TEST-AUTH"
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "semantic_search",
+    "map_id": "TEST-SEARCH",
+    "entity_id": "TEST-ORG",
+    "audience_question": "What does this fictional organization do?",
+    "language": "en",
+    "canonical_concept": "Fictional demonstration",
+    "answer_first_definition": "This is a synthetic record, not a factual claim.",
+    "evidence_refs": [],
+    "status": "draft"
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "performance_observation",
+    "observation_id": "TEST-PERF",
+    "content_id": "TEST-CONTENT",
+    "platform": "test",
+    "measurement_label": "1h",
+    "measurement_window": {
+      "start": "2026-09-27T09:00:00Z",
+      "end": "2026-09-27T10:00:00Z"
+    },
+    "captured_at": "2026-09-27T11:00:00Z",
+    "capture_source": "synthetic",
+    "metrics": {
+      "views": {
+        "value": 0,
+        "state": "observed",
+        "unit": "count",
+        "definition": "Synthetic view count, not a platform observation",
+        "source_ref": "synthetic"
+      }
+    },
+    "commercial_signals": {
+      "inquiries": {
+        "value": null,
+        "state": "not_collected",
+        "unit": "count",
+        "definition": "Synthetic signal, not collected",
+        "source_ref": "synthetic"
+      }
+    }
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "content_genome",
+    "genome_id": "TEST-GENOME",
+    "content_id": "TEST-CONTENT",
+    "content_type": "DOC",
+    "subject": "FICTIONAL-SPOKESPERSON",
+    "lens": "REAL",
+    "narrative_function": "STANDALONE",
+    "format": "horizontal",
+    "hook_type": "question",
+    "pause_type": "NONE",
+    "loop_design": false,
+    "language": "en",
+    "source_of_description": "synthetic annotation"
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "commerce_music_brand",
+    "commerce_record_id": "TEST-COMMERCE",
+    "content_id": "TEST-CONTENT",
+    "status": "NONE",
+    "brand_presence": {
+      "relation": "NONE",
+      "placement": "not_applicable",
+      "prominence": "not_applicable",
+      "authorization": "unknown"
+    },
+    "approval_state": "unknown",
+    "commercial_readiness": "REVIEW"
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "rights_disclosure_authorship",
+    "rights_record_id": "TEST-RIGHTS",
+    "authorship_record_id": "TEST-AUTH",
+    "content_id": "TEST-CONTENT",
+    "asset_components": {
+      "image_likeness": "unknown",
+      "voice": "unknown",
+      "music": "unknown",
+      "footage": "unknown",
+      "third_party_marks": "unknown"
+    },
+    "permissions": {
+      "evidence_refs": [],
+      "scope": "unknown",
+      "duration": "unknown",
+      "territory": "unknown",
+      "channels": [],
+      "editing_allowed": "unknown",
+      "paid_use_allowed": "unknown",
+      "revocation_or_contact": "unknown"
+    },
+    "ai_generation_or_alteration": {
+      "used": "unknown",
+      "tools": [],
+      "components": [],
+      "disclosure_required": "unknown"
+    },
+    "human_authorship": {
+      "concept": "unknown",
+      "writing": "unknown",
+      "performance": "unknown",
+      "direction": "unknown",
+      "selection_arrangement": "unknown",
+      "editing_compositing": "unknown",
+      "music_creation_or_selection": "unknown",
+      "final_creative_decisions": "unknown",
+      "evidence_refs": []
+    },
+    "disclosure": {
+      "required": "unknown",
+      "status": "unknown",
+      "basis": "unknown",
+      "text_or_location": "not_applicable"
+    },
+    "review_status": "not_reviewed"
+  },
+  {
+    "schema_version": "1.0.0",
+    "owner": "TEST-ORG",
+    "source_ref": "synthetic-example-not-evidence",
+    "recorded_at": "2026-09-27T12:00:00Z",
+    "visibility": "private",
+    "record_type": "case",
+    "case_id": "TEST-CASE",
+    "case_name": "Synthetic organization case",
+    "entity_ids": [
+      "TEST-ORG"
+    ],
+    "research_question": "Can the same records represent an organization?",
+    "scope": "Schema test only",
+    "intervention_ids": [],
+    "baseline_refs": [],
+    "observation_refs": [],
+    "methods_and_conditions": "Synthetic test, no external observation",
+    "findings": [],
+    "limitations": [
+      "No empirical evidence"
+    ],
+    "claims_supported": [],
+    "claims_not_supported": [],
+    "status": "planned",
+    "updated_at": "2026-09-27T12:00:00Z"
+  }
+]

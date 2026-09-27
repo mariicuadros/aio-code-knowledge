@@ -34,6 +34,8 @@ def check(condition, message):
 
 def main():
     for path in ROOT.rglob("*.json"):
+        if any(part in {"node_modules", ".git", ".venv", "hf-export", "hf-journal-export"} for part in path.relative_to(ROOT).parts):
+            continue
         json.loads(path.read_text(encoding="utf-8"))
 
     for schema_path, data_path in PAIRS:
@@ -65,7 +67,14 @@ def main():
     nodes = {node["entity_id"]: node for node in graph["nodes"]}
     check(len(nodes) == len(graph["nodes"]), "Duplicate entity_id")
     check(nodes["AIO-001"]["entity_type"] == "ResearchMethodology", "AIO-001 canonical type mismatch")
+    relationship_ids = [edge["relationship_id"] for edge in graph["edges"]]
+    check(len(relationship_ids) == len(set(relationship_ids)), "Duplicate relationship_id")
+    for node in nodes.values():
+        for key in ("passport", "content_registry", "platform_registry"):
+            if key in node:
+                check((ROOT / node[key]).is_file(), f"Missing entity {key}: {node[key]}")
     for edge in graph["edges"]:
+        check((ROOT / edge["source_ref"]).is_file(), f"Missing relationship source: {edge['source_ref']}")
         check(edge["from"] in nodes and edge["to"] in nodes, "Relationship references an unknown entity")
     claim_ids = [item["claim_id"] for item in claims["claims"]]
     check(len(claim_ids) == len(set(claim_ids)), "Duplicate claim_id")
@@ -89,11 +98,18 @@ def main():
     check(len(query_ids) == len(set(query_ids)), "Duplicate semantic query ID")
     for item in semantic_map["questions"]:
         check(bool(item["linked_entities"]), f"Semantic query has no entity link: {item['query_id']}")
+        check(set(item["linked_entities"]).issubset(nodes), f"Unknown semantic entity: {item['query_id']}")
         for ref in item["evidence_refs"]:
             check((ROOT / ref).is_file(), f"Semantic query source missing: {ref}")
 
     commerce = read("commerce/commerce-register-v1.json")
+    asset_ids = [item["asset_id"] for item in commerce["records"]]
+    check(len(asset_ids) == len(set(asset_ids)), "Duplicate commerce asset_id")
+    check(set(commerce["entity_ids"]).issubset(nodes), "Unknown commerce registry entity")
     for item in commerce["records"]:
+        for key in ("creator_entity", "creator_or_curator_entity"):
+            if key in item:
+                check(item[key] in nodes, f"Unknown commerce creator: {item[key]}")
         if item["commercial_status"] == "PAID":
             check(item["rights_state"] == "cleared", f"PAID asset has unresolved rights: {item['asset_id']}")
     baseline_plan = read("observatory/baseline-plan-v1.json")

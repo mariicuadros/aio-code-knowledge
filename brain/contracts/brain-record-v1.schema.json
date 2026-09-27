@@ -1,0 +1,1928 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/brain/contracts/brain-record-v1.schema.json",
+  "title": "AIO CODE Brain record contract v1.0.0",
+  "description": "Seven frozen-Brain record shapes. Operational data stays private. Schema validation is not verification of evidence or permission.",
+  "$defs": {
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "CANON",
+        "TRAILER",
+        "LIFE",
+        "CUT",
+        "EDITORIAL",
+        "STORY",
+        "DOC",
+        "SHORT",
+        "TRIAL",
+        "SPEC"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "commercial_relationship": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "ORGANIC",
+        "SPEC",
+        "GIFT",
+        "PAID",
+        "AFF",
+        "OWN",
+        "unknown"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "lens": {
+      "type": "string",
+      "enum": [
+        "REAL",
+        "VOID",
+        "HYBRID"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "narrative_function": {
+      "type": "string",
+      "enum": [
+        "SEED",
+        "TEASE",
+        "BRIDGE",
+        "EXPAND",
+        "REVEAL",
+        "CALLBACK",
+        "PAYOFF",
+        "STANDALONE"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "pause_type": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "REACTION",
+        "TENSION",
+        "REVEAL",
+        "INTIMACY",
+        "UNCERTAINTY"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "objective": {
+      "type": "string",
+      "enum": [
+        "DISCOVERY",
+        "SEARCH",
+        "RETENTION",
+        "LORE",
+        "MUSIC",
+        "BRAND",
+        "CONVERSION",
+        "OTHER"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "readiness": {
+      "type": "string",
+      "enum": [
+        "ORGANIC_ONLY",
+        "BRANDREADY",
+        "PAIDREADY",
+        "REVIEW",
+        "RESTRICTED"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "metric_state": {
+      "type": "string",
+      "enum": [
+        "observed",
+        "not_collected",
+        "not_available",
+        "not_applicable"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "rights_state": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "review_required",
+        "cleared",
+        "restricted",
+        "not_applicable"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "disclosure_status": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "required",
+        "satisfied",
+        "not_required",
+        "not_applicable"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "permission_state": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "allowed",
+        "denied",
+        "not_applicable"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "decision_state": {
+      "type": "string",
+      "enum": [
+        "SCALE",
+        "ITERATE",
+        "REPACKAGE",
+        "RETEST",
+        "ARCHIVE"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "metric": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "state": {
+          "$ref": "#/$defs/metric_state"
+        },
+        "unit": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "definition": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "value",
+        "state",
+        "unit",
+        "definition",
+        "source_ref"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "observed"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "value": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "content_provenance": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "content_provenance"
+        },
+        "content_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "entity_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "parent_content_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "master_asset_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "platform_derivative_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "content_type": {
+          "$ref": "#/$defs/content_type"
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "lens": {
+          "$ref": "#/$defs/lens"
+        },
+        "narrative_function": {
+          "$ref": "#/$defs/narrative_function"
+        },
+        "hook": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "objective": {
+          "$ref": "#/$defs/objective"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "first_seen_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "(Z|\\+00:00)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "published_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "(Z|\\+00:00)$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "publication_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "intervention_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "changeset_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "fingerprint_sha256": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source_evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "rights_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "authorship_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "approved",
+            "published",
+            "withdrawn",
+            "archived"
+          ]
+        },
+        "commercial_relationship": {
+          "$ref": "#/$defs/commercial_relationship"
+        },
+        "rights_status": {
+          "$ref": "#/$defs/rights_state"
+        },
+        "distribution_mode": {
+          "$ref": "#/$defs/distribution_mode"
+        },
+        "representations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "representation_of": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+              },
+              "authorization": {
+                "enum": [
+                  "SELF_AUTHORIZED",
+                  "verified",
+                  "pending",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 0,
+                "uniqueItems": true
+              }
+            },
+            "required": [
+              "name",
+              "representation_of",
+              "authorization",
+              "evidence_refs"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "content_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "entity_ids",
+        "parent_content_id",
+        "master_asset_id",
+        "content_type",
+        "fingerprint_sha256",
+        "status",
+        "commercial_relationship",
+        "rights_status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "published"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "published_at",
+              "platform",
+              "publication_ref",
+              "intervention_id"
+            ],
+            "properties": {
+              "published_at": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "(Z|\\+00:00)$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "semantic_search": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "semantic_search"
+        },
+        "map_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "entity_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "audience_question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "canonical_concept": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "answer_first_definition": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "disambiguation_terms": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "methodology_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "claim_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "draft",
+            "reviewed",
+            "approved"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        }
+      },
+      "required": [
+        "record_type",
+        "map_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "entity_id",
+        "audience_question",
+        "language",
+        "canonical_concept",
+        "answer_first_definition",
+        "evidence_refs",
+        "status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "reviewed",
+                  "approved"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewed_by",
+              "reviewed_at"
+            ],
+            "properties": {
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              }
+            }
+          }
+        }
+      ]
+    },
+    "performance_observation": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "performance_observation"
+        },
+        "observation_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "content_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "platform": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "measurement_label": {
+          "enum": [
+            "1h",
+            "6h",
+            "24h",
+            "72h",
+            "7d",
+            "30d",
+            "custom"
+          ]
+        },
+        "measurement_window": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "(Z|\\+00:00)$"
+            },
+            "end": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "(Z|\\+00:00)$"
+            }
+          },
+          "required": [
+            "start",
+            "end"
+          ],
+          "additionalProperties": false
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "capture_source": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "metrics": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "commercial_signals": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/metric"
+          }
+        },
+        "retention_points": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "position_seconds": {
+                "type": "number",
+                "minimum": 0
+              },
+              "metric": {
+                "$ref": "#/$defs/metric"
+              }
+            },
+            "required": [
+              "position_seconds",
+              "metric"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "observation_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "content_id",
+        "platform",
+        "measurement_label",
+        "measurement_window",
+        "captured_at",
+        "capture_source",
+        "metrics"
+      ],
+      "additionalProperties": false
+    },
+    "content_genome": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "content_genome"
+        },
+        "genome_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "content_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "content_type": {
+          "$ref": "#/$defs/content_type"
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "lens": {
+          "$ref": "#/$defs/lens"
+        },
+        "narrative_function": {
+          "$ref": "#/$defs/narrative_function"
+        },
+        "format": {
+          "$ref": "#/$defs/format"
+        },
+        "hook_type": {
+          "$ref": "#/$defs/hook_type"
+        },
+        "open_question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "theme": {
+          "$ref": "#/$defs/theme"
+        },
+        "emotion": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "narrative_beats": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "visual_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "audio_elements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "pause_type": {
+          "$ref": "#/$defs/pause_type"
+        },
+        "loop_design": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "const": "not_applicable"
+            }
+          ]
+        },
+        "call_to_action": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "search_intent": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "brand_verticals": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "intended_audience": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "source_of_description": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "record_type",
+        "genome_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "content_id",
+        "content_type",
+        "subject",
+        "lens",
+        "narrative_function",
+        "format",
+        "hook_type",
+        "pause_type",
+        "loop_design",
+        "language",
+        "source_of_description"
+      ],
+      "additionalProperties": false
+    },
+    "commerce_music_brand": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "commerce_music_brand"
+        },
+        "commerce_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "content_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "status": {
+          "$ref": "#/$defs/commercial_relationship"
+        },
+        "brand_or_partner": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "brand_vertical": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "brand_presence": {
+          "type": "object",
+          "properties": {
+            "relation": {
+              "$ref": "#/$defs/commercial_relationship"
+            },
+            "placement": {
+              "enum": [
+                "BACKGROUND",
+                "PROP",
+                "WARDROBE",
+                "DIALOGUE",
+                "HERO",
+                "OTHER",
+                "not_applicable"
+              ]
+            },
+            "prominence": {
+              "enum": [
+                "LOW",
+                "MEDIUM",
+                "HIGH",
+                "not_applicable"
+              ]
+            },
+            "authorization": {
+              "enum": [
+                "unknown",
+                "not_required",
+                "verified",
+                "not_verified"
+              ]
+            }
+          },
+          "required": [
+            "relation",
+            "placement",
+            "prominence",
+            "authorization"
+          ],
+          "additionalProperties": false
+        },
+        "campaign_or_brief_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "deliverable": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "disclosure_required": {
+          "enum": [
+            "yes",
+            "no",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "disclosure_text_or_location": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "approval_state": {
+          "enum": [
+            "unknown",
+            "pending",
+            "approved",
+            "rejected",
+            "not_applicable"
+          ]
+        },
+        "usage": {
+          "type": "object",
+          "properties": {
+            "term": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "territory": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "channels": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "paid_amplification": {
+              "$ref": "#/$defs/permission_state"
+            }
+          },
+          "required": [
+            "term",
+            "territory",
+            "channels",
+            "paid_amplification"
+          ],
+          "additionalProperties": false
+        },
+        "music": {
+          "type": "object",
+          "properties": {
+            "track_or_asset": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "relation": {
+              "enum": [
+                "TREND",
+                "CATALOG",
+                "OWNTRACK",
+                "PLAYLIST",
+                "OTHER",
+                "not_applicable"
+              ]
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "rights_holder_or_source": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "license_evidence_ref": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "territory": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "term": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "platform_restrictions": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "commercial_use": {
+              "$ref": "#/$defs/permission_state"
+            }
+          },
+          "required": [
+            "track_or_asset",
+            "relation",
+            "version",
+            "rights_holder_or_source",
+            "license_evidence_ref",
+            "territory",
+            "term",
+            "platform_restrictions",
+            "commercial_use"
+          ],
+          "additionalProperties": false
+        },
+        "commercial_readiness": {
+          "$ref": "#/$defs/readiness"
+        },
+        "rights_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "record_type",
+        "commerce_record_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "content_id",
+        "status",
+        "brand_presence",
+        "approval_state",
+        "commercial_readiness"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "commercial_readiness": {
+                "enum": [
+                  "BRANDREADY",
+                  "PAIDREADY"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "rights_record_id",
+              "reviewed_by",
+              "reviewed_at",
+              "evidence_refs"
+            ],
+            "properties": {
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "approval_state": {
+                "const": "approved"
+              },
+              "brand_presence": {
+                "properties": {
+                  "authorization": {
+                    "enum": [
+                      "verified",
+                      "not_required"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "rights_disclosure_authorship": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "rights_disclosure_authorship"
+        },
+        "rights_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "content_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "authorship_record_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "asset_components": {
+          "type": "object",
+          "properties": {
+            "image_likeness": {
+              "$ref": "#/$defs/rights_state"
+            },
+            "voice": {
+              "$ref": "#/$defs/rights_state"
+            },
+            "music": {
+              "$ref": "#/$defs/rights_state"
+            },
+            "footage": {
+              "$ref": "#/$defs/rights_state"
+            },
+            "third_party_marks": {
+              "$ref": "#/$defs/rights_state"
+            }
+          },
+          "required": [
+            "image_likeness",
+            "voice",
+            "music",
+            "footage",
+            "third_party_marks"
+          ],
+          "additionalProperties": false
+        },
+        "permissions": {
+          "type": "object",
+          "properties": {
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "scope": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "duration": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "territory": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "channels": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "editing_allowed": {
+              "$ref": "#/$defs/permission_state"
+            },
+            "paid_use_allowed": {
+              "$ref": "#/$defs/permission_state"
+            },
+            "revocation_or_contact": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "evidence_refs",
+            "scope",
+            "duration",
+            "territory",
+            "channels",
+            "editing_allowed",
+            "paid_use_allowed",
+            "revocation_or_contact"
+          ],
+          "additionalProperties": false
+        },
+        "ai_generation_or_alteration": {
+          "type": "object",
+          "properties": {
+            "used": {
+              "enum": [
+                "yes",
+                "no",
+                "unknown"
+              ]
+            },
+            "tools": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "components": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            },
+            "disclosure_required": {
+              "enum": [
+                "yes",
+                "no",
+                "unknown",
+                "not_applicable"
+              ]
+            }
+          },
+          "required": [
+            "used",
+            "tools",
+            "components",
+            "disclosure_required"
+          ],
+          "additionalProperties": false
+        },
+        "human_authorship": {
+          "type": "object",
+          "properties": {
+            "concept": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "writing": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "performance": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "direction": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "selection_arrangement": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "editing_compositing": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "music_creation_or_selection": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "final_creative_decisions": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "evidence_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "minItems": 0,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "concept",
+            "writing",
+            "performance",
+            "direction",
+            "selection_arrangement",
+            "editing_compositing",
+            "music_creation_or_selection",
+            "final_creative_decisions",
+            "evidence_refs"
+          ],
+          "additionalProperties": false
+        },
+        "disclosure": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "enum": [
+                "yes",
+                "no",
+                "unknown",
+                "not_applicable"
+              ]
+            },
+            "status": {
+              "$ref": "#/$defs/disclosure_status"
+            },
+            "basis": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            },
+            "text_or_location": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "required",
+            "status",
+            "basis",
+            "text_or_location"
+          ],
+          "additionalProperties": false
+        },
+        "review_status": {
+          "enum": [
+            "not_reviewed",
+            "pending",
+            "reviewed",
+            "rejected"
+          ]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        }
+      },
+      "required": [
+        "record_type",
+        "rights_record_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "content_id",
+        "authorship_record_id",
+        "asset_components",
+        "permissions",
+        "ai_generation_or_alteration",
+        "human_authorship",
+        "disclosure",
+        "review_status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "review_status": {
+                "const": "reviewed"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewed_by",
+              "reviewed_at"
+            ]
+          }
+        }
+      ]
+    },
+    "case": {
+      "type": "object",
+      "properties": {
+        "record_type": {
+          "const": "case"
+        },
+        "case_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "schema_version": {
+          "const": "1.0.0"
+        },
+        "owner": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+        },
+        "source_ref": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        },
+        "visibility": {
+          "enum": [
+            "private",
+            "public"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "case_name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "entity_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "research_question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "intervention_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "changeset_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "baseline_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "observation_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "methods_and_conditions": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "claims_supported": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "claims_not_supported": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,159}$"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "active",
+            "analyzed",
+            "closed"
+          ]
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "(Z|\\+00:00)$"
+        }
+      },
+      "required": [
+        "record_type",
+        "case_id",
+        "owner",
+        "source_ref",
+        "recorded_at",
+        "visibility",
+        "case_name",
+        "entity_ids",
+        "research_question",
+        "scope",
+        "intervention_ids",
+        "baseline_refs",
+        "observation_refs",
+        "methods_and_conditions",
+        "findings",
+        "limitations",
+        "claims_supported",
+        "claims_not_supported",
+        "status",
+        "updated_at"
+      ],
+      "additionalProperties": false
+    },
+    "distribution_mode": {
+      "type": "string",
+      "enum": [
+        "organic",
+        "paid",
+        "mixed",
+        "unknown"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "hook_type": {
+      "type": "string",
+      "enum": [
+        "confession",
+        "gossip",
+        "contradiction",
+        "question",
+        "mystery",
+        "reveal",
+        "aspirational",
+        "absurd",
+        "other"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "vertical",
+        "horizontal",
+        "hybrid",
+        "carousel",
+        "still",
+        "other"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "identity",
+        "power",
+        "desire",
+        "loss",
+        "faith",
+        "transformation",
+        "ambition",
+        "love",
+        "fear",
+        "betrayal",
+        "self",
+        "other"
+      ],
+      "description": "Controlled dictionary: vocabulary-v1.json terms."
+    }
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/content_provenance"
+    },
+    {
+      "$ref": "#/$defs/semantic_search"
+    },
+    {
+      "$ref": "#/$defs/performance_observation"
+    },
+    {
+      "$ref": "#/$defs/content_genome"
+    },
+    {
+      "$ref": "#/$defs/commerce_music_brand"
+    },
+    {
+      "$ref": "#/$defs/rights_disclosure_authorship"
+    },
+    {
+      "$ref": "#/$defs/case"
+    }
+  ]
+}

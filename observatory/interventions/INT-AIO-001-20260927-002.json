@@ -1,0 +1,21 @@
+{
+  "intervention_id": "INT-AIO-001-20260927-002",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-27T19:21:19.294848+00:00",
+  "status": "implemented_on_review_branch",
+  "intervention_type": "brain_contract_implementation",
+  "before_state_ref": "0f9ba2da5dcd0035060281d547f393202de7f704",
+  "scope": [
+    "seven machine-readable Brain record contracts",
+    "controlled dictionaries",
+    "shared private ledger validation"
+  ],
+  "expected_effect": "Data consistency; no external recognition or causal effect asserted.",
+  "unchanged_controls": [
+    "Frozen architecture",
+    "baseline 14/49",
+    "Prompt Registry and raw observations"
+  ],
+  "operator": "Codex at Marii Cuadros request",
+  "observed_external_effect": "not_measured"
+}

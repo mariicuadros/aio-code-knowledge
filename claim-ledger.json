@@ -1,7 +1,7 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "2.1",
-  "updated": "2026-09-25",
+  "version": "2.2",
+  "updated": "2026-09-27",
   "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
   "claim_type_values": [
     "canonical_definition",
@@ -155,10 +155,28 @@
         "entity-graph.json"
       ],
       "date": "2026-09-25",
-      "claim_status": "active",
+      "claim_status": "superseded",
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "First-party definition and relationship; not a demonstrated commercial outcome."
+    },
+    {
+      "claim_id": "CLAIM-009",
+      "entity_id": "VOID-001",
+      "claim_type": "canonical_definition",
+      "claim": "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed by Marii Cuadros, encompassing music, video production, wardrobe, playlists, YouTube and the artist’s visual world without a single-category restriction.",
+      "source": "VOID MODE canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-VOID-MODE.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json",
+        "brain/AIO-CODE-BRAIN-v1.md"
+      ],
+      "date": "2026-09-27",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party creator definition; not independent validation, legal incorporation, demonstrated replicability or a commercial result."
     }
   ],
   "integrity_rules": [
