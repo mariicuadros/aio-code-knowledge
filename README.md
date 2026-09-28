@@ -1,26 +1,26 @@
 # AIO CODE
 
-## AIO CODE — primary methodology and public brand
+## AIO CODE — primary system and public brand
 
 AIO CODE remains the primary public/project brand through 2027. OZCU is the company/venture layer and a reserve corporate identity; it does not replace or demote AIO CODE. Marii Cuadros develops AIO CODE and VOID MODE. VOID MODE is AIO CODE’s creative system for artists. This repository does not assert that a legal company has been incorporated.
 
 ## Artificial Intelligence Optimization Code
 
-**Research Methodology · Entity Architecture · Evidence · AI Representation · Information Retrieval**
+**Digital Entity Operating System · Entity Architecture · Evidence · AI Representation · Information Retrieval**
 
-**Primary public brand and methodology:** `AIO-001` — AIO CODE  
+**Primary public brand and system:** `AIO-001` — AIO CODE
 **Company/venture layer:** `OZCU-001` — OZCU  
 **Creative System:** `VOID-001` — VOID MODE  
-**Canonical Type:** `ResearchMethodology`  
+**Canonical internal type:** `DigitalEntityOperatingSystem`
 **Creator:** Marii Cuadros  
-**Current Stage:** Pre-pilot evidence and replication preparation  
-**Methodology Spec:** `AIO-METHODOLOGY-SPEC-v1.md`
+**Current Stage:** Phase 2 — operating the connected system and preparing content/pilots
+**System Spec:** `AIO-CODE-SYSTEM-SPEC-v2.md` · **Method component:** `AIO-METHODOLOGY-SPEC-v1.md`
 
 > **Identity before visibility. Evidence before conclusions. Replication before generalization.**
 
 ## What is AIO CODE?
 
-AIO CODE is a **research and implementation methodology** for structuring digital entities, documenting claims and relationships, and observing how third-party AI/search systems retrieve, resolve, represent, cite and potentially recommend those entities over time.
+AIO CODE is a **Digital Entity Operating System** for structuring digital entities and connecting claims, evidence, content, provenance, observations and operations across platforms. Its research and implementation methodology is an internal component, documented in v1. “Operating system” describes the coordinated architecture; it does not mean computer OS software or a finished SaaS product.
 
 AIO CODE does **not** control third-party AI systems and does **not** guarantee recognition, ranking, citation or recommendation.
 
@@ -54,7 +54,7 @@ The repository includes:
 ## Canonical entities
 
 ```text
-AIO-001 — AIO CODE — Primary public brand and ResearchMethodology
+AIO-001 — AIO CODE — Primary public brand and DigitalEntityOperatingSystem
 OZCU-001 — OZCU — Company / venture layer; reserve corporate identity
 MC-001 — Marii Cuadros — Person; develops AIO CODE and VOID MODE
 VOID-001 — VOID MODE — CreativeSystem for artists
@@ -85,7 +85,7 @@ Operational per-entity workspaces containing implementation records such as cont
 
 **Operational workspaces MUST reference canonical identity and MUST NOT silently redefine it.**
 
-## Current methodology pipeline
+## Method component: current research pipeline
 
 ```text
 Canonical Entity
@@ -204,7 +204,7 @@ Changes observed after an intervention may be temporally associated with it with
 
 External pilots are governed by `PILOT-PROTOCOL-v1.md`.
 
-The recommended initial pilot cohort is three structurally different external entities. The pilot validates whether the methodology is executable, traceable, comparable and useful—not whether AIO CODE can force third-party systems to return predetermined answers.
+The recommended initial pilot cohort is three structurally different external entities. The pilot tests whether the system and its method component are executable, traceable, comparable and useful; it does not test whether AIO CODE can force third-party systems to return predetermined answers.
 
 ## Provenance
 
@@ -247,6 +247,7 @@ Replicate
 ## Core standards
 
 - `AIO-METHODOLOGY-SPEC-v1.md`
+- `AIO-CODE-SYSTEM-SPEC-v2.md` (phase-2 canonical definition; v1 method is a component)
 - `EVIDENCE-STANDARD-v1.md`
 - `RECOGNITION-RUBRIC-v1.md`
 - `OBSERVATORY-PROTOCOL-v1.md`

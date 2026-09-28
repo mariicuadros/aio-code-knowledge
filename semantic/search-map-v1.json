@@ -1,7 +1,7 @@
 {
   "map_id": "AIO-SEMANTIC-SEARCH-MAP-v1",
-  "version": "1.0",
-  "updated": "2026-09-25",
+  "version": "1.1",
+  "updated": "2026-09-27",
   "owner_entity_id": "AIO-001",
   "primary_public_brand": "AIO CODE",
   "purpose": "Map likely audience questions to canonical concepts, bounded answer definitions, and first-party evidence sources. This is a query/content map, not a claim about search demand or external model retrieval.",
@@ -10,11 +10,11 @@
     {
       "query_id": "SEM-Q-001",
       "question": "What is AIO CODE?",
-      "intent": "methodology_definition",
-      "canonical_concept": "methodology_definition",
-      "answer_first_definition": "AIO CODE is a research and implementation methodology for structuring digital entities and observing how systems retrieve, resolve, represent and cite them.",
+      "intent": "system_definition",
+      "canonical_concept": "digital_entity_operating_system",
+      "answer_first_definition": "AIO CODE is a Digital Entity Operating System connecting identity, evidence, provenance, content and observation; the research methodology is a component.",
       "evidence_refs": [
-        "AIO-METHODOLOGY-SPEC-v1.md"
+        "AIO-CODE-SYSTEM-SPEC-v2.md"
       ],
       "evidence_scope": "first_party_definition_or_method_record",
       "independent_validation": false,
@@ -30,7 +30,7 @@
       "canonical_concept": "entity_provenance",
       "answer_first_definition": "It organizes identity, claims, relationships and evidence so representations can be examined consistently across public information systems.",
       "evidence_refs": [
-        "AIO-METHODOLOGY-SPEC-v1.md"
+        "AIO-CODE-SYSTEM-SPEC-v2.md"
       ],
       "evidence_scope": "first_party_definition_or_method_record",
       "independent_validation": false,

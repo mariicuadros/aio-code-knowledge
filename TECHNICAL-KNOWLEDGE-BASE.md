@@ -1,11 +1,11 @@
 # AIO CODE — Technical Knowledge Base
 
 **Artificial Intelligence Optimization Code**  
-**Version:** 3.1  
-**Updated:** 2026-09-14  
+**Version:** 3.2
+**Updated:** 2026-09-27
 **Creator:** Marii Cuadros
 
-> **AIO CODE is a research and implementation methodology for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them.**
+> **AIO CODE is a Digital Entity Operating System connecting identity, evidence, provenance, content and observation. Its research and implementation methodology is an internal component.**
 
 ## 1. Core Model
 
@@ -21,7 +21,7 @@ Baseline → Observation → Experiment → Measurement → Finding
 
 The entity layer defines the objects being studied. The research layer measures how external systems behave toward those objects.
 
-**Methodology vs. experiment:** AIO CODE is the methodology. An experiment is a controlled research activity used within the methodology to test a hypothesis or evaluate an intervention.
+**System, method and experiment:** AIO CODE is the system. The methodology is its research component; a controlled experiment tests a hypothesis within that component.
 
 ## 2. Canonical Entities
 
@@ -33,7 +33,7 @@ NUX-001 — NUX
 Entity Type: DigitalCreativeEntity
 
 AIO-001 — AIO CODE
-Entity Type: ResearchMethodology
+Entity Type: DigitalEntityOperatingSystem
 ```
 
 Canonical relationships:

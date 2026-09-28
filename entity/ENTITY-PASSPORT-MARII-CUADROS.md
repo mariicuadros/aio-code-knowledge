@@ -9,7 +9,7 @@
 - **Status:** Active
 - **Passport Version:** 4.0
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-25
+- **Last Updated:** 2026-09-27
 - **Company:** OZCU (OZCU-001)
 - **Role:** CEO of OZCU; creator of AIO CODE and developer of VOID MODE
 
@@ -19,9 +19,9 @@
 
 Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
 
-She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within the AIO CODE methodology.
+She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within its research methodology.
 
-This passport defines the canonical representation of the person. It must remain semantically distinct from AIO CODE, which is a research and implementation methodology.
+This passport defines the canonical representation of the person. It must remain semantically distinct from AIO CODE, a digital entity operating system with a research and implementation method component.
 
 ---
 
@@ -67,7 +67,7 @@ Alternative, abbreviated, inferred or automatically generated representations mu
 - An independent researcher.
 - A curator.
 - The creator of AIO CODE.
-- The primary human case entity used within the methodology.
+- The primary human case entity used to test parts of the system.
 
 ### Marii Cuadros IS NOT
 
@@ -84,22 +84,22 @@ Alternative, abbreviated, inferred or automatically generated representations mu
 
 ## Relationship to AIO CODE
 
-**AIO CODE — Artificial Intelligence Optimization Code** is a separate entity with ID **AIO-001** and type **ResearchMethodology**.
+**AIO CODE — Artificial Intelligence Optimization Code** is a separate entity with ID **AIO-001** and type **DigitalEntityOperatingSystem**.
 
 Marii Cuadros is its creator.
 
-AIO CODE is a research and implementation methodology for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them across distributed public information environments.
+AIO CODE connects identity, evidence, provenance, content and observation; its research and implementation methodology studies selected external-system behavior without controlling it.
 
 The relationship is therefore:
 
 ```text
-Person → creator_of → ResearchMethodology
+Person → creator_of → DigitalEntityOperatingSystem
 ```
 
 and not:
 
 ```text
-Person = ResearchMethodology
+Person = DigitalEntityOperatingSystem
 ```
 
 ---

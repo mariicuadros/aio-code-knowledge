@@ -1,6 +1,6 @@
 {
   "graph": "OZCU / AIO CODE Entity Graph",
-  "version": "1.3",
+  "version": "1.4",
   "updated": "2026-09-25",
   "nodes": [
     {
@@ -20,7 +20,7 @@
     {
       "entity_id": "AIO-001",
       "canonical_name": "AIO CODE",
-      "entity_type": "ResearchMethodology",
+      "entity_type": "DigitalEntityOperatingSystem",
       "passport": "entity/ENTITY-PASSPORT-AIO-CODE.md",
       "content_registry": "entity/content/AIO-001/content-registry.json",
       "platform_registry": "entity/content/AIO-001/platforms.json",

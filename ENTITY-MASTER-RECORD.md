@@ -1,8 +1,8 @@
 # AIO CODE — Entity Master Record
 
-**Version:** 4.0  
+**Version:** 5.0
 **Status:** Active  
-**Updated:** 2026-09-25  
+**Updated:** 2026-09-27
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros
 
@@ -12,7 +12,7 @@ This document defines the canonical entity layer of AIO CODE. It is the source-o
 
 ## 2. Canonical Entity Set
 
-The current canonical entity set contains five distinct entities across the company, person, methodology, creative system and digital creative identity:
+The current canonical entity set contains five distinct entities across the venture layer, person, digital entity operating system, creative system and digital creative identity:
 
 ```text
 OZCU-001 — OZCU
@@ -62,17 +62,18 @@ These entities are distinct. A relationship between entities must be explicit; a
 
 ### AIO-001 — AIO CODE
 
-- **Entity Type:** ResearchMethodology
+- **Entity Type:** DigitalEntityOperatingSystem
 - **Canonical Name:** AIO CODE
 - **Full Name:** Artificial Intelligence Optimization Code
-- **Role in ecosystem:** Research and implementation methodology for digital entity structuring, observation, measurement and AI/search representation
-- **Status:** Active and implemented
+- **Role in ecosystem:** Coordinated system for digital entity identity, evidence, provenance, content, observation and operations; includes a research and implementation methodology
+- **Status:** Phase-2 operating architecture in development; implemented parts and unproven outcomes are separated in the system specification
 - **Validation Mode:** Experimental / iterative
 - **Passport:** `entity/ENTITY-PASSPORT-AIO-CODE.md`
 - **Platform Registry:** `entity/content/AIO-001/platforms.json`
 - **Public IP and Method Boundaries:** `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`
+- **Canonical System Specification:** `AIO-CODE-SYSTEM-SPEC-v2.md`
 
-AIO CODE is the methodology. Experiments are controlled validation activities conducted within the methodology and must not be confused with the identity or type of AIO CODE itself.
+AIO CODE is the system. The v1 methodology and controlled experiments operate inside it; neither defines the top-level type of AIO-001. “Operating system” is an operating-model category, not a claim that AIO CODE is computer operating-system software.
 
 ## 4. Canonical Relationships
 
@@ -88,7 +89,7 @@ OZCU-001 — OZCU
    └── offers → VOID-001 — VOID MODE
 ```
 
-Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. OZCU is the company/venture brand; AIO CODE remains its distinct methodology and VOID MODE its distinct creative system. They are not aliases or interchangeable labels.
+Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. OZCU is the reserve venture layer; AIO CODE remains the distinct primary public system and VOID MODE its distinct creative system. They are not aliases or interchangeable labels.
 
 There is no separate root-level `relationships.json` source of truth.
 
@@ -238,7 +239,7 @@ AIO CODE publicly documents its identity, definition, architecture, evidence mod
 
 The governing principle is:
 
-> **The methodology is public; the complete operational playbook is not.**
+> **The system's public definition and selected method rules are public; the complete operational playbook is not.**
 
 The public boundary is documented in `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`.
 

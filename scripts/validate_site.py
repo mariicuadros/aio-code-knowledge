@@ -27,6 +27,9 @@ MC = BASE + "entities/marii-cuadros/#MC-001"
 AIO = BASE + "#AIO-001"
 assert person["@id"] == marii_json["@id"] == marii["mainEntity"]["@id"] == aio["creator"]["@id"] == MC
 assert aio["@id"] == AIO
+assert aio["@type"] == "CreativeWork"
+assert aio["category"] == "Digital Entity Operating System"
+assert json.loads((ROOT / "schemas/person-schema.json").read_text(encoding="utf-8"))["@graph"][1]["@type"] == aio["@type"]
 assert f'id="AIO-001"' in homepage
 assert 'href="/entities/marii-cuadros/"' in homepage
 assert 'href="/entities/nux/"' in homepage

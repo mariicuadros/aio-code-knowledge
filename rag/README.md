@@ -48,7 +48,7 @@ the question. Unsupported questions must receive `No hay evidencia
 suficiente` after answer-level verification; do not present a retrieved
 passage as a final answer without that check.
 
-The 24 questions in `evaluation-v0.json` are an internal retrieval and answer
+The 24 questions in `evaluation-v1.json` are the revised phase-2 internal retrieval and answer
 acceptance set. They are not the frozen external Observatory Prompt Registry.
 The CLI evaluation checks source recall only; the answer support and abstention
 reviews remain separate human gates. Optional draft generation uses an

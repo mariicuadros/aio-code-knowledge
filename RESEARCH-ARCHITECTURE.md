@@ -2,7 +2,9 @@
 
 **Version:** 3.2  
 **Updated:** 2026-09-15  
-**Status:** Active Methodology
+**Status:** Phase-1 research architecture, now a component of the phase-2 system (see `AIO-CODE-SYSTEM-SPEC-v2.md`)
+
+This document records the research-method component as originally specified. Its phase-1 classification of AIO-001 as `ResearchMethodology` is historical; the current top-level type is `DigitalEntityOperatingSystem`.
 
 ## 1. Purpose
 
@@ -335,7 +337,7 @@ Finding
 Replication / Refinement
 ```
 
-**Methodology vs. experiment:** AIO CODE is the methodology. `Experiment` is a controlled activity inside the methodology used for validation and refinement.
+**Current reading:** AIO CODE is the broader system; this methodology and its controlled experiments are internal components used for validation and refinement.
 
 ## 15. Evidence Model
 

@@ -2,4 +2,4 @@
 
 Entity ID: AIO-001
 
-AIO CODE (AIO-001) is the methodology developed by Marii Cuadros and applied by OZCU (OZCU-001). This directory contains its structured identity, media, evidence, social, content and provenance records. VOID MODE (VOID-001) is a distinct creative system for artists.
+AIO CODE (AIO-001) is the Digital Entity Operating System developed by Marii Cuadros. Its v1 research methodology is one component; OZCU (OZCU-001) remains a reserve venture identity. This directory contains structured identity, media, evidence, social, content and provenance records. VOID MODE (VOID-001) is a distinct creative system for artists.

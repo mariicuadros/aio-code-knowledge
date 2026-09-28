@@ -2,14 +2,14 @@
 
 ## Canonical Identity
 
-**AIO CODE** is the canonical public name of this methodology.
+**AIO CODE** is the canonical public name of this digital entity operating system.
 
 - **Entity ID:** AIO-001
-- **Entity Type:** ResearchMethodology
+- **Entity Type:** DigitalEntityOperatingSystem
 - **Status:** Active
-- **Passport Version:** 3.1
+- **Passport Version:** 4.0
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-25
+- **Last Updated:** 2026-09-27
 - **Creator / Developer:** Marii Cuadros (MC-001)
 - **Applied by:** OZCU (OZCU-001)
 
@@ -17,13 +17,13 @@
 
 ## Definition
 
-**AIO CODE — Artificial Intelligence Optimization Code** is a **research and implementation methodology** for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite, and potentially recommend them across distributed public information environments.
+**AIO CODE — Artificial Intelligence Optimization Code** is a **Digital Entity Operating System** for defining and maintaining digital entities and connecting their claims, evidence, provenance, content, platform representations, observations and operational records. It contains a research and implementation methodology as a component for testing how external AI and search systems identify, retrieve, resolve, represent, connect, cite and potentially recommend entities.
 
-The methodology is implemented through a documented entity architecture, evidence model, observatory, baseline, measurement system, and structured validation cycle.
+The system currently includes a documented entity architecture, evidence model, observatory, partial baseline, local public retrieval prototype, content contracts and a structured validation cycle. See `AIO-CODE-SYSTEM-SPEC-v2.md` for component status and limits.
 
-AIO CODE is not itself an experiment. Experiments are controlled research activities performed within the methodology to test hypotheses, evaluate interventions, and refine the methodology over time.
+AIO CODE is not itself an experiment. Experiments use the internal methodology to test hypotheses and refine parts of the system over time.
 
-AIO CODE is not an AI model, chatbot, search engine, social platform, person, or generative AI system.
+AIO CODE is not a computer operating system, finished SaaS product, AI model, chatbot, search engine, social platform, person, or generative AI system.
 
 ---
 
@@ -35,7 +35,7 @@ OZCU (OZCU-001) ── applies → AIO CODE (AIO-001)
 AIO CODE (AIO-001) ── includes_creative_system → VOID MODE (VOID-001)
 ```
 
-These relationships are defined in the canonical entity records. AIO CODE is the primary public/project brand and remains a methodology entity. OZCU is the company/venture layer and reserve corporate identity. VOID MODE is AIO CODE’s associated creative system for artists.
+These relationships are defined in the canonical entity records. AIO CODE is the primary public/project brand and a digital entity operating system. OZCU is the venture layer and reserve corporate identity. VOID MODE is AIO CODE’s associated creative system for artists.
 
 ---
 
@@ -77,7 +77,7 @@ These stages are distinct. Success at one stage does not automatically establish
 
 ---
 
-## Methodology Architecture
+## System Architecture
 
 The AIO CODE system is organized as:
 
@@ -119,22 +119,22 @@ Contains evidence-backed conclusions when the relevant evidence is sufficient.
 
 AIO CODE already has a functioning documented architecture: canonical entity records, entity separation, content registries, relationship mapping, evidence classification, observational records, baseline structures, and a measurement workflow.
 
-This means the methodology is **implemented and demonstrable**, while specific mechanisms and outcomes remain subject to ongoing experimental validation.
+This means parts of the system are **implemented and demonstrable**, while integration completeness, third-party mechanisms and outcomes remain subject to validation.
 
-The word **experimental** therefore describes the validation mode of the methodology, not its ontological status. AIO CODE is the methodology; experiments are how selected hypotheses within it are tested.
+The word **experimental** describes the validation mode of research inside the system. The v1 methodology is one component; experiments test selected hypotheses within it.
 
 ---
 
 ## Answer-First Definition
 
 **What is AIO CODE?**  
-A research and implementation methodology for building, structuring, observing and measuring digital entity representation across AI systems and search engines.
+A digital entity operating system that connects identity, evidence, provenance, content, observation and operating records; the research methodology runs inside it.
 
 **Is AIO CODE an experiment?**  
-No. AIO CODE is the methodology. Individual experiments operate inside it.
+No. AIO CODE is the system. Individual experiments operate inside its methodology.
 
 **Why does it remain experimental?**  
-Because the methodology is actively validated and refined against real external systems, while individual signals, causal mechanisms and reproducibility remain open research questions.
+Because external-system signals, causal mechanisms, repeatability and commercial value remain open research questions, even though components of the system exist.
 
 ---
 
@@ -179,7 +179,7 @@ The competing representation is an observation, not part of the canonical identi
 
 **EXP-001 — Canonical Identity Consistency and Entity Resolution**
 
-This is an experiment **within the AIO CODE methodology**.
+This is an experiment **within the method component of AIO CODE**.
 
 Research question:
 
@@ -199,11 +199,11 @@ No post-intervention measurement has yet established improvement for EXP-001.
 
 ### AIO CODE IS
 
-- A research methodology.
-- An implementation methodology.
+- A Digital Entity Operating System (an operating architecture, not computer OS software).
+- A research and implementation methodology **inside** the system.
 - A structured research architecture.
 - A system for entity definition, observation, measurement and evidence classification.
-- A methodology validated through experiments and iterative refinement.
+- A system whose outcomes are studied through experiments and iterative refinement.
 
 ### AIO CODE IS NOT
 
@@ -213,6 +213,7 @@ No post-intervention measurement has yet established improvement for EXP-001.
 - A chatbot.
 - A search engine.
 - A social media platform.
+- A finished SaaS platform or computer operating system.
 - An SEO agency.
 - A generative AI system.
 
@@ -238,6 +239,7 @@ Supporting rules:
 
 - `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - `ENTITY-MASTER-RECORD.md`
+- `AIO-CODE-SYSTEM-SPEC-v2.md`
 - `RESEARCH-ARCHITECTURE.md`
 - `AI-REPRESENTATION-PROTOCOL.md`
 - `observatory/`
@@ -249,9 +251,9 @@ Supporting rules:
 ---
 
 **Entity ID:** AIO-001  
-**Entity Type:** ResearchMethodology  
-**Passport Version:** 3.1  
-**Last Updated:** 2026-09-14  
+**Entity Type:** DigitalEntityOperatingSystem
+**Passport Version:** 4.0
+**Last Updated:** 2026-09-27
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros  
 **Validation Mode:** Experimental / Iterative

@@ -25,7 +25,7 @@ configs:
 
 This dataset provides a controlled, machine-readable index of the entities defined in the public OZCU and AIO CODE project records.
 
-**OZCU** is the company/venture brand. **AIO CODE** is a research and implementation methodology developed by Marii Cuadros and applied by OZCU. **VOID MODE** is a creative system for artists developed by Marii and applied by OZCU. The dataset keeps these identities distinct and records their relationships.
+**AIO CODE** is the primary public Digital Entity Operating System developed by Marii Cuadros; its research methodology is one internal component. **OZCU** is the reserve venture layer. **VOID MODE** is a distinct creative system for artists. The dataset keeps these identities distinct and records their relationships.
 
 Hugging Face Dataset Viewer is configured to load only data/entities.jsonl. Versioned source artifacts are retained under source-artifacts/; they are not viewer rows.
 
@@ -33,7 +33,7 @@ Hugging Face Dataset Viewer is configured to load only data/entities.jsonl. Vers
 
 - **OZCU-001 — OZCU** — Company / venture brand. The project records Marii Cuadros as CEO. This is a first-party venture identity statement, not independent corporate registry verification.
 - **MC-001 — Marii Cuadros** — Person.
-- **AIO-001 — AIO CODE** — ResearchMethodology.
+- **AIO-001 — AIO CODE** — DigitalEntityOperatingSystem.
 - **VOID-001 — VOID MODE** — CreativeSystem.
 - **NUX-001 — NUX** — DigitalCreativeEntity.
 
@@ -50,4 +50,3 @@ GitHub is the source of truth. A controlled GitHub Actions workflow validates ca
 The dataset records first-party definitions and relationships. It is not proof that external search engines or AI systems recognize, cite or recommend any entity. Consult the source artifacts and their evidence boundaries before making claims.
 
 No legal incorporation status is asserted by the OZCU identity record. No secret, token, credential or private client data belongs in this export.
-

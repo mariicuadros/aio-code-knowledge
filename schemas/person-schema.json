@@ -17,16 +17,14 @@
       ]
     },
     {
-      "@type": "ResearchProject",
+      "@type": "CreativeWork",
       "@id": "https://aio-code.vercel.app/#AIO-001",
       "name": "AIO CODE",
       "alternateName": "Artificial Intelligence Optimization Code",
-      "description": "Research project investigating how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, and cite digital entities.",
-      "founder": {
-        "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001"
-      },
+      "description": "Digital Entity Operating System connecting identity, evidence, provenance, content and observation. Its research methodology is an internal component, not the top-level entity type.",
+      "category": "Digital Entity Operating System",
       "creator": {
-        "@id": "https://github.com/mariicuadros/aio-code-knowledge#MC-001"
+        "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001"
       },
       "dateCreated": "2026-08-13",
       "sameAs": [
