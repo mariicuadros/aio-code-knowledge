@@ -7,7 +7,7 @@
   "target_system_or_platform": "AIO CODE public repository, Entity Home, public RAG source set and controlled Hugging Face export",
   "target_url_or_record": "AIO-CODE-SYSTEM-SPEC-v2.md; README.md; ENTITY-MASTER-RECORD.md; entity/ENTITY-PASSPORT-AIO-CODE.md; entity-graph.json; claim-ledger.json; index.html; schemas/person-schema.json; data-export/README.md; rag/corpus-manifest-v0.json",
   "before_state_ref": "Public repository main at c27c5a1e368f624c8e61142328672cf22579945a; AIO-001 is ResearchMethodology; Entity Home markup is ResearchProject.",
-  "after_state_ref": "The merge commit for this intervention is recorded by GitHub. AIO-001 is DigitalEntityOperatingSystem in current canonical records; v1 methodology remains a dated internal component.",
+  "after_state_ref": "Public main merge commit 70b3f0340316707f52cdfb26f9f9ad3fc2216147; production deployment dpl_6DmgbwKF4hWeeA7fYxf949opHyu1 READY. AIO-001 is DigitalEntityOperatingSystem in current canonical records; v1 methodology remains a dated internal component. External AI behavior has not been measured after publication.",
   "changed_variables": [
     "Changed the current top-level AIO-001 classification and first-party definition to DigitalEntityOperatingSystem for phase 2.",
     "Moved the research/implementation methodology under the system while preserving the v1 method specification as a dated record.",
@@ -19,7 +19,10 @@
     "The frozen prompt registry, MC-001 14/49 baseline, historical logs and verbatim third-party responses retain their original dates and contents.",
     "No externally observed change or independent validation is inferred from the publication."
   ],
-  "related_claim_ids": ["CLAIM-007", "CLAIM-010"],
+  "related_claim_ids": [
+    "CLAIM-007",
+    "CLAIM-010"
+  ],
   "related_prompt_registry_version": "1.0",
   "hypothesis_id": null,
   "expected_effect": "Clarify the first-party current definition and reduce semantic disagreement across public surfaces; actual retrieval and AI behavior are unmeasured.",
@@ -36,5 +39,5 @@
     "The frozen MC-001 baseline is incomplete and predates this intervention.",
     "External system refresh schedules, search context and other publications are not controlled by this update."
   ],
-  "status": "planned_publication"
+  "status": "completed_documentation_only"
 }
