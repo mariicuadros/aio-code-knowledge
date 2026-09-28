@@ -1,6 +1,6 @@
 {
   "map": "OZCU Social Entity Map",
-  "version": "2.1",
+  "version": "2.2",
   "updated": "2026-09-25",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
@@ -85,5 +85,5 @@
     "email": "aiocodeadmin@gmail.com"
   },
   "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
-  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and methodology through 2027; OZCU is the company/venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified."
+  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and Digital Entity Operating System through 2027; its methodology is an internal component. OZCU is the venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified."
 }

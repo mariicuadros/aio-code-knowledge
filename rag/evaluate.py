@@ -8,7 +8,7 @@ from rag.engine import ROOT, build_index, search
 
 def evaluate(k: int = 5) -> dict:
     version, passages = build_index()
-    suite = json.loads((ROOT / "rag/evaluation-v0.json").read_text(encoding="utf-8"))
+    suite = json.loads((ROOT / "rag/evaluation-v1.json").read_text(encoding="utf-8"))
     results = []
     for case in suite["cases"]:
         hits = search(case["query"], passages, k)

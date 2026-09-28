@@ -44,6 +44,12 @@ Historical journal rows are retained in data/research-journal.jsonl. New dated e
 """
     if "## Project structure and dated updates — 2026-09-25" not in body:
         body = body.rstrip() + "\n\n" + section
+    phase_two = """## Phase 2 — current definition, 2026-09-27
+
+AIO CODE (AIO-001) is now described as a Digital Entity Operating System, with the phase-1 research and implementation methodology retained as one internal component. This is a first-party classification change and a new public intervention, not a rewrite of the 2026-09-25 definition, a new AI baseline, proof of software completeness, or proof of external recognition. The partial 14/49 MC-001 snapshot retains its original date and conditions. See AIO-CODE-SYSTEM-SPEC-v2.md and the dated intervention record in the public repository.
+"""
+    if "## Phase 2 — current definition, 2026-09-27" not in body:
+        body = body.rstrip() + "\n\n" + phase_two
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("---\n" + yaml.safe_dump(metadata, sort_keys=False, allow_unicode=True).rstrip() + "\n---\n\n" + body, encoding="utf-8")

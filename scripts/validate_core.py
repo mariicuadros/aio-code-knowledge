@@ -66,7 +66,7 @@ def main():
 
     nodes = {node["entity_id"]: node for node in graph["nodes"]}
     check(len(nodes) == len(graph["nodes"]), "Duplicate entity_id")
-    check(nodes["AIO-001"]["entity_type"] == "ResearchMethodology", "AIO-001 canonical type mismatch")
+    check(nodes["AIO-001"]["entity_type"] == "DigitalEntityOperatingSystem", "AIO-001 canonical type mismatch")
     relationship_ids = [edge["relationship_id"] for edge in graph["edges"]]
     check(len(relationship_ids) == len(set(relationship_ids)), "Duplicate relationship_id")
     for node in nodes.values():
@@ -78,12 +78,18 @@ def main():
         check(edge["from"] in nodes and edge["to"] in nodes, "Relationship references an unknown entity")
     claim_ids = [item["claim_id"] for item in claims["claims"]]
     check(len(claim_ids) == len(set(claim_ids)), "Duplicate claim_id")
+    current_system = next((item for item in claims["claims"] if item["claim_id"] == "CLAIM-010"), None)
+    old_method = next((item for item in claims["claims"] if item["claim_id"] == "CLAIM-007"), None)
+    check(current_system is not None and current_system["entity_id"] == "AIO-001"
+          and current_system["claim_status"] == "active", "Missing active phase-2 AIO-001 definition")
+    check(old_method is not None and old_method["claim_status"] == "superseded",
+          "Historical top-level methodology claim must not remain active")
     for item in claims["claims"]:
         check(item["entity_id"] in nodes, "Claim references an unknown entity")
         for ref in [item["source_ref"], *item["evidence_refs"]]:
             check((ROOT / ref).is_file(), f"Claim source/evidence path missing: {ref}")
     manifest = read("rag/corpus-manifest-v0.json")
-    suite = read("rag/evaluation-v0.json")
+    suite = read("rag/evaluation-v1.json")
     allowlist = [item["path"] for item in manifest["allowlist"]]
     check(len(allowlist) == len(set(allowlist)), "Duplicate approved RAG source")
     for path in allowlist:

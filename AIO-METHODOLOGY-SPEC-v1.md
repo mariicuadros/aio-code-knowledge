@@ -4,7 +4,9 @@
 **Entity:** AIO-001  
 **Version:** 1.0  
 **Date:** 2026-09-23  
-**Status:** Canonical pre-pilot specification
+**Status:** Historical phase-1 method specification; component of `AIO-CODE-SYSTEM-SPEC-v2.md` since 2026-09-27
+
+> **Phase-2 reading:** This v1 document preserves the method as originally defined. Its statements classifying AIO-001 itself as `ResearchMethodology` were superseded by the dated phase-2 system decision. The procedure and evidence boundaries remain usable; consult the v2 system specification for the current top-level entity type. Do not rewrite this document as if phase 1 had used the newer name.
 
 ## 1. Definition
 

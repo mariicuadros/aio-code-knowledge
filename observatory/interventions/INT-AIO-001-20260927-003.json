@@ -1,0 +1,40 @@
+{
+  "intervention_id": "INT-AIO-001-20260927-003",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-28T00:18:32Z",
+  "research_window_id": "AIO-PHASE-2-SYSTEM-INTRODUCTION-2026-09-27",
+  "intervention_type": "public_canonical_system_reclassification",
+  "target_system_or_platform": "AIO CODE public repository, Entity Home, public RAG source set and controlled Hugging Face export",
+  "target_url_or_record": "AIO-CODE-SYSTEM-SPEC-v2.md; README.md; ENTITY-MASTER-RECORD.md; entity/ENTITY-PASSPORT-AIO-CODE.md; entity-graph.json; claim-ledger.json; index.html; schemas/person-schema.json; data-export/README.md; rag/corpus-manifest-v0.json",
+  "before_state_ref": "Public repository main at c27c5a1e368f624c8e61142328672cf22579945a; AIO-001 is ResearchMethodology; Entity Home markup is ResearchProject.",
+  "after_state_ref": "The merge commit for this intervention is recorded by GitHub. AIO-001 is DigitalEntityOperatingSystem in current canonical records; v1 methodology remains a dated internal component.",
+  "changed_variables": [
+    "Changed the current top-level AIO-001 classification and first-party definition to DigitalEntityOperatingSystem for phase 2.",
+    "Moved the research/implementation methodology under the system while preserving the v1 method specification as a dated record.",
+    "Aligned current graph, passports, claims, homepage JSON-LD and approved retrieval corpus.",
+    "Marked the old methodology definition claim superseded instead of rewriting historical observations."
+  ],
+  "unchanged_controls": [
+    "AIO-001 and MC-001 identifiers and creator relationship remain stable.",
+    "The frozen prompt registry, MC-001 14/49 baseline, historical logs and verbatim third-party responses retain their original dates and contents.",
+    "No externally observed change or independent validation is inferred from the publication."
+  ],
+  "related_claim_ids": ["CLAIM-007", "CLAIM-010"],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Clarify the first-party current definition and reduce semantic disagreement across public surfaces; actual retrieval and AI behavior are unmeasured.",
+  "evidence_refs": [
+    "AIO-CODE-SYSTEM-SPEC-v2.md",
+    "ENTITY-MASTER-RECORD.md",
+    "entity-graph.json",
+    "claim-ledger.json"
+  ],
+  "operator": "Marii Cuadros / AIO CODE repository maintenance",
+  "reversibility": "Git revert of the publication commits; the public exposure itself cannot be undone in external caches.",
+  "confounders_known_at_time_of_change": [
+    "AIO CODE and Marii Cuadros had public source presence before phase 2.",
+    "The frozen MC-001 baseline is incomplete and predates this intervention.",
+    "External system refresh schedules, search context and other publications are not controlled by this update."
+  ],
+  "status": "planned_publication"
+}
