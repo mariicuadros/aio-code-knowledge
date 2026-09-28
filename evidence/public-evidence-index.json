@@ -4,8 +4,8 @@
   "creator_entity_id": "MC-001",
   "visibility_policy": {
     "public_designation": "Only explicitly approved evidence may be placed in evidence/public/.",
-    "historical_designation": "Evidence in evidence/historical/ is not designated for public release.",
-    "technical_note": "This repository is public, so historical files remain technically accessible through GitHub. True private originals must be stored outside this repository."
+    "historical_designation": "The original historical evidence is held in restricted storage; the public repository contains summary metadata only.",
+    "technical_note": "Removing historical files from the current public branch does not revoke access to past clones, forks, commit history or caches."
   },
   "public_records": [
     {
@@ -25,8 +25,7 @@
   ],
   "historical_records": {
     "count": 25,
-    "path": "evidence/historical/",
-    "visibility": "not_designated_for_public_release",
-    "description": "All other AIO-EVD visual records currently present in the repository are organized here as historical evidence. Private originals should additionally be preserved outside the public repository."
+    "visibility": "restricted_archive",
+    "description": "25 historical visual records preserved privately with provenance and an integrity checksum. No public paths to the originals are provided."
   }
 }

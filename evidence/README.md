@@ -1,26 +1,15 @@
-# AIO CODE Evidence Archive
+# AIO CODE — índice público de evidencia
 
-This directory contains the evidence record associated with the development and observation history of AIO CODE (AIO-001).
+La evidencia histórica íntegra y las bitácoras originales están bajo custodia privada de Marii Cuadros. Este repositorio público conserva resúmenes fechados y únicamente las piezas aprobadas para publicación. Una captura registra lo que se veía en una superficie concreta; no prueba causalidad ni asegura que todas las IA muestren lo mismo.
 
-## Evidence policy
+## Evidencia visual pública aprobada
 
-- `public/` contains only evidence explicitly designated for public release.
-- `historical/` contains historical evidence retained in the repository for archival organization but **not designated for public release**.
-- Because this repository is public, files placed under `historical/` are still technically accessible through GitHub. True private storage must remain outside this public repository.
-- Original photographs and videos intended to remain private should be preserved in restricted storage (for example, the private evidence archive / Drive).
-- Evidence must not be interpreted as proof beyond what it directly documents.
-- Each record should distinguish observed facts, corroborated evidence, verified claims, hypotheses, and unknowns.
+- `public/AIO-EVD-0002_2026-08-07_initial-development.jpg.png` — registro visual temprano, seleccionado previamente para exposición pública. Véase `public-evidence-index.json`.
 
-## Public evidence
+## Archivo histórico privado
 
-The only currently designated public visual evidence is:
+- 25 capturas históricas y una nota sobre desambiguación dejaron de estar en la rama pública actual. Sus originales se conservan en el archivo restringido y están identificados con huellas de integridad.
+- Las semanas 1–6 de `logbook/` son resúmenes públicos; las versiones originales están en el repositorio privado de evidencia. La semana 7 se conserva privada.
+- Nunca se deben publicar imágenes, notas de observación completas, datos comerciales o identificadores privados por la sola existencia de un archivo.
 
-`AIO-EVD-0002_2026-08-07_initial-development.jpg.png`
-
-## Historical evidence
-
-All other AIO-EVD visual records currently present in this repository have been moved to `historical/` and are **not designated for public release**.
-
-## Storage principle
-
-GitHub serves as the public research/documentation layer. Original private evidence should be maintained separately from the public repository, with GitHub retaining only the necessary evidence IDs, metadata, provenance references, and approved public material.
+**Límite de acceso:** la retirada de la rama actual no equivale a eliminación retroactiva de commits, clones, forks o caches previos. No afirmar que el material previamente público se volvió secreto.
