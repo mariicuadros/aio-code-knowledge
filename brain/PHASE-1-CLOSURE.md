@@ -7,7 +7,7 @@
 - AIO CODE (`AIO-001`) began with a research and implementation methodology. The current first-party definition is **Digital Entity Operating System in development**. The methodology remains a component. The term describes an operating architecture, not computer operating-system software or a finished SaaS.
 - `MC-001` is Marii Cuadros, a real person and the first documented case. `NUX-001` is a creative entity. `TWIN-MC-001` is a representation of `MC-001`, not an independent person or entity. The records distinguish entities, roles, projects and representations.
 - Identity, graph, claims, evidence/provenance, source contracts and seven Brain record contracts are prepared. The private manual Ledger accepts the seven shapes. No real content-performance data has been ingested merely by having the schema.
-- Public RAG is controlled lexical retrieval over 17 sources and 171 passages at the current integration index. It retrieved the expected gold source in 21/21 applicable cases from a 24-question set. This is source recall, separate from the external AI observations and not generated-answer accuracy.
+- Public RAG is controlled lexical retrieval over 18 sources and 171 passages at the current integration index. It retrieved the expected gold source in 21/21 applicable cases from a 24-question set. This is source recall, separate from the external AI observations and not generated-answer accuracy.
 - Phase-1 screenshots and logbooks record identification, representation and visible citations of Marii/AIO CODE in particular search and AI sessions. This answers the initial feasibility question for the documented case: a creator without prior fame was identifiable and cited in these observed sessions. It does not establish a universal rate or isolate the mechanism behind each response.
 - The MC-001 first measured window remains partial at 14/49 system–prompt pairs. The other 35 are missing, not zero or negative. Later screenshots and the Blogger intervention cannot be inserted retroactively. This coverage limitation does not negate the earlier observed appearances and citations.
 
@@ -29,3 +29,7 @@ The phase-2 source branch and Brain integrity work were combined in an isolated 
 ## Follow-ons, not phase-1 accomplishments
 
 Live Meta/Instagram insights, external pilots, content performance, automated ingestion, embeddings/vector retrieval, generated-answer support and causal efficacy evidence remain unimplemented or unverified. Content records can now use the receiving structure with rights, disclosure, source and intervention IDs before publication.
+
+## September 29 handoff to content phase 2
+
+The public infrastructure was merged and deployed; production identity is tracked in GitHub issue #7. September 29 observations are retained in their own report and snapshot records, including Perplexity's current system definition and Vercel citation. Phase-1 observed feasibility is retained; new content, its preceding measurement windows, publication details, Insights and results are to be documented for October. No later content effects have been inferred from infrastructure validation. The receiving RAG, Brain contracts and private manual Ledger are prepared; the next Observatory retest is deferred by the owner.

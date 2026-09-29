@@ -1,0 +1,42 @@
+{
+  "intervention_id": "INT-AIO-001-20260929-002",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-29T19:50:43.806871Z",
+  "timestamp_basis": "Local recording time; production READY time will be recorded in the operational deployment ledger after publication",
+  "research_window_id": "phase2-precontent-readiness-20260929",
+  "intervention_type": "precontent_rag_alignment_and_website_analytics_instrumentation",
+  "target_system_or_platform": "GitHub main and Vercel Entity Home",
+  "target_url_or_record": "https://aio-code.vercel.app/; https://github.com/mariicuadros/aio-code-knowledge/issues/7",
+  "before_state_ref": "Morning snapshots 11:44–11:50 observed production release 36c5fef; browser retrieval ranked with a separate algorithm; website analytics service script available but public HTML not instrumented.",
+  "after_state_ref": "Prepared shared lexical browser/gateway retriever, pre-content intake instructions, schema-validated variant snapshots with private-original hashes and website pageview instrumentation. Deployment identity belongs in issue #7; dashboard ingestion remains to be checked.",
+  "changed_variables": [
+    "Shared browser and private gateway lexical ranking",
+    "Website pageview script with query/fragment redaction and no custom/identity events",
+    "Current readiness documentation and retrospective morning snapshots"
+  ],
+  "unchanged_controls": [
+    "MC-001 baseline remains frozen partial 14/49",
+    "Original captures remain private; no screenshot or transcript fabrication",
+    "Public RAG allowlist and indexed source blobs remain unchanged",
+    "No live model generation or Meta API call"
+  ],
+  "related_claim_ids": [
+    "CLAIM-010"
+  ],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Prepare the receiving infrastructure for October content and website traffic measurements.",
+  "observed_external_effect": "No new external AI run after this bundle. The morning screenshots precede this intervention and cannot be outcomes of it.",
+  "evidence_refs": [
+    "observatory/reports/AIO-001-POST-DEPLOY-20260929.md",
+    "rag/PRE-CONTENT-READINESS-20260929.md",
+    "brain/WEBSITE-ANALYTICS-20260929.md"
+  ],
+  "operator": "Codex under Marii Cuadros instruction to record observations and prepare/connect infrastructure",
+  "reversibility": "Git revert and redeploy; third-party caches may retain versions",
+  "confounders_known_at_time_of_change": [
+    "New deployment follows morning measurements; next run deferred by owner",
+    "No isolated causal effect inferred from infrastructure changes"
+  ],
+  "status": "prepared_for_publication"
+}

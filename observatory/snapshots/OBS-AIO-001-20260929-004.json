@@ -1,0 +1,42 @@
+{
+  "observation_id": "OBS-AIO-001-20260929-004",
+  "timestamp": "2026-09-29T11:48:00-05:00",
+  "entity_id": "AIO-001",
+  "system": "gemini-web",
+  "system_interface_or_model_if_visible": null,
+  "prompt_id": "AIO-02",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "que es aio code?",
+  "language": "es",
+  "country_or_location_context_if_relevant": "Owner location: Colombia; provider location settings not captured",
+  "logged_in_state": "guest; sign-in button visible",
+  "context_condition": "incognito_or_private",
+  "browsing_or_search_state_if_visible": "not established by screenshot",
+  "environment": "Chrome on Windows; screenshot clock America/Bogota; capture minute, not server response time",
+  "observation_type": "owner_supplied_screenshot_snapshot",
+  "observed_result": "Visible answer explains Asynchronous I/O and All-In-One Code, then asks which environment or project contained the term. No target entity or Blogger/Vercel citation visible.",
+  "response_snapshot_or_ref": "Private originals identified by filenames and SHA-256 in observatory/reports/AIO-001-POST-DEPLOY-20260929-evidence.json; visible excerpt summary in AIO-001-POST-DEPLOY-20260929.md; not a full raw transcript",
+  "sources_or_citations": [],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "reference_prompt_text": "¿Qué es AIO CODE?",
+    "exact_registry_repetition": false,
+    "screenshot_suffixes": [
+      "114757",
+      "114808",
+      "114815"
+    ],
+    "target_identified": false,
+    "full_source_panel_captured": false,
+    "model_label_visible": "Gemini 3.5 Fl… (truncated; full model not established)",
+    "capture_window_local": "11:47–11:48"
+  },
+  "evidence_state": "observed",
+  "confidence_note": "Visible output only; no independent reproduction, crawl-time measurement or causal attribution",
+  "research_window_id": "RW-AIO-001-20260929-1144-1150",
+  "related_intervention_ids": [
+    "INT-AIO-001-20260929-001"
+  ],
+  "confounder_ids": [],
+  "status": "closed"
+}

@@ -206,6 +206,14 @@ def main():
         check(record["prompt_text"] == next(p["text"] for p in prompts["prompts"] if p["prompt_id"] == record["prompt_id"]), f"Prompt text changed: {path}")
         check(record["prompt_registry_version"] == prompts["version"], f"Prompt version changed: {path}")
         check(record["entity_id"] in nodes, f"Unknown observed entity: {path}")
+    for path in sorted((ROOT / "observatory/snapshots").glob("*.json")):
+        record = read(str(path.relative_to(ROOT)))
+        Draft202012Validator(obs_schema, format_checker=FormatChecker()).validate(record)
+        check(record["entity_id"] in nodes, f"Unknown snapshot entity: {path}")
+        check(record["evidence_state"] == "observed", f"Snapshot must describe an observed output: {path}")
+        check(record["evaluation"].get("exact_registry_repetition") is False, f"Variant snapshot misrepresented as controlled run: {path}")
+        check(record["prompt_id"] in prompt_ids, f"Unknown snapshot reference prompt: {path}")
+        check(set(record["related_intervention_ids"]).issubset(known_interventions), f"Unknown snapshot intervention: {path}")
     print(f"Public RAG corpus and {len(suite['cases'])} gold questions valid.")
     print("Canonical cross-references valid. Legacy ER-001 kept unchanged.")
 

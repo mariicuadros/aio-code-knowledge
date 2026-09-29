@@ -1,0 +1,42 @@
+{
+  "observation_id": "OBS-AIO-001-20260929-001",
+  "timestamp": "2026-09-29T11:44:00-05:00",
+  "entity_id": "AIO-001",
+  "system": "google-search-ai-overview",
+  "system_interface_or_model_if_visible": null,
+  "prompt_id": "AIO-02",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "Que es aio code?",
+  "language": "es",
+  "country_or_location_context_if_relevant": "Owner location: Colombia; provider location settings not captured",
+  "logged_in_state": "guest; sign-in button visible",
+  "context_condition": "unknown_context",
+  "browsing_or_search_state_if_visible": "not established by screenshot",
+  "environment": "Windows Chrome; cropped image does not show private-window state; capture minute America/Bogota, not server response time",
+  "observation_type": "owner_supplied_screenshot_snapshot",
+  "observed_result": "Google Search All tab AI Overview presents generic asynchronous I/O, all-in-one editor and technology senses; no identification of this AIO CODE in visible overview. Separate Modo IA tab is unselected.",
+  "response_snapshot_or_ref": "Private originals identified by filenames and SHA-256 in observatory/reports/AIO-001-POST-DEPLOY-20260929-evidence.json; visible excerpt summary in AIO-001-POST-DEPLOY-20260929.md; not a full raw transcript",
+  "sources_or_citations": [
+    "Visible generic GitHub linux-aio citation; not the AIO CODE repository",
+    "Visible Lenovo citation"
+  ],
+  "stage": "Entity Resolution",
+  "evaluation": {
+    "reference_prompt_text": "¿Qué es AIO CODE?",
+    "exact_registry_repetition": false,
+    "screenshot_suffixes": [
+      "114449",
+      "114456"
+    ],
+    "target_identified": false,
+    "full_source_panel_captured": false
+  },
+  "evidence_state": "observed",
+  "confidence_note": "Visible output only; no independent reproduction, crawl-time measurement or causal attribution",
+  "research_window_id": "RW-AIO-001-20260929-1144-1150",
+  "related_intervention_ids": [
+    "INT-AIO-001-20260929-001"
+  ],
+  "confounder_ids": [],
+  "status": "closed"
+}
