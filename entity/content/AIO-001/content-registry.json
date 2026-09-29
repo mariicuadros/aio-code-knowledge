@@ -1,9 +1,9 @@
 {
   "entity_id": "AIO-001",
   "entity_name": "AIO CODE",
-  "version": "1.0",
+  "version": "1.1",
   "status": "active",
-  "purpose": "Registry for research, documentation and public information assets belonging to the AIO-001 canonical research project.",
+  "purpose": "Registry for research, documentation and public information assets belonging to the AIO-001 digital entity operating system.",
   "content_domains": [
     "research_documentation",
     "methodology",

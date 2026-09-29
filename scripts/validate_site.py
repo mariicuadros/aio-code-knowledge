@@ -27,6 +27,9 @@ MC = BASE + "entities/marii-cuadros/#MC-001"
 AIO = BASE + "#AIO-001"
 assert person["@id"] == marii_json["@id"] == marii["mainEntity"]["@id"] == aio["creator"]["@id"] == MC
 assert aio["@id"] == AIO
+assert aio["@type"] == "CreativeWork"
+assert aio["category"] == "Digital Entity Operating System"
+assert json.loads((ROOT / "schemas/person-schema.json").read_text(encoding="utf-8"))["@graph"][1]["@type"] == aio["@type"]
 assert f'id="AIO-001"' in homepage
 assert 'href="/entities/marii-cuadros/"' in homepage
 assert 'href="/entities/nux/"' in homepage
@@ -37,4 +40,6 @@ assert "No external AI/search systems were queried" in checker_page
 assert 'fetch(' not in checker_page and 'XMLHttpRequest' not in checker_page
 assert 'href="/entities/marii-cuadros/"' in nux_page
 assert marii["mainEntity"]["url"] == BASE + "entities/marii-cuadros/"
+assert set(person["sameAs"]) == set(marii_json["sameAs"]) == set(marii["mainEntity"]["sameAs"])
+assert set(aio["sameAs"]) == set(json.loads((ROOT / "schemas/person-schema.json").read_text(encoding="utf-8"))["@graph"][1]["sameAs"])
 print("Static pages, checker limits, privacy behavior, and published @id references are locally consistent.")

@@ -11,9 +11,12 @@ Create a stable relationship between an entity and its official digital surfaces
 | Entity | ID | Role |
 |---|---|---|
 | Marii Cuadros | MC-001 | Person / canonical real-world entity |
-| AIO CODE | AIO-001 | Research project / experimental lab |
-| NUX | NUX-001 | Fictional/narrative entity |
-| Twin MC-001 | Twin-MC-001 | Digital representation/extension of MC-001 |
+| AIO CODE | AIO-001 | Digital Entity Operating System in development |
+| NUX | NUX-001 | Distinct digital creative entity |
+| VOID MODE | VOID-001 | Creative system for artists |
+| OZCU | OZCU-001 | Venture/company layer; legal incorporation is not asserted |
+
+TWIN-MC-001 is a representation of MC-001, not a canonical entity or separate account owner. The five entity types and IDs must match `entity-graph.json`.
 
 ## Registry fields
 

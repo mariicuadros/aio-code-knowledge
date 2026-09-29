@@ -1,6 +1,6 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "2.2",
+  "version": "2.3",
   "updated": "2026-09-27",
   "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
   "claim_type_values": [
@@ -138,10 +138,10 @@
         "entity-graph.json"
       ],
       "date": "2026-09-25",
-      "claim_status": "active",
+      "claim_status": "superseded",
       "evidence_state": "observed",
       "verification_rule_id": null,
-      "verification_scope": "First-party methodology definition and relationship; not independent evidence of external recognition or effectiveness."
+      "verification_scope": "Phase-1 first-party methodology definition, superseded as AIO-001's top-level type by CLAIM-010. The v1 methodology continues as an internal system component; no external performance claim."
     },
     {
       "claim_id": "CLAIM-008",
@@ -177,6 +177,24 @@
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "First-party creator definition; not independent validation, legal incorporation, demonstrated replicability or a commercial result."
+    },
+    {
+      "claim_id": "CLAIM-010",
+      "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
+      "claim": "AIO CODE is a Digital Entity Operating System developed by Marii Cuadros; its research and implementation methodology is an internal component, not the top-level entity type.",
+      "source": "AIO CODE phase-2 system specification",
+      "source_ref": "AIO-CODE-SYSTEM-SPEC-v2.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "date": "2026-09-27",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party classification of the operating architecture; does not prove software completeness, external AI recognition, generalizability or commercial demand."
     }
   ],
   "integrity_rules": [

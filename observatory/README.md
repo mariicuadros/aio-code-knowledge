@@ -6,10 +6,10 @@ The AIO CODE Observatory is the structured observation layer of **AIO-001**. It 
 
 The Observatory does not replace the chronological logbook. It provides the structured analytical record that can later feed experiments, measurements and findings.
 
-## Canonical Methodology
+## Canonical System
 
 ```text
-AIO-001 — AIO CODE (ResearchMethodology)
+AIO-001 — AIO CODE (DigitalEntityOperatingSystem)
         │
         └── research layer → Observatory
 ```
@@ -18,7 +18,7 @@ The Observatory may observe any canonical entity defined in the AIO CODE entity 
 
 - `MC-001` — Marii Cuadros — Person
 - `NUX-001` — NUX — DigitalCreativeEntity
-- `AIO-001` — AIO CODE — ResearchMethodology
+- `AIO-001` — AIO CODE — DigitalEntityOperatingSystem
 
 The presence of an entity in the Observatory means it is an observation target. It does not imply that every entity has already been measured.
 

@@ -26,7 +26,7 @@ def main():
         raise ValueError("Could not find the end of the journal card metadata")
     metadata = yaml.safe_load(text[3:marker]) or {}
     body = text[marker + 4:].lstrip("\n")
-    metadata["pretty_name"] = "AIO CODE Knowledge Journal — OZCU"
+    metadata["pretty_name"] = "AIO CODE Knowledge Journal"
     metadata["configs"] = [{
         "config_name": "default",
         "data_files": [{
@@ -36,7 +36,7 @@ def main():
     }]
     section = """## Project structure and dated updates — 2026-09-25
 
-OZCU is the company/venture brand. Marii Cuadros is its CEO. AIO CODE is the methodology developed by Marii and applied by OZCU. VOID MODE is the creative system for artists developed by Marii and applied by OZCU. These are distinct entities.
+At this dated stage AIO CODE was described as Marii Cuadros's research and implementation methodology. VOID MODE was documented separately as Marii's creative ecosystem. OZCU was being considered as a possible venture identity; this dated journal section does not assert a registered company, CEO appointment or transfer of ownership.
 
 The MC-001 Observatory snapshot frozen on 2026-09-25 is partial: 14 observed pairs out of 49 planned, with 35 documented missing because of sign-in or verification gates. It does not support a seven-system recognition rate, stability claim or causal conclusion.
 
@@ -44,6 +44,12 @@ Historical journal rows are retained in data/research-journal.jsonl. New dated e
 """
     if "## Project structure and dated updates — 2026-09-25" not in body:
         body = body.rstrip() + "\n\n" + section
+    phase_two = """## Phase 2 — current definition, 2026-09-27
+
+AIO CODE (AIO-001) is now described as a Digital Entity Operating System, with the phase-1 research and implementation methodology retained as one internal component. This is a first-party classification change and a new public intervention, not a rewrite of the 2026-09-25 definition, a new AI baseline, proof of software completeness, or proof of external recognition. The partial 14/49 MC-001 snapshot retains its original date and conditions. See AIO-CODE-SYSTEM-SPEC-v2.md and the dated intervention record in the public repository.
+"""
+    if "## Phase 2 — current definition, 2026-09-27" not in body:
+        body = body.rstrip() + "\n\n" + phase_two
     out = Path(args.output)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("---\n" + yaml.safe_dump(metadata, sort_keys=False, allow_unicode=True).rstrip() + "\n---\n\n" + body, encoding="utf-8")

@@ -1,11 +1,11 @@
 # AIO CODE — Technical Knowledge Base
 
 **Artificial Intelligence Optimization Code**  
-**Version:** 3.1  
-**Updated:** 2026-09-14  
+**Version:** 3.2
+**Updated:** 2026-09-27
 **Creator:** Marii Cuadros
 
-> **AIO CODE is a research and implementation methodology for structuring digital entities and studying how artificial intelligence systems and search engines identify, retrieve, resolve, represent, connect, cite and potentially recommend them.**
+> **AIO CODE is a Digital Entity Operating System connecting identity, evidence, provenance, content and observation. Its research and implementation methodology is an internal component.**
 
 ## 1. Core Model
 
@@ -21,7 +21,7 @@ Baseline → Observation → Experiment → Measurement → Finding
 
 The entity layer defines the objects being studied. The research layer measures how external systems behave toward those objects.
 
-**Methodology vs. experiment:** AIO CODE is the methodology. An experiment is a controlled research activity used within the methodology to test a hypothesis or evaluate an intervention.
+**System, method and experiment:** AIO CODE is the system. The methodology is its research component; a controlled experiment tests a hypothesis within that component.
 
 ## 2. Canonical Entities
 
@@ -33,7 +33,7 @@ NUX-001 — NUX
 Entity Type: DigitalCreativeEntity
 
 AIO-001 — AIO CODE
-Entity Type: ResearchMethodology
+Entity Type: DigitalEntityOperatingSystem
 ```
 
 Canonical relationships:
@@ -185,7 +185,7 @@ Priority questions include:
 - What is AIO CODE?
 - Is AIO CODE a methodology or an experiment?
 - What is already demonstrated?
-- What remains experimental?
+- What results were observed in phase 1, and what does phase 2 test?
 - What problem does AIO CODE address?
 - How does AIO CODE measure change?
 - What is the role of Marii Cuadros?
@@ -310,9 +310,9 @@ A source appearing in an AI response does not prove that it caused the response.
 
 GitHub, Blogger, Hugging Face, social platforms, publications and other public nodes can form a distributed information environment. Their evidentiary status is tracked separately.
 
-### Experimental validation
+### Phase-1 results and phase-2 tests
 
-AIO CODE is a methodology with an experimental validation mode. This distinction allows the project to demonstrate what is already implemented while remaining transparent about what is still being tested.
+AIO CODE is a Digital Entity Operating System in development. Dated phase-1 records show identification, descriptions and citations in specific external search and AI sessions, including sessions before Vercel. These are observed results for the first case. Its internal research methodology now tests the effects of new content, longitudinal behavior and transfer to other entities in phase 2; the mechanism behind each external answer remains a separate question.
 
 ## 16. Related Technical Assets
 
@@ -353,4 +353,4 @@ CLASSIFY EVIDENCE
 PUBLISH FINDINGS
 ```
 
-> **AIO CODE is a methodology for structuring, observing and measuring digital entity representation. Its experiments validate and refine the methodology; they do not define what AIO CODE is.**
+> **AIO CODE is a Digital Entity Operating System in development, connecting entity identity, evidence, provenance, content and observation. Its research methodology is an internal component whose experiments test limited hypotheses.**

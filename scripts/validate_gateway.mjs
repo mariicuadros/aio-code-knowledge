@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { strict as assert } from 'node:assert';
 import { POST, retrieve } from '../api/answer.mjs';
 
-const cases = JSON.parse(readFileSync(new URL('../rag/evaluation-v0.json', import.meta.url))).cases;
+const cases = JSON.parse(readFileSync(new URL('../rag/evaluation-v1.json', import.meta.url))).cases;
 let count = 0;
 for (const c of cases) {
   if (!c.gold_source_paths.length) continue;

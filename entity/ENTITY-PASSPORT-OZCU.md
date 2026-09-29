@@ -8,7 +8,7 @@
 - **Entity Type:** Company
 - **Status:** Active venture brand
 - **CEO:** Marii Cuadros (MC-001)
-- **Methodology:** AIO CODE (AIO-001)
+- **Associated system:** AIO CODE (AIO-001); methodology is an internal component
 - **Creative system:** VOID MODE (VOID-001)
 
 This passport records the venture identity and does not assert legal incorporation or registration.
@@ -29,4 +29,4 @@ OZCU-001 → offers → VOID-001
 
 ## Semantic Boundaries
 
-OZCU is a distinct company/venture entity and reserve corporate identity. AIO CODE is the primary public/project brand and a distinct methodology developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii Cuadros and associated with AIO CODE. None of these names is an alias for another.
+OZCU is a distinct venture identity and reserve corporate option. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another.

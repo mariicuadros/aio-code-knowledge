@@ -3,7 +3,7 @@
 **Status:** FROZEN v1 architecture specification  
 **Primary public brand:** AIO CODE  
 **Company/venture layer:** OZCU (reserve corporate identity)  
-**Methodology / operating system:** AIO CODE  
+**Phase-1 designation:** AIO CODE system/methodology; current phase-2 top-level type is `DigitalEntityOperatingSystem` (see `AIO-CODE-SYSTEM-SPEC-v2.md`)
 **Creative system:** VOID MODE  
 **Reference case:** MC-001 (Marii Cuadros)  
 **Version date:** 2026-09-26

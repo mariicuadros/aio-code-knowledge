@@ -1,7 +1,7 @@
 {
   "map": "OZCU Social Entity Map",
-  "version": "2.1",
-  "updated": "2026-09-25",
+  "version": "2.3",
+  "updated": "2026-09-28",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
     {
@@ -85,5 +85,140 @@
     "email": "aiocodeadmin@gmail.com"
   },
   "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
-  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and methodology through 2027; OZCU is the company/venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified."
+  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and Digital Entity Operating System through 2027; its methodology is an internal component. OZCU is the venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified.",
+  "public_asset_inventory_ref": "public-assets-v1.json",
+  "asset_categories": [
+    {
+      "asset_id": "PUB-01",
+      "platform": "Bilibili",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-02",
+      "platform": "YouTube",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-03",
+      "platform": "Instagram",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-04",
+      "platform": "Facebook",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-05",
+      "platform": "Threads",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-06",
+      "platform": "X",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-07",
+      "platform": "Bluesky",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-08",
+      "platform": "TikTok",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-09",
+      "platform": "Reddit",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-10",
+      "platform": "Quora",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-11",
+      "platform": "Medium",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-12",
+      "platform": "Substack",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-13",
+      "platform": "Blogger",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-14",
+      "platform": "Vercel",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-15",
+      "platform": "Spotify",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-16",
+      "platform": "Pinterest",
+      "entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-17",
+      "platform": "GitHub",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-18",
+      "platform": "Hugging Face",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ]
+    }
+  ]
 }

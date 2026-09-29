@@ -17,6 +17,15 @@ The changes here repair AIO CODE's own documentation and data contracts. They ar
 
 No existing historical observation, prompt text or content publication date is rewritten by this correction.
 
+## SYS-20260927-001 — Phase-2 top-level system classification
+
+- **Authorized:** 2026-09-27 (Colombia) by Marii Cuadros. Public intervention: `observatory/interventions/INT-AIO-001-20260927-003.json`.
+- **Previous:** AIO-001 classified as `ResearchMethodology` in phase-1 current records, while the Entity Home used Schema.org `ResearchProject`.
+- **New current type:** `DigitalEntityOperatingSystem`. The method specification v1 remains a dated **component** of the system; experimental activities remain inside it. AIO CODE stays the primary public brand.
+- **Operational scope:** identity graph, master/passports, active Claim Ledger, Entity Home and JSON-LD, export description, public RAG allowlist and current retrieval evaluation. Frozen prompts, baseline observations and historical documents retain their dated wording.
+- **Meaning:** “operating system” names a coordinated operating architecture; it does not assert computer OS software, completed SaaS features, third-party AI control, proven causation or commercial validation.
+- **External effect:** unmeasured. Public publication itself is a new intervention and confounder for later observations.
+
 ## METH-20260924-002 — Public RAG and first Observatory measurement tools
 
 - **Recorded:** 2026-09-24; the publishing commit records the precise time.
