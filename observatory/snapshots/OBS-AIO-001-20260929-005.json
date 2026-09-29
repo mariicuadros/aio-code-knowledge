@@ -1,0 +1,48 @@
+{
+  "observation_id": "OBS-AIO-001-20260929-005",
+  "timestamp": "2026-09-29T11:49:00-05:00",
+  "entity_id": "AIO-001",
+  "system": "perplexity-web",
+  "system_interface_or_model_if_visible": null,
+  "prompt_id": "AIO-02",
+  "prompt_registry_version": "1.0",
+  "prompt_text": "que es aio code?",
+  "language": "es",
+  "country_or_location_context_if_relevant": "Owner location: Colombia; provider location settings not captured",
+  "logged_in_state": "guest; sign-in button visible",
+  "context_condition": "incognito_or_private",
+  "browsing_or_search_state_if_visible": "not established by screenshot",
+  "environment": "Chrome on Windows; screenshot clock America/Bogota; capture minute, not server response time",
+  "observation_type": "owner_supplied_screenshot_snapshot",
+  "observed_result": "After three generic meanings, fourth interpretation identifies AIO CODE as Artificial Intelligence Optimization Code and a digital entity operating system connecting identity, evidence, provenance and content. Visible citation label aio-code.vercel. Footer shows 10 sources; source panel URLs not captured.",
+  "response_snapshot_or_ref": "Private originals identified by filenames and SHA-256 in observatory/reports/AIO-001-POST-DEPLOY-20260929-evidence.json; visible excerpt summary in AIO-001-POST-DEPLOY-20260929.md; not a full raw transcript",
+  "sources_or_citations": [
+    "https://aio-code.vercel.app/",
+    "Other visible labels: amt.edu, generic GitHub, neolo +2, aprender21; exact URLs not captured"
+  ],
+  "stage": "Citation",
+  "evaluation": {
+    "reference_prompt_text": "¿Qué es AIO CODE?",
+    "exact_registry_repetition": false,
+    "screenshot_suffixes": [
+      "114931",
+      "114942",
+      "114953",
+      "115006"
+    ],
+    "target_identified": true,
+    "full_source_panel_captured": false,
+    "interpretation_position": 4,
+    "visible_source_count": 10,
+    "vercel_url_basis": "Visible domain label aio-code.vercel; canonical domain known; clicked citation destination not captured",
+    "capture_window_local": "11:49–11:50"
+  },
+  "evidence_state": "observed",
+  "confidence_note": "Visible output only; no independent reproduction, crawl-time measurement or causal attribution",
+  "research_window_id": "RW-AIO-001-20260929-1144-1150",
+  "related_intervention_ids": [
+    "INT-AIO-001-20260929-001"
+  ],
+  "confounder_ids": [],
+  "status": "closed"
+}

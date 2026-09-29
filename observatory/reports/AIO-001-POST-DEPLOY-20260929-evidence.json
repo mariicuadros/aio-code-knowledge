@@ -1,0 +1,74 @@
+{
+  "window_id": "RW-AIO-001-20260929-1144-1150",
+  "timezone": "America/Bogota",
+  "original_storage": "Private owner-supplied screenshots; no images copied to public repository",
+  "timestamp_boundary": "Filenames and visible taskbar clocks support capture times only",
+  "files": [
+    {
+      "filename": "Captura de pantalla 2026-09-29 114449.png",
+      "sha256": "ef017672c708e0e13ba25e0abf206fd0bb77d854dd53d5e044592b741d377468",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114456.png",
+      "sha256": "de5d7da4021d50a5495ca66d23f2f89f302835df593120fa89cbf15e9b5f3b6c",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114632.png",
+      "sha256": "d6ba980fa4531a98553c643d8a70be2aaa2e4b9c4195471ac976f7019f8571ff",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114641.png",
+      "sha256": "8b4ad956ad17c4481afedd79a723222ae5216c31b8429161536aa7d8755f3a3e",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114757.png",
+      "sha256": "d19972c66dda05ebe0aa27cfa5cac66b1494aa569b3a7cebabb4330d70c4d967",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114808.png",
+      "sha256": "7add80e4d5856a0cd8648ce494af51d6fd72f25c80ceca799e2b5bc056655b79",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114815.png",
+      "sha256": "bbb3b4404689b760a6c43fb2d78cbeecb696a03d7fbc9a05cd183ef239f09cea",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114931.png",
+      "sha256": "9d80e9f06dfeae559ac85116ff015581bdb3696645bf7464bdfefbfd55d66c2f",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114942.png",
+      "sha256": "5ddbdfe15f3173f2919e83811453db8e9dfef769260567d42b86312caa71cfac",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 114953.png",
+      "sha256": "e5d6605f0a72df33f2d682eb3e73f2c42dedcbfb6a2d6148b2960f0c64056e1f",
+      "visibility": "private",
+      "public_copy": false
+    },
+    {
+      "filename": "Captura de pantalla 2026-09-29 115006.png",
+      "sha256": "bcf4a05accc7820bc615b2fdbbb1cd9003ddbc9d5e329107ecb3de488f0584ad",
+      "visibility": "private",
+      "public_copy": false
+    }
+  ]
+}

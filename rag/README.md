@@ -71,3 +71,7 @@ offers measurable improvement before introducing another data store.
 ## OZCU corpus rebuild — 2026-09-25
 
 After the canonical identity update, the approved corpus contains OZCU, AIO CODE and VOID MODE records. The public index is pinned to source commit 89f4b65662d97df9c2c4e49138e74b634a66201f and contains 177 passages from 17 allowlisted files. The frozen 24-query retrieval suite returned all 21 applicable gold sources (21/21); the three cases without gold sources are abstention cases. This is source retrieval performance only, not answer correctness or third-party recognition. See rag/evaluation-2026-09-25-report.json.
+
+## Current pre-content cut — September 29, 2026
+
+The current published index contains 171 passages from 18 exact allowlisted files. The September 25 paragraph above is historical. Browser and private gateway now use `retriever.mjs` for the same lexical ranking; the Python evaluator remains an independently implemented reference. Uppercase/lowercase name queries are normalized internally, which does not establish how third-party systems handle case. Follow `PRE-CONTENT-READINESS-20260929.md` when approving a new content source. Unpublished drafts, original screenshots and private Insights never enter the public corpus automatically.
