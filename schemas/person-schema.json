@@ -6,14 +6,57 @@
       "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001",
       "name": "Marii Cuadros",
       "description": "Venezuelan-born creator and researcher associated with AIO CODE.",
-      "jobTitle": ["Creator", "Artist", "Digital Model", "Independent Researcher", "Curator"],
+      "jobTitle": [
+        "Creator",
+        "Artist",
+        "Digital Model",
+        "Independent Researcher",
+        "Curator"
+      ],
       "creatorOf": {
         "@id": "https://aio-code.vercel.app/#AIO-001"
       },
       "sameAs": [
+        "https://bsky.app/profile/mariicuadros.bsky.social",
+        "https://co.pinterest.com/mariicuadros1/",
+        "https://es.quora.com/profile/Marii-Cuadros",
         "https://github.com/MariiCuadros",
         "https://huggingface.co/MariiCuadros",
-        "https://mariicuadros.blogspot.com/"
+        "https://medium.com/@mariicuadros1",
+        "https://substack.com/@mariicuadros",
+        "https://www.bilibili.tv/en/space/2024087771",
+        "https://www.facebook.com/MariiCuadros/",
+        "https://www.instagram.com/mariicuadros/",
+        "https://www.reddit.com/user/Mariicuadros/",
+        "https://www.threads.com/@mariicuadros/",
+        "https://www.tiktok.com/@mariicuadros1",
+        "https://www.youtube.com/@mariicuadros",
+        "https://x.com/mariicuadros"
+      ],
+      "url": "https://aio-code.vercel.app/entities/marii-cuadros/",
+      "subjectOf": [
+        {
+          "@type": "WebSite",
+          "url": "https://mariicuadros.blogspot.com/"
+        },
+        {
+          "@type": "ItemList",
+          "name": "Marii Cuadros curated playlists",
+          "itemListElement": [
+            {
+              "@type": "MusicPlaylist",
+              "url": "https://open.spotify.com/playlist/1CE0mH5FEwALIvyRxgJpuV"
+            },
+            {
+              "@type": "MusicPlaylist",
+              "url": "https://open.spotify.com/playlist/4nafBaPaMGv6IVAvAZbO0d"
+            },
+            {
+              "@type": "MusicPlaylist",
+              "url": "https://open.spotify.com/playlist/4G3MotrzkSa2T4dqoXq3ff"
+            }
+          ]
+        }
       ]
     },
     {
@@ -28,9 +71,22 @@
       },
       "dateCreated": "2026-08-13",
       "sameAs": [
-        "https://github.com/mariicuadros/aio-code-knowledge",
-        "https://huggingface.co/datasets/mariicuadros/aio-code-entities",
-        "https://mariicuadros.blogspot.com/"
+        "https://www.instagram.com/aiocode_/"
+      ],
+      "url": "https://aio-code.vercel.app/",
+      "subjectOf": [
+        {
+          "@type": "WebSite",
+          "url": "https://mariicuadros.blogspot.com/"
+        },
+        {
+          "@type": "SoftwareSourceCode",
+          "url": "https://github.com/mariicuadros/aio-code-knowledge"
+        },
+        {
+          "@type": "Dataset",
+          "url": "https://huggingface.co/datasets/mariicuadros/aio-code-entities"
+        }
       ]
     }
   ]

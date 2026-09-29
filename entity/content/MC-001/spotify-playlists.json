@@ -2,7 +2,12 @@
   "entity_id": "MC-001",
   "entity_name": "Marii Cuadros",
   "asset_type": "SpotifyPlaylists",
-  "version": "1.0",
-  "status": "active",
-  "playlists": []
+  "version": "1.1",
+  "status": "linked_by_owner",
+  "source_ref": "public-assets-v1.json",
+  "playlists": [
+    {"asset_id":"MC-SPOTIFY-01","url":"https://open.spotify.com/playlist/1CE0mH5FEwALIvyRxgJpuV","label":"Selección musical 01","relationship":"curated_music_link"},
+    {"asset_id":"MC-SPOTIFY-02","url":"https://open.spotify.com/playlist/4nafBaPaMGv6IVAvAZbO0d","label":"Selección musical 02","relationship":"curated_music_link"},
+    {"asset_id":"MC-SPOTIFY-03","url":"https://open.spotify.com/playlist/4G3MotrzkSa2T4dqoXq3ff","label":"Selección musical 03","relationship":"curated_music_link"}
+  ]
 }

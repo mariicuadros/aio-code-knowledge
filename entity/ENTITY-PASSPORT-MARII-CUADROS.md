@@ -150,7 +150,7 @@ Earlier observations of recognition and representation by search and AI systems 
 
 Within AIO CODE, Marii Cuadros functions as:
 
-1. **Creator** — creator of the AIO CODE methodology.
+1. **Creator** — creator of AIO CODE, a Digital Entity Operating System in development that includes a research methodology.
 2. **Primary case entity** — the principal human entity whose digital representation is studied.
 3. **Researcher** — participant in observation, experimentation and documentation.
 
@@ -218,7 +218,7 @@ The Entity Passport establishes the person/entity boundary first. Search visibil
 ## Related Documents
 
 - `ENTITY-MASTER-RECORD.md` — canonical identity structure.
-- `entity/ENTITY-PASSPORT-AIO-CODE.md` — AIO CODE methodology definition.
+- `entity/ENTITY-PASSPORT-AIO-CODE.md` — AIO CODE system definition and methodological boundary.
 - `entity/content/MC-001/platforms.json` — official platform registry.
 - `RESEARCH-ARCHITECTURE.md` — complete research architecture.
 - `PUBLIC-IP-AND-METHOD-BOUNDARIES.md` — public disclosure and protected-know-how boundary.

@@ -2,10 +2,14 @@
   "schema_version": "1.0",
   "purpose": "Canonical registry of official ecosystem surfaces. Public metadata only; never store credentials or recovery secrets here.",
   "entities": [
-    {"entity_id": "MC-001", "entity_name": "Marii Cuadros", "role": "Person"},
-    {"entity_id": "AIO-001", "entity_name": "AIO CODE", "role": "Research Project"},
-    {"entity_id": "NUX-001", "entity_name": "NUX", "role": "Narrative entity"},
-    {"entity_id": "TWIN-MC-001", "entity_name": "Twin MC-001", "role": "Digital representation"}
+    {"entity_id": "OZCU-001", "entity_name": "OZCU", "entity_type": "Company", "role": "Venture brand; no claim of legal incorporation"},
+    {"entity_id": "MC-001", "entity_name": "Marii Cuadros", "entity_type": "Person", "role": "Real person"},
+    {"entity_id": "AIO-001", "entity_name": "AIO CODE", "entity_type": "DigitalEntityOperatingSystem", "role": "Primary public system in development"},
+    {"entity_id": "NUX-001", "entity_name": "NUX", "entity_type": "DigitalCreativeEntity", "role": "Distinct creative entity"},
+    {"entity_id": "VOID-001", "entity_name": "VOID MODE", "entity_type": "CreativeSystem", "role": "Creative system for artists"}
+  ],
+  "representations": [
+    {"representation_id": "TWIN-MC-001", "represents_entity_id": "MC-001", "role": "Digital representation; not an independent entity"}
   ],
   "accounts": [],
   "required_fields": [

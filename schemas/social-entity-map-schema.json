@@ -2,13 +2,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "AIO CODE Social Entity Map",
   "type": "object",
-  "required": ["map", "version", "entities", "platforms"],
+  "required": ["map", "version", "entities", "platforms", "public_asset_inventory_ref", "asset_categories"],
   "properties": {
     "map": {"type": "string"},
     "version": {"type": "string"},
     "updated": {"type": "string", "format": "date"},
     "entities": {"type": "array"},
-    "platforms": {"type": "array"}
+    "platforms": {"type": "array"},
+    "public_asset_inventory_ref": {"const": "public-assets-v1.json"},
+    "asset_categories": {"type": "array", "minItems": 18, "maxItems": 18,
+      "items": {"type": "object", "required": ["asset_id", "platform", "entity_ids"],
+        "properties": {"asset_id": {"type": "string"}, "platform": {"type": "string"},
+          "entity_ids": {"type": "array", "minItems": 1, "items": {"enum": ["MC-001", "AIO-001"]}}}}}
   },
   "additionalProperties": true
 }

@@ -50,8 +50,11 @@ passage as a final answer without that check.
 
 The 24 questions in `evaluation-v1.json` are the revised phase-2 internal retrieval and answer
 acceptance set. They are not the frozen external Observatory Prompt Registry.
-The CLI evaluation checks source recall only; the answer support and abstention
-reviews remain separate human gates. Optional draft generation uses an
+The CLI evaluation checks source recall only. `scripts/validate_core.py` additionally
+checks that the volatile gold expectations for entity set, system type and baseline
+status agree with canonical records, plus security registry alignment. These checks
+do not grade generated answers; answer support and abstention reviews remain separate
+human gates. Optional draft generation uses an
 OpenAI-compatible API (Vercel AI Gateway by default): set `AI_GATEWAY_API_KEY`
 and `AIO_RAG_MODEL`, then run `python -m rag.cli ask '¿Qué es AIO CODE?'
 --generate`. Outputs are marked `draft_requires_review`; the program validates

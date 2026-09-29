@@ -28,7 +28,7 @@ The Observatory treats **indexation, retrieval, entity resolution, entity repres
 
 ## Phase boundary
 
-**Phase 1** built and observed the initial entity and its infrastructure. Its historical questions, screenshots, logbooks and AI responses keep their dates and original wording. **Phase 2** operates the connected system, adds content under provenance controls, observes later responses in new windows and tests transferability with other entities. A new name for the architecture does not retrospectively prove that phase-1 observations were caused by AIO CODE.
+**Phase 1** built the initial entity and its infrastructure and produced documented results: specific search and AI sessions identified or described Marii Cuadros and AIO CODE and displayed citations to public sources, including observations before the Vercel Entity Home. Its historical questions, screenshots, logbooks and AI responses keep their dates and original wording. The September 28 same-day comparison (`observatory/reports/AIO-001-POST-BLOGGER-T0-20260928.md`) additionally records Perplexity selecting the current system definition and citing Vercel. **Phase 2** operates the connected system, adds content under provenance controls, measures changes after publication and tests transferability with other entities. The recorded phase-1 appearances are results of those sessions; a new name for the architecture does not establish which intervention caused them.
 
 ## Source and privacy boundaries
 
@@ -39,7 +39,7 @@ The Observatory treats **indexation, retrieval, entity resolution, entity repres
 
 ## Validation and sale boundary
 
-What can be shown now: the implemented records, governance, content architecture, local retrieval and the limits of the partial baseline. What still requires evidence: repeatability across independent entities, longitudinal changes in external systems, answer accuracy and willingness to pay. Services can be designed and piloted without claiming those results in advance.
+What can be shown now: implemented records, governance, content architecture, local retrieval, the limits of the partial baseline, and dated external observations of identification and citation. What still requires evidence: the effects of new content, repeatability across independent entities, longitudinal changes in external systems, answer accuracy and willingness to pay. Services can be designed and piloted without claiming those future results in advance.
 
 ## Change control
 

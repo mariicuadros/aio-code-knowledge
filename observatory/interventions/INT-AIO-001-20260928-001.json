@@ -1,0 +1,45 @@
+{
+  "intervention_id": "INT-AIO-001-20260928-001",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-28T21:17:32Z",
+  "timestamp_basis": "Marii Cuadros reported completion at approximately 16:17 America/Bogota; individual Blogger publication times were not captured.",
+  "research_window_id": "post-MC-001-BASELINE-v1-partial-before-content-phase",
+  "intervention_type": "bundled_blogger_editorial_and_theme_update",
+  "target_system_or_platform": "Blogger",
+  "target_url_or_record": "https://mariicuadros.blogspot.com/",
+  "before_state_ref": "Private Blogger Takeout exported 2026-09-28T19:15:08Z; original theme and feed.atom retained outside this public repository.",
+  "after_state_ref": "Blogger homepage, historical article, current pages and links; Marii Cuadros confirmed on 2026-09-28 around 16:23 America/Bogota that pages, links and historical archive render correctly.",
+  "changed_variables": [
+    "Replaced Blogger theme with a black, white and gold editorial presentation while preserving the original Blog1 widget and archive URLs.",
+    "Updated current public pages from the earlier methodology classification to Digital Entity Operating System in development.",
+    "Restored the historical article body from the Takeout after accidental deletion and added a dated editorial note without changing its original publication date.",
+    "Added cross-links to the Entity Home, repository, official profiles and music selections.",
+    "Changed a homepage link from an unpublished Week 01 draft to the live archive index."
+  ],
+  "unchanged_controls": [
+    "MC-001-BASELINE-v1 partial coverage remains 14/49 and is not rewritten.",
+    "Prompt Registry v1 text and raw Observatory responses remain unchanged.",
+    "Historical Week 01, Week 02 and ARCHIVE post bodies remain drafts in the pre-change Takeout; no publication of those drafts was requested."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Clearer current first-party definition and navigation; any change in external retrieval or representation remains to be measured.",
+  "observed_external_effect": "Before/after screenshots from approximately 13:43–13:50 and 17:15–17:18 America/Bogota document output/source differences, including Perplexity's later Digital Entity Operating System classification citing Vercel. See observatory/reports/AIO-001-POST-BLOGGER-T0-20260928.md. Prompts and context differed; this does not isolate the Blogger bundle as cause.",
+  "evidence_refs": [
+    "Owner confirmation in the 2026-09-28 work session",
+    "Private Blogger Takeout and authored replacement files retained outside the public repository",
+    "Owner functional verification in the 2026-09-28 work session: pages, links and historical archive reported correct",
+    "observatory/reports/AIO-001-POST-BLOGGER-T0-20260928.md (public same-day comparison; original screenshots privately retained)"
+  ],
+  "operator": "Marii Cuadros in Blogger, with Codex preparing the files",
+  "reversibility": "Original Blogger theme and content Takeout retained by the owner; pages can be revised in Blogger.",
+  "confounders_known_at_time_of_change": [
+    "Several pages and the theme changed in one bundle, so a future response cannot be attributed to a specific page.",
+    "External web fetch was blocked by Google during final verification; independent external capture remains unavailable here.",
+    "Crawler discovery, search indexing and model refresh timing are unknown.",
+    "Other first-party sources may still use the historical methodology term.",
+    "Wayback homepage URLs were supplied before exploratory T0 (INT-AIO-001-20260928-002), creating another possible public source."
+  ],
+  "status": "owner_verified_functional_same_day_external_observation_recorded"
+}

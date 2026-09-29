@@ -1,0 +1,38 @@
+{
+  "intervention_id": "INT-AIO-001-20260928-003",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-28T23:08:52Z",
+  "timestamp_basis": "Completion and verification logged at about 18:08 America/Bogota; the individual Blogger save events occurred shortly before this timestamp and are not independently timestamped here.",
+  "research_window_id": "after-20260928-1715-T0-before-phase2-content",
+  "intervention_type": "blogger_phase1_results_editorial_correction",
+  "target_system_or_platform": "Blogger",
+  "target_url_or_record": "https://mariicuadros.blogspot.com/; https://mariicuadros.blogspot.com/p/aio-code.html; https://mariicuadros.blogspot.com/2026/08/how-artists-can-optimize-their.html",
+  "before_state_ref": "The Blogger homepage described identification as a future question and placed citation among future results. The AIO CODE page said only that infrastructure and observations existed. The August post's current editorial note omitted phase-1 observed identification and citations.",
+  "after_state_ref": "The public homepage now explicitly states phase-1 observed identification, descriptions and visible citations in recorded sessions, including before Vercel; identifies the September 28 Perplexity answer citing Vercel; and reserves content effects, longitudinal observation and transfer for phase 2. The current AIO CODE page and dated editorial note agree. Browser verification confirmed the rendered homepage, page and historical article.",
+  "changed_variables": [
+    "Five targeted text replacements in the Blogger theme: first-case description, evidence card, September 28 observation paragraph, FAQ and footer.",
+    "One current AIO CODE page section changed to phase-1 results and phase-2 limits.",
+    "One sentence in the dated editorial note of the August article was expanded to acknowledge phase-1 results and phase-2 content work. The historic title and original body were preserved."
+  ],
+  "unchanged_controls": [
+    "The 17:15–17:18 AI observation predates this intervention and remains unchanged.",
+    "The partial 14/49 baseline and original screenshots remain unchanged.",
+    "Existing Blogger social links, Spotify lists and historical post title remain intact."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Make current first-party editorial text distinguish recorded phase-1 results from phase-2 content and pilot evaluation.",
+  "observed_external_effect": "not_measured_after_this_intervention",
+  "evidence_refs": [
+    "Rendered Blogger homepage, AIO CODE page and August article inspected in an authenticated editing session followed by public browser verification on 2026-09-28.",
+    "Private browser screenshot of the public evidence section retained outside the public repository."
+  ],
+  "operator": "Codex in Blogger with Marii Cuadros's explicit authorization and secure Google sign-in approval",
+  "reversibility": "Blogger theme and page/post revisions can be edited again; original historical body and title were left in place.",
+  "confounders_known_at_time_of_change": [
+    "The site already had other same-day editorial and Wayback changes before the 17:15 observation.",
+    "Any later AI result may reflect multiple public sources and unknown crawl/refresh timing; this intervention cannot be assigned a causal effect from the earlier screenshots."
+  ],
+  "status": "public_render_verified_no_post_intervention_ai_measurement"
+}

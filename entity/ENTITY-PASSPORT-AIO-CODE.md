@@ -119,9 +119,9 @@ Contains evidence-backed conclusions when the relevant evidence is sufficient.
 
 AIO CODE already has a functioning documented architecture: canonical entity records, entity separation, content registries, relationship mapping, evidence classification, observational records, baseline structures, and a measurement workflow.
 
-This means parts of the system are **implemented and demonstrable**, while integration completeness, third-party mechanisms and outcomes remain subject to validation.
+The system architecture is **implemented and demonstrable**, and its phase-1 external observations are recorded results. Integration completeness, third-party mechanisms, content effects and transfer to independent entities remain distinct questions.
 
-The word **experimental** describes the validation mode of research inside the system. The v1 methodology is one component; experiments test selected hypotheses within it.
+Phase 1 has documented external identification, descriptions and citations of Marii Cuadros and AIO CODE in specific recorded search and AI sessions. Those observed outputs are results of the first case, even though they do not reveal the providers' internal mechanisms. The v1 methodology is a historical component of the system. Phase 2 tests content effects, longitudinal behavior and transfer to other entities.
 
 ---
 
@@ -133,8 +133,8 @@ A digital entity operating system that connects identity, evidence, provenance, 
 **Is AIO CODE an experiment?**  
 No. AIO CODE is the system. Individual experiments operate inside its methodology.
 
-**Why does it remain experimental?**  
-Because external-system signals, causal mechanisms, repeatability and commercial value remain open research questions, even though components of the system exist.
+**What is being tested next?**
+The phase-2 content and external-pilot work: whether new works change how the entity is represented over time, whether the process transfers to others, and what value it creates. These open questions do not erase the phase-1 observations of recognition and citation.
 
 ---
 
@@ -253,7 +253,7 @@ Supporting rules:
 **Entity ID:** AIO-001  
 **Entity Type:** DigitalEntityOperatingSystem
 **Passport Version:** 4.0
-**Last Updated:** 2026-09-27
+**Last Updated:** 2026-09-28
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros  
-**Validation Mode:** Experimental / Iterative
+**Evidence state:** Phase-1 identification and citations observed in dated sessions; phase-2 content effects and external replication under evaluation

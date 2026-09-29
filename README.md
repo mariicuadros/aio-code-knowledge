@@ -24,6 +24,14 @@ AIO CODE is a **Digital Entity Operating System** for structuring digital entiti
 
 AIO CODE does **not** control third-party AI systems and does **not** guarantee recognition, ranking, citation or recommendation.
 
+**Phase-1 observed result:** dated screenshots and logbooks show Marii Cuadros and AIO CODE identified or described by search/AI interfaces, with citations to public sources in specific sessions, including observations before the Vercel Entity Home. This establishes observed feasibility in the first case, not a promise of the same outcome for every query or independent creator. The September 28 comparison records Perplexity returning the current system definition with a visible Vercel citation; see `observatory/reports/AIO-001-POST-BLOGGER-T0-20260928.md`. Phase-2 tests content changes, longitudinal behavior and external pilots.
+
+## Public discovery signals
+
+The public site includes `robots.txt`, `sitemap.xml`, JSON-LD and a controlled RAG corpus. A concise root `llms.txt` was added to the repository on 2026-09-28 and awaits deployment; the public URL still returned 404 that day. The discovery file summarizes the canonical definition and public URLs; it does not create an indexing or citation guarantee. See `PUBLIC-DISCOVERY-SIGNALS.md` for the implementation boundary.
+
+`public-assets-v1.json` records the eighteen public asset categories and distinguishes identity profiles from publication channels, playlists, repositories and infrastructure. Its contract is `schemas/public-assets-v1.schema.json`; the corresponding Blogger theme is versioned at `blogger/theme-aio-code-20260928.xml`. A link in the inventory records its stated source and relationship; it does not by itself prove external recognition.
+
 ## What is already implemented?
 
 The repository includes:

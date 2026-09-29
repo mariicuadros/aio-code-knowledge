@@ -9,9 +9,12 @@ This layer protects the integrity and continuity of the ecosystem without publis
 Protected entities:
 
 - MC-001 — Marii Cuadros — real Person/entity
-- AIO-001 — AIO CODE — research project / experimental lab
-- NUX-001 — NUX — fictional/narrative entity
-- Twin MC-001 — digital representation/extension of MC-001
+- AIO-001 — AIO CODE — Digital Entity Operating System in development; the research methodology remains a component
+- NUX-001 — NUX — distinct digital creative entity
+- VOID-001 — VOID MODE — creative system for artists
+- OZCU-001 — OZCU — venture/company layer; the registry does not assert legal incorporation
+
+TWIN-MC-001 is a digital representation of MC-001, not an independent canonical entity.
 
 ## Security principles
 
@@ -21,7 +24,7 @@ Protected entities:
 4. **Redundancy** — critical provenance and recovery information must exist in more than one independent location.
 5. **Integrity** — preserve original files and, where useful, cryptographic hashes as integrity fingerprints.
 6. **Continuity** — the ecosystem must remain reconstructable if a platform, account or service becomes unavailable.
-7. **Entity separation** — MC-001, AIO-001, NUX-001 and Twin MC-001 must never be represented as the same entity.
+7. **Entity separation** — the five canonical entity IDs must remain distinct; TWIN-MC-001 represents MC-001 without becoming a sixth entity.
 8. **Evidence classification** — distinguish Observed, Corroborated, Verified, Hypothesized and Unknown.
 
 ## Architecture

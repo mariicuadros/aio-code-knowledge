@@ -125,6 +125,13 @@
       "visibility": "public",
       "canonical_or_historical": "canonical_current",
       "extract": "Approved entity inventory and verified platform representation records; do not infer unverified profiles."
+    },
+    {
+      "path": "public-assets-v1.json",
+      "role": "public_asset_inventory",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "The eighteen creator-reported public asset categories with exact URLs and entity relationships; source status is not independent platform-account verification."
     }
   ],
   "required_index_metadata": [

@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"AIO CODE public asset inventory",
+  "type":"object",
+  "required":["registry","version","updated_local_date","timezone","verification_rule","assets"],
+  "properties":{
+    "registry":{"type":"string"},"version":{"type":"string"},"updated_local_date":{"type":"string","format":"date"},"timezone":{"const":"America/Bogota"},"scope":{"type":"string"},"verification_rule":{"type":"string"},
+    "assets":{"type":"array","minItems":18,"maxItems":18,"items":{"type":"object","required":["asset_id","platform","kind","entity_ids","urls","source","status","same_as_entity_ids"],"properties":{"asset_id":{"pattern":"^PUB-(0[1-9]|1[0-8])$","type":"string"},"platform":{"type":"string"},"kind":{"type":"string"},"entity_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"enum":["MC-001","AIO-001"]}},"urls":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","format":"uri","pattern":"^https://"}},"source":{"type":"string"},"status":{"enum":["owner_confirmed","linked_by_owner","recorded_official"]},"same_as_entity_ids":{"type":"array","uniqueItems":true,"items":{"enum":["MC-001","AIO-001"]}},"note":{"type":"string"}},"additionalProperties":false}}
+  },
+  "additionalProperties":false
+}
