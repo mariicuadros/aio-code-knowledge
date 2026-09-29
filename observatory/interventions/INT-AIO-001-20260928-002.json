@@ -1,0 +1,53 @@
+{
+  "intervention_id": "INT-AIO-001-20260928-002",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-28T21:42:48Z",
+  "timestamp_basis": "Earliest timestamp encoded in the two Wayback URLs supplied by Marii Cuadros; capture success and exact page rendering were not independently verified here.",
+  "research_window_id": "post-Blogger-before-T0-observation",
+  "intervention_type": "owner_submitted_public_wayback_capture_urls",
+  "target_system_or_platform": "Internet Archive Wayback Machine",
+  "target_url_or_record": "https://mariicuadros.blogspot.com/ and https://aio-code.vercel.app/",
+  "before_state_ref": "Blogger editorial bundle reported complete at approximately 16:17 America/Bogota; Vercel phase-2 integration still local and not deployed.",
+  "after_state_ref": "Owner supplied two Wayback URLs on 2026-09-28 and later confirmed that the registration was around 17:00 America/Bogota. The URL-encoded capture times are 16:42:48 and 16:43:47. The Wayback tab was closed and no owner screenshots were retained; visual rendering was not verified by this workspace.",
+  "captures": [
+    {
+      "original_url": "https://mariicuadros.blogspot.com/",
+      "owner_supplied_wayback_url": "https://web.archive.org/web/20260928214248/https://mariicuadros.blogspot.com/#aio-sistema",
+      "timestamp_from_wayback_url": "2026-09-28T21:42:48Z",
+      "local_time_america_bogota": "2026-09-28T16:42:48-05:00",
+      "status": "owner_reported_url_not_independently_render_verified",
+      "note": "The #aio-sistema fragment is a browser-side anchor; this URL identifies a homepage capture, not separate proof that an anchored section was stored."
+    },
+    {
+      "original_url": "https://aio-code.vercel.app/",
+      "owner_supplied_wayback_url": "https://web.archive.org/web/20260928214347/https://aio-code.vercel.app/",
+      "timestamp_from_wayback_url": "2026-09-28T21:43:47Z",
+      "local_time_america_bogota": "2026-09-28T16:43:47-05:00",
+      "status": "owner_reported_url_not_independently_render_verified",
+      "note": "Pre-integration Vercel state; do not describe as a phase-2 deployment capture."
+    }
+  ],
+  "changed_variables": [
+    "Submitted two public homepage URLs to an independent web archive after the Blogger bundle and before the planned T0 external AI observation."
+  ],
+  "unchanged_controls": [
+    "MC-001 frozen partial baseline remains 14/49 and unchanged.",
+    "No phase-2 GitHub branch push or Vercel deployment is implied by these captures."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Preserve dated public URL snapshots where Wayback capture succeeds; no claim of future indexing or external AI uptake.",
+  "observed_external_effect": "not_measured",
+  "evidence_refs": [
+    "Owner-supplied Wayback URLs in the 2026-09-28 work session, with approximate 17:00 local-time confirmation; no owner screenshots retained and web retrieval in this environment was unavailable."
+  ],
+  "operator": "Marii Cuadros",
+  "reversibility": "External archive availability and removal are controlled by Internet Archive; this local log can be corrected if a capture fails verification.",
+  "confounders_known_at_time_of_change": [
+    "Archive URLs were created before T0, so a later source citation could refer to a Wayback snapshot rather than only Blogger or Vercel directly.",
+    "Vercel homepage reflects the pre-integration live state unless independently shown otherwise.",
+    "Archive indexing and external-system crawl timing are unknown."
+  ],
+  "status": "owner_reported_capture_urls_external_observation_pending"
+}

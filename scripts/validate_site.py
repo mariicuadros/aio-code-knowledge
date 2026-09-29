@@ -40,4 +40,6 @@ assert "No external AI/search systems were queried" in checker_page
 assert 'fetch(' not in checker_page and 'XMLHttpRequest' not in checker_page
 assert 'href="/entities/marii-cuadros/"' in nux_page
 assert marii["mainEntity"]["url"] == BASE + "entities/marii-cuadros/"
+assert set(person["sameAs"]) == set(marii_json["sameAs"]) == set(marii["mainEntity"]["sameAs"])
+assert set(aio["sameAs"]) == set(json.loads((ROOT / "schemas/person-schema.json").read_text(encoding="utf-8"))["@graph"][1]["sameAs"])
 print("Static pages, checker limits, privacy behavior, and published @id references are locally consistent.")

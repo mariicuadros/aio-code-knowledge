@@ -43,8 +43,8 @@ Do not alter wording during this round. The three entity prompts test unaided id
 For each response, mark each field `correct`, `partial`, `incorrect`, `not_stated`, or `not_applicable`:
 
 - Entity identity: correctly describes the named entity.
-- Entity type/role: OZCU as company/venture layer; AIO CODE as the primary public brand and methodology; VOID MODE as the creative system for artists.
-- Relationships, only for `OZ-REL-01`: Marii Cuadros is CEO of OZCU; Marii develops AIO CODE and VOID MODE; OZCU applies AIO CODE and offers VOID MODE; VOID MODE is associated with AIO CODE as its creative system.
+- Entity type/role: OZCU as company/venture layer without implying legal incorporation; AIO CODE as the primary public brand and Digital Entity Operating System in development (methodology internal); VOID MODE as the creative system for artists.
+- Relationships, only for `OZ-REL-01`: Marii Cuadros is recorded as CEO of OZCU, creator of AIO CODE and developer of VOID MODE; OZCU applies AIO CODE and offers VOID MODE; VOID MODE is associated with AIO CODE as its creative system. These are first-party records, not independently verified corporate status.
 - Grounding: cited sources actually support the associated statements (`supported`, `partly_supported`, `unsupported`, `no_citations`).
 - Confabulations: note any invented legal status, guarantees, people, or facts as exact quotes; do not silently normalize them.
 

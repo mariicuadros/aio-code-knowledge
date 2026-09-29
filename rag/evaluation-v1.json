@@ -51,7 +51,7 @@
         "entity-graph.json"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "Tres: MC-001, AIO-001 y NUX-001."
+      "expected_fact_or_boundary": "Cinco entidades canónicas: OZCU-001, MC-001, AIO-001, NUX-001 y VOID-001; Twin MC-001 es una representación, no una sexta entidad."
     },
     {
       "case_id": "RAG-Q-04",
@@ -106,7 +106,7 @@
         "entity/ENTITY-PASSPORT-AIO-CODE.md"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "No; persona y metodología unidas por creator_of."
+      "expected_fact_or_boundary": "No; MC-001 es una persona y AIO-001 un DigitalEntityOperatingSystem en desarrollo, unidos por creator_of."
     },
     {
       "case_id": "RAG-Q-08",
@@ -202,7 +202,7 @@
         "OBSERVATORY-PROTOCOL-v1.md"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "No; freeze.status=not_frozen y records vacío."
+      "expected_fact_or_boundary": "Sí; freeze.status=frozen, con 14 observaciones de 49 pares planificados. Es una instantánea parcial, no una medición completa."
     },
     {
       "case_id": "RAG-Q-16",

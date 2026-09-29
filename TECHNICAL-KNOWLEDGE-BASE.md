@@ -185,7 +185,7 @@ Priority questions include:
 - What is AIO CODE?
 - Is AIO CODE a methodology or an experiment?
 - What is already demonstrated?
-- What remains experimental?
+- What results were observed in phase 1, and what does phase 2 test?
 - What problem does AIO CODE address?
 - How does AIO CODE measure change?
 - What is the role of Marii Cuadros?
@@ -310,9 +310,9 @@ A source appearing in an AI response does not prove that it caused the response.
 
 GitHub, Blogger, Hugging Face, social platforms, publications and other public nodes can form a distributed information environment. Their evidentiary status is tracked separately.
 
-### Experimental validation
+### Phase-1 results and phase-2 tests
 
-AIO CODE is a methodology with an experimental validation mode. This distinction allows the project to demonstrate what is already implemented while remaining transparent about what is still being tested.
+AIO CODE is a Digital Entity Operating System in development. Dated phase-1 records show identification, descriptions and citations in specific external search and AI sessions, including sessions before Vercel. These are observed results for the first case. Its internal research methodology now tests the effects of new content, longitudinal behavior and transfer to other entities in phase 2; the mechanism behind each external answer remains a separate question.
 
 ## 16. Related Technical Assets
 
@@ -353,4 +353,4 @@ CLASSIFY EVIDENCE
 PUBLISH FINDINGS
 ```
 
-> **AIO CODE is a methodology for structuring, observing and measuring digital entity representation. Its experiments validate and refine the methodology; they do not define what AIO CODE is.**
+> **AIO CODE is a Digital Entity Operating System in development, connecting entity identity, evidence, provenance, content and observation. Its research methodology is an internal component whose experiments test limited hypotheses.**

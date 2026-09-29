@@ -1,26 +1,176 @@
 {
   "entity_id": "MC-001",
   "entity_name": "Marii Cuadros",
-  "version": "1.2",
+  "version": "1.3",
   "purpose": "Registry of public platform representation nodes associated with the MC-001 canonical entity.",
   "platforms": [
-    {"platform_id":"MC-PLAT-001","platform_name":"Instagram","profile_or_page_name":"mariicuadros","canonical_entity_id":"MC-001","url":"https://www.instagram.com/mariicuadros","official_status":"official","status":"active"},
-    {"platform_id":"MC-PLAT-002","platform_name":"TikTok","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-003","platform_name":"YouTube","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-004","platform_name":"X","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-005","platform_name":"Threads","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-006","platform_name":"Bluesky","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-007","platform_name":"Facebook","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-008","platform_name":"Pinterest","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-009","platform_name":"LinkedIn","canonical_entity_id":"MC-001","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-010","platform_name":"Spotify","canonical_entity_id":"MC-001","content_role":"music_curation","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-011","platform_name":"GitHub","canonical_entity_id":"MC-001","content_role":"technical_research","official_status":"official","status":"active"},
-    {"platform_id":"MC-PLAT-012","platform_name":"Hugging Face","canonical_entity_id":"MC-001","content_role":"structured_research","official_status":"official","status":"active"},
-    {"platform_id":"MC-PLAT-013","platform_name":"Blogger","canonical_entity_id":"MC-001","content_role":"public_documentation","official_status":"official","status":"active"},
-    {"platform_id":"MC-PLAT-014","platform_name":"Medium","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-015","platform_name":"Substack","canonical_entity_id":"MC-001","content_role":"research_publication","official_status":"unverified","status":"to_verify"},
-    {"platform_id":"MC-PLAT-016","platform_name":"Bilibili","url":"https://www.bilibili.tv/en/space/2024087771","canonical_entity_id":"MC-001","content_role":"international_video_distribution","official_status":"official","status":"active"}
+    {
+      "platform_id": "MC-PLAT-001",
+      "platform_name": "Instagram",
+      "profile_or_page_name": "mariicuadros",
+      "canonical_entity_id": "MC-001",
+      "url": "https://www.instagram.com/mariicuadros/",
+      "official_status": "official",
+      "status": "active"
+    },
+    {
+      "platform_id": "MC-PLAT-002",
+      "platform_name": "TikTok",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://www.tiktok.com/@mariicuadros1"
+    },
+    {
+      "platform_id": "MC-PLAT-003",
+      "platform_name": "YouTube",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://www.youtube.com/@mariicuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-004",
+      "platform_name": "X",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://x.com/mariicuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-005",
+      "platform_name": "Threads",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://www.threads.com/@mariicuadros/"
+    },
+    {
+      "platform_id": "MC-PLAT-006",
+      "platform_name": "Bluesky",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://bsky.app/profile/mariicuadros.bsky.social"
+    },
+    {
+      "platform_id": "MC-PLAT-007",
+      "platform_name": "Facebook",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://www.facebook.com/MariiCuadros/"
+    },
+    {
+      "platform_id": "MC-PLAT-008",
+      "platform_name": "Pinterest",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://co.pinterest.com/mariicuadros1/"
+    },
+    {
+      "platform_id": "MC-PLAT-009",
+      "platform_name": "LinkedIn",
+      "canonical_entity_id": "MC-001",
+      "official_status": "unverified",
+      "status": "to_verify"
+    },
+    {
+      "platform_id": "MC-PLAT-010",
+      "platform_name": "Spotify",
+      "canonical_entity_id": "MC-001",
+      "content_role": "curated_playlist_collection",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://open.spotify.com/playlist/1CE0mH5FEwALIvyRxgJpuV",
+      "content_urls": [
+        "https://open.spotify.com/playlist/1CE0mH5FEwALIvyRxgJpuV",
+        "https://open.spotify.com/playlist/4nafBaPaMGv6IVAvAZbO0d",
+        "https://open.spotify.com/playlist/4G3MotrzkSa2T4dqoXq3ff"
+      ]
+    },
+    {
+      "platform_id": "MC-PLAT-011",
+      "platform_name": "GitHub",
+      "canonical_entity_id": "MC-001",
+      "content_role": "technical_research",
+      "official_status": "official",
+      "status": "active",
+      "url": "https://github.com/MariiCuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-012",
+      "platform_name": "Hugging Face",
+      "canonical_entity_id": "MC-001",
+      "content_role": "structured_research",
+      "official_status": "official",
+      "status": "active",
+      "url": "https://huggingface.co/MariiCuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-013",
+      "platform_name": "Blogger",
+      "canonical_entity_id": "MC-001",
+      "content_role": "shared_editorial_site",
+      "official_status": "official",
+      "status": "active",
+      "url": "https://mariicuadros.blogspot.com/"
+    },
+    {
+      "platform_id": "MC-PLAT-014",
+      "platform_name": "Medium",
+      "canonical_entity_id": "MC-001",
+      "content_role": "research_publication",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://medium.com/@mariicuadros1"
+    },
+    {
+      "platform_id": "MC-PLAT-015",
+      "platform_name": "Substack",
+      "canonical_entity_id": "MC-001",
+      "content_role": "research_publication",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://substack.com/@mariicuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-016",
+      "platform_name": "Bilibili",
+      "url": "https://www.bilibili.tv/en/space/2024087771",
+      "canonical_entity_id": "MC-001",
+      "content_role": "international_video_distribution",
+      "official_status": "official",
+      "status": "active"
+    },
+    {
+      "platform_id": "MC-PLAT-017",
+      "platform_name": "Reddit",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://www.reddit.com/user/Mariicuadros/"
+    },
+    {
+      "platform_id": "MC-PLAT-018",
+      "platform_name": "Quora",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://es.quora.com/profile/Marii-Cuadros"
+    },
+    {
+      "platform_id": "MC-PLAT-019",
+      "platform_name": "Vercel",
+      "canonical_entity_id": "MC-001",
+      "official_status": "owner_linked",
+      "status": "linked",
+      "url": "https://aio-code.vercel.app/entities/marii-cuadros/",
+      "content_role": "canonical_entity_home"
+    }
   ],
   "rule": "A platform record describes a representation node. It does not by itself prove external entity resolution, AI recognition, citation or recommendation.",
-  "data_integrity": "Only verified URLs and verified official status should be promoted from to_verify/unverified to active/official."
+  "data_integrity": "Only verified URLs and verified official status should be promoted from to_verify/unverified to active/official.",
+  "public_asset_inventory_ref": "public-assets-v1.json"
 }

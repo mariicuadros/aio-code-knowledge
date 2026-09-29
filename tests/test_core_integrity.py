@@ -24,14 +24,14 @@ class CoreIntegrityTests(unittest.TestCase):
             relative = path.relative_to(ROOT)
             if any(part in {'.git', 'node_modules', '__pycache__', '.venv'} for part in relative.parts):
                 continue
-            if path.is_file() and path.suffix in {'.json', '.md'}:
+            if path.is_file() and path.suffix in {'.json', '.md', '.html'}:
                 destination = core.ROOT / relative
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(path, destination)
     def reject(self, filename, change, message):
         path = core.ROOT / filename
-        doc = json.loads(path.read_text()); change(doc)
-        path.write_text(json.dumps(doc))
+        doc = json.loads(path.read_text(encoding='utf-8')); change(doc)
+        path.write_text(json.dumps(doc, ensure_ascii=False), encoding='utf-8')
         with contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(ValueError, message):
             core.main()
     def test_duplicate_relationship(self):
@@ -44,5 +44,18 @@ class CoreIntegrityTests(unittest.TestCase):
         self.reject('commerce/commerce-register-v1.json', lambda d: d['records'].append(d['records'][0]), 'Duplicate commerce asset_id')
     def test_unknown_creator(self):
         self.reject('commerce/commerce-register-v1.json', lambda d: d['records'][0].update(creator_entity='MISSING'), 'Unknown commerce creator')
+    def test_security_registry_missing_entity(self):
+        self.reject('security/account-registry/accounts.json',
+                    lambda d: d['entities'].pop(), 'Security registry canonical entity set differs from graph')
+    def test_gold_baseline_stale(self):
+        self.reject('rag/evaluation-v1.json',
+                    lambda d: next(c for c in d['cases'] if c['case_id'] == 'RAG-Q-15').update(
+                        expected_fact_or_boundary='No; freeze.status=not_frozen y records vacío.'),
+                    'RAG-Q-15 gold answer differs from baseline status/coverage')
+    def test_gold_entity_set_stale(self):
+        self.reject('rag/evaluation-v1.json',
+                    lambda d: next(c for c in d['cases'] if c['case_id'] == 'RAG-Q-03').update(
+                        expected_fact_or_boundary='Tres: MC-001, AIO-001 y NUX-001.'),
+                    'RAG-Q-03 omits')
 
 if __name__ == '__main__': unittest.main()

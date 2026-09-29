@@ -1,0 +1,39 @@
+{
+  "intervention_id": "INT-AIO-001-20260928-004",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-29T02:58:25Z",
+  "timestamp_basis": "Logged after Blogger displayed theme restoration success and the public homepage was reloaded at about 21:58 America/Bogota on September 28, 2026. Exact individual save event time was not independently captured.",
+  "research_window_id": "post-baseline-pre-phase2-content-20260928",
+  "intervention_type": "public_asset_registry_schema_and_blogger_editorial_reconciliation",
+  "target_system_or_platform": "AIO CODE repository and Blogger",
+  "target_url_or_record": "https://mariicuadros.blogspot.com/; public-assets-v1.json; schemas/person-schema.json; llms.txt",
+  "before_state_ref": "The repository lacked one canonical list of eighteen public asset categories, person sameAs varied across JSON-LD documents, Spotify playlist registry was empty, and Blogger's commercial story was harder to follow. Blogger did not visibly link Bilibili, Pinterest or Hugging Face in its network section.",
+  "after_state_ref": "The repository now has a schema-validated eighteen-category asset registry and aligned entity-specific platform records; person JSON-LD has fifteen identity-equivalent profile URLs; AIO CODE's distinct Instagram is its only sameAs URL. Blogger's homepage now leads with the human problem and commercial sequence and visibly links all eighteen asset categories. Public Blogger render and JSON-LD parse were verified in the browser. Vercel repository changes still require deployment/public HTTP verification.",
+  "changed_variables": [
+    "Blogger theme homepage copy: hero, system, need, offering, FAQ and contact/network section.",
+    "Blogger Person JSON-LD sameAs corrected to profile identity URLs; repository, dataset and Blogger home represented as related resources.",
+    "public-assets-v1.json, platform registries, social entity map, Spotify playlist registry, site JSON-LD, llms.txt and cross-record validation updated."
+  ],
+  "unchanged_controls": [
+    "Historical Blogger articles, page routes, drafts and existing Spotify links were preserved.",
+    "The 14/49 frozen baseline and original observation responses remain unchanged.",
+    "Theme widget count, section count and skin CSS matched the backup before upload."
+  ],
+  "related_claim_ids": [],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Make the current public definition, identity links and commercial explanation consistent while preserving phase-1 observations and historical context.",
+  "observed_external_effect": "Blogger public render and links verified; downstream search and AI responses not yet measured after this intervention.",
+  "evidence_refs": [
+    "Blogger theme restore reported success in the authenticated dashboard on 2026-09-28.",
+    "Public homepage reloaded and inspected, including fifteen Person sameAs URLs and all eighteen asset categories.",
+    "blogger/theme-aio-code-20260928.xml"
+  ],
+  "operator": "Codex with prior user authorization to edit Blogger and explicit request to correct the public asset network",
+  "reversibility": "The previous Blogger theme was downloaded before restoration; the revised theme is versioned in the repository.",
+  "confounders_known_at_time_of_change": [
+    "The asset inventory combines user-provided links, first-party Blogger links and existing repository records; external account ownership was not independently authenticated for every profile.",
+    "Future AI outputs may reflect other sources and unknown crawl timing, so this intervention alone cannot establish causality."
+  ],
+  "status": "blogger_public_render_verified_repository_changes_local_pending_deploy"
+}
