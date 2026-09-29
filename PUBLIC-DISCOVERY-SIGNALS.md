@@ -1,6 +1,6 @@
 # Public discovery signals
 
-**Updated:** 2026-09-28
+**Updated:** 2026-09-29
 
 This record explains the public machine-readable signals in the AIO CODE Entity Home. It is an implementation note, not a promise that a search engine or AI provider will crawl, index, retrieve or cite every source.
 
@@ -10,10 +10,10 @@ This record explains the public machine-readable signals in the AIO CODE Entity 
 | --- | --- | --- |
 | `robots.txt` | Published | Allows public crawling and points to the sitemap. The project currently keeps the site open to retrieval and citation crawlers. |
 | `sitemap.xml` | Published | Lists the public Entity Home, entity pages, RAG page and checker. |
-| `llms.txt` | In repository; public URL returned 404 on 2026-09-28 | Concise, human and machine-readable orientation to the current system definition, phase state and canonical URLs. Requires deployment and HTTP verification. |
-| JSON-LD | Published version exists; updated identity links pending deployment | Gives the Entity Home and person page stable schema identifiers and relationships. |
+| `llms.txt` | Published; `https://aio-code.vercel.app/llms.txt` returned HTTP 200 on 2026-09-29 | Concise, human and machine-readable orientation to the current system definition, phase state and canonical URLs. |
+| JSON-LD | Published; current AIO and Marii markup parsed on 2026-09-29 | Gives the Entity Home and person page stable schema identifiers and relationships. |
 | Answer-first architecture | Defined | `RESEARCH-ARCHITECTURE.md` and `semantic/search-map-v1.json` map direct questions to bounded answers and evidence. |
-| Public RAG passages | Published version exists; new 171-passage index pending deployment | `rag/public-index-v0.json` exposes approved passages and source references for local retrieval. |
+| Public RAG passages | Published 171-passage index at deployment `dpl_HsU3B4hN4Fd1DfmS17tCgp1f2VvF` | `rag/public-index-v0.json` exposes approved passages and source references for local retrieval. Recovery checks do not measure answer accuracy. |
 | Prompt Registry | Published | `prompt-registry-v1.json` freezes controlled observation questions. It is a measurement registry, not a guarantee of prompt seeding in third-party systems. |
 | Observatory | Published | Records prompts, conditions, answers, citations, interventions and evidence state. |
 

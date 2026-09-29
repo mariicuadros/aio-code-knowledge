@@ -1,0 +1,39 @@
+{
+  "intervention_id": "INT-AIO-001-20260929-001",
+  "entity_id": "AIO-001",
+  "timestamp": "2026-09-29T15:59:13Z",
+  "timestamp_basis": "Vercel production deployment ready timestamp; Blogger theme restore occurred later during the same release review, with no exact save timestamp recorded.",
+  "research_window_id": "phase2-public-asset-release-20260929",
+  "intervention_type": "public_asset_integration_deployment_and_blogger_theme_correction",
+  "target_system_or_platform": "GitHub main, Vercel Entity Home and Blogger theme",
+  "target_url_or_record": "https://aio-code.vercel.app/; https://aio-code.vercel.app/llms.txt; https://mariicuadros.blogspot.com/; GitHub PR #5",
+  "before_state_ref": "On 2026-09-28, the public llms.txt URL returned 404 and the expanded public asset inventory, JSON-LD and 171-passage index were not yet in production. Blogger's theme typed the public repository as CreativeWork and retained an HTTP home link in PageList.",
+  "after_state_ref": "PR #5 merged as 0969462d74de06e93555ac495ee6f27cb56999bf. Vercel deployment dpl_HsU3B4hN4Fd1DfmS17tCgp1f2VvF reached READY for main and the aio-code.vercel.app alias. The public llms.txt returned HTTP 200; AIO CODE homepage JSON-LD parsed as CreativeWork with one distinct Instagram sameAs; Marii's ProfilePage parsed with fifteen profile sameAs URLs. The corrected Blogger theme was restored and its public Person JSON-LD included SoftwareSourceCode and codeRepository; the three playlists and archive links remained visible.",
+  "changed_variables": [
+    "Published the eighteen-category asset inventory and aligned platform registries, public JSON-LD and llms.txt.",
+    "Published the regenerated 171-passage public RAG index after resolving conflicts with the previous main publication.",
+    "Restored the Blogger theme with SoftwareSourceCode/codeRepository for the repository and HTTPS for the PageList home link."
+  ],
+  "unchanged_controls": [
+    "Historical posts and the 14/49 partial baseline were not rewritten.",
+    "Phase-1 observations remain bounded to the recorded sessions; no new external AI answer is inferred from this release."
+  ],
+  "related_claim_ids": ["CLAIM-010"],
+  "related_prompt_registry_version": "1.0",
+  "hypothesis_id": null,
+  "expected_effect": "Make the current canonical definition, public asset links and discovery document accessible at the public URLs for subsequent observations.",
+  "observed_external_effect": "Public HTTP and rendered Blogger checks confirmed publication. Effects on third-party indexing, citations, content and pilots have not been measured in this release window.",
+  "evidence_refs": [
+    "https://github.com/mariicuadros/aio-code-knowledge/pull/5",
+    "https://aio-code.vercel.app/llms.txt",
+    "https://mariicuadros.blogspot.com/",
+    "blogger/theme-aio-code-20260928.xml"
+  ],
+  "operator": "Codex with Marii Cuadros authorization to complete the release",
+  "reversibility": "Git revert and redeployment for the repository; the preceding Blogger theme was backed up before restoration. External caches may retain published versions.",
+  "confounders_known_at_time_of_change": [
+    "Publication timing and third-party retrieval schedules are uncontrolled.",
+    "The same release changed several first-party sources, so future external responses cannot be attributed to one file alone."
+  ],
+  "status": "published_and_public_routes_verified"
+}

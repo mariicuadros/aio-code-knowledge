@@ -28,7 +28,7 @@ AIO CODE does **not** control third-party AI systems and does **not** guarantee 
 
 ## Public discovery signals
 
-The public site includes `robots.txt`, `sitemap.xml`, JSON-LD and a controlled RAG corpus. A concise root `llms.txt` was added to the repository on 2026-09-28 and awaits deployment; the public URL still returned 404 that day. The discovery file summarizes the canonical definition and public URLs; it does not create an indexing or citation guarantee. See `PUBLIC-DISCOVERY-SIGNALS.md` for the implementation boundary.
+The public site includes `robots.txt`, `sitemap.xml`, JSON-LD and a controlled RAG corpus. A concise root `llms.txt` was added to the repository on 2026-09-28 and verified at the public URL with HTTP 200 after the September 29 deployment. It summarizes the canonical definition and public URLs; it does not create an indexing or citation guarantee. See `PUBLIC-DISCOVERY-SIGNALS.md` for the implementation boundary.
 
 `public-assets-v1.json` records the eighteen public asset categories and distinguishes identity profiles from publication channels, playlists, repositories and infrastructure. Its contract is `schemas/public-assets-v1.schema.json`; the corresponding Blogger theme is versioned at `blogger/theme-aio-code-20260928.xml`. A link in the inventory records its stated source and relationship; it does not by itself prove external recognition.
 
