@@ -1,6 +1,6 @@
 /** Private Instagram account + insights diagnostic endpoint.
  * Disabled unless AIO_INSIGHTS_ENABLED=1 and protected by AIO_INSIGHTS_ADMIN_TOKEN.
- * Secrets are never returned, logged, or placed in query strings.
+ * Secrets are never returned, logged, or placed in URLs.
  */
 
 import { createHash, timingSafeEqual } from 'node:crypto';
@@ -68,16 +68,17 @@ export async function GET(request) {
   );
 
   const base = `https://graph.facebook.com/${version}/${encodeURIComponent(businessId)}`;
-  const headers = { accept: 'application/json' };
+  const headers = {
+    accept: 'application/json',
+    authorization: `Bearer ${accessToken}`,
+  };
   const accountUrl = new URL(base);
   accountUrl.searchParams.set('fields', 'id,username,name,followers_count,media_count');
-  accountUrl.searchParams.set('access_token', accessToken);
 
   const insightsUrl = new URL(`${base}/insights`);
   insightsUrl.searchParams.set('metric', metrics.join(','));
   insightsUrl.searchParams.set('period', period);
   insightsUrl.searchParams.set('metric_type', metricType);
-  insightsUrl.searchParams.set('access_token', accessToken);
 
   try {
     const [accountResponse, insightsResponse] = await Promise.all([
