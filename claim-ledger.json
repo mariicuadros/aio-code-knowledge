@@ -1,7 +1,7 @@
 {
   "dataset": "AIO CODE Claim Ledger",
   "version": "2.3",
-  "updated": "2026-09-27",
+  "updated": "2026-10-03",
   "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
   "claim_type_values": [
     "canonical_definition",
@@ -195,6 +195,23 @@
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "First-party classification of the operating architecture; does not prove software completeness, external AI recognition, generalizability or commercial demand."
+    },
+    {
+      "claim_id": "CLAIM-011",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros is an independent researcher, creator of AIO CODE and developer of VOID MODE.",
+      "source": "Marii Cuadros Entity Passport",
+      "source_ref": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "date": "2026-10-03",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party canonical role definition of MC-001; external systems' recognition of this role remains a separate Observatory question."
     }
   ],
   "integrity_rules": [
