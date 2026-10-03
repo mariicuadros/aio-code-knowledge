@@ -12,7 +12,7 @@ AIO CODE remains the primary public/project brand through 2027. OZCU is the comp
 **Company/venture layer:** `OZCU-001` — OZCU  
 **Creative System:** `VOID-001` — VOID MODE  
 **Canonical internal type:** `DigitalEntityOperatingSystem`
-**Creator:** Marii Cuadros  
+**Creator and independent researcher:** Marii Cuadros  
 **Current Stage:** Phase 2 — operating the connected system and preparing content/pilots
 **System Spec:** `AIO-CODE-SYSTEM-SPEC-v2.md` · **Method component:** `AIO-METHODOLOGY-SPEC-v1.md`
 
@@ -64,7 +64,7 @@ The repository includes:
 ```text
 AIO-001 — AIO CODE — Primary public brand and DigitalEntityOperatingSystem
 OZCU-001 — OZCU — Company / venture layer; reserve corporate identity
-MC-001 — Marii Cuadros — Person; develops AIO CODE and VOID MODE
+MC-001 — Marii Cuadros — Person; independent researcher, creator of AIO CODE and developer of VOID MODE
 VOID-001 — VOID MODE — CreativeSystem for artists
 NUX-001 — NUX — DigitalCreativeEntity
 ```
