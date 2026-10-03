@@ -9,7 +9,7 @@
 - **Status:** Active
 - **Passport Version:** 4.0
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-27
+- **Last Updated:** 2026-10-03
 - **Company:** OZCU (OZCU-001)
 - **Role:** CEO of OZCU; creator of AIO CODE and developer of VOID MODE
 
@@ -232,7 +232,7 @@ The Entity Passport establishes the person/entity boundary first. Search visibil
 
 **Entity ID:** MC-001  
 **Passport Version:** 4.0  
-**Last Updated:** 2026-09-14  
+**Last Updated:** 2026-10-03  
 **Project:** AIO CODE
 
 **AIO CODE — 2026**
