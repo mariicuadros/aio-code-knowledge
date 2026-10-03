@@ -1,6 +1,7 @@
 /** Private Instagram account + insights diagnostic endpoint.
  * Disabled unless AIO_INSIGHTS_ENABLED=1 and protected by AIO_INSIGHTS_ADMIN_TOKEN.
  * Secrets are never returned, logged, or placed in URLs.
+ * Preview-only smoke test before merge; production remains disabled by default.
  */
 
 import { createHash, timingSafeEqual } from 'node:crypto';
