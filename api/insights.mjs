@@ -5,6 +5,8 @@
 
 import { createHash, timingSafeEqual } from 'node:crypto';
 
+const APPROVED_METRICS = new Set(['reach', 'views', 'total_interactions']);
+
 const json = (body, status = 200) =>
   new Response(JSON.stringify(body), {
     status,
@@ -30,13 +32,17 @@ function graphError(payload) {
   return {
     code: typeof error?.code === 'number' ? error.code : null,
     type: typeof error?.type === 'string' ? error.type : null,
-    message: typeof error?.message === 'string' ? error.message : 'Meta Graph API request failed',
+    message: 'Meta Graph API request failed',
   };
 }
 
 function allowedList(value, fallback) {
   if (!value) return fallback;
-  return value.split(',').map(item => item.trim()).filter(Boolean).slice(0, 20);
+  const requested = value.split(',').map(item => item.trim()).filter(Boolean);
+  if (!requested.length || requested.length > 20 || requested.some(metric => !APPROVED_METRICS.has(metric))) {
+    return null;
+  }
+  return requested;
 }
 
 export async function GET(request) {
@@ -66,6 +72,10 @@ export async function GET(request) {
     url.searchParams.get('metric'),
     ['reach', 'views', 'total_interactions']
   );
+
+  if (!metrics) {
+    return json({ status: 'invalid_metric' }, 400);
+  }
 
   const base = `https://graph.facebook.com/${version}/${encodeURIComponent(businessId)}`;
   const headers = {
