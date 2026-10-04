@@ -25,9 +25,15 @@ def main():
     if marker < 0:
         raise ValueError("Could not find the end of the journal card metadata")
     metadata = yaml.safe_load(text[3:marker]) or {}
-    body = text[marker + 4:].lstrip("\n")
+   body = text[marker + 4:].lstrip("\n")
+
+# Remove an old duplicated YAML separator while preserving the journal history.
+if body.startswith("---"):
+    body = body[3:].lstrip("\n")
+
     metadata["pretty_name"] = "AIO CODE Knowledge Journal"
-    metadata["configs"] = [{
+    metadata["configs"] = [{metadata["version"] = "2.1"
+metadata["last_updated"] = "2026-09-25"
         "config_name": "default",
         "data_files": [{
             "split": "train",
