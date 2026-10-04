@@ -31,10 +31,17 @@ def main():
 if body.startswith("---"):
     body = body[3:].lstrip("\n")
 
+    metadata = yaml.safe_load(text[3:marker]) or {}
+    body = text[marker + 4:].lstrip("\n")
+
+    # Remove an old duplicated YAML separator while preserving the journal history.
+    if body.startswith("---"):
+        body = body[3:].lstrip("\n")
+
     metadata["pretty_name"] = "AIO CODE Knowledge Journal"
-    metadata["configs"] = [{metadata["version"] = "2.1"
-metadata["last_updated"] = "2026-09-25"
-        "config_name": "default",
+    metadata["version"] = "2.1"
+    metadata["last_updated"] = "2026-09-25"
+    metadata["configs"] = [{: "default",
         "data_files": [{
             "split": "train",
             "path": ["data/research-journal.jsonl", "data/research-journal-addendum.jsonl"],
