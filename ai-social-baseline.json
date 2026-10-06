@@ -4,7 +4,7 @@
   "updated": "2026-10-06",
   "baseline_target": "MC-001 BASELINE v1",
   "purpose": "Container and specification for the first dated empirical snapshot across AI systems, search environments and relevant platforms, measured after the prior interventions declared in the baseline plan.",
-  "important_note": "Version 1.5 connects prior DEOS integration, historical journals and visually reviewed historical cuts with October 6. Frozen records and 14/49 coverage remain unchanged. Raw images and full original journals stay restricted.",
+  "important_note": "Post-intervention snapshot after INT-AIO-001-20260924-001, INT-MC-001-20260924-001: 14/49 planned pairs observed; 35 explicitly missing. This is not a pre-change comparison. No causal or stability claim.",
   "entities": [
     {
       "entity_id": "MC-001",
