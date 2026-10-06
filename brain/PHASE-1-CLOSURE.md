@@ -1,5 +1,13 @@
 # AIO CODE — Brain v1 closure and phase-2 handoff
 
+## Estado vigente — 2026-10-06
+
+Fase 1/Brain está cerrada para el alcance de infraestructura y documentación. El corte histórico que sigue se conserva; sus pendientes de publicación de septiembre no describen el estado actual. La consolidación visual/documental del 6 de octubre está publicada y el RAG vigente contiene 173 pasajes de 18 fuentes. El baseline congelado conserva 14/49; el seguimiento comparable T+7 permanece pendiente. El PR de Meta/Instagram sigue abierto y draft, sin lectura real verificada.
+
+Ver la [auditoría de cierre](../observatory/reports/PHASE-1-CODEX-AUDIT-20261006.md) y la [carpeta de Fase 2](../phase-2/README.md). Los siete contratos y el Ledger existente se reutilizan; contenido real, conectores, dashboard y rediseño creativo se ejecutan en Fase 2.
+
+## Cortes históricos preservados
+
 **Prepared:** 2026-09-28. **Status:** local integration validated; public release and final operational review pending. This file is a handoff record, not an external AI result.
 
 ## Established in phase 1
