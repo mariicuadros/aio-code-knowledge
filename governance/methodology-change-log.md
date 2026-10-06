@@ -33,3 +33,7 @@ No existing historical observation, prompt text or content publication date is r
 - **Status:** local implementation with source retrieval validation; external AI measurements and generated-answer support evaluation have not yet happened.
 - **Website:** public entity pages and JSON-LD ID alignment are a material public exposure change recorded separately under `observatory/interventions/INT-MC-001-20260924-001.json`.
 - **Evidence boundary:** neither a corpus hit nor a new entity page proves that external AI recognizes or cites the entity.
+
+## 2026-10-06 — Documentary baseline consolidation
+
+Connected existing DEOS integration and September reports to supplied eight-week journals and October observations. Preserved frozen records/coverage; added explicit supplemental schema fields and public summary indices. Raw screenshots and original journals remain restricted. Brain operating closure already recorded on October 3; analytics/content ledger operation belongs to phase 2.

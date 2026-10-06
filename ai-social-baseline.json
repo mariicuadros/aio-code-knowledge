@@ -1,10 +1,10 @@
 {
   "dataset": "AIO CODE AI + Social Baseline",
-  "version": "1.1",
-  "updated": "2026-09-25",
+  "version": "1.5",
+  "updated": "2026-10-06",
   "baseline_target": "MC-001 BASELINE v1",
   "purpose": "Container and specification for the first dated empirical snapshot across AI systems, search environments and relevant platforms, measured after the prior interventions declared in the baseline plan.",
-  "important_note": "Post-intervention snapshot after INT-AIO-001-20260924-001, INT-MC-001-20260924-001: 14/49 planned pairs observed; 35 explicitly missing. This is not a pre-change comparison. No causal or stability claim.",
+  "important_note": "Version 1.5 connects prior DEOS integration, historical journals and visually reviewed historical cuts with October 6. Frozen records and 14/49 coverage remain unchanged. Raw images and full original journals stay restricted.",
   "entities": [
     {
       "entity_id": "MC-001",
@@ -444,5 +444,550 @@
         "reason": "Security/human-verification page persisted after one normal reload; no prompt submitted."
       }
     ]
+  },
+  "supplemental_observation_windows": [
+    {
+      "window_id": "MC-001-SUPP-20261006",
+      "date": "2026-10-06",
+      "status": "documentary_cut_closed",
+      "purpose": "Supplemental visual capture of entity and project recognition across Google Search/AI Overview, ChatGPT, Gemini and Perplexity.",
+      "capture_method": "All 14 originals visually reviewed; OCR is auxiliary only.",
+      "observations": [
+        {
+          "observation_id": "OBS-GOOGLE-AIO-20261006-01",
+          "entity_id": "AIO-001",
+          "system": "google-search-ai-overview",
+          "prompt_text": "AIO CODE",
+          "observed_representation": "Google presents AIO CODE as an ambiguous term with technical meanings and an experimental entity-representation framework resembling the project scope; creator attribution and target source URL are not visible.",
+          "resolution_status": "probable_partial_project_match_among_technical_alternatives",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "AIO CODE 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [
+            "AIO Code Framework label",
+            "Microsoft Learn",
+            "OpenCode"
+          ],
+          "accuracy_issues": [],
+          "notes": "Project description resembles AIO CODE scope, but target source URL and creator are not exposed; classify as probable partial match, not full resolution.",
+          "evidence": [
+            {
+              "filename": "AIO CODE 06-10.png",
+              "sha256": "bd6df6fb035d2a64147e3536c5a4ba38127b8f61189ee6c28b2ab6da89e2efe7",
+              "vault_path": "evidence/baseline-20261006/capture-01.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-GOOGLE-AIO-20261006-02",
+          "entity_id": "AIO-001",
+          "system": "google-search-ai-overview",
+          "prompt_text": "qué es AIO CODE",
+          "observed_representation": "The AI Overview describes AIO CODE as a research project/framework focused on entity representation, consistency between sources and visibility in distributed digital environments. It mentions structured identity, retrieval, entity resolution, citations, recommendations, evidence and traceability.",
+          "resolution_status": "resolved_to_project_in_direct_spanish_query",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "QUE ES AIO CODE 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [
+            "Vercel"
+          ],
+          "accuracy_issues": [
+            "Project scope recovered but DEOS wording absent; research/experimental classification still used."
+          ],
+          "evidence": [
+            {
+              "filename": "QUE ES AIO CODE 06-10.png",
+              "sha256": "969bb4cdc8a15fde633612acc2e23d6ea127156c6c738d73007b47c158169315",
+              "vault_path": "evidence/baseline-20261006/capture-02.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-GOOGLE-MC-20261006-01",
+          "entity_id": "MC-001",
+          "system": "google-search",
+          "prompt_text": "marii cuadros",
+          "observed_representation": "The result includes the official Instagram profile with the descriptor Model — Artist — Curator and Founder of AIO CODE, but the AI Overview also confuses the query with a Colombian decorative-art business named Cuadros Maria Luisa.",
+          "resolution_status": "partial_with_name_confusion",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "MARII CUADROS 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [
+            "Instagram @mariicuadros",
+            "Cuadros Maria Luisa"
+          ],
+          "accuracy_issues": [],
+          "notes": "Organic Instagram result is correct; AI Overview is wrong. These layers must not share a single success label.",
+          "evidence": [
+            {
+              "filename": "MARII CUADROS 06-10.png",
+              "sha256": "a22d78d05d479d8a0ae1157cdf21312792cc95c3f061884bf64cd4748ffbc31d",
+              "vault_path": "evidence/baseline-20261006/capture-03.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-GOOGLE-MC-20261006-02",
+          "entity_id": "MC-001",
+          "system": "google-search",
+          "prompt_text": "quién es Marii Cuadros",
+          "observed_representation": "Google appears to interpret the query as Mario Cuadros and returns unrelated public-service and LinkedIn results. The intended Marii Cuadros entity is not resolved in the visible result.",
+          "resolution_status": "unresolved_wrong-name-interpretation",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "QUIEN ES MARII CUADROS 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [],
+          "accuracy_issues": [],
+          "evidence": [
+            {
+              "filename": "QUIEN ES MARII CUADROS 06-10.png",
+              "sha256": "2c31447459a65ac8b7cc040000124de31255f612da4c410dc5cf7ed8081eb97f",
+              "vault_path": "evidence/baseline-20261006/capture-04.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-CHATGPT-AIO-20261006-01",
+          "entity_id": "AIO-001",
+          "system": "chatgpt-web",
+          "prompt_text": "qué es aio code?",
+          "observed_representation": "ChatGPT treats AIO Code as potentially referring to multiple technical concepts and asks for a URL or additional context; it does not resolve the Marii Cuadros project in the initial exchange.",
+          "resolution_status": "ambiguous_unresolved",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "AIO CODE- CHAT GPT- 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [],
+          "accuracy_issues": [],
+          "notes": "Initial prompt plus follow-up En una pagina; neither resolves project. One conversation episode.",
+          "evidence": [
+            {
+              "filename": "AIO CODE- CHAT GPT- 06-10.png",
+              "sha256": "d2c47389508751c041a6174e53a03add1f2a91f2b42fd8018beaa5e3b22c116c",
+              "vault_path": "evidence/baseline-20261006/capture-05.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-CHATGPT-MC-20261006-01",
+          "entity_id": "MC-001",
+          "system": "chatgpt-web",
+          "prompt_text": "quién es Marii Cuadros?",
+          "observed_representation": "ChatGPT identifies Marii Cuadros as a Colombian creator presenting as model, artist and curator, links her to AIO CODE and VOID MODE, and describes her as the principal case study of AIO CODE.",
+          "resolution_status": "resolved_with_relationships",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "MARII CUADROS-CHAT GPT-06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [
+            "Mariicuadros",
+            "Himalayas"
+          ],
+          "accuracy_issues": [
+            "Calls Marii Colombian; distinguish Venezuelan nationality from Colombian residence.",
+            "Himalayas-associated activities not independently verified in this review."
+          ],
+          "evidence": [
+            {
+              "filename": "MARII CUADROS-CHAT GPT-06-10.png",
+              "sha256": "59b96bfef8f2b65ed2381b056f03284bb3f1c9c95274bf8eb410417d5c081e33",
+              "vault_path": "evidence/baseline-20261006/capture-06.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-CHATGPT-MC-20261006-02",
+          "entity_id": "MC-001",
+          "system": "chatgpt-web",
+          "prompt_text": "marii cuadros",
+          "observed_representation": "ChatGPT asks whether the user means a person, an artwork or another reference; no entity resolution is shown in the visible exchange.",
+          "resolution_status": "ambiguous_unresolved",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "MARII CUADROS. CHAT GPT. 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [],
+          "accuracy_issues": [],
+          "notes": "Two visible repeated bare-name prompts in one conversation; not independent fresh trials.",
+          "evidence": [
+            {
+              "filename": "MARII CUADROS. CHAT GPT. 06-10.png",
+              "sha256": "c96f6dca5a5ed31f278a86f2e906e85e3197fa18d17b83ed43e69fdc090fb143",
+              "vault_path": "evidence/baseline-20261006/capture-07.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-GEMINI-AIO-20261006-01",
+          "entity_id": "AIO-001",
+          "system": "gemini-web",
+          "prompt_text": "AIO CODE",
+          "observed_representation": "Gemini interprets AIO Code primarily through All-In-One code, AI coding assistants, platforms, libraries and educational projects; it does not resolve the Marii Cuadros project.",
+          "resolution_status": "ambiguous_unresolved",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "AIO CODE- GEMINI- 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": "Flash-Lite",
+          "sources_or_citations_visible": [],
+          "accuracy_issues": [],
+          "evidence": [
+            {
+              "filename": "AIO CODE- GEMINI- 06-10.png",
+              "sha256": "0aeaf3d61d5be2e19dc65a78f3c806625d46c1e0f9afca2f7f6622815ed5f243",
+              "vault_path": "evidence/baseline-20261006/capture-08.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-GEMINI-MC-20261006-01",
+          "entity_id": "MC-001",
+          "system": "gemini-web",
+          "prompt_text": "Marii Cuadros",
+          "observed_representation": "Gemini identifies Marii Cuadros as a model, artist and curator, founder of AIO CODE, based in the Aburrá Valley/Sabaneta, and connects her identity to research on how AI systems identify and process creator information.",
+          "resolution_status": "resolved_with_project_relationship",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "MARII CUADROS- GEMINI- 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": "Flash-Lite",
+          "sources_or_citations_visible": [
+            "Medium"
+          ],
+          "accuracy_issues": [],
+          "evidence": [
+            {
+              "filename": "MARII CUADROS- GEMINI- 06-10.png",
+              "sha256": "140f3c6c74bd17d5bb658517919a07ad979fef429991b6bb4b52af84f3be7bca",
+              "vault_path": "evidence/baseline-20261006/capture-09.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-PERPLEXITY-AIO-20261006-01",
+          "entity_id": "AIO-001",
+          "system": "perplexity-web",
+          "prompt_text": "aio code",
+          "observed_representation": "Perplexity returns POSIX asynchronous I/O meanings and programming functions such as aio_read, aio_write and aio_fsync; no Marii Cuadros project resolution is visible.",
+          "resolution_status": "unresolved_technical_collision",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "perplexity- aio code- 06-10.png",
+            "perplexity- aio code. 06-10.png",
+            "PERPLEXITY- AIO CODE- 06--10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [],
+          "accuracy_issues": [],
+          "grouping_basis": "Matching answer sections and interface; treated conservatively as one answer, not three replications.",
+          "evidence": [
+            {
+              "filename": "perplexity- aio code- 06-10.png",
+              "sha256": "f9168dd2751c3f3f86d98f338d08af8ab8059efceb0483acd9b395e9973c5b92",
+              "vault_path": "evidence/baseline-20261006/capture-10.png"
+            },
+            {
+              "filename": "perplexity- aio code. 06-10.png",
+              "sha256": "ef4245c3e52262012f18a1b23569e84707526ac10abaf6d98c853e76959850c6",
+              "vault_path": "evidence/baseline-20261006/capture-11.png"
+            },
+            {
+              "filename": "PERPLEXITY- AIO CODE- 06--10.png",
+              "sha256": "3e1947a43adb5f6da66e48fabd6c6f9dbcdc98f1e915cd02c978193b8426a599",
+              "vault_path": "evidence/baseline-20261006/capture-12.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        },
+        {
+          "observation_id": "OBS-PERPLEXITY-MC-20261006-01",
+          "entity_id": "MC-001",
+          "system": "perplexity-web",
+          "prompt_text": "marii cuadros",
+          "observed_representation": "Identifies intended creator, founder of AIO CODE and creator of VOID MODE, but also offers religious-painting and decor-store interpretations. Incorrect nationality and legacy methodology wording remain.",
+          "resolution_status": "target_identified_with_alternatives_and_factual_error",
+          "evidence_state": "observed",
+          "capture_refs": [
+            "PERPLEXITY- MARII CUADROS- 06-10.png",
+            "PERPLEXITYY- MARIICUADROS- 06-10.png"
+          ],
+          "timestamp": null,
+          "date_basis": "2026-10-06 according to filenames and user submission; exact capture time unknown",
+          "prompt_registry_version": null,
+          "session_state": "signed_out_visible",
+          "private_browsing": "not_established_by_cropped_interface",
+          "full_response_available": false,
+          "source_urls_verified": false,
+          "model": null,
+          "sources_or_citations_visible": [
+            "mariicuadros",
+            "mariacuadros.cl",
+            "cope"
+          ],
+          "accuracy_issues": [
+            "Calls Marii Colombian; creator-provided identity says Venezuelan based in Colombia.",
+            "Describes AIO CODE as methodology, not current DEOS definition.",
+            "Future label/sello 2031 is model output, not evidence of current operational product."
+          ],
+          "grouping_basis": "Continuation of same numbered alternatives and answer; one response.",
+          "evidence": [
+            {
+              "filename": "PERPLEXITY- MARII CUADROS- 06-10.png",
+              "sha256": "6836c7dbebfcb012c06bdf40e7c70c400d301c82fe806bcac25d3d9fe45e8a88",
+              "vault_path": "evidence/baseline-20261006/capture-13.png"
+            },
+            {
+              "filename": "PERPLEXITYY- MARIICUADROS- 06-10.png",
+              "sha256": "8fd216555919f68d0f5395bc8dbe7b4c4d64a6a8e745a83130aa91cf2e883634",
+              "vault_path": "evidence/baseline-20261006/capture-14.png"
+            }
+          ],
+          "raw_evidence_custody": "mariicuadros/aio-code-vault; evidence/baseline-20261006/"
+        }
+      ],
+      "window_summary": {
+        "aio_code": "AIO CODE remains highly ambiguous when queried without context. Google can surface the project for a direct Spanish question, while ChatGPT, Gemini and Perplexity default mainly to technical meanings.",
+        "marii_cuadros": "Target identified in ChatGPT explicit question, Gemini bare name and Perplexity bare name, with nationality errors in ChatGPT/Perplexity. Google organic Instagram result correct but AI Overview incorrect. Bare-name ChatGPT episode unresolved.",
+        "strongest_signal": "Selected answers identify the creator-project relationship and display project-associated source labels. This co-occurrence is observational, not proof of retrieval mechanism or causality.",
+        "main_gap": "AIO CODE needs stronger disambiguation against technical meanings; Marii Cuadros needs stronger external corroboration and protection against name variants and decorative-brand collisions."
+      },
+      "comparison_to_previous_window": {
+        "previous_windows": [
+          "2026-09-25 primary stored records",
+          "2026-09-29/30 as summarized in audit of 2026-10-03"
+        ],
+        "comparability": "Descriptive only: prompts, language and source conditions differ. No percentage uplift or causal estimate.",
+        "findings": [
+          "ChatGPT explicit Spanish person question resolves target now versus failure in September 25; same prompt family, not identical conditions.",
+          "Gemini recognizes person in both windows; October adds model/artist/curator and AIO founder, but no proof of causal improvement.",
+          "AIO CODE remains unresolved on standalone ChatGPT/Gemini queries.",
+          "Perplexity project recognition reported for September 29/30 is not reproduced on October bare-name query; do not infer deindexing.",
+          "Google retrieves project scope for explicit Spanish question, but still research-framework wording; person overview and autocorrection failures persist.",
+          "Perplexity already recognized DEOS with Vercel on September 28, 29 and the explicit September 30 question; September 30 bare-name query also failed. October bare-name failure is not proof of temporal regression.",
+          "Google person Overview identified and separated Marii on September 30; October Overview confusion is a differing observed output, not proof of deindexing.",
+          "Bing explicit September 30 output recovers DEOS wording but cites XPG cooler material; count wording recovery separately from supported citation."
+        ],
+        "source_limit": "Original September 28, 29 and 29/30 reports now located in GitHub and cross-checked with recovered images; prompt variants and incomplete conditions still limit controlled comparison.",
+        "causal_claim": false,
+        "stability_claim": false
+      },
+      "limitations": [
+        "This supplemental window is not a replacement for the frozen historical records.",
+        "The screenshots do not provide a complete standardized prompt registry, model/version record or full session-state record for every observation.",
+        "OCR transcription was used as an aid; the screenshots remain the primary evidence.",
+        "The observations show representation at capture time and do not establish indexing causality, algorithmic influence or persistence."
+      ],
+      "closure_date": "2026-10-06",
+      "counts": {
+        "screenshots": 14,
+        "query_episodes": 11,
+        "independent_replications_established": false
+      },
+      "previous_ingestion_correction": "Version 1.2 counted screenshot fragments as separate observations. Version 1.3 groups 3 AIO and 2 Marii Perplexity screenshots into 2 episodes. Previous removed IDs remain mapped in correction history.",
+      "correction_history": {
+        "OBS-PERPLEXITY-AIO-20261006-02": "OBS-PERPLEXITY-AIO-20261006-01",
+        "OBS-PERPLEXITY-AIO-20261006-03": "OBS-PERPLEXITY-AIO-20261006-01",
+        "OBS-PERPLEXITY-MC-20261006-02": "OBS-PERPLEXITY-MC-20261006-01"
+      },
+      "phase_transition": {
+        "decision": "sufficient_observational_evidence_to_begin_phase2",
+        "scope": "Documentary closure of supplied baseline evidence only; not certification of all Brain integrations.",
+        "supported": [
+          "Target recovery in selected systems",
+          "Visible citations to project-associated sources",
+          "Creator-project relationship in selected answers",
+          "Documented ambiguity and factual errors"
+        ],
+        "not_supported": [
+          "Permanent all-system recognition",
+          "Causal effect of JSON-LD/RAG/publications",
+          "Recommendation or sales uplift",
+          "External independent validation of methodology",
+          "Operational API/dashboard readiness"
+        ]
+      }
+    }
+  ],
+  "historical_journal_archive": {
+    "ref": "observatory/history/aio-code-historical-evidence-index.json",
+    "version": "1.1",
+    "status": "supplied_journals_integrated",
+    "source_count": 8,
+    "selected_observation_count": 36,
+    "dated_entry_count": 59,
+    "reported_date_range": [
+      "2026-08-06",
+      "2026-09-29"
+    ],
+    "evidence_state": "reported_in_journal",
+    "scope": "Longitudinal documentary history separate from fixed 49-pair matrix and October visual window",
+    "sources": [
+      {
+        "week": 1,
+        "sha256": "86b66b55b290429cb5eb2226807dd81a3a9d1290cb09c2458c53bd440b865116",
+        "source_ref": "restricted submitted week 01"
+      },
+      {
+        "week": 2,
+        "sha256": "14de40faf4cd97746f9e92f1e8534c61e51a8bd724675a1ff8d57c0efa1c26b6",
+        "source_ref": "restricted submitted week 02"
+      },
+      {
+        "week": 3,
+        "sha256": "4ac7d0b42ab85c2fcc1f6bfe809bf6df343fe619db4931dd45ed1698e3a46d64",
+        "source_ref": "restricted submitted week 03"
+      },
+      {
+        "week": 4,
+        "sha256": "0203eac975a0f49910e4817d63dc572639d2644a38739a2e858041089645d931",
+        "source_ref": "restricted submitted week 04"
+      },
+      {
+        "week": 5,
+        "sha256": "c0357a3fee9f36011fb4f1b42b92aaf6449571a4472d88b7bb53f55c3d9e2793",
+        "source_ref": "restricted submitted week 05"
+      },
+      {
+        "week": 6,
+        "sha256": "6fb3314551547f6933dac492d598ba42c25f4f13c24687f9a8383745e0462da1",
+        "source_ref": "restricted submitted week 06"
+      },
+      {
+        "week": 7,
+        "sha256": "1446400674d8d34a139d8947b9e60973326b74fbd8289b1d25197974bea75d2d",
+        "source_ref": "restricted submitted week 07"
+      },
+      {
+        "week": 8,
+        "sha256": "509b7c90a0ebfb0152aac954a4fdbdb19fbd181e63d23a60b4f2cdc447209857",
+        "source_ref": "restricted submitted week 08"
+      }
+    ]
+  },
+  "coverage_interpretation": {
+    "scope": "MC-001-BL-PLAN-v1 only; seven prompt IDs across seven systems",
+    "planned_pairs": 49,
+    "captured_pairs": 14,
+    "not_captured_pairs": 35,
+    "completed_systems": [
+      "chatgpt-web",
+      "gemini-web"
+    ],
+    "missing_by_system": {
+      "claude-web": 7,
+      "deepseek-web": 7,
+      "grok-web": 7,
+      "meta-ai-web": 7,
+      "perplexity-web": 7
+    },
+    "missing_is_not_failed_recognition": true,
+    "historical_journals_and_october_window_do_not_fill_old_pairs": true,
+    "remaining_matrix_status": "closed_as_partial_with_explicit_access_gaps",
+    "timezone_note": "The freeze labeled 20260925 is 2026-09-25 UTC and 2026-09-24 evening in America/Bogota.",
+    "baseline_state": "post_intervention_snapshot",
+    "pre_publication_claim": false
+  },
+  "repository_evidence_review": {
+    "review_date": "2026-10-06",
+    "public_repository_base_commit": "0841c146d374188995be3bf1eeae98ac31957f62",
+    "private_repository_base_commit": "47891e30c5616ee5b284aad3f699ddd9959c1266",
+    "canonical_type": "DigitalEntityOperatingSystem",
+    "canonical_definition_already_integrated": true,
+    "historical_visual_review_ref": "observatory/history/historical-visual-review-20261006.json",
+    "historical_images_reviewed": 108,
+    "current_images_reviewed": 14,
+    "original_transition_report_ref": "observatory/reports/MC-001-AIO-001-BASELINE-TRANSITION-20260929-30.md",
+    "brain_closure_already_recorded": "2026-10-03",
+    "t_plus_7_status": "Supplementary October cut available; exact controlled prompt repeat not established"
   }
 }

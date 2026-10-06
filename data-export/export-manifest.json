@@ -1,7 +1,7 @@
 {
   "manifest": "AIO CODE Controlled Data Export",
-  "version": "1.1",
-  "updated": "2026-09-25",
+  "version": "1.2",
+  "updated": "2026-10-06",
   "source_of_truth": "GitHub repository mariicuadros/aio-code-knowledge",
   "downstream_targets": [
     "Hugging Face"
@@ -27,7 +27,9 @@
     "entity/ENTITY-PASSPORT-OZCU.md",
     "entity/ENTITY-PASSPORT-VOID-MODE.md",
     "observatory/interventions/INT-OZCU-001-20260925-001.json",
-    "data-export/journal-addendum.jsonl"
+    "data-export/journal-addendum.jsonl",
+    "observatory/history/aio-code-historical-evidence-index.json",
+    "observatory/history/historical-visual-review-20261006.json"
   ],
   "integrity_rules": [
     "Preserve canonical entity IDs.",

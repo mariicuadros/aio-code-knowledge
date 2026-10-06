@@ -303,3 +303,7 @@ AIO CODE 4 — Product
 ```
 
 **Current focus: AIO CODE 1 — Evidence.**
+
+## Historical evidence consolidation — October 6, 2026
+
+AIO CODE remains the Digital Entity Operating System already defined above. The [consolidation report](observatory/reports/PHASE-1-BASELINE-CONSOLIDATION-20261006.md) connects eight supplied journals, 108 reviewed historical images and the 14-image October cut. The fixed 14/49 matrix is preserved; no universal recognition or causal claim follows. Raw originals remain restricted.

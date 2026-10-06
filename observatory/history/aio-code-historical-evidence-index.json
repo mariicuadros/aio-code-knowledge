@@ -1,0 +1,1102 @@
+{
+  "title": "AIO CODE historical journal evidence index",
+  "version": "1.1",
+  "review_date": "2026-10-06",
+  "timezone": "America/Bogota",
+  "status": "supplied_journals_integrated",
+  "sources": [
+    {
+      "week": 1,
+      "sha256": "86b66b55b290429cb5eb2226807dd81a3a9d1290cb09c2458c53bd440b865116",
+      "source_ref": "restricted submitted week 01"
+    },
+    {
+      "week": 2,
+      "sha256": "14de40faf4cd97746f9e92f1e8534c61e51a8bd724675a1ff8d57c0efa1c26b6",
+      "source_ref": "restricted submitted week 02"
+    },
+    {
+      "week": 3,
+      "sha256": "4ac7d0b42ab85c2fcc1f6bfe809bf6df343fe619db4931dd45ed1698e3a46d64",
+      "source_ref": "restricted submitted week 03"
+    },
+    {
+      "week": 4,
+      "sha256": "0203eac975a0f49910e4817d63dc572639d2644a38739a2e858041089645d931",
+      "source_ref": "restricted submitted week 04"
+    },
+    {
+      "week": 5,
+      "sha256": "c0357a3fee9f36011fb4f1b42b92aaf6449571a4472d88b7bb53f55c3d9e2793",
+      "source_ref": "restricted submitted week 05"
+    },
+    {
+      "week": 6,
+      "sha256": "6fb3314551547f6933dac492d598ba42c25f4f13c24687f9a8383745e0462da1",
+      "source_ref": "restricted submitted week 06"
+    },
+    {
+      "week": 7,
+      "sha256": "1446400674d8d34a139d8947b9e60973326b74fbd8289b1d25197974bea75d2d",
+      "source_ref": "restricted submitted week 07"
+    },
+    {
+      "week": 8,
+      "sha256": "509b7c90a0ebfb0152aac954a4fdbdb19fbd181e63d23a60b4f2cdc447209857",
+      "source_ref": "restricted submitted week 08"
+    }
+  ],
+  "dated_entries": [
+    {
+      "entry_id": "JRN-W01-01",
+      "date": "2026-08-06",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 7,
+      "end_line": 21,
+      "original_heading": "6 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-02",
+      "date": "2026-08-06",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 22,
+      "end_line": 27,
+      "original_heading": "6 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-03",
+      "date": "2026-08-07",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 28,
+      "end_line": 33,
+      "original_heading": "7 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-04",
+      "date": "2026-08-08",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 34,
+      "end_line": 39,
+      "original_heading": "8 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-05",
+      "date": "2026-08-09",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 40,
+      "end_line": 45,
+      "original_heading": "9 agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-06",
+      "date": "2026-08-10",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 46,
+      "end_line": 52,
+      "original_heading": "10 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-07",
+      "date": "2026-08-11",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 53,
+      "end_line": 57,
+      "original_heading": "11 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-08",
+      "date": "2026-08-12",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 58,
+      "end_line": 63,
+      "original_heading": "12 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W01-09",
+      "date": "2026-08-13",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 1.txt",
+      "start_line": 64,
+      "end_line": 112,
+      "original_heading": "13 de agosto (1 era semana)"
+    },
+    {
+      "entry_id": "JRN-W02-01",
+      "date": "2026-08-13",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 4,
+      "end_line": 15,
+      "original_heading": "13 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W02-02",
+      "date": "2026-08-14",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 16,
+      "end_line": 21,
+      "original_heading": "14 de AGOSTO:"
+    },
+    {
+      "entry_id": "JRN-W02-03",
+      "date": "2026-08-15",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 22,
+      "end_line": 27,
+      "original_heading": "15 de agosto:"
+    },
+    {
+      "entry_id": "JRN-W02-04",
+      "date": "2026-08-16",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 28,
+      "end_line": 32,
+      "original_heading": "Agosto 16:"
+    },
+    {
+      "entry_id": "JRN-W02-05",
+      "date": "2026-08-17",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 33,
+      "end_line": 51,
+      "original_heading": "Agosto 17:"
+    },
+    {
+      "entry_id": "JRN-W02-06",
+      "date": "2026-08-18",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 52,
+      "end_line": 57,
+      "original_heading": "AGOSTO 18:"
+    },
+    {
+      "entry_id": "JRN-W02-07",
+      "date": "2026-08-19",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 2.txt",
+      "start_line": 58,
+      "end_line": 61,
+      "original_heading": "Agosto 19:"
+    },
+    {
+      "entry_id": "JRN-W03-01",
+      "date": "2026-08-19",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 3.txt",
+      "start_line": 7,
+      "end_line": 12,
+      "original_heading": "AGOSTO 19 (TARDE/NOCHE)"
+    },
+    {
+      "entry_id": "JRN-W03-02",
+      "date": "2026-08-20",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 3.txt",
+      "start_line": 13,
+      "end_line": 18,
+      "original_heading": "AGOSTO 20:"
+    },
+    {
+      "entry_id": "JRN-W03-03",
+      "date": "2026-08-21",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 3.txt",
+      "start_line": 19,
+      "end_line": 24,
+      "original_heading": "agosto 21"
+    },
+    {
+      "entry_id": "JRN-W03-04",
+      "date": "2026-08-22",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 3.txt",
+      "start_line": 25,
+      "end_line": 29,
+      "original_heading": "AGOSTO 22:"
+    },
+    {
+      "entry_id": "JRN-W03-05",
+      "date": "2026-08-23",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 3.txt",
+      "start_line": 30,
+      "end_line": 36,
+      "original_heading": "AGOSTO 23:"
+    },
+    {
+      "entry_id": "JRN-W04-01",
+      "date": "2026-08-24",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 6,
+      "end_line": 9,
+      "original_heading": "AGOSTO 24:"
+    },
+    {
+      "entry_id": "JRN-W04-02",
+      "date": "2026-08-25",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 10,
+      "end_line": 16,
+      "original_heading": "AGOSTO 25:"
+    },
+    {
+      "entry_id": "JRN-W04-03",
+      "date": "2026-08-26",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 17,
+      "end_line": 22,
+      "original_heading": "AGOSTO 26:"
+    },
+    {
+      "entry_id": "JRN-W04-04",
+      "date": "2026-08-27",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 23,
+      "end_line": 28,
+      "original_heading": "AGOSTO 27:"
+    },
+    {
+      "entry_id": "JRN-W04-05",
+      "date": "2026-08-28",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 29,
+      "end_line": 34,
+      "original_heading": "Agosto 28:"
+    },
+    {
+      "entry_id": "JRN-W04-06",
+      "date": "2026-08-29",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 35,
+      "end_line": 41,
+      "original_heading": "Agosto 29:"
+    },
+    {
+      "entry_id": "JRN-W04-07",
+      "date": "2026-08-30",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 42,
+      "end_line": 47,
+      "original_heading": "AGOSTO 30:"
+    },
+    {
+      "entry_id": "JRN-W04-08",
+      "date": "2026-08-31",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 48,
+      "end_line": 54,
+      "original_heading": "Agosto 31:"
+    },
+    {
+      "entry_id": "JRN-W04-09",
+      "date": "2026-09-01",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 55,
+      "end_line": 59,
+      "original_heading": "SEPTIEMBRE 1:"
+    },
+    {
+      "entry_id": "JRN-W04-10",
+      "date": "2026-09-02",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "Semana 4.txt",
+      "start_line": 60,
+      "end_line": 62,
+      "original_heading": "Septiembre 2:"
+    },
+    {
+      "entry_id": "JRN-W05-01",
+      "date": "2026-09-02",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 7,
+      "end_line": 11,
+      "original_heading": "Septiembre 2:"
+    },
+    {
+      "entry_id": "JRN-W05-02",
+      "date": "2026-09-03",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 12,
+      "end_line": 20,
+      "original_heading": "Septiembre 3:"
+    },
+    {
+      "entry_id": "JRN-W05-03",
+      "date": "2026-09-04",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 21,
+      "end_line": 26,
+      "original_heading": "Septiembre 4:"
+    },
+    {
+      "entry_id": "JRN-W05-04",
+      "date": "2026-09-05",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 27,
+      "end_line": 32,
+      "original_heading": "Septiembre 5:"
+    },
+    {
+      "entry_id": "JRN-W05-05",
+      "date": "2026-09-06",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 33,
+      "end_line": 37,
+      "original_heading": "Septiembre 6:"
+    },
+    {
+      "entry_id": "JRN-W05-06",
+      "date": "2026-09-07",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 38,
+      "end_line": 42,
+      "original_heading": "Septiembre 7:"
+    },
+    {
+      "entry_id": "JRN-W05-07",
+      "date": "2026-09-08",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 5.txt",
+      "start_line": 43,
+      "end_line": 47,
+      "original_heading": "Septiembre 8:"
+    },
+    {
+      "entry_id": "JRN-W06-01",
+      "date": "2026-09-09",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 5,
+      "end_line": 9,
+      "original_heading": "SEPTIEMBRE 9:"
+    },
+    {
+      "entry_id": "JRN-W06-02",
+      "date": "2026-09-10",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 10,
+      "end_line": 15,
+      "original_heading": "SEPTIEMBRE 10:"
+    },
+    {
+      "entry_id": "JRN-W06-03",
+      "date": "2026-09-11",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 16,
+      "end_line": 20,
+      "original_heading": "SEPTIEMBRE 11:"
+    },
+    {
+      "entry_id": "JRN-W06-04",
+      "date": "2026-09-12",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 21,
+      "end_line": 26,
+      "original_heading": "SEPTIEMBRE 12:"
+    },
+    {
+      "entry_id": "JRN-W06-05",
+      "date": "2026-09-13",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 27,
+      "end_line": 32,
+      "original_heading": "SEPTIEMBRE 13:"
+    },
+    {
+      "entry_id": "JRN-W06-06",
+      "date": "2026-09-14",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 33,
+      "end_line": 38,
+      "original_heading": "SEPTIEMBRE 14:"
+    },
+    {
+      "entry_id": "JRN-W06-07",
+      "date": "2026-09-15",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 6.txt",
+      "start_line": 39,
+      "end_line": 42,
+      "original_heading": "SEPTIEMBRE 15:"
+    },
+    {
+      "entry_id": "JRN-W07-01",
+      "date": "2026-09-16",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 4,
+      "end_line": 8,
+      "original_heading": "SEPTIEMBRE 16:"
+    },
+    {
+      "entry_id": "JRN-W07-02",
+      "date": "2026-09-17",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 9,
+      "end_line": 14,
+      "original_heading": "SEPTIEMBRE 17:"
+    },
+    {
+      "entry_id": "JRN-W07-03",
+      "date": "2026-09-18",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 15,
+      "end_line": 19,
+      "original_heading": "SEPTIEMBRE 18:"
+    },
+    {
+      "entry_id": "JRN-W07-04",
+      "date": "2026-09-19",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 20,
+      "end_line": 24,
+      "original_heading": "Septiembre 19:"
+    },
+    {
+      "entry_id": "JRN-W07-05",
+      "date": "2026-09-20",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 25,
+      "end_line": 30,
+      "original_heading": "SEPTIEMBRE 20:"
+    },
+    {
+      "entry_id": "JRN-W07-06",
+      "date": "2026-09-21",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 31,
+      "end_line": 36,
+      "original_heading": "SEPTIEMBRE 21:"
+    },
+    {
+      "entry_id": "JRN-W07-07",
+      "date": "2026-09-22",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 7(1).txt",
+      "start_line": 37,
+      "end_line": 43,
+      "original_heading": "SEPTIEMBRE 22:"
+    },
+    {
+      "entry_id": "JRN-W08-01",
+      "date": "2026-09-23",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 6,
+      "end_line": 10,
+      "original_heading": "SEPTIEMBRE 23:"
+    },
+    {
+      "entry_id": "JRN-W08-02",
+      "date": "2026-09-24",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 11,
+      "end_line": 15,
+      "original_heading": "SEPTIEMBRE 24:"
+    },
+    {
+      "entry_id": "JRN-W08-03",
+      "date": "2026-09-25",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 16,
+      "end_line": 20,
+      "original_heading": "SEPTIEMBRE 25:"
+    },
+    {
+      "entry_id": "JRN-W08-04",
+      "date": "2026-09-26",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 21,
+      "end_line": 26,
+      "original_heading": "SEPTIEMBRE 26:"
+    },
+    {
+      "entry_id": "JRN-W08-05",
+      "date": "2026-09-27",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 27,
+      "end_line": 31,
+      "original_heading": "SEPTIEMBRE 27:"
+    },
+    {
+      "entry_id": "JRN-W08-06",
+      "date": "2026-09-28",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 32,
+      "end_line": 37,
+      "original_heading": "SEPTIEMBRE 28:"
+    },
+    {
+      "entry_id": "JRN-W08-07",
+      "date": "2026-09-29",
+      "date_basis": "journal heading; year inferred from project context",
+      "source_filename": "SEMANA 8(1).txt",
+      "start_line": 38,
+      "end_line": 42,
+      "original_heading": "SEPTIEMBRE 29:"
+    }
+  ],
+  "selected_historical_observations": [
+    {
+      "observation_id": "HIST-JRN-001",
+      "date": "2026-08-08",
+      "summary": "Se reportan problemas iniciales de identidad y estructura; aún no hay una prueba estandarizada de ausencia.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W01-04"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-002",
+      "date": "2026-08-10",
+      "summary": "Se diferencia el usuario mariicuadros del nombre Marii Cuadros y se cambian perfiles y JSON de Blogger.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W01-06"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-003",
+      "date": "2026-08-12",
+      "summary": "Se reporta aparición de Twitter al buscar Marii Cuadros en Google en incógnito; «tercera barrita» no se convierte en ranking preciso.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W01-08"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-004",
+      "date": "2026-08-13",
+      "summary": "Se reporta identificación sin Mario/Maria Luisa, con Quora y Twitter; la descripción todavía es marca relacionada con estrategias de redes.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-01"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-005",
+      "date": "2026-08-14",
+      "summary": "Se reporta presencia en Modo AI de Google. La palabra recomendación no tiene consulta completa que permita verificar recomendación espontánea.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-02"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-099"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-006",
+      "date": "2026-08-15",
+      "summary": "Se reporta Instagram primero en la búsqueda; Blogger aún no indexado según la bitácora.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-03"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-007",
+      "date": "2026-08-16",
+      "summary": "Se reporta error HTTPS de Blogger y corrección. La conexión con visualizaciones de Instagram es hipótesis.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-04"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-008",
+      "date": "2026-08-17",
+      "summary": "Se reportan Blogger/Medium en buscador. El texto reproduce no identificación en ChatGPT y Gemini y confusión con María Esther en Perplexity.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-05"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-009",
+      "date": "2026-08-19",
+      "summary": "Se reporta recuperación en ChatGPT, Gemini y Perplexity en incógnito; Medium se atribuye como fuente en la bitácora.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W02-07"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-092"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-010",
+      "date": "2026-08-19",
+      "summary": "Registro tarde/noche de recuperación y actualizaciones. Enumera Gemini dos veces; no permite identificar un tercer sistema distinto por sí solo.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W03-01"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-092"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-011",
+      "date": "2026-08-23",
+      "summary": "Se reporta pérdida de aparición en Gemini, cambio de respuesta en ChatGPT y TikTok localizable solo por usuario tras modificaciones; causalidad no probada.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W03-05"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-102"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-012",
+      "date": "2026-08-24",
+      "summary": "Se reporta aviso de Search Console pero no aparición en la búsqueda realizada: aviso y resultado visible son capas diferentes.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-01"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-104"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-013",
+      "date": "2026-08-26",
+      "summary": "Se reporta foto de Twitter en búsqueda de Marii Cuadros/Modo AI; interpretación exacta del canal no queda fijada.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-03"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-014",
+      "date": "2026-08-28",
+      "summary": "Se reporta resultado de Instagram actualizado con post y cantidad de seguidos.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-05"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-015",
+      "date": "2026-08-29",
+      "summary": "Se reporta no aparición en las IA, sin lista completa ni consultas.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-06"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-016",
+      "date": "2026-08-30",
+      "summary": "Continúa el reporte de no aparición en las IA; no se cuenta como réplica estandarizada.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-07"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-108"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-017",
+      "date": "2026-08-31",
+      "summary": "ChatGPT en español y Perplexity en inglés solo con búsqueda forzada; Gemini español/inglés no identifica según el registro.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-08"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-018",
+      "date": "2026-09-01",
+      "summary": "Se reporta una aparición de Instagram con perfil completo en incógnito.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-09"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-019",
+      "date": "2026-09-02",
+      "summary": "Registro mixto: no aparición en búsqueda general, pero identificación asistida en ChatGPT/Perplexity y Gemini con Medium/Blogger.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W04-10"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-020",
+      "date": "2026-09-02",
+      "summary": "Se reporta persistencia de Cuadros Maria Luisa; se decide migrar hub a Vercel y actualizar repositorios.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W05-01"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-021",
+      "date": "2026-09-03",
+      "summary": "Se reportan foto de Instagram, relación de búsqueda Marii Cuadros inteligencia artificial en Bing y persistencia de homónimos.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W05-02"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-022",
+      "date": "2026-09-04",
+      "summary": "Se reportan Vercel y ChatGPT, con salvedad de biografía no exacta; Gemini no identifica.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W05-03"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-023",
+      "date": "2026-09-07",
+      "summary": "Perplexity desglosa Blogger; ChatGPT menciona Hugging Face, Medium y Twitter; Gemini no identifica según la bitácora.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W05-06"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-024",
+      "date": "2026-09-08",
+      "summary": "Se reporta recuperación en Gemini de nuevo, sin respuesta completa adjunta al texto.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W05-07"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-025",
+      "date": "2026-09-10",
+      "summary": "AIO CODE aparece; ChatGPT/Modo AI recuperan a Marii al añadir AIO CODE. Persisten homónimos; Medium/Substack se mencionan como fuentes del proyecto.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W06-02"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-026",
+      "date": "2026-09-11",
+      "summary": "Se reportan 21 clics atribuidos a Instagram/Search Console y aviso de Hugging Face; sin exportación primaria verificada.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W06-03"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-027",
+      "date": "2026-09-12",
+      "summary": "Se reporta reaparición de Marii en las IA, sin enumeración suficiente para afirmar todas.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W06-04"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-028",
+      "date": "2026-09-14",
+      "summary": "Se reportan respuestas congruentes de baseline, mayor información en Bing y consulta Marii Cuadros inteligencia artificial. Recomendación en Instagram sigue sin evidencia métrica primaria aquí.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W06-06"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-029",
+      "date": "2026-09-19",
+      "summary": "Copilot no entiende AIO CODE; se reporta primera presencia de TikTok y más plataformas en búsquedas de Marii.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W07-04"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-030",
+      "date": "2026-09-20",
+      "summary": "Se reporta AIO CODE primero en Modo AI; no se transforma en posición estable ni cobertura general.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W07-05"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-031",
+      "date": "2026-09-22",
+      "summary": "Se reporta baseline sin cambios, junto con contenido programado.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W07-07"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-032",
+      "date": "2026-09-24",
+      "summary": "Se describe RAG y sistema de preguntas para AIO CODE, OZCU, VOID MODE y Marii. Es instrumentación, no resultado externo completo.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W08-02"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-033",
+      "date": "2026-09-26",
+      "summary": "Se reporta ejecución de baseline y organización del Brain, sin respuestas completas en este apartado.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W08-04"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-034",
+      "date": "2026-09-27",
+      "summary": "Se reporta entrega de imágenes históricas y auditoría; cambio de metodología a operating system. El texto no aporta identificadores de cada captura.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W08-05"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-035",
+      "date": "2026-09-28",
+      "summary": "Se reportan registro en Internet Archive, cambios de Blogger, nuevas capturas y transición terminológica. Las respuestas varían durante intervenciones.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W08-06"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-010",
+        "VIS-HIST-011",
+        "VIS-HIST-012",
+        "VIS-HIST-024",
+        "VIS-HIST-026",
+        "VIS-HIST-027",
+        "VIS-HIST-028",
+        "VIS-HIST-029",
+        "VIS-HIST-036",
+        "VIS-HIST-037",
+        "VIS-HIST-038",
+        "VIS-HIST-039",
+        "VIS-HIST-040",
+        "VIS-HIST-041",
+        "VIS-HIST-042"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    },
+    {
+      "observation_id": "HIST-JRN-036",
+      "date": "2026-09-29",
+      "summary": "Se reporta pérdida de visibilidad en algunas IA tras cambios; relación temporal, no causalidad establecida.",
+      "evidence_state": "reported_in_journal",
+      "source_entries": [
+        "JRN-W08-07"
+      ],
+      "linked_original_capture_ids": [],
+      "counts_as_frozen_matrix_pair": false,
+      "contextual_visual_refs": [
+        "VIS-HIST-051",
+        "VIS-HIST-052",
+        "VIS-HIST-053",
+        "VIS-HIST-054"
+      ],
+      "visual_link_limit": "Same filename date and topic only; not assumed identical prompt/session."
+    }
+  ],
+  "limits": [
+    "Creator-authored journals are documentary evidence; not independently verified model responses.",
+    "No exact historical screenshot link is inferred from a text claim that screenshots were delivered.",
+    "Repeated dates are retained with source identity and are not assumed independent tests.",
+    "Origin narrative dated August 6 and formal milestone August 13 must remain distinct.",
+    "Publications preceded August 19 and the September baseline; no pristine pre-publication baseline claimed."
+  ],
+  "future_phase_scope": {
+    "phase_1": "Versioned documentation and historical evidence closure",
+    "phase_2": [
+      "Operational Content Provenance",
+      "Operational Content Genome",
+      "Operational Performance Ledger",
+      "Dashboard and platform analytics"
+    ]
+  },
+  "visual_review_ref": "historical-visual-review-20261006.json"
+}

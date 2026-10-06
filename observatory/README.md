@@ -111,3 +111,7 @@ FINDINGS
 **Updated:** September 3, 2026
 
 **Canonical principle:** Record what the system did before explaining why it happened.
+
+## October 6 documentary cut
+
+See [phase-1 consolidation](reports/PHASE-1-BASELINE-CONSOLIDATION-20261006.md) and `history/` for the connected longitudinal archive. The frozen 14/49 counts only the fixed historical matrix; later windows and journals never fill old missing pairs.
