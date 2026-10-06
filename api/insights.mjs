@@ -46,6 +46,29 @@ function allowedList(value, fallback) {
   return requested;
 }
 
+// Unix seconds only: reject partial, duplicate, reversed and future ranges.
+function requestedWindow(params, nowSeconds) {
+  const sinceValues = params.getAll('since');
+  const untilValues = params.getAll('until');
+  if (!sinceValues.length && !untilValues.length) return { value: null };
+  if (sinceValues.length !== 1 || untilValues.length !== 1) {
+    return { error: 'Provide exactly one since and one until, in Unix seconds.' };
+  }
+  const values = [sinceValues[0], untilValues[0]];
+  if (values.some(value => !/^[0-9]{1,10}$/.test(value))) {
+    return { error: 'since and until must be integer Unix timestamps in seconds.' };
+  }
+  const [since, until] = values.map(Number);
+  if (since >= until || until > nowSeconds) {
+    return { error: 'Require since < until, with neither boundary in the future.' };
+  }
+  return { value: {
+    since, until,
+    start_utc: new Date(since * 1000).toISOString(),
+    end_utc: new Date(until * 1000).toISOString(),
+  } };
+}
+
 export async function GET(request) {
   if (process.env.AIO_INSIGHTS_ENABLED !== '1') {
     return json({ status: 'disabled' }, 503);
@@ -78,6 +101,12 @@ export async function GET(request) {
     return json({ status: 'invalid_metric' }, 400);
   }
 
+  const windowResult = requestedWindow(url.searchParams, Math.floor(Date.now() / 1000));
+  if (windowResult.error) {
+    return json({ status: 'invalid_window', message: windowResult.error }, 400);
+  }
+  const window = windowResult.value;
+
   const base = `https://graph.facebook.com/${version}/${encodeURIComponent(businessId)}`;
   const headers = {
     accept: 'application/json',
@@ -90,6 +119,11 @@ export async function GET(request) {
   insightsUrl.searchParams.set('metric', metrics.join(','));
   insightsUrl.searchParams.set('period', period);
   insightsUrl.searchParams.set('metric_type', metricType);
+
+  if (window) {
+    insightsUrl.searchParams.set('since', String(window.since));
+    insightsUrl.searchParams.set('until', String(window.until));
+  }
 
   try {
     const [accountResponse, insightsResponse] = await Promise.all([
@@ -116,7 +150,18 @@ export async function GET(request) {
       fetched_at: new Date().toISOString(),
       graph_api_version: version,
       account: accountBody,
-      request: { metrics, period, metric_type: metricType },
+      request: {
+        metrics, period, metric_type: metricType,
+        since: window?.since ?? null, until: window?.until ?? null,
+      },
+      measurement_window: {
+        status: window ? 'explicit_requested' : 'provider_default_unconfirmed',
+        requested: window,
+        provider_end_times: [...new Set((insightsBody.data || [])
+          .flatMap(metric => (metric.values || []).map(value => value.end_time))
+          .filter(value => typeof value === 'string'))],
+        scope: 'account',
+      },
       insights: insightsBody.data || [],
     });
   } catch {
