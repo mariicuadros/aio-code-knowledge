@@ -68,6 +68,14 @@ de Google/Bing, conexiones Meta, ni registro jurídico de OZCU.
 
 ## Estado de CI
 
+**CI confirmado: SUCCESS.** Ejecución Linux
+https://github.com/mariicuadros/aio-code-knowledge/actions/runs/37993309541
+para el head `01533edf07c6829823de712a44b993a77198a1f0`.
+El log acredita **45 pruebas correctas**, tres registros Intake válidos, siete
+registros Brain sintéticos válidos, Core, Site, Entities, RAG, índice con 173
+pasajes, gateway, precontent y Node safety correctos. No hay pasos omitidos por
+fallos en esa ejecución.
+
 El fallo inicial de Runs queda documentado en la auditoría histórica. El workflow
 del PR ejecuta Core, Intake, Brain, suite completa, Site, Entities, evaluación
 RAG, frescura del índice, gateway, precontent y Node safety. El estado del commit
@@ -107,14 +115,51 @@ activar sus automatizaciones existentes; esta auditoría no lo autoriza.
 
 ## Recomendación técnica
 
-El cambio está preparado para evaluación de integración una vez confirmada la
-ejecución completa de CI del commit publicado. No implica autorización para
-desplegar ni declarar validación de un modelo. Si CI falla, debe corregirse la
-causa antes de recomendar integrar. El PR permanece en borrador para revisión
-de la fundadora.
+**Técnicamente listo para revisión de integración**, con CI completo correcto y
+el bloqueo inicial resuelto. No implica autorización para desplegar ni declarar
+validación de un modelo. Las limitaciones de cobertura son explícitas y no se
+presentan como reconocimiento externo. El PR permanece en borrador para revisión
+de la fundadora. No se recomienda habilitar generación pública general sin
+ampliar y revisar el catálogo y evaluar un modelo remoto de manera separada.
 
 ## Inventario de archivos
 
 El inventario adjunto a la entrega compara este pase con el head anterior del
 PR (`c6f436657688a9f7857811e50da12f9e706b417c`). Las tres bajas en `runs/`
 son traslados idénticos a `intake/`, no eliminación de evidencia.
+
+| Estado de este pase | Archivo |
+| --- | --- |
+| Modificado | .github/workflows/rag-validation.yml |
+| Modificado | api/answer.mjs |
+| Modificado | codex/PHASE2-AUDIT-2026-10-09.md |
+| Creado | codex/PHASE2-FINAL-TECHNICAL-REPORT-2026-10-09.md |
+| Modificado | entities/nux/index.html |
+| Modificado | entity/ENTITY-PASSPORT-NUX.md |
+| Modificado | entity/ENTITY-PASSPORT-VOID-MODE.md |
+| Creado | observatory/intake-schema.json |
+| Trasladado, contenido idéntico | observatory/runs/GOOGLE-MC-20261009.json → observatory/intake/GOOGLE-MC-20261009.json |
+| Trasladado, contenido idéntico | observatory/runs/META-IG-AIO-20261009.json → observatory/intake/META-IG-AIO-20261009.json |
+| Trasladado, contenido idéntico | observatory/runs/META-IG-MC-20261009.json → observatory/intake/META-IG-MC-20261009.json |
+| Creado | observatory/intake/README.md |
+| Modificado | rag/README.md |
+| Creado | rag/answer-policy-v1.json |
+| Modificado | rag/cli.py |
+| Modificado | rag/engine.py |
+| Modificado | rag/evaluate.py |
+| Modificado | rag/generate.py |
+| Modificado | rag/index.html |
+| Modificado | rag/public-index-v0.json |
+| Modificado | rag/retriever.mjs |
+| Creado | rag/semantic-evaluation-v1.json |
+| Creado | rag/semantic.mjs |
+| Creado | rag/semantic.py |
+| Modificado | scripts/build_public_rag.py |
+| Creado | scripts/validate_entities.py |
+| Creado | scripts/validate_intake.py |
+| Creado | scripts/validate_rag_safety.mjs |
+| Creado | tests/test_intake.py |
+| Modificado | tests/test_phase2_identity.py |
+| Creado | tests/test_rag_safety.py |
+
+Archivos eliminados sin reemplazo: ninguno. El schema de Runs y los documentos históricos permanecen conservados.
