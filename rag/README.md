@@ -50,15 +50,16 @@ passage as a final answer without that check.
 
 The 24 questions in `evaluation-v1.json` are the revised phase-2 internal retrieval and answer
 acceptance set. They are not the frozen external Observatory Prompt Registry.
-The CLI evaluation checks source recall only. `scripts/validate_core.py` additionally
+The frozen lexical portion of the CLI evaluation checks source recall. `scripts/validate_core.py` additionally
 checks that the volatile gold expectations for entity set, system type and baseline
 status agree with canonical records, plus security registry alignment. These checks
-do not grade generated answers; answer support and abstention reviews remain separate
-human gates. Optional draft generation uses an
+do not grade general generated answers. The separate finite reviewed-answer suite
+checks abstention and citation support; human review remains required. Optional draft generation uses an
 OpenAI-compatible API (Vercel AI Gateway by default): set `AI_GATEWAY_API_KEY`
 and `AIO_RAG_MODEL`, then run `python -m rag.cli ask '¿Qué es AIO CODE?'
 --generate`. Outputs are marked `draft_requires_review`; the program validates
-cited source IDs but cannot prove that a source supports every assertion.
+cited source IDs, then rejects any answer differing from the exact reviewed
+assertion or citing a passage other than its current supporting source/section.
 Do not publish a generated answer without checking each claim against its
 passage. No model key, hosted service or model evaluation is included here.
 
@@ -72,6 +73,48 @@ offers measurable improvement before introducing another data store.
 
 After the canonical identity update, the approved corpus contains OZCU, AIO CODE and VOID MODE records. The public index is pinned to source commit 89f4b65662d97df9c2c4e49138e74b634a66201f and contains 177 passages from 17 allowlisted files. The frozen 24-query retrieval suite returned all 21 applicable gold sources (21/21); the three cases without gold sources are abstention cases. This is source retrieval performance only, not answer correctness or third-party recognition. See rag/evaluation-2026-09-25-report.json.
 
-## Current pre-content cut — September 29, 2026
+## Historical pre-content cut — September 29, 2026
 
 The current published index contains 171 passages from 18 exact allowlisted files. The September 25 paragraph above is historical. Browser and private gateway now use `retriever.mjs` for the same lexical ranking; the Python evaluator remains an independently implemented reference. Uppercase/lowercase name queries are normalized internally, which does not establish how third-party systems handle case. Follow `PRE-CONTENT-READINESS-20260929.md` when approving a new content source. Unpublished drafts, original screenshots and private Insights never enter the public corpus automatically.
+
+## Phase 2 technical correction — October 9, 2026
+
+The candidate index has 173 passages from 18 allowlisted sources. The dated counts
+above are historical. Intake summaries remain outside this corpus and HF exports.
+
+`canonical_or_historical` is the metadata **field**. Retrieval treats its values
+as follows in both Python and JavaScript:
+
+| Value | Current identity queries | Explicit historical research |
+| --- | --- | --- |
+| `canonical_current` | Eligible if public | Excluded |
+| `historical` | Excluded | Eligible if public |
+| `superseded` | Excluded | Eligible if public, still superseded |
+| `canonical_or_historical` | Ambiguous legacy value: excluded | Excluded |
+| `unknown`, missing, unrecognized | Excluded | Excluded |
+
+Python: `search(query, passages, scope='historical')` or CLI `--scope historical`.
+JavaScript: `createRetriever(passages, {scope:'historical'})`. Historical mode
+returns research passages only; generation is prohibited by the CLI in that mode.
+No historical source is added to the allowlist by enabling this option.
+
+The browser, CLI and private endpoint now distinguish lexical candidates from
+assertions. `answer-policy-v1.json` contains seven finite, reviewed first-party
+statements and exact normalized question variants. For a recognized question, a
+separate source/section router finds its exact current supporting passage before
+adding lexical candidates. Otherwise the answer abstains even if lexical hits
+exist. The lexical benchmark remains unchanged; routed answers are measured
+separately. Wording remains in the quoted source language.
+
+Optional generation accepts only the exact approved statement and its supporting
+citation ID. Unsupported paraphrases, appended claims, real-but-irrelevant IDs,
+historical sources and identity conflations fail closed. This is intentionally
+restrictive: it is **not** a general semantic entailment engine and does not cover
+arbitrary valid questions. Extending the catalog requires source/claim review.
+
+`python -m rag.evaluate` reports 24 lexical cases (21 scored), 27 answer/abstention
+cases and nine malicious draft fixtures separately. Python tests and
+`node scripts/validate_rag_safety.mjs` also check temporal mutations, citation
+mutations and mocked provider adapters. No live model generation or provider
+accuracy is evaluated. A passing internal suite does not demonstrate external
+AI recognition, ranking, ownership or legal status.

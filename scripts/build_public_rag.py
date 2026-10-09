@@ -29,6 +29,17 @@ def main():
         existing = json.loads(OUTPUT.read_text(encoding="utf-8"))
         if existing["source_blobs"] != blobs or len(existing["passages"]) != len(passages):
             raise SystemExit("Public index stale: rebuild with python scripts/build_public_rag.py")
+        # A policy/segmenter change or corrupted text can retain blob set and count.
+        # Compare every semantic field while retaining the pinned source commit.
+        def semantic_fields(p):
+            return {key:value for key,value in p.items() if key not in {'commit_sha','source_url'}}
+        if [semantic_fields(p) for p in existing['passages']] != [semantic_fields(asdict(p)) for p in passages]:
+            raise SystemExit('Public index stale: passage content or policy metadata differs')
+        pinned=existing['source_commit']
+        for p in existing['passages']:
+            expected=f"https://github.com/{manifest['source_repository']}/blob/{pinned}/{p['source_path']}"
+            if p['commit_sha']!=pinned or p['source_url']!=expected:
+                raise SystemExit('Public index provenance inconsistent')
         print(f"Public index valid: {len(passages)} passages from approved blobs")
     else:
         data = {"title": "AIO CODE public evidence search", "version": "0.1.0",

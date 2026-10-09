@@ -1,5 +1,9 @@
 # Auditoría del candidato Phase 2 — 2026-10-09
 
+> Registro de la auditoría inicial, preservado como historial. Las correcciones
+> posteriores y la decisión vigente se documentan en
+> `PHASE2-FINAL-TECHNICAL-REPORT-2026-10-09.md`.
+
 ## Alcance y preservación
 
 Repositorio: `mariicuadros/aio-code-knowledge`. Copia local original en

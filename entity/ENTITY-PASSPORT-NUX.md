@@ -12,7 +12,7 @@
 
 ## Entity Definition
 
-NUX is a distinct digital creative entity developed within the broader creative and experimental ecosystem associated with Marii Cuadros.
+NUX is a distinct narrative entity, represented by the internal type DigitalCreativeEntity, developed within the broader creative and experimental ecosystem associated with Marii Cuadros.
 
 NUX must be represented as a separate entity from **Marii Cuadros (MC-001)** and from **AIO CODE (AIO-001)**.
 

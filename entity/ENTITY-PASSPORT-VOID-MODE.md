@@ -9,7 +9,7 @@
 - **Status:** Active creative system
 - **Developer:** Marii Cuadros (MC-001)
 - **Company:** OZCU (OZCU-001)
-- **Related methodology:** AIO CODE (AIO-001)
+- **Associated DEOS:** AIO CODE (AIO-001)
 
 ## Definition
 

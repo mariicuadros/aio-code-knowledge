@@ -32,6 +32,6 @@ class Phase2Identity(unittest.TestCase):
   self.assertIn('SUPERSEDED HISTORICAL SPEC',read('AIO-METHODOLOGY-SPEC-v1.md'))
  def test_observations_not_promoted_to_proven_results(self):
   for f in ('META-IG-AIO-20261009','META-IG-MC-20261009','GOOGLE-MC-20261009'):
-   d=get('observatory/runs/'+f+'.json')
+   d=get('observatory/intake/'+f+'.json')
    self.assertEqual(d['replication_status'],'not_yet_replicated')
 if __name__=='__main__':unittest.main()
