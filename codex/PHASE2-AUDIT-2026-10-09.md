@@ -97,6 +97,23 @@ Hallazgos pendientes:
 - Escaneo heurístico de patrones de credenciales sobre archivos versionados:
   no sustituye una auditoría de secretos ni valida variables privadas.
 
+### Bloqueo confirmado en CI
+
+La ejecución Linux https://github.com/mariicuadros/aio-code-knowledge/actions/runs/37989306322
+falló en `Validate canonical contracts before merge`: `validate_core.py` rechaza
+`observatory/runs/GOOGLE-MC-20261009.json` porque falta `timestamp`.
+Las tres observaciones nuevas tienen el mismo formato resumido y tampoco aportan
+los campos completos del contrato de runs (entidad, prompt registrado, contexto,
+snapshot inmutable, ventana de investigación y evaluación, entre otros).
+No es un fallo de la DLL local: es una incompatibilidad real del candidato con
+`observatory/observation-schema.json`. Los siguientes pasos de CI no se ejecutaron.
+
+**Prioridad alta; bloquea integrar el PR.** Se conserva el contenido recibido para
+revisión, sin fabricar hora, prompt, contexto ni evidencia. Resolver aportando
+registros completos auténticos, o diseñando un contrato separado de intake para
+resúmenes no replicados que no cuenten como runs de benchmark. No se debilita el
+schema actual ni se excluyen silenciosamente archivos para hacer pasar CI.
+
 ## Verificaciones remotas de solo lectura
 
 Home, ficha MC-001, robots, sitemap y RAG respondieron HTTP 200 en las URLs
