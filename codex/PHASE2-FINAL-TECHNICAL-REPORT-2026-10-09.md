@@ -1,3 +1,5 @@
+> Registro histórico anterior a la adopción oficial de OZCU como empresa desarrolladora. Para el estado vigente, consultar `OZCU-OFFICIAL-INTEGRATION-REPORT-2026-10-09.md`. Los resultados de esta auditoría conservan su fecha y alcance originales.
+
 # Phase 2 — correcciones técnicas finales del PR #13
 
 Repositorio: `mariicuadros/aio-code-knowledge`.

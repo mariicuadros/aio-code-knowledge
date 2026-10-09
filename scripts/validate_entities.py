@@ -21,6 +21,28 @@ def ld(path):
     html=(ROOT/path).read_text(encoding='utf-8')
     return json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',html,re.S)[1])
 
+def validate_ozcu_declaration(graph, passport, representations, social, rows):
+    edges={(e['from'],e['relationship'],e['to']) for e in graph['edges'] if e['status']=='active'}
+    assert ('MC-001','founder_of','OZCU-001') in edges,'Missing OZCU founder'
+    assert ('OZCU-001','develops','AIO-001') in edges,'Missing OZCU developer relation'
+    assert ('MC-001','creator_of','AIO-001') in edges,'Human creator must remain distinct'
+    assert '**Founder:** Marii Cuadros (MC-001)' in passport
+    assert 'officially adopted declared developer company/venture' in passport
+    assert 'legal formalization is pending' in passport.casefold()
+    assert 'does not assert legal incorporation or registration' in passport
+    for representation in representations:
+        company=representation['contributor']
+        assert company['@type']=='Organization' and company['identifier']=='OZCU-001' and company['name']=='OZCU'
+        assert company['founder']['@id']==representation['creator']['@id']
+        assert company['founder']['name']=='Marii Cuadros'
+        assert 'declared developer' in company['description'] and 'legal formalization pending' in company['description']
+        assert not any(k in company for k in ['sameAs','url','legalName','taxID','vatID']),'Unverified OZCU identity or legal identifier'
+    note=next(e['notes'] for e in social['entities'] if e['entity_id']=='OZCU-001')
+    assert 'developer' in note and 'legal formalization pending' in note
+    row=next(r for r in rows if r['entity_id']=='OZCU-001')
+    assert 'declared developer company/venture' in row['description']
+    assert 'legal formalization is pending' in row['description'].casefold()
+
 def validate_entities():
     graph=read('entity-graph.json');nodes={n['entity_id']:n for n in graph['nodes']}
     assert set(nodes)==set(EXPECTED),'Canonical entity set changed'
@@ -59,6 +81,7 @@ def validate_entities():
     current_claims=[json.loads(p.text) for p in passages if p.source_path=='claim-ledger.json']
     assert all(c['claim_status']=='active' for c in current_claims)
     rows=build_rows()
+    validate_ozcu_declaration(graph,(ROOT/nodes['OZCU-001']['passport']).read_text(encoding='utf-8'),[aio,schema[1]],social,rows)
     assert {r['entity_id'] for r in rows}==set(nodes)
     for row in rows:
         assert (row['canonical_name'],row['entity_type'])==EXPECTED[row['entity_id']]

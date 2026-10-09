@@ -79,7 +79,7 @@ The current published index contains 171 passages from 18 exact allowlisted file
 
 ## Phase 2 technical correction — October 9, 2026
 
-The candidate index has 173 passages from 18 allowlisted sources. The dated counts
+The pre-OZCU-adoption candidate index had 173 passages from 18 allowlisted sources. The dated counts
 above are historical. Intake summaries remain outside this corpus and HF exports.
 
 `canonical_or_historical` is the metadata **field**. Retrieval treats its values
@@ -99,7 +99,7 @@ returns research passages only; generation is prohibited by the CLI in that mode
 No historical source is added to the allowlist by enabling this option.
 
 The browser, CLI and private endpoint now distinguish lexical candidates from
-assertions. `answer-policy-v1.json` contains seven finite, reviewed first-party
+assertions. `answer-policy-v1.json` contains eight finite, reviewed first-party
 statements and exact normalized question variants. For a recognized question, a
 separate source/section router finds its exact current supporting passage before
 adding lexical candidates. Otherwise the answer abstains even if lexical hits
@@ -112,9 +112,13 @@ historical sources and identity conflations fail closed. This is intentionally
 restrictive: it is **not** a general semantic entailment engine and does not cover
 arbitrary valid questions. Extending the catalog requires source/claim review.
 
-`python -m rag.evaluate` reports 24 lexical cases (21 scored), 27 answer/abstention
-cases and nine malicious draft fixtures separately. Python tests and
+`python -m rag.evaluate` reports 24 lexical cases (21 scored), 36 answer/abstention
+cases and twelve malicious draft fixtures separately. Python tests and
 `node scripts/validate_rag_safety.mjs` also check temporal mutations, citation
 mutations and mocked provider adapters. No live model generation or provider
 accuracy is evaluated. A passing internal suite does not demonstrate external
 AI recognition, ranking, ownership or legal status.
+
+## OZCU official developer adoption — October 9, 2026
+
+The current passport and graph adopt OZCU as the declared official developer company/venture, founded by Marii Cuadros, with legal formalization pending. Source passages and reviewed answers supersede the reserve characterization; historical observations are unchanged. The eight assertions include a reviewed founder/developer/legal-boundary declaration with six question variants. Three additional questions about unverified social accounts, legal certification and similarly named organizations abstain. Three draft fixtures reject incorporation claims, the superseded reserve characterization and a reversed developer relationship. The current passage count and pinned source commit are recorded in `public-index-v0.json`. Local HF export rows are regenerated from these passports and graph; no dataset was published.

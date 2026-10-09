@@ -25,7 +25,7 @@ configs:
 
 This dataset provides a controlled, machine-readable index of the entities defined in the public OZCU and AIO CODE project records.
 
-**AIO CODE** is the primary public Digital Entity Operating System developed by Marii Cuadros; its research methodology is one internal component. **OZCU** is the reserve venture layer. **VOID MODE** is a distinct creative system for artists. The dataset keeps these identities distinct and records their relationships.
+**AIO CODE** is the primary public Digital Entity Operating System developed by Marii Cuadros; its research methodology is one internal component. **OZCU** is the officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros, with legal formalization pending. **VOID MODE** is a distinct creative system for artists. The dataset keeps these identities distinct and records their relationships.
 
 Hugging Face Dataset Viewer is configured to load only data/entities.jsonl. Versioned source artifacts are retained under source-artifacts/; they are not viewer rows.
 

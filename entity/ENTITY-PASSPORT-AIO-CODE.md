@@ -7,10 +7,11 @@
 - **Entity ID:** AIO-001
 - **Entity Type:** DigitalEntityOperatingSystem
 - **Status:** Active
-- **Passport Version:** 4.0
+- **Passport Version:** 4.1
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-09-27
+- **Last Updated:** 2026-10-09
 - **Creator / Developer:** Marii Cuadros (MC-001)
+- **Official declared developer company:** OZCU (OZCU-001); legal formalization pending
 - **Applied by:** OZCU (OZCU-001)
 
 ---
@@ -31,11 +32,12 @@ AIO CODE is not a computer operating system, finished SaaS product, AI model, ch
 
 ```text
 Marii Cuadros (MC-001) ── creator_of → AIO CODE (AIO-001)
+OZCU (OZCU-001) ── develops → AIO CODE (AIO-001)
 OZCU (OZCU-001) ── applies → AIO CODE (AIO-001)
 AIO CODE (AIO-001) ── includes_creative_system → VOID MODE (VOID-001)
 ```
 
-These relationships are defined in the canonical entity records. AIO CODE is the primary public/project brand and a digital entity operating system. OZCU is the venture layer and reserve corporate identity. VOID MODE is AIO CODE’s associated creative system for artists.
+These relationships are defined in the canonical entity records. AIO CODE is the primary public/project brand and a digital entity operating system. OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending. VOID MODE is AIO CODE’s associated creative system for artists.
 
 ---
 
@@ -252,7 +254,7 @@ Supporting rules:
 
 **Entity ID:** AIO-001  
 **Entity Type:** DigitalEntityOperatingSystem
-**Passport Version:** 4.0
+**Passport Version:** 4.1
 **Last Updated:** 2026-09-28
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros  

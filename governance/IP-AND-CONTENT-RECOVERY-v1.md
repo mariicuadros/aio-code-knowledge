@@ -92,7 +92,7 @@ No jurisdiction, class, legal owner, filing, or registration is asserted by this
 
 ## 9. Current project facts and open verification
 
-- AIO CODE remains the primary public/project brand through at least 2027; OZCU is the venture/company layer and reserve corporate identity.
+- AIO CODE remains the primary public/project brand through at least 2027; OZCU is the declared developer company/venture of AIO CODE, with legal formalization pending.
 - The MC-001 baseline is frozen partially at 14/49. It is not a clean pre-content baseline. Future releases need their own logged Changeset/Intervention and a dated follow-up; do not attribute changes causally without a suitable comparison.
 - The repository contains a VOID MODE Season 1 outline, a rights/provenance template, and separate MC-001 content registries. Existing public-post assets must be checked individually; filenames alone do not settle publication, ownership, or license status.
 - Still to verify with the creator/legal professional: asset-by-asset rights holders, co-author/performer agreements, AI tool records and terms for actual outputs, account custodians/recovery routes, private backup location and successful restore, trademark owner/jurisdiction/classes, and any filing or registration evidence.

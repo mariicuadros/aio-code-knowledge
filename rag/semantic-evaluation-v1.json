@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "scope": "Deterministic reviewed answers and adversarial draft rejection, no live model calls or general entailment benchmark.",
   "cases": [
     {
@@ -16,7 +16,7 @@
       "query": "¿Quién es Marii Cuadros?",
       "expected": "supported_reviewed_answer",
       "claim_id": "MC-PERSON",
-      "answer": "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001)."
+      "answer": "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001)."
     },
     {
       "case_id": "SUPPORTED-NUX-NARRATIVE",
@@ -32,7 +32,7 @@
       "query": "¿Qué es VOID MODE?",
       "expected": "supported_reviewed_answer",
       "claim_id": "VOID-CREATIVE",
-      "answer": "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the reserve company/venture layer."
+      "answer": "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending."
     },
     {
       "case_id": "SUPPORTED-OZCU-VENTURE",
@@ -40,7 +40,7 @@
       "query": "¿Qué es OZCU?",
       "expected": "supported_reviewed_answer",
       "claim_id": "OZCU-VENTURE",
-      "answer": "OZCU is a digital marketing and optimization venture focused on helping artists build coherent digital identities and creative systems. OZCU applies AIO CODE to structure, document and observe digital entities across public sources, search and AI systems. It applies VOID MODE to develop an artist’s visual and narrative identity."
+      "answer": "OZCU (OZCU-001) is the officially adopted declared developer company/venture of AIO CODE (AIO-001), founded by Marii Cuadros (MC-001). Its legal formalization is pending. Its digital marketing and optimization work focuses on helping artists build coherent digital identities and creative systems. OZCU develops and applies AIO CODE, the Digital Entity Operating System and primary public brand, and applies VOID MODE as a distinct creative system for artists."
     },
     {
       "case_id": "SUPPORTED-OZCU-LEGAL-BOUNDARY",
@@ -48,7 +48,7 @@
       "query": "¿El pasaporte de OZCU acredita su constitución jurídica?",
       "expected": "supported_reviewed_answer",
       "claim_id": "OZCU-LEGAL-BOUNDARY",
-      "answer": "This passport records the venture identity and does not assert legal incorporation or registration."
+      "answer": "OZCU is an officially adopted declared business identity; legal formalization is pending. This passport records the venture identity and does not assert legal incorporation or registration."
     },
     {
       "case_id": "SUPPORTED-ENTITY-BOUNDARIES",
@@ -56,7 +56,7 @@
       "query": "¿Son OZCU, AIO CODE y VOID MODE la misma entidad?",
       "expected": "supported_reviewed_answer",
       "claim_id": "ENTITY-BOUNDARIES",
-      "answer": "OZCU is a distinct venture identity and reserve corporate option. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another."
+      "answer": "OZCU is the distinct officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros; its legal formalization is pending. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another."
     },
     {
       "case_id": "ABSTAIN-01",
@@ -177,6 +177,72 @@
       "category": "uncovered",
       "query": "Explain every feature of AIO CODE in detail.",
       "expected": "no_evidence"
+    },
+    {
+      "case_id": "OZCU-DECLARATION-1",
+      "category": "official_developer_identity",
+      "query": "¿Quién fundó OZCU?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-DECLARATION-2",
+      "category": "official_developer_identity",
+      "query": "Who founded OZCU?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-DECLARATION-3",
+      "category": "official_developer_identity",
+      "query": "¿Qué relación existe entre OZCU y AIO CODE?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-DECLARATION-4",
+      "category": "official_developer_identity",
+      "query": "What is the relationship between OZCU and AIO CODE?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-DECLARATION-5",
+      "category": "official_developer_identity",
+      "query": "¿Cuál es la empresa desarrolladora de AIO CODE?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-DECLARATION-6",
+      "category": "official_developer_identity",
+      "query": "¿La identidad empresarial oficial de OZCU implica constitución jurídica?",
+      "expected": "supported_reviewed_answer",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+    },
+    {
+      "case_id": "OZCU-ABSTAIN-1",
+      "category": "ozcu_unverified_external_identity",
+      "query": "¿OZCU es la misma entidad que cualquier empresa con nombre similar?",
+      "expected": "no_evidence"
+    },
+    {
+      "case_id": "OZCU-ABSTAIN-2",
+      "category": "ozcu_unverified_external_identity",
+      "query": "¿Cuál es la cuenta de Instagram oficial de OZCU?",
+      "expected": "no_evidence"
+    },
+    {
+      "case_id": "OZCU-ABSTAIN-3",
+      "category": "ozcu_unverified_external_identity",
+      "query": "¿OZCU está certificada legalmente?",
+      "expected": "no_evidence"
     }
   ],
   "draft_rejections": [
@@ -215,6 +281,21 @@
     {
       "claim_id": "MC-PERSON",
       "answer": "The Instagram aiocode_ is Marii Cuadros, verified by Meta."
+    },
+    {
+      "case_id": "OZCU-INVALID-1",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "OZCU is legally incorporated and certified."
+    },
+    {
+      "case_id": "OZCU-INVALID-2",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "OZCU is only a reserve corporate identity."
+    },
+    {
+      "case_id": "OZCU-INVALID-3",
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "answer": "AIO CODE is the developer company of OZCU."
     }
   ]
 }

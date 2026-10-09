@@ -2,7 +2,7 @@
 
 **Status:** FROZEN v1 architecture specification  
 **Primary public brand:** AIO CODE  
-**Company/venture layer:** OZCU (reserve corporate identity)  
+**Company/venture layer:** OZCU (official declared developer company/venture; legal formalization pending)
 **Phase-1 designation:** AIO CODE system/methodology; current phase-2 top-level type is `DigitalEntityOperatingSystem` (see `AIO-CODE-SYSTEM-SPEC-v2.md`)
 **Creative system:** VOID MODE  
 **Reference case:** MC-001 (Marii Cuadros)  
@@ -14,13 +14,13 @@ AIO CODE Brain is the operating layer that keeps entity identity, content proven
 
 ## Canonical identity and namespaces
 
-Public content signature: `AIO CODE — VOID MODE — MC`. Keep OZCU as the company/venture layer and reserve corporate identity through 2027; it is not the primary public/project brand.
+Public content signature: `AIO CODE — VOID MODE — MC`. Keep OZCU as the company/officially adopted declared developer company/venture of AIO CODE, with legal formalization pending through 2027; it is not the primary public/project brand.
 
 Use the existing repository conventions: `/entity/` is canonical; `/entities/<slug>/` is operational. Do not create a competing entity namespace.
 
 Canonical entity IDs and identity relationships:
 
-- `OZCU-001` — company/venture layer; reserve corporate identity.
+- `OZCU-001` — declared developer company/venture of AIO CODE; legal formalization pending.
 - `AIO-001` — AIO CODE system/methodology, created and directed by the human creator behind MC-001.
 - `VOID-001` — VOID MODE creative system, created and directed by the human creator behind MC-001.
 - `MC-001` — Marii Cuadros, the public/artistic identity of the human creator María Alejandra Cuadros Lozada. `Marii Cuadros` and the human creator are the same underlying person, not two separate real-person entities.

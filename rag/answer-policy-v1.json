@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "mode": "finite_reviewed_assertions",
   "scope": "First-party identity only. Exact normalized query match, exact approved answer, current evidence and correct supporting citation required. Other queries abstain. Not a general entailment model.",
   "claims": [
@@ -23,11 +23,11 @@
         "¿Quién es Marii Cuadros?",
         "Who is Marii Cuadros?"
       ],
-      "answer": "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).",
+      "answer": "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).",
       "source_path": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
       "locator": "Entity Definition",
       "required_fragments": [
-        "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001)."
+        "Marii Cuadros is a creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001)."
       ]
     },
     {
@@ -49,11 +49,11 @@
         "¿Qué es VOID MODE?",
         "What is VOID MODE?"
       ],
-      "answer": "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the reserve company/venture layer.",
+      "answer": "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending.",
       "source_path": "entity/ENTITY-PASSPORT-VOID-MODE.md",
       "locator": "Definition",
       "required_fragments": [
-        "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the reserve company/venture layer."
+        "VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending."
       ]
     },
     {
@@ -62,11 +62,11 @@
         "¿Qué es OZCU?",
         "What is OZCU?"
       ],
-      "answer": "OZCU is a digital marketing and optimization venture focused on helping artists build coherent digital identities and creative systems. OZCU applies AIO CODE to structure, document and observe digital entities across public sources, search and AI systems. It applies VOID MODE to develop an artist’s visual and narrative identity.",
+      "answer": "OZCU (OZCU-001) is the officially adopted declared developer company/venture of AIO CODE (AIO-001), founded by Marii Cuadros (MC-001). Its legal formalization is pending. Its digital marketing and optimization work focuses on helping artists build coherent digital identities and creative systems. OZCU develops and applies AIO CODE, the Digital Entity Operating System and primary public brand, and applies VOID MODE as a distinct creative system for artists.",
       "source_path": "entity/ENTITY-PASSPORT-OZCU.md",
       "locator": "Definition",
       "required_fragments": [
-        "OZCU is a digital marketing and optimization venture focused on helping artists build coherent digital identities and creative systems. OZCU applies AIO CODE to structure, document and observe digital entities across public sources, search and AI systems. It applies VOID MODE to develop an artist’s visual and narrative identity."
+        "OZCU (OZCU-001) is the officially adopted declared developer company/venture of AIO CODE (AIO-001), founded by Marii Cuadros (MC-001). Its legal formalization is pending. Its digital marketing and optimization work focuses on helping artists build coherent digital identities and creative systems. OZCU develops and applies AIO CODE, the Digital Entity Operating System and primary public brand, and applies VOID MODE as a distinct creative system for artists."
       ]
     },
     {
@@ -74,11 +74,11 @@
       "queries": [
         "¿El pasaporte de OZCU acredita su constitución jurídica?"
       ],
-      "answer": "This passport records the venture identity and does not assert legal incorporation or registration.",
+      "answer": "OZCU is an officially adopted declared business identity; legal formalization is pending. This passport records the venture identity and does not assert legal incorporation or registration.",
       "source_path": "entity/ENTITY-PASSPORT-OZCU.md",
       "locator": "Canonical Identity",
       "required_fragments": [
-        "This passport records the venture identity and does not assert legal incorporation or registration."
+        "OZCU is an officially adopted declared business identity; legal formalization is pending. This passport records the venture identity and does not assert legal incorporation or registration."
       ]
     },
     {
@@ -86,11 +86,28 @@
       "queries": [
         "¿Son OZCU, AIO CODE y VOID MODE la misma entidad?"
       ],
-      "answer": "OZCU is a distinct venture identity and reserve corporate option. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another.",
+      "answer": "OZCU is the distinct officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros; its legal formalization is pending. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another.",
       "source_path": "entity/ENTITY-PASSPORT-OZCU.md",
       "locator": "Semantic Boundaries",
       "required_fragments": [
-        "OZCU is a distinct venture identity and reserve corporate option. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another."
+        "OZCU is the distinct officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros; its legal formalization is pending. AIO CODE is the primary public/project brand and a distinct digital entity operating system developed by Marii Cuadros. VOID MODE is a distinct creative system developed by Marii and associated with AIO CODE. None of these names is an alias for another."
+      ]
+    },
+    {
+      "claim_id": "OZCU-FOUNDER-DEVELOPER",
+      "queries": [
+        "¿Quién fundó OZCU?",
+        "Who founded OZCU?",
+        "¿Qué relación existe entre OZCU y AIO CODE?",
+        "What is the relationship between OZCU and AIO CODE?",
+        "¿Cuál es la empresa desarrolladora de AIO CODE?",
+        "¿La identidad empresarial oficial de OZCU implica constitución jurídica?"
+      ],
+      "answer": "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending.",
+      "source_path": "entity/ENTITY-PASSPORT-OZCU.md",
+      "locator": "Founder and Developer Declaration",
+      "required_fragments": [
+        "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
       ]
     }
   ]

@@ -8,7 +8,7 @@
       "entity_id": "OZCU-001",
       "canonical_name": "OZCU",
       "platform_registry": null,
-      "notes": "Company/venture layer and reserve corporate identity; AIO CODE remains the primary public/project brand through 2027. No official OZCU profile is recorded in this map yet."
+      "notes": "Officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros (MC-001), with legal formalization pending. AIO CODE remains the primary public/project brand. No official OZCU profile is recorded in this map yet."
     },
     {
       "entity_id": "MC-001",
@@ -85,7 +85,7 @@
     "email": "aiocodeadmin@gmail.com"
   },
   "rule": "The entity-specific platform registries are the source for platform representation records. This map provides the cross-entity index. A platform presence is a representation node, not proof of entity resolution by an external AI or search system.",
-  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and Digital Entity Operating System through 2027; its methodology is an internal component. OZCU is the venture layer and reserve corporate identity; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified.",
+  "data_integrity": "Keep OZCU-001, MC-001, AIO-001, VOID-001 and NUX-001 distinct. AIO CODE is the primary public/project brand and Digital Entity Operating System through 2027; its methodology is an internal component. OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending; VOID MODE is the creative system for artists. Do not infer platform profiles that have not been verified.",
   "public_asset_inventory_ref": "public-assets-v1.json",
   "asset_categories": [
     {
