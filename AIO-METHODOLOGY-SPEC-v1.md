@@ -8,6 +8,8 @@
 
 > **Phase-2 reading:** This v1 document preserves the method as originally defined. Its statements classifying AIO-001 itself as `ResearchMethodology` were superseded by the dated phase-2 system decision. The procedure and evidence boundaries remain usable; consult the v2 system specification for the current top-level entity type. Do not rewrite this document as if phase 1 had used the newer name.
 
+> **CANONICAL STATUS: SUPERSEDED HISTORICAL SPEC.** Do not ingest as the present definition of AIO-001. Present canonical type: Digital Entity Operating System (DEOS), specified by `AIO-CODE-SYSTEM-SPEC-v2.md`. The methodology described below is an internal subsystem, not AIO CODE itself.
+
 ## 1. Definition
 
 AIO CODE is the methodology developed by Marii Cuadros and applied by OZCU. It is a **research and implementation methodology** for structuring digital entities, documenting claims and relationships, and observing how third-party AI/search systems retrieve, resolve, represent, cite and potentially recommend those entities over time.

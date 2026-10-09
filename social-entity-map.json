@@ -1,7 +1,7 @@
 {
   "map": "OZCU Social Entity Map",
   "version": "2.3",
-  "updated": "2026-09-28",
+  "updated": "2026-10-09",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
     {
@@ -220,5 +220,6 @@
         "MC-001"
       ]
     }
-  ]
+  ],
+  "identity_equivalence_rule": "A shared publication channel is a content/distribution relationship, not automatically sameAs for every referenced entity. Official status in this file is a first-party declaration, not third-party verification."
 }

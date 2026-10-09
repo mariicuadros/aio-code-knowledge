@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-09",
+  "policy": "A search co-occurrence is not evidence of identity. Excluded entities are not aliases, sameAs, or graph nodes of MC-001. This registry documents observed ambiguity; do not presume search-engine internals.",
+  "records": [
+    {
+      "record_id": "CONF-MLC-001",
+      "query": "marii cuadros",
+      "observed_label": "Cuadros María Luisa",
+      "relation_to_mc001": "not_same_entity",
+      "source": "User-supplied Google AI Overview screenshot dated 2026-10-09",
+      "status": "observed_response_conflation",
+      "confidence_scope": "The response mixed unrelated descriptions; not evidence of a merged Google Knowledge Graph record."
+    },
+    {
+      "record_id": "CONF-MCH-001",
+      "query": "marii cuadros",
+      "observed_label": "Mari Chordà",
+      "relation_to_mc001": "not_same_entity",
+      "source": "User-supplied Instagram / Meta AI screenshot dated 2026-10-09",
+      "status": "observed_response_mismatch"
+    }
+  ]
+}

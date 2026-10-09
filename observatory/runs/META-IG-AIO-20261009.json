@@ -1,0 +1,12 @@
+{
+  "observation_id": "META-IG-AIO-20261009",
+  "date": "2026-10-09",
+  "query": "aio code",
+  "platform": "Instagram search with Meta AI",
+  "observation": "Response discussed unrelated AIO hardware/software senses while account aiocode_ appeared in results.",
+  "evidence_type": "user_supplied_screenshot",
+  "evidence_location": "Separate conversation attachment; do not claim embedded image in repository",
+  "interpretation": "Observed displayed response only; no proof of internal knowledge graph merge, ingestion pathway, or causal mechanism.",
+  "replication_status": "not_yet_replicated",
+  "baseline_role": "phase2_social_ai_initial"
+}
