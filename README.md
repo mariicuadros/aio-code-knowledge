@@ -30,7 +30,7 @@ AIO CODE does **not** control third-party AI systems and does **not** guarantee 
 
 The public site includes `robots.txt`, `sitemap.xml`, JSON-LD and a controlled RAG corpus. A concise root `llms.txt` was added to the repository on 2026-09-28 and verified at the public URL with HTTP 200 after the September 29 deployment. It summarizes the canonical definition and public URLs; it does not create an indexing or citation guarantee. See `PUBLIC-DISCOVERY-SIGNALS.md` for the implementation boundary.
 
-`public-assets-v1.json` records the eighteen public asset categories and distinguishes identity profiles from publication channels, playlists, repositories and infrastructure. Its contract is `schemas/public-assets-v1.schema.json`; the historical Blogger theme is preserved at `blogger/theme-aio-code-20260928.xml`; the reviewed successor is `blogger/theme-aio-code-20261010.xml`, which remains unpublished until the live Blogger installation is backed up and explicitly approved. A link in the inventory records its stated source and relationship; it does not by itself prove external recognition.
+`public-assets-v1.json` records the eighteen public asset categories and distinguishes identity profiles from publication channels, playlists, repositories and infrastructure. Its contract is `schemas/public-assets-v1.schema.json`; the corresponding Blogger theme is versioned at `blogger/theme-aio-code-20260928.xml`. A link in the inventory records its stated source and relationship; it does not by itself prove external recognition.
 
 ## What is already implemented?
 
@@ -198,7 +198,7 @@ See `RAG-READINESS-AUDIT-2026-09-24.md` for the initial gap assessment. A first 
 
 The Observatory has a planned 49-pair first measurement window and local capture/report tools in `observatory/`. `MC-001-BASELINE-v1-20260925` is frozen **partially at 14/49**, with 35 pairs documented as missing. It is not complete coverage or a causal comparison. The separate OZCU post-intervention window is also prepared but awaits its 28 platform captures.
 
-Before controlled releases, `scripts/validate_core.py` checks schemas and canonical cross-references, while `scripts/audit_repository_integrity.py` traverses repository JSON/JSONL, internal paths, social identity mappings, vocabulary/schema enums and media file headers/manifests. Historical `ER-001` remains a legacy observation and is not silently converted to the new benchmark schema. Repository-only corrections are recorded in `governance/methodology-change-log.md`.
+Before the controlled Hugging Face export, `scripts/validate_core.py` checks the current JSON schemas and key canonical cross-references. Historical `ER-001` remains a legacy observation and is not silently converted to the new benchmark schema. Repository-only corrections are recorded in `governance/methodology-change-log.md`.
 
 ## Intervention governance
 
