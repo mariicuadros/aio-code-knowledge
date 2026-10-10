@@ -3,6 +3,8 @@ __pycache__/
 .env
 .env.*
 node_modules/
+/public/
+/.vercel/
 
 # AIO CODE security boundary — never commit private operational material here
 /private/

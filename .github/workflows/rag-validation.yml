@@ -16,6 +16,9 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
       - name: Validate canonical contracts before merge
         run: |
           python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'
@@ -34,12 +37,11 @@ jobs:
         run: python -m rag.evaluate
       - name: Check published evidence index freshness
         run: python scripts/build_public_rag.py --check
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
       - name: Validate gated AI SDK route
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           npm run check:gateway
           npm run check:precontent
           node scripts/validate_rag_safety.mjs
+      - name: Build explicit public website surface
+        run: npm run build

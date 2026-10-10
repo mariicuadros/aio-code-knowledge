@@ -49,8 +49,10 @@ def validate_configuration(workflows,vercel):
             assert name=='sync-huggingface.yml','Additional publisher requires explicit review'
             assert not publisher.search(json.dumps(w['jobs']['validate'])),'Publisher escaped manual approval job'
     enabled=vercel['git']['deploymentEnabled']
-    assert enabled['main'] is False and enabled['codex/phase2-reviewed-audit-20261009'] is False
-    assert all(v is False for v in enabled.values()),'Overlapping true Vercel rule could enable main'
+    if enabled is not False:
+        assert isinstance(enabled,dict),'Vercel Git deployments require false or an explicit blocked-branch map'
+        assert enabled.get('main') is False and enabled.get('codex/phase2-reviewed-audit-20261009') is False
+        assert all(v is False for v in enabled.values()),'Overlapping true Vercel rule could enable main'
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--request',action='store_true');args=parser.parse_args()
@@ -61,6 +63,6 @@ def main():
     import yaml
     workflows={p.name:yaml.load(p.read_text(encoding='utf-8'),Loader=yaml.BaseLoader) for p in (ROOT/'.github/workflows').iterdir() if p.suffix in {'.yml','.yaml'}}
     validate_configuration(workflows,json.loads((ROOT/'vercel.json').read_text(encoding='utf-8')))
-    print('Release safety valid: manual HF approval/main/SHA gates, no other repository workflow publisher, main and PR Vercel Git blocks. External project settings/hooks not verified here.')
+    print('Release safety valid: manual HF approval/main/SHA gates, no other repository workflow publisher, global false or explicit main/PR Vercel Git blocks. Effective platform activation and other branches not verified here.')
 
 if __name__=='__main__':main()
