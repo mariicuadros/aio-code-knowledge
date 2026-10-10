@@ -1,0 +1,148 @@
+{
+  "intake_id": "AI-CLAIMS-INTAKE-20261010-01",
+  "date": "2026-10-10",
+  "phase": 2,
+  "purpose": "Capture externally supplied AI explanations as hypotheses/test inputs without promoting self-reported provider internals to fact.",
+  "rule": "AI-generated mechanism explanations are observations. Provider behavior is promoted only when qualifying first-party documentation or direct first-party evidence is recorded.",
+  "inputs": [
+    {
+      "system": "DeepSeek",
+      "claims": [
+        {
+          "topic": "entity_resolution_alias_fragmentation",
+          "summary": "Entity/alias fragmentation and RAG chunk context loss were presented as retrieval risks.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "convert_to_entity-resolution and attribution test cases"
+        },
+        {
+          "topic": "citation_drift",
+          "summary": "Citation drift was described as attribution ambiguity in RAG outputs.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "measure visible source/entity attribution; do not assume internal cause"
+        },
+        {
+          "topic": "vector_proximity_manipulation",
+          "summary": "Suggested semantic proximity to major AI brands as a visibility tactic.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "reject as optimization rule; avoid false association/entity contamination"
+        }
+      ]
+    },
+    {
+      "system": "Gemini",
+      "claims": [
+        {
+          "topic": "context_caching",
+          "summary": "Context caching/long context was described as an indexing mechanism.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "do not treat context cache as public web index"
+        },
+        {
+          "topic": "multimodal_ingestion",
+          "summary": "Native multimodal processing and hybrid retrieval were described as model/retrieval capabilities.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "future internal retrieval research only; no external-indexing inference"
+        },
+        {
+          "topic": "query_fanout",
+          "summary": "Parallel subqueries/agents were described as retrieval architecture.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "use only as a test hypothesis unless provider-documented"
+        }
+      ]
+    },
+    {
+      "system": "Perplexity",
+      "claims": [
+        {
+          "topic": "PerplexityBot",
+          "summary": "PerplexityBot surfaces/links sites in search results and is distinct from user-triggered Perplexity-User.",
+          "evidence_state": "provider_documented",
+          "source_ref": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+          "action": "explicitly allow search crawler; observe crawler/fetch evidence separately"
+        },
+        {
+          "topic": "multi_surface_retrieval",
+          "summary": "Web search, direct URL reading, archives and repositories were presented as distinct retrieval surfaces.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "separate discovery from direct URL retrieval and archive/repository observations"
+        },
+        {
+          "topic": "AIO_CODE_type_error",
+          "summary": "Perplexity response described AIO CODE as a methodology.",
+          "evidence_state": "first_party_observed",
+          "action": "record as entity-type resolution failure; canonical type remains DigitalEntityOperatingSystem"
+        }
+      ]
+    },
+    {
+      "system": "Claude",
+      "claims": [
+        {
+          "topic": "alternative_indexes",
+          "summary": "Common Crawl, Wayback, independent search and repository indexes were proposed as alternative discovery surfaces.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "treat as surface-map candidates, verify individually before operational use"
+        }
+      ]
+    },
+    {
+      "system": "Grok",
+      "claims": [
+        {
+          "topic": "direct_url_vs_search",
+          "summary": "Direct page access was distinguished from indexed search discovery.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "maintain separate direct-url retrieval and discovery tests"
+        }
+      ]
+    },
+    {
+      "system": "Meta AI",
+      "claims": [
+        {
+          "topic": "account_identity_linkage",
+          "summary": "Claimed shared phone/email/device causes server-side public entity unification.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "do not use as fact or entity-resolution mechanism without Meta first-party evidence"
+        },
+        {
+          "topic": "first_party_ecosystem",
+          "summary": "Claimed Meta AI can use first-party public ecosystem content differently from external web retrieval.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "test observable Meta surfaces separately; no training inference"
+        },
+        {
+          "topic": "meta_crawler_names",
+          "summary": "Named meta-webindexer, Meta-ExternalAgent and Meta-ExternalFetcher with distinct roles.",
+          "evidence_state": "ai_reported_unverified",
+          "action": "do not encode provider-specific robots rules until first-party documentation is verified"
+        }
+      ]
+    },
+    {
+      "system": "OpenAI documentation",
+      "claims": [
+        {
+          "topic": "OAI-SearchBot",
+          "summary": "OAI-SearchBot is used for ChatGPT search discovery; GPTBot training controls are separate; ChatGPT-User is user-triggered.",
+          "evidence_state": "provider_documented",
+          "source_ref": "https://developers.openai.com/api/docs/bots",
+          "action": "explicitly allow OAI-SearchBot and keep search/training policies distinct"
+        }
+      ]
+    },
+    {
+      "system": "IndexNow documentation",
+      "claims": [
+        {
+          "topic": "change_notification",
+          "summary": "IndexNow accepts URL-change notifications after host ownership verification; HTTP acceptance only confirms receipt/acceptance state and does not prove indexing.",
+          "evidence_state": "provider_documented",
+          "source_ref": "https://www.indexnow.org/documentation",
+          "action": "implement after Blogger canonical update and log request/response/timestamp"
+        }
+      ]
+    }
+  ]
+}
