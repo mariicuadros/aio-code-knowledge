@@ -40,6 +40,8 @@ These entities are distinct. A relationship between entities must be explicit; a
 
 - **Entity Type:** Person
 - **Canonical Name:** Marii Cuadros
+- **Owner-declared Full Name:** Maria Alejandra Cuadros Lozada (same person, MC-001)
+- **Professional Roles:** Digital strategist, artist, creator, digital model, independent researcher
 - **Role in AIO CODE:** Creator, researcher and primary human case entity
 - **Passport:** `entity/ENTITY-PASSPORT-MARII-CUADROS.md`
 - **Content Registry:** `entity/content/MC-001/content-registry.json`
@@ -68,7 +70,7 @@ These entities are distinct. A relationship between entities must be explicit; a
 - **Full Name:** Artificial Intelligence Optimization Code
 - **Role in ecosystem:** Coordinated system for digital entity identity, evidence, provenance, content, observation and operations; includes a research and implementation methodology
 - **Status:** Phase-2 operating architecture in development; implemented parts and unproven outcomes are separated in the system specification
-- **Validation Mode:** Experimental / iterative
+- **Validation Mode:** Operational Phase 2; individual claims and experiments retain their distinct validation states
 - **Passport:** `entity/ENTITY-PASSPORT-AIO-CODE.md`
 - **Platform Registry:** `entity/content/AIO-001/platforms.json`
 - **Public IP and Method Boundaries:** `PUBLIC-IP-AND-METHOD-BOUNDARIES.md`
@@ -167,7 +169,7 @@ A social profile is treated as a representation node. Its existence does not by 
 
 ## 10. AI + Social Baseline
 
-`ai-social-baseline.json` is the container for a dated observation baseline across AI systems, search environments and social platforms. Its empirical `records` array is currently empty and its freeze status is `not_frozen`; it does not yet establish a measured pre-intervention state. Earlier public activity cannot be reconstructed as though it had not happened. A later baseline must identify its actual cutoff date and the interventions it precedes.
+`ai-social-baseline.json` is the container for a dated observation baseline across AI systems, search environments and social platforms. Its historical MC-001 post-intervention window is frozen **partially** at 14 captured of 49 planned system–prompt pairs, with 35 explicitly missing. This is capture coverage, not a recognition pass rate, and not a pre-intervention benchmark. Earlier public activity cannot be reconstructed as though it had not happened. A later baseline must identify its actual cutoff date and the interventions it precedes.
 
 Baseline records preserve:
 
