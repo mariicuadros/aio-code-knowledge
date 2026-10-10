@@ -25,7 +25,7 @@ configs:
 
 This dataset provides a controlled, machine-readable index of the entities defined in the public OZCU and AIO CODE project records.
 
-**AIO CODE** is the primary public Digital Entity Operating System developed by Marii Cuadros; its research methodology is one internal component. **OZCU** is the reserve venture layer. **VOID MODE** is a distinct creative system for artists. The dataset keeps these identities distinct and records their relationships.
+**AIO CODE** is the primary public Digital Entity Operating System developed by Marii Cuadros; its research methodology is one internal component. **OZCU** is the officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros, with legal formalization pending. **VOID MODE** is a distinct creative system for artists. The dataset keeps these identities distinct and records their relationships.
 
 Hugging Face Dataset Viewer is configured to load only data/entities.jsonl. Versioned source artifacts are retained under source-artifacts/; they are not viewer rows.
 
@@ -44,6 +44,8 @@ The MC-001 Observatory snapshot frozen on 2026-09-25 contains 14 observed pairs 
 ## Source and synchronization
 
 GitHub is the source of truth. A controlled GitHub Actions workflow validates canonical data contracts, builds the entity rows from the graph and passports, uploads only the configured JSONL table for viewing, and retains the source artifacts separately.
+
+Publication is separate from merging: `sync-huggingface.yml` accepts only a manual `workflow_dispatch` on `main` with its full approved commit SHA. `publish_approved` defaults to false, which validates and prepares a temporary GitHub artifact without Hugging Face access. Setting it to true after explicit founder authorization permits the separate publish job to update both `mariicuadros/aio-code-entities` and `mariicuadros/aio-code-journal`. Pushes and merges do not trigger this workflow. No remote file deletion is requested. See `codex/SAFE-MERGE-PR13-2026-10-09.md` for the integration checklist and remaining external configuration checks.
 
 ## Evidence and use
 

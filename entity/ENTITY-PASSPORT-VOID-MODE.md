@@ -9,11 +9,11 @@
 - **Status:** Active creative system
 - **Developer:** Marii Cuadros (MC-001)
 - **Company:** OZCU (OZCU-001)
-- **Related methodology:** AIO CODE (AIO-001)
+- **Associated DEOS:** AIO CODE (AIO-001)
 
 ## Definition
 
-VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the reserve company/venture layer.
+VOID MODE is the artist’s visual and expressive ecosystem within AIO CODE, developed from the artist’s own creative material. It can include music, video production, wardrobe, playlists, YouTube and the artist’s visual world without limiting the artist to a single category. Marii Cuadros created the reference implementation as her artistic work and as an AIO CODE test environment; these creative and research roles remain distinct. Reusability for other artists and organizations is an architectural objective, not demonstrated market validation. AIO CODE remains the primary public brand; OZCU is the officially adopted declared developer company/venture of AIO CODE, with legal formalization pending.
 
 ## Canonical Relationships
 

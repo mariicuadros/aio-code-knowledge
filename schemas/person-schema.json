@@ -87,7 +87,18 @@
           "@type": "Dataset",
           "url": "https://huggingface.co/datasets/mariicuadros/aio-code-entities"
         }
-      ]
+      ],
+      "contributor": {
+        "@type": "Organization",
+        "identifier": "OZCU-001",
+        "name": "OZCU",
+        "description": "Officially adopted declared developer company/venture of AIO CODE; legal formalization pending.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001",
+          "name": "Marii Cuadros"
+        }
+      }
     }
   ]
 }

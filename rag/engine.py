@@ -141,15 +141,27 @@ def build_index(root: Path = ROOT) -> tuple[str, list[Passage]]:
                 commit_sha=commit, document_version_or_unknown=version,
                 entity_id_or_null=ids[0] if len(ids) == 1 else None,
                 claim_ids_or_empty=claim_ids, published_at_or_unknown=date,
-                visibility=item["visibility"], evidence_state_or_not_applicable=state,
-                canonical_or_historical=item["canonical_or_historical"],
+                visibility=item.get("visibility", "unknown"), evidence_state_or_not_applicable=state,
+                canonical_or_historical=item.get("canonical_or_historical", "unknown"),
             ))
     return commit, passages
 
 
-def search(query: str, passages: list[Passage], limit: int = 5) -> list[dict[str, Any]]:
+TEMPORAL_STATES = {'canonical_current', 'canonical_or_historical', 'historical', 'superseded', 'unknown'}
+
+def eligible(passage: Passage, scope: str = 'current') -> bool:
+    if scope not in {'current', 'historical'}:
+        raise ValueError('Scope must be current or historical')
+    # Mixed/legacy, missing and unknown labels never establish current identity.
+    states = {'canonical_current'} if scope == 'current' else {'historical', 'superseded'}
+    return passage.visibility == 'public' and passage.canonical_or_historical in states
+
+def search(query: str, passages: list[Passage], limit: int = 5, *, scope: str = 'current') -> list[dict[str, Any]]:
     if not query.strip() or not 1 <= limit <= 20:
         raise ValueError("Nonempty query and limit 1..20 required")
+    if scope not in {'current', 'historical'}:
+        raise ValueError('Scope must be current or historical')
+    passages = [p for p in passages if eligible(p, scope)]
     terms = tokens(query)
     qt = Counter(terms + [synonym for term in terms for synonym in ES_EN.get(term, ())])
     if not qt:
@@ -164,7 +176,7 @@ def search(query: str, passages: list[Passage], limit: int = 5) -> list[dict[str
                      * dt[t] * 2.2 / (dt[t] + 1.2 * (.25 + .75 * length / max(1, average))))
                     for t in qt if dt[t])
         # Exact registered entity identifiers outweigh broad narrative mentions.
-        exact_ids = set(ENTITIES.findall(query))
+        exact_ids = set(ENTITIES.findall(query.upper()))
         if exact_ids and (exact_ids & set(ENTITIES.findall(p.text))):
             score += 1.5
         if score > 0:
@@ -176,6 +188,10 @@ def search(query: str, passages: list[Passage], limit: int = 5) -> list[dict[str
 def ask(query: str, passages: list[Passage], limit: int = 5) -> dict[str, Any]:
     """Return evidence, not an invented narrative; a generator can use this contract."""
     hits = search(query, passages, limit)
-    return {"query": query, "status": "evidence_found" if hits else "no_evidence",
+    from rag.semantic import answer, select_answer_sources
+    hits = select_answer_sources(query, hits, [{**asdict(p), 'citation':p.citation} for p in passages], limit)
+    decision = answer(query, hits)
+    return {"query": query, "status": decision['status'], 'answer_decision': decision,
+            'retrieval_status': 'candidates_found' if hits else 'no_candidates',
             "message": "Pasajes candidatos; comprueba que respondan a la pregunta." if hits else "No hay evidencia suficiente",
             "retrieved_at": datetime.now(timezone.utc).isoformat(), "sources": hits}

@@ -1,8 +1,8 @@
 # AIO CODE — Entity Master Record
 
-**Version:** 5.0
+**Version:** 5.1
 **Status:** Active  
-**Updated:** 2026-09-27
+**Updated:** 2026-10-09
 **Project:** AIO CODE  
 **Creator:** Marii Cuadros
 
@@ -30,7 +30,8 @@ These entities are distinct. A relationship between entities must be explicit; a
 
 - **Entity Type:** Company / venture brand
 - **Canonical Name:** OZCU
-- **Role in ecosystem:** Digital marketing and optimization venture serving artists; applies AIO CODE and VOID MODE.
+- **Role in ecosystem:** Officially adopted declared developer company/venture of AIO CODE; applies AIO CODE and VOID MODE. Legal formalization pending.
+- **Founder:** Marii Cuadros (MC-001)
 - **CEO:** Marii Cuadros (MC-001)
 - **Passport:** `entity/ENTITY-PASSPORT-OZCU.md`
 - **Legal-status boundary:** This identity record uses OZCU as the venture/brand name and does not claim that a legal company has been incorporated.
@@ -79,17 +80,19 @@ AIO CODE is the system. The v1 methodology and controlled experiments operate in
 
 ```text
 MC-001 — Marii Cuadros
+   ├── founder_of → OZCU-001 — OZCU
    ├── CEO_of → OZCU-001 — OZCU
    ├── creator_of → AIO-001 — AIO CODE
    ├── develops → VOID-001 — VOID MODE
    └── develops → NUX-001 — NUX
 
 OZCU-001 — OZCU
+   ├── develops → AIO-001 — AIO CODE
    ├── applies → AIO-001 — AIO CODE
    └── offers → VOID-001 — VOID MODE
 ```
 
-Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. OZCU is the reserve venture layer; AIO CODE remains the distinct primary public system and VOID MODE its distinct creative system. They are not aliases or interchangeable labels.
+Canonical relationship records are maintained in `entity-graph.json` and described in this record and the entity passports. OZCU is the officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros, with legal formalization pending; AIO CODE remains the distinct primary public system and VOID MODE its distinct creative system. They are not aliases or interchangeable labels.
 
 There is no separate root-level `relationships.json` source of truth.
 

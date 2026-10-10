@@ -1,7 +1,7 @@
 {
   "graph": "OZCU / AIO CODE Entity Graph",
-  "version": "1.4",
-  "updated": "2026-09-25",
+  "version": "1.5",
+  "updated": "2026-10-09",
   "nodes": [
     {
       "entity_id": "OZCU-001",
@@ -104,8 +104,26 @@
       "to": "VOID-001",
       "status": "active",
       "source_ref": "entity/ENTITY-PASSPORT-AIO-CODE.md"
+    },
+    {
+      "relationship_id": "REL-008",
+      "from": "MC-001",
+      "relationship": "founder_of",
+      "to": "OZCU-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "note": "Explicit founder declaration adopted 2026-10-09; legal formalization pending; no corporate registry verification."
+    },
+    {
+      "relationship_id": "REL-009",
+      "from": "OZCU-001",
+      "relationship": "develops",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "note": "Explicit founder declaration adopted 2026-10-09; legal formalization pending; no corporate registry verification."
     }
   ],
-  "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity. AIO CODE remains the primary public/project brand; OZCU is the company/venture layer and reserve corporate identity through 2027.",
+  "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity. AIO CODE remains the primary public/project brand; OZCU is the company/officially adopted declared developer company/venture of AIO CODE, with legal formalization pending through 2027.",
   "ecosystem_rule": "Each canonical entity may have its own connected ecosystem of platforms, content, projects, sources and relationships. Empty registries represent known architectural slots, not invented assets."
 }

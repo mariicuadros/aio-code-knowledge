@@ -1,7 +1,7 @@
 {
   "dataset": "AIO CODE Claim Ledger",
-  "version": "2.3",
-  "updated": "2026-10-03",
+  "version": "2.4",
+  "updated": "2026-10-09",
   "purpose": "Track canonical and research claims by entity, claim type, lifecycle state, evidence state, source, date and verification scope.",
   "claim_type_values": [
     "canonical_definition",
@@ -212,6 +212,57 @@
       "evidence_state": "observed",
       "verification_rule_id": null,
       "verification_scope": "First-party canonical role definition of MC-001; external systems' recognition of this role remains a separate Observatory question."
+    },
+    {
+      "claim_id": "CLAIM-012",
+      "entity_id": "OZCU-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros (MC-001) is the founder of OZCU (OZCU-001).",
+      "source": "Explicit founder declaration, PR #13 review, 2026-10-09",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "identity/OZCU-OFFICIAL-DECLARATION-2026-10-09.md",
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "date": "2026-10-09",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party adoption by the founder; not independent legal, ownership, market or external AI validation."
+    },
+    {
+      "claim_id": "CLAIM-013",
+      "entity_id": "OZCU-001",
+      "claim_type": "canonical_definition",
+      "claim": "OZCU (OZCU-001) is the officially adopted declared developer company/venture of AIO CODE (AIO-001); AIO CODE remains the primary public brand and Digital Entity Operating System.",
+      "source": "Explicit founder declaration, PR #13 review, 2026-10-09",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "identity/OZCU-OFFICIAL-DECLARATION-2026-10-09.md",
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "date": "2026-10-09",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party adoption by the founder; not independent legal, ownership, market or external AI validation."
+    },
+    {
+      "claim_id": "CLAIM-014",
+      "entity_id": "OZCU-001",
+      "claim_type": "canonical_definition",
+      "claim": "OZCU is an officially adopted declared business identity; legal formalization is pending. This declaration does not establish legal incorporation, registration or certification.",
+      "source": "Explicit founder declaration, PR #13 review, 2026-10-09",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "identity/OZCU-OFFICIAL-DECLARATION-2026-10-09.md",
+        "ENTITY-MASTER-RECORD.md"
+      ],
+      "date": "2026-10-09",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party adoption by the founder; not independent legal, ownership, market or external AI validation."
     }
   ],
   "integrity_rules": [

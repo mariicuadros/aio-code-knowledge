@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Observatory Intake — preliminary reported observations",
+  "description": "Preliminary summaries, not controlled runs or independently verified evidence. No missing capture metadata is inferred.",
+  "type": "object",
+  "required": ["observation_id", "date", "query", "platform", "observation", "evidence_type", "evidence_location", "interpretation", "replication_status", "baseline_role"],
+  "properties": {
+    "observation_id": {"type": "string", "minLength": 1},
+    "date": {"type": "string", "format": "date"},
+    "query": {"type": "string", "minLength": 1},
+    "platform": {"type": "string", "minLength": 1},
+    "observation": {"type": "string", "minLength": 1},
+    "evidence_type": {"const": "user_supplied_screenshot"},
+    "evidence_location": {"type": "string", "minLength": 1},
+    "interpretation": {"type": "string", "minLength": 1},
+    "replication_status": {"const": "not_yet_replicated"},
+    "baseline_role": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

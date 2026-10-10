@@ -18,14 +18,17 @@ jobs:
           python-version: '3.12'
       - name: Validate canonical contracts before merge
         run: |
-          python -m pip install 'jsonschema>=4.23,<5'
+          python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'
+          python scripts/validate_release_safety.py
           python scripts/validate_core.py
+          python scripts/validate_intake.py
           python scripts/validate_brain.py brain/contracts/examples.synthetic.json
           python -m unittest discover -s tests -v
       - name: Check syntax and approved sources
         run: |
           python -m compileall -q rag
           python scripts/validate_site.py
+          python scripts/validate_entities.py
           python -m rag.cli ask '¿Qué es AIO CODE?' > /dev/null
       - name: Check frozen gold-source questions
         run: python -m rag.evaluate
@@ -39,3 +42,4 @@ jobs:
           npm ci --ignore-scripts --no-audit --no-fund
           npm run check:gateway
           npm run check:precontent
+          node scripts/validate_rag_safety.mjs

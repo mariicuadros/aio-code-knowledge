@@ -7,17 +7,17 @@
 - **Entity ID:** MC-001
 - **Entity Type:** Person
 - **Status:** Active
-- **Passport Version:** 4.0
+- **Passport Version:** 4.1
 - **Created:** 2026-09-02
-- **Last Updated:** 2026-10-03
+- **Last Updated:** 2026-10-09
 - **Company:** OZCU (OZCU-001)
-- **Role:** CEO of OZCU; creator of AIO CODE and developer of VOID MODE
+- **Role:** Founder and CEO of OZCU; creator of AIO CODE and developer of VOID MODE
 
 ---
 
 ## Entity Definition
 
-Marii Cuadros is a creator, artist, digital model and independent researcher. She is the CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
+Marii Cuadros is a creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
 
 She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within its research methodology.
 
@@ -29,6 +29,7 @@ This passport defines the canonical representation of the person. It must remain
 
 ```text
 Marii Cuadros (MC-001)
+   ├── founder_of → OZCU (OZCU-001)
    ├── CEO_of → OZCU (OZCU-001)
    ├── creator_of → AIO CODE (AIO-001)
    └── develops → VOID MODE (VOID-001)
@@ -57,6 +58,8 @@ Alternative, abbreviated, inferred or automatically generated representations mu
 ---
 
 ## Semantic Boundaries
+
+Marii Cuadros (MC-001) and AIO CODE (AIO-001) are not the same entity. Marii Cuadros is a Person and the creator of AIO CODE, a distinct Digital Entity Operating System. Founding OZCU, its declared developer company/venture with legal formalization pending, does not collapse the person, company or system into aliases.
 
 ### Marii Cuadros IS
 
@@ -231,8 +234,8 @@ The Entity Passport establishes the person/entity boundary first. Search visibil
 ---
 
 **Entity ID:** MC-001  
-**Passport Version:** 4.0  
-**Last Updated:** 2026-10-03  
+**Passport Version:** 4.1  
+**Last Updated:** 2026-10-09  
 **Project:** AIO CODE
 
 **AIO CODE — 2026**

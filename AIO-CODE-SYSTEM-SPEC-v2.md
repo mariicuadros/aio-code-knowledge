@@ -35,7 +35,7 @@ The Observatory treats **indexation, retrieval, entity resolution, entity repres
 - `mariicuadros/aio-code-knowledge`: public definitions, approved schemas, selected evidence and reproducible non-sensitive procedures.
 - `mariicuadros/aio-code-vault`: restricted original evidence, operational records and protected know-how; never credentials.
 - The public Entity Home uses the same `AIO-001` identifier as the records. A descriptive internal type is not a Schema.org `OperatingSystem` claim or a promise of downloadable software.
-- OZCU is a reserve corporate/venture layer and does not replace AIO CODE as the public brand. VOID MODE is the associated creative system; Marii Cuadros remains the human creator and longitudinal reference case.
+- OZCU is a officially adopted declared developer company/venture of AIO CODE, with legal formalization pending and does not replace AIO CODE as the public brand. VOID MODE is the associated creative system; Marii Cuadros remains the human creator and longitudinal reference case.
 
 ## Validation and sale boundary
 

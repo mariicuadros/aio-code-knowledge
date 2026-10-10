@@ -2,7 +2,7 @@
 
 ## AIO CODE — primary system and public brand
 
-AIO CODE remains the primary public/project brand through 2027. OZCU is the company/venture layer and a reserve corporate identity; it does not replace or demote AIO CODE. Marii Cuadros develops AIO CODE and VOID MODE. VOID MODE is AIO CODE’s creative system for artists. This repository does not assert that a legal company has been incorporated.
+AIO CODE remains the primary public/project brand through 2027. OZCU is the officially adopted declared developer company/venture of AIO CODE, founded by Marii Cuadros, with legal formalization pending; it does not replace or demote AIO CODE. Marii Cuadros develops AIO CODE and VOID MODE. VOID MODE is AIO CODE’s creative system for artists. This repository does not assert that a legal company has been incorporated.
 
 ## Artificial Intelligence Optimization Code
 
@@ -63,7 +63,7 @@ The repository includes:
 
 ```text
 AIO-001 — AIO CODE — Primary public brand and DigitalEntityOperatingSystem
-OZCU-001 — OZCU — Company / venture layer; reserve corporate identity
+OZCU-001 — OZCU — Company / declared developer venture of AIO CODE; legal formalization pending
 MC-001 — Marii Cuadros — Person; independent researcher, creator of AIO CODE and developer of VOID MODE
 VOID-001 — VOID MODE — CreativeSystem for artists
 NUX-001 — NUX — DigitalCreativeEntity
