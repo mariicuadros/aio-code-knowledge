@@ -164,6 +164,10 @@ def check_current_terminology():
     if 'Digital Entity Operating System' not in src: fail('AIO Instagram source lacks DEOS terminology')
 
 def check_folder_rules():
+    # .gitkeep is only valid in otherwise empty directories.
+    for keep in ROOT.rglob('.gitkeep'):
+        siblings=[p for p in keep.parent.iterdir() if p.name!='.gitkeep']
+        if siblings: fail(f'Stale .gitkeep in populated directory: {keep.parent.relative_to(ROOT)}')
     required=[
       'entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld',
       'entities/marii-cuadros/technical/schema/disambiguation.json',
