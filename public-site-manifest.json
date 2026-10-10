@@ -18,6 +18,8 @@
     "entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld",
     "entities/marii-cuadros/technical/schema/disambiguation.json",
     "entities/nux/index.html",
+    "entities/void-mode/index.html",
+    "entities/void-mode/technical/jsonld/void-mode.jsonld",
     "entity-graph.json",
     "entity/ENTITY-PASSPORT-AIO-CODE.md",
     "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
