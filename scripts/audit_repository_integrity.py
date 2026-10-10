@@ -34,6 +34,7 @@ def check_repo_path_references():
     prefixes=('entities/','entity/','evidence/','observatory/','rag/','schemas/','security/','brain/','data-export/','metrics/','identity/','phase-2/','blogger/','api/','assets/','checker/','governance/','commerce/','semantic/','provenance/','logbook/','legal/','product/','experiments/','cases/')
     root_names={'ENTITY-MASTER-RECORD.md','public-assets-v1.json','social-entity-map.json','claim-ledger.json','ai-social-baseline.json','AIO-CODE-SYSTEM-SPEC-v2.md'}
     bad=[]
+    source_file=None
     def walk(v):
         if isinstance(v,dict):
             for x in v.values(): walk(x)
@@ -42,16 +43,20 @@ def check_repo_path_references():
         elif isinstance(v,str):
             value=v.strip()
             if value.startswith(('http://','https://')) or '*' in value or ' → ' in value or ' — ' in value: return
+            if ';' in value:
+                for part in value.split(';'): walk(part.strip())
+                return
             candidate=value.lstrip('./')
             if candidate.startswith(prefixes) or candidate in root_names:
                 # Only path-like values; skip prose sentences that happen to start with a directory word.
                 if '\n' in candidate or len(candidate)>240 or ' ' in candidate and not candidate.endswith(('.md','.json','.jsonld','.csv','.html','.txt','/')): return
                 p=ROOT/candidate.rstrip('/')
-                if not p.exists(): bad.append(candidate)
+                if not p.exists(): bad.append((source_file,candidate))
     for p in repo_files():
         if p.suffix.lower() in {'.json','.jsonld'}:
+            source_file=p.relative_to(ROOT).as_posix()
             walk(json.loads(p.read_text(encoding='utf-8')))
-    if bad: fail('Broken internal repository references: '+', '.join(sorted(set(bad))[:25]))
+    if bad: fail('Broken internal repository references: '+', '.join(f'{src} -> {ref}' for src,ref in sorted(set(bad))[:25]))
 
 def check_entities_and_social():
     graph=read_json('entity-graph.json'); nodes={x['entity_id']:x for x in graph['nodes']}
