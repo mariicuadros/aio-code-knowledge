@@ -3,7 +3,10 @@
   "git": {
     "deploymentEnabled": {
       "codex/phase2-reviewed-audit-20261009": false,
-      "main": false
+      "main": false,
+      "codex/staged-public-artifact-20261009": false
     }
-  }
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "public"
 }

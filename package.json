@@ -4,7 +4,8 @@
   "description": "Digital Entity Operating System \u00b7 Entity Architecture \u00b7 Evidence \u00b7 AI Representation \u00b7 Information Retrieval",
   "scripts": {
     "check:gateway": "node scripts/validate_gateway.mjs",
-    "check:precontent": "node scripts/validate_precontent.mjs"
+    "check:precontent": "node scripts/validate_precontent.mjs",
+    "build": "node scripts/build_site.mjs"
   },
   "repository": {
     "type": "git",
