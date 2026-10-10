@@ -18,7 +18,8 @@ jobs:
           python-version: '3.12'
       - name: Validate canonical contracts before merge
         run: |
-          python -m pip install 'jsonschema>=4.23,<5'
+          python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'
+          python scripts/validate_release_safety.py
           python scripts/validate_core.py
           python scripts/validate_intake.py
           python scripts/validate_brain.py brain/contracts/examples.synthetic.json

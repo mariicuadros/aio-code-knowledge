@@ -1,24 +1,54 @@
 name: Sync AIO CODE to Hugging Face
 
+# Merging/pushing must not publish. A separate founder-authorized dispatch is required.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+    inputs:
+      approved_commit:
+        description: Full 40-character main commit approved for this run
+        required: true
+        type: string
+      publish_approved:
+        description: Publish BOTH datasets only after explicit founder authorization
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
 
+concurrency:
+  group: huggingface-publication
+  cancel-in-progress: false
+
 jobs:
-  sync:
+  validate:
     runs-on: ubuntu-latest
+    env:
+      APPROVED_COMMIT: ${{ inputs.approved_commit }}
     steps:
-      - name: Checkout GitHub source of truth
+      - name: Checkout exact dispatch commit
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Require manual main request for the approved commit
+        run: python scripts/validate_release_safety.py --request
 
       - name: Validate canonical data contracts
         run: |
-          python -m pip install 'jsonschema>=4.23,<5'
+          python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'
+          python scripts/validate_release_safety.py
           python scripts/validate_core.py
+          python scripts/validate_intake.py
+          python scripts/validate_brain.py brain/contracts/examples.synthetic.json
+          python scripts/validate_entities.py
+          python scripts/validate_site.py
+          python scripts/build_public_rag.py --check
+          python -m unittest discover -s tests -v
+          python -m rag.evaluate
 
       - name: Validate export manifest
         shell: bash
@@ -48,7 +78,6 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf hf-export
           mkdir -p hf-export/source-artifacts
           cp data-export/README.md hf-export/README.md
           cp data-export/export-manifest.json hf-export/source-artifacts/export-manifest.json
@@ -71,6 +100,36 @@ jobs:
           subprocess.run(["python", "scripts/build_hf_entities.py", "--output", "hf-export/data/entities.jsonl"], check=True)
           print(f"Built controlled export with {len(manifest['sources'])} source files and canonical entity rows")
           PY
+
+      - name: Retain validated export for this run
+        uses: actions/upload-artifact@v4
+        with:
+          name: hf-export-${{ github.sha }}
+          path: hf-export/
+          retention-days: 7
+
+  publish:
+    needs: validate
+    if: >-
+      github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main' && inputs.publish_approved == true && inputs.approved_commit == github.sha
+    runs-on: ubuntu-latest
+    env:
+      APPROVED_COMMIT: ${{ inputs.approved_commit }}
+    steps:
+      - name: Checkout the same approved commit for journal preparation
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Recheck manual main request before any HF access
+        run: python scripts/validate_release_safety.py --request
+      - name: Download the validated export from this run
+        uses: actions/download-artifact@v4
+        with:
+          name: hf-export-${{ github.sha }}
+          path: hf-export/
 
       - name: Install Hugging Face Hub client
         run: python -m pip install --upgrade huggingface_hub PyYAML
@@ -134,7 +193,6 @@ jobs:
               repo_id="mariicuadros/aio-code-entities",
               repo_type="dataset",
               folder_path="hf-export",
-              delete_patterns=["entities.json"],
               commit_message="Sync controlled OZCU / AIO CODE export from GitHub",
           )
           print("Controlled export uploaded successfully")

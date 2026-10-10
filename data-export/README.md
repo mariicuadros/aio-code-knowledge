@@ -45,6 +45,8 @@ The MC-001 Observatory snapshot frozen on 2026-09-25 contains 14 observed pairs 
 
 GitHub is the source of truth. A controlled GitHub Actions workflow validates canonical data contracts, builds the entity rows from the graph and passports, uploads only the configured JSONL table for viewing, and retains the source artifacts separately.
 
+Publication is separate from merging: `sync-huggingface.yml` accepts only a manual `workflow_dispatch` on `main` with its full approved commit SHA. `publish_approved` defaults to false, which validates and prepares a temporary GitHub artifact without Hugging Face access. Setting it to true after explicit founder authorization permits the separate publish job to update both `mariicuadros/aio-code-entities` and `mariicuadros/aio-code-journal`. Pushes and merges do not trigger this workflow. No remote file deletion is requested. See `codex/SAFE-MERGE-PR13-2026-10-09.md` for the integration checklist and remaining external configuration checks.
+
 ## Evidence and use
 
 The dataset records first-party definitions and relationships. It is not proof that external search engines or AI systems recognize, cite or recommend any entity. Consult the source artifacts and their evidence boundaries before making claims.
