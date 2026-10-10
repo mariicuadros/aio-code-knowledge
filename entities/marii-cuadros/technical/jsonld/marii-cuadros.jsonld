@@ -57,7 +57,9 @@
       ]
     }
   ],
-  "alternateName": "Maria Alejandra Cuadros Lozada",
+  "alternateName": [
+    "Maria Alejandra Cuadros Lozada"
+  ],
   "jobTitle": [
     "Digital Strategist",
     "Artist",

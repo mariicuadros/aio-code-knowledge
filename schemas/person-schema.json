@@ -58,7 +58,9 @@
           ]
         }
       ],
-      "alternateName": "Maria Alejandra Cuadros Lozada"
+      "alternateName": [
+        "Maria Alejandra Cuadros Lozada"
+      ]
     },
     {
       "@type": "CreativeWork",

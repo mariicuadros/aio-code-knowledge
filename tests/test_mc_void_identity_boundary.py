@@ -11,7 +11,7 @@ class IdentityBoundaryTests(unittest.TestCase):
   page=json.loads(read('entities/marii-cuadros/index.html').split('<script type="application/ld+json">',1)[1].split('</script>',1)[0])['mainEntity']
   for p in (schema,technical,page):
    self.assertEqual(p['name'],'Marii Cuadros')
-   self.assertEqual(p['alternateName'],'Maria Alejandra Cuadros Lozada')
+   self.assertEqual(p['alternateName'],['Maria Alejandra Cuadros Lozada'])
    self.assertTrue(any('Strategist' in t or 'Estratega' in t for t in p['jobTitle']))
   self.assertEqual(len({p['@id'] for p in (schema,technical,page)}),1)
   self.assertEqual(obj('.well-known/marii-cuadros.json')['full_name'],'Maria Alejandra Cuadros Lozada')
