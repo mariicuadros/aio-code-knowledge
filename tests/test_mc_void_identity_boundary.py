@@ -8,7 +8,7 @@ class IdentityBoundaryTests(unittest.TestCase):
  def test_mc_name_same_entity_and_roles(self):
   schema=obj('schemas/person-schema.json')['@graph'][0]
   technical=obj('entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld')
-  page=json.loads(re.search(r'<script type="application/ld\\+json">(.*?)</script>',read('entities/marii-cuadros/index.html'),re.S).group(1))['mainEntity']
+  page=json.loads(read('entities/marii-cuadros/index.html').split('<script type="application/ld+json">',1)[1].split('</script>',1)[0])['mainEntity']
   for p in (schema,technical,page):
    self.assertEqual(p['name'],'Marii Cuadros')
    self.assertEqual(p['alternateName'],'Maria Alejandra Cuadros Lozada')
