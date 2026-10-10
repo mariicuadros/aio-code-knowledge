@@ -1,0 +1,520 @@
+{
+  "manifest_id": "AIO-IG-CAROUSEL-MEDIA-001",
+  "entity_id": "AIO-001",
+  "platform": "Instagram",
+  "handle": "@aiocode_",
+  "directory": "entities/aio-code/media/instagram/carousels/",
+  "status": "repository_archive",
+  "media_count": 63,
+  "image_count": 62,
+  "video_count": 1,
+  "publication_metadata_status": "not_catalogued_per_asset",
+  "filename_rule": "Original repository filenames are preserved. Date-like tokens in filenames are labels only and are not treated as publication timestamps without source metadata.",
+  "assets": [
+    {
+      "filename": "1.png",
+      "bytes": 71236,
+      "git_blob_sha": "067310c7d5331fdfa1465fcfb53e4250e076389e",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "2.png",
+      "bytes": 99929,
+      "git_blob_sha": "08dd87adc6fb16ae9d83cdb1b242c06efb020b5f",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "3.png",
+      "bytes": 78503,
+      "git_blob_sha": "44814e78a22c72df4d9f3ac9e2f57de1774cc403",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-01-10-001.png",
+      "bytes": 61514,
+      "git_blob_sha": "4a571ef30f8ecb2b6171dd8b07ce1a4b429f5888",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-01-10-002.png",
+      "bytes": 69492,
+      "git_blob_sha": "0fb58ae78f3d87cc5a4822cdccb28ea221062832",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-01-10-003.png",
+      "bytes": 76978,
+      "git_blob_sha": "f611e9a71e80be55b4504936867cac08a14d15e0",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-03-10-001.png",
+      "bytes": 90982,
+      "git_blob_sha": "2b33303cbfb30dda91dde4b1ec1ebd6e5f7e4070",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-03-10-002.png",
+      "bytes": 80621,
+      "git_blob_sha": "535408a8d4e30c41a9002e5cb67635e293181c40",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-03-10-003.png",
+      "bytes": 55178,
+      "git_blob_sha": "530c9e5d4d55e8e6f26c7c1641f72ea5b9dea6a2",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-06-10-001.png",
+      "bytes": 91381,
+      "git_blob_sha": "f8a294e8f700bbaad5de2e02ffa7615d513f7737",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-06-10-002.png",
+      "bytes": 82945,
+      "git_blob_sha": "e1f48618f6be504784510949db9a4fa774a363ca",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-06-10-003.png",
+      "bytes": 68690,
+      "git_blob_sha": "93cf77413a0aa35c78b87afa9bcb4011b9fb5989",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-001.png",
+      "bytes": 892268,
+      "git_blob_sha": "1197478a0c0d159785e84415bd3909433949c000",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-002.png",
+      "bytes": 1104069,
+      "git_blob_sha": "36ab1d0464ae9d4a4967a0610cc9738d1ffeb5a1",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-003.png",
+      "bytes": 1035341,
+      "git_blob_sha": "da4e92e5e3cb79e96449ee349e27ec469574e048",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-004.png",
+      "bytes": 110863,
+      "git_blob_sha": "cc1d7ebcaa5b4f3225d11a2c30c206ab3c2fd0ff",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-005.png",
+      "bytes": 102783,
+      "git_blob_sha": "b79429b33d841df66eed018f0cad4b4874567c61",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-07-10-2026-006.png",
+      "bytes": 229730,
+      "git_blob_sha": "ec3be1871b25a49ec7777794c42a60d85290b3b0",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-08-10-001.png",
+      "bytes": 73086,
+      "git_blob_sha": "a394089db1fad103cc79a8e9b0c2376306f90838",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-08-10-002.png",
+      "bytes": 76460,
+      "git_blob_sha": "0385b4dce46e93c633dbf86dbc4eda69faf8e42b",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-08-10-003.png",
+      "bytes": 73100,
+      "git_blob_sha": "bb343ee84f807dc33a03d8f3f8ee38c0dd28e23e",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-10-10-001.png",
+      "bytes": 90542,
+      "git_blob_sha": "17143b2157ac9fd0b0c26e8527c21390ce209584",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-10-10-002.png",
+      "bytes": 72461,
+      "git_blob_sha": "82b8dc8c1d9ecdccadfe880520e571fc7bd06754",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-10-10-003.png",
+      "bytes": 80057,
+      "git_blob_sha": "4b289f2418f983fa8ab5e981ba396204da69d566",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-001.png",
+      "bytes": 892570,
+      "git_blob_sha": "432eddba21dabf2d2fb8d0a753e851c3a8d5b848",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-002.mp4",
+      "bytes": 8373186,
+      "git_blob_sha": "477ccb79ab3bf9cf2b98db13af574dae1f15d565",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-003.jpg",
+      "bytes": 153609,
+      "git_blob_sha": "c059e7a58a7f140059fd305352bcee6c65d9e357",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-004.jpg",
+      "bytes": 139428,
+      "git_blob_sha": "d9b3476c5c605f6ca265ab8ceff350840da6d4ec",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-005.jpg",
+      "bytes": 120863,
+      "git_blob_sha": "412664462b24ec57873e8979b89df4539d20ac06",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-14-10-2026-006.jpg",
+      "bytes": 115440,
+      "git_blob_sha": "890b0ec93b3a3767364ca16723c83c8fbbeb21da",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-15-10-001.png",
+      "bytes": 65105,
+      "git_blob_sha": "8af01113122d87a5e336b303d66da60a2b14db9c",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-15-10-002.png",
+      "bytes": 87404,
+      "git_blob_sha": "8652f0e91170cc665edd8e25d7510fb53fa00ae1",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-15-10-003.png",
+      "bytes": 90125,
+      "git_blob_sha": "0223dabf3eeec55e1252aaa2e2602c2e1a5024be",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-17-10-001.png",
+      "bytes": 87916,
+      "git_blob_sha": "8d76ebcddfbe8650f3c37701f8634f2d29288247",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-17-10-002.png",
+      "bytes": 92785,
+      "git_blob_sha": "33295b899c8a0a2c967e59c06e39545926e6b2df",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-17-10-003.png",
+      "bytes": 83698,
+      "git_blob_sha": "e2861a3942a62b78a506b46bf131dc70a84dc1b5",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-001.png",
+      "bytes": 892063,
+      "git_blob_sha": "1d88ca5bfdd96a3c4df3a095144e0ca9be0b30bb",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-002.jpg",
+      "bytes": 147710,
+      "git_blob_sha": "1dab6b298377e46bae8871a7ebb591a53ed2c427",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-003.jpg",
+      "bytes": 133673,
+      "git_blob_sha": "0c5fec4711f6d99139345bfbd655c939978d9a00",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-004.jpg",
+      "bytes": 114527,
+      "git_blob_sha": "e7b48a26b843840918da0fa28fea6529d34532ab",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-005.jpg",
+      "bytes": 148979,
+      "git_blob_sha": "9d206ffc32bc2a87442984c38f3749306ec0ad33",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-21-10-2026-006.jpg",
+      "bytes": 94405,
+      "git_blob_sha": "a10953961cadb7e385fd327c7bb3357d568fddad",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-22-10-001.png",
+      "bytes": 99109,
+      "git_blob_sha": "911b5f907f397dfa1cc070ef8eeb721343bfb0f5",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-22-10-002.png",
+      "bytes": 75982,
+      "git_blob_sha": "feb24484104fddbe506ff07c149a470c4b412d55",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-22-10-003.png",
+      "bytes": 104610,
+      "git_blob_sha": "1b4c953a92676bde6099896c54a58ab36f2de71f",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-24-10-001.png",
+      "bytes": 84719,
+      "git_blob_sha": "c2c07b44de0f86c0da93ee06f1046ba0c03a42dc",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-24-10-002.png",
+      "bytes": 88433,
+      "git_blob_sha": "cbd4c562d23a737a78544e43dd0235432fe989aa",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-24-10-003.png",
+      "bytes": 113779,
+      "git_blob_sha": "71dde50c1dc918d71ce8a90246f2765e4535e603",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-09-001.png",
+      "bytes": 79040,
+      "git_blob_sha": "75db136cdf29906a5969bf6c15ced39ae1b19700",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-09-002.png",
+      "bytes": 83437,
+      "git_blob_sha": "f72b15c1123edbe68dfed48e6f57eee160e1fc6e",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-09-003.png",
+      "bytes": 97613,
+      "git_blob_sha": "fd9ceb04f4191a029f93285b75101db0fff84104",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-10-001.png",
+      "bytes": 61747,
+      "git_blob_sha": "eb60f9eec3b93fe1dce5c98f9b3ea56e2a19b96a",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-10-002.png",
+      "bytes": 98488,
+      "git_blob_sha": "38147c240847dc3ffa32947ba6620e676e532f29",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-29-10-003.png",
+      "bytes": 88495,
+      "git_blob_sha": "fe118253dc5a47ea49eb47710913d704162429fc",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-001.png",
+      "bytes": 900591,
+      "git_blob_sha": "25be99584ce224457cc91fe2e8003562915702ac",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-002.png",
+      "bytes": 1125433,
+      "git_blob_sha": "a5248b8083491d386e4d792eb2826e735f62cd5a",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-003.png",
+      "bytes": 1068973,
+      "git_blob_sha": "316b1e4adaa4df180b428872013997e40d63fbf7",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-004.png",
+      "bytes": 104013,
+      "git_blob_sha": "81ae304c6cc12dbe0eb50c95d45f6e5922ddba30",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-005.png",
+      "bytes": 223629,
+      "git_blob_sha": "081f502d8c5b95522409ef351c142d46754a6d7a",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-30-09-2026-006.png",
+      "bytes": 338070,
+      "git_blob_sha": "22a22438cb2ceab6a9c654815ab2cc6cf5ad09fb",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-31-10-001.png",
+      "bytes": 89441,
+      "git_blob_sha": "f8a00b0063d9c5ab8a94c346225ebb474f4f3ed9",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-31-10-002.png",
+      "bytes": 102521,
+      "git_blob_sha": "3f4d771b0552fc80697d7a96d195bceee86c4d48",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    },
+    {
+      "filename": "AIOCODE-31-10-003.png",
+      "bytes": 93817,
+      "git_blob_sha": "ab01440f081b4cc3402e8d1d749656618aaa9191",
+      "archive_status": "present",
+      "publication_url": null,
+      "publication_timestamp": null
+    }
+  ],
+  "integrity_note": "Git blob SHA and byte size document repository state; they do not prove Instagram publication or ownership."
+}

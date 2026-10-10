@@ -3,7 +3,7 @@
   "entity_id": "AIO-001",
   "platform": "Instagram",
   "handle": "@aiocode_",
-  "purpose": "Official public social identity and methodology communication",
+  "purpose": "Official public social identity and Digital Entity Operating System communication",
   "status": "observed",
   "media_directory": "entities/aio-code/media/instagram/",
   "post_media_directory": "entities/aio-code/media/instagram/posts/",
@@ -11,11 +11,14 @@
   "carousel_media_directory": "entities/aio-code/media/instagram/carousels/",
   "story_media_directory": "entities/aio-code/media/instagram/stories/",
   "profile_media_directory": "entities/aio-code/media/instagram/profile/",
-  "content_registry": "entities/aio-code/content-registry/posts/instagram-media-batch-001.json",
+  "content_registry": "entities/aio-code/content-registry/carousels/instagram-carousel-batch-001.json",
   "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
   "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
-  "asset_count": "not yet catalogued",
+  "asset_count": 63,
   "carousel_status": "uploaded_to_instagram",
   "carousel_registry": "entities/aio-code/content-registry/carousels/instagram-carousel-batch-001.json",
-  "notes": "Instagram carousels have been uploaded by the owner. Individual asset filenames/IDs are not yet catalogued in the repository; no filenames or publication dates are inferred."
+  "notes": "63 carousel media files are archived in GitHub (62 images, 1 MP4). Owner-confirmed upload status is distinct from per-post publication metadata; individual Instagram URLs/IDs/timestamps remain uncatalogued and are not inferred from filenames.",
+  "image_asset_count": 62,
+  "video_asset_count": 1,
+  "asset_manifest": "entities/aio-code/media/instagram/carousels/manifest.json"
 }
