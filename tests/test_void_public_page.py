@@ -20,6 +20,6 @@ class VoidPublicPageTests(unittest.TestCase):
   self.assertIn('https://aio-code.vercel.app/entities/void-mode/',(R/'sitemap.xml').read_text(encoding='utf-8'))
  def test_creator_universe_not_system_definition(self):
   page=(R/'entities/void-mode/index.html').read_text(encoding='utf-8')
-  self.assertIn('no es la estética personal',page)
+  self.assertIn('Tampoco es la estética personal',page)
   self.assertIn('no garantiza',page)
 if __name__=='__main__':unittest.main()
