@@ -5,7 +5,7 @@ R=Path(__file__).resolve().parents[1]
 class VoidPublicPageTests(unittest.TestCase):
  def test_page_and_machine_identity(self):
   page=(R/'entities/void-mode/index.html').read_text(encoding='utf-8')
-  block=re.search(r'<script type="application/ld\\+json">(.*?)</script>',page,re.S)
+  block=re.search(r'<script type="application/ld[+]json">(.*?)</script>',page,re.S)
   self.assertIsNotNone(block)
   web=json.loads(block.group(1));thing=web['mainEntity']
   machine=json.loads((R/'entities/void-mode/technical/jsonld/void-mode.jsonld').read_text(encoding='utf-8'))
