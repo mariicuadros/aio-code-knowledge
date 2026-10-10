@@ -269,3 +269,7 @@ And:
 **Created:** 2026-09-02
 
 AIO CODE — Artificial Intelligence Optimization Code
+
+## 15. Instagram views-first: versionar las definiciones
+
+La métrica primaria de visibilidad para Instagram es `views` cuando esté disponible, preservando `reach`, seguidores e interacción como dimensiones separadas. Registrar fuente, ventana, unidad, formato, definición de API y estado; no convertir silenciosamente impresiones/reproducciones históricas en visualizaciones. El reporte informado por la creadora no prueba eliminación futura de seguidores. No equiparar views con resolución o citación por IA.
