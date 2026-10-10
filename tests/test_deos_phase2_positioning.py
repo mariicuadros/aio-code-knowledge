@@ -8,7 +8,7 @@ class Phase2PositioningTests(unittest.TestCase):
         self.assertIn('Digital Entity Operating System',page)
         self.assertIn('Phase 2 expands practical implementation',page)
         self.assertIn('coverage count, not a recognition success rate',page)
-        self.assertIn('methodology',page)
+        self.assertIn('Research and measurement protocols are internal operating procedures',page)
     def test_readme_does_not_equate_phase_with_evidence_ladder(self):
         doc=(ROOT/'README.md').read_text(encoding='utf-8')
         self.assertIn('Current operating phase: Phase 2',doc)
