@@ -25,5 +25,5 @@ class IdentityBoundaryTests(unittest.TestCase):
  def test_exclusions_remain_unrelated(self):
   registry=obj('identity/confusable-entities.json')['records']
   aliases=obj('schemas/person-schema.json')['@graph'][0]['alternateName']
-  for record in registry:self.assertNotEqual(record['observed_label'],aliases)
+  for record in registry:self.assertNotIn(record['observed_label'],aliases)
 if __name__=='__main__':unittest.main()
