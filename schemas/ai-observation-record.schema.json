@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/schemas/ai-observation-record.schema.json",
+  "title": "AIO CODE AI Observation Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "timestamp",
+    "entity_id",
+    "system",
+    "test_class",
+    "prompt_text",
+    "result_state",
+    "evidence_state"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "entity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system": {
+      "type": "string",
+      "minLength": 1
+    },
+    "system_interface_or_model_if_visible": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "test_class": {
+      "type": "string",
+      "enum": [
+        "discovery",
+        "direct_url_retrieval",
+        "entity_resolution",
+        "attribution",
+        "citation",
+        "other"
+      ]
+    },
+    "prompt_text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_url_supplied": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "result_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "published": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "crawlable": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "crawl_observed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "indexation_observed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "retrieved": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "entity_resolved": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "attributed": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "cited": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "answered": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "response_snapshot_or_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "sources_or_citations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mechanism_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "claim",
+          "evidence_state"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence_state": {
+            "type": "string",
+            "enum": [
+              "provider_documented",
+              "first_party_observed",
+              "third_party_documented",
+              "ai_reported_unverified",
+              "hypothesis",
+              "unknown"
+            ]
+          },
+          "source_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "provider_documented",
+        "first_party_observed",
+        "third_party_documented",
+        "ai_reported_unverified",
+        "hypothesis",
+        "unknown"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

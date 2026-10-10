@@ -1,0 +1,96 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-10",
+  "purpose": "Document crawler/search access behavior separately from training, user-triggered fetches and observed retrieval.",
+  "default_site_policy": {
+    "robots_txt": "User-agent: * / Allow: /",
+    "effect": "General crawling is currently allowed by wildcard unless provider behavior or infrastructure overrides it.",
+    "search_discovery_explicit": [
+      "OAI-SearchBot",
+      "PerplexityBot"
+    ]
+  },
+  "agents": [
+    {
+      "agent": "OAI-SearchBot",
+      "provider": "OpenAI",
+      "function": "search_discovery",
+      "evidence_state": "provider_documented",
+      "source": "https://developers.openai.com/api/docs/bots",
+      "desired_policy": "allow",
+      "note": "OpenAI documents this bot for surfacing sites in ChatGPT search results. Search access is separate from GPTBot training controls.",
+      "current_effective_policy": "explicitly_allowed"
+    },
+    {
+      "agent": "GPTBot",
+      "provider": "OpenAI",
+      "function": "foundation_model_training_crawl",
+      "evidence_state": "provider_documented",
+      "source": "https://developers.openai.com/api/docs/bots",
+      "desired_policy": "policy_decision_pending",
+      "note": "Do not equate search visibility with training permission. AIO CODE has not encoded an allow/deny decision here.",
+      "current_effective_policy": "allowed_by_wildcard_pending_explicit_training_policy_decision"
+    },
+    {
+      "agent": "ChatGPT-User",
+      "provider": "OpenAI",
+      "function": "user_triggered_fetch",
+      "evidence_state": "provider_documented",
+      "source": "https://developers.openai.com/api/docs/bots",
+      "desired_policy": "observe",
+      "note": "OpenAI documents this as user-triggered rather than automatic web crawling.",
+      "current_effective_policy": "covered_by_general_site_policy_where_robots_applies"
+    },
+    {
+      "agent": "PerplexityBot",
+      "provider": "Perplexity",
+      "function": "search_discovery",
+      "evidence_state": "provider_documented",
+      "source": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "desired_policy": "allow",
+      "note": "Perplexity documents this bot for surfacing/linking websites in search results and not for foundation-model training.",
+      "current_effective_policy": "explicitly_allowed"
+    },
+    {
+      "agent": "Perplexity-User",
+      "provider": "Perplexity",
+      "function": "user_triggered_fetch",
+      "evidence_state": "provider_documented",
+      "source": "https://docs.perplexity.ai/docs/resources/perplexity-crawlers",
+      "desired_policy": "observe",
+      "note": "Perplexity documents this as a user-request fetcher, not an automatic crawler.",
+      "current_effective_policy": "covered_by_general_site_policy_where_robots_applies"
+    },
+    {
+      "agent": "meta-webindexer",
+      "provider": "Meta",
+      "function": "reported_search_indexing",
+      "evidence_state": "ai_reported_unverified",
+      "source": null,
+      "desired_policy": "do_not_encode_until_verified",
+      "note": "Name/function supplied by an AI response; no first-party Meta documentation was verified in this audit.",
+      "current_effective_policy": "not_encoded_as_provider_specific_rule"
+    },
+    {
+      "agent": "Meta-ExternalAgent",
+      "provider": "Meta",
+      "function": "reported_training_or_indexing",
+      "evidence_state": "ai_reported_unverified",
+      "source": null,
+      "desired_policy": "do_not_encode_until_verified",
+      "note": "Provider behavior must be verified before robots/WAF policy is changed.",
+      "current_effective_policy": "not_encoded_as_provider_specific_rule"
+    },
+    {
+      "agent": "Meta-ExternalFetcher",
+      "provider": "Meta",
+      "function": "reported_user_triggered_fetch",
+      "evidence_state": "ai_reported_unverified",
+      "source": null,
+      "desired_policy": "do_not_encode_until_verified",
+      "note": "Provider behavior must be verified before treating robots bypass or retrieval semantics as fact.",
+      "current_effective_policy": "not_encoded_as_provider_specific_rule"
+    }
+  ],
+  "rule": "Never infer provider internals from a successful citation, a failed discovery test, account linkage, shared devices, embeddings, or an AI's self-description."
+}

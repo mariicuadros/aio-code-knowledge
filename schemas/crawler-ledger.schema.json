@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/schemas/crawler-ledger.schema.json",
+  "title": "AIO CODE Crawler Ledger Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "timestamp",
+    "host",
+    "path",
+    "user_agent",
+    "agent_classification",
+    "http_status",
+    "evidence_state"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "host": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "user_agent": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_classification": {
+      "type": "string",
+      "enum": [
+        "known_search_crawler",
+        "known_user_fetcher",
+        "known_training_crawler",
+        "unverified_ai_crawler",
+        "generic_bot",
+        "human_or_unknown"
+      ]
+    },
+    "provider": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "http_status": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 599
+    },
+    "source_ip_hash": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional privacy-preserving hash; never require publication of raw IPs."
+    },
+    "canonical_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "request_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_state": {
+      "type": "string",
+      "enum": [
+        "provider_documented",
+        "first_party_observed",
+        "third_party_documented",
+        "ai_reported_unverified",
+        "hypothesis",
+        "unknown"
+      ]
+    },
+    "verification_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

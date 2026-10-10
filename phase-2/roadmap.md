@@ -2,16 +2,17 @@
 
 **Corte:** 2026-10-10. Responsable del proyecto: Marii Cuadros; implementación y auditoría técnica: Codex.
 
-The repository/infrastructure cleanup is a release-maintenance gate, **not a return to Phase 1**. PR #15 is merged and Vercel production is updated. PR #16 closes repository integrity and Hugging Face Journal chronology before the remaining Phase-2 integrations.
+Repository/infrastructure cleanup is a release-maintenance gate, **not a return to Phase 1**. PR #15 and PR #16 are merged; GitHub main, Vercel production and the approved Hugging Face release have been synchronized. Phase 2 now adds observable discovery/retrieval contracts before changing live editorial surfaces.
 
 | Orden | Entrega | Estado | Criterio de aceptación |
 |---|---|---|---|
-| 0 | Integridad repositorio + HF Journal | **PR #16: CI required before merge** | Repository-wide integrity validator green; Journal chronology append-only; merge once final head is green; run approved HF sync and verify public metadata. |
+| 0 | Integridad repositorio + HF Journal | **Complete** | Repository integrity CI green; append-only Journal release published through the approved HF gate. |
+| 0.5 | AI Discovery & Retrieval layer | **In integration** | Retrieval-state taxonomy, crawler policy, crawler-ledger schema and AI-observation schema exist; provider mechanism claims carry explicit evidence states; CI prevents unverified AI claims from becoming provider facts. |
 | 1 | Blogger canonical update | Theme 2026-10-10 prepared; live install pending | Export currently installed Blogger theme; compare/backup; install reviewed theme; verify visual/mobile, source HTML, MC-001 JSON-LD and VOID production link. |
-| 2 | IndexNow | Pending | Create host-compatible verification key/module; submit only approved canonical production URLs; log response without claiming guaranteed indexing. |
+| 2 | IndexNow | Pending | Verify current protocol/participants; create host-compatible ownership key; submit only approved canonical production URLs; log request/response/timestamp. HTTP acceptance is not proof of indexing, ranking, retrieval or citation. |
 | 3 | Meta/Instagram API | PR #10 open/draft; real production capture not verified | Resolve protected endpoint/auth flow, obtain one authorized real snapshot, store privately, map to Ledger, keep secrets outside Git. |
 | 4 | First traceable content item | Pending real record | Content ID, master/derivatives, publication links and Intervention ID; rights/disclosure reviewed; private ledger/source retained. |
-| 5 | Observatory comparable follow-up | Pending comparable repeat | Repeat selected prompts/conditions, preserve responses/citations/date/deviations; do not replace frozen baseline. |
+| 5 | Observatory comparable follow-up | Pending comparable repeat | Run separate discovery, direct-URL retrieval, entity-resolution, attribution and citation tests where applicable; preserve responses/citations/date/deviations; do not replace frozen baseline. |
 | 6 | Minimum private dashboard | Pending real data | Display publication/source/window/capture date/value/absence/error; reconcile one row against raw snapshot + Ledger. |
 | 7 | YouTube analytics | Connector not implemented | Define authorized metrics, save real response, map privately; views remain distinct from AI recognition. |
 | 8 | TikTok analytics | Connector not implemented | Verify account access/metrics; real snapshot or explicit manual capture state. |
