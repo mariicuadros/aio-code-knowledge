@@ -302,7 +302,7 @@ AIO CODE 3 — Market Validation
 AIO CODE 4 — Product
 ```
 
-**Current focus: AIO CODE 1 — Evidence.**
+**Current operating phase: Phase 2 — practical implementation and scaling.** The `AIO CODE 0–4` ladder above is a validation workstream taxonomy, not the operating phase or a regression of the DEOS into an experiment. Evidence strength remains claim-specific.
 
 ## Historical evidence consolidation — October 6, 2026
 

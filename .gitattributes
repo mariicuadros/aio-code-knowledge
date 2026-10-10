@@ -1,0 +1,2 @@
+# Evidence hashes refer to exact committed bytes on every platform.
+/observatory/intake/*.json -text

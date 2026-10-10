@@ -1,6 +1,6 @@
 # AIO CODE
 
-> AIO CODE is a Digital Entity Operating System created by Marii Cuadros. It coordinates canonical identity, entity relationships, evidence, provenance, content, observation and source retrieval across public digital environments. The research and implementation methodology is an internal component of the system.
+> AIO CODE is a Digital Entity Operating System created by Marii Cuadros. It coordinates canonical identity, entity relationships, evidence, provenance, content, observation and source retrieval across public digital environments. Phase 1 established the initial architecture and recorded case-specific external observations; Phase 2 scales practical implementation with content, integrations, additional participants and replication studies. Research protocols operate inside the DEOS; they do not define its product category.
 
 ## Current definition
 

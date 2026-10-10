@@ -4,7 +4,9 @@
   "canonical_name": "Marii Cuadros",
   "entity_type": "Person",
   "canonical_rule": "Only the exact canonical entity record identifies MC-001. Similar names must not be promoted to aliases or sameAs relationships without independent evidence.",
-  "alternate_names": [],
+  "alternate_names": [
+    "Maria Alejandra Cuadros Lozada"
+  ],
   "same_as_policy": "Only confirmed first-party identifiers may be listed as sameAs.",
   "negative_merge_rule": "Do not merge MC-001 with another person merely because of a similar name, surname, search result, citation, image, or third-party association.",
   "confusable_entity_policy": "Known confusable names are treated as entity-resolution observations, not identity attributes of MC-001.",
@@ -13,5 +15,6 @@
   "document_kind": "entity_disambiguation_policy",
   "last_reviewed": "2026-10-09",
   "confusable_entities_ref": "identity/confusable-entities.json",
-  "merge_constraint": "Explicitly excluded identities cannot be assigned MC-001 identity IDs, alternate names, or sameAs; do not publish confusable people as aliases."
+  "merge_constraint": "Explicitly excluded identities cannot be assigned MC-001 identity IDs, alternate names, or sameAs; do not publish confusable people as aliases.",
+  "full_name_rule": "Owner-declared full name belongs to MC-001; Marii Cuadros remains public canonical name; unrelated similarly named people are excluded."
 }

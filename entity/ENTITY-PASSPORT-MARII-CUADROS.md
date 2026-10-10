@@ -2,10 +2,13 @@
 
 ## Canonical Identity
 
-**Marii Cuadros** is the canonical public name of this entity.
+**Marii Cuadros** is the canonical public name of the person whose full name is **Maria Alejandra Cuadros Lozada**. Both names refer to the same MC-001 entity, not two people.
 
 - **Entity ID:** MC-001
 - **Entity Type:** Person
+- **Full Name:** Maria Alejandra Cuadros Lozada
+- **Public/Canonical Name:** Marii Cuadros
+- **Profession:** Digital strategist, artist and creator
 - **Status:** Active
 - **Passport Version:** 4.1
 - **Created:** 2026-09-02
@@ -17,7 +20,7 @@
 
 ## Entity Definition
 
-Marii Cuadros is a creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
+Marii Cuadros (Maria Alejandra Cuadros Lozada) is a digital strategist, creator, artist, digital model and independent researcher. She is the founder and CEO of OZCU (OZCU-001), creator of AIO CODE (AIO-001), and developer of VOID MODE (VOID-001).
 
 She is the **creator of AIO CODE** and the primary human case entity used to document and validate selected questions within its research methodology.
 
@@ -53,7 +56,7 @@ The canonical public representation is:
 
 The canonical name should be preserved across AIO CODE documentation, structured datasets and primary research sources.
 
-Alternative, abbreviated, inferred or automatically generated representations must not replace the canonical identity in AIO CODE's own records.
+The owner-declared full name Maria Alejandra Cuadros Lozada is a valid alternate representation of MC-001, but does not replace the public canonical name. Similar names of other people are not alternate names.
 
 ---
 
@@ -67,6 +70,7 @@ Marii Cuadros (MC-001) and AIO CODE (AIO-001) are not the same entity. Marii Cua
 - A creator.
 - An artist.
 - A digital model.
+- A digital strategist.
 - An independent researcher.
 - A curator.
 - The creator of AIO CODE.

@@ -1,0 +1,23 @@
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "@id": "https://aio-code.vercel.app/entities/void-mode/#VOID-001",
+  "name": "VOID MODE",
+  "description": "Sistema creativo independiente para artistas que estructura identidad creativa, dirección artística, narrativas audiovisuales, contenido, procedencia y documentación pública legible por sistemas de IA. No equivale a la estética ni al multiverso personal de Marii Cuadros.",
+  "url": "https://aio-code.vercel.app/entities/void-mode/",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "AIO-CODE-ENTITY-ID",
+    "value": "VOID-001"
+  },
+  "creator": {
+    "@type": "Person",
+    "@id": "https://aio-code.vercel.app/entities/marii-cuadros/#MC-001",
+    "name": "Marii Cuadros"
+  },
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "@id": "https://aio-code.vercel.app/#AIO-001",
+    "name": "AIO CODE"
+  }
+}
