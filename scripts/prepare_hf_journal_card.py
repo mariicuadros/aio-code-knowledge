@@ -38,7 +38,7 @@ def main():
 
     metadata["pretty_name"] = "AIO CODE Knowledge Journal"
     metadata["version"] = "2.1"
-    metadata["last_updated"] = "2026-09-25"
+    metadata["last_updated"] = "2026-10-10"
     metadata["configs"] = [{
         "config_name": "default",
         "data_files": [{

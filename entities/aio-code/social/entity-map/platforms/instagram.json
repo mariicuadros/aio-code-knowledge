@@ -6,7 +6,9 @@
   "role": "official_social_presence",
   "status": "observed",
   "media_archive": "entities/aio-code/media/instagram/",
-  "content_registry": "entities/aio-code/content-registry/posts/instagram-media-batch-001.json",
+  "content_registry": "entities/aio-code/content-registry/carousels/instagram-carousel-batch-001.json",
   "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
-  "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json"
+  "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
+  "media_manifest": "entities/aio-code/media/instagram/carousels/manifest.json",
+  "archive_media_count": 63
 }

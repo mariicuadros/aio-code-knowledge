@@ -1,9 +1,10 @@
 {
-  "registry_id":"CONTENT-AIO-IG-001",
-  "entity_id":"AIO-001",
-  "platform":"Instagram",
-  "handle":"@aiocode_",
-  "content_type":"social_media_assets",
-  "status":"observed",
-  "source":"entities/aio-code/media/instagram/posts/"
+  "registry_id": "CONTENT-AIO-IG-001",
+  "entity_id": "AIO-001",
+  "platform": "Instagram",
+  "handle": "@aiocode_",
+  "content_type": "social_media_assets",
+  "status": "reserved_empty",
+  "source": "entities/aio-code/media/instagram/posts/",
+  "notes": "Reserved registry for non-carousel Instagram post media. The current repository contains no archived files in the posts directory; existing archived Instagram media is catalogued by the carousel registry."
 }

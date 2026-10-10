@@ -25,3 +25,7 @@
 - [ ] Plan IndexNow key/host compatibility and an approved URL submission; no indexing guarantee.
 
 **Decision:** CONDITIONAL / NO-GO FOR PUBLICATION until release gates and owner approvals. No PR merge, production deployment, Blogger installation, HF sync or IndexNow submission authorized as part of this audit.
+
+## Post-release factual addendum — 2026-10-10
+
+PR #15 was merged into main as `277ec5a968bff0c8b39ff85677a75a0531d25dbb`; Vercel production deployment `dpl_BKtuzsM3YM9MhiheF7AkU8ZxLtd9` reached READY. A separately approved Hugging Face workflow showed validate and publish successful, and its entities dataset publicly displayed a 2026-10-10 update; Journal metadata still displayed 2026-10-06 when checked. Previous release gates above are retained as **historical pre-release evaluation**, not live state. Independent URL responses, remote journal row provenance and Blogger installation remain pending external verification. This is a dated audit addendum, not a rewrite of the prior decision.

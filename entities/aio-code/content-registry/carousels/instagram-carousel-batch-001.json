@@ -13,5 +13,9 @@
   "provenance_record": "entities/aio-code/evidence/provenance/instagram-media-batch-001.json",
   "evidence_source": "entities/aio-code/evidence/sources/instagram-aiocode.json",
   "cataloguing_rule": "Catalog each carousel as an individual asset when its filename, post URL/ID, publication date, and slide count are available. Do not infer publication dates from filenames.",
-  "notes": "The owner confirmed the AIO CODE carousels have been uploaded to Instagram. Individual carousel asset metadata has not yet been supplied/catalogued."
+  "notes": "The owner confirmed the AIO CODE carousel collection was uploaded to Instagram. The repository currently archives 63 media files (62 images and 1 MP4). Per-carousel Instagram post URLs/IDs/timestamps are not yet catalogued; filename date tokens are never treated as publication timestamps.",
+  "asset_manifest": "entities/aio-code/media/instagram/carousels/manifest.json",
+  "media_asset_count": 63,
+  "image_asset_count": 62,
+  "video_asset_count": 1
 }

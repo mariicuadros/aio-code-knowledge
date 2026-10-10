@@ -1,18 +1,20 @@
 # Orden de ejecución — Fase 2
 
-**Corte:** 2026-10-06. Responsable del proyecto: Marii Cuadros; implementación y auditoría técnica: Codex. Estados de abajo son los comprobados o explícitamente pendientes.
+**Corte:** 2026-10-10. Responsable del proyecto: Marii Cuadros; implementación y auditoría técnica: Codex.
+
+The repository/infrastructure cleanup is a release-maintenance gate, **not a return to Phase 1**. PR #15 is merged and Vercel production is updated. PR #16 closes repository integrity and Hugging Face Journal chronology before the remaining Phase-2 integrations.
 
 | Orden | Entrega | Estado | Criterio de aceptación |
 |---|---|---|---|
-| 1 | Primera pieza trazable | Pendiente de registro real | Content ID, master/derivados, publicaciones e Intervention ID reales; derechos/disclosure revisados; registro privado válido y fuente conservada |
-| 2 | Seguimiento Observatory | Pendiente de repetición comparable | Repetir prompts y condiciones de la ventana elegida, conservar respuestas/citas, registrar fecha y desviaciones; no reemplazar el baseline congelado |
-| 3 | Meta/Instagram | PR #10 abierto y draft; producción no verificada | Revisar endpoint, comprobar acceso autorizado en preview, obtener datos reales, guardar snapshot privado y validar la observación en el Ledger antes de activar producción |
-| 4 | Dashboard mínimo | No localizado en main | Mostrar publicaciones, fuente, ventana, fecha de captura, valores/ausencias y errores; cotejar una fila con el snapshot y el Ledger; acceso privado |
-| 5 | YouTube | Conector no localizado en los repositorios revisados | Definir métricas autorizadas, comprobar acceso, guardar una respuesta real y mapearla a un registro privado sin equiparar vistas con reconocimiento |
-| 6 | TikTok | Conector no localizado en los repositorios revisados | Confirmar acceso y métricas disponibles para la cuenta; snapshot real y registro validado; si no hay acceso, captura manual con estado explícito |
-| 7 | Rediseño creativo | Por ejecutar | Revisar documental, largos/shorts YouTube, TikTok y VOID MODE; guiones versionados, lista de masters/derivados y calendario de publicación verificable |
-| 8 | Operación repetible | Por ejecutar | Repetir captura → registro → dashboard en una segunda ventana; detectar duplicados, errores, ausencia y cambios sin sobrescribir el registro original |
+| 0 | Integridad repositorio + HF Journal | **PR #16: CI required before merge** | Repository-wide integrity validator green; Journal chronology append-only; merge once final head is green; run approved HF sync and verify public metadata. |
+| 1 | Blogger canonical update | Theme 2026-10-10 prepared; live install pending | Export currently installed Blogger theme; compare/backup; install reviewed theme; verify visual/mobile, source HTML, MC-001 JSON-LD and VOID production link. |
+| 2 | IndexNow | Pending | Create host-compatible verification key/module; submit only approved canonical production URLs; log response without claiming guaranteed indexing. |
+| 3 | Meta/Instagram API | PR #10 open/draft; real production capture not verified | Resolve protected endpoint/auth flow, obtain one authorized real snapshot, store privately, map to Ledger, keep secrets outside Git. |
+| 4 | First traceable content item | Pending real record | Content ID, master/derivatives, publication links and Intervention ID; rights/disclosure reviewed; private ledger/source retained. |
+| 5 | Observatory comparable follow-up | Pending comparable repeat | Repeat selected prompts/conditions, preserve responses/citations/date/deviations; do not replace frozen baseline. |
+| 6 | Minimum private dashboard | Pending real data | Display publication/source/window/capture date/value/absence/error; reconcile one row against raw snapshot + Ledger. |
+| 7 | YouTube analytics | Connector not implemented | Define authorized metrics, save real response, map privately; views remain distinct from AI recognition. |
+| 8 | TikTok analytics | Connector not implemented | Verify account access/metrics; real snapshot or explicit manual capture state. |
+| 9 | Repeatable operation | Pending | Repeat capture → register → dashboard in a second window; detect duplicates/errors/missing values without overwriting originals. |
 
-El orden 1–2 puede avanzar en paralelo con la revisión del conector. El dashboard empieza después de fijar qué datos reales recibirá. No se fusiona ni activa el PR de Insights como parte de este cierre documental.
-
-Las capturas del 6 de octubre son seguimiento suplementario; no sustituyen automáticamente un T+7 controlado. Para el baseline del 29 de septiembre, el 6 de octubre corresponde al día calendario +7; para el del 30, al 7 de octubre. La hora exacta depende de la captura original. Si hubo publicaciones o cambios entre ventanas, se registran como intervenciones y la comparación se limita en consecuencia.
+The October 6 captures are supplementary follow-up, not an automatic controlled T+7 replacement. Any content or identity changes between windows must remain intervention records.
