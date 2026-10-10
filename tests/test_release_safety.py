@@ -14,6 +14,7 @@ class ReleaseSafetyTests(unittest.TestCase):
         self.vercel=json.loads((ROOT/'vercel.json').read_text(encoding='utf-8'))
 
     def test_current_configuration_preserves_validators_and_separates_publication(self):
+        self.assertIs(self.vercel['git']['deploymentEnabled'],False, 'Global Git block must remain installed')
         validate_configuration(self.workflows,self.vercel)
 
     def test_only_exact_manual_main_request_is_accepted(self):
@@ -44,7 +45,16 @@ class ReleaseSafetyTests(unittest.TestCase):
 
     def test_main_or_overlapping_vercel_enablement_is_rejected(self):
         for branch in ['main','*']:
-            changed=copy.deepcopy(self.vercel);changed['git']['deploymentEnabled'][branch]=True
+            changed=copy.deepcopy(self.vercel)
+            changed['git']['deploymentEnabled']={'main':False,'codex/phase2-reviewed-audit-20261009':False,branch:True}
             with self.subTest(branch=branch),self.assertRaises(AssertionError):validate_configuration(self.workflows,changed)
+
+    def test_global_false_is_accepted_without_accepting_other_boolean_or_invalid_values(self):
+        changed=copy.deepcopy(self.vercel);changed['git']['deploymentEnabled']=False
+        validate_configuration(self.workflows,changed)
+        for enabled in [True,None,[],0,{'main':False}, {'main':False,'codex/phase2-reviewed-audit-20261009':False,'*':True}]:
+            changed['git']['deploymentEnabled']=enabled
+            with self.subTest(enabled=enabled),self.assertRaises(AssertionError):
+                validate_configuration(self.workflows,changed)
 
 if __name__=='__main__':unittest.main()
