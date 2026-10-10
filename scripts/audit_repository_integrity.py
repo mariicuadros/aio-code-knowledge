@@ -35,16 +35,18 @@ def check_repo_path_references():
     root_names={'ENTITY-MASTER-RECORD.md','public-assets-v1.json','social-entity-map.json','claim-ledger.json','ai-social-baseline.json','AIO-CODE-SYSTEM-SPEC-v2.md'}
     bad=[]
     source_file=None
-    def walk(v):
+    private_keys={'vault_path','raw_evidence_custody','private_path','restricted_path'}
+    def walk(v,key=None):
+        if key in private_keys: return
         if isinstance(v,dict):
-            for x in v.values(): walk(x)
+            for k,x in v.items(): walk(x,k)
         elif isinstance(v,list):
-            for x in v: walk(x)
+            for x in v: walk(x,key)
         elif isinstance(v,str):
             value=v.strip()
             if value.startswith(('http://','https://')) or '*' in value or ' → ' in value or ' — ' in value: return
             if ';' in value:
-                for part in value.split(';'): walk(part.strip())
+                for part in value.split(';'): walk(part.strip(),key)
                 return
             candidate=value.lstrip('./')
             if candidate.startswith(prefixes) or candidate in root_names:
