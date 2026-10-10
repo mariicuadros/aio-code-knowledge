@@ -1,9 +1,8 @@
 # AIO CODE — Observatory Protocol v1
 
-**Version:** 1.1  
-**Original date:** 2026-09-23  
-**Phase-2 extension:** 2026-10-10  
-**Status:** Canonical protocol
+**Version:** 1.0  
+**Date:** 2026-09-23  
+**Status:** Canonical pre-pilot protocol
 
 ## Purpose
 
@@ -43,39 +42,6 @@ Every benchmark observation MUST include:
 - `research_window_id`
 - `related_intervention_ids`
 - `confounder_ids`
-
-## Phase-2 discovery/retrieval states
-
-When the observation concerns public discovery or retrieval, additionally preserve states independently where observable:
-
-`published -> crawlable -> crawl_observed -> indexation_observed -> retrieved -> entity_resolved -> attributed -> cited -> answered`
-
-Unknown states remain null/unknown. Do not infer an unseen state because a later state succeeded.
-
-Use `schemas/ai-observation-record.schema.json` for the compact machine-readable form and `phase-2/AI-DISCOVERY-RETRIEVAL-LAYER-v1.md` for definitions.
-
-## Test classes
-
-- `discovery` — no canonical URL supplied; tests independent discovery/resolution.
-- `direct_url_retrieval` — known URL supplied; tests access/interpretation, not discovery.
-- `entity_resolution` — tests whether the intended canonical entity is selected.
-- `attribution` — tests a specific relationship/claim assignment.
-- `citation` — tests visible citation/link behavior.
-
-Do not combine discovery and direct-URL retrieval into one success rate.
-
-## Mechanism evidence
-
-Mechanism statements about a provider must be labeled:
-
-- `provider_documented`
-- `first_party_observed`
-- `third_party_documented`
-- `ai_reported_unverified`
-- `hypothesis`
-- `unknown`
-
-An AI response describing its own alleged internal indexing, identity, embedding, training or crawler behavior is still `ai_reported_unverified` unless qualifying provider documentation or direct evidence supports the claim.
 
 ## Context conditions
 
@@ -129,8 +95,6 @@ Not allowed without reliable provider documentation/evidence:
 
 `The model stored X in its knowledge graph because Y caused ingestion.`
 
-Likewise, a failed discovery result does not prove absence from every provider index, corpus, cache or training set.
-
 ## Baseline freeze
 
 A baseline version is frozen only when:
@@ -150,7 +114,7 @@ Missing is not zero. Use explicit null/missing states.
 
 ## Negative results
 
-Preserve not-found, incorrect, degraded, contradictory and unstable outputs. A negative retrieval result is a valid observation, not proof of non-existence.
+Preserve not-found, incorrect, degraded, contradictory and unstable outputs.
 
 ## Core rule
 
