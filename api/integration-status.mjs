@@ -1,6 +1,7 @@
 import { json } from '../lib/private-auth.mjs';
 
 export async function GET() {
+  if (process.env.VERCEL_ENV !== 'preview') return json({ status: 'preview_only' }, 404);
   return json({
     status: 'ok',
     phase: 'phase_2',
