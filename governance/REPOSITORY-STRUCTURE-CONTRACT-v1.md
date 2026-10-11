@@ -7,6 +7,7 @@
 - `/schemas/` and entity `technical/` folders — machine-readable contracts and JSON-LD.
 - `/observatory/`, `/entity-labs/`, `/metrics/` — research observations, experiments and measurements; dated evidence is not rewritten to match current definitions.
 - `/phase-2/` — current operational integration contracts and roadmap. Provider-specific mechanism statements must retain evidence state and must not override canonical identity.
+- `/legal/` — public legal architecture, rights-provenance attestations, templates and legal baselines. Signed agreements and personal execution evidence remain private.
 - `/evidence/` — public evidence only. Private originals use explicit vault/restricted references and must not be copied into the public repository.
 - `/rag/` — controlled public retrieval corpus/index; only allowlisted canonical/current or explicitly historical sources.
 - `/brain/` — operational record contracts and controlled vocabulary.
@@ -14,6 +15,17 @@
 - `/data-export/` — controlled downstream export manifests; publication remains separately gated.
 - `/governance/` — audits, release gates and change records.
 - `/security/` — public security architecture only; never secrets.
+
+## Legal / rights placement
+
+The public rights layer is governed by `legal/RIGHTS-PROVENANCE-v1.md`.
+
+- `legal/rights-registry.json` may expose only privacy-preserving status metadata.
+- A record may be `executed_active` only when private execution evidence exists.
+- Signed agreements, signatures, government IDs, dates of birth, private contacts, payment records and signing audit trails are prohibited from the public repository.
+- Public rights records do not create or imply employment, partnership, agency, representation, shareholding or spokesperson status.
+- General image consent must never be expanded into persistent voice cloning, dedicated reusable identity-model training, political persuasion, intimate/sexual content or unrelated third-party licensing without separate authorization where legally permissible.
+- Pending legislation is not current law; it may inform defensive design only when clearly labeled as pending.
 
 ## Discovery/retrieval placement
 
@@ -42,4 +54,4 @@ Controlled operational terms live in `brain/contracts/vocabulary-v1.json`. Match
 
 ## Automated enforcement
 
-`scripts/audit_repository_integrity.py` is a required CI gate and validates JSON/JSONL syntax, path references, media headers/dimensions/manifests, canonical entity/social mappings, sameAs, vocabulary enums and active-folder conventions. Phase-2 discovery/retrieval tests additionally enforce separation between provider-documented behavior and unverified AI mechanism claims.
+`scripts/audit_repository_integrity.py` is a required CI gate and validates JSON/JSONL syntax, path references, media headers/dimensions/manifests, canonical entity/social mappings, sameAs, vocabulary enums and active-folder conventions. Phase-2 discovery/retrieval tests additionally enforce separation between provider-documented behavior and unverified AI mechanism claims. Legal-layer tests enforce privacy boundaries and prevent unsigned agreements from being represented as active authorization.
