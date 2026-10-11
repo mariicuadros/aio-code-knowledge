@@ -19,12 +19,22 @@ function stamp(value) {
   return value.replace(/[-:.]/g, '');
 }
 
+const SAFE_CONFIGURATION_CODES = {
+  'Vault write credential missing': 'vault_write_token_missing',
+  'Instagram Business ID missing or invalid': 'instagram_business_id_missing_or_invalid',
+  'Instagram access token missing': 'instagram_access_token_missing',
+  'Graph API version invalid': 'meta_graph_api_version_invalid',
+};
+
 export async function collect(now = new Date()) {
-  let stage = 'configuration';
+  let stage = 'vault_configuration';
   try {
     const vaultToken = process.env.AIO_VAULT_WRITE_TOKEN;
     if (!vaultToken) throw new Error('Vault write credential missing');
+
+    stage = 'meta_configuration';
     const accountId = configuredAccountId();
+    stage = 'time_window';
     const { since, until } = previousDayColombia(now);
     const marker = `phase-2/analytics/jobs/instagram/account-${accountId}-${until}.json`;
 
@@ -99,7 +109,12 @@ export async function collect(now = new Date()) {
       commit: result.commit || result.head || null,
     };
   } catch (error) {
-    if (error && typeof error === 'object') error.collectionStage = stage;
+    if (error && typeof error === 'object') {
+      error.collectionStage = stage;
+      if (typeof error.message === 'string' && SAFE_CONFIGURATION_CODES[error.message]) {
+        error.collectionCode = SAFE_CONFIGURATION_CODES[error.message];
+      }
+    }
     throw error;
   }
 }
@@ -116,6 +131,7 @@ export async function GET(request) {
       diagnostic: {
         stage: error?.collectionStage || 'unknown',
         kind: error?.meta ? 'meta' : upstreamStatus !== undefined ? 'vault' : 'internal',
+        ...(error?.collectionCode ? { code: error.collectionCode } : {}),
         ...(upstreamStatus !== undefined ? { upstream_status: upstreamStatus } : {}),
       },
       upstream: error?.meta ? metaFailure(error) : undefined,
