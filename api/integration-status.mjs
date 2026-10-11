@@ -7,7 +7,7 @@ export async function GET() {
     phase: 'phase_2',
     instagram: {
       connector_code: 'installed',
-      production_collection_enabled: process.env.AIO_COLLECTION_ENABLED === '1',
+      collection_enabled_in_this_environment: process.env.AIO_COLLECTION_ENABLED === '1',
       graph_api_version: process.env.META_GRAPH_API_VERSION || 'v22.0',
       account_configured: Boolean(process.env.IG_BUSINESS_ID && process.env.IG_LONG_TOKEN),
       vault_read_configured: Boolean(process.env.AIO_VAULT_READ_TOKEN),
