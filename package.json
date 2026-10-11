@@ -6,7 +6,8 @@
     "check:gateway": "node scripts/validate_gateway.mjs",
     "check:precontent": "node scripts/validate_precontent.mjs",
     "build": "node scripts/build_site.mjs",
-    "indexnow": "node scripts/submit_indexnow.mjs"
+    "indexnow": "node scripts/submit_indexnow.mjs",
+    "test:instagram": "node --test tests/instagram-phase2.test.mjs"
   },
   "repository": {
     "type": "git",
