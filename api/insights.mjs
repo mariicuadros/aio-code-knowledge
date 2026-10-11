@@ -75,7 +75,10 @@ export async function GET(request) {
   }
 
   if (!authorized(request)) {
-    return json({ status: 'unauthorized' }, 401);
+    return json({
+      status: 'unauthorized',
+      auth_header_present: Boolean(request.headers.get('authorization')),
+    }, 401);
   }
 
   const businessId = process.env.IG_BUSINESS_ID;
