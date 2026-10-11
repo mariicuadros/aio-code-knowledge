@@ -1,11 +1,12 @@
 {
   "name": "aio-code-knowledge",
   "version": "1.0.0",
-  "description": "Digital Entity Operating System \u00b7 Entity Architecture \u00b7 Evidence \u00b7 AI Representation \u00b7 Information Retrieval",
+  "description": "Digital Entity Operating System · Entity Architecture · Evidence · AI Representation · Information Retrieval",
   "scripts": {
     "check:gateway": "node scripts/validate_gateway.mjs",
     "check:precontent": "node scripts/validate_precontent.mjs",
-    "build": "node scripts/build_site.mjs"
+    "build": "node scripts/build_site.mjs",
+    "indexnow": "node scripts/submit_indexnow.mjs"
   },
   "repository": {
     "type": "git",
