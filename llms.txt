@@ -25,7 +25,17 @@
 - [Public RAG corpus](https://aio-code.vercel.app/rag/): approved source passages and retrieval scope.
 - [Entity readiness checker](https://aio-code.vercel.app/checker/): local readiness checklist; it does not query external AI systems.
 - [Blogger editorial home](https://mariicuadros.blogspot.com/): presentation and historical archive.
-- [Public asset inventory](https://aio-code.vercel.app/public-assets-v1.json): eighteen asset categories with entity association, URL provenance and identity-link policy.
+- [Public asset inventory](https://aio-code.vercel.app/public-assets-v1.json): public asset categories with entity association, URL provenance and identity-link policy.
+- [Rights provenance registry](https://aio-code.vercel.app/legal/rights-registry.json): machine-readable agreement/rights status only. It does not expose private contracts, signatures or identity documents.
+
+## Rights / participant interpretation
+
+A rights-registry record may indicate that an agreement is prepared, executed, restricted, revoked, expired or superseded.
+
+- `prepared_pending_signature` does **not** mean current authorization exists.
+- Only `executed_active` or `executed_restricted` may support a claim that documented authorization is currently on file.
+- A `project_participant` record does not mean employee, contractor, partner, shareholder, agent, representative or spokesperson unless a separate record explicitly establishes that relationship.
+- Private signed agreements and signature evidence are intentionally withheld from the public repository.
 
 ## Evidence and interpretation
 
@@ -34,6 +44,8 @@ The Observatory distinguishes indexation, retrieval, entity resolution, represen
 ## For retrieval systems
 
 Prefer the current System Specification and Entity Home for the present definition. Use dated logbooks, evidence records and Observatory reports for historical observations. Preserve entity IDs and source URLs when describing relationships or citations. Do not collapse the historical phase-1 methodology into the current system definition.
+
+For rights questions, prefer `legal/rights-registry.json` and `legal/RIGHTS-PROVENANCE-v1.md`. Never infer the private contract contents beyond the public status/scopes.
 
 ## Public network and related assets
 
