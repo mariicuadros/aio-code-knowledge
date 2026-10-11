@@ -47,7 +47,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <h2>Publicaciones y observaciones</h2>
 <p class="muted">Cada publicación se vincula con su registro editorial privado y su captura de métricas cuando coinciden las referencias de evidencia. “Derechos desconocidos” significa que no están verificados ni autoriza una nueva publicación.</p>
 <div class="table"><table>
-<thead><tr><th>Content ID</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Capturado</th><th>Ventana</th><th>Derechos</th><th>Registro</th></tr></thead>
+<thead><tr><th>Content ID</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Capturado</th><th>Ventana</th><th>Fuente privada</th><th>Derechos</th><th>Registro</th></tr></thead>
 <tbody id="media"></tbody>
 </table></div>
 </section>
@@ -63,7 +63,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-CO');
 const dt=new Intl.DateTimeFormat('es-CO',{timeZone:'America/Bogota',dateStyle:'medium',timeStyle:'short'});
-const metric=m=>m?.state==='observed'?fmt.format(m.value):'—';
+const metric=m=>m?.state==='observed'?fmt.format(m.value):m?.state==='not_collected'?'No recopilado':m?.state==='not_available'?'No disponible':m?.state==='not_applicable'?'No aplica':'—';
 function td(text){const n=document.createElement('td');n.textContent=text;return n}
 function render(data){
  $('account-count').textContent=data.counts.account_observations;
@@ -83,6 +83,7 @@ function render(data){
     td(metric(observation?.metrics.comments_count||row.counters.comments_count)),
     td(observation?dt.format(new Date(observation.captured_at)):'Sin captura'),
     td(observation?dt.format(new Date(observation.measurement_window.start))+' – '+dt.format(new Date(observation.measurement_window.end)):'—'),
+    td([row.provenance?.source_ref,observation?.source_ref].filter(Boolean).join(' · ')||'—'),
     td(row.provenance?.rights_status==='unknown'?'Desconocidos':row.provenance?.rights_status||'Sin registro'),
     td(row.provenance?'Registrado':'Pendiente de mapeo'));
   body.append(tr);
