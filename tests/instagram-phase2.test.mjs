@@ -5,6 +5,7 @@ import { normalizeMediaSnapshot, verifyMediaCandidate } from '../lib/media-candi
 import { normalize, verify } from '../lib/account-observation.mjs';
 import { GET as collectRoute, previousDayColombia } from '../api/collect-instagram.mjs';
 import { POST as dashboardLogin } from '../api/dashboard-session.mjs';
+import { linkPerformanceLedger } from '../lib/performance-ledger-view.mjs';
 
 const originalFetch = globalThis.fetch;
 const oldEnv = { ...process.env };
@@ -129,4 +130,76 @@ test('dashboard login uses dedicated admin header and same-origin check', async 
     headers: { origin: 'https://evil.test', 'x-aio-admin-token': 'test-admin' },
   });
   assert.equal((await dashboardLogin(wrongOrigin)).status, 403);
+});
+
+test('performance ledger links only matching private publication and capture evidence', () => {
+  const source = 'phase-2/analytics/snapshots/instagram/media/capture.json';
+  const candidate = {
+    proposed_content_id: 'MC-001-IG-18010095092949559', candidate_id: 'IGMEDIA-test',
+    source_ref: source, platform: 'instagram', permalink: 'https://www.instagram.com/p/Dcb3wZrGXnV/',
+    media_type: 'CAROUSEL_ALBUM', published_at: '2026-08-24T20:00:02.000Z',
+    captured_at: '2026-10-11T18:38:22.282Z',
+    counters: {
+      like_count: { value: 50, state: 'observed', source_ref: source },
+      comments_count: { value: 9, state: 'observed', source_ref: source },
+    },
+  };
+  const provenance = {
+    record_type: 'content_provenance', content_id: candidate.proposed_content_id, visibility: 'private',
+    status: 'published', source_evidence_refs: [source], published_at: '2026-08-24T20:00:02Z',
+    platform: 'Instagram', publication_ref: candidate.permalink, content_type: 'EDITORIAL',
+    rights_status: 'unknown', commercial_relationship: 'unknown', source_ref: 'commercial-data/content-intake/IGMEDIA.json',
+  };
+  const observation = {
+    record_type: 'performance_observation', content_id: candidate.proposed_content_id, visibility: 'private',
+    observation_id: 'IGOBS-test', source_ref: source, platform: 'Instagram',
+    captured_at: candidate.captured_at,
+    measurement_window: { start: '2026-08-24T20:00:02Z', end: candidate.captured_at },
+    metrics: {
+      like_count: { value: 50, state: 'observed', source_ref: source },
+      comments_count: { value: 9, state: 'observed', source_ref: source },
+    },
+  };
+  const linked = linkPerformanceLedger([candidate], [provenance, observation]);
+  assert.equal(linked[0].provenance.rights_status, 'unknown');
+  assert.equal(linked[0].latest_observation.observation_id, 'IGOBS-test');
+  assert.equal(linked[0].observation_count, 1);
+  assert.throws(() => linkPerformanceLedger([candidate], [
+    provenance, { ...observation, metrics: { ...observation.metrics, like_count: { ...observation.metrics.like_count, value: 51 } } },
+  ]), /Like count does not reconcile/);
+});
+test('performance ledger supports a later immutable capture for the same content ID', () => {
+  const firstRef = 'phase-2/analytics/snapshots/instagram/media/first.json';
+  const secondRef = 'phase-2/analytics/snapshots/instagram/media/second.json';
+  const makeCandidate = (source_ref, captured_at, likes) => ({
+    proposed_content_id: 'MC-001-IG-123', candidate_id: 'IGMEDIA-' + captured_at,
+    source_ref, platform: 'instagram', permalink: 'https://www.instagram.com/p/example/',
+    media_type: 'IMAGE', published_at: '2026-08-24T20:00:02.000Z', captured_at,
+    counters: {
+      like_count: { value: likes, state: 'observed', source_ref },
+      comments_count: { value: 2, state: 'observed', source_ref },
+    },
+  });
+  const first = makeCandidate(firstRef, '2026-10-11T18:38:22.282Z', 50);
+  const second = makeCandidate(secondRef, '2026-10-12T18:38:22.282Z', 57);
+  const provenance = {
+    record_type: 'content_provenance', content_id: first.proposed_content_id, visibility: 'private',
+    status: 'published', source_evidence_refs: [firstRef], published_at: '2026-08-24T20:00:02Z',
+    platform: 'Instagram', publication_ref: first.permalink, content_type: 'EDITORIAL',
+    rights_status: 'unknown', commercial_relationship: 'unknown', source_ref: 'intake.json',
+  };
+  const observation = {
+    record_type: 'performance_observation', content_id: first.proposed_content_id, visibility: 'private',
+    observation_id: 'IGOBS-next', source_ref: secondRef, platform: 'Instagram',
+    captured_at: second.captured_at,
+    measurement_window: { start: '2026-08-24T20:00:02Z', end: second.captured_at },
+    metrics: {
+      like_count: { value: 57, state: 'observed', source_ref: secondRef },
+      comments_count: { value: 2, state: 'observed', source_ref: secondRef },
+    },
+  };
+  const linked = linkPerformanceLedger([first, second], [provenance, observation]);
+  assert.equal(linked.length, 1);
+  assert.equal(linked[0].captured_at, second.captured_at);
+  assert.equal(linked[0].latest_observation.observation_id, 'IGOBS-next');
 });
