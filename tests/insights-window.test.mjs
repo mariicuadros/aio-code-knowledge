@@ -19,7 +19,7 @@ beforeEach(() => {
 });
 afterEach(() => { process.env = { ...oldEnv }; globalThis.fetch = originalFetch; });
 const request = (query = '', auth = true) => new Request('https://example.test/api/insights' + query,
-  { headers: auth ? { authorization: 'Bearer test-admin' } : {} });
+  { headers: auth ? { 'x-aio-admin-token': 'test-admin' } : {} });
 test('forwards explicit seconds only to insights and retains zeros', async () => {
   const response = await GET(request('?since=1791176400&until=1791262800'));
   const body = await response.json();
