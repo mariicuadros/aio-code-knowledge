@@ -38,11 +38,12 @@ jobs:
         run: python -m rag.evaluate
       - name: Check published evidence index freshness
         run: python scripts/build_public_rag.py --check
-      - name: Validate gated AI SDK route
+      - name: Validate gated AI SDK route and protected analytics endpoint
         run: |
           npm ci --ignore-scripts --no-audit --no-fund
           npm run check:gateway
           npm run check:precontent
+          npm run test:insights
           node scripts/validate_rag_safety.mjs
       - name: Build explicit public website surface
         run: npm run build
