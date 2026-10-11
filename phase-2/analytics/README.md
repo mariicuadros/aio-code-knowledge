@@ -1,10 +1,11 @@
 # Analytics y dashboard — criterios de implementación
 
-## Estado verificado al 6 de octubre
+## Estado verificado al 11 de octubre
 
-- Instagram Insights: [PR #10](https://github.com/mariicuadros/aio-code-knowledge/pull/10) abierto, draft, no fusionado. El código incorpora un interruptor y autenticación; no se ejecutó una consulta real a Meta en esta auditoría. Configurar variables o autorizar una app no demuestra una lectura operativa.
-- YouTube y TikTok: no se localizaron conectores en los main de los tres repositorios accesibles revisados. Esto no verifica recursos que existan solo en Vercel o en la computadora de la creadora.
-- Dashboard: no se localizó una implementación en esos main. El Ledger manual privado y los contratos de observación sí existen.
+- Instagram / Meta: una reconstrucción limpia sobre el main actual confirmó en Vercel Preview lectura autorizada de la cuenta configurada, media real y account-level Insights. La integración de producción se implementa con snapshots privados, normalización, Content ID candidato, vault inmutable, cron diario y dashboard privado. La automatización solo se declarará operativa después de observar ejecuciones reales sucesivas sin sobrescritura.
+- PR #10 y los intentos intermedios quedaron cerrados sin fusionarse; no son la base operativa.
+- YouTube y TikTok: siguen siendo conectores Phase-2 separados y todavía no se declaran operativos.
+- Dashboard: la capa privada está implementada en esta rama de integración y exige credencial de administración para leer el vault. La página pública no contiene datos operativos.
 
 ## Circuito esperado
 
