@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>AIO CODE · Phase 2 Brain</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#17191c;background:#f4f5f7}
+*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:32px 20px 60px}
+header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:28px}
+h1{margin:4px 0;font-size:34px}h2{margin-top:0}.muted{color:#66707b}.eyebrow{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#8a671d;font-weight:800}
+.card{background:#fff;border:1px solid #dfe3e8;border-radius:12px;padding:20px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.metric strong{font-size:34px;display:block}.metric span{color:#66707b}
+input,button{font:inherit}input{width:100%;padding:11px;border:1px solid #c8ced6;border-radius:7px}button{padding:10px 14px;border:1px solid #bbb;background:#17191c;color:#fff;border-radius:7px;cursor:pointer}
+form{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:650px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #eceff2;vertical-align:top}th{color:#66707b}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#f3ead4;color:#765816;font-size:12px;font-weight:700}
+#error{color:#8d2020}[hidden]{display:none!important}
+@media(max-width:760px){.grid{grid-template-columns:1fr}form{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.table{overflow:auto}}
+</style>
+</head>
+<body>
+<main>
+<header><div><div class="eyebrow">AIO CODE · Digital Entity Operating System</div><h1>Phase 2 Brain</h1><div class="muted">Instagram · private operational view</div></div><button id="logout" hidden>Salir</button></header>
+
+<section id="login" class="card">
+<h2>Acceso privado</h2>
+<p class="muted">La clave se usa solo para crear una sesión segura y no se guarda en esta página.</p>
+<form id="login-form"><input id="token" type="password" autocomplete="current-password" placeholder="AIO dashboard admin token" required><button>Entrar</button></form>
+<p id="login-status" class="muted"></p>
+</section>
+
+<section id="app" hidden>
+<div class="grid">
+<div class="card metric"><span>Capturas de cuenta</span><strong id="account-count">—</strong></div>
+<div class="card metric"><span>Content IDs propuestos</span><strong id="content-count">—</strong></div>
+<div class="card metric"><span>Vault commit</span><strong id="commit" style="font-size:16px">—</strong></div>
+</div>
+
+<section class="card">
+<h2>Última observación de cuenta</h2>
+<div id="latest-account" class="muted">Sin observaciones.</div>
+</section>
+
+<section class="card">
+<h2>Contenido observado</h2>
+<p class="muted">Estos IDs son candidatos estables basados en media de Instagram. No se convierten en content_provenance hasta completar el mapeo humano, derechos y clasificación.</p>
+<div class="table"><table>
+<thead><tr><th>Content ID propuesto</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Estado</th></tr></thead>
+<tbody id="media"></tbody>
+</table></div>
+</section>
+
+<section class="card">
+<h2>Límite de interpretación</h2>
+<p class="muted">Las métricas de cuenta, los contadores de contenido y el reconocimiento en buscadores/IA permanecen separados. El panel no atribuye causalidad a AIO CODE.</p>
+</section>
+</section>
+<p id="error"></p>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const fmt=new Intl.NumberFormat('es-CO');
+const dt=new Intl.DateTimeFormat('es-CO',{timeZone:'America/Bogota',dateStyle:'medium',timeStyle:'short'});
+const metric=m=>m?.state==='observed'?fmt.format(m.value):'—';
+function td(text){const n=document.createElement('td');n.textContent=text;return n}
+function render(data){
+ $('account-count').textContent=data.counts.account_observations;
+ $('content-count').textContent=data.counts.unique_proposed_content_ids;
+ $('commit').textContent=(data.source_commit||'').slice(0,12)||'—';
+ const latest=data.account_records[0];
+ $('latest-account').textContent=latest
+  ? `@${latest.username} · ${dt.format(new Date(latest.captured_at))} · Reach ${metric(latest.metrics.reach)} · Views ${metric(latest.metrics.views)} · Interactions ${metric(latest.metrics.total_interactions)}`
+  : 'Sin observaciones.';
+ const body=$('media');body.replaceChildren();
+ for(const row of data.media_candidates){
+  const tr=document.createElement('tr');
+  tr.append(td(row.proposed_content_id),td(dt.format(new Date(row.published_at))),td(row.media_type),
+    td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)));
+  const state=td('');const b=document.createElement('span');b.className='badge';b.textContent='Pendiente de mapeo';state.append(b);tr.append(state);body.append(tr);
+ }
+ $('login').hidden=true;$('app').hidden=false;$('logout').hidden=false;$('error').textContent='';
+}
+async function load(){
+ const r=await fetch('/api/dashboard',{cache:'no-store'});
+ if(r.status===401)return false;
+ if(!r.ok)throw new Error('dashboard');
+ render(await r.json());return true;
+}
+$('login-form').addEventListener('submit',async e=>{
+ e.preventDefault();$('login-status').textContent='Verificando…';
+ const value=$('token').value;$('token').value='';
+ try{
+  const r=await fetch('/api/dashboard-session',{method:'POST',headers:{'x-aio-admin-token':value}});
+  if(!r.ok){$('login-status').textContent=r.status===503?'Falta configurar la clave de dashboard en Vercel.':'Clave no válida.';return}
+  await load();$('login-status').textContent='';
+ }catch{$('login-status').textContent='No se pudo abrir la sesión.'}
+});
+$('logout').addEventListener('click',async()=>{await fetch('/api/dashboard-session',{method:'DELETE'});location.reload()});
+load().catch(()=>{$('error').textContent='No se pudo verificar el Brain privado.'});
+</script>
+</body>
+</html>
