@@ -34,7 +34,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 <section id="app" hidden>
 <div class="grid">
 <div class="card metric"><span>Capturas de cuenta</span><strong id="account-count">—</strong></div>
-<div class="card metric"><span>Content IDs propuestos</span><strong id="content-count">—</strong></div>
+<div class="card metric"><span>Publicaciones registradas</span><strong id="content-count">—</strong></div>
 <div class="card metric"><span>Vault commit</span><strong id="commit" style="font-size:16px">—</strong></div>
 </div>
 
@@ -44,17 +44,17 @@ table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;p
 </section>
 
 <section class="card">
-<h2>Contenido observado</h2>
-<p class="muted">Estos IDs son candidatos estables basados en media de Instagram. No se convierten en content_provenance hasta completar el mapeo humano, derechos y clasificación.</p>
+<h2>Publicaciones y observaciones</h2>
+<p class="muted">Cada publicación se vincula con su registro editorial privado y su captura de métricas cuando coinciden las referencias de evidencia. “Derechos desconocidos” significa que no están verificados ni autoriza una nueva publicación.</p>
 <div class="table"><table>
-<thead><tr><th>Content ID propuesto</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Estado</th></tr></thead>
+<thead><tr><th>Content ID</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Capturado</th><th>Ventana</th><th>Derechos</th><th>Registro</th></tr></thead>
 <tbody id="media"></tbody>
 </table></div>
 </section>
 
 <section class="card">
 <h2>Límite de interpretación</h2>
-<p class="muted">Las métricas de cuenta, los contadores de contenido y el reconocimiento en buscadores/IA permanecen separados. El panel no atribuye causalidad a AIO CODE.</p>
+<p class="muted">Las métricas de cuenta permanecen separadas de cada publicación. Las métricas son contadores observados en una fecha, no cambios del periodo. Derechos desconocidos no son autorización. El panel no atribuye causalidad a AIO CODE.</p>
 </section>
 </section>
 <p id="error"></p>
@@ -67,18 +67,25 @@ const metric=m=>m?.state==='observed'?fmt.format(m.value):'—';
 function td(text){const n=document.createElement('td');n.textContent=text;return n}
 function render(data){
  $('account-count').textContent=data.counts.account_observations;
- $('content-count').textContent=data.counts.unique_proposed_content_ids;
+ $('content-count').textContent=data.counts.publications_registered;
  $('commit').textContent=(data.source_commit||'').slice(0,12)||'—';
  const latest=data.account_records[0];
  $('latest-account').textContent=latest
   ? `@${latest.username} · ${dt.format(new Date(latest.captured_at))} · Reach ${metric(latest.metrics.reach)} · Views ${metric(latest.metrics.views)} · Interactions ${metric(latest.metrics.total_interactions)}`
   : 'Sin observaciones.';
  const body=$('media');body.replaceChildren();
- for(const row of data.media_candidates){
+ for(const row of data.media_records){
   const tr=document.createElement('tr');
-  tr.append(td(row.proposed_content_id),td(dt.format(new Date(row.published_at))),td(row.media_type),
-    td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)));
-  const state=td('');const b=document.createElement('span');b.className='badge';b.textContent='Pendiente de mapeo';state.append(b);tr.append(state);body.append(tr);
+  const observation=row.latest_observation;
+  tr.append(td(row.content_id),td(dt.format(new Date(row.published_at))),
+    td(row.provenance?.content_type||row.media_type),
+    td(metric(observation?.metrics.like_count||row.counters.like_count)),
+    td(metric(observation?.metrics.comments_count||row.counters.comments_count)),
+    td(observation?dt.format(new Date(observation.captured_at)):'Sin captura'),
+    td(observation?dt.format(new Date(observation.measurement_window.start))+' – '+dt.format(new Date(observation.measurement_window.end)):'—'),
+    td(row.provenance?.rights_status==='unknown'?'Desconocidos':row.provenance?.rights_status||'Sin registro'),
+    td(row.provenance?'Registrado':'Pendiente de mapeo'));
+  body.append(tr);
  }
  $('login').hidden=true;$('app').hidden=false;$('logout').hidden=false;$('error').textContent='';
 }
