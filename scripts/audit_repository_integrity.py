@@ -38,6 +38,7 @@ def check_repo_path_references():
     private_keys={'vault_path','raw_evidence_custody','private_path','restricted_path'}
     def walk(v,key=None):
         if key in private_keys: return
+        if source_file=='vercel.json' and key in {'path','source','destination'}: return
         if isinstance(v,dict):
             for k,x in v.items(): walk(x,k)
         elif isinstance(v,list):

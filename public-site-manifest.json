@@ -15,6 +15,7 @@
     "assets/web-analytics.js",
     "checker/index.html",
     "claim-ledger.json",
+    "dashboard/index.html",
     "entities/marii-cuadros/index.html",
     "entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld",
     "entities/marii-cuadros/technical/schema/disambiguation.json",
