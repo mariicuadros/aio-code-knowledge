@@ -135,7 +135,7 @@ test('dashboard login uses dedicated admin header and same-origin check', async 
 test('performance ledger links only matching private publication and capture evidence', () => {
   const source = 'phase-2/analytics/snapshots/instagram/media/capture.json';
   const candidate = {
-    proposed_content_id: 'MC-001-IG-18010095092949559', candidate_id: 'IGMEDIA-test',
+    proposed_content_id: 'MC-001-IG-18010095092949559', candidate_id: 'IGMEDIA-test', owner: 'MC-001', entity_id: 'MC-001',
     source_ref: source, platform: 'instagram', permalink: 'https://www.instagram.com/p/Dcb3wZrGXnV/',
     media_type: 'CAROUSEL_ALBUM', published_at: '2026-08-24T20:00:02.000Z',
     captured_at: '2026-10-11T18:38:22.282Z',
@@ -145,13 +145,13 @@ test('performance ledger links only matching private publication and capture evi
     },
   };
   const provenance = {
-    record_type: 'content_provenance', content_id: candidate.proposed_content_id, visibility: 'private',
+    record_type: 'content_provenance', content_id: candidate.proposed_content_id, owner: 'MC-001', entity_ids: ['MC-001'], visibility: 'private',
     status: 'published', source_evidence_refs: [source], published_at: '2026-08-24T20:00:02Z',
     platform: 'Instagram', publication_ref: candidate.permalink, content_type: 'EDITORIAL',
     rights_status: 'unknown', commercial_relationship: 'unknown', source_ref: 'commercial-data/content-intake/IGMEDIA.json',
   };
   const observation = {
-    record_type: 'performance_observation', content_id: candidate.proposed_content_id, visibility: 'private',
+    record_type: 'performance_observation', content_id: candidate.proposed_content_id, owner: 'MC-001', visibility: 'private',
     observation_id: 'IGOBS-test', source_ref: source, platform: 'Instagram',
     captured_at: candidate.captured_at,
     measurement_window: { start: '2026-08-24T20:00:02Z', end: candidate.captured_at },
@@ -175,7 +175,7 @@ test('performance ledger supports a later immutable capture for the same content
   const firstRef = 'phase-2/analytics/snapshots/instagram/media/first.json';
   const secondRef = 'phase-2/analytics/snapshots/instagram/media/second.json';
   const makeCandidate = (source_ref, captured_at, likes) => ({
-    proposed_content_id: 'MC-001-IG-123', candidate_id: 'IGMEDIA-' + captured_at,
+    proposed_content_id: 'MC-001-IG-123', candidate_id: 'IGMEDIA-' + captured_at, owner: 'MC-001', entity_id: 'MC-001',
     source_ref, platform: 'instagram', permalink: 'https://www.instagram.com/p/example/',
     media_type: 'IMAGE', published_at: '2026-08-24T20:00:02.000Z', captured_at,
     counters: {
@@ -186,13 +186,13 @@ test('performance ledger supports a later immutable capture for the same content
   const first = makeCandidate(firstRef, '2026-10-11T18:38:22.282Z', 50);
   const second = makeCandidate(secondRef, '2026-10-12T18:38:22.282Z', 57);
   const provenance = {
-    record_type: 'content_provenance', content_id: first.proposed_content_id, visibility: 'private',
+    record_type: 'content_provenance', content_id: first.proposed_content_id, owner: 'MC-001', entity_ids: ['MC-001'], visibility: 'private',
     status: 'published', source_evidence_refs: [firstRef], published_at: '2026-08-24T20:00:02Z',
     platform: 'Instagram', publication_ref: first.permalink, content_type: 'EDITORIAL',
     rights_status: 'unknown', commercial_relationship: 'unknown', source_ref: 'intake.json',
   };
   const observation = {
-    record_type: 'performance_observation', content_id: first.proposed_content_id, visibility: 'private',
+    record_type: 'performance_observation', content_id: first.proposed_content_id, owner: 'MC-001', visibility: 'private',
     observation_id: 'IGOBS-next', source_ref: secondRef, platform: 'Instagram',
     captured_at: second.captured_at,
     measurement_window: { start: '2026-08-24T20:00:02Z', end: second.captured_at },
