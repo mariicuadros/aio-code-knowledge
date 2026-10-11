@@ -2,15 +2,6 @@ import { authorized, json } from '../lib/private-auth.mjs';
 import { state, accountRecords, mediaCandidates, performanceLedgerRecords } from '../lib/vault-client.mjs';
 import { linkPerformanceLedger } from '../lib/performance-ledger-view.mjs';
 
-function latestByContent(rows) {
-  const latest = new Map();
-  for (const row of rows) {
-    const prior = latest.get(row.proposed_content_id);
-    if (!prior || row.captured_at > prior.captured_at) latest.set(row.proposed_content_id, row);
-  }
-  return [...latest.values()].sort((a, b) => b.published_at.localeCompare(a.published_at));
-}
-
 export async function GET(request) {
   if (!authorized(request)) return json({ status: 'unauthorized' }, 401);
   const token = process.env.AIO_VAULT_READ_TOKEN;
