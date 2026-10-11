@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/legal/rights-registry.schema.json",
+  "title": "AIO CODE Public Rights Provenance Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "updated",
+    "privacy_rule",
+    "records"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "privacy_rule": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rights_record_id",
+          "subject_id",
+          "public_name",
+          "relationship",
+          "agreement_type",
+          "agreement_version",
+          "execution_status",
+          "document_public",
+          "private_evidence_on_file",
+          "scopes",
+          "non_relationship_claims"
+        ],
+        "properties": {
+          "rights_record_id": {
+            "type": "string"
+          },
+          "subject_id": {
+            "type": "string"
+          },
+          "public_name": {
+            "type": "string"
+          },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "project_participant",
+              "self_rights_holder"
+            ]
+          },
+          "project_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "agreement_type": {
+            "type": "string"
+          },
+          "agreement_version": {
+            "type": "string"
+          },
+          "execution_status": {
+            "type": "string",
+            "enum": [
+              "draft_internal",
+              "prepared_pending_signature",
+              "executed_active",
+              "executed_restricted",
+              "revoked_for_future_use",
+              "expired",
+              "superseded",
+              "unknown"
+            ]
+          },
+          "executed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "document_public": {
+            "const": false
+          },
+          "private_evidence_on_file": {
+            "type": "boolean"
+          },
+          "document_hash_sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-fA-F0-9]{64}$"
+          },
+          "scopes": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "enum": [
+                "allowed",
+                "prohibited",
+                "separate_consent_required",
+                "not_applicable",
+                "unknown"
+              ]
+            }
+          },
+          "non_relationship_claims": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification_note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
