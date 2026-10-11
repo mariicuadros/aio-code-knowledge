@@ -21,9 +21,9 @@ const hash = value => createHash('sha256').update(value).digest();
 
 function authorized(request) {
   const expected = process.env.AIO_INSIGHTS_ADMIN_TOKEN;
-  const header = request.headers.get('authorization') || '';
-  if (!expected || !header.startsWith('Bearer ')) return false;
-  const supplied = hash(header.slice(7));
+  const suppliedValue = request.headers.get('x-aio-admin-token') || '';
+  if (!expected || !suppliedValue) return false;
+  const supplied = hash(suppliedValue);
   const configured = hash(expected);
   return timingSafeEqual(supplied, configured);
 }
@@ -77,7 +77,7 @@ export async function GET(request) {
   if (!authorized(request)) {
     return json({
       status: 'unauthorized',
-      auth_header_present: Boolean(request.headers.get('authorization')),
+      admin_header_present: Boolean(request.headers.get('x-aio-admin-token')),
     }, 401);
   }
 
