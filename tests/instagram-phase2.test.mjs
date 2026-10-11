@@ -165,6 +165,9 @@ test('performance ledger links only matching private publication and capture evi
   assert.equal(linked[0].latest_observation.observation_id, 'IGOBS-test');
   assert.equal(linked[0].observation_count, 1);
   assert.throws(() => linkPerformanceLedger([candidate], [
+    { ...provenance, owner: 'OTHER' }, observation,
+  ]), /owner or entity mismatch/);
+  assert.throws(() => linkPerformanceLedger([candidate], [
     provenance, { ...observation, metrics: { ...observation.metrics, like_count: { ...observation.metrics.like_count, value: 51 } } },
   ]), /Like count does not reconcile/);
 });
