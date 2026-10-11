@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "updated": "2026-10-10",
+  "privacy_rule": "Public machine-readable status only. Signed agreements, signatures, government IDs, dates of birth, contact details and signing audit trails remain private.",
+  "records": [
+    {
+      "rights_record_id": "RIGHTS-DANISAN-001-v1",
+      "subject_id": "DANISAN-001",
+      "public_name": "Danisan Carpio",
+      "relationship": "project_participant",
+      "project_refs": [
+        "AIO CODE Phase 2 participant/client pilot"
+      ],
+      "agreement_type": "participant_image_ai_consent",
+      "agreement_version": "1.0",
+      "execution_status": "prepared_pending_signature",
+      "executed_at": null,
+      "expires_at": null,
+      "document_public": false,
+      "private_evidence_on_file": false,
+      "document_hash_sha256": null,
+      "scopes": {
+        "image_capture_use": "unknown",
+        "ordinary_editing": "unknown",
+        "creative_ai_transformation": "unknown",
+        "natural_voice_use": "unknown",
+        "persistent_voice_clone": "separate_consent_required",
+        "dedicated_reusable_identity_model": "separate_consent_required",
+        "paid_advertising": "separate_consent_required",
+        "third_party_licensing": "separate_consent_required",
+        "political_electoral_use": "prohibited",
+        "sexual_intimate_content": "prohibited"
+      },
+      "non_relationship_claims": [
+        "This record does not establish employment.",
+        "This record does not establish partnership/shareholding.",
+        "This record does not establish agency, exclusive representation or spokesperson status."
+      ],
+      "verification_note": "A final agreement form has been prepared. No current authorization is asserted until execution is verified and this record is promoted to executed_active or executed_restricted."
+    },
+    {
+      "rights_record_id": "RIGHTS-MC-001-v1",
+      "subject_id": "MC-001",
+      "public_name": "Marii Cuadros",
+      "relationship": "self_rights_holder",
+      "project_refs": [
+        "AIO-001",
+        "VOID-001"
+      ],
+      "agreement_type": "self_image_ai_authorization",
+      "agreement_version": "1.0",
+      "execution_status": "prepared_pending_signature",
+      "executed_at": null,
+      "expires_at": null,
+      "document_public": false,
+      "private_evidence_on_file": false,
+      "document_hash_sha256": null,
+      "scopes": {
+        "image_capture_use": "unknown",
+        "ordinary_editing": "unknown",
+        "creative_ai_transformation": "unknown",
+        "natural_voice_use": "unknown",
+        "persistent_voice_clone": "separate_consent_required",
+        "dedicated_reusable_identity_model": "separate_consent_required",
+        "paid_advertising": "unknown",
+        "third_party_licensing": "separate_consent_required",
+        "political_electoral_use": "prohibited",
+        "sexual_intimate_content": "prohibited"
+      },
+      "non_relationship_claims": [
+        "Self-authorization does not replace third-party rights, platform rules or applicable law."
+      ],
+      "verification_note": "Self-authorization form has been prepared. Status remains pending until execution evidence is stored privately."
+    }
+  ]
+}
