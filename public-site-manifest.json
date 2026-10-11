@@ -3,6 +3,7 @@
   "purpose": "Explicit public website surface; source and operational records remain in Git, outside the static deployment.",
   "files": [
     ".well-known/marii-cuadros.json",
+    "2000427ca5d64970a33991c02e493ab4.txt",
     "AIO-CODE-SYSTEM-SPEC-v2.md",
     "ENTITY-MASTER-RECORD.md",
     "EVIDENCE-STANDARD-v1.md",
@@ -27,7 +28,6 @@
     "entity/ENTITY-PASSPORT-OZCU.md",
     "entity/ENTITY-PASSPORT-VOID-MODE.md",
     "identity/OZCU-OFFICIAL-DECLARATION-2026-10-09.md",
-    "identity/confusable-entities.json",
     "index.html",
     "legal/RIGHTS-PROVENANCE-v1.md",
     "legal/rights-registry.json",
