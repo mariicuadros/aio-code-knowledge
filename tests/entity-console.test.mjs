@@ -20,6 +20,27 @@ test('canonical IDs and unknown tenant fields cannot be supplied',async t=>{cons
 test('validation rejects private/malformed links, unauthorized location and verified claims',()=>{for(const url of ['javascript:alert(1)','http://example.com','https://127.0.0.1/a','https://user:pass@example.com','https://[::1]/'])assert.throws(()=>validateEntity({...data(),officialUrls:[url]}),{code:'invalid_url'});assert.throws(()=>validateEntity({...data(),location:'Bogotá'}),{code:'location_not_authorized'});assert.throws(()=>validateEntity({...data(),claims:[{claim_id:'X',claim_type:'canonical_definition',claim:'X',source:'X',source_ref:'X',evidence_refs:[],date:'2026-10-11',claim_status:'draft',evidence_state:'verified',verification_rule_id:null,verification_scope:null}]}),{code:'verified_claims_require_separate_review'});});
 test('HTTP denies anonymous reads and writes before storage access',async()=>{let touched=false;const store={all(){touched=true;throw new Error('SHOULD_NOT_ACCESS');}};for(const method of ['GET','POST','PATCH']){const res=await handle(new Request('http://local/api/entities',{method}),store);assert.equal(res.status,401);}assert.equal(touched,false);});
 test('HTTP structured errors, persistence read, size and media-type limits; no secrets in response',async t=>{const {store}=await setup(t);process.env.AIO_DASHBOARD_ADMIN_TOKEN='backend-secret-canary-test';const headers={'x-aio-admin-token':process.env.AIO_DASHBOARD_ADMIN_TOKEN,'content-type':'application/json','idempotency-key':randomUUID()};const post=await handle(new Request('http://local/api/entities',{method:'POST',headers,body:JSON.stringify({data:data()})}),store);assert.equal(post.status,201);const text=await post.text();assert.equal(text.includes(process.env.AIO_DASHBOARD_ADMIN_TOKEN),false);assert.equal(text.includes('operationHash'),false);const r=JSON.parse(text).data;const get=await handle(new Request('http://local/api/entities?id='+r.id,{headers}),store);assert.equal(get.status,200);assert.equal((await get.json()).data.id,r.id);const large=await handle(new Request('http://local/api/entities',{method:'POST',headers,body:'x'.repeat(40000)}),store);assert.equal(large.status,413);const malformed=await handle(new Request('http://local/api/entities',{method:'POST',headers,body:'{'}),store);assert.equal(malformed.status,400);const wrong=await handle(new Request('http://local/api/entities',{method:'POST',headers:{...headers,'content-type':'text/plain'},body:'x'}),store);assert.equal(wrong.status,415);const down=await handle(new Request('http://local/api/entities',{headers}),{all(){throw new Error('provider-secret-canary');}});assert.equal(down.status,503);assert.equal((await down.text()).includes('provider-secret-canary'),false);});
+
+test('read failure diagnostics categorize provider outcomes without exposing secrets',async()=>{
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='diagnostic-test-secret';
+  const req=()=>new Request('http://local/api/entities',{headers:{'x-aio-admin-token':'diagnostic-test-secret'}});
+  const cases=[
+    [{status:401,message:'SECRET-PROVIDER-BODY'},'vault_access_denied'],
+    [{status:403,message:'SECRET-PROVIDER-BODY'},'vault_access_denied'],
+    [{status:404,message:'SECRET-PROVIDER-BODY'},'vault_repository_unavailable'],
+    [{status:429,message:'SECRET-PROVIDER-BODY'},'vault_provider_rate_limited'],
+    [{status:502,message:'SECRET-PROVIDER-BODY'},'vault_provider_unavailable'],
+    [new TypeError('SECRET-NETWORK-DATA'),'vault_network_unavailable'],
+    [new Error('SECRET-UNKNOWN-DATA'),'vault_read_failed'],
+  ];
+  for(const [failure,expected] of cases){
+    const response=await handle(req(),{all(){throw failure;}});
+    assert.equal(response.status,503);
+    const body=await response.text();
+    assert.deepEqual(JSON.parse(body),{error:{code:expected}});
+    assert.equal(body.includes('SECRET'),false);
+  }
+});
 test('archive withdraws active approval and package',async t=>{const {service}=await setup(t);let r=await create(service);r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'archive');assert.equal(r.status,'archived');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);});
 test('filesystem store refuses Vercel deployment',()=>{const saved={...process.env};process.env.AIO_ENTITY_STORE='local';process.env.AIO_ENTITY_LOCAL_ENABLED='1';process.env.VERCEL='1';try{assert.throws(()=>configuredStore(),{code:'local_store_forbidden'});}finally{process.env=saved;}});
 test('vault adapter uses existing immutable client (MOCK GitHub, no remote writes)',async t=>{
