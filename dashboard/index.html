@@ -123,7 +123,9 @@ $('collect').addEventListener('click',async()=>{
   if(!response.ok){
    const messages={unauthorized:'La sesión venció. Vuelve a entrar.',forbidden:'La solicitud no proviene de este dashboard.',disabled:'La recolección está desactivada en Vercel.'};
    const stage=result.diagnostic?.stage;
-   throw new Error(messages[result.status]||`No se completó la consulta. Etapa: ${stage||'desconocida'}. Código: ${result.diagnostic?.code||result.status}.`);
+   const meta=result.upstream;
+   const detail=Number.isInteger(meta?.code) ? ` Meta: código ${meta.code}; HTTP ${Number.isInteger(meta.status)?meta.status:'desconocido'}.` : '';
+   throw new Error(messages[result.status]||`No se completó la consulta. Etapa: ${stage||'desconocida'}. Código: ${result.diagnostic?.code||result.status}.${detail}`);
   }
   if(!await load())throw new Error('La sesión venció. Vuelve a entrar para ver el registro.');
   $('collection-status').textContent=result.status==='already_collected'
