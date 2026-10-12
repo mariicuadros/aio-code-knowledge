@@ -63,18 +63,30 @@ test('vault read-stage diagnostics expose only a fixed stage without secrets',as
     assert.equal(body.includes('PRIVATE'),false);
   }
 });
-test('vault tree and record processing errors use safe fixed codes',async()=>{
+test('vault read diagnostics reject malformed tree and invalid JSON without leaking data',async t=>{
+  const original=globalThis.fetch;
+  t.after(()=>{globalThis.fetch=original;});
   process.env.AIO_DASHBOARD_ADMIN_TOKEN='diagnostic-only-test-secret';
   const req=()=>new Request('http://local/api/entities',{headers:{'x-aio-admin-token':'diagnostic-only-test-secret'}});
-  for(const [code,failure] of [
-    ['vault_tree_invalid',()=>({entries:null})],
-    ['vault_record_selection_failed',()=>({entries:[{type:'blob',get path(){throw new Error('PRIVATE-TREE-DETAIL');}}]})]
-  ]) {
-    const store={all(){const snapshot=failure();if(!Array.isArray(snapshot.entries)) { const e=new Error('bad tree'); e.code=code; throw e; }snapshot.entries.filter(e=>e.path);}};
-    const result=await handle(req(),store);
-    assert.equal(result.status,503);
-    assert.equal((await result.text()).includes('PRIVATE'),false);
-  }
+  const sha='a'.repeat(40);
+  let tree;
+  globalThis.fetch=async(input)=>{
+    const u=String(input);
+    if(u.endsWith('/aio-code-vault'))return Response.json({private:true});
+    if(u.includes('/git/ref/heads/main'))return Response.json({object:{sha}});
+    if(u.includes('/git/commits/'))return Response.json({tree:{sha}});
+    if(u.includes('/git/trees/'))return Response.json(tree);
+    if(u.includes('/git/blobs/'))return Response.json({encoding:'base64',content:Buffer.from('PRIVATE INVALID JSON').toString('base64')});
+    throw Error('Unexpected request');
+  };
+  tree={truncated:false,tree:undefined};
+  let response=await handle(req(),new EntityService(new VaultStore('mock-read','')).store);
+  assert.equal(response.status,503);
+  assert.deepEqual(await response.json(),{error:{code:'vault_tree_invalid'}});
+  tree={truncated:false,tree:[{path:'entity-console/v1/ENT-'+ 'b'.repeat(8)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(12)+'/00000001.json',type:'blob',sha}]};
+  response=await handle(req(),new VaultStore('mock-read',''));
+  assert.equal(response.status,503);
+  assert.deepEqual(await response.json(),{error:{code:'vault_record_parse_failed'}});
 });
 test('archive withdraws active approval and package',async t=>{const {service}=await setup(t);let r=await create(service);r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'archive');assert.equal(r.status,'archived');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);});
 test('filesystem store refuses Vercel deployment',()=>{const saved={...process.env};process.env.AIO_ENTITY_STORE='local';process.env.AIO_ENTITY_LOCAL_ENABLED='1';process.env.VERCEL='1';try{assert.throws(()=>configuredStore(),{code:'local_store_forbidden'});}finally{process.env=saved;}});
