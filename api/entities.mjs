@@ -59,6 +59,7 @@ export async function handle(request,store) {
     return json({error:{code}},error instanceof ApiError?error.status:503);
   }
 }
-export const GET=handle;
-export const POST=handle;
-export const PATCH=handle;
+// Vercel supplies a request context as the second argument; it is not a store.
+export const GET=request=>handle(request);
+export const POST=request=>handle(request);
+export const PATCH=request=>handle(request);
