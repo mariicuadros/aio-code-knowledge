@@ -1,4 +1,4 @@
-# AIO CODE — Semana 10 (7–13 de octubre de 2026)
+# AIO CODE — Semana 10 (9–15 de octubre de 2026)
 
 ## Blogger y aparición en Google AI Mode
 
@@ -29,4 +29,3 @@ El recorte no muestra el intervalo de fechas del panel ni permite identificar si
 - **2026-10-06:** último baseline visual anterior al cambio.
 - **2026-10-10:** último cambio realizado en Blogger, según la titular.
 - **2026-10-12:** captura de Google AI Mode con “investigadora” y captura de distribución geográfica de clics de Vercel.
-
