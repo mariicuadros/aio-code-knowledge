@@ -63,6 +63,19 @@ test('vault read-stage diagnostics expose only a fixed stage without secrets',as
     assert.equal(body.includes('PRIVATE'),false);
   }
 });
+test('vault tree and record processing errors use safe fixed codes',async()=>{
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='diagnostic-only-test-secret';
+  const req=()=>new Request('http://local/api/entities',{headers:{'x-aio-admin-token':'diagnostic-only-test-secret'}});
+  for(const [code,failure] of [
+    ['vault_tree_invalid',()=>({entries:null})],
+    ['vault_record_selection_failed',()=>({entries:[{type:'blob',get path(){throw new Error('PRIVATE-TREE-DETAIL');}}]})]
+  ]) {
+    const store={all(){const snapshot=failure();if(!Array.isArray(snapshot.entries)) { const e=new Error('bad tree'); e.code=code; throw e; }snapshot.entries.filter(e=>e.path);}};
+    const result=await handle(req(),store);
+    assert.equal(result.status,503);
+    assert.equal((await result.text()).includes('PRIVATE'),false);
+  }
+});
 test('archive withdraws active approval and package',async t=>{const {service}=await setup(t);let r=await create(service);r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'archive');assert.equal(r.status,'archived');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);});
 test('filesystem store refuses Vercel deployment',()=>{const saved={...process.env};process.env.AIO_ENTITY_STORE='local';process.env.AIO_ENTITY_LOCAL_ENABLED='1';process.env.VERCEL='1';try{assert.throws(()=>configuredStore(),{code:'local_store_forbidden'});}finally{process.env=saved;}});
 test('vault adapter uses existing immutable client (MOCK GitHub, no remote writes)',async t=>{
