@@ -41,6 +41,20 @@ test('read failure diagnostics categorize provider outcomes without exposing sec
     assert.equal(body.includes('SECRET'),false);
   }
 });
+test('entity API handles relative Vercel request URLs without reading the vault',async()=>{
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='test-relative-request-secret';
+  try {
+    const request={url:'/api/entities',method:'GET',headers:new Headers({'x-aio-admin-token':'test-relative-request-secret'})};
+    const store={async all(){return [];}};
+    const response=await handle(request,store);
+    assert.equal(response.status,200);
+    assert.deepEqual((await response.json()).data,[]);
+  } finally {
+    if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+    else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;
+  }
+});
 test('vault read-stage diagnostics expose only a fixed stage without secrets',async t=>{
   const original=globalThis.fetch;
   t.after(()=>{globalThis.fetch=original;});
