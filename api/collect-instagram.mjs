@@ -52,14 +52,14 @@ export async function collect(now = new Date()) {
     stage = 'normalization';
     const accountSource = `phase-2/analytics/snapshots/instagram/account/${stamp(accountBody.fetched_at)}.json`;
     const mediaSource = `phase-2/analytics/snapshots/instagram/media/${stamp(mediaBody.fetched_at)}.json`;
-    const accountRaw = JSON.stringify(accountBody);
-    const mediaRaw = JSON.stringify(mediaBody);
+    const accountRaw = JSON.stringify(accountBody) + '\n';
+    const mediaRaw = JSON.stringify(mediaBody) + '\n';
     const accountRecord = normalize(accountRaw, accountSource, 'MC-001', 'MC-001');
     const mediaRows = normalizeMediaSnapshot(mediaRaw, mediaSource, 'MC-001', 'MC-001');
 
     const files = [
-      { path: accountSource, content: accountRaw + '\n' },
-      { path: mediaSource, content: mediaRaw + '\n' },
+      { path: accountSource, content: accountRaw },
+      { path: mediaSource, content: mediaRaw },
       {
         path: 'commercial-data/account-ledger/' + accountRecord.observation_id + '.json',
         content: JSON.stringify(accountRecord, null, 2) + '\n',
