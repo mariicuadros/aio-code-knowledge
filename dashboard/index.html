@@ -40,10 +40,12 @@ button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offse
 <div class="card metric"><span>Vault commit</span><strong id="commit" style="font-size:16px">—</strong></div>
 </div>
 
+<div class="card"><button id="collect">Consultar Instagram</button><p id="collection-status" class="muted" role="status" aria-live="polite">Consulta el día anterior en horario de Colombia. Cada período se guarda una sola vez.</p></div>
 <p id="integrity-note" class="muted"></p>
 <section class="card">
 <h2>Última observación de cuenta</h2>
 <div id="latest-account" class="muted">Sin observaciones.</div>
+<p id="measurement-window" class="muted"></p>
 </section>
 
 <section class="card">
@@ -77,6 +79,10 @@ function render(data){
  $('latest-account').textContent=latest
   ? `@${latest.username} · ${dt.format(new Date(latest.captured_at))} · Reach ${metric(latest.metrics.reach)} · Views ${metric(latest.metrics.views)} · Interactions ${metric(latest.metrics.total_interactions)}`
   : 'Sin observaciones.';
+ const window=latest?.measurement_window;
+ $('measurement-window').textContent=window?.status==='explicit_requested'
+  ? `Período solicitado (Colombia): desde ${dt.format(new Date(window.start))} hasta ${dt.format(new Date(window.end))}. Los límites de agregación de Meta no se han confirmado independientemente.`
+  : 'Período de la consulta histórica: predeterminado por Meta, sin fechas confirmadas.';
  const body=$('media');body.replaceChildren();
  for(const row of data.media_candidates){
   const tr=document.createElement('tr');
@@ -108,6 +114,23 @@ $('login-form').addEventListener('submit',async e=>{
    if(!await load()){$('login').hidden=false;$('login-status').textContent='La sesión no se pudo recuperar. Vuelve a entrar.';}
   }catch(error){$('error').textContent='Sesión iniciada. '+error.message;}
  }catch{$('login-status').textContent='No se pudo abrir la sesión.'}
+});
+$('collect').addEventListener('click',async()=>{
+ const button=$('collect');button.disabled=true;$('collection-status').textContent='Consultando Instagram y guardando evidencia…';
+ try{
+  const response=await fetch('/api/collect-instagram',{method:'POST'});
+  const result=await response.json();
+  if(!response.ok){
+   const messages={unauthorized:'La sesión venció. Vuelve a entrar.',forbidden:'La solicitud no proviene de este dashboard.',disabled:'La recolección está desactivada en Vercel.'};
+   const stage=result.diagnostic?.stage;
+   throw new Error(messages[result.status]||`No se completó la consulta. Etapa: ${stage||'desconocida'}. Código: ${result.diagnostic?.code||result.status}.`);
+  }
+  if(!await load())throw new Error('La sesión venció. Vuelve a entrar para ver el registro.');
+  $('collection-status').textContent=result.status==='already_collected'
+   ? 'Este período ya estaba guardado. Se conserva la captura original; el dashboard se ha recargado.'
+   : 'Consulta guardada y dashboard actualizado. Las métricas de cuenta cubren el día anterior; los contadores de publicaciones se capturan al consultar.';
+ }catch(error){$('collection-status').textContent=error.message;}
+ finally{button.disabled=false;}
 });
 $('logout').addEventListener('click',async()=>{await fetch('/api/dashboard-session',{method:'DELETE'});location.reload()});
 load().catch(error=>{$('login').hidden=true;$('logout').hidden=false;$('error').textContent='La sesión está reconocida. '+error.message;});
