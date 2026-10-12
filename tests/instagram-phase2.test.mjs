@@ -169,3 +169,22 @@ test('dashboard separates authentication from rejected vault credentials', async
   assert.equal(result.status, 503);
   assert.deepEqual(await result.json(), {status:'vault_access_denied'});
 });
+
+
+test('vault accepts the exact legacy terminal LF transformation and rejects altered evidence', async () => {
+  const {recordEvidence} = await import('../lib/vault-client.mjs');
+  const body=await captureAccount({since:1791176400,until:1791262800});body.fetched_at='2026-10-06T21:50:20.509Z';
+  const raw=JSON.stringify(body),source='phase-2/analytics/snapshots/instagram/account/test.json';
+  const row=normalize(raw,source,'MC-001','MC-001','2026-10-06T22:00:00Z'),notes=[];
+  assert.equal(recordEvidence(raw,row,notes),raw);assert.equal(notes.length,0);
+  assert.equal(recordEvidence(raw+'\n',row,notes),raw);assert.equal(notes[0].kind,'legacy_terminal_lf');
+  assert.equal(verify(row,recordEvidence(raw+'\n',row)).observation_id,row.observation_id);
+  assert.throws(()=>recordEvidence(raw+'\n\n',row),/Evidence digest mismatch/);
+  assert.throws(()=>recordEvidence(raw.replace('mariicuadros','altered-account')+'\n',row),/Evidence digest mismatch/);
+  const body2=await captureMedia({limit:25});body2.fetched_at='2026-10-11T04:28:31.455Z';
+  const mediaRaw=JSON.stringify(body2),mediaSource='phase-2/analytics/snapshots/instagram/media/test.json';
+  const media=normalizeMediaSnapshot(mediaRaw,mediaSource,'MC-001','MC-001','2026-10-11T04:29:00Z')[0];
+  assert.equal(verifyMediaCandidate(media,recordEvidence(mediaRaw+'\n',media)).candidate_id,media.candidate_id);
+  const future=normalize(raw+'\n',source,'MC-001','MC-001','2026-10-06T22:00:00Z'),futureNotes=[];
+  assert.equal(recordEvidence(raw+'\n',future,futureNotes),raw+'\n');assert.equal(futureNotes.length,0);
+});
