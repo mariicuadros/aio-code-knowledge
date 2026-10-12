@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AIO CODE is a Digital Entity Operating System connecting identity, evidence, provenance, content and observation. Phase 1 established the initial architecture and documented observations; Phase 2 expands practical implementation and tests replication.">
+  <meta name="description" content="AIO CODE structures and manages digital identities, relationships, content, rights records, evidence and observations through verifiable records and connected infrastructure.">
   <meta name="robots" content="index,follow">
   <meta name="google-site-verification" content="M6Wr2ezJPCDRjPtW0O2pT5TR8U81eeHr3a9J3FfOCHE">
   <link rel="canonical" href="https://aio-code.vercel.app/">
@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://aio-code.vercel.app/">
   <meta property="og:site_name" content="AIO CODE">
   <meta name="twitter:card" content="summary">
-  <title>AIO CODE — Artificial Intelligence Optimization Code</title>
+  <title>AIO CODE — Digital Entity Operating System</title>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -60,103 +60,64 @@
 }
   </script>
   <style>
-    :root { color-scheme: dark; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #0b0b0d; color: #f4f4f5; line-height: 1.6; }
-    main { width: min(1100px, calc(100% - 40px)); margin: 0 auto; }
-    header { padding: 88px 0 64px; border-bottom: 1px solid #27272a; }
-    .eyebrow { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #a1a1aa; }
-    h1 { font-size: clamp(48px, 9vw, 96px); line-height: .95; margin: 18px 0 22px; letter-spacing: -.055em; }
-    .lead { max-width: 760px; font-size: clamp(20px, 3vw, 28px); color: #d4d4d8; }
-    section { padding: 64px 0; border-bottom: 1px solid #27272a; }
-    h2 { font-size: 32px; margin: 0 0 24px; letter-spacing: -.03em; }
-    p { color: #c4c4ca; max-width: 780px; }
-    .pipeline { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 32px; }
-    .step, .entity, .card { border: 1px solid #2f2f34; background: #111114; border-radius: 14px; padding: 18px; }
-    .step { font-size: 14px; min-height: 88px; display: flex; align-items: center; }
-    .entities { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
-    .entity strong { display: block; font-size: 20px; margin-bottom: 8px; }
-    .entity span { color: #a1a1aa; font-size: 14px; }
-    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 28px; }
-    a { color: #f4f4f5; text-underline-offset: 4px; }
-    footer { padding: 42px 0 70px; color: #71717a; font-size: 14px; }
-    @media (max-width: 800px) { .pipeline, .entities, .cards { grid-template-columns: 1fr; } .pipeline { display: grid; } }
+:root{color-scheme:dark;--bg:#000000;--panel:#141414;--text:#ffffff;--muted:#b8b8b8;--line:#333333;--silver:#d6d6d6}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65}a{color:inherit;text-underline-offset:4px}a:focus-visible,summary:focus-visible{outline:3px solid var(--silver);outline-offset:5px}main,nav,footer{width:min(1120px,calc(100% - 48px));margin:auto}nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}.brand{font-weight:800;letter-spacing:.08em;text-decoration:none}.navlinks{display:flex;flex-wrap:wrap;gap:22px;font-size:14px;color:var(--muted)}.navlinks a{text-decoration:none}header{padding:96px 0 76px}.eyebrow,.label{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--silver)}h1{font-size:clamp(44px,7.5vw,86px);line-height:1.06;letter-spacing:-.045em;font-weight:600;max-width:920px;margin:23px 0}h2{font-size:clamp(29px,4vw,44px);line-height:1.18;letter-spacing:-.035em;margin:14px 0 24px;max-width:850px}h3{font-size:21px;line-height:1.3;margin:12px 0}.lead{max-width:760px;font-size:clamp(19px,2.4vw,24px);color:var(--muted)}p{color:var(--muted);max-width:800px}.actions{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0}.button{display:inline-flex;justify-content:center;align-items:center;padding:13px 21px;border:1px solid var(--line);border-radius:2px;text-decoration:none;font-weight:600;font-size:14px}.button.primary{background:var(--silver);border-color:var(--silver);color:#111111}.button:hover{border-color:var(--silver)}.note{font-size:13px;color:var(--muted)}.strip{display:flex;flex-wrap:wrap;gap:15px 30px;padding:22px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px}section{padding:72px 0;border-top:1px solid var(--line)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0}.card{padding:26px;border:1px solid var(--line);background:var(--panel);border-radius:3px}.card p{font-size:15px;margin-bottom:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}.flow{list-style:none;padding:0;counter-reset:stage}.flow li{position:relative;counter-increment:stage;padding:18px 0 18px 48px;border-top:1px solid var(--line);color:var(--muted)}.flow li:before{content:'0' counter(stage);position:absolute;left:0;color:var(--silver)}.flow strong{display:block;color:var(--text)}.status{font-size:12px;color:var(--silver);text-transform:uppercase;letter-spacing:.08em}ul{padding-left:20px;color:var(--muted)}li{margin:9px 0}.case{border-left:3px solid var(--silver);padding-left:25px;margin:30px 0}.contact{background:var(--panel);padding:38px;border:1px solid var(--line);border-radius:3px}details{padding:18px 0;border-top:1px solid var(--line)}summary{cursor:pointer;font-weight:600}footer{padding:36px 0 60px;font-size:13px;color:var(--muted)}.skip{position:absolute;left:24px;top:-100px;background:var(--silver);color:#111111;padding:10px}.skip:focus{top:8px}@media(max-width:760px){main,nav,footer{width:calc(100% - 36px)}nav{align-items:flex-start;flex-direction:column;gap:14px}.navlinks{gap:16px}header{padding:60px 0 48px}.grid,.two{grid-template-columns:1fr}.two{gap:20px}section{padding:48px 0}.contact{padding:25px}.button{min-height:48px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 <script defer src="/assets/web-analytics.js"></script>
 </head>
 <body>
-<main>
-  <header>
-    <div class="eyebrow">Digital Entity Operating System · AIO-001 · Phase 2</div>
-    <h1>AIO CODE</h1>
-    <div class="lead">Artificial Intelligence Optimization Code — a system connecting digital identity, evidence, provenance, content and observation across platforms.</div>
-  </header>
-
-  <section>
-    <h2>What is AIO CODE?</h2>
-    <p>AIO CODE is a Digital Entity Operating System: an operating architecture for digital entities with canonical records, evidence rules, content relationships, source provenance, measurements and protected operations.</p>
-    <p>Phase 1 established the initial architecture and documented specific search and AI identification and citation observations for the first case. Phase 2 expands practical implementation with controlled content, additional participants, platform integrations and measured replication. Research and measurement protocols are internal operating procedures, not the identity or product category of AIO CODE.</p>
-    <p><strong>“Operating system” describes this coordinated framework, not computer OS software or a finished SaaS product.</strong> The historical MC-001 baseline captured 14 of 49 planned system-prompt pairs; 35 were not captured. This is a coverage count, not a recognition success rate or a measure of overall DEOS maturity.</p>
-    <p>The project distinguishes observed facts, corroborated evidence, verified findings, hypotheses and unknowns. Claims are strengthened only as evidence strengthens.</p>
-  </section>
-
-  <section><h2>OZCU relationship</h2><p>OZCU (OZCU-001) is the declared venture and company-identity layer associated with the AIO CODE system. AIO CODE (AIO-001) remains the primary public project and DEOS identity; OZCU is not an alternate name or replacement for AIO CODE. Corporate registration status is not asserted here.</p></section>
-
-  <section>
-    <h2>Research pipeline</h2>
-    <div class="pipeline">
-      <div class="step">01 · Indexation</div>
-      <div class="step">02 · Retrieval</div>
-      <div class="step">03 · Entity Resolution</div>
-      <div class="step">04 · Representation</div>
-      <div class="step">05 · Citation</div>
-      <div class="step">06 · Recommendation</div>
-    </div>
-  </section>
-
-  <section id="AIO-001">
-    <h2>Canonical entities</h2>
-    <p>AIO CODE maintains distinct canonical entities and explicit relationships. A relationship connects identities; it does not collapse them.</p>
-    <div class="entities">
-      <div class="entity"><strong><a href="/entities/marii-cuadros/">MC-001 · Marii Cuadros</a></strong><span>Person · primary case study</span></div>
-      <div class="entity"><strong><a href="/#AIO-001">AIO-001 · AIO CODE</a></strong><span>Primary public brand · Digital Entity Operating System</span></div>
-      <div class="entity"><strong><a href="/entities/void-mode/">VOID-001 · VOID MODE</a></strong><span>Creative system for artists</span></div>
-      <div class="entity"><strong><a href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/entity/ENTITY-PASSPORT-OZCU.md">OZCU-001 · OZCU</a></strong><span>Official declared developer company/venture · legal formalization pending</span></div>
-      <div class="entity"><strong><a href="/entities/nux/">NUX-001 · NUX</a></strong><span>Distinct narrative entity</span></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Method component: research cycle</h2>
-    <p>Observation → Research Question → Hypothesis → Experiment → Baseline → Intervention → Measurement → Comparison → Evidence Classification → Interpretation → Finding → Replication / Refinement.</p>
-    <p>Individual experiments follow a controlled sequence: define the entity, observe, record, formulate the research question, state a hypothesis, implement an intervention, measure, compare, classify evidence, interpret and preserve the finding.</p>
-  </section>
-
-  <section>
-    <h2>Open research infrastructure</h2>
-    <div class="cards">
-      <div class="card"><strong>Current system definition</strong><p>Phase-2 components, implementation status and validation boundaries.</p><a href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/AIO-CODE-SYSTEM-SPEC-v2.md">Read the system specification</a></div>
-      <div class="card"><strong>GitHub · Source of Truth</strong><p>Versioned research architecture, entity records, schemas, observations, experiments, metrics and controlled export definitions.</p><a href="https://github.com/mariicuadros/aio-code-knowledge">View repository</a></div>
-      <div class="card"><strong>Hugging Face · Structured Dataset</strong><p>Machine-readable downstream representation of the controlled AIO CODE entity and research data export.</p><a href="https://huggingface.co/datasets/mariicuadros/aio-code-entities">View dataset</a></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Entity readiness check</h2>
-    <p>Use the free self-check to review identity records, evidence, cross-platform consistency, provenance, rights and observation readiness. It does not query external AI systems or predict visibility.</p>
-    <p><a href="/checker/">Open the AIO CODE Entity Readiness Check</a></p>
-  </section>
-
-  <section>
-    <h2>Public evidence search</h2>
-    <p>Explore the approved first-party sources with exact file and commit references. Search results are candidate passages, not a claim that outside AI systems recognize the entity.</p>
-    <p><a href="/rag/">Search the controlled corpus</a></p>
-  </section>
-
-  <footer>
-    AIO CODE · Artificial Intelligence Optimization Code · Digital Entity Operating System in development · AIO-001<br>
-    Evidence strength determines claim strength.
-  <br>Marii Cuadros (MC-001) · Creator & Primary Human Case Entity</footer>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Main navigation"><a class="brand" href="#main">AIO CODE</a><div class="navlinks"><a href="#system">The system</a><a href="#offer">Work with us</a><a href="#evidence">Evidence</a><a href="#contact">Contact</a></div></nav>
+<main id="main">
+<header>
+<div class="eyebrow">Digital Entity Operating System</div>
+<h1>A connected foundation for your digital identity.</h1>
+<p class="lead">AIO CODE structures and manages digital identities, their relationships, content, rights records, evidence and observations through verifiable records and connected infrastructure.</p>
+<div class="actions"><a class="button primary" href="#offer">Explore an entity pilot</a><a class="button" href="#evidence">See the documented case</a></div>
+<p class="note">For creators, artist teams, brands and organizations managing a digital entity across platforms.</p>
+<div class="strip"><span>Canonical identity</span><span>Connected sources</span><span>Content &amp; evidence</span><span>Ongoing observation</span></div>
+</header>
+<section id="system">
+<div class="label">One connected system</div><h2>Your identity, sources and content need to stay connected.</h2>
+<p>A profile describes you. A publication records your work. A permission document explains an authorized use. Search and AI systems may represent you differently over time. AIO CODE connects these records around the entity they concern, preserving their sources and history.</p>
+<div class="grid">
+<article class="card"><div class="label">01 · Identity</div><h3>Define the entity</h3><p>Canonical names, aliases, roles, official profiles and explicit relationships form a coherent reference for the person, brand or project.</p></article>
+<article class="card"><div class="label">02 · Evidence</div><h3>Connect each claim to its source</h3><p>Versioned records connect statements, publication URLs, dates and available content-origin, permission and contract documentation.</p></article>
+<article class="card"><div class="label">03 · Observation</div><h3>Keep a history of what changes</h3><p>Dated observations preserve how search and AI interfaces describe an entity, so changes can be examined against their evidence.</p></article>
+</div>
+<p>AIO CODE is a Digital Entity Operating System. Its research and implementation methods are components of the system.</p>
+</section>
+<section id="offer">
+<div class="label">Work with AIO CODE</div><h2>Start with a defined entity and a concrete delivery.</h2>
+<p>Our initial pilot offer focuses on organizing one digital entity. We agree on the scope, authorized information, deliverables and observation window before work begins.</p>
+<div class="grid">
+<article class="card"><h3>Identity &amp; source diagnostic</h3><p>A review of names, profiles, published descriptions and source consistency, with a documented list of gaps and priorities.</p></article>
+<article class="card"><h3>Entity foundation</h3><p>A canonical entity record, an official-source map and a claims-and-evidence register prepared from authorized information.</p></article>
+<article class="card"><h3>Implementation &amp; observation plan</h3><p>A prioritized publishing and correction plan, agreed observation queries and a dated initial report of available external results.</p></article>
+</div>
+<div class="two"><div><h3>Who this serves</h3><p>Independent creators and artists, teams managing artist catalogs, brands with fragmented public information, and organizations that need traceable records of digital identity and content.</p></div><div><h3>What you take away</h3><p>A structured entity dossier, connected source references and a practical action plan. Ongoing monitoring and platform integrations are scoped separately according to their verified availability.</p></div></div>
+<div class="actions"><a class="button primary" href="#contact">Discuss your entity</a><a class="button" href="/checker/">Try the free readiness check</a></div>
+</section>
+<section id="capabilities">
+<div class="label">Current capabilities</div><h2>A documented foundation, with connected operations expanding in Phase 2.</h2>
+<div class="two">
+<div class="card"><div class="status">Implemented foundation</div><ul><li>Entity passports, canonical records and relationship mapping.</li><li>Claim Ledger and rules connecting claims to evidence.</li><li>Controlled public evidence search with source and version references.</li><li>Public entity pages, structured data, sitemaps and an IndexNow submission workflow.</li><li>Contracts and registries for content, provenance, rights documentation and performance records.</li><li>Dated search and AI observations for the primary case.</li></ul></div>
+<div class="card"><div class="status">Phase 2 · Integration work</div><ul><li>Meta/Instagram Preview reads have been observed for identity, media and account Insights.</li><li>Production collection, private vault continuity and the dashboard flow still require end-to-end confirmation.</li><li>The private Entity Console API remains a draft integration.</li><li>YouTube and TikTok connectors, Content Genome population and AI reasoning over verified records remain development workstreams.</li></ul></div>
+</div>
+<p class="note">Public documentation and authorized private operations have separate access boundaries. Credentials are kept outside the repositories.</p>
+</section>
+<section id="evidence">
+<div class="label">Documented primary case · MC-001</div><h2>Marii Cuadros: from canonical records to observable external results.</h2>
+<div class="case"><p>AIO CODE has documented search and AI sessions identifying Marii Cuadros and AIO CODE and citing public sources. The September 28 comparison records Perplexity returning the current system definition with a visible citation to the Vercel Entity Home.</p><p>The October record connects Blogger and Vercel indexing observations with dated changes in external descriptions, including the October 12 Google AI Mode capture using “investigadora” in Marii's professional description.</p></div>
+<p>These are documented results from the primary case. They support showing what was returned, when it was observed and which sources were cited. Outcomes for a new entity are measured within that entity's own pilot.</p>
+<div class="actions"><a class="button" href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/observatory/reports/AIO-001-POST-BLOGGER-T0-20260928.md">Read the September comparison</a><a class="button" href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/logbook/week-10.md">Read the October record</a></div>
+<details><summary>Measurement context</summary><p>The historical MC-001 baseline contains 14 of 49 planned system-prompt pairs; 35 were not captured. This describes coverage, not a success rate. Indexing, retrieval, entity resolution, representation, citation and recommendation are evaluated separately. AIO CODE does not guarantee external recognition, ranking or recommendation.</p></details>
+</section>
+<section id="workflow">
+<div class="label">The pilot workflow</div><div class="two"><div><h2>A clear scope. A traceable record. A next step you can act on.</h2><p>Each delivery builds on authorized information and preserves its sources. Public references can support discovery; private evidence remains available to the people authorized to review it.</p></div><ol class="flow"><li><strong>Agree on the entity and scope</strong>Identify the subject, priorities, information permissions and deliverables.</li><li><strong>Organize identity and evidence</strong>Connect canonical records, official sources, content and supporting documents.</li><li><strong>Prepare implementation</strong>Prioritize approved corrections, source connections and publishing actions.</li><li><strong>Observe and report</strong>Record external results, distinguish findings from missing data and document the next intervention.</li></ol></div>
+</section>
+<section id="documentation"><div class="label">Evidence &amp; provenance</div><h2>Documentation that supports professional review.</h2><p>Identity records, content origin, publication history and available permission or contract references can be organized into a traceable dossier for a rights specialist, lawyer or governance team to review.</p><p>Recording a document preserves its reference and context. Its legal significance is assessed by the appropriate professional; AIO CODE does not certify ownership or legal compliance.</p></section>
+<section id="resources"><div class="label">Explore the system</div><h2>Inspect the sources behind AIO CODE.</h2><div class="grid"><article class="card"><h3>Public evidence search</h3><p>Search approved first-party passages with exact source references.</p><p><a href="/rag/">Open evidence search</a></p></article><article class="card"><h3>System specification</h3><p>Read the DEOS definition, component roles and evidence boundaries.</p><p><a href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/AIO-CODE-SYSTEM-SPEC-v2.md">Read the specification</a></p></article><article class="card"><h3>Canonical entities</h3><p><a href="/entities/marii-cuadros/">Marii Cuadros</a> · <a href="/#AIO-001">AIO CODE</a> · <a href="/entities/void-mode/">VOID MODE</a> · <a href="/entities/nux/">NUX</a> · <a href="https://github.com/mariicuadros/aio-code-knowledge/blob/main/entity/ENTITY-PASSPORT-OZCU.md">OZCU</a></p></article></div></section>
+<section id="contact"><div class="contact"><div class="label">Start a conversation</div><h2>Which digital entity are you building?</h2><p>Tell us the entity's public name, its official profiles and the problem you want to resolve. We will use that starting point to discuss an appropriate pilot scope.</p><a class="button primary" href="https://www.instagram.com/aiocode_/">Contact AIO CODE on Instagram</a><p class="note">Use the official profile to start the conversation. Private documents and credentials are not needed for the first contact.</p></div></section>
 </main>
-</body>
-</html>
+<footer id="AIO-001"><strong>AIO CODE · Digital Entity Operating System</strong><p>Created by Marii Cuadros. OZCU is the officially adopted declared developer venture; legal formalization is pending. VOID MODE is the associated creative system for artists.</p><a href="https://github.com/mariicuadros/aio-code-knowledge">Public repository</a> · <a href="https://huggingface.co/datasets/mariicuadros/aio-code-entities">Structured entity dataset</a></footer>
+</body></html>

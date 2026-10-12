@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "mode": "finite_reviewed_assertions",
   "scope": "First-party identity only. Exact normalized query match, exact approved answer, current evidence and correct supporting citation required. Other queries abstain. Not a general entailment model.",
   "claims": [
@@ -10,11 +10,11 @@
         "What is AIO CODE?",
         "¿Qué tipo de entidad es AIO CODE?"
       ],
-      "answer": "AIO CODE is a **Digital Entity Operating System**: a coordinated set of identity records, evidence rules, provenance, content relationships, observations, measurements and operational procedures for building and maintaining a digital entity across platforms. It includes a research and implementation **methodology** as one component; the methodology is no longer the top-level identity of AIO-001.",
+      "answer": "AIO CODE es un Digital Entity Operating System que estructura y administra identidades digitales, sus relaciones, contenidos, derechos, evidencias y observaciones mediante registros verificables e infraestructura conectada.",
       "source_path": "AIO-CODE-SYSTEM-SPEC-v2.md",
       "locator": "Definition",
       "required_fragments": [
-        "AIO CODE is a **Digital Entity Operating System**: a coordinated set of identity records, evidence rules, provenance, content relationships, observations, measurements and operational procedures for building and maintaining a digital entity across platforms. It includes a research and implementation **methodology** as one component; the methodology is no longer the top-level identity of AIO-001."
+        "AIO CODE es un Digital Entity Operating System que estructura y administra identidades digitales, sus relaciones, contenidos, derechos, evidencias y observaciones mediante registros verificables e infraestructura conectada."
       ]
     },
     {

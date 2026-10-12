@@ -6,7 +6,9 @@
 
 ## Definition
 
-AIO CODE is a **Digital Entity Operating System**: a coordinated set of identity records, evidence rules, provenance, content relationships, observations, measurements and operational procedures for building and maintaining a digital entity across platforms. It includes a research and implementation **methodology** as one component; the methodology is no longer the top-level identity of AIO-001.
+AIO CODE es un Digital Entity Operating System que estructura y administra identidades digitales, sus relaciones, contenidos, derechos, evidencias y observaciones mediante registros verificables e infraestructura conectada.
+
+Its research and implementation methodology is a component of the DEOS. This definition describes the system’s scope; each capability retains its documented implementation and evidence status.
 
 “Operating system” names the way this ecosystem is organized and run. It does **not** mean a computer operating system, a finished SaaS platform, an AI model, or privileged access to third-party search or recommendation systems. AIO CODE does not guarantee indexing, recognition, ranking, citation, recommendation or commercial results.
 
