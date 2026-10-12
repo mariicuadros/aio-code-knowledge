@@ -31,7 +31,15 @@ export async function handle(request,store) {
     const {operationKey,operationHash,tenant,...data}=record;
     return json({data,mode:process.env.AIO_ENTITY_STORE==='local'?'local_test_persistence':'private_vault'},operation==='create'?201:200);
   } catch(error) {
-    return json({error:{code:error instanceof ApiError?error.code:'backend_unavailable'}},error instanceof ApiError?error.status:503);
+    // Diagnostic codes are intentionally coarse; never include provider bodies, token data, or paths.
+    let code='vault_read_failed';
+    if(error instanceof ApiError) code=error.code;
+    else if(error?.status===401||error?.status===403) code='vault_access_denied';
+    else if(error?.status===404) code='vault_repository_unavailable';
+    else if(error?.status===429) code='vault_provider_rate_limited';
+    else if(Number.isInteger(error?.status)&&error.status>=500) code='vault_provider_unavailable';
+    else if(error?.name==='TimeoutError'||error?.name==='AbortError'||error instanceof TypeError) code='vault_network_unavailable';
+    return json({error:{code}},error instanceof ApiError?error.status:503);
   }
 }
 export const GET=handle;
