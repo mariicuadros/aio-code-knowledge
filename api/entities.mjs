@@ -5,6 +5,11 @@ import { ApiError, fail } from '../lib/entity-domain.mjs';
 const windows=new Map();
 export async function handle(request,store) {
   try {
+    console.error('AIO_REQUEST_FORMAT', {
+  hasHeadersGet: typeof request?.headers?.get === 'function',
+  hasUrl: typeof request?.url === 'string',
+  hasMethod: typeof request?.method === 'string'
+});
     if(!adminHeaderAuthorized(request)) return json({error:{code:'unauthorized'}},401);
     // Single administrator MVP: a dedicated server credential, never tenant IDs from clients.
     const slot=Math.floor(Date.now()/60000), hits=windows.get(slot)||0;
