@@ -56,7 +56,7 @@ test('vault read-stage diagnostics expose only a fixed stage without secrets',as
       return Response.json({tree:[],truncated:false});
     };
     const request=new Request('http://local/api/entities',{headers:{'x-aio-admin-token':'stage-test-admin'}});
-    const response=await handle(request);
+    const response=await handle(request,new VaultStore('mock-read-token',''));
     assert.equal(response.status,503);
     const body=await response.text();
     assert.deepEqual(JSON.parse(body),{error:{code:'vault_'+stage+'_network_unavailable'}});
