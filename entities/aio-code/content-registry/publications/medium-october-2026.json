@@ -1,0 +1,43 @@
+{
+  "registry_id": "CONTENT-AIO-MEDIUM-OCT-2026-001",
+  "entity_id": "AIO-001",
+  "entity": "AIO CODE",
+  "platform": "Medium",
+  "profile": "https://medium.com/@mariicuadros1",
+  "content_type": "article",
+  "status": "published",
+  "evidence_status": "owner_provided_url_verified_against_medium",
+  "items": [
+    {
+      "item_id": "AIO-MEDIUM-2026-10-VOID-MODE",
+      "title": "VOID MODE is not another niche",
+      "url": "https://medium.com/@mariicuadros1/void-mode-is-not-another-niche-ca64b22cd45c",
+      "author": "Marii Cuadros",
+      "user_reported_date": "2026-10-03",
+      "medium_displayed_date": "2026-10-02",
+      "date_note": "The owner-provided date differs by one day from the publication date displayed on the Medium page. Both are retained."
+    },
+    {
+      "item_id": "AIO-MEDIUM-2026-10-GSC-AUGUST",
+      "title": "What Google Search Console told me in August",
+      "url": "https://medium.com/@mariicuadros1/what-google-search-console-told-me-in-august-c9307193dc88",
+      "author": "Marii Cuadros",
+      "user_reported_dates": [
+        "2026-10-06",
+        "2026-10-08"
+      ],
+      "medium_displayed_date": "2026-10-06",
+      "date_note": "The same URL was supplied for October 6 and October 8, so it is catalogued once. Medium displayed “6 days ago” when checked on 2026-10-12."
+    },
+    {
+      "item_id": "AIO-MEDIUM-2026-10-THURSDAYS",
+      "title": "Thursdays don’t move (and that’s okay)",
+      "url": "https://medium.com/@mariicuadros1/thursdays-dont-move-and-that-s-okay-da03422cdc0e",
+      "author": "Marii Cuadros",
+      "user_reported_date": "2026-10-10",
+      "medium_displayed_date": "2026-10-10",
+      "date_note": "The supplied URL contained an escape before the colon; it has been normalized to https://. Medium displayed “2 days ago” when checked on 2026-10-12."
+    }
+  ],
+  "source_note": "Dates reported by the owner are preserved separately from dates displayed by Medium. Medium relative date labels are interpreted against the verification date 2026-10-12."
+}
