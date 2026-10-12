@@ -1,0 +1,44 @@
+{
+  "registry_id": "CONTENT-AIO-SUBSTACK-OCT-2026-001",
+  "entity_id": "AIO-001",
+  "entity": "AIO CODE",
+  "platform": "Substack",
+  "profile": "https://mariicuadros.substack.com/",
+  "content_type": "article",
+  "status": "published",
+  "evidence_status": "owner_provided_urls",
+  "title_note": "Titles below are readable fragments derived from the URL slugs; full displayed titles were not independently verified.",
+  "items": [
+    {
+      "item_id": "AIO-SUBSTACK-2026-10-01-AI-QUERY-MATRIX",
+      "title_fragment": "The AI Query Matrix: Who Knows AIO",
+      "url": "https://mariicuadros.substack.com/p/the-ai-query-matrix-who-knows-aio",
+      "user_reported_date": "2026-10-01"
+    },
+    {
+      "item_id": "AIO-SUBSTACK-2026-10-03-CONSISTENT",
+      "title_fragment": "We Thought We Were Consistent: The…",
+      "url": "https://mariicuadros.substack.com/p/we-thought-we-were-consistent-the",
+      "user_reported_date": "2026-10-03"
+    },
+    {
+      "item_id": "AIO-SUBSTACK-2026-10-06-CITATION-DRIFT",
+      "title_fragment": "Citation Drift: Why AI Models Update…",
+      "url": "https://mariicuadros.substack.com/p/citation-drift-why-ai-models-update",
+      "user_reported_date": "2026-10-06"
+    },
+    {
+      "item_id": "AIO-SUBSTACK-2026-10-08-VOID-MODE-ANOMALY",
+      "title_fragment": "The Void Mode Anomaly: When AI Ignores…",
+      "url": "https://mariicuadros.substack.com/p/the-void-mode-anomaly-when-ai-ignores",
+      "user_reported_date": "2026-10-08"
+    },
+    {
+      "item_id": "AIO-SUBSTACK-2026-10-10-ENTITY-GRAPH-TEST",
+      "title_fragment": "The Entity Graph Test: Can AI Connect…",
+      "url": "https://mariicuadros.substack.com/p/the-entity-graph-test-can-ai-connect",
+      "user_reported_date": "2026-10-10"
+    }
+  ],
+  "source_note": "Publication dates were supplied by the owner on 2026-10-12."
+}
