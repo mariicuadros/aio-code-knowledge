@@ -31,7 +31,15 @@ export async function handle(request,store) {
     const {operationKey,operationHash,tenant,...data}=record;
     return json({data,mode:process.env.AIO_ENTITY_STORE==='local'?'local_test_persistence':'private_vault'},operation==='create'?201:200);
   } catch(error) {
-    // Diagnostic codes are intentionally coarse; never include provider bodies, token data, or paths.
+    console.error('AIO_ENTITY_DIAGNOSTIC', {
+  errorType: error?.constructor?.name,
+  errorName: error?.name,
+  vaultStage: ['repository', 'branch', 'commit', 'tree', 'blob']
+    .includes(error?.vaultReadStage)
+      ? error.vaultReadStage
+      : 'none',
+  hasHttpStatus: Number.isInteger(error?.status)
+});// Diagnostic codes are intentionally coarse; never include provider bodies, token data, or paths.
     let code='vault_read_failed';
     if(error instanceof ApiError) code=error.code;
     else if(error?.status===401||error?.status===403) code='vault_access_denied';
