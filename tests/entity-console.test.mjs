@@ -41,6 +41,28 @@ test('read failure diagnostics categorize provider outcomes without exposing sec
     assert.equal(body.includes('SECRET'),false);
   }
 });
+test('vault read-stage diagnostics expose only a fixed stage without secrets',async t=>{
+  const original=globalThis.fetch;
+  t.after(()=>{globalThis.fetch=original;});
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='stage-test-admin';
+  for(const [stage,breakAt] of [['repository',1],['branch',2],['commit',3],['tree',4]]) {
+    let hits=0;
+    globalThis.fetch=async()=>{
+      hits++;
+      if(hits===breakAt)throw new TypeError('PRIVATE-TOKEN-MUST-NOT-LEAK');
+      if(hits===1)return Response.json({private:true});
+      if(hits===2)return Response.json({object:{sha:'a'.repeat(40)}});
+      if(hits===3)return Response.json({tree:{sha:'b'.repeat(40)}});
+      return Response.json({tree:[],truncated:false});
+    };
+    const request=new Request('http://local/api/entities',{headers:{'x-aio-admin-token':'stage-test-admin'}});
+    const response=await handle(request);
+    assert.equal(response.status,503);
+    const body=await response.text();
+    assert.deepEqual(JSON.parse(body),{error:{code:'vault_'+stage+'_network_unavailable'}});
+    assert.equal(body.includes('PRIVATE'),false);
+  }
+});
 test('archive withdraws active approval and package',async t=>{const {service}=await setup(t);let r=await create(service);r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'archive');assert.equal(r.status,'archived');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);});
 test('filesystem store refuses Vercel deployment',()=>{const saved={...process.env};process.env.AIO_ENTITY_STORE='local';process.env.AIO_ENTITY_LOCAL_ENABLED='1';process.env.VERCEL='1';try{assert.throws(()=>configuredStore(),{code:'local_store_forbidden'});}finally{process.env=saved;}});
 test('vault adapter uses existing immutable client (MOCK GitHub, no remote writes)',async t=>{
