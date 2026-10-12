@@ -16,15 +16,17 @@ export async function GET(request) {
   if (!token) return json({ status: 'vault_not_configured' }, 503);
   try {
     const snapshot = await state(token);
+    const integrityNotes = [];
     const [accounts, media] = await Promise.all([
-      accountRecords(snapshot, token),
-      mediaCandidates(snapshot, token),
+      accountRecords(snapshot, token, integrityNotes),
+      mediaCandidates(snapshot, token, integrityNotes),
     ]);
     return json({
       status: 'ok',
       generated_at: new Date().toISOString(),
       source_commit: snapshot.head,
       mode: 'verified_private_records',
+      integrity_notes: integrityNotes,
       account_records: accounts,
       media_candidates: latestByContent(media),
       counts: {
