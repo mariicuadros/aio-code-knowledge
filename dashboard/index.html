@@ -40,6 +40,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offse
 <div class="card metric"><span>Vault commit</span><strong id="commit" style="font-size:16px">—</strong></div>
 </div>
 
+<p id="integrity-note" class="muted"></p>
 <section class="card">
 <h2>Última observación de cuenta</h2>
 <div id="latest-account" class="muted">Sin observaciones.</div>
@@ -71,6 +72,7 @@ function render(data){
  $('account-count').textContent=data.counts.account_observations;
  $('content-count').textContent=data.counts.unique_proposed_content_ids;
  $('commit').textContent=(data.source_commit||'').slice(0,12)||'—';
+ $('integrity-note').textContent=data.integrity_notes?.length ? `Formato histórico conciliado en lectura: ${data.integrity_notes.length} registros. Originales preservados.` : '';
  const latest=data.account_records[0];
  $('latest-account').textContent=latest
   ? `@${latest.username} · ${dt.format(new Date(latest.captured_at))} · Reach ${metric(latest.metrics.reach)} · Views ${metric(latest.metrics.views)} · Interactions ${metric(latest.metrics.total_interactions)}`
