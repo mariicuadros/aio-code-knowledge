@@ -29,7 +29,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offse
 <section id="login" class="card">
 <h2>Acceso privado</h2>
 <p class="muted">La clave se usa solo para crear una sesión segura y no se guarda en esta página.</p>
-<form id="login-form"><input id="token" type="password" autocomplete="current-password" placeholder="AIO dashboard admin token" required><button>Entrar</button></form>
+<form id="login-form"><input id="token" type="password" autocomplete="current-password" aria-label="Código de acceso al dashboard" placeholder="Código de acceso al dashboard" required><button>Entrar</button></form>
 <p id="login-status" class="muted"></p>
 </section>
 
@@ -94,8 +94,8 @@ $('login-form').addEventListener('submit',async e=>{
  e.preventDefault();$('login-status').textContent='Verificando…';
  const value=$('token').value;$('token').value='';
  try{
-  const r=await fetch('/api/dashboard-session',{method:'POST',headers:{'x-aio-admin-token':value}});
-  if(!r.ok){$('login-status').textContent=r.status===503?'Falta configurar la clave de dashboard en Vercel.':'Clave no válida.';return}
+  const r=await fetch('/api/dashboard-session',{method:'POST',headers:{'x-aio-dashboard-code':value}});
+  if(!r.ok){$('login-status').textContent=r.status===503?'Falta configurar el código del dashboard.':r.status===429?'Demasiados intentos. Espera un minuto.':'Código no válido.';return}
   await load();$('login-status').textContent='';
  }catch{$('login-status').textContent='No se pudo abrir la sesión.'}
 });
