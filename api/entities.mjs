@@ -40,7 +40,7 @@ export async function handle(request,store) {
     else if(Number.isInteger(error?.status)&&error.status>=500) code='vault_provider_unavailable';
     else if(error?.name==='TimeoutError'||error?.name==='AbortError'||error instanceof TypeError) {
       // Only a fixed stage label may leave the backend; not the raw provider error.
-      const stage=['repository','branch','commit','tree'].includes(error?.vaultReadStage)?error.vaultReadStage:null;
+      const stage=['repository','branch','commit','tree','blob'].includes(error?.vaultReadStage)?error.vaultReadStage:null;
       code=stage?'vault_'+stage+'_network_unavailable':'vault_network_unavailable';
     }
     return json({error:{code}},error instanceof ApiError?error.status:503);
