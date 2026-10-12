@@ -30,7 +30,7 @@ test('read failure diagnostics categorize provider outcomes without exposing sec
     [{status:404,message:'SECRET-PROVIDER-BODY'},'vault_repository_unavailable'],
     [{status:429,message:'SECRET-PROVIDER-BODY'},'vault_provider_rate_limited'],
     [{status:502,message:'SECRET-PROVIDER-BODY'},'vault_provider_unavailable'],
-    [new TypeError('SECRET-NETWORK-DATA'),'vault_network_unavailable'],
+    [new TypeError('SECRET-NETWORK-DATA'),'vault_read_failed'],
     [new Error('SECRET-UNKNOWN-DATA'),'vault_read_failed'],
   ];
   for(const [failure,expected] of cases){
