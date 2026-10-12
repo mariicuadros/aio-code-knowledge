@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { captureAccount, captureMedia } from '../lib/meta-instagram.mjs';
 import { normalizeMediaSnapshot, verifyMediaCandidate } from '../lib/media-candidate.mjs';
 import { normalize, verify } from '../lib/account-observation.mjs';
-import { GET as collectRoute, previousDayColombia } from '../api/collect-instagram.mjs';
+import { GET as collectRoute, POST as manualCollectRoute, previousDayColombia } from '../api/collect-instagram.mjs';
 import { POST as dashboardLogin } from '../api/dashboard-session.mjs';
 
 const originalFetch = globalThis.fetch;
@@ -187,4 +187,23 @@ test('vault accepts the exact legacy terminal LF transformation and rejects alte
   assert.equal(verifyMediaCandidate(media,recordEvidence(mediaRaw+'\n',media)).candidate_id,media.candidate_id);
   const future=normalize(raw+'\n',source,'MC-001','MC-001','2026-10-06T22:00:00Z'),futureNotes=[];
   assert.equal(recordEvidence(raw+'\n',future,futureNotes),raw+'\n');assert.equal(futureNotes.length,0);
+});
+
+
+test('manual collection requires same origin and authenticated session before providers', async () => {
+  const { session, cookie } = await import('../lib/private-auth.mjs');
+  const url = 'https://example.test/api/collect-instagram';
+  assert.equal((await manualCollectRoute(new Request(url, { method: 'POST' }))).status, 403);
+  assert.equal((await manualCollectRoute(new Request(url, { method: 'POST', headers: { origin: 'https://example.test' } }))).status, 401);
+  const headers = { origin: 'https://example.test', cookie: cookie(session()) };
+  assert.equal((await manualCollectRoute(new Request(url, { method: 'POST', headers }))).status, 503);
+  assert.equal(calls.length, 0);
+  process.env.AIO_COLLECTION_ENABLED = '1';
+  delete process.env.AIO_VAULT_WRITE_TOKEN;
+  const response = await manualCollectRoute(new Request(url, { method: 'POST', headers }));
+  assert.equal(response.status, 503);
+  const body = await response.json();
+  assert.equal(body.diagnostic.code, 'vault_write_token_missing');
+  assert.equal(calls.length, 0);
+  assert.equal((await manualCollectRoute(new Request(url, { method: 'POST', headers: { ...headers, origin: 'https://other.test' } }))).status, 403);
 });
