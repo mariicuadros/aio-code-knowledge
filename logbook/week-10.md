@@ -1,21 +1,32 @@
 # AIO CODE — Semana 10 (7–13 de octubre de 2026)
 
-## Observación posterior al cambio de Blogger
+## Blogger y aparición en Google AI Mode
 
-La titular reporta que el último cambio realizado en Blogger fue el **10 de octubre de 2026**. Después de ese cambio, al buscar **“marii cuadros”**, Google AI Mode mostró el término **“investigadora”** en la descripción de Marii Cuadros.
+La titular confirma que el último cambio en Blogger se realizó el **10 de octubre de 2026**. El **baseline visual del 6 de octubre** mostraba la información anterior. En la captura posterior, aportada el **12 de octubre**, Google AI Mode ya incluye el término **“investigadora”** en la descripción de Marii Cuadros.
 
-La captura aportada el **12 de octubre de 2026** muestra, dentro de la Visión general creada por IA:
+La Visión general creada por IA muestra:
 
 > “Marii Cuadros (Perfil profesional): Creadora multidisciplinaria, investigadora y estratega digital venezolana radicada en Antioquia, Colombia…”
 
-La misma respuesta también contiene una caracterización general de “creadora digital y marca colombiana de arte y decoración”. La etiqueta de fuente visible en la captura señala Instagram (“cuadros_ma… +1”); no muestra a Blogger como fuente directa.
+La titular confirma que parte de la información trabajada desde Blogger se ha estado indexando y que el cambio del 10 de octubre precede a la nueva representación visible en AI Mode. Se registra como resultado confirmado de la comparación entre el baseline del 6 de octubre y la captura posterior al cambio.
 
-## Registro e interpretación
+La respuesta también contiene una caracterización general de “creadora digital y marca colombiana de arte y decoración”. En la captura de AI Mode, la etiqueta de fuente visible dice Instagram (“cuadros_ma… +1”).
 
-- **Cambio en Blogger:** 2026-10-10, según reporte de la titular. El detalle exacto de la edición no fue especificado en esta nota.
-- **Observación en AI Mode:** registrada en la captura entregada el 2026-10-12; incluye el término “investigadora”.
-- **Hipótesis de la titular:** parte de la información podría haberse indexado desde Blogger después de la actualización.
-- **Límite de evidencia:** la secuencia temporal es compatible con esa hipótesis, pero esta captura no atribuye la respuesta a Blogger ni permite aislar qué página aportó el término. La fuente visible es Instagram y puede haber fuentes adicionales no expuestas.
+## Tráfico reciente reportado en Vercel
 
-Se conserva como una **observación posterior a una intervención reportada**, no como prueba de que Blogger causó la aparición del término ni de indexación directa desde esa plataforma. Conviene comparar las fuentes citadas y repetir la observación en condiciones registradas para evaluar la hipótesis.
+La captura de Vercel aportada el 12 de octubre muestra el panel **“Países principales — Clics”** con esta distribución:
+
+- Colombia: **50 %**
+- India: **17 %**
+- Japón: **17 %**
+- Taiwán: **17 %**
+- Afganistán: **<1 %**
+
+El recorte no muestra el intervalo de fechas del panel ni permite identificar si cada clic corresponde a una persona, un crawler o una sesión de AI Mode. Se conserva como la distribución geográfica de clics que presenta Vercel en esa captura.
+
+## Fechas registradas
+
+- **2026-10-06:** último baseline visual anterior al cambio.
+- **2026-10-10:** último cambio realizado en Blogger, según la titular.
+- **2026-10-12:** captura de Google AI Mode con “investigadora” y captura de distribución geográfica de clics de Vercel.
 
