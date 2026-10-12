@@ -87,7 +87,11 @@ function render(data){
 async function load(){
  const r=await fetch('/api/dashboard',{cache:'no-store'});
  if(r.status===401)return false;
- if(!r.ok)throw new Error('dashboard');
+ if(!r.ok){
+  let status='dashboard_unavailable';try{status=(await r.json()).status||status;}catch{}
+  const messages={vault_not_configured:'Falta configurar la lectura del vault en el proyecto aio-code.',vault_access_denied:'El vault rechazó su credencial de lectura. El código de acceso no es la causa.',vault_repository_unavailable:'El repositorio del vault no está disponible para la credencial configurada.',vault_provider_rate_limited:'GitHub limitó temporalmente las consultas al vault.',vault_provider_unavailable:'GitHub no está disponible temporalmente.',vault_network_unavailable:'No se pudo completar la conexión con el vault.',vault_verification_failed:'No se pudieron validar los registros privados del vault.'};
+  throw new Error((messages[status]||'No se pudieron cargar las métricas privadas.')+' Código: '+status);
+ }
  render(await r.json());return true;
 }
 $('login-form').addEventListener('submit',async e=>{
@@ -96,11 +100,15 @@ $('login-form').addEventListener('submit',async e=>{
  try{
   const r=await fetch('/api/dashboard-session',{method:'POST',headers:{'x-aio-dashboard-code':value}});
   if(!r.ok){$('login-status').textContent=r.status===503?'Falta configurar el código del dashboard.':r.status===429?'Demasiados intentos. Espera un minuto.':'Código no válido.';return}
-  await load();$('login-status').textContent='';
+  $('login-status').textContent='Código aceptado. Sesión iniciada.';
+  $('login').hidden=true;$('logout').hidden=false;$('error').textContent='';
+  try{
+   if(!await load()){$('login').hidden=false;$('login-status').textContent='La sesión no se pudo recuperar. Vuelve a entrar.';}
+  }catch(error){$('error').textContent='Sesión iniciada. '+error.message;}
  }catch{$('login-status').textContent='No se pudo abrir la sesión.'}
 });
 $('logout').addEventListener('click',async()=>{await fetch('/api/dashboard-session',{method:'DELETE'});location.reload()});
-load().catch(()=>{$('error').textContent='No se pudo verificar el Brain privado.'});
+load().catch(error=>{$('login').hidden=true;$('logout').hidden=false;$('error').textContent='La sesión está reconocida. '+error.message;});
 </script>
 </body>
 </html>
