@@ -5,11 +5,6 @@ import { ApiError, fail } from '../lib/entity-domain.mjs';
 const windows=new Map();
 export async function handle(request,store) {
   try {
-    console.error('AIO_REQUEST_FORMAT', {
-  hasHeadersGet: typeof request?.headers?.get === 'function',
-  hasUrl: typeof request?.url === 'string',
-  hasMethod: typeof request?.method === 'string'
-});
     if(!adminHeaderAuthorized(request)) return json({error:{code:'unauthorized'}},401);
     // Single administrator MVP: a dedicated server credential, never tenant IDs from clients.
     const slot=Math.floor(Date.now()/60000), hits=windows.get(slot)||0;
@@ -36,15 +31,7 @@ export async function handle(request,store) {
     const {operationKey,operationHash,tenant,...data}=record;
     return json({data,mode:process.env.AIO_ENTITY_STORE==='local'?'local_test_persistence':'private_vault'},operation==='create'?201:200);
   } catch(error) {
-    console.error('AIO_ENTITY_DIAGNOSTIC', {
-  errorType: error?.constructor?.name,
-  errorName: error?.name,
-  vaultStage: ['repository', 'branch', 'commit', 'tree', 'blob']
-    .includes(error?.vaultReadStage)
-      ? error.vaultReadStage
-      : 'none',
-  hasHttpStatus: Number.isInteger(error?.status)
-});// Diagnostic codes are intentionally coarse; never include provider bodies, token data, or paths.
+    // Return only fixed, non-sensitive error codes.
     let code='vault_read_failed';
     if(error instanceof ApiError) code=error.code;
     else if(error?.status===401||error?.status===403) code='vault_access_denied';
