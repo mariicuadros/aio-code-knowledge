@@ -154,3 +154,18 @@ test('dashboard code login fails closed when code is missing or too short', asyn
   });
   assert.equal((await dashboardLogin(request)).status, 503);
 });
+
+
+test('dashboard separates authentication from rejected vault credentials', async () => {
+  const { GET: dashboard } = await import('../api/dashboard.mjs');
+  process.env.AIO_VAULT_READ_TOKEN = 'test-private-vault-token';
+  calls.length = 0;
+  assert.equal((await dashboard(new Request('https://example.test/api/dashboard'))).status, 401);
+  assert.equal(calls.length, 0);
+  globalThis.fetch = async () => new Response('{}', {status:403});
+  const result = await dashboard(new Request('https://example.test/api/dashboard', {
+    headers:{'x-aio-admin-token':'test-admin'},
+  }));
+  assert.equal(result.status, 503);
+  assert.deepEqual(await result.json(), {status:'vault_access_denied'});
+});
