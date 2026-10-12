@@ -2,7 +2,7 @@ import { normalize } from '../lib/account-observation.mjs';
 import { normalizeMediaSnapshot } from '../lib/media-candidate.mjs';
 import { captureAccount, captureMedia, configuredAccountId, metaFailure } from '../lib/meta-instagram.mjs';
 import { commitFiles } from '../lib/vault-client.mjs';
-import { cronAuthorized, json } from '../lib/private-auth.mjs';
+import { authorized, sameOrigin, cronAuthorized, json } from '../lib/private-auth.mjs';
 
 export function previousDayColombia(now = new Date()) {
   const shifted = new Date(now.getTime() - 5 * 3600000);
@@ -122,6 +122,17 @@ export async function collect(now = new Date()) {
 export async function GET(request) {
   if (!cronAuthorized(request)) return json({ status: 'unauthorized' }, 401);
   if (process.env.AIO_COLLECTION_ENABLED !== '1') return json({ status: 'disabled' }, 503);
+  return collectionResponse();
+}
+
+export async function POST(request) {
+  if (!sameOrigin(request)) return json({ status: 'forbidden' }, 403);
+  if (!authorized(request)) return json({ status: 'unauthorized' }, 401);
+  if (process.env.AIO_COLLECTION_ENABLED !== '1') return json({ status: 'disabled' }, 503);
+  return collectionResponse();
+}
+
+async function collectionResponse() {
   try {
     return json(await collect());
   } catch (error) {
