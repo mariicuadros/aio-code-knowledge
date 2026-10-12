@@ -7,7 +7,7 @@ import { randomUUID, createHash } from 'node:crypto';
 import { LocalStore, VaultStore, configuredStore } from '../lib/entity-store.mjs';
 import { EntityService } from '../lib/entity-service.mjs';
 import { validateEntity, publicPackage, CANONICAL_IDS } from '../lib/entity-domain.mjs';
-import { handle } from '../api/entities.mjs';
+import { handle, GET } from '../api/entities.mjs';
 const data=()=>({canonicalName:'Estudio Horizonte — FICTICIO',type:'organization',description:'Entidad ficticia para probar la consola; no representa a ningún cliente.',alternateNames:[],areas:['Diseño'],socials:[{platform:'Sitio de prueba',alias:'horizonte-demo',url:'https://example.com/social'}],officialUrls:['https://example.com'],location:'',locationAuthorized:false,relationships:[],claims:[],rightsHolder:'Titular ficticio privado',useAuthorized:true,lastReviewed:'2026-10-11',publicFields:['socials'],typeDetail:'Interno privado'});
 async function setup(t) { const dir=await mkdtemp(join(tmpdir(),'aio-entity-test-'));t.after(()=>rm(dir,{recursive:true,force:true}));const store=new LocalStore(dir);return {dir,store,service:new EntityService(store)}; }
 const create=service=>service.change({action:'create',key:randomUUID(),body:{data:data()}});
@@ -53,6 +53,23 @@ test('entity API handles relative Vercel request URLs without reading the vault'
   } finally {
     if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;
     else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;
+  }
+});
+test('Vercel route context is never treated as the persistence store',async()=>{
+  const previousAdmin=process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+  const previousRead=process.env.AIO_VAULT_READ_TOKEN;
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='route-context-test-admin';
+  delete process.env.AIO_VAULT_READ_TOKEN;
+  try {
+    const request=new Request('https://example.test/api/entities',{headers:{'x-aio-admin-token':'route-context-test-admin'}});
+    const response=await GET(request,{params:{path:[]},waitUntil(){}});
+    assert.equal(response.status,503);
+    assert.deepEqual(await response.json(),{error:{code:'vault_not_configured'}});
+  } finally {
+    if(previousAdmin===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+    else process.env.AIO_DASHBOARD_ADMIN_TOKEN=previousAdmin;
+    if(previousRead===undefined)delete process.env.AIO_VAULT_READ_TOKEN;
+    else process.env.AIO_VAULT_READ_TOKEN=previousRead;
   }
 });
 test('vault read-stage diagnostics expose only a fixed stage without secrets',async t=>{
