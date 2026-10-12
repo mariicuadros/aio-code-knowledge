@@ -130,3 +130,27 @@ test('dashboard login uses dedicated admin header and same-origin check', async 
   });
   assert.equal((await dashboardLogin(wrongOrigin)).status, 403);
 });
+
+
+test('dashboard access code creates a session without granting API admin header access', async () => {
+  process.env.AIO_DASHBOARD_ACCESS_CODE = 'test-dashboard-access-code';
+  const request = code => new Request('https://example.test/api/dashboard-session', {
+    method: 'POST', headers: {origin: 'https://example.test', 'x-aio-dashboard-code': code},
+  });
+  const ok = await dashboardLogin(request('test-dashboard-access-code'));
+  assert.equal(ok.status, 200);
+  assert.match(ok.headers.get('set-cookie'), /HttpOnly; Secure; SameSite=Strict/);
+  assert.equal((await dashboardLogin(request('wrong-code'))).status, 401);
+  const { adminHeaderAuthorized } = await import('../lib/private-auth.mjs');
+  assert.equal(adminHeaderAuthorized(new Request('https://example.test/api/collect-instagram', {
+    headers: {'x-aio-admin-token': 'test-dashboard-access-code'},
+  })), false);
+});
+
+test('dashboard code login fails closed when code is missing or too short', async () => {
+  process.env.AIO_DASHBOARD_ACCESS_CODE = 'short';
+  const request = new Request('https://example.test/api/dashboard-session', {
+    method: 'POST', headers: {origin:'https://example.test','x-aio-dashboard-code':'short'},
+  });
+  assert.equal((await dashboardLogin(request)).status, 503);
+});
