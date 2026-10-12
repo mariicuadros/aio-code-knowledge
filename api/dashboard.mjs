@@ -38,7 +38,13 @@ export async function GET(request) {
         causal_claims: 'Not inferred.',
       },
     });
-  } catch {
-    return json({ status: 'vault_verification_failed' }, 503);
+  } catch (error) {
+    let code = 'vault_verification_failed';
+    if (error?.status === 401 || error?.status === 403) code = 'vault_access_denied';
+    else if (error?.status === 404) code = 'vault_repository_unavailable';
+    else if (error?.status === 429) code = 'vault_provider_rate_limited';
+    else if (Number.isInteger(error?.status) && error.status >= 500) code = 'vault_provider_unavailable';
+    else if (['TimeoutError', 'AbortError'].includes(error?.name)) code = 'vault_network_unavailable';
+    return json({ status: code }, 503);
   }
 }
