@@ -20,7 +20,9 @@ AIO CODE remains the primary public/project brand through 2027. OZCU is the offi
 
 ## What is AIO CODE?
 
-AIO CODE is a **Digital Entity Operating System** for structuring digital entities and connecting claims, evidence, content, provenance, observations and operations across platforms. Its research and implementation methodology is an internal component, documented in v1. “Operating system” describes the coordinated architecture; it does not mean computer OS software or a finished SaaS product.
+AIO CODE es un Digital Entity Operating System que estructura y administra identidades digitales, sus relaciones, contenidos, derechos, evidencias y observaciones mediante registros verificables e infraestructura conectada.
+
+Its research and implementation methodology is an internal component, documented in v1.
 
 AIO CODE does **not** control third-party AI systems and does **not** guarantee recognition, ranking, citation or recommendation.
 
