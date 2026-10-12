@@ -1,0 +1,37 @@
+{
+  "registry_id": "CONTENT-AIO-SOCIAL-OCT-2026-001",
+  "entity_id": "AIO-001",
+  "entity": "AIO CODE",
+  "content_type": "social_post_or_answer",
+  "status": "published",
+  "evidence_status": "owner_provided_urls",
+  "verification_note": "The supplied post URLs could not be opened by the available web lookup, so titles and page dates are not independently verified. No titles are inferred.",
+  "items": [
+    {
+      "item_id": "AIO-X-2026-10-06-2107552231411335249",
+      "platform": "X",
+      "url": "https://x.com/mariicuadros/status/2107552231411335249",
+      "user_reported_date": "2026-10-06"
+    },
+    {
+      "item_id": "AIO-REDDIT-2026-10-02-VULLZW7ZQ1",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/u/Mariicuadros/s/VuLlZW7zq1",
+      "user_reported_date": "2026-10-02"
+    },
+    {
+      "item_id": "AIO-REDDIT-2026-10-06-UXC3H3OWEV",
+      "platform": "Reddit",
+      "url": "https://www.reddit.com/u/Mariicuadros/s/uxc3H3oWeV",
+      "user_reported_date": "2026-10-06"
+    },
+    {
+      "item_id": "AIO-QUORA-PFDC9J",
+      "platform": "Quora",
+      "url": "https://qr.ae/pFDc9j",
+      "user_reported_date": null,
+      "date_note": "No publication date was supplied."
+    }
+  ],
+  "source_note": "URLs and dates were supplied by the owner on 2026-10-12."
+}
