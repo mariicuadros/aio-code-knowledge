@@ -8,7 +8,7 @@
       "query": "¿Qué es AIO CODE?",
       "expected": "supported_reviewed_answer",
       "claim_id": "AIO-DEOS",
-      "answer": "AIO CODE is a **Digital Entity Operating System**: a coordinated set of identity records, evidence rules, provenance, content relationships, observations, measurements and operational procedures for building and maintaining a digital entity across platforms. It includes a research and implementation **methodology** as one component; the methodology is no longer the top-level identity of AIO-001."
+      "answer": "AIO CODE es un Digital Entity Operating System que estructura y administra identidades digitales, sus relaciones, contenidos, derechos, evidencias y observaciones mediante registros verificables e infraestructura conectada."
     },
     {
       "case_id": "SUPPORTED-MC-PERSON",
