@@ -37,3 +37,11 @@ No existing historical observation, prompt text or content publication date is r
 ## 2026-10-06 — Documentary baseline consolidation
 
 Connected existing DEOS integration and September reports to supplied eight-week journals and October observations. Preserved frozen records/coverage; added explicit supplemental schema fields and public summary indices. Raw screenshots and original journals remain restricted. Brain operating closure already recorded on October 3; analytics/content ledger operation belongs to phase 2.
+
+## SYS-20261012-001 — Approved DEOS definition in controlled RAG
+
+- Authorized by Marii Cuadros on 2026-10-12 (Colombia).
+- Synchronizes the approved Spanish definition across system specification, repository overview, reviewed RAG assertion and its acceptance fixture; rebuilds the pinned public index.
+- AIO CODE remains a Digital Entity Operating System. Capability readiness remains claim-specific; Phase 1 remains closed.
+- Historical records, frozen prompts and external responses are preserved.
+- External discovery/indexing effects of this public wording change are unmeasured.
