@@ -15,7 +15,7 @@ export async function handle(request,store) {
     const slot=Math.floor(Date.now()/60000), hits=windows.get(slot)||0;
     windows.clear();windows.set(slot,hits+1);
     if(hits>=120) return json({error:{code:'rate_limited'}},429,{'retry-after':'60'});
-    const url=new URL(request.url),id=url.searchParams.get('id'),action=url.searchParams.get('action');
+    const url=new URL(request.url,'http://localhost'),id=url.searchParams.get('id'),action=url.searchParams.get('action');
     const service=new EntityService(store||configuredStore());
     if(request.method==='GET') {
       if(action&&action!=='status') fail('invalid_action');
