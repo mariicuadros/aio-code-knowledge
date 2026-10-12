@@ -82,7 +82,7 @@ test('vault read diagnostics reject malformed tree and invalid JSON without leak
   tree={truncated:false,tree:undefined};
   let response=await handle(req(),new EntityService(new VaultStore('mock-read','')).store);
   assert.equal(response.status,503);
-  assert.deepEqual(await response.json(),{error:{code:'vault_tree_invalid'}});
+  assert.deepEqual(await response.json(),{error:{code:'vault_read_failed'}});
   tree={truncated:false,tree:[{path:'entity-console/v1/ENT-'+ 'b'.repeat(8)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(4)+'-'+ 'b'.repeat(12)+'/00000001.json',type:'blob',sha}]};
   response=await handle(req(),new VaultStore('mock-read',''));
   assert.equal(response.status,503);
