@@ -96,6 +96,10 @@ jobs:
               dst = destination / src
               dst.parent.mkdir(parents=True, exist_ok=True)
               shutil.copy2(src, dst)
+              # Keep the legacy root paths aligned with the same approved sources.
+              root_dst = Path("hf-export") / source
+              root_dst.parent.mkdir(parents=True, exist_ok=True)
+              shutil.copy2(src, root_dst)
 
           subprocess.run(["python", "scripts/build_hf_entities.py", "--output", "hf-export/data/entities.jsonl"], check=True)
           print(f"Built controlled export with {len(manifest['sources'])} source files and canonical entity rows")
