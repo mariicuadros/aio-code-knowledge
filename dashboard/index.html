@@ -41,6 +41,7 @@ button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offse
 </div>
 
 <div class="card"><button id="collect">Consultar Instagram</button><p id="collection-status" class="muted" role="status" aria-live="polite">Consulta el día anterior en horario de Colombia. Cada período se guarda una sola vez.</p></div>
+<p id="capture-health" class="muted" role="status"></p>
 <p id="integrity-note" class="muted"></p>
 <section class="card">
 <h2>Última observación de cuenta</h2>
@@ -52,11 +53,22 @@ button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offse
 <h2>Contenido observado</h2>
 <p class="muted">Estos IDs son candidatos estables basados en media de Instagram. No se convierten en content_provenance hasta completar el mapeo humano, derechos y clasificación.</p>
 <div class="table"><table>
-<thead><tr><th>Content ID propuesto</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Estado</th></tr></thead>
+<thead><tr><th>Content ID propuesto</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Alcance</th><th>Visualizaciones</th><th>Guardados</th><th>Compartidos</th><th>Capturado</th><th>Estado</th></tr></thead>
 <tbody id="media"></tbody>
 </table></div>
 </section>
 
+<section class="card">
+<h2>Historial por publicación</h2>
+<p class="muted">Cada captura conserva sus propios valores. Las métricas de publicaciones son acumuladas hasta la consulta, no corresponden al día de la cuenta. — significa no disponible o todavía no recogido.</p>
+<div id="media-history"></div>
+</section>
+<section class="card">
+<h2>Audiencia de la cuenta</h2>
+<p class="muted">Datos agregados de la cuenta. La geografía de seguidores no describe dónde se vio una publicación concreta.</p>
+<p id="audience-period" class="muted"></p>
+<div id="audience" class="grid"></div>
+</section>
 <section class="card">
 <h2>Límite de interpretación</h2>
 <p class="muted">Las métricas de cuenta, los contadores de contenido y el reconocimiento en buscadores/IA permanecen separados. El panel no atribuye causalidad a AIO CODE.</p>
@@ -74,6 +86,8 @@ function render(data){
  $('account-count').textContent=data.counts.account_observations;
  $('content-count').textContent=data.counts.unique_proposed_content_ids;
  $('commit').textContent=(data.source_commit||'').slice(0,12)||'—';
+ $('capture-health').textContent=data.collection_health?.stale ? 'La última captura tiene más de 36 horas o todavía no existe. Consulta Instagram y revisa el resultado.' : 'Captura reciente. Recolección automática programada a las 8:00 a. m. de Colombia; su próxima ejecución aún debe comprobarse.';
+ if(data.collection_health?.collection_enabled===false)$('capture-health').textContent+=' Recolección desactivada en Vercel.';
  $('integrity-note').textContent=data.integrity_notes?.length ? `Formato histórico conciliado en lectura: ${data.integrity_notes.length} registros. Originales preservados.` : '';
  const latest=data.account_records[0];
  $('latest-account').textContent=latest
@@ -87,10 +101,35 @@ function render(data){
  for(const row of data.media_candidates){
   const tr=document.createElement('tr');
   tr.append(td(row.proposed_content_id),td(dt.format(new Date(row.published_at))),td(row.media_type),
-    td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)));
+    td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)),
+    ...['reach','views','saved','shares'].map(key=>td(metric(row.insights?.[key]))),td(dt.format(new Date(row.captured_at))));
   const state=td('');const b=document.createElement('span');b.className='badge';b.textContent='Pendiente de mapeo';state.append(b);tr.append(state);body.append(tr);
  }
+ renderHistory(data.media_history || []);renderAudience(data.audience_observation);
  $('login').hidden=true;$('app').hidden=false;$('logout').hidden=false;$('error').textContent='';
+}
+function renderHistory(rows){
+ const parent=$('media-history');parent.replaceChildren();
+ const ids=[...new Set(rows.map(r=>r.proposed_content_id))];
+ for(const id of ids){
+  const detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent=id;detail.append(summary);
+  for(const row of rows.filter(r=>r.proposed_content_id===id)){
+   const line=document.createElement('p');line.className='muted';line.textContent=`${dt.format(new Date(row.captured_at))} · Likes ${metric(row.counters.like_count)} · Comentarios ${metric(row.counters.comments_count)} · Alcance ${metric(row.insights?.reach)} · Visualizaciones ${metric(row.insights?.views)} · Guardados ${metric(row.insights?.saved)} · Compartidos ${metric(row.insights?.shares)}`;detail.append(line);
+  }
+  parent.append(detail);
+ }
+}
+function renderAudience(observation){
+ const parent=$('audience');parent.replaceChildren();
+ $('audience-period').textContent=observation ? `Capturado: ${dt.format(new Date(observation.captured_at))}. Distribución de visualizaciones: día anterior solicitado. Demografía de seguidores: last_30_days según Meta.` : 'Todavía no se ha capturado la audiencia con esta versión.';
+ const labels={views_follow_type:'Visualizaciones: seguidores / no seguidores',country:'Países de seguidores',city:'Ciudades de seguidores',age:'Edades de seguidores',gender:'Género de seguidores'};
+ for(const result of observation?.results||[]){
+  const card=document.createElement('div');card.className='card';const h=document.createElement('h3');h.textContent=labels[result.key];card.append(h);
+  const rows=result.data.flatMap(m=>(m.total_value?.breakdowns||[]).flatMap(b=>b.results||[])).sort((a,b)=>b.value-a.value);
+  if(!rows.length){const p=document.createElement('p');p.className='muted';p.textContent=result.status==='provider_rejected' ? `No disponible en esta consulta. Meta: ${result.diagnostic?.code ?? 'sin código'}.` : 'Meta no entregó un desglose disponible.';card.append(p);}
+  for(const row of rows.slice(0,10)){const p=document.createElement('p');p.textContent=`${row.dimension_values.join(' / ')}: ${fmt.format(row.value)}`;card.append(p);}
+  parent.append(card);
+ }
 }
 async function load(){
  const r=await fetch('/api/dashboard',{cache:'no-store'});
@@ -130,7 +169,7 @@ $('collect').addEventListener('click',async()=>{
   if(!await load())throw new Error('La sesión venció. Vuelve a entrar para ver el registro.');
   $('collection-status').textContent=result.status==='already_collected'
    ? 'Este período ya estaba guardado. Se conserva la captura original; el dashboard se ha recargado.'
-   : 'Consulta guardada y dashboard actualizado. Las métricas de cuenta cubren el día anterior; los contadores de publicaciones se capturan al consultar.';
+   : 'Consulta guardada: cuenta, publicaciones y audiencia. Revisa los períodos y las métricas no disponibles.' + (result.media_truncated ? ' Hay más publicaciones: se alcanzó el límite de 100 por consulta.' : '');
  }catch(error){$('collection-status').textContent=error.message;}
  finally{button.disabled=false;}
 });
