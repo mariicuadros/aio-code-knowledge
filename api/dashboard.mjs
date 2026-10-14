@@ -1,5 +1,5 @@
 import { authorized, json } from '../lib/private-auth.mjs';
-import { state, accountRecords, mediaCandidates } from '../lib/vault-client.mjs';
+import { state, accountRecords, mediaCandidates, audienceRecords } from '../lib/vault-client.mjs';
 
 function latestByContent(rows) {
   const latest = new Map();
@@ -17,9 +17,10 @@ export async function GET(request) {
   try {
     const snapshot = await state(token);
     const integrityNotes = [];
-    const [accounts, media] = await Promise.all([
+    const [accounts, media, audience] = await Promise.all([
       accountRecords(snapshot, token, integrityNotes),
       mediaCandidates(snapshot, token, integrityNotes),
+      audienceRecords(snapshot, token),
     ]);
     return json({
       status: 'ok',
@@ -29,6 +30,9 @@ export async function GET(request) {
       integrity_notes: integrityNotes,
       account_records: accounts,
       media_candidates: latestByContent(media),
+      media_history: media.map(row => ({ proposed_content_id: row.proposed_content_id, captured_at: row.captured_at, counters: row.counters, insights: row.insights || null })),
+      audience_observation: audience[0] || null,
+      collection_health: { latest_account_capture: accounts[0]?.captured_at || null, stale: !accounts[0] || Date.now() - Date.parse(accounts[0].captured_at) > 36 * 3600000, expected_daily_colombia_time: '08:00', collection_enabled: process.env.AIO_COLLECTION_ENABLED === '1' },
       counts: {
         account_observations: accounts.length,
         media_candidate_captures: media.length,
