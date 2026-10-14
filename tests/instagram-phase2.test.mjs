@@ -1,6 +1,6 @@
 import { test, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
-import { captureAccount, captureMedia } from '../lib/meta-instagram.mjs';
+import { captureAccount, captureMedia, fetchMediaInsights, captureAudience } from '../lib/meta-instagram.mjs';
 import { normalizeMediaSnapshot, verifyMediaCandidate } from '../lib/media-candidate.mjs';
 import { normalize, verify } from '../lib/account-observation.mjs';
 import { GET as collectRoute, POST as manualCollectRoute, previousDayColombia } from '../api/collect-instagram.mjs';
@@ -25,6 +25,14 @@ beforeEach(() => {
     calls.push({ url: u, options });
     assert.equal(u.searchParams.has('access_token'), false);
     assert.equal(options.headers.authorization, 'Bearer test-meta-token');
+    if (u.pathname.includes('/18010095092949559/insights')) {
+      const values={reach:429,views:1042,saved:7,shares:3,total_interactions:63};
+      return Response.json({data:u.searchParams.get('metric').split(',').map(name=>({name,period:'lifetime',values:[{value:values[name]}]}))});
+    }
+    if (u.searchParams.has('breakdown')) {
+      const name=u.searchParams.get('metric');
+      return Response.json({data:[{name,period:u.searchParams.get('period'),total_value:{breakdowns:[{dimension_keys:[u.searchParams.get('breakdown')],results:[{dimension_values:['CO'],value:25}]}]}}]});
+    }
     if (u.pathname.endsWith('/insights')) {
       return Response.json({ data: [
         { name: 'reach', period: 'day', description: 'reach definition', total_value: { value: 11 } },
@@ -206,4 +214,96 @@ test('manual collection requires same origin and authenticated session before pr
   assert.equal(body.diagnostic.code, 'vault_write_token_missing');
   assert.equal(calls.length, 0);
   assert.equal((await manualCollectRoute(new Request(url, { method: 'POST', headers: { ...headers, origin: 'https://other.test' } }))).status, 403);
+});
+
+
+test('media insights preserve lifetime scope, missing metrics and immutable source validation', async () => {
+  const body=await captureMedia();const raw=JSON.stringify(body)+'\n';
+  const source='phase-2/analytics/snapshots/instagram/media/metrics.json';
+  const [row]=normalizeMediaSnapshot(raw,source,'MC-001','MC-001');
+  assert.equal(row.insights.views.value,1042);assert.equal(row.insights.saved.value,7);
+  assert.equal(row.measurement_window.period,'lifetime');assert.equal(verifyMediaCandidate(row,raw).candidate_id,row.candidate_id);
+  const changed=structuredClone(row);changed.insights.views.value=1043;assert.throws(()=>verifyMediaCandidate(changed,raw));
+  body.media_insights[0].data=body.media_insights[0].data.filter(x=>x.name!=='saved');
+  const missing=normalizeMediaSnapshot(JSON.stringify(body),source,'MC-001','MC-001')[0];
+  assert.equal(missing.insights.saved.value,null);assert.equal(missing.insights.saved.state,'not_available');
+  delete body.media_insights;
+  assert.equal(normalizeMediaSnapshot(JSON.stringify(body),source,'MC-001','MC-001')[0].schema_version,'phase2-1.0.0');
+});
+
+test('a rejected media metric falls back independently while invalid tokens fail collection', async () => {
+ const original=globalThis.fetch;
+ globalThis.fetch=async(url,options)=>{
+  const u=new URL(url),metric=u.searchParams.get('metric');
+  if(metric?.includes(',')||metric==='saved')return Response.json({error:{code:100,type:'OAuthException',message:'invalid metric'}},{status:400});
+  return original(url,options);
+ };
+ const result=await fetchMediaInsights('18010095092949559');
+ assert.equal(result.status,'partial');assert.equal(result.rejected[0].metric,'saved');assert.ok(result.data.some(x=>x.name==='views'));
+ globalThis.fetch=async()=>Response.json({error:{code:190,type:'OAuthException',message:'invalid token'}},{status:401});
+ await assert.rejects(fetchMediaInsights('18010095092949559'),e=>e.meta.code===190);
+});
+
+test('media pagination uses only trusted host and cursor, reports incomplete catalogue', async () => {
+ const original=globalThis.fetch;
+ globalThis.fetch=async(url,options)=>{
+  const u=new URL(url);
+  if(u.pathname.endsWith('/media'))return Response.json({data:[],paging:{next:'https://evil.example/?access_token=secret',cursors:{after:u.searchParams.get('after')==='next'?'last':'next'}}});
+  return original(url,options);
+ };
+ const result=await captureMedia({maxPages:2});
+ assert.equal(result.paging.pages,2);assert.equal(result.paging.truncated,true);
+ assert.ok(calls.every(x=>x.url.hostname==='graph.facebook.com'));
+ assert.ok(!JSON.stringify(result).includes('evil.example'));assert.ok(!JSON.stringify(result).includes('secret'));
+});
+
+test('audience is verified account aggregation with explicit periods and unavailable data', async () => {
+ const {normalizeAudience,verifyAudience}=await import('../lib/audience-observation.mjs');
+ const body=await captureAudience({since:1791608400,until:1791694800});
+ const source='phase-2/analytics/snapshots/instagram/audience/test.json',raw=JSON.stringify(body)+'\n';
+ const row=normalizeAudience(raw,source);
+ assert.equal(row.results.find(x=>x.key==='country').request.timeframe,'last_30_days');
+ assert.equal(row.results.find(x=>x.key==='views_follow_type').request.since,1791608400);
+ assert.equal(verifyAudience(row,raw).observation_id,row.observation_id);
+ const changed=structuredClone(row);changed.results[0].data[0].total_value.breakdowns[0].results[0].value=26;
+ assert.throws(()=>verifyAudience(changed,raw));
+ body.results[0]={...body.results[0],status:'provider_rejected',data:[],diagnostic:{code:100}};
+ assert.equal(normalizeAudience(JSON.stringify(body),source).results[0].data.length,0);
+});
+
+
+test('authorized collection persists raw evidence, dashboard verifies it, and repeat avoids Meta calls', async () => {
+ const {createHash}=await import('node:crypto');
+ const {GET:dashboard}=await import('../api/dashboard.mjs');
+ const provider=globalThis.fetch;const blobs=new Map(),trees=new Map(),commits=new Map();
+ let head='a'.repeat(40),tree='b'.repeat(40),sequence=1;trees.set(tree,[]);commits.set(head,{tree:{sha:tree}});
+ const sha=()=>String(++sequence).padStart(40,'0');
+ globalThis.fetch=async(url,options={})=>{
+  const u=new URL(url);
+  if(u.hostname==='graph.facebook.com')return provider(url,options);
+  assert.equal(u.hostname,'api.github.com');
+  const path=u.pathname.replace('/repos/mariicuadros/aio-code-vault','');
+  const body=options.body?JSON.parse(options.body):null;
+  if(path==='')return Response.json({private:true});
+  if(path==='/git/ref/heads/main')return Response.json({object:{sha:head}});
+  if(path.startsWith('/git/commits/')&&!body)return Response.json(commits.get(path.split('/').pop()));
+  if(path.startsWith('/git/trees/')&&!body)return Response.json({tree:trees.get(path.split('/').pop()),truncated:false});
+  if(path.startsWith('/git/blobs/'))return Response.json({encoding:'base64',content:Buffer.from(blobs.get(path.split('/').pop())).toString('base64')});
+  if(path==='/git/trees'&&body){
+   const entries=[...trees.get(body.base_tree)];
+   for(const f of body.tree){const b=createHash('sha1').update(f.content).digest('hex');blobs.set(b,f.content);entries.push({path:f.path,type:'blob',sha:b});}
+   const id=sha();trees.set(id,entries);return Response.json({sha:id});
+  }
+  if(path==='/git/commits'&&body){const id=sha();commits.set(id,{tree:{sha:body.tree}});return Response.json({sha:id});}
+  if(path==='/git/refs/heads/main'&&body){head=body.sha;return Response.json({object:{sha:head}});}
+  throw new Error('Unexpected mock vault request '+path);
+ };
+ Object.assign(process.env,{AIO_COLLECTION_ENABLED:'1',AIO_VAULT_WRITE_TOKEN:'mock-write',AIO_VAULT_READ_TOKEN:'mock-read'});
+ const request=new Request('https://example.test/api/collect-instagram',{headers:{authorization:'Bearer test-cron'}});
+ const response=await collectRoute(request);assert.equal(response.status,200);assert.equal((await response.json()).status,'collected');
+ const loaded=await dashboard(new Request('https://example.test/api/dashboard',{headers:{'x-aio-admin-token':'test-admin'}}));
+ assert.equal(loaded.status,200);const result=await loaded.json();
+ assert.equal(result.account_records.length,1);assert.equal(result.media_candidates[0].insights.views.value,1042);
+ assert.equal(result.media_history.length,1);assert.equal(result.audience_observation.results.length,5);
+ const before=calls.length;const repeat=await collectRoute(request);assert.equal((await repeat.json()).status,'already_collected');assert.equal(calls.length,before);
 });
