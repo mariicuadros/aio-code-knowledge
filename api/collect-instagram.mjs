@@ -1,7 +1,8 @@
 import { normalize } from '../lib/account-observation.mjs';
+import { normalizeAudience } from '../lib/audience-observation.mjs';
 import { normalizeMediaSnapshot } from '../lib/media-candidate.mjs';
-import { captureAccount, captureMedia, configuredAccountId, metaFailure } from '../lib/meta-instagram.mjs';
-import { commitFiles } from '../lib/vault-client.mjs';
+import { captureAccount, captureMedia, captureAudience, configuredAccountId, metaFailure } from '../lib/meta-instagram.mjs';
+import { commitFiles, state } from '../lib/vault-client.mjs';
 import { authorized, sameOrigin, cronAuthorized, json } from '../lib/private-auth.mjs';
 
 export function previousDayColombia(now = new Date()) {
@@ -36,16 +37,21 @@ export async function collect(now = new Date()) {
     const accountId = configuredAccountId();
     stage = 'time_window';
     const { since, until } = previousDayColombia(now);
-    const marker = `phase-2/analytics/jobs/instagram/account-${accountId}-${until}.json`;
+    const marker = `phase-2/analytics/jobs/instagram/account-v2-${accountId}-${until}.json`;
+
+    stage = 'vault_idempotency';
+    const current = await state(vaultToken);
+    if (current.entries.some(entry => entry.path === marker)) return { status: 'already_collected', since, until, commit: current.head };
 
     stage = 'meta_capture';
-    const [accountBody, mediaBody] = await Promise.all([
+    const [accountBody, mediaBody, audienceBody] = await Promise.all([
       captureAccount({ since, until }),
       captureMedia({ limit: 25 }),
+      captureAudience({ since, until }),
     ]);
 
     stage = 'account_validation';
-    if (accountBody.account?.id !== accountId || mediaBody.account?.id !== accountId) {
+    if (accountBody.account?.id !== accountId || mediaBody.account?.id !== accountId || audienceBody.account_id !== accountId) {
       throw new Error('Unexpected Instagram account');
     }
 
@@ -57,7 +63,13 @@ export async function collect(now = new Date()) {
     const accountRecord = normalize(accountRaw, accountSource, 'MC-001', 'MC-001');
     const mediaRows = normalizeMediaSnapshot(mediaRaw, mediaSource, 'MC-001', 'MC-001');
 
+    const audienceSource = `phase-2/analytics/snapshots/instagram/audience/${stamp(audienceBody.fetched_at)}.json`;
+    const audienceRaw = JSON.stringify(audienceBody) + '\n';
+    const audienceRecord = normalizeAudience(audienceRaw, audienceSource);
+
     const files = [
+      { path: audienceSource, content: audienceRaw },
+      { path: 'commercial-data/audience-ledger/' + audienceRecord.observation_id + '.json', content: JSON.stringify(audienceRecord, null, 2) + '\n' },
       { path: accountSource, content: accountRaw },
       { path: mediaSource, content: mediaRaw },
       {
@@ -81,6 +93,8 @@ export async function collect(now = new Date()) {
           account_source_ref: accountSource,
           account_observation_ref: 'commercial-data/account-ledger/' + accountRecord.observation_id + '.json',
           media_source_ref: mediaSource,
+          audience_source_ref: audienceSource,
+          media_paging: mediaBody.paging,
           media_candidate_count: mediaRows.length,
           proposed_content_ids: [...new Set(mediaRows.map(row => row.proposed_content_id))],
           limitations: [
@@ -100,12 +114,14 @@ export async function collect(now = new Date()) {
       marker,
     );
 
+    console.info(JSON.stringify({ event: 'instagram_collection', status: result.status, since, until, media_count: mediaRows.length, media_truncated: mediaBody.paging.truncated }));
     return {
       status: result.status === 'already_collected' ? 'already_collected' : 'collected',
       since,
       until,
       account_observation_id: accountRecord.observation_id,
       media_candidate_count: mediaRows.length,
+      media_truncated: mediaBody.paging.truncated,
       commit: result.commit || result.head || null,
     };
   } catch (error) {
@@ -136,6 +152,7 @@ async function collectionResponse() {
   try {
     return json(await collect());
   } catch (error) {
+    console.error(JSON.stringify({ event: 'instagram_collection_failed', stage: error?.collectionStage || 'unknown', meta_code: error?.meta?.code ?? null, configuration_code: error?.collectionCode ?? null }));
     const upstreamStatus = Number.isInteger(error?.status) ? error.status : undefined;
     return json({
       status: 'collection_failed',
