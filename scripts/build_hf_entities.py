@@ -15,7 +15,7 @@ def definition(text):
         raise ValueError("Passport has no definition section")
     start = starts[0] + 1
     end = next((i for i in range(start, len(lines)) if lines[i].startswith("#")), len(lines))
-    value = " ".join(line.strip() for line in lines[start:end] if line.strip() and not line.startswith(chr(96) * 3))
+    value = " ".join(line.strip() for line in lines[start:end] if line.strip() and line.strip() != "---" and not line.startswith(chr(96) * 3))
     value = re.sub(r"[*]", "", value).replace(chr(96), "")
     return re.sub(r"\s+", " ", value).strip()
 
