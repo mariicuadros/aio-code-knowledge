@@ -1,136 +1,73 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>AIO CODE · Phase 2 Brain</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>AIO CODE · Instagram Console</title>
 <style>
-:root{font-family:Arial,Helvetica,sans-serif;color:#ffffff;background:#000000}
-*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:32px 20px 60px}
-header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:28px}
-h1{margin:4px 0;font-size:34px}h2{margin-top:0}.muted{color:#b8b8b8}.eyebrow{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#d6d6d6;font-weight:800}
-.card{background:#141414;border:1px solid #333333;border-radius:3px;padding:20px;margin-bottom:18px}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.metric strong{font-size:34px;display:block}.metric span{color:#b8b8b8}
-input,button{font:inherit}input{background:#141414;color:#ffffff;width:100%;padding:11px;border:1px solid #333333;border-radius:3px}button{padding:10px 14px;border:1px solid #d6d6d6;background:#d6d6d6;color:#111111;border-radius:3px;cursor:pointer}
-form{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:650px}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:10px;border-bottom:1px solid #333333;vertical-align:top}th{color:#b8b8b8}
-.badge{display:inline-block;padding:4px 8px;border-radius:999px;background:#242424;color:#d6d6d6;font-size:12px;font-weight:700}
-#error{color:#ffffff}[hidden]{display:none!important}
-@media(max-width:760px){.grid{grid-template-columns:1fr}form{grid-template-columns:1fr}header{align-items:flex-start;flex-direction:column}.table{overflow:auto}}
-
-button:focus-visible,input:focus-visible{outline:2px solid #d6d6d6;outline-offset:4px}#error{border-left:3px solid #d6d6d6;padding-left:12px}
+:root{font-family:Arial,Helvetica,sans-serif;color:#f5f5f5;background:#080808;color-scheme:dark;--muted:#a3a3a3;--line:#282828;--panel:#111111;--silver:#dedede}*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,input{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:disabled{cursor:wait;opacity:.5}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid white;outline-offset:5px}[hidden]{display:none!important}.muted{color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#a3a3a3;font-weight:700}.layout{min-height:100vh}.signed-in .layout{display:grid;grid-template-columns:224px minmax(0,1fr)}.sidebar{background:#0b0b0b;border-right:1px solid var(--line);padding:35px 20px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}.brand{font-weight:700;letter-spacing:3px;font-size:19px;text-decoration:none;display:block}.brand small{display:block;font-size:9px;color:#929292;letter-spacing:1.8px;font-weight:400;margin-top:9px}.side-divider{height:1px;background:var(--line);margin:32px 0 23px}.workspace{display:flex;align-items:center;gap:11px;padding:0 8px 30px}.avatar{display:grid;place-items:center;width:34px;height:34px;border:1px solid #474747;background:linear-gradient(135deg,#2c2c2c,#121212);border-radius:50%;font-size:12px}.workspace strong{font-size:12px}.workspace p{font-size:10px;margin:5px 0 0;color:#929292}.navigation{display:grid;gap:5px;margin-top:12px}.nav-item{display:flex;align-items:center;gap:12px;text-align:left;background:none;border:1px solid transparent;color:#a3a3a3;padding:13px 12px;border-radius:6px;font-size:12px}.nav-item[aria-selected=true]{background:#202020;border-color:#333333;color:white}.nav-item:hover{color:white;background:#191919}.nav-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4}.side-bottom{margin-top:auto;padding:25px 7px 0}.side-note{font-size:10px;line-height:1.6;color:#868686}.logout{border:0;background:none;color:#c8c8c8;font-size:11px;padding:10px 0;margin-top:9px}.main{padding:0 42px 45px;max-width:1590px;width:100%;margin:auto}.topbar{height:81px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.breadcrumbs{font-size:11px;color:#999999}.breadcrumbs span{color:#d6d6d6;margin-left:12px}.private-label{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:#bdbdbd;border:1px solid #343434;padding:8px 11px;border-radius:20px}.page-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:36px 0 25px}.page-heading h1{font-size:32px;letter-spacing:-1.1px;margin:9px 0 10px;font-weight:500}.page-heading p{font-size:12px;color:#aaa;margin:0;line-height:1.6}.primary{border:1px solid #e0e0e0;background:linear-gradient(#efefef,#d3d3d3);color:#111;padding:12px 17px;border-radius:5px;font-weight:600;font-size:11px;white-space:nowrap}.secondary{border:1px solid #363636;background:#171717;color:#ddd;padding:10px 14px;border-radius:5px;font-size:11px}.status-line{display:flex;gap:10px;align-items:center;font-size:11px;color:#b0b0b0;flex-wrap:wrap;margin-bottom:23px;line-height:1.7}.dot{width:5px;height:5px;border-radius:50%;background:#dedede}.status-line .period{margin-left:auto;border:1px solid #303030;padding:7px 10px;border-radius:4px;color:#d0d0d0}.collection-message{font-size:12px;line-height:1.6;padding:13px 16px;background:#191919;border-left:2px solid #b0b0b0;border-radius:3px;margin:0 0 22px}.collection-message:empty{display:none}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:22px}.kpi{background:linear-gradient(135deg,#171717,#101010);border:1px solid var(--line);border-radius:7px;padding:22px}.kpi-title{color:#aaa;font-size:11px;display:flex;justify-content:space-between}.kpi-value{font-size:35px;letter-spacing:-1.4px;display:block;margin:15px 0 11px;font-weight:500;font-variant-numeric:tabular-nums}.kpi-foot{font-size:10px;color:#888}.split{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;margin-bottom:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:25px;min-width:0}.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:23px}.card-head h2{font-size:15px;font-weight:500;margin:0}.card-head p{font-size:11px;color:#909090;margin:8px 0 0;line-height:1.6}.tiny{font-size:10px;color:#aaa}.text-button{background:none;color:#c7c7c7;font-size:10px;border:0;padding:2px 0;white-space:nowrap}.bar-row{margin:18px 0}.bar-label{display:flex;justify-content:space-between;font-size:11px;margin-bottom:10px;color:#cfcfcf;gap:15px}.bar-label span:first-child{overflow-wrap:anywhere}.track{height:5px;background:#272727;border-radius:4px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#777777,#dedede);border-radius:4px}.empty{color:#949494;font-size:12px;line-height:1.8;padding:16px 0}.summary-post{padding:19px 0;border-top:1px solid var(--line)}.summary-post:first-child{border-top:0;padding-top:0}.post-top{display:flex;justify-content:space-between;gap:15px;font-size:10px;color:#929292}.post-name{font-size:13px;margin:13px 0 10px;line-height:1.6;overflow-wrap:anywhere}.post-stats{display:flex;gap:24px;font-size:11px;color:#aaa}.post-stats strong{color:#e3e3e3;font-weight:500}.badge{display:inline-block;border:1px solid #3a3a3a;border-radius:15px;padding:5px 8px;font-size:9px;color:#bcbcbc;white-space:nowrap}.bottom-stats{display:flex;flex-wrap:wrap;gap:25px;border:1px solid var(--line);border-radius:7px;padding:17px 22px;font-size:11px;color:#999}.bottom-stats strong{color:#e5e5e5;font-weight:500;margin-left:7px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:11px;min-width:930px}th{color:#858585;text-align:left;font-size:9px;font-weight:400;padding:0 15px 16px;text-transform:uppercase;letter-spacing:.7px;white-space:nowrap}td{padding:21px 15px;border-top:1px solid var(--line);color:#ccc;vertical-align:middle;font-variant-numeric:tabular-nums}td:first-child{min-width:230px}td strong{font-size:12px;color:#eee;display:block;font-weight:500;margin-bottom:7px}.row-subtitle{font-size:9px;color:#828282;overflow-wrap:anywhere;max-width:250px}.table-wrap a{color:#ddd;text-decoration:underline;text-underline-offset:4px;font-size:10px}.note{font-size:10px;color:#888;line-height:1.8;margin:17px 0 0}.segment{display:flex;gap:4px;border:1px solid var(--line);background:#0c0c0c;padding:4px;border-radius:6px;width:max-content;max-width:100%;flex-wrap:wrap;margin-bottom:23px}.segment button{border:0;background:none;color:#9b9b9b;padding:9px 17px;font-size:11px;border-radius:4px}.segment button[aria-pressed=true]{background:#2b2b2b;color:white}.audience-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}.history-item{border-top:1px solid var(--line);padding:19px 0}.history-item summary{font-size:12px;cursor:pointer;color:#ddd;overflow-wrap:anywhere}.history-item p{font-size:11px;line-height:1.8;color:#aaa}.timeline-row{display:grid;grid-template-columns:170px 1fr;gap:20px;border-top:1px solid #242424;padding:17px 0;font-size:11px;line-height:1.8}.timeline-row .time{color:#aaa}.timeline-row small{display:block;color:#777;font-size:9px}.connection-row{display:flex;align-items:center;justify-content:space-between;padding:16px 0;border-top:1px solid var(--line);font-size:12px;gap:20px}.connection-row:first-child{border-top:0}.legal-note{border-top:1px solid var(--line);font-size:10px;color:#757575;line-height:1.8;margin-top:28px;padding-top:20px}.login{max-width:420px;margin:90px auto;padding:36px;border:1px solid #333;border-radius:8px;background:linear-gradient(135deg,#1b1b1b,#101010)}.login h1{font-size:27px;letter-spacing:-1px;font-weight:500;margin:18px 0 12px}.login p{font-size:12px;line-height:1.8;color:#aaa}.login label{font-size:11px;color:#ccc;display:block;margin:27px 0 10px}.login input{width:100%;background:#090909;border:1px solid #414141;border-radius:5px;color:white;padding:13px;margin-bottom:15px}.login button{width:100%}#login-status,#error{font-size:12px;line-height:1.8}#error:not(:empty){border-left:2px solid #bbb;background:#1c1c1c;padding:14px 18px;margin-top:20px}.attention{color:#dedede}.technical{margin-top:25px;color:#777;font-size:10px;line-height:1.8}.technical summary{cursor:pointer}.technical p{overflow-wrap:anywhere}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1500px){.main{padding-left:55px;padding-right:55px}.card{padding:30px}}@media(max-width:1150px){.signed-in .layout{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:30px 14px}.main{padding:0 25px 35px}.kpis{gap:10px}.kpi{padding:17px}.kpi-value{font-size:30px}.split{grid-template-columns:1fr 1fr}}@media(max-width:850px){.signed-in .layout{display:block}.sidebar{height:auto;position:static;padding:20px 22px;border-right:0;border-bottom:1px solid var(--line)}.brand{font-size:16px}.brand small{font-size:8px}.side-divider,.workspace,.nav-eyebrow,.side-note{display:none}.navigation{display:flex;overflow-x:auto;margin:20px 0 0;gap:5px}.nav-item{padding:10px;white-space:nowrap;font-size:11px}.nav-icon{width:15px;height:15px}.side-bottom{position:absolute;right:22px;top:15px;padding:0}.logout{font-size:10px}.topbar{height:55px}.page-heading{padding-top:26px}.page-heading h1{font-size:28px}.main{padding:0 20px 30px}.split,.audience-layout{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.status-line .period{margin-left:0}.card{padding:21px}.timeline-row{grid-template-columns:1fr;gap:5px}.private-label{font-size:8px}.login{margin:55px auto}}@media(prefers-reduced-motion:no-preference){button,.nav-item{transition:background .15s,opacity .15s}.fill{transition:width .25s}}
 </style>
 </head>
 <body>
-<main>
-<header><div><div class="eyebrow">AIO CODE · Digital Entity Operating System</div><h1>Phase 2 Brain</h1><div class="muted">Instagram · private operational view</div></div><button id="logout" hidden>Salir</button></header>
-
-<section id="login" class="card">
-<h2>Acceso privado</h2>
-<p class="muted">La clave se usa solo para crear una sesión segura y no se guarda en esta página.</p>
-<form id="login-form"><input id="token" type="password" autocomplete="current-password" aria-label="Código de acceso al dashboard" placeholder="Código de acceso al dashboard" required><button>Entrar</button></form>
-<p id="login-status" class="muted"></p>
-</section>
-
+<div class="layout">
+<aside id="sidebar" class="sidebar" hidden>
+<a class="brand" href="/">AIO CODE<small>DIGITAL ENTITY OPERATING SYSTEM</small></a><div class="side-divider"></div>
+<div class="workspace"><div class="avatar" aria-hidden="true">MC</div><div><strong id="workspace-name">Marii Cuadros</strong><p>MC-001 · Instagram</p></div></div>
+<div class="eyebrow nav-eyebrow">Observación</div>
+<nav class="navigation" role="tablist" aria-label="Secciones de Instagram" aria-orientation="vertical">
+<button id="tab-overview" class="nav-item" role="tab" aria-selected="true" aria-controls="panel-overview" data-panel="overview"><svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5" height="5"/><rect x="12" y="3" width="5" height="5"/><rect x="3" y="12" width="5" height="5"/><rect x="12" y="12" width="5" height="5"/></svg>Resumen</button>
+<button id="tab-content" class="nav-item" role="tab" aria-selected="false" aria-controls="panel-content" data-panel="content" tabindex="-1"><svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4" width="14" height="12" rx="1"/><path d="m4 14 5-5 4 4 3-3"/></svg>Publicaciones</button>
+<button id="tab-audience" class="nav-item" role="tab" aria-selected="false" aria-controls="panel-audience" data-panel="audience" tabindex="-1"><svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="6" r="3"/><path d="M4 17v-2a6 6 0 0 1 12 0v2"/></svg>Audiencia</button>
+<button id="tab-history" class="nav-item" role="tab" aria-selected="false" aria-controls="panel-history" data-panel="history" tabindex="-1"><svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 5v5l3 2"/></svg>Historial</button>
+<button id="tab-connection" class="nav-item" role="tab" aria-selected="false" aria-controls="panel-connection" data-panel="connection" tabindex="-1"><svg class="nav-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 13 6-6M8 6l2-2a4 4 0 0 1 6 6l-2 2M12 14l-2 2a4 4 0 0 1-6-6l2-2"/></svg>Conexión</button>
+</nav><div class="side-bottom"><div class="eyebrow">Workspace privado</div><p class="side-note">Identidad, contenido y evidencia<br>en un mismo sistema.</p><button id="logout" class="logout" hidden>Cerrar sesión ↗</button></div>
+</aside>
+<main class="main">
+<div class="topbar"><div class="breadcrumbs">AIO CODE <span>/ Instagram</span></div><div class="private-label">Acceso privado</div></div>
+<section id="login" class="login"><div class="eyebrow">Entity workspace</div><h1>Tu entidad.<br>Su recorrido.</h1><p>Consulta las métricas de Instagram y el historial verificable de tu contenido.</p><form id="login-form"><label for="token">Código de acceso</label><input id="token" type="password" autocomplete="current-password" placeholder="Introduce tu código" required><button class="primary">Entrar al workspace</button></form><p id="login-status" role="status" aria-live="polite"></p></section>
 <section id="app" hidden>
-<div class="grid">
-<div class="card metric"><span>Capturas de cuenta</span><strong id="account-count">—</strong></div>
-<div class="card metric"><span>Content IDs propuestos</span><strong id="content-count">—</strong></div>
-<div class="card metric"><span>Vault commit</span><strong id="commit" style="font-size:16px">—</strong></div>
-</div>
-
-<div class="card"><button id="collect">Consultar Instagram</button><p id="collection-status" class="muted" role="status" aria-live="polite">Consulta el día anterior en horario de Colombia. Cada período se guarda una sola vez.</p></div>
-<p id="capture-health" class="muted" role="status"></p>
-<p id="integrity-note" class="muted"></p>
-<section class="card">
-<h2>Última observación de cuenta</h2>
-<div id="latest-account" class="muted">Sin observaciones.</div>
-<p id="measurement-window" class="muted"></p>
+<header class="page-heading"><div><div class="eyebrow">MC-001 · Instagram</div><h1 id="page-title">Resumen de rendimiento</h1><p id="page-description">Una vista clara de tu cuenta, tu contenido y su audiencia.</p></div><button id="collect" class="primary">Consultar Instagram ↗</button></header>
+<div class="status-line"><span class="dot" aria-hidden="true"></span><span id="capture-health">Cargando captura…</span><span id="short-period" class="period">Período de cuenta —</span></div>
+<p id="collection-status" class="collection-message" role="status" aria-live="polite"></p>
+<section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+<div class="kpis"><div class="kpi"><div class="kpi-title">Visualizaciones <span>↗</span></div><strong id="kpi-views" class="kpi-value">—</strong><div class="kpi-foot">Durante el período de la cuenta</div></div><div class="kpi"><div class="kpi-title">Cuentas alcanzadas <span>↗</span></div><strong id="kpi-reach" class="kpi-value">—</strong><div class="kpi-foot">Alcance estimado por Meta</div></div><div class="kpi"><div class="kpi-title">Interacciones <span>↗</span></div><strong id="kpi-interactions" class="kpi-value">—</strong><div class="kpi-foot">Durante el período de la cuenta</div></div><div class="kpi"><div class="kpi-title">Seguidores <span>◎</span></div><strong id="kpi-followers" class="kpi-value">—</strong><div class="kpi-foot">Total observado al consultar</div></div></div>
+<div class="split"><article class="card"><div class="card-head"><div><h2>¿A quién llegó?</h2><p>Visualizaciones de seguidores y no seguidores.<br>Desglose diario de la cuenta.</p></div><button class="text-button" data-go="audience">Ver audiencia ↗</button></div><div id="overview-distribution"></div></article><article class="card"><div class="card-head"><div><h2>Tu contenido</h2><p>La última captura de cada publicación.</p></div><button class="text-button" data-go="content">Ver publicaciones ↗</button></div><div id="overview-posts"></div></article></div>
+<div class="split"><article class="card"><div class="card-head"><div><h2>Países de tus seguidores</h2><p>Los cinco grupos principales entregados por Meta.</p></div><span class="tiny">Últimos 30 días</span></div><div id="overview-countries"></div></article><article class="card"><div class="card-head"><div><h2>Tu registro de observación</h2><p>Las capturas conectan los datos con su evidencia original.</p></div></div><div class="connection-row"><span>Capturas de cuenta</span><strong id="account-count">—</strong></div><div class="connection-row"><span>Publicaciones identificadas</span><strong id="content-count">—</strong></div><div class="connection-row"><span>Última consulta</span><span id="latest-account" class="tiny">—</span></div><p class="note">La audiencia de seguidores describe la cuenta; no es la geografía de una publicación específica.</p></article></div>
 </section>
-
-<section class="card">
-<h2>Contenido observado</h2>
-<p class="muted">Estos IDs son candidatos estables basados en media de Instagram. No se convierten en content_provenance hasta completar el mapeo humano, derechos y clasificación.</p>
-<div class="table"><table>
-<thead><tr><th>Content ID propuesto</th><th>Publicado</th><th>Tipo</th><th>Likes</th><th>Comentarios</th><th>Alcance</th><th>Visualizaciones</th><th>Guardados</th><th>Compartidos</th><th>Capturado</th><th>Estado</th></tr></thead>
-<tbody id="media"></tbody>
-</table></div>
-</section>
-
-<section class="card">
-<h2>Historial por publicación</h2>
-<p class="muted">Cada captura conserva sus propios valores. Las métricas de publicaciones son acumuladas hasta la consulta, no corresponden al día de la cuenta. — significa no disponible o todavía no recogido.</p>
-<div id="media-history"></div>
-</section>
-<section class="card">
-<h2>Audiencia de la cuenta</h2>
-<p class="muted">Datos agregados de la cuenta. La geografía de seguidores no describe dónde se vio una publicación concreta.</p>
-<p id="audience-period" class="muted"></p>
-<div id="audience" class="grid"></div>
-</section>
-<section class="card">
-<h2>Límite de interpretación</h2>
-<p class="muted">Las métricas de cuenta, los contadores de contenido y el reconocimiento en buscadores/IA permanecen separados. El panel no atribuye causalidad a AIO CODE.</p>
-</section>
-</section>
-<p id="error"></p>
-</main>
+<section id="panel-content" role="tabpanel" aria-labelledby="tab-content" hidden><article class="card"><div class="card-head"><div><h2>Rendimiento por publicación</h2><p>Métricas acumuladas hasta la fecha de captura de cada contenido.</p></div><span class="badge">Instagram</span></div><div class="table-wrap"><table><thead><tr><th>Publicación</th><th>Likes</th><th>Comentarios</th><th>Alcance</th><th>Visualizaciones</th><th>Guardados</th><th>Compartidos</th><th>Estado</th></tr></thead><tbody id="media"></tbody></table></div><p class="note">— indica una métrica no disponible o todavía no recogida. El Content ID propuesto vincula la publicación con sus capturas; su mapeo de autoría, derechos y clasificación sigue pendiente.</p></article></section>
+<section id="panel-audience" role="tabpanel" aria-labelledby="tab-audience" hidden><div class="audience-layout"><article class="card"><div class="card-head"><div><h2>Conoce a tu audiencia</h2><p>Demografía agregada de seguidores; período solicitado: últimos 30 días.</p></div></div><div class="segment" role="group" aria-label="Desglose de seguidores"><button data-demographic="country" aria-pressed="true">Países</button><button data-demographic="city" aria-pressed="false">Ciudades</button><button data-demographic="age" aria-pressed="false">Edades</button><button data-demographic="gender" aria-pressed="false">Género</button></div><div id="audience"></div><p class="note">Se muestran hasta diez grupos. Las barras comparan cada valor con el grupo mayor; los resultados dependen de los límites de privacidad de Meta.</p></article><article class="card"><div class="card-head"><div><h2>Seguidores / no seguidores</h2><p>Distribución de visualizaciones de la cuenta durante el día solicitado.</p></div></div><div id="audience-distribution"></div><p id="audience-period" class="note"></p></article></div></section>
+<section id="panel-history" role="tabpanel" aria-labelledby="tab-history" hidden><article class="card"><div class="card-head"><div><h2>Historial de publicaciones</h2><p>Abre un Content ID para consultar sus capturas anteriores.</p></div></div><div id="media-history"></div></article><article class="card" style="margin-top:20px"><div class="card-head"><div><h2>Capturas de la cuenta</h2><p>Cada observación conserva la fecha de consulta y su propio período.</p></div></div><div id="account-history"></div></article></section>
+<section id="panel-connection" role="tabpanel" aria-labelledby="tab-connection" hidden><div class="split"><article class="card"><div class="card-head"><div><h2>Cuenta conectada</h2><p id="connected-account">—</p></div><span class="badge">Lectura de métricas</span></div><div class="connection-row"><span>Métricas de cuenta</span><span id="connection-account" class="badge">—</span></div><div class="connection-row"><span>Métricas por publicación</span><span id="connection-media" class="badge">—</span></div><div class="connection-row"><span>Audiencia agregada</span><span id="connection-audience" class="badge">—</span></div><p class="note">La consulta guarda una captura diaria por versión del recolector. Repetir el mismo período conserva el registro guardado.</p></article><article class="card"><div class="card-head"><div><h2>Actualización de datos</h2><p>Consulta manual y recolección diaria programada.</p></div></div><div class="connection-row"><span>Horario programado</span><span>8:00 a. m. · Colombia</span></div><div class="connection-row"><span>Recolección</span><span id="collection-enabled" class="badge">—</span></div><p class="note">El horario es una configuración. La ejecución automática se confirma cuando aparece una nueva captura. Publicación, mensajes, webhooks y otras cuentas requieren integraciones adicionales.</p></article></div><article class="card"><h2 style="font-size:15px;font-weight:500">Períodos y evidencia</h2><p id="measurement-window" class="note"></p><details class="technical"><summary>Ver referencia de la captura</summary><p>Versión del vault: <span id="commit">—</span></p><p id="integrity-note"></p></details></article></section>
+<footer class="legal-note">AIO CODE · Digital Entity Operating System. Las métricas describen observaciones de Instagram. Se registran por separado del reconocimiento en buscadores e IA y no atribuyen causalidad a AIO CODE.</footer>
+</section><p id="error" role="alert"></p><button id="logout-fallback" class="secondary" hidden>Cerrar sesión</button>
+</main></div>
 <script>
 const $=id=>document.getElementById(id);
 const fmt=new Intl.NumberFormat('es-CO');
 const dt=new Intl.DateTimeFormat('es-CO',{timeZone:'America/Bogota',dateStyle:'medium',timeStyle:'short'});
+const dateOnly=new Intl.DateTimeFormat('es-CO',{timeZone:'America/Bogota',dateStyle:'medium'});
+const regionNames=new Intl.DisplayNames(['es'],{type:'region'});
 const metric=m=>m?.state==='observed'?fmt.format(m.value):'—';
-function td(text){const n=document.createElement('td');n.textContent=text;return n}
-function render(data){
- $('account-count').textContent=data.counts.account_observations;
- $('content-count').textContent=data.counts.unique_proposed_content_ids;
- $('commit').textContent=(data.source_commit||'').slice(0,12)||'—';
- $('capture-health').textContent=data.collection_health?.stale ? 'La última captura tiene más de 36 horas o todavía no existe. Consulta Instagram y revisa el resultado.' : 'Captura reciente. Recolección automática programada a las 8:00 a. m. de Colombia; su próxima ejecución aún debe comprobarse.';
- if(data.collection_health?.collection_enabled===false)$('capture-health').textContent+=' Recolección desactivada en Vercel.';
- $('integrity-note').textContent=data.integrity_notes?.length ? `Formato histórico conciliado en lectura: ${data.integrity_notes.length} registros. Originales preservados.` : '';
- const latest=data.account_records[0];
- $('latest-account').textContent=latest
-  ? `@${latest.username} · ${dt.format(new Date(latest.captured_at))} · Reach ${metric(latest.metrics.reach)} · Views ${metric(latest.metrics.views)} · Interactions ${metric(latest.metrics.total_interactions)}`
-  : 'Sin observaciones.';
- const window=latest?.measurement_window;
- $('measurement-window').textContent=window?.status==='explicit_requested'
-  ? `Período solicitado (Colombia): desde ${dt.format(new Date(window.start))} hasta ${dt.format(new Date(window.end))}. Los límites de agregación de Meta no se han confirmado independientemente.`
-  : 'Período de la consulta histórica: predeterminado por Meta, sin fechas confirmadas.';
- const body=$('media');body.replaceChildren();
- for(const row of data.media_candidates){
-  const tr=document.createElement('tr');
-  tr.append(td(row.proposed_content_id),td(dt.format(new Date(row.published_at))),td(row.media_type),
-    td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)),
-    ...['reach','views','saved','shares'].map(key=>td(metric(row.insights?.[key]))),td(dt.format(new Date(row.captured_at))));
-  const state=td('');const b=document.createElement('span');b.className='badge';b.textContent='Pendiente de mapeo';state.append(b);tr.append(state);body.append(tr);
- }
- renderHistory(data.media_history || []);renderAudience(data.audience_observation);
- $('login').hidden=true;$('app').hidden=false;$('logout').hidden=false;$('error').textContent='';
-}
-function renderHistory(rows){
- const parent=$('media-history');parent.replaceChildren();
- const ids=[...new Set(rows.map(r=>r.proposed_content_id))];
- for(const id of ids){
-  const detail=document.createElement('details'),summary=document.createElement('summary');summary.textContent=id;detail.append(summary);
-  for(const row of rows.filter(r=>r.proposed_content_id===id)){
-   const line=document.createElement('p');line.className='muted';line.textContent=`${dt.format(new Date(row.captured_at))} · Likes ${metric(row.counters.like_count)} · Comentarios ${metric(row.counters.comments_count)} · Alcance ${metric(row.insights?.reach)} · Visualizaciones ${metric(row.insights?.views)} · Guardados ${metric(row.insights?.saved)} · Compartidos ${metric(row.insights?.shares)}`;detail.append(line);
-  }
-  parent.append(detail);
- }
-}
-function renderAudience(observation){
- const parent=$('audience');parent.replaceChildren();
- $('audience-period').textContent=observation ? `Capturado: ${dt.format(new Date(observation.captured_at))}. Distribución de visualizaciones: día anterior solicitado. Demografía de seguidores: last_30_days según Meta.` : 'Todavía no se ha capturado la audiencia con esta versión.';
- const labels={views_follow_type:'Visualizaciones: seguidores / no seguidores',country:'Países de seguidores',city:'Ciudades de seguidores',age:'Edades de seguidores',gender:'Género de seguidores'};
- for(const result of observation?.results||[]){
-  const card=document.createElement('div');card.className='card';const h=document.createElement('h3');h.textContent=labels[result.key];card.append(h);
-  const rows=result.data.flatMap(m=>(m.total_value?.breakdowns||[]).flatMap(b=>b.results||[])).sort((a,b)=>b.value-a.value);
-  if(!rows.length){const p=document.createElement('p');p.className='muted';p.textContent=result.status==='provider_rejected' ? `No disponible en esta consulta. Meta: ${result.diagnostic?.code ?? 'sin código'}.` : 'Meta no entregó un desglose disponible.';card.append(p);}
-  for(const row of rows.slice(0,10)){const p=document.createElement('p');p.textContent=`${row.dimension_values.join(' / ')}: ${fmt.format(row.value)}`;card.append(p);}
-  parent.append(card);
- }
-}
+const titles={overview:['Resumen de rendimiento','Una vista clara de tu cuenta, tu contenido y su audiencia.'],content:['Tus publicaciones','Cada contenido, sus métricas y su registro de evidencia.'],audience:['Tu audiencia','Comprende quién ve tu cuenta y qué seguidores la componen.'],history:['Historial de observación','El recorrido de tus datos, con sus capturas originales.'],connection:['Conexión de Instagram','Estado de la cuenta y de sus observaciones verificadas.']};
+let currentData=null,currentDemographic='country';
+function element(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(className)n.className=className;return n}
+function td(text){return element('td',text)}
+function showPanel(name){if(!titles[name])return;for(const [key]of Object.entries(titles)){$('panel-'+key).hidden=key!==name;const b=$('tab-'+key);b.setAttribute('aria-selected',String(key===name));b.tabIndex=key===name?0:-1}$('page-title').textContent=titles[name][0];$('page-description').textContent=titles[name][1]}
+for(const button of document.querySelectorAll('[data-panel]'))button.addEventListener('click',()=>showPanel(button.dataset.panel));
+for(const button of document.querySelectorAll('[data-go]'))button.addEventListener('click',()=>showPanel(button.dataset.go));
+document.querySelector('.navigation').addEventListener('keydown',e=>{const buttons=[...document.querySelectorAll('[data-panel]')];const i=buttons.indexOf(document.activeElement);let next;if(['ArrowDown','ArrowRight'].includes(e.key))next=(i+1)%buttons.length;else if(['ArrowUp','ArrowLeft'].includes(e.key))next=(i-1+buttons.length)%buttons.length;else if(e.key==='Home')next=0;else if(e.key==='End')next=buttons.length-1;else return;e.preventDefault();buttons[next].focus();showPanel(buttons[next].dataset.panel)});
+for(const button of document.querySelectorAll('[data-demographic]'))button.addEventListener('click',()=>{currentDemographic=button.dataset.demographic;for(const b of document.querySelectorAll('[data-demographic]'))b.setAttribute('aria-pressed',String(b===button));renderDemographic()});
+function rowsFor(key){const result=currentData?.audience_observation?.results?.find(r=>r.key===key);return {result,rows:(result?.data||[]).flatMap(m=>(m.total_value?.breakdowns||[]).flatMap(b=>b.results||[])).sort((a,b)=>b.value-a.value)}}
+function audienceLabel(row,key){let label=row.dimension_values.join(' / ');if(key==='country'&&/^[A-Z]{2}$/.test(label)){try{return regionNames.of(label)||label}catch{}}if(key==='gender')return {F:'Mujeres',M:'Hombres',U:'Sin especificar'}[label]||label;if(key==='views_follow_type')return {FOLLOWER:'Seguidores',NON_FOLLOWER:'No seguidores',followers:'Seguidores',non_followers:'No seguidores'}[label]||label;return label}
+function renderBars(parentId,key,limit=10){const parent=$(parentId);parent.replaceChildren();const {result,rows}=rowsFor(key);if(!rows.length){parent.append(element('p',result?.status==='provider_rejected'?'Meta no entregó este desglose para la consulta.':'Sin datos disponibles en la última captura.','empty'));return}const max=Math.max(...rows.map(r=>r.value),1);for(const row of rows.slice(0,limit)){const wrap=element('div',undefined,'bar-row'),label=element('div',undefined,'bar-label');label.append(element('span',audienceLabel(row,key)),element('span',fmt.format(row.value)));const track=element('div',undefined,'track'),fill=element('div',undefined,'fill');fill.style.width=(row.value/max*100)+'%';track.append(fill);wrap.append(label,track);parent.append(wrap)}}
+function renderDemographic(){renderBars('audience',currentDemographic)}
+function accountPeriod(row){const w=row?.measurement_window;if(w?.status!=='explicit_requested')return 'Período predeterminado de Meta';const start=new Date(w.start),end=new Date(Date.parse(w.end)-1);return dateOnly.format(start)===dateOnly.format(end)?dateOnly.format(start):dateOnly.format(start)+' — '+dateOnly.format(end)}
+function render(data){currentData=data;const latest=data.account_records[0];$('kpi-views').textContent=metric(latest?.metrics.views);$('kpi-reach').textContent=metric(latest?.metrics.reach);$('kpi-interactions').textContent=metric(latest?.metrics.total_interactions);$('kpi-followers').textContent=metric(latest?.account_state_at_capture?.followers_count);$('account-count').textContent=fmt.format(data.counts.account_observations);$('content-count').textContent=fmt.format(data.counts.unique_proposed_content_ids);$('commit').textContent=data.source_commit||'—';$('latest-account').textContent=latest?dt.format(new Date(latest.captured_at)):'—';$('connected-account').textContent=latest?'@'+latest.username+' · MC-001':'Sin cuenta observada';$('short-period').textContent='Cuenta · '+accountPeriod(latest);$('capture-health').textContent=latest?(data.collection_health?.stale?'Captura antigua · ':'Última captura · ')+dt.format(new Date(latest.captured_at)):'Todavía no hay capturas';$('integrity-note').textContent=data.integrity_notes?.length?`${data.integrity_notes.length} registros históricos conciliados en lectura. Sus originales se conservaron.`:'La evidencia coincide con sus registros.';const w=latest?.measurement_window;$('measurement-window').textContent=w?.status==='explicit_requested'?`Cuenta: desde ${dt.format(new Date(w.start))} hasta ${dt.format(new Date(w.end))}. Los límites de agregación del proveedor no se han confirmado independientemente. Publicaciones: valores acumulados hasta su captura. Demografía: últimos 30 días solicitados a Meta.`:'La captura histórica usa un período predeterminado de Meta, sin fechas confirmadas.';
+$('connection-account').textContent=latest?'Captura verificada':'Sin captura';$('connection-media').textContent=data.media_candidates.some(r=>Object.values(r.insights||{}).some(m=>m.state==='observed'))?'Datos recibidos':'Pendiente de captura';$('connection-audience').textContent=data.audience_observation?'Captura verificada':'Pendiente de captura';$('collection-enabled').textContent=data.collection_health?.collection_enabled?'Habilitada':'Desactivada';
+const body=$('media');body.replaceChildren();const overview=$('overview-posts');overview.replaceChildren();for(const row of data.media_candidates){const name=row.caption?.trim().slice(0,85)||'Publicación de Instagram',tr=element('tr'),first=td('');first.append(element('strong',name),element('div',row.proposed_content_id,'row-subtitle'),element('div',`Publicado: ${dateOnly.format(new Date(row.published_at))}`,'row-subtitle'),element('div',`Capturado: ${dt.format(new Date(row.captured_at))}`,'row-subtitle'));if(row.permalink){const u=new URL(row.permalink);if(u.protocol==='https:'&&/(^|\.)instagram\.com$/.test(u.hostname)){const a=element('a','Ver en Instagram ↗');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';first.append(a)}}tr.append(first,td(metric(row.counters.like_count)),td(metric(row.counters.comments_count)),...['reach','views','saved','shares'].map(k=>td(metric(row.insights?.[k]))));const state=td('');state.append(element('span','Pendiente de mapeo','badge'));tr.append(state);body.append(tr);if(overview.children.length<3){const post=element('div',undefined,'summary-post'),top=element('div',undefined,'post-top');top.append(element('span',row.media_type==='CAROUSEL_ALBUM'?'Carrusel':row.media_type),element('span',dateOnly.format(new Date(row.published_at))));post.append(top,element('p',name,'post-name'));const stats=element('div',undefined,'post-stats');for(const [label,value]of [['Views',metric(row.insights?.views)],['Likes',metric(row.counters.like_count)],['Compartidos',metric(row.insights?.shares)]]){const span=element('span');span.append(element('strong',value),document.createTextNode(' '+label));stats.append(span)}post.append(stats);overview.append(post)}}if(!data.media_candidates.length)overview.append(element('p','Todavía no hay publicaciones capturadas.','empty'));
+renderBars('overview-distribution','views_follow_type');renderBars('audience-distribution','views_follow_type');renderBars('overview-countries','country',5);renderDemographic();const a=data.audience_observation;$('audience-period').textContent=a?'Captura de audiencia: '+dt.format(new Date(a.captured_at))+'. Los valores describen grupos agregados de la cuenta.':'Consulta Instagram para obtener una captura de audiencia.';renderHistory(data.media_history||[]);const history=$('account-history');history.replaceChildren();for(const row of data.account_records){const item=element('div',undefined,'timeline-row'),time=element('div',dt.format(new Date(row.captured_at)),'time');time.append(element('small','Período: '+accountPeriod(row)));item.append(time,element('div',`Visualizaciones ${metric(row.metrics.views)} · Alcance ${metric(row.metrics.reach)} · Interacciones ${metric(row.metrics.total_interactions)}`));history.append(item)}
+$('logout-fallback').hidden=true;$('login').hidden=true;$('app').hidden=false;$('sidebar').hidden=false;$('logout').hidden=false;document.body.classList.add('signed-in');$('error').textContent='';}
+function renderHistory(rows){const parent=$('media-history');parent.replaceChildren();for(const id of [...new Set(rows.map(r=>r.proposed_content_id))]){const detail=element('details',undefined,'history-item');detail.append(element('summary',id));for(const row of rows.filter(r=>r.proposed_content_id===id)){detail.append(element('p',`${dt.format(new Date(row.captured_at))} · Likes ${metric(row.counters.like_count)} · Comentarios ${metric(row.counters.comments_count)} · Alcance ${metric(row.insights?.reach)} · Visualizaciones ${metric(row.insights?.views)} · Guardados ${metric(row.insights?.saved)} · Compartidos ${metric(row.insights?.shares)}`))}parent.append(detail)}}
 async function load(){
  const r=await fetch('/api/dashboard',{cache:'no-store'});
  if(r.status===401)return false;
@@ -151,7 +88,7 @@ $('login-form').addEventListener('submit',async e=>{
   $('login').hidden=true;$('logout').hidden=false;$('error').textContent='';
   try{
    if(!await load()){$('login').hidden=false;$('login-status').textContent='La sesión no se pudo recuperar. Vuelve a entrar.';}
-  }catch(error){$('error').textContent='Sesión iniciada. '+error.message;}
+  }catch(error){showSessionError(error);}
  }catch{$('login-status').textContent='No se pudo abrir la sesión.'}
 });
 $('collect').addEventListener('click',async()=>{
@@ -174,7 +111,10 @@ $('collect').addEventListener('click',async()=>{
  finally{button.disabled=false;}
 });
 $('logout').addEventListener('click',async()=>{await fetch('/api/dashboard-session',{method:'DELETE'});location.reload()});
-load().catch(error=>{$('login').hidden=true;$('logout').hidden=false;$('error').textContent='La sesión está reconocida. '+error.message;});
+function showSessionError(error){$('login').hidden=true;$('app').hidden=true;$('sidebar').hidden=true;document.body.classList.remove('signed-in');$('logout-fallback').hidden=false;$('error').textContent='Sesión reconocida. '+error.message;}
+$('logout-fallback').addEventListener('click',async()=>{await fetch('/api/dashboard-session',{method:'DELETE'});location.reload()});
+load().catch(showSessionError);
+
 </script>
 </body>
 </html>
