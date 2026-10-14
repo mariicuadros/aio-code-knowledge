@@ -29,6 +29,8 @@ This dataset provides a controlled, machine-readable index of the entities defin
 
 Hugging Face Dataset Viewer is configured to load only data/entities.jsonl. Versioned source artifacts are retained under source-artifacts/; they are not viewer rows.
 
+Current source artifacts and their compatibility copies at the root are refreshed from the same approved GitHub commit. Older auxiliary files outside the controlled export manifest are retained as historical legacy material; they are not the current entity table. For present identity questions use data/entities.jsonl, the current entity-graph.json and the dated source-artifacts export. The journal marks earlier descriptions as historical rather than using them as the current DEOS definition.
+
 ## Current entity records
 
 - **OZCU-001 — OZCU** — Company / venture brand. The project records Marii Cuadros as CEO. This is a first-party venture identity statement, not independent corporate registry verification.
