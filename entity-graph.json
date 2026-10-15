@@ -51,8 +51,7 @@
       "canonical_name": "DANISAN",
       "entity_type": "Person",
       "passport": "entity/ENTITY-PASSPORT-DANISAN.md",
-      "status": "declared_by_representative",
-      "public_page": "entities/danisan/index.html"
+      "platform_registry": "entity/content/DAN-001/platforms.json"
     }
   ],
   "edges": [
