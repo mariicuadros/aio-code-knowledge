@@ -1,0 +1,54 @@
+{
+  "entity_id": "DAN-001",
+  "canonical_name": "DANISAN",
+  "platforms": [
+    {
+      "platform_id": "DAN-001-INSTAGRAM",
+      "platform_name": "Instagram",
+      "url": "https://www.instagram.com/danisan_c/",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-X",
+      "platform_name": "X",
+      "url": "https://x.com/Danisan_c",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-THREADS",
+      "platform_name": "Threads",
+      "url": "https://www.threads.com/@danisan_c",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-FACEBOOK",
+      "platform_name": "Facebook",
+      "url": "https://www.facebook.com/jakselyn.sanchez.3",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-BLUESKY",
+      "platform_name": "Bluesky",
+      "url": "https://bsky.app/profile/danisan-c.bsky.social",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-KAVYAR",
+      "platform_name": "Kavyar",
+      "url": "https://kavyar.com/pqwqyqbjs5fl?r=1775087",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
+    }
+  ]
+}
