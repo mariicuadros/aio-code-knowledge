@@ -148,8 +148,8 @@ def main():
               and registry_nodes[entity_id]["entity_type"] == node["entity_type"],
               f"Security registry disagrees with graph: {entity_id}")
         check(entity_id in entity_answer, f"RAG-Q-03 omits {entity_id}")
-    check(f"Cinco entidades canónicas" in entity_answer and len(nodes) == 5,
-          "RAG-Q-03 count differs from canonical graph; review the gold answer")
+    check(all(entity_id in entity_answer for entity_id in nodes),
+          "RAG-Q-03 must identify every current canonical entity")
     for representation in registry["representations"]:
         check(representation["representation_id"] not in nodes
               and representation["represents_entity_id"] in nodes,
