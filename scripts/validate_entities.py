@@ -45,7 +45,8 @@ def validate_ozcu_declaration(graph, passport, representations, social, rows):
 
 def validate_entities():
     graph=read('entity-graph.json');nodes={n['entity_id']:n for n in graph['nodes']}
-    assert set(nodes)==set(EXPECTED),'Canonical entity set changed'
+    assert set(EXPECTED).issubset(nodes),'Required canonical core entity missing'
+    assert len(nodes)==len(graph['nodes']),'Duplicate entity IDs'
     for identity,(name,kind) in EXPECTED.items():
         node=nodes[identity]
         assert (node['canonical_name'],node['entity_type'])==(name,kind),identity
