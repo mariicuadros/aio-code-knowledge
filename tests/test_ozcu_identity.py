@@ -45,7 +45,7 @@ class OzcuIdentityTests(unittest.TestCase):
         for path in paths:
             with self.subTest(path=path):self.assertNotRegex((ROOT/path).read_text(encoding='utf-8'),r'(?i)\breserve\b|fallback corporate|empresa de reserva')
         graph=read('entity-graph.json')
-        self.assertEqual(len(graph['nodes']),5)
+        self.assertTrue({'MC-001','AIO-001','OZCU-001','VOID-001','NUX-001'}.issubset({n['entity_id'] for n in graph['nodes']}))
         for c in read('identity/confusable-entities.json')['records']:
             self.assertEqual(c['relation_to_mc001'],'not_same_entity')
             self.assertNotIn(c['observed_label'],json.dumps(graph,ensure_ascii=False))
