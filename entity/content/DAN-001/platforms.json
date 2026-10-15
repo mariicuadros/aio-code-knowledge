@@ -49,6 +49,14 @@
       "canonical_entity_id": "DAN-001",
       "official_status": "declared_by_representative",
       "status": "public_profile_link_provided"
+    },
+    {
+      "platform_id": "DAN-001-PINTEREST",
+      "platform_name": "Pinterest",
+      "url": "https://co.pinterest.com/daniisaan/",
+      "canonical_entity_id": "DAN-001",
+      "official_status": "declared_by_representative",
+      "status": "public_profile_link_provided"
     }
   ]
 }
