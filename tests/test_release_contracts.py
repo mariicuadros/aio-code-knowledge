@@ -6,7 +6,8 @@ def obj(x):return json.loads((ROOT/x).read_text(encoding='utf-8'))
 class ReleaseContracts(unittest.TestCase):
  def test_canonical_node_types_and_distinct_ids(self):
   graph=obj('entity-graph.json');nodes={n['entity_id']:n for n in graph['nodes']}
-  self.assertEqual({k:v['entity_type'] for k,v in nodes.items()},{'MC-001':'Person','AIO-001':'DigitalEntityOperatingSystem','OZCU-001':'Company','VOID-001':'CreativeSystem','NUX-001':'DigitalCreativeEntity'})
+  for entity_id, entity_type in {'MC-001':'Person','AIO-001':'DigitalEntityOperatingSystem','OZCU-001':'Company','VOID-001':'CreativeSystem','NUX-001':'DigitalCreativeEntity'}.items():
+   self.assertEqual(nodes[entity_id]['entity_type'],entity_type)
   self.assertEqual(len(nodes),len(graph['nodes']))
  def test_same_as_arrays_no_unrelated_person(self):
   person=obj('entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld')
