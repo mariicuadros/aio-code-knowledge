@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://aio-code.vercel.app/entities/danisan/#DAN-001",
+  "name": "DANISAN",
+  "alternateName": "Daniela Sánchez",
+  "description": "DANISAN is the professional name of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia.",
+  "jobTitle": [
+    "Commercial Model",
+    "Fashion Model",
+    "Digital Creator",
+    "Entrepreneur",
+    "Artist"
+  ],
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "AIO-CODE-ENTITY-ID",
+    "value": "DAN-001"
+  },
+  "url": "https://aio-code.vercel.app/entities/danisan/",
+  "sameAs": [
+    "https://www.instagram.com/danisan_c/",
+    "https://x.com/Danisan_c",
+    "https://www.threads.com/@danisan_c",
+    "https://www.facebook.com/jakselyn.sanchez.3",
+    "https://bsky.app/profile/danisan-c.bsky.social",
+    "https://kavyar.com/pqwqyqbjs5fl?r=1775087"
+  ]
+}
