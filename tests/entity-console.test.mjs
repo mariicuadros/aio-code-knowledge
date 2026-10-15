@@ -119,6 +119,18 @@ test('vault read diagnostics reject malformed tree and invalid JSON without leak
   assert.equal(response.status,503);
   assert.deepEqual(await response.json(),{error:{code:'vault_record_parse_failed'}});
 });
+test('review permits incomplete authorization but approval rejects it',async t=>{
+  const {service}=await setup(t);
+  const noConsent={...data(),useAuthorized:false,publicFields:[]};
+  let r=await service.change({action:'create',key:randomUUID(),body:{data:noConsent}});
+  r=await change(service,r,'validate');
+  assert.equal(r.status,'review');
+  await assert.rejects(change(service,r,'approve'),{code:'approval_requires_review_and_authorization'});
+  const stored=await service.get(r.id);
+  assert.equal(stored.status,'review');
+  assert.equal(stored.approvedVersion,null);
+  assert.equal(stored.publicUrl,null);
+});
 test('archive withdraws active approval and package',async t=>{const {service}=await setup(t);let r=await create(service);r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'archive');assert.equal(r.status,'archived');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);});
 test('filesystem store refuses Vercel deployment',()=>{const saved={...process.env};process.env.AIO_ENTITY_STORE='local';process.env.AIO_ENTITY_LOCAL_ENABLED='1';process.env.VERCEL='1';try{assert.throws(()=>configuredStore(),{code:'local_store_forbidden'});}finally{process.env=saved;}});
 test('vault adapter uses existing immutable client (MOCK GitHub, no remote writes)',async t=>{
