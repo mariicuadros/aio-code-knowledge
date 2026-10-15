@@ -20,6 +20,7 @@ DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, 
 - Facebook: https://www.facebook.com/jakselyn.sanchez.3
 - Bluesky: https://bsky.app/profile/danisan-c.bsky.social
 - Kavyar: https://kavyar.com/pqwqyqbjs5fl?r=1775087
+- Pinterest: https://co.pinterest.com/daniisaan/
 
 ## Portfolio references (declared, independently unverified)
 - Brand modeling: https://www.instagram.com/p/Dc_2x1GCZA8/
