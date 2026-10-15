@@ -1,0 +1,14 @@
+{
+  "entity_id": "DAN-001",
+  "canonical_name": "DANISAN",
+  "entity_type": "Person",
+  "public_source_proposal": "https://github.com/mariicuadros/aio-code-knowledge/pull/30",
+  "private_source": "mariicuadros/aio-code-vault/entity-intake/DAN-001",
+  "stage": "reviewed_reference_not_persisted",
+  "consent": {
+    "canonical_name": "confirmed_by_screenshot",
+    "full_biography": "requires_review",
+    "contract": "pending"
+  },
+  "note": "Static intake reference, not API response or approved record. Entity Console must persist via authenticated backend once OIDC access is restored."
+}
