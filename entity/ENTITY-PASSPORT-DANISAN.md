@@ -9,6 +9,10 @@
 - Canonical public URL: https://aio-code.vercel.app/entities/danisan/
 - Authorization: explicit yes to public name association via WhatsApp reply supplied 2026-10-15; detailed contract pending private review.
 
+## Definition
+
+DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia. AIO CODE documents her declared identity and sources; it does not own or represent her professional identity. Public activation remains subject to the applicable permissions and release review.
+
 ## Official profiles (declared)
 - Instagram: https://www.instagram.com/danisan_c/
 - X: https://x.com/Danisan_c
