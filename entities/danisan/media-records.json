@@ -1,0 +1,125 @@
+{
+  "entity_id": "DAN-001",
+  "asset_category": "professional_portfolio",
+  "approval_basis": "project operator reports participant approval; original photographic copyright holder not independently established",
+  "records": [
+    {
+      "id": "DAN-001-IMG-002",
+      "file": "dan-001-img-002.webp",
+      "source_filename": "DSC02549 2.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 108036,
+      "sha256": "10e92fa9da5dd53552470584b3affe319845032a08b3c07992fd8a4dc785a68a"
+    },
+    {
+      "id": "DAN-001-IMG-003",
+      "file": "dan-001-img-003.webp",
+      "source_filename": "DSC02743.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 109690,
+      "sha256": "0b0003c37676172c06efbd8fbbc96f5f0137e6c79d841a9b27bf1ee0865188ba"
+    },
+    {
+      "id": "DAN-001-IMG-004",
+      "file": "dan-001-img-004.webp",
+      "source_filename": "DSC00061.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 178092,
+      "sha256": "ad3877f402a6e3e332301491c50a5beba6ee9dc217cfcf777c5812cbf8a1409d"
+    },
+    {
+      "id": "DAN-001-IMG-005",
+      "file": "dan-001-img-005.webp",
+      "source_filename": "DSC02549.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 108036,
+      "sha256": "10e92fa9da5dd53552470584b3affe319845032a08b3c07992fd8a4dc785a68a",
+      "duplicate_of": "DAN-001-IMG-002"
+    },
+    {
+      "id": "DAN-001-IMG-006",
+      "file": "dan-001-img-006.webp",
+      "source_filename": "DSC00072.jpg.jpeg",
+      "width": 1400,
+      "height": 933,
+      "bytes": 27838,
+      "sha256": "51eaeafa580c3e324ca99bc37e13cc1e5354cea34aaa5c9090d343421764ce32"
+    },
+    {
+      "id": "DAN-001-IMG-007",
+      "file": "dan-001-img-007.webp",
+      "source_filename": "DSC02686.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 194180,
+      "sha256": "842bfd71191e3121f13ba1ad94217d0862164365c75c01636796674dfd67c26f"
+    },
+    {
+      "id": "DAN-001-IMG-008",
+      "file": "dan-001-img-008.webp",
+      "source_filename": "DSC00080.jpg.jpeg",
+      "width": 1400,
+      "height": 934,
+      "bytes": 34518,
+      "sha256": "60990e240a8520168b4edd2135ced18df450b2a985ea88a9bccca43b134b71a7"
+    },
+    {
+      "id": "DAN-001-IMG-009",
+      "file": "dan-001-img-009.webp",
+      "source_filename": "DSC00025.jpg (1).jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 60086,
+      "sha256": "ff1308621953038d8eb7c13396c19e57e0caf7c206e76636ab0ffe21676e82c8"
+    },
+    {
+      "id": "DAN-001-IMG-010",
+      "file": "dan-001-img-010.webp",
+      "source_filename": "DSC00106.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 38908,
+      "sha256": "8dafb5e10b3b731623762f9933ef7dd98b72be9f15acb76f5f34bcb3daa3558d"
+    },
+    {
+      "id": "DAN-001-IMG-011",
+      "file": "dan-001-img-011.webp",
+      "source_filename": "DSC00025.acr.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 127780,
+      "sha256": "2ea1685914381d628f7dd42585d6bf6e933e7adc11e37b5f47a5015f407ae77a"
+    },
+    {
+      "id": "DAN-001-IMG-012",
+      "file": "dan-001-img-012.webp",
+      "source_filename": "DSC00202.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 64796,
+      "sha256": "190a7ab850428e87055e3389a0edebf5c11bac6861f1840cbcd7ae7931c23cf5"
+    },
+    {
+      "id": "DAN-001-IMG-013",
+      "file": "dan-001-img-013.webp",
+      "source_filename": "DSC02711.jpg.jpeg",
+      "width": 1200,
+      "height": 1800,
+      "bytes": 80790,
+      "sha256": "7fd609f544ec3a3ff46bc720eae5de1ca190a40c137e25e2b5c5676f6284b1ab"
+    },
+    {
+      "id": "DAN-001-IMG-014",
+      "file": "dan-001-img-014.webp",
+      "source_filename": "DSC00070.jpg.jpeg",
+      "width": 1400,
+      "height": 933,
+      "bytes": 26622,
+      "sha256": "2e06b5b35ae0ada0798fb1c47727d533646ea3bd8faf07d7e96d3d0884567421"
+    }
+  ]
+}
