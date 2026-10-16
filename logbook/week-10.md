@@ -45,3 +45,7 @@ El recorte no muestra el intervalo de fechas del panel ni permite identificar si
 - Otros pendientes: integrar DANISAN en Blogger; revisar backend, frontend, PR sin fusionar, Vault y reglas; inventario de activos, observatorio, cobertura de pruebas, indexación y reconocimiento externo.
 
 Las evidencias de despliegue, registro y lectura no demuestran indexación externa ni validación jurídica independiente.
+
+### Auditoría documental adicional — 16 de octubre
+
+Se comprobó que el checklist privado de DAN-001 sigue pendiente de reconciliar con la aprobación comunicada por la administradora. El backend de Entity Console implementa canonicalEntityId y valida las relaciones contra un conjunto explícito de IDs; la asociación del expediente administrativo con DAN-001 continúa pendiente de prueba. Se conserva el estado actual sin declarar nuevas verificaciones de permisos ni ejecutar fusiones.
