@@ -26,6 +26,7 @@ DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, 
 - Brand modeling: https://www.instagram.com/p/Dc_2x1GCZA8/
 - Real-estate promotion: https://www.instagram.com/reels/DecFb4ah72-/
 - Lingerie modeling: https://www.instagram.com/p/DdrUrvJljFT/
+- Additional collaboration reference (provided by project operator; content and brand unverified): https://www.instagram.com/p/DUlHl3rjk-z/
 
 Do not infer fees, copyright ownership, legal rights, or contracts from these public links. Private evidence belongs in the vault and is not published here.
 
