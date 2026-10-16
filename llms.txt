@@ -17,6 +17,8 @@
 
 ## Canonical public sources
 
+- [DANISAN entity record](https://aio-code.vercel.app/entities/danisan/): approved independent professional profile for DAN-001, including portfolio and public identity links.
+
 - [Entity Home](https://aio-code.vercel.app/): current public definition and entity records.
 - [Marii Cuadros entity record](https://aio-code.vercel.app/entities/marii-cuadros/): canonical person record.
 - [NUX entity record](https://aio-code.vercel.app/entities/nux/): canonical narrative entity record.
