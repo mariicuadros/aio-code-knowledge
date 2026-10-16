@@ -4,7 +4,7 @@
   "image_count_received": 13,
   "unique_optimized_images": 12,
   "primary_image_unchanged": "DAN-001-IMG-001",
-  "publication": "pending media uploads",
+  "publication": "assets uploaded and added to static site manifest; deployment verification pending",
   "rights_note": "Consent to professional profile stated by operator; verify photographer rights for original images.",
   "records": [
     {
@@ -12,21 +12,21 @@
       "origin_file": "DSC02549 2.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-002.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-003",
       "origin_file": "DSC02743.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-003.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-004",
       "origin_file": "DSC00061.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-004.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-005",
@@ -40,63 +40,63 @@
       "origin_file": "DSC00072.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-006.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-007",
       "origin_file": "DSC02686.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-007.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-008",
       "origin_file": "DSC00080.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-008.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-009",
       "origin_file": "DSC00025.jpg (1).jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-009.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-010",
       "origin_file": "DSC00106.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-010.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-011",
       "origin_file": "DSC00025.acr.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-011.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-012",
       "origin_file": "DSC00202.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-012.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-013",
       "origin_file": "DSC02711.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-013.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     },
     {
       "asset_id": "DAN-001-IMG-014",
       "origin_file": "DSC00070.jpg.jpeg",
       "role": "professional_portfolio",
       "public_path": "entities/danisan/dan-001-img-014.webp",
-      "state": "prepared_pending_binary_upload"
+      "state": "uploaded_to_repository_in_manifest"
     }
   ]
 }
