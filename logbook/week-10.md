@@ -33,3 +33,15 @@ El recorte no muestra el intervalo de fechas del panel ni permite identificar si
 - **2026-10-06:** último baseline visual anterior al cambio.
 - **2026-10-10:** último cambio realizado en Blogger, según la titular.
 - **2026-10-12:** captura de Google AI Mode con “investigadora”, distribución geográfica de clics de Vercel y reporte del estado de Bing.
+
+## 16 de octubre — DAN-001 y revisión operativa
+
+- Se desplegó la página y portafolio de DANISAN, con 12 imágenes WebP únicas. La administradora confirmó visualización pública.
+- La portada y llms.txt se actualizaron; robots.txt y sitemap.xml incluyen la política general de rastreo y la URL de DANISAN respectivamente.
+- Entity Console creó el expediente privado de DANISAN, revisión 1, en estado borrador. La consola confirmó el guardado y la administradora verificó la lectura tras recargar.
+- Se documentaron siete perfiles y tres afirmaciones con clasificación observed. La creación inicial falló por invalid_relationship y funcionó al retirar las relaciones del formulario.
+- Pendiente: vincular el expediente de consola con DAN-001 sin duplicar la identidad pública; probar revisión, aprobación y persistencia remota en distintos escenarios.
+- Auditoría: discrepancia entre DAN-001 y el identificador anterior del registro de derechos; revisar los documentos y permisos privados antes de actualizar estados. Verificar derechos de autor de las fotografías.
+- Otros pendientes: integrar DANISAN en Blogger; revisar backend, frontend, PR sin fusionar, Vault y reglas; inventario de activos, observatorio, cobertura de pruebas, indexación y reconocimiento externo.
+
+Las evidencias de despliegue, registro y lectura no demuestran indexación externa ni validación jurídica independiente.
