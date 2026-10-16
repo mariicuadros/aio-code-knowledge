@@ -85,9 +85,9 @@ def validate_entities():
     validate_ozcu_declaration(graph,(ROOT/nodes['OZCU-001']['passport']).read_text(encoding='utf-8'),[aio,schema[1]],social,rows)
     assert {r['entity_id'] for r in rows}==set(nodes)
     for row in rows:
-        assert (row['canonical_name'],row['entity_type'])==EXPECTED[row['entity_id']]
+        assert (row['canonical_name'],row['entity_type'])==(nodes[row['entity_id']]['canonical_name'],nodes[row['entity_id']]['entity_type'])
         assert row['passport_path']==nodes[row['entity_id']]['passport']
     assert 'narrative entity' in next(r['description'] for r in rows if r['entity_id']=='NUX-001')
-    print('Entity coherence valid: five distinct entities, passports, JSON-LD, sameAs, social map, RAG and local HF export. Remote ownership/legal status not verified.')
+    print('Entity coherence valid: fixed core and extensible additional entities, passports, JSON-LD, sameAs, social map, RAG and local HF export. Remote ownership/legal status not verified.')
 
 if __name__=='__main__':validate_entities()
