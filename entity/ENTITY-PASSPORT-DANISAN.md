@@ -11,7 +11,7 @@
 
 ## Definition
 
-DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia. AIO CODE documents her declared identity and sources; it does not own or represent her professional identity. Participation as a voluntary AIO CODE modeling collaborator is separate from professional identity ownership and does not imply employment, agency representation or endorsement of unrelated services.
+DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia. AIO CODE documents her declared identity and sources; it does not own or represent her professional identity. DANISAN is an AIO CODE collaborating model in the digital entity development program, which documents her professional identity, portfolio and digital presence. Specific brand outreach, image uses and other activities remain subject to their respective authorization scopes. Her identity remains her own.
 
 ## Official profiles (declared)
 - Instagram: https://www.instagram.com/danisan_c/
