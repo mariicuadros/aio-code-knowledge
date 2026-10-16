@@ -41,3 +41,19 @@ DANISAN (DAN-001) is Daniela Sánchez, the Medellín-based model and digital cre
 - Perplexity logged-out query `quien es danisan`: refers to the music artist, not DAN-001.
 
 Baseline describes the supplied screenshots at a point in time; it does not imply all users or later searches receive the same answers. Recheck after public page deployment and indexing; use identical prompt, timestamp, system, account state, region and URL evidence.
+
+## Approved public professional biography (English)
+
+DANISAN, the professional name of Daniela Sánchez, is a model, digital creator, entrepreneur, and artist based in Medellín, Colombia. Her work focuses on fashion, beauty, lifestyle, and commercial advertising, combining on-camera presence with visual content creation for brands and audiovisual projects.
+
+Her experience includes fashion and lingerie productions, brand collaborations, and audiovisual campaigns for real estate promotion. As a digital creator, she works across fashion, beauty, lifestyle, travel, and fitness.
+
+In business, she participates as founder of **EB ACTIVE** and in operations at **Founded Founders**. Her artistic interests and projects include music, songwriting, and audiovisual production.
+
+Her professional identity brings modeling, digital creation, entrepreneurship, and artistic expression together under DANISAN.
+
+- **Specialties:** Fashion · Beauty · Lifestyle · Commercial Modeling
+- **Instagram:** https://www.instagram.com/danisan_c/
+- **Portfolio:** https://kavyar.com/pqwqyqbjs5fl?r=1775087
+
+This public biography was supplied as approved content for the entity; it does not independently verify third-party contractual arrangements or imply AI-system endorsement.
