@@ -2,16 +2,12 @@
   "entity_id": "DAN-001",
   "asset_id": "DAN-001-IMG-001",
   "purpose": "Primary professional portrait",
-  "intended_public_url": "https://aio-code.vercel.app/entities/danisan/media/dani-001-01.jpg",
-  "intended_repository_path": "entities/danisan/media/dani-001-01.jpg",
-  "publication_state": "asset_binary_not_uploaded",
-  "dimensions": {
-    "width": 1200,
-    "height": 1800
-  },
-  "sha256": "6183b017ae25372f243d38cb0e25bf860057d157e0e694284eea4c764be61142",
+  "intended_public_url": "https://aio-code.vercel.app/entities/danisan/dani-001-01.jpg",
+  "intended_repository_path": "entities/danisan/dani-001-01.jpg",
+  "publication_state": "uploaded_to_repository_pending_http_verification",
   "alt": "DANISAN, commercial and fashion model, wearing a white off-shoulder dress in a professional portrait",
   "provenance": "Photo supplied by project operator for DAN-001. Authorship/licensing claims are not asserted by this manifest.",
   "rights_review": "Confirm photographer or other copyright authorization before publication.",
-  "next_action": "Upload validated media file to repository path, verify HTTP 200, then add image to JSON-LD and media inventory."
+  "next_action": "Verify deployment and image HTTP response; record copyright permission separately.",
+  "repository_blob_sha": "f156167f46d4d034a9fea67cd19b41c3f14c71d0"
 }
