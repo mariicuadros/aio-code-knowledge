@@ -1,7 +1,7 @@
 {
   "map": "OZCU Social Entity Map",
   "version": "2.3",
-  "updated": "2026-10-09",
+  "updated": "2026-10-15",
   "purpose": "Map how each canonical entity is represented across public platforms and distinguish identity nodes from research observations.",
   "entities": [
     {
@@ -30,6 +30,12 @@
       "canonical_name": "VOID MODE",
       "platform_registry": null,
       "notes": "Creative system; no distinct official platform profile is recorded in this map yet."
+    },
+    {
+      "entity_id": "DAN-001",
+      "canonical_name": "DANISAN",
+      "platform_registry": "entity/content/DAN-001/platforms.json",
+      "notes": "DANISAN is the professional name of Daniela Sánchez, explicitly authorized as public canonical name in WhatsApp confirmation dated 2026-10-15."
     }
   ],
   "platform_record_fields": [

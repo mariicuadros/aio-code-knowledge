@@ -51,7 +51,7 @@
         "entity-graph.json"
       ],
       "relevant_claim_ids": [],
-      "expected_fact_or_boundary": "Cinco entidades canónicas: OZCU-001, MC-001, AIO-001, NUX-001 y VOID-001; Twin MC-001 es una representación, no una sexta entidad."
+      "expected_fact_or_boundary": "Seis entidades canónicas actuales: OZCU-001, MC-001, AIO-001, NUX-001, VOID-001 y DAN-001 (DANISAN). TWIN-MC-001 es representación de MC-001, no entidad adicional. Los registros históricos con cinco entidades permanecen históricos."
     },
     {
       "case_id": "RAG-Q-04",

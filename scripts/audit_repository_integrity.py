@@ -63,18 +63,20 @@ def check_repo_path_references():
 
 def check_entities_and_social():
     graph=read_json('entity-graph.json'); nodes={x['entity_id']:x for x in graph['nodes']}
-    if set(nodes)!=set(ENTITY_TYPES): fail(f'Canonical entity set mismatch: {set(nodes)}')
+    if not set(ENTITY_TYPES).issubset(nodes): fail('Required core entities missing from canonical graph')
+    if len(nodes)!=len(graph['nodes']): fail('Duplicate canonical entity ID')
     for eid,kind in ENTITY_TYPES.items():
         if nodes[eid]['entity_type']!=kind: fail(f'{eid} type mismatch')
         passport=ROOT/nodes[eid]['passport']
         if not passport.is_file(): fail(f'Missing passport for {eid}')
     assets=read_json('public-assets-v1.json')['assets']
-    asset_urls={eid:set() for eid in ENTITY_TYPES}
+    asset_urls={eid:set() for eid in nodes}
     for a in assets:
         for eid in a['entity_ids']:
             if eid in asset_urls: asset_urls[eid].update(a['urls'])
-    for eid in ('MC-001','AIO-001','NUX-001'):
-        reg=read_json(nodes[eid]['platform_registry'])
+    for eid,node in nodes.items():
+        if not node.get('platform_registry'): continue
+        reg=read_json(node['platform_registry'])
         seen=set()
         for p in reg['platforms']:
             pid=p['platform_id']
@@ -85,6 +87,8 @@ def check_entities_and_social():
                 fail(f'Active/linked platform lacks URL: {pid}')
             if p.get('url') and eid in {'MC-001','AIO-001'} and p['url'] not in asset_urls[eid]:
                 fail(f'Platform URL absent from public asset inventory: {pid} {p["url"]}')
+    for eid,node in nodes.items():
+        if node.get('passport') and not (ROOT/node['passport']).is_file(): fail(f'Missing passport for {eid}')
     person=read_json('entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld')
     schema=read_json('schemas/person-schema.json')['@graph'][0]
     if person['name']!='Marii Cuadros' or 'Maria Alejandra Cuadros Lozada' not in person.get('alternateName',[]): fail('MC canonical/alternate name mismatch')

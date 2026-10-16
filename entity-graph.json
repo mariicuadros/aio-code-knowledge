@@ -1,7 +1,7 @@
 {
   "graph": "OZCU / AIO CODE Entity Graph",
   "version": "1.5",
-  "updated": "2026-10-09",
+  "updated": "2026-10-15",
   "nodes": [
     {
       "entity_id": "OZCU-001",
@@ -45,6 +45,13 @@
       "canonical_name": "VOID MODE",
       "entity_type": "CreativeSystem",
       "passport": "entity/ENTITY-PASSPORT-VOID-MODE.md"
+    },
+    {
+      "entity_id": "DAN-001",
+      "canonical_name": "DANISAN",
+      "entity_type": "Person",
+      "passport": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "platform_registry": "entity/content/DAN-001/platforms.json"
     }
   ],
   "edges": [
