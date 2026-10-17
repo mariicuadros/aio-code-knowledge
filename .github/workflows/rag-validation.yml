@@ -45,6 +45,8 @@ jobs:
           npm run check:precontent
           npm run test:instagram
           node --test tests/entity-console.test.mjs
+          node --test tests/public-entity-sync.test.mjs
+          node scripts/check_public_entity_sync.mjs
           node scripts/validate_rag_safety.mjs
       - name: Build explicit public website surface
         run: npm run build
