@@ -54,6 +54,7 @@
     "legal/rights-registry.schema.json",
     "llms.txt",
     "public-assets-v1.json",
+    "public-assets-v2.json",
     "rag/answer-policy-v1.json",
     "rag/corpus-manifest-v0.json",
     "rag/index.html",
