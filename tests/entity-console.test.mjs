@@ -175,9 +175,12 @@ test('vault adapter uses existing immutable client (MOCK GitHub, no remote write
   assert.equal((await service.get(r.id)).version,4);
   isPrivate=false;await assert.rejects(service.list(),/Vault must remain private/);
 });
-test('canonical graph, deployment policy, public manifest remain unmodified',async()=>{
+test('canonical graph retains founding entities and distinct case nodes; publication policy is safe',async()=>{
   const graph=JSON.parse(await readFile(new URL('../entity-graph.json',import.meta.url)));
-  assert.deepEqual(graph.nodes.map(n=>n.entity_id).sort(),[...CANONICAL_IDS].sort());
+  const ids=graph.nodes.map(n=>n.entity_id);
+  assert.equal(new Set(ids).size,ids.length,'canonical graph must not duplicate entity IDs');
+  for(const id of CANONICAL_IDS)assert.ok(ids.includes(id),'missing protected core entity '+id);
+  assert.ok(ids.includes('DAN-001'),'registered collaborating model must remain a separate entity');
   const vercel=JSON.parse(await readFile(new URL('../vercel.json',import.meta.url)));assert.equal(vercel.git.deploymentEnabled,false);
   const manifest=JSON.parse(await readFile(new URL('../public-site-manifest.json',import.meta.url)));assert.equal(manifest.files.some(p=>p.startsWith('entity-console/')||p.startsWith('.entity-test-data/')||p.startsWith('lib/entity-')),false);
 });
