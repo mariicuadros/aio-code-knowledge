@@ -23,3 +23,9 @@ No se modificaron ni expusieron contraseñas, tokens ni documentación identific
 
 ## Próxima prueba de aceptación
 Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que aparecen los expedientes previos y que la edición ofrece `Identificador canónico vinculado`. Guardar `DAN-001` solo una vez confirmado que corresponde al mismo expediente, y comprobar que la revisión se recupera tras actualizar. Registrar el resultado y fecha.
+
+## Comprobaciones adicionales tras el corte de conexión
+- El manifiesto de publicación restringida no incluía inicialmente `public-assets-v2.json`. Se añadió a `public-site-manifest.json` (62 archivos permitidos) y se desplegó de nuevo `aio-code` desde `main`; Vercel confirmó `READY` para la revisión `1da7108281dc6fa2a49d6e69dce2151c1c64ca24`.
+- Se comprobó por API de Vercel que el dominio `aio-code.vercel.app` sigue asignado y verificado al proyecto público; `aio-code-console-lab.vercel.app` está asignado a la consola.
+- Las consultas de errores agregados del runtime de la consola y del backend no devolvieron errores para la ventana consultada. Esto no sustituye una prueba activa del circuito login/listar/editar.
+- Las pruebas y los despliegues no certifican indexación externa ni sincronización de Hugging Face más allá de lo observado.
