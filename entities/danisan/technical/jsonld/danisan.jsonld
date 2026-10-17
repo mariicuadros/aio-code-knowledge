@@ -2,21 +2,18 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://aio-code.vercel.app/entities/danisan/#DAN-001",
-  "name": "DANISAN",
-  "alternateName": "Daniela Sánchez",
-  "description": "DANISAN, the professional name of Daniela Sánchez, is a model, digital creator, entrepreneur, and artist based in Medellín, Colombia. Her work focuses on fashion, beauty, lifestyle, commercial modeling, brand collaborations, and audiovisual projects.",
-  "jobTitle": [
-    "Commercial Model",
-    "Fashion Model",
-    "Digital Creator",
-    "Entrepreneur",
-    "Artist"
-  ],
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "AIO-CODE-ENTITY-ID",
     "value": "DAN-001"
   },
+  "name": "DANISAN",
+  "alternateName": [
+    "Daniela Sánchez",
+    "Danisan Carpio",
+    "Danisan"
+  ],
+  "description": "DANISAN, nombre profesional de Daniela Sánchez, es una modelo comercial y de moda, creadora digital, emprendedora y artista radicada en Medellín, Colombia. Su trabajo comprende moda, belleza, estilo de vida, modelaje publicitario, colaboraciones con marcas y producciones audiovisuales. También desarrolla actividades empresariales y proyectos artísticos relacionados con la música. DANISAN es una identidad profesional independiente documentada por AIO CODE; su participación no implica que el sistema sea propietario de su identidad ni su representante legal.",
   "url": "https://aio-code.vercel.app/entities/danisan/",
   "sameAs": [
     "https://www.instagram.com/danisan_c/",
@@ -27,6 +24,14 @@
     "https://kavyar.com/pqwqyqbjs5fl?r=1775087",
     "https://co.pinterest.com/daniisaan/"
   ],
+  "jobTitle": [
+    "Commercial Model",
+    "Fashion Model",
+    "Digital Creator",
+    "Entrepreneur",
+    "Artist"
+  ],
+  "image": "https://aio-code.vercel.app/entities/danisan/dani-001-01.jpg",
   "knowsAbout": [
     "Fashion",
     "Beauty",
@@ -55,6 +60,5 @@
       "@type": "Occupation",
       "name": "Artist"
     }
-  ],
-  "image": "https://aio-code.vercel.app/entities/danisan/dani-001-01.jpg"
+  ]
 }
