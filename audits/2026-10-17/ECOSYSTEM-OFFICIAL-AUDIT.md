@@ -1,11 +1,11 @@
 # AIO CODE · REGISTRO OFICIAL DE AUDITORÍA DEL ECOSISTEMA
-**Corte:** 2026-10-17 · **Informe:** AUD-DEOS-20261017-001 · **Estado:** Auditoría de código y configuración; publicación pendiente de revisión.
+**Corte:** 2026-10-17 · **Informe:** AUD-DEOS-20261017-001 · **Estado:** Informe incorporado a main mediante PR #39, con CI aprobado; cierre de protección de rama pendiente.
 
 ## 0. Naturaleza y límites
 AIO CODE = **Digital Entity Operating System (DEOS)**. No se reclasifica como metodología. Esta auditoría revisa definiciones, coherencia, riesgos, trazabilidad y conexión operativa por capas. No constituye pentest, certificación legal, validación independiente de reconocimiento por IA ni comprobación HTTP universal. Se separa lo inspeccionado directamente en repositorios/conectores de las capturas de la titular y lo todavía no verificado.
 
 ### Regla de congelación acordada
-MC-001 (Marii Cuadros) y AIO-001 (AIO CODE): conservar definiciones, `@id`, sameAs, pasaportes, páginas, campos canónicos y registros históricos hasta que fases 2 y 3 estén documentadas y exista una aprobación de liberación específica. Nuevas entidades se agregan sin reescribirlas. **La rama de esta auditoría contiene la protección propuesta; no se considera activa en main hasta que pase CI, se fusione y GitHub exija el check.** Los archivos históricos y baseline 14/49 no se reescriben.
+MC-001 (Marii Cuadros) y AIO-001 (AIO CODE): conservar definiciones, `@id`, sameAs, pasaportes, páginas, campos canónicos y registros históricos hasta que fases 2 y 3 estén documentadas y exista una aprobación de liberación específica. Nuevas entidades se agregan sin reescribirlas. **El gate ya está incorporado a main y pasó CI en el PR #39; GitHub reporta `main.protected=false`, por lo que NO es todavía un bloqueo obligatorio contra pushes/fusiones que ignoren CI. La titular debe activar branch protection/ruleset con el check `validate`.** Los archivos históricos y baseline 14/49 no se reescriben.
 
 ## 1. Inventario verificado
 | Capa | Origen | Corte observado |
@@ -66,7 +66,7 @@ El archivo [mariicuadros/marii-cuadros/README.md](https://github.com/mariicuadro
 ## 5. GitHub, backend, frontend, Vault y Vercel
 1. **Divergencia de ramas:** `aio-code-frontend` tiene default `codex/entity-console` en commit `064951e5`, pero el laboratorio Vercel usa `codex/lab-oidc-20261011` commit `11782241` con PR #2. No conectar nuevas publicaciones automáticas a la default desactualizada. Preparar rama limpia/PR de consolidación y probar en laboratorio.
 2. **PR obsoleto:** #37 contenía JSON-LD anterior y quedó cerrado sin merge en la auditoría; #38 ya fusionó la representación vigente. PR #25 sigue abierto sobre el Ledger/Meta; no mezclarlo con despliegues de entidades sin revisión.
-3. **Congelación insuficiente antes de esta rama:** GitHub permite cambios si el CI no es obligatorio. Se añadió `governance/frozen-core-baseline-20261017.json`, `scripts/check_frozen_core.py` y llamadas al gate en CI y pre-publicación HF. Hasta fusionar esta rama y exigir el check mediante Settings→Rules / branch protection, es un control propuesto, NO bloqueo efectivo.
+3. **Congelación insuficiente antes de esta rama:** GitHub permite cambios si el CI no es obligatorio. Se añadió `governance/frozen-core-baseline-20261017.json`, `scripts/check_frozen_core.py` y llamadas al gate en CI y pre-publicación HF. La rama ya se fusionó mediante PR #39, pero GitHub informa `main.protected=false`. Es indispensable habilitar ruleset/branch protection y exigir `validate` sin bypass para convertirlo en bloqueo efectivo.
 4. **Vault:** la estructura privada contiene expedientes con revisiones; la consola mostró 2 entidades y paquete DAN pendiente de despliegue y previamente aprobado. Esto acredita lectura/aplicación en ese momento, no equivale a haber probado permisos de escritura, recuperación ante fallos y concordancia de los documentos firmados.
 5. **Backend/API:** `aio-code-api-lab` tiene protección. Los agregados de errores de siete días contienen incidencias del 12/10 (`TypeError`, diagnóstico de formato y rutas). No hay fallos recientes del mismo tipo observados en este corte; realizar prueba autenticada y prueba negativa de identidad cruzada antes de pasar a SaaS.
 6. **Frontend:** Cookie HTTP-only y SameSite strict, verificación de origin, limite de body, validación de token de sesión y secret handling presentes en código. Hay rate limiting de proceso (memoria); no presentarlo como defensa distribuida completa. Revisar sesión, CSRF, Trusted Sources/OIDC y pruebas multiinstancia.
@@ -110,7 +110,7 @@ El archivo [mariicuadros/marii-cuadros/README.md](https://github.com/mariicuadro
 
 ## 9. Semáforo final
 - **Confirmado en fuentes:** DEOS, grafo con DAN, canonicals de cinco páginas, siete sameAs DAN, sitemap, robots, CI, READY producción, rama frontend divergente, RAG allowlist sin DAN, HF publish manual y registro de derechos con verificación privada pendiente.
-- **Corregido sin tocar identidades congeladas:** PR #37 cerrado sin fusión; estado histórico incorrecto del portafolio DAN corregido en la rama de auditoría; prueba freeze y bitácora creadas en rama.
+- **Corregido sin tocar identidades congeladas:** PR #37 cerrado sin fusión; estado histórico incorrecto del portafolio DAN corregido; prueba freeze y bitácora incorporadas a main en PR #39, con CI aprobado; falta configurar reglas obligatorias de rama.
 - **No confirmado:** causa de pérdidas en AI Mode; listado completo de archivos/fila actual HF; indexación efectiva DAN Google; renovación/validez jurídica de documentos; recuperación y aislamiento remoto bajo fallos; cobertura HTTP integral; ruleset branch main activo.
 
 ## 10. Evidencia técnica y rutas
