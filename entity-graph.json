@@ -1,7 +1,7 @@
 {
   "graph": "OZCU / AIO CODE Entity Graph",
-  "version": "1.5",
-  "updated": "2026-10-15",
+  "version": "1.6",
+  "updated": "2026-10-17",
   "nodes": [
     {
       "entity_id": "OZCU-001",
@@ -129,6 +129,15 @@
       "status": "active",
       "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
       "note": "Explicit founder declaration adopted 2026-10-09; legal formalization pending; no corporate registry verification."
+    },
+    {
+      "relationship_id": "REL-010",
+      "from": "DAN-001",
+      "relationship": "collaborating_model_in",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "note": "Participation as a collaborating model, reported by the administrator and documented in the private signed-agreement process; no automatic agency, employment, ownership or commercial mandate implied."
     }
   ],
   "graph_rule": "Canonical entities remain distinct. Relationships connect entities but do not collapse their identities. Platform profiles, content assets, playlists, images and research records are representation or resource nodes and must not be promoted to sameAs identity claims unless they actually represent the same entity. AIO CODE remains the primary public/project brand; OZCU is the company/officially adopted declared developer company/venture of AIO CODE, with legal formalization pending through 2027.",
