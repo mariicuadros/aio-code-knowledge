@@ -11,3 +11,10 @@
 - Indexation submissions: NONE performed by this workflow.
 - Next checks: inspect Blogger article and Vercel Entity Home separately in their corresponding Google Search Console properties. Confirm crawlability, canonicals, fetch success; request indexing only if eligible and needed; capture baseline with timestamps.
 - No additional JSON-LD Person entity placed in Blogger editorial article.
+
+## Google Search Console — Blogger, 2026-10-17
+- Live inspection: URL available to Google; page can be indexed.
+- Index inspection at submission: Discovered, currently not indexed.
+- Operator screenshot confirms: indexing request accepted and URL added to priority crawl queue.
+- Effective indexing and AI Mode retrieval: not yet confirmed.
+- Do not repeat submission without material reason.
