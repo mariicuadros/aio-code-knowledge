@@ -1,19 +1,19 @@
 {
-  "version": "1.0",
-  "updated": "2026-10-10",
+  "version": "1.1",
+  "updated": "2026-10-17",
   "privacy_rule": "Public machine-readable status only. Signed agreements, signatures, government IDs, dates of birth, contact details and signing audit trails remain private.",
   "records": [
     {
-      "rights_record_id": "RIGHTS-DANISAN-001-v1",
-      "subject_id": "DANISAN-001",
-      "public_name": "Danisan Carpio",
-      "relationship": "project_participant",
+      "rights_record_id": "RIGHTS-DAN-001-operator-attestation-v1",
+      "subject_id": "DAN-001",
+      "public_name": "DANISAN",
+      "relationship": "collaborating_model",
       "project_refs": [
-        "AIO CODE Phase 2 participant record"
+        "AIO-001"
       ],
       "agreement_type": "participant_image_ai_consent",
-      "agreement_version": "1.0",
-      "execution_status": "prepared_pending_signature",
+      "agreement_version": "signed_copy_version_pending_match",
+      "execution_status": "signing_reported_by_administrator_pending_private_evidence_match",
       "executed_at": null,
       "expires_at": null,
       "document_public": false,
@@ -36,7 +36,7 @@
         "This record does not establish partnership/shareholding.",
         "This record does not establish agency, exclusive representation or spokesperson status."
       ],
-      "verification_note": "A final agreement form has been prepared. No current authorization is asserted until execution is verified and this record is promoted to executed_active or executed_restricted."
+      "verification_note": "The project administrator reports that both parties signed the DAN-001 agreement with identifying details. This is an operator attestation, not independent verification; the signed-file version, audit trail, SHA-256 and evidence location have not yet been reconciled with the private Vault. No new signature is requested. Scoped image and promotional permissions remain tied to the signed agreement and individual authorized assets."
     },
     {
       "rights_record_id": "RIGHTS-MC-001-v1",
