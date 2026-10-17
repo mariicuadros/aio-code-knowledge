@@ -1,0 +1,65 @@
+{
+  "id": "DAN-001",
+  "canonicalName": "DANISAN",
+  "type": "person",
+  "description": "DANISAN, nombre profesional de Daniela Sánchez, es una modelo comercial y de moda, creadora digital, emprendedora y artista radicada en Medellín, Colombia. Su trabajo comprende moda, belleza, estilo de vida, modelaje publicitario, colaboraciones con marcas y producciones audiovisuales. También desarrolla actividades empresariales y proyectos artísticos relacionados con la música. DANISAN es una identidad profesional independiente documentada por AIO CODE; su participación no implica que el sistema sea propietario de su identidad ni su representante legal.",
+  "alternateNames": [
+    "Daniela Sánchez",
+    "Danisan Carpio",
+    "Danisan"
+  ],
+  "areas": [
+    "Commercial Model",
+    "Fashion Model",
+    "Digital Creator",
+    "Entrepreneur",
+    "Artist"
+  ],
+  "socials": [
+    {
+      "platform": "Instagram",
+      "alias": "danisan_c",
+      "url": "https://www.instagram.com/danisan_c/"
+    },
+    {
+      "platform": "x",
+      "alias": "Danisan_c",
+      "url": "https://x.com/Danisan_c"
+    },
+    {
+      "platform": "Threads",
+      "alias": "danisan_c",
+      "url": "https://www.threads.com/@danisan_c"
+    },
+    {
+      "platform": "Facebook",
+      "alias": "Daniela Sánchez",
+      "url": "https://www.facebook.com/jakselyn.sanchez.3"
+    },
+    {
+      "platform": "Bluesky",
+      "alias": "danisan-c.bsky.social",
+      "url": "https://bsky.app/profile/danisan-c.bsky.social"
+    },
+    {
+      "platform": "Kavyar",
+      "alias": "DANISAN",
+      "url": "https://kavyar.com/pqwqyqbjs5fl?r=1775087"
+    },
+    {
+      "platform": "Pinterest",
+      "alias": "daniisaan",
+      "url": "https://co.pinterest.com/daniisaan/"
+    }
+  ],
+  "officialUrls": [
+    "https://aio-code.vercel.app/entities/danisan/",
+    "https://www.instagram.com/danisan_c/",
+    "https://x.com/Danisan_c",
+    "https://www.threads.com/@danisan_c",
+    "https://www.facebook.com/jakselyn.sanchez.3",
+    "https://bsky.app/profile/danisan-c.bsky.social",
+    "https://kavyar.com/pqwqyqbjs5fl?r=1775087",
+    "https://co.pinterest.com/daniisaan/"
+  ]
+}
