@@ -25,6 +25,9 @@ En una copia de trabajo limpia de aio-code-knowledge, con Node.js 24:
 5. Revisar el archivo privado con la administradora. La función pura previewReviewedCandidate permite seleccionar campos aprobados explícitamente y calcular el JSON-LD candidato en memoria, preservando el documento original y bloqueando revisiones obsoletas.
 6. Un proceso separado y posteriormente autorizado podrá proponer un PR público, con controles de revisión y despliegue. **Este módulo no implementa esa publicación.**
 
+
+**Límite de confianza:** la comprobación del hash del archivo local solo verifica coherencia interna. Por sí sola **no prueba** que el archivo corresponda a una revisión auténtica del Vault. Antes de aprobar un futuro PR de publicación se debe cotejar de manera independiente el ID, número de revisión y huella contra el Vault privado con credenciales autorizadas. La herramienta nunca realiza ese cotejo ni guarda un token.
+
 ## Archivos
 
 - lib/public-update-proposal.mjs: valida revisión y construye diferencias; vista previa explícita sin escribir.
