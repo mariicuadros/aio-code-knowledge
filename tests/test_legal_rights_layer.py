@@ -26,9 +26,18 @@ class LegalRightsLayerTests(unittest.TestCase):
                 self.assertIsNone(r["document_hash_sha256"])
                 self.assertNotIn("allowed", set(r["scopes"].values()))
 
+    def test_reported_signing_is_not_marked_archived_or_verified(self):
+        data=json.loads((ROOT/"legal/rights-registry.json").read_text(encoding="utf-8"))
+        rec=next(x for x in data["records"] if x["subject_id"]=="DAN-001")
+        self.assertEqual(rec["relationship"],"collaborating_model")
+        self.assertIn("administrator",rec["execution_status"])
+        self.assertFalse(rec["private_evidence_on_file"])
+        self.assertIsNone(rec["document_hash_sha256"])
+        self.assertIsNone(rec["executed_at"])
+
     def test_participant_record_disclaims_employment_and_agency(self):
         data=json.loads((ROOT/"legal/rights-registry.json").read_text(encoding="utf-8"))
-        rec=next(x for x in data["records"] if x["subject_id"]=="DANISAN-001")
+        rec=next(x for x in data["records"] if x["subject_id"]=="DAN-001")
         text=" ".join(rec["non_relationship_claims"]).lower()
         self.assertIn("employment",text)
         self.assertIn("partnership",text)
