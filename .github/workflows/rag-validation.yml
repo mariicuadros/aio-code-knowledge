@@ -19,7 +19,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Enforce frozen MC-001 / AIO-001 core\n        run: python scripts/check_frozen_core.py\n      - name: Validate canonical contracts before merge
+      - name: Enforce frozen MC-001 / AIO-001 core
+        run: python scripts/check_frozen_core.py
+      - name: Validate canonical contracts before merge
         run: |
           python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'
           python scripts/validate_release_safety.py
