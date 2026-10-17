@@ -53,7 +53,8 @@
             "type": "string",
             "enum": [
               "project_participant",
-              "self_rights_holder"
+              "self_rights_holder",
+              "collaborating_model"
             ]
           },
           "project_refs": {
@@ -78,7 +79,8 @@
               "revoked_for_future_use",
               "expired",
               "superseded",
-              "unknown"
+              "unknown",
+              "signing_reported_by_administrator_pending_private_evidence_match"
             ]
           },
           "executed_at": {
