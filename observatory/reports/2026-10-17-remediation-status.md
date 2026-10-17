@@ -35,3 +35,10 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - Se añadió un caso de regresión `test_public_registry_conforms_to_published_schema` que valida el registro con JSON Schema 2020-12 y formatos. La prueba quedó en GitHub, pero **no se ejecutó una batería CI completa desde esta sesión**.
 - Comprobación estructural sobre los archivos actuales: 2 registros de derechos, 6 nodos y 10 relaciones, 21 inventarios públicos, 62 rutas publicadas; cero inconsistencias en enumeraciones/relación/inventario comprobados.
 - La web pública se desplegó de nuevo desde `main` SHA `b10d924a7f29d58cbcbeb08985f1628716ce637d` y Vercel notificó `READY`. Una prueba HTTP pública externa y el recorrido de consola con sesión permanecen pendientes.
+
+## Hallazgos de cierre: ramas y alcance del Vault
+- El repositorio privado `aio-code-vault` existe, no está archivado y contiene expedientes Entity Console. No se leyó ni divulgó contenido de identidad privada.
+- El repositorio frontend tiene rama predeterminada `codex/entity-console`, distinta de la rama de laboratorio desplegada `codex/lab-oidc-20261011`. Su comparación informa divergencia de 29 commits hacia delante y 6 hacia atrás; no se ejecutó una fusión automática a la predeterminada porque requiere revisión de diferencias y conflictos.
+- El proyecto público `aio-code` conserva variables privadas `AIO_VAULT_READ_TOKEN` y `AIO_VAULT_WRITE_TOKEN` en Production. Su presencia no significa divulgación del valor, pero amerita revisión de privilegios por función y rutas, especialmente después de incorporar el endpoint administrativo de Entity Console a main. No se rotaron ni eliminaron credenciales sin plan de continuidad.
+- El proyecto API específico conserva la credencial administrativa y las credenciales de Vault en Production; no se han replicado a Preview.
+- Los errores OIDC del Preview anterior no se declaran reparados por una compilación READY; la prueba funcional del usuario sigue siendo obligatoria.
