@@ -29,3 +29,9 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - Se comprobó por API de Vercel que el dominio `aio-code.vercel.app` sigue asignado y verificado al proyecto público; `aio-code-console-lab.vercel.app` está asignado a la consola.
 - Las consultas de errores agregados del runtime de la consola y del backend no devolvieron errores para la ventana consultada. Esto no sustituye una prueba activa del circuito login/listar/editar.
 - Las pruebas y los despliegues no certifican indexación externa ni sincronización de Hugging Face más allá de lo observado.
+
+## Corrección adicional del esquema de derechos
+- El registro público DAN-001 utilizaba `collaborating_model` y el estado explícito de firma declarada por la administradora, pero `legal/rights-registry.schema.json` no admitía esos valores. Se ampliaron las enumeraciones conservando las categorías históricas.
+- Se añadió un caso de regresión `test_public_registry_conforms_to_published_schema` que valida el registro con JSON Schema 2020-12 y formatos. La prueba quedó en GitHub, pero **no se ejecutó una batería CI completa desde esta sesión**.
+- Comprobación estructural sobre los archivos actuales: 2 registros de derechos, 6 nodos y 10 relaciones, 21 inventarios públicos, 62 rutas publicadas; cero inconsistencias en enumeraciones/relación/inventario comprobados.
+- La web pública se desplegó de nuevo desde `main` SHA `b10d924a7f29d58cbcbeb08985f1628716ce637d` y Vercel notificó `READY`. Una prueba HTTP pública externa y el recorrido de consola con sesión permanecen pendientes.
