@@ -4,8 +4,8 @@
   "image_count_received": 13,
   "unique_optimized_images": 12,
   "primary_image_unchanged": "DAN-001-IMG-001",
-  "publication": "assets uploaded and added to static site manifest; deployment verification pending",
-  "rights_note": "Consent to professional profile stated by operator; verify photographer rights for original images.",
+  "publication": "Vercel production deployment READY on 2026-10-17 (commit 4f90e1f6); operator confirmed visual rendering; independent external HTTP fetch and photographer rights verification remain pending.",
+  "rights_note": "Professional profile participation reported as authorized by operator. Specific photographer, third-party usage, and image publication rights must be individually verified in private records; site publication is not rights clearance.",
   "records": [
     {
       "asset_id": "DAN-001-IMG-002",
