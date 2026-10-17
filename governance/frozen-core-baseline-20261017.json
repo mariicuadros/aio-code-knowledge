@@ -1,0 +1,558 @@
+{
+  "version": 1,
+  "baseline_date": "2026-10-17",
+  "policy": "Frozen MC-001/AIO-001 canonical representations until Phase 2 and Phase 3 are documented and explicitly approved; new entities can be appended without changing frozen records.",
+  "locked_git_blobs": {
+    "index.html": "f1c46f019c5a91106a8527a69bfdc5ca93f0f8e1",
+    "AIO-CODE-SYSTEM-SPEC-v2.md": "d757d31f1f70be4cd44ace0438132b223e867d40",
+    "ENTITY-MASTER-RECORD.md": "4a097a8f59ee70c6c140882c939ddcfd56014485",
+    "entity/ENTITY-PASSPORT-MARII-CUADROS.md": "8e2d0e60c987a5dfe230b3e0f1a12ead02a264ed",
+    "entity/ENTITY-PASSPORT-AIO-CODE.md": "f4a10cd594efa7135dd7dc0d3faccacec9710a54",
+    "entities/marii-cuadros/index.html": "5729cbdf97e36cc935da746bd62449225193645e",
+    "entities/marii-cuadros/technical/jsonld/marii-cuadros.jsonld": "06a2597d299b5487119920e9bc8669b17014a1c0",
+    "entities/marii-cuadros/technical/schema/disambiguation.json": "3728bffd7b426bedc244083552b2ea90c481c5e3",
+    ".well-known/marii-cuadros.json": "58f0e765e8b2588c5d2c4b5f781ce172b4466a9c",
+    "schemas/person-schema.json": "4065357d3dad921304f6399caffdae4bfdb1a426",
+    "public-assets-v1.json": "5d4f771b5db2987f70c2f42e67b85f02a1ed610d"
+  },
+  "entity_snapshot": {
+    "MC-001": {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros",
+      "entity_type": "Person",
+      "passport": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+      "content_registry": "entity/content/MC-001/content-registry.json",
+      "platform_registry": "entity/content/MC-001/platforms.json"
+    },
+    "AIO-001": {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE",
+      "entity_type": "DigitalEntityOperatingSystem",
+      "passport": "entity/ENTITY-PASSPORT-AIO-CODE.md",
+      "content_registry": "entity/content/AIO-001/content-registry.json",
+      "platform_registry": "entity/content/AIO-001/platforms.json",
+      "research_layers": [
+        "observatory/",
+        "entity-labs/",
+        "metrics/",
+        "ethics/",
+        "logbook/"
+      ]
+    }
+  },
+  "social_snapshot": {
+    "MC-001": {
+      "entity_id": "MC-001",
+      "canonical_name": "Marii Cuadros",
+      "platform_registry": "entity/content/MC-001/platforms.json"
+    },
+    "AIO-001": {
+      "entity_id": "AIO-001",
+      "canonical_name": "AIO CODE",
+      "platform_registry": "entity/content/AIO-001/platforms.json"
+    }
+  },
+  "claims_snapshot": [
+    {
+      "claim_id": "CLAIM-001",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "The canonical public name is Marii Cuadros.",
+      "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "date": "2026-09-03",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Canonical first-party entity registry definition; not independent public recognition."
+    },
+    {
+      "claim_id": "CLAIM-002",
+      "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
+      "claim": "The canonical project name is AIO CODE.",
+      "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "date": "2026-09-03",
+      "claim_status": "superseded",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Canonical first-party entity registry definition."
+    },
+    {
+      "claim_id": "CLAIM-003",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros is the creator of AIO CODE.",
+      "source": "AIO CODE Entity Master Record",
+      "source_ref": "ENTITY-MASTER-RECORD.md",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-03",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party authorship/creator claim recorded by the project; independent corroboration is tracked separately."
+    },
+    {
+      "claim_id": "CLAIM-006",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros is CEO of OZCU.",
+      "source": "OZCU canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "evidence_refs": [
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party role statement recorded by the venture; not independent corporate registry verification."
+    },
+    {
+      "claim_id": "CLAIM-007",
+      "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
+      "claim": "AIO CODE is a research and implementation methodology developed by Marii Cuadros and applied by OZCU.",
+      "source": "AIO CODE canonical entity passport",
+      "source_ref": "entity/ENTITY-PASSPORT-AIO-CODE.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json"
+      ],
+      "date": "2026-09-25",
+      "claim_status": "superseded",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "Phase-1 first-party methodology definition, superseded as AIO-001's top-level type by CLAIM-010. The v1 methodology continues as an internal system component; no external performance claim."
+    },
+    {
+      "claim_id": "CLAIM-010",
+      "entity_id": "AIO-001",
+      "claim_type": "canonical_definition",
+      "claim": "AIO CODE is a Digital Entity Operating System developed by Marii Cuadros; its research and implementation methodology is an internal component, not the top-level entity type.",
+      "source": "AIO CODE phase-2 system specification",
+      "source_ref": "AIO-CODE-SYSTEM-SPEC-v2.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity-graph.json",
+        "entity/ENTITY-PASSPORT-AIO-CODE.md"
+      ],
+      "date": "2026-09-27",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party classification of the operating architecture; does not prove software completeness, external AI recognition, generalizability or commercial demand."
+    },
+    {
+      "claim_id": "CLAIM-011",
+      "entity_id": "MC-001",
+      "claim_type": "canonical_definition",
+      "claim": "Marii Cuadros is an independent researcher, creator of AIO CODE and developer of VOID MODE.",
+      "source": "Marii Cuadros Entity Passport",
+      "source_ref": "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
+      "evidence_refs": [
+        "ENTITY-MASTER-RECORD.md",
+        "entity/ENTITY-PASSPORT-MARII-CUADROS.md"
+      ],
+      "date": "2026-10-03",
+      "claim_status": "active",
+      "evidence_state": "observed",
+      "verification_rule_id": null,
+      "verification_scope": "First-party canonical role definition of MC-001; external systems' recognition of this role remains a separate Observatory question."
+    }
+  ],
+  "assets_snapshot": [
+    {
+      "asset_id": "PUB-01",
+      "platform": "Bilibili",
+      "kind": "shared_video_channel",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ],
+      "urls": [
+        "https://www.bilibili.tv/en/space/2024087771"
+      ],
+      "source": "owner_provided_2026-09-28_and_existing_platform_registry",
+      "status": "owner_confirmed",
+      "same_as_entity_ids": [
+        "MC-001"
+      ],
+      "note": "Shared distribution channel; AIO CODE association is editorial, not a second identity."
+    },
+    {
+      "asset_id": "PUB-02",
+      "platform": "YouTube",
+      "kind": "person_video_channel",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://www.youtube.com/@mariicuadros"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-03",
+      "platform": "Instagram",
+      "kind": "entity_profiles",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ],
+      "urls": [
+        "https://www.instagram.com/mariicuadros/",
+        "https://www.instagram.com/aiocode_/"
+      ],
+      "source": "first_party_blogger_and_social_entity_map",
+      "status": "recorded_official",
+      "same_as_entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ],
+      "note": "Distinct URLs for the person and the system; URL order follows entity_ids."
+    },
+    {
+      "asset_id": "PUB-04",
+      "platform": "Facebook",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://www.facebook.com/MariiCuadros/"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-05",
+      "platform": "Threads",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://www.threads.com/@mariicuadros/"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-06",
+      "platform": "X",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://x.com/mariicuadros"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-07",
+      "platform": "Bluesky",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://bsky.app/profile/mariicuadros.bsky.social"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-08",
+      "platform": "TikTok",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://www.tiktok.com/@mariicuadros1"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-09",
+      "platform": "Reddit",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://www.reddit.com/user/Mariicuadros/"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-10",
+      "platform": "Quora",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://es.quora.com/profile/Marii-Cuadros"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-11",
+      "platform": "Medium",
+      "kind": "person_publication_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://medium.com/@mariicuadros1"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-12",
+      "platform": "Substack",
+      "kind": "person_publication_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://substack.com/@mariicuadros"
+      ],
+      "source": "first_party_blogger_link",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-13",
+      "platform": "Blogger",
+      "kind": "shared_editorial_site",
+      "entity_ids": [
+        "MC-001",
+        "AIO-001"
+      ],
+      "urls": [
+        "https://mariicuadros.blogspot.com/"
+      ],
+      "source": "first_party_editorial_site",
+      "status": "owner_confirmed",
+      "same_as_entity_ids": [],
+      "note": "Editorial home and historical archive for both entities; not an identity-equivalent profile."
+    },
+    {
+      "asset_id": "PUB-14",
+      "platform": "Vercel",
+      "kind": "canonical_entity_home",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ],
+      "urls": [
+        "https://aio-code.vercel.app/",
+        "https://aio-code.vercel.app/entities/marii-cuadros/"
+      ],
+      "source": "canonical_public_site",
+      "status": "owner_confirmed",
+      "same_as_entity_ids": [],
+      "note": "Canonical URLs are expressed with url and mainEntityOfPage, not sameAs."
+    },
+    {
+      "asset_id": "PUB-15",
+      "platform": "Spotify",
+      "kind": "curated_playlist_collection",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://open.spotify.com/playlist/1CE0mH5FEwALIvyRxgJpuV",
+        "https://open.spotify.com/playlist/4nafBaPaMGv6IVAvAZbO0d",
+        "https://open.spotify.com/playlist/4G3MotrzkSa2T4dqoXq3ff"
+      ],
+      "source": "first_party_blogger_links",
+      "status": "linked_by_owner",
+      "same_as_entity_ids": [],
+      "note": "Individual playlists are works, not Marii's identity profile."
+    },
+    {
+      "asset_id": "PUB-16",
+      "platform": "Pinterest",
+      "kind": "person_profile",
+      "entity_ids": [
+        "MC-001"
+      ],
+      "urls": [
+        "https://co.pinterest.com/mariicuadros1/"
+      ],
+      "source": "owner_provided_2026-09-28",
+      "status": "owner_confirmed",
+      "same_as_entity_ids": [
+        "MC-001"
+      ]
+    },
+    {
+      "asset_id": "PUB-17",
+      "platform": "GitHub",
+      "kind": "repository_and_person_profile",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ],
+      "urls": [
+        "https://github.com/mariicuadros/aio-code-knowledge",
+        "https://github.com/MariiCuadros"
+      ],
+      "source": "canonical_repository_and_person_schema",
+      "status": "recorded_official",
+      "same_as_entity_ids": [
+        "MC-001"
+      ],
+      "note": "The repository is about AIO CODE; only the person profile is an identity URL."
+    },
+    {
+      "asset_id": "PUB-18",
+      "platform": "Hugging Face",
+      "kind": "dataset_and_person_profile",
+      "entity_ids": [
+        "AIO-001",
+        "MC-001"
+      ],
+      "urls": [
+        "https://huggingface.co/datasets/mariicuadros/aio-code-entities",
+        "https://huggingface.co/MariiCuadros"
+      ],
+      "source": "canonical_dataset_and_person_schema",
+      "status": "recorded_official",
+      "same_as_entity_ids": [
+        "MC-001"
+      ],
+      "note": "The dataset is a related research asset, not an identity-equivalent URL."
+    }
+  ],
+  "graph_edges_snapshot": [
+    {
+      "relationship_id": "REL-001",
+      "from": "MC-001",
+      "relationship": "creator_of",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-002",
+      "from": "MC-001",
+      "relationship": "develops",
+      "to": "NUX-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-NUX.md",
+      "note": "NUX is a distinct entity. The broader creative role semantics may be refined as documented evidence accumulates."
+    },
+    {
+      "relationship_id": "REL-003",
+      "from": "MC-001",
+      "relationship": "CEO_of",
+      "to": "OZCU-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-004",
+      "from": "MC-001",
+      "relationship": "develops",
+      "to": "VOID-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-005",
+      "from": "OZCU-001",
+      "relationship": "applies",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "ENTITY-MASTER-RECORD.md"
+    },
+    {
+      "relationship_id": "REL-007",
+      "from": "AIO-001",
+      "relationship": "includes_creative_system",
+      "to": "VOID-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-AIO-CODE.md"
+    },
+    {
+      "relationship_id": "REL-008",
+      "from": "MC-001",
+      "relationship": "founder_of",
+      "to": "OZCU-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "note": "Explicit founder declaration adopted 2026-10-09; legal formalization pending; no corporate registry verification."
+    },
+    {
+      "relationship_id": "REL-009",
+      "from": "OZCU-001",
+      "relationship": "develops",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-OZCU.md",
+      "note": "Explicit founder declaration adopted 2026-10-09; legal formalization pending; no corporate registry verification."
+    },
+    {
+      "relationship_id": "REL-010",
+      "from": "DAN-001",
+      "relationship": "collaborating_model_in",
+      "to": "AIO-001",
+      "status": "active",
+      "source_ref": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "note": "Participation as a collaborating model, reported by the administrator and documented in the private signed-agreement process; no automatic agency, employment, ownership or commercial mandate implied."
+    }
+  ]
+}
