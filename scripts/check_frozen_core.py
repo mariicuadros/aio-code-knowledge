@@ -22,7 +22,7 @@ def read(path):
 
 def git_blob_sha(path):
     data = (ROOT / path).read_bytes()
-    return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\\0' + data).hexdigest()
+    return hashlib.sha1(b'blob ' + str(len(data)).encode() + bytes([0]) + data).hexdigest()
 
 
 def assert_preserved(label, saved, current, key):
