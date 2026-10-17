@@ -6,19 +6,10 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname, isAbsolute, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { PUBLIC_IDENTITY_TARGETS } from '../lib/public-identity-targets.mjs';
 
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),'..');
-export const TARGETS=Object.freeze({
-  'DAN-001':Object.freeze({
-    name:'DANISAN',
-    type:'Person',
-    pageUrl:'https://aio-code.vercel.app/entities/danisan/',
-    personId:'https://aio-code.vercel.app/entities/danisan/#DAN-001',
-    pagePath:'entities/danisan/index.html',
-    jsonldPath:'entities/danisan/technical/jsonld/danisan.jsonld',
-    platformsPath:'entity/content/DAN-001/platforms.json',
-  }),
-});
+export const TARGETS=PUBLIC_IDENTITY_TARGETS;
 const ALLOWED_PUBLIC_FIELDS=new Set(['id','canonicalName','type','description','alternateNames','areas','officialUrls','socials','location','relationships']);
 const ALLOWED_PACKAGE_FIELDS=new Set(['entity','jsonld','notice']);
 function json(root,path) { return JSON.parse(readFileSync(resolve(root,path),'utf8')); }
