@@ -48,3 +48,9 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - El Vault privado conserva las versiones 1 y 2 del mismo expediente `ENT-84b3e02f-a497-4fc1-b8f1-c5c7929331f0`.
 - Se leyó la versión 2 y se verificó `data.canonicalName = DANISAN`, `data.canonicalEntityId = DAN-001`, `status = draft`, `data.useAuthorized = true`, `publicUrl = null`.
 - La vinculación está persistida y no duplica el expediente; todavía no se ejecutaron los estados `review`, `approved` ni `pending_deployment` desde la consola.
+
+## DAN-001 — revisión y aprobación verificadas
+- El Vault privado conserva la versión 3 con `status: review`, `canonicalEntityId: DAN-001`, y una acción `validate` en su historial.
+- La versión 4 conserva `canonicalEntityId: DAN-001`, `status: approved`, `approvedVersion: 3` y una huella `approvedDataHash` no vacía.
+- La aprobación no expone la información privada ni despliega automáticamente un nuevo paquete: `publicUrl` sigue siendo `null` y `packageData` está pendiente.
+- Próximo paso: desde la pestaña Publicación, usar `Preparar paquete privado` y revisar el resultado y las coincidencias con el registro público existente sin crear una segunda entidad.
