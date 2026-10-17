@@ -21,6 +21,8 @@ jobs:
           node-version: '24'
       - name: Enforce frozen MC-001 / AIO-001 core
         run: python scripts/check_frozen_core.py
+      - name: Verify independent-employer template guardrails
+        run: python scripts/validate_external_org_template.py --self-test
       - name: Validate canonical contracts before merge
         run: |
           python -m pip install 'jsonschema>=4.23,<5' 'PyYAML>=6,<7'

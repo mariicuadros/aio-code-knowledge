@@ -1,0 +1,66 @@
+{
+  "$comment": "BORRADOR SINTÉTICO. No publicar; reemplazar con fuentes confirmadas, sin insertar contratos o datos privados.",
+  "record_version": "1.0",
+  "record_id": "EXT-ORG-NEW",
+  "record_state": "draft_unverified",
+  "classification": "independent_external_employer",
+  "organization": {
+    "canonical_name": "",
+    "slug": "",
+    "organization_type": "",
+    "official_website": "",
+    "canonical_url": "",
+    "description_es": "",
+    "location_public": "",
+    "official_profiles": []
+  },
+  "association": {
+    "related_person_id": "MC-001",
+    "role_label_es": "Estratega digital",
+    "relationship_type": "employment_reported_pending_validation",
+    "employment_start_public": null,
+    "employment_end_public": null,
+    "source_ref_public": null,
+    "employment_disclosure_approved": false,
+    "do_not_infer": {
+      "customer_of_aio_code": true,
+      "owned_by_aio_code": true,
+      "subsidiary_of_aio_code": true,
+      "partner_of_aio_code": true,
+      "sameAs_marii_or_aio_code": true
+    }
+  },
+  "method_use": {
+    "description_es": "",
+    "classification": "independent_professional_practice",
+    "involves_aio_code_product": false,
+    "is_aio_code_commercial_implementation": false,
+    "company_approved_public_claim": false,
+    "evidence_ref_public": null,
+    "explicit_prohibition": "No decir que la organización usa, compra, avala o pertenece a AIO CODE sin prueba independiente y autorización para publicar"
+  },
+  "discovery": {
+    "answer_first_es": "",
+    "title_es": "",
+    "description_es": "",
+    "keywords_es": [],
+    "user_questions_es": [],
+    "negative_disambiguation": [],
+    "official_sources": []
+  },
+  "publication": {
+    "organization_publication_permission": false,
+    "operator_approval": false,
+    "rights_review_completed": false,
+    "source_integrity_checked": false,
+    "can_generate_public_package": false,
+    "published_at": null,
+    "indexing_requested_at": null
+  },
+  "evidence": {
+    "private_evidence_reference": null,
+    "provenance_public": [],
+    "external_verified": false
+  },
+  "notes": "Una organización externa NO se incorpora al grafo canónico DEOS ni se convierte en cliente por publicar un perfil profesional. Si más adelante pasa a ser entidad del sistema, crear un expediente independiente y nueva aprobación; nunca cambiar solamente el nombre o reutilizar IDs/sameAs/URL."
+}

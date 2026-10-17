@@ -1,0 +1,115 @@
+{
+  "template_version": "1.0",
+  "publication": "not_for_direct_publication",
+  "note": "No modificar prompt-registry-v1.json ni hacer afirmaciones sobre reconocimiento AI. Crear lote y versión nueva por cada entidad. Las preguntas de empleo solo se activan tras autorización de divulgación.",
+  "placeholders": {
+    "ORG": "Nombre público exacto de la organización",
+    "ROLE": "Cargo público aprobado de Marii",
+    "SECTOR": "Sector confirmado",
+    "CITY": "Ubicación pública confirmada"
+  },
+  "answer_first_rules": [
+    "Empezar la descripción con una respuesta factual corta a quién es la organización y qué hace, sin promoción o repetición forzada.",
+    "Atribuir el dato al origen/declarante apropiado; no convertir declaraciones en verificación externa.",
+    "Separar claramente el empleo de MC-001 de cualquier relación comercial con AIO-001.",
+    "No mencionar implementación de AIO CODE por la empresa sin permiso y evidencia expresa.",
+    "Si no hay fuente directa, omitir respuesta o indicar que no hay evidencia suficiente."
+  ],
+  "query_cases": [
+    {
+      "id": "EXT-ENT-ES-01",
+      "group": "direct_entity",
+      "lang": "es",
+      "prompt": "¿Qué es {ORG}?",
+      "requires": "official_public_source",
+      "expected": "short_grounded_identity_or_abstention"
+    },
+    {
+      "id": "EXT-ENT-EN-01",
+      "group": "direct_entity",
+      "lang": "en",
+      "prompt": "What does {ORG} do?",
+      "requires": "official_public_source",
+      "expected": "short_grounded_identity_or_abstention"
+    },
+    {
+      "id": "EXT-ROLE-ES-01",
+      "group": "role",
+      "lang": "es",
+      "prompt": "¿Qué trabajo realiza Marii Cuadros en {ORG}?",
+      "requires": "employment_disclosure_approved_and_verified",
+      "expected": "grounded_role_or_abstention"
+    },
+    {
+      "id": "EXT-REL-ES-01",
+      "group": "disambiguation",
+      "lang": "es",
+      "prompt": "¿{ORG} pertenece a AIO CODE o es su cliente?",
+      "requires": "explicit_relation_or_documented_absence_of_affiliation",
+      "expected": "no_inference_from_employment"
+    },
+    {
+      "id": "EXT-SRC-ES-01",
+      "group": "sources",
+      "lang": "es",
+      "prompt": "¿Cuál es la página oficial de {ORG}?",
+      "requires": "owned_verified_company_url",
+      "expected": "official_source_or_abstention"
+    },
+    {
+      "id": "EXT-METHOD-ES-01",
+      "group": "methods",
+      "lang": "es",
+      "prompt": "¿{ORG} utiliza oficialmente AIO CODE?",
+      "requires": "company_approved_public_claim_and_verifiable_contract",
+      "expected": "do_not_assert_implementation_without_evidence"
+    },
+    {
+      "id": "EXT-NEG-ES-01",
+      "group": "negative_control",
+      "lang": "es",
+      "prompt": "¿{ORG} y Marii Cuadros son la misma entidad?",
+      "requires": "identity_contract",
+      "expected": "distinct_entities"
+    }
+  ],
+  "keyword_groups": {
+    "identity": [
+      "{ORG}",
+      "{ORG} {SECTOR}",
+      "{ORG} {CITY}"
+    ],
+    "roles": [
+      "estrategia digital",
+      "estratega digital",
+      "gestión de contenido digital"
+    ],
+    "evidence": [
+      "sitio oficial",
+      "fuentes oficiales",
+      "trayectoria profesional"
+    ],
+    "forbidden_without_independent_basis": [
+      "cliente AIO CODE",
+      "filial AIO CODE",
+      "empresa de AIO CODE",
+      "colaboración comercial AIO CODE",
+      "certificado AIO CODE"
+    ]
+  },
+  "tracking_fields": [
+    "prompt_version",
+    "entity_id_or_external_record_id",
+    "session_time",
+    "platform_or_model",
+    "locale",
+    "retrieval_present",
+    "entity_resolution",
+    "supporting_source_url",
+    "source_accessible",
+    "answer_matches_evidence",
+    "citation_validity",
+    "negative_case",
+    "status"
+  ]
+}
