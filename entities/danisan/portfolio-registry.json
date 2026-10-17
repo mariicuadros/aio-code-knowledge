@@ -32,8 +32,9 @@
       "asset_id": "DAN-001-IMG-005",
       "origin_file": "DSC02549.jpg.jpeg",
       "role": "professional_portfolio",
-      "public_path": "entities/danisan/dan-001-img-005.webp",
-      "state": "duplicate_of_DAN-001-IMG-002"
+      "public_path": "entities/danisan/dan-001-img-002.webp",
+      "state": "duplicate_of_DAN-001-IMG-002",
+      "duplicate_of": "DAN-001-IMG-002"
     },
     {
       "asset_id": "DAN-001-IMG-006",
