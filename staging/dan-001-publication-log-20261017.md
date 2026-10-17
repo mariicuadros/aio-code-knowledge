@@ -18,3 +18,10 @@
 - Operator screenshot confirms: indexing request accepted and URL added to priority crawl queue.
 - Effective indexing and AI Mode retrieval: not yet confirmed.
 - Do not repeat submission without material reason.
+
+## Google Search Console — Vercel, 2026-10-17
+- URL: https://aio-code.vercel.app/entities/danisan/
+- Live inspection: available to Google, eligible for indexing, one valid ProfilePage item.
+- Current index status from screenshot: Google does not recognize this URL yet (not indexed).
+- Manual indexing request: REJECTED due to daily quota exceeded; not queued. Do not record as accepted.
+- Next action: retry once after quota renewal if still not indexed; avoid repeated attempts. Automatic crawling remains possible.
