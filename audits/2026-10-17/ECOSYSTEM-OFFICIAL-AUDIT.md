@@ -35,6 +35,11 @@ MC-001 (Marii Cuadros) y AIO-001 (AIO CODE): conservar definiciones, `@id`, same
 | E-09 | DANISAN no equivale al personaje/identidad creativa de Marii ni es propietaria de VOID MODE. | Controlado | Mantener separado uso editorial del sistema creativo y propiedad de identidad. |
 | E-10 | MC-001 tiene en el repositorio una lista extensa de perfiles `sameAs`; los validadores comparan sus representaciones publicadas. Vincular perfiles declarados no verifica titularidad externa ni AI Mode. | **Correcto dentro del repositorio** | Mantener prueba de igualdad y auditoría humana eventual de URLs rotas. |
 
+### Hallazgo crítico adicional — repositorio público de perfil `marii-cuadros`
+El archivo [mariicuadros/marii-cuadros/README.md](https://github.com/mariicuadros/marii-cuadros/blob/main/README.md) aún describe AIO CODE principalmente como **research and implementation methodology** y lo vuelve a definir así en «Relationship to AIO CODE», contradiciendo la definición DEOS vigente de la fuente principal. También enumera aliases/URLs de perfiles que difieren del inventario actual, por ejemplo Medium sin el sufijo `1` y Threads `threads.net` en lugar de `threads.com`. Esta es una **incongruencia pública confirmada** que puede presentar definiciones discordantes a lectores o recuperadores; su efecto causal en AI Mode NO está demostrado.
+
+**Severidad: P0 documental.** Debido a la congelación solicitada de MC-001/AIO-001, NO modificar ese README en esta auditoría. Preparar corrección mínima en PR separado sujeto a autorización de excepción, manteniendo nombre público, historial y canonical; confirmar URLs reales antes de alterar `sameAs`. No declarar que todos los repositorios dicen lo mismo hasta que se resuelva.
+
 ## 3. RAG, llms, robots, esquemas y búsqueda
 | Superficie | Resultado | Hallazgo operativo |
 |---|---|---|
