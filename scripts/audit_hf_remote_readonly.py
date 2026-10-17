@@ -100,6 +100,8 @@ def inspect_metadata(metadata: dict, expected_file: str | None = None) -> dict:
 
 def build_report(fetch=get_bytes, local_rows=None, github_sha=None):
     # Import only repository-local, read-only build logic.
+    if str(ROOT) not in sys.path:
+        sys.path.insert(0, str(ROOT))
     from scripts.build_hf_entities import build_rows
     expected = local_rows if local_rows is not None else build_rows()
     report = {
