@@ -1,7 +1,7 @@
 {
   "manifest": "AIO CODE Controlled Data Export",
-  "version": "1.4",
-  "updated": "2026-10-13",
+  "version": "1.5",
+  "updated": "2026-10-17",
   "source_of_truth": "GitHub repository mariicuadros/aio-code-knowledge",
   "downstream_targets": [
     "Hugging Face"
@@ -33,7 +33,11 @@
     "AIO-CODE-SYSTEM-SPEC-v2.md",
     "entity/ENTITY-PASSPORT-AIO-CODE.md",
     "entity/ENTITY-PASSPORT-MARII-CUADROS.md",
-    "entity/ENTITY-PASSPORT-NUX.md"
+    "entity/ENTITY-PASSPORT-NUX.md",
+    "entity/ENTITY-PASSPORT-DANISAN.md",
+    "entity/content/DAN-001/platforms.json",
+    "entities/danisan/technical/jsonld/danisan.jsonld",
+    "public-assets-v2.json"
   ],
   "integrity_rules": [
     "Preserve canonical entity IDs.",
@@ -41,6 +45,7 @@
     "Do not overwrite historical observations with later measurements.",
     "Do not treat planned records as observed facts.",
     "Do not treat platform presence as proof of AI recognition.",
-    "Do not treat defined canonical claims as externally verified findings."
+    "Do not treat defined canonical claims as externally verified findings.",
+    "For every graph node, the canonical passport and declared platform registry (if any) must be included in the approved export source manifest. Newly approved entity source additions must not change frozen core records."
   ]
 }
