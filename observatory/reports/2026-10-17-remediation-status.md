@@ -61,3 +61,10 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - `approvedVersion: 3`, la huella aprobada y los datos privados del expediente son idénticos a la versión 5; historial intacto.
 - El sitio público existente usa ya la identidad `DAN-001`; las siete URL `sameAs` del paquete privado coinciden exactamente con las siete del JSON-LD público. No se requiere una nueva ficha ni un despliegue adicional por esta corrección.
 - Diferencia arquitectónica pendiente de seguimiento: el JSON-LD privado generado no contiene aún un `@id` URI estable; el JSON-LD público existente sí dispone de `https://aio-code.vercel.app/entities/danisan/#DAN-001`. Mantener la proyección pública como fuente existente hasta diseñar una sincronización controlada, sin sobreescritura automática.
+
+## DAN-001 — v7 con identificador semántico estable verificado
+- Vault privado, revisión 7: `status: pending_deployment`, `approvedVersion: 3`; hash de aprobación y `data` idénticos a v6.
+- Paquete privado: `entity.id = DAN-001`, `jsonld.identifier = DAN-001` y `jsonld.@id = https://aio-code.vercel.app/entities/danisan/#DAN-001`. El ID operativo `ENT-...` no se exporta.
+- Comparación con `entities/danisan/technical/jsonld/danisan.jsonld`: coinciden el URI Person, URL pública, nombre, tipo, identificador y las siete URL `sameAs`.
+- Diferencias editoriales: la descripción textual no es idéntica; el JSON-LD público ya incluye `jobTitle`, `knowsAbout`, `hasOccupation`, `image`, y el paquete privado incluye `keywords`. No sobrescribir página/JSON-LD público con una proyección reducida.
+- Sin escritura de página pública, despliegue del sitio principal ni cambio adicional del Vault; próximo paso es una propuesta de cambios pública, revisada manualmente, que preserve campos editoriales y derechos.
