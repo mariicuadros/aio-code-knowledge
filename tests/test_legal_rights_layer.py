@@ -5,6 +5,12 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 
 class LegalRightsLayerTests(unittest.TestCase):
+    def test_public_registry_conforms_to_published_schema(self):
+        from jsonschema import Draft202012Validator, FormatChecker
+        schema=json.loads((ROOT/"legal/rights-registry.schema.json").read_text(encoding="utf-8"))
+        registry=json.loads((ROOT/"legal/rights-registry.json").read_text(encoding="utf-8"))
+        Draft202012Validator(schema,format_checker=FormatChecker()).validate(registry)
+
     def test_public_registry_contains_no_obvious_sensitive_fields(self):
         data=json.loads((ROOT/"legal/rights-registry.json").read_text(encoding="utf-8"))
         forbidden={"date_of_birth","birth_date","government_id","document_number","email","phone","address","signature","ip_address"}
