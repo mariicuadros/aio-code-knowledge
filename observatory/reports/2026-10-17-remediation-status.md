@@ -54,3 +54,10 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - La versión 4 conserva `canonicalEntityId: DAN-001`, `status: approved`, `approvedVersion: 3` y una huella `approvedDataHash` no vacía.
 - La aprobación no expone la información privada ni despliega automáticamente un nuevo paquete: `publicUrl` sigue siendo `null` y `packageData` está pendiente.
 - Próximo paso: desde la pestaña Publicación, usar `Preparar paquete privado` y revisar el resultado y las coincidencias con el registro público existente sin crear una segunda entidad.
+
+## DAN-001 — paquete privado v6 regenerado
+- Tras aprobar la revisión 3, la versión 6 del expediente privado quedó en `pending_deployment` mediante `refresh_package`.
+- Se comprobó en el Vault que `packageData.entity.id` y `packageData.jsonld.identifier` valen `DAN-001` y que el identificador administrativo `ENT-...` no aparece en el paquete.
+- `approvedVersion: 3`, la huella aprobada y los datos privados del expediente son idénticos a la versión 5; historial intacto.
+- El sitio público existente usa ya la identidad `DAN-001`; las siete URL `sameAs` del paquete privado coinciden exactamente con las siete del JSON-LD público. No se requiere una nueva ficha ni un despliegue adicional por esta corrección.
+- Diferencia arquitectónica pendiente de seguimiento: el JSON-LD privado generado no contiene aún un `@id` URI estable; el JSON-LD público existente sí dispone de `https://aio-code.vercel.app/entities/danisan/#DAN-001`. Mantener la proyección pública como fuente existente hasta diseñar una sincronización controlada, sin sobreescritura automática.
