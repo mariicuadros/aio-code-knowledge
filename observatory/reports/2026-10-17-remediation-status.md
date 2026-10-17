@@ -42,3 +42,9 @@ Desde el dominio de producción del laboratorio, iniciar sesión, comprobar que 
 - El proyecto público `aio-code` conserva variables privadas `AIO_VAULT_READ_TOKEN` y `AIO_VAULT_WRITE_TOKEN` en Production. Su presencia no significa divulgación del valor, pero amerita revisión de privilegios por función y rutas, especialmente después de incorporar el endpoint administrativo de Entity Console a main. No se rotaron ni eliminaron credenciales sin plan de continuidad.
 - El proyecto API específico conserva la credencial administrativa y las credenciales de Vault en Production; no se han replicado a Preview.
 - Los errores OIDC del Preview anterior no se declaran reparados por una compilación READY; la prueba funcional del usuario sigue siendo obligatoria.
+
+## Comprobación del vínculo de DAN-001 en el Vault
+- La administradora completó la edición desde Entity Console.
+- El Vault privado conserva las versiones 1 y 2 del mismo expediente `ENT-84b3e02f-a497-4fc1-b8f1-c5c7929331f0`.
+- Se leyó la versión 2 y se verificó `data.canonicalName = DANISAN`, `data.canonicalEntityId = DAN-001`, `status = draft`, `data.useAuthorized = true`, `publicUrl = null`.
+- La vinculación está persistida y no duplica el expediente; todavía no se ejecutaron los estados `review`, `approved` ni `pending_deployment` desde la consola.
