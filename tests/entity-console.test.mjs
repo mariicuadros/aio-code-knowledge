@@ -34,6 +34,25 @@ test('local store atomically rejects concurrent canonical duplicate creates',asy
   assert.equal(results.filter(r=>r.status==='rejected'&&r.reason.code==='canonical_link_conflict').length,1);
   assert.equal((await service.list()).length,1);
 });
+test('canonical export uses public ID and regenerates without losing approved source revision',async t=>{
+  const {service}=await setup(t);
+  const input={...data(),canonicalEntityId:'DAN-001'};
+  let r=await service.change({action:'create',key:randomUUID(),body:{data:input}});
+  r=await change(service,r,'validate');const approvedSource=r.version;
+  r=await change(service,r,'approve');r=await change(service,r,'publish');
+  const frozenHash=r.approvedDataHash;
+  assert.equal(r.packageData.entity.id,'DAN-001');
+  assert.equal(r.packageData.jsonld.identifier,'DAN-001');
+  assert.equal(JSON.stringify(r.packageData).includes(r.id),false);
+  r=await change(service,r,'refresh_package');
+  assert.equal(r.status,'pending_deployment');
+  assert.equal(r.approvedVersion,approvedSource);
+  assert.equal(r.approvedDataHash,frozenHash);
+  assert.equal(r.packageData.entity.id,'DAN-001');
+  assert.equal(r.packageData.jsonld.identifier,'DAN-001');
+  assert.equal(r.publicUrl,null);
+  await assert.rejects(change(service,r,'refresh_package',{extra:'invalid'}),{code:'invalid_fields'});
+});
 test('approval is bound to exact revision; pending is private; editing revokes approval',async t=>{const {service}=await setup(t);let r=await create(service);await assert.rejects(change(service,r,'approve'),{code:'approval_requires_review_and_authorization'});await assert.rejects(change(service,r,'publish'),{code:'approval_required'});r=await change(service,r,'validate');const reviewed=r.version;r=await change(service,r,'approve');assert.equal(r.approvedVersion,reviewed);const hash=r.approvedDataHash;r=await change(service,r,'publish');assert.equal(r.status,'pending_deployment');assert.equal(r.publicUrl,null);assert.equal(r.approvedDataHash,hash);const exported=JSON.stringify(r.packageData);assert.equal(exported.includes('Titular ficticio privado'),false);assert.equal(exported.includes('Interno privado'),false);assert.equal(exported.includes('officialUrls'),false);assert.equal(r.packageData.jsonld['@type'],'Organization');r=await change(service,r,'edit',{data:data()});assert.equal(r.status,'draft');assert.equal(r.approvedVersion,null);assert.equal(r.packageData,null);assert.equal(r.activity.length,5);});
 test('concurrent revision changes cannot silently overwrite each other',async t=>{const {service}=await setup(t);const r=await create(service);const attempts=await Promise.allSettled([change(service,r,'validate'),change(service,r,'edit',{data:data()})]);assert.equal(attempts.filter(v=>v.status==='fulfilled').length,1);assert.equal(attempts.find(v=>v.status==='rejected').reason.code,'revision_conflict');});
 test('canonical IDs and unknown tenant fields cannot be supplied',async t=>{const {service}=await setup(t);for(const id of CANONICAL_IDS)await assert.rejects(service.get(id),{code:'not_found'});await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:data(),tenant:'other'}}),{code:'invalid_fields'});assert.throws(()=>validateEntity({...data(),id:'AIO-001'}),{code:'invalid_fields'});});
