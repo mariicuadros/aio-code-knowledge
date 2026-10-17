@@ -1,0 +1,31 @@
+name: Audit Hugging Face data parity (read only)
+
+# Never uploads or modifies public datasets. Run only when the founder requests an audit.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Check frozen canonical baseline
+        run: python scripts/check_frozen_core.py
+      - name: Compare approved local entity rows with public Hugging Face table
+        run: python scripts/audit_hf_remote_readonly.py --github-sha "$GITHUB_SHA" --output hf-drift-report.json
+      - name: Preserve dated diff report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hf-readonly-audit-${{ github.sha }}
+          path: hf-drift-report.json
+          if-no-files-found: warn
+          retention-days: 14
