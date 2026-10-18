@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, rm, readFile } from 'node:fs/promises';
+import { mkdtemp, rm, readFile, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { randomUUID, createHash } from 'node:crypto';
 import { LocalStore, VaultStore, configuredStore } from '../lib/entity-store.mjs';
 import { EntityService } from '../lib/entity-service.mjs';
 import { validateEntity, publicPackage, CANONICAL_IDS } from '../lib/entity-domain.mjs';
+import { publicReleaseCandidate } from '../lib/entity-public-release-gate.mjs';
 import { handle, GET } from '../api/entities.mjs';
 const data=()=>({canonicalName:'Estudio Horizonte — FICTICIO',type:'organization',description:'Entidad ficticia para probar la consola; no representa a ningún cliente.',alternateNames:[],areas:['Diseño'],socials:[{platform:'Sitio de prueba',alias:'horizonte-demo',url:'https://example.com/social'}],officialUrls:['https://example.com'],location:'',locationAuthorized:false,relationships:[],claims:[],rightsHolder:'Titular ficticio privado',useAuthorized:true,lastReviewed:'2026-10-11',publicFields:['socials'],typeDetail:'Interno privado'});
 async function setup(t) { const dir=await mkdtemp(join(tmpdir(),'aio-entity-test-'));t.after(()=>rm(dir,{recursive:true,force:true}));const store=new LocalStore(dir);return {dir,store,service:new EntityService(store)}; }
@@ -14,30 +15,37 @@ const create=service=>service.change({action:'create',key:randomUUID(),body:{dat
 const change=(service,r,action,extra={})=>service.change({id:r.id,action,key:randomUUID(),body:{expectedVersion:r.version,...extra}});
 test('persistent private create/read survives a fresh store instance',async t=>{const {dir,service}=await setup(t);const r=await create(service);assert.equal(r.status,'draft');assert.match(r.id,/^ENT-/);assert.equal(CANONICAL_IDS.includes(r.id),false);assert.equal((await new EntityService(new LocalStore(dir)).get(r.id)).data.canonicalName,r.data.canonicalName);assert.equal(r.publicUrl,null);});
 test('idempotency is persistent and rejects changed payload',async t=>{const {dir,service}=await setup(t);const key=randomUUID(),body={data:data()};const r=await service.change({action:'create',key,body});assert.equal((await new EntityService(new LocalStore(dir)).change({action:'create',key,body})).id,r.id);await assert.rejects(service.change({action:'create',key,body:{data:{...data(),description:'Cambio'}}}),{code:'idempotency_conflict'});assert.equal((await service.list()).length,1);});
-test('canonical link is private and duplicate active links are rejected',async t=>{
-  const {service}=await setup(t);
-  const input={...data(),canonicalEntityId:'DAN-001',useAuthorized:false,publicFields:[]};
-  const first=await service.change({action:'create',key:randomUUID(),body:{data:input}});
-  assert.equal(first.data.canonicalEntityId,'DAN-001');
-  assert.equal(publicPackage(first).entity.canonicalEntityId,undefined);
-  await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:input}}),{code:'canonical_link_conflict'});
-  const second=await create(service);
-  await assert.rejects(change(service,second,'edit',{data:input}),{code:'canonical_link_conflict'});
-  await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:{...data(),canonicalEntityId:'MC-001'}}}),{code:'invalid_canonical_link'});
-  assert.equal((await service.list()).length,2);
-});
-test('local store atomically rejects concurrent canonical duplicate creates',async t=>{
-  const {service}=await setup(t);
-  const entity={...data(),canonicalEntityId:'DEMO-002',useAuthorized:false,publicFields:[]};
-  const results=await Promise.allSettled([1,2].map(()=>service.change({action:'create',key:randomUUID(),body:{data:entity}})));
-  assert.equal(results.filter(r=>r.status==='fulfilled').length,1);
-  assert.equal(results.filter(r=>r.status==='rejected'&&r.reason.code==='canonical_link_conflict').length,1);
+// Fixture installation is deliberately outside ordinary service/store writes.
+// It models an already persisted binding, never an assignment API or real Vault.
+async function seedLinked(store,input) {
+  const now='2026-10-11T12:00:00Z';
+  const record={id:'ENT-'+randomUUID(),tenant:'admin-console',eventId:randomUUID(),version:1,
+    createdAt:now,updatedAt:now,status:'draft',data:validateEntity(input),approvedVersion:null,
+    approvedDataHash:null,packageData:null,publicUrl:null,operationKey:randomUUID(),operationHash:'fixture',activity:[]};
+  await writeFile(join(store.directory,'event-'+record.eventId+'.json'),JSON.stringify(record),{flag:'wx'});
+  return record;
+}
+test('ordinary create cannot grant canonical identities, including DAN and frozen core',async t=>{
+  const {service,store}=await setup(t);
+  for(const canonicalEntityId of ['DEMO-001','DAN-001',...CANONICAL_IDS]) {
+    await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:{...data(),canonicalEntityId}}}),{code:'invalid_canonical_link'});
+  }
+  assert.equal((await store.all()).length,0);
+  const first=await create(service);assert.equal(first.data.canonicalEntityId,null);
   assert.equal((await service.list()).length,1);
 });
+test('simultaneous ordinary assignments both fail without creating revisions',async t=>{
+  const {service,store}=await setup(t);
+  const entity={...data(),canonicalEntityId:'DEMO-002'};
+  const results=await Promise.allSettled([1,2].map(()=>service.change({action:'create',key:randomUUID(),body:{data:entity}})));
+  assert.equal(results.filter(r=>r.status==='fulfilled').length,0);
+  assert.equal(results.filter(r=>r.status==='rejected'&&r.reason.code==='invalid_canonical_link').length,2);
+  assert.equal((await store.all()).length,0);
+});
 test('canonical export uses public ID and regenerates without losing approved source revision',async t=>{
-  const {service}=await setup(t);
+  const {service,store}=await setup(t);
   const input={...data(),canonicalEntityId:'DAN-001'};
-  let r=await service.change({action:'create',key:randomUUID(),body:{data:input}});
+  let r=await seedLinked(store,input);
   r=await change(service,r,'validate');const approvedSource=r.version;
   r=await change(service,r,'approve');r=await change(service,r,'publish');
   const frozenHash=r.approvedDataHash;
@@ -252,4 +260,133 @@ test('public package fails closed if a legacy record contains unapproved private
   for(const marker of ['PRIVATE_HOLDER_CANARY','PRIVATE_TYPE_CANARY','Non-disclosed location',record.id,'operationKey'])
     assert.equal(published.includes(marker),false,marker);
   assert.equal(result.entity.id,'DAN-001');
+});
+
+
+test('ordinary edits preserve prior bindings, including legacy omission and DAN compatibility',async t=>{
+  const {service,store}=await setup(t);
+  for(const canonicalEntityId of ['DEMO-001','DAN-001']) {
+    let r=await seedLinked(store,{...data(),canonicalEntityId});
+    r=await change(service,r,'validate');r=await change(service,r,'approve');
+    const input={...r.data,description:'Updated synthetic description'};
+    delete input.canonicalEntityId;
+    const edited=await change(service,r,'edit',{data:input});
+    assert.equal(edited.data.canonicalEntityId,canonicalEntityId);
+    assert.equal(edited.status,'draft');assert.equal(edited.approvedVersion,null);
+    assert.equal(r.data.canonicalEntityId,canonicalEntityId);
+    const exact=await change(service,edited,'edit',{data:{...edited.data,areas:['Synthetic']}});
+    assert.equal(exact.data.canonicalEntityId,canonicalEntityId);
+    const archived=await change(service,exact,'archive');
+    assert.equal(archived.data.canonicalEntityId,canonicalEntityId);
+    assert.equal(archived.packageData,null);
+  }
+});
+test('replacement, removal, acquisition and archived-ID appropriation leave zero new revisions',async t=>{
+  const {service,store}=await setup(t);
+  let linked=await seedLinked(store,{...data(),canonicalEntityId:'DAN-001'});
+  const unlinked=await create(service);
+  for(const [r,ids] of [[linked,[null,'DEMO-001']],[unlinked,['DAN-001','DEMO-001']]]) {
+    for(const canonicalEntityId of ids) {
+      const before=await store.all();
+      await assert.rejects(change(service,r,'edit',{data:{...r.data,canonicalEntityId}}),{code:'invalid_canonical_link',status:409});
+      assert.deepEqual(await store.all(),before);
+    }
+  }
+  linked=await change(service,linked,'archive');
+  const before=await store.all();
+  await assert.rejects(change(service,unlinked,'edit',{data:{...unlinked.data,canonicalEntityId:'DAN-001'}}),{code:'invalid_canonical_link'});
+  assert.deepEqual(await store.all(),before);
+});
+test('binding-preserving retries are idempotent and stale/changed retries cannot mutate',async t=>{
+  const {service,store}=await setup(t);
+  const r=await seedLinked(store,{...data(),canonicalEntityId:'DEMO-001'});
+  const request={id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:r.version,data:{...r.data,description:'Synthetic edit'}}};
+  const edited=await service.change(request);
+  assert.deepEqual(await service.change(request),edited);
+  const before=await store.all();
+  await assert.rejects(service.change({...request,body:{...request.body,data:{...request.body.data,canonicalEntityId:null}}}),{code:'idempotency_conflict'});
+  await assert.rejects(change(service,r,'edit',{data:r.data}),{code:'revision_conflict'});
+  assert.deepEqual(await store.all(),before);
+});
+test('concurrent edits cannot assign an ID or displace a prior binding',async t=>{
+  const {service,store}=await setup(t);
+  const r=await seedLinked(store,{...data(),canonicalEntityId:'DEMO-001'});
+  const result=await Promise.allSettled([
+    change(service,r,'edit',{data:{...r.data,description:'Safe change'}}),
+    change(service,r,'edit',{data:{...r.data,canonicalEntityId:'DEMO-002'}})]);
+  assert.equal(result.filter(x=>x.status==='fulfilled').length,1);
+  assert.equal(result.find(x=>x.status==='rejected').reason.code,'invalid_canonical_link');
+  assert.equal((await store.all()).length,2);
+  assert.equal((await service.get(r.id)).data.canonicalEntityId,'DEMO-001');
+});
+test('store boundary denies bypass appends for allocation and removal',async t=>{
+  const {store}=await setup(t);
+  const r=await seedLinked(store,{...data(),canonicalEntityId:'DEMO-001'});
+  const next={...r,eventId:randomUUID(),version:2,operationKey:randomUUID(),data:{...r.data,canonicalEntityId:null}};
+  await assert.rejects(store.append(next),{code:'invalid_canonical_link'});
+  await assert.rejects(store.append({...next,id:'ENT-'+randomUUID(),version:1,data:r.data}),{code:'invalid_canonical_link'});
+  assert.deepEqual(await store.all(),[r]);
+});
+test('historical unsafe idempotency replay cannot bypass the new allocation guard',async t=>{
+  const {service,store}=await setup(t);
+  const key=randomUUID(),body={data:{...data(),canonicalEntityId:'DEMO-001'}};
+  const r=await seedLinked(store,body.data);
+  const digest=v=>createHash('sha256').update(JSON.stringify(v)).digest('hex');
+  r.operationKey=digest(['admin-console',key]);r.operationHash=digest({id:undefined,action:'create',body});
+  await writeFile(join(store.directory,'event-'+r.eventId+'.json'),JSON.stringify(r));
+  const before=await store.all();
+  await assert.rejects(service.change({action:'create',key,body}),{code:'invalid_canonical_link'});
+  assert.deepEqual(await store.all(),before);
+});
+test('authenticated HTTP administrator cannot mint or withdraw canonical links',async t=>{
+  const {service,store}=await setup(t);
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='synthetic-canonical-guard-token';
+  t.after(()=>{if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;});
+  const r=await seedLinked(store,{...data(),canonicalEntityId:'DAN-001'});
+  const send=(method,url,body)=>handle(new Request(url,{method,headers:{'x-aio-admin-token':process.env.AIO_DASHBOARD_ADMIN_TOKEN,'content-type':'application/json','idempotency-key':randomUUID()},body:JSON.stringify(body)}),store);
+  const before=await store.all();
+  for(const res of [await send('POST','http://local/api/entities',{data:{...data(),canonicalEntityId:'DAN-001'}}),
+    await send('PATCH','http://local/api/entities?id='+r.id,{expectedVersion:r.version,data:{...r.data,canonicalEntityId:null}})]) {
+    assert.equal(res.status,409);assert.deepEqual(await res.json(),{error:{code:'invalid_canonical_link'}});
+  }
+  assert.deepEqual(await store.all(),before);assert.equal((await service.get(r.id)).data.canonicalEntityId,'DAN-001');
+});
+test('homonyms, aliases and official URLs grant neither identity nor public release',async t=>{
+  const {service}=await setup(t);
+  const input={...data(),canonicalName:'DANISAN',type:'person',alternateNames:['DAN-001'],
+    officialUrls:['https://aio-code.vercel.app/entities/danisan/'],publicFields:['officialUrls']};
+  let r=await service.change({action:'create',key:randomUUID(),body:{data:input}});
+  assert.equal(r.data.canonicalEntityId,null);assert.deepEqual(r.data.relationships,[]);
+  r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'publish');
+  assert.equal(r.packageData.jsonld['@id'],undefined);
+  assert.throws(()=>publicReleaseCandidate(r),{code:'public_release_requires_canonical_identity'});
+  // This remains an authenticated private preview; there is no public publisher.
+  assert.equal(r.publicUrl,null);
+});
+
+test('Vault optimistic retry rechecks the binding before any second commit (MOCK only)',async t=>{
+  const {store:fixtures}=await setup(t);
+  const prior=await seedLinked(fixtures,{...data(),canonicalEntityId:'DEMO-001'});
+  const candidate={...prior,version:2,eventId:randomUUID(),operationKey:randomUUID(),data:{...prior.data,description:'Safe synthetic edit'}};
+  const vault=new VaultStore('synthetic-read','synthetic-write');
+  vault.all=async()=>[prior];
+  let conflict=false,treeWrites=0,refWrites=0;
+  vault.recordsFromSnapshot=async()=>[{...prior,data:{...prior.data,canonicalEntityId:conflict?'DEMO-002':'DEMO-001'}}];
+  const original=globalThis.fetch;t.after(()=>{globalThis.fetch=original;});
+  globalThis.fetch=async(input,options={})=>{
+    const url=String(input),method=options.method||'GET';
+    if(url.endsWith('/aio-code-vault'))return Response.json({private:true});
+    if(url.includes('/git/ref/heads/main'))return Response.json({object:{sha:'a'.repeat(40)}});
+    if(url.includes('/git/commits/')&&method==='GET')return Response.json({tree:{sha:'b'.repeat(40)}});
+    if(url.includes('/git/trees/')&&method==='GET')return Response.json({tree:[],truncated:false});
+    if(url.endsWith('/git/trees')&&method==='POST'){treeWrites++;return Response.json({sha:'c'.repeat(40)});}
+    if(url.endsWith('/git/commits')&&method==='POST')return Response.json({sha:'d'.repeat(40)});
+    if(url.endsWith('/git/refs/heads/main')&&method==='PATCH'){
+      refWrites++;conflict=true;return Response.json({message:'synthetic race'},{status:409});
+    }
+    throw new Error('Unexpected mock request');
+  };
+  await assert.rejects(vault.append(candidate),{code:'invalid_canonical_link'});
+  assert.equal(treeWrites,1);assert.equal(refWrites,1);
 });
