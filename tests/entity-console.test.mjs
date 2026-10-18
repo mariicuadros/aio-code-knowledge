@@ -233,3 +233,23 @@ test('DAN-001 can be a sourced relationship target, never a synthetic subsidiary
   assert.throws(()=>validateEntity({...data(),
     relationships:[{targetId:'DAN-002',relation:'unverified',sourceRef:'private'}]}),{code:'invalid_relationship'});
 });
+
+
+test('public package fails closed if a legacy record contains unapproved private field names',()=>{
+  const source={...data(),
+    canonicalEntityId:'DAN-001',
+    rightsHolder:'PRIVATE_HOLDER_CANARY',
+    typeDetail:'PRIVATE_TYPE_CANARY',
+    claims:[],
+    location:'Non-disclosed location',
+    locationAuthorized:false,
+    publicFields:['rightsHolder','claims','canonicalEntityId','typeDetail','location','operationKey','socials']};
+  // Emulate reading a malformed old record that did not pass today's validator.
+  const record={id:'ENT-11111111-1111-4111-8111-111111111111',data:source};
+  const result=publicPackage(record);
+  assert.deepEqual(Object.keys(result.entity).sort(),['canonicalName','description','id','socials','type'].sort());
+  const published=JSON.stringify(result);
+  for(const marker of ['PRIVATE_HOLDER_CANARY','PRIVATE_TYPE_CANARY','Non-disclosed location',record.id,'operationKey'])
+    assert.equal(published.includes(marker),false,marker);
+  assert.equal(result.entity.id,'DAN-001');
+});
