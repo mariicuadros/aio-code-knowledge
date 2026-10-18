@@ -70,5 +70,11 @@
     "api/dashboard.mjs": {
       "maxDuration": 60
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/institutional-home/"
+    }
+  ]
 }
