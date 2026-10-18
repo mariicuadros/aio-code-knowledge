@@ -101,6 +101,18 @@ def build_index(root: Path = ROOT) -> tuple[str, list[Passage]]:
     commit = _git("rev-parse", "HEAD") or "local-uncommitted"
     passages: list[Passage] = []
     seen: set[str] = set()
+    # Section-specific exceptions preserve the exact source while excluding
+    # obsolete passages from current-scope retrieval. Fail closed if an
+    # override points at a missing source or section.
+    overrides: dict[tuple[str, str], str] = {}
+    for record in manifest.get("section_temporal_overrides", []):
+        key = (record["source_path"], record["section_or_record_locator"])
+        if key in overrides or record["state"] not in {"historical", "superseded"}:
+            raise ValueError(f"Invalid or duplicate temporal override: {key}")
+        if not record.get("superseded_by") or not record.get("reason"):
+            raise ValueError(f"Temporal override missing documented successor: {key}")
+        overrides[key] = record["state"]
+    consumed_overrides: set[tuple[str, str]] = set()
     for item in manifest["allowlist"]:
         path = item["path"]
         if path in seen or Path(path).is_absolute() or ".." in Path(path).parts:
@@ -125,6 +137,9 @@ def build_index(root: Path = ROOT) -> tuple[str, list[Passage]]:
             version = version_match.group(1) if version_match else "unknown"
             date = date_match.group(1) if date_match else "unknown"
         for locator, text in sections:
+            key = (path, locator)
+            if key in overrides:
+                consumed_overrides.add(key)
             if path.endswith(".md") and len(tokens(text)) < 12:
                 continue
             ids = sorted(set(ENTITIES.findall(text)))
@@ -142,8 +157,11 @@ def build_index(root: Path = ROOT) -> tuple[str, list[Passage]]:
                 entity_id_or_null=ids[0] if len(ids) == 1 else None,
                 claim_ids_or_empty=claim_ids, published_at_or_unknown=date,
                 visibility=item.get("visibility", "unknown"), evidence_state_or_not_applicable=state,
-                canonical_or_historical=item.get("canonical_or_historical", "unknown"),
+                canonical_or_historical=overrides.get(key, item.get("canonical_or_historical", "unknown")),
             ))
+    unused = set(overrides) - consumed_overrides
+    if unused:
+        raise ValueError(f"Temporal overrides refer to missing source sections: {sorted(unused)}")
     return commit, passages
 
 
