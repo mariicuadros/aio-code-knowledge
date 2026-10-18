@@ -1,5 +1,4 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "register_id": "REG-DEOS-ECOSYSTEM-20261018-001",
   "schema_version": "1.0.0",
   "observed_on_utc": "2026-10-18",
@@ -287,5 +286,6 @@
     "no_public_release_permission_granted": true,
     "new_clients_require_separate_authorization": true,
     "external_recognition_not_inferred": true
-  }
+  },
+  "document_format": "dated_machine_readable_inventory_snapshot"
 }
