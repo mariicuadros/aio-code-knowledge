@@ -122,3 +122,35 @@ AI recognition, ranking, ownership or legal status.
 ## OZCU official developer adoption — October 9, 2026
 
 The current passport and graph adopt OZCU as the declared official developer company/venture, founded by Marii Cuadros, with legal formalization pending. Source passages and reviewed answers supersede the reserve characterization; historical observations are unchanged. The eight assertions include a reviewed founder/developer/legal-boundary declaration with six question variants. Three additional questions about unverified social accounts, legal certification and similarly named organizations abstain. Three draft fixtures reject incorporation claims, the superseded reserve characterization and a reversed developer relationship. The current passage count and pinned source commit are recorded in `public-index-v0.json`. Local HF export rows are regenerated from these passports and graph; no dataset was published.
+
+
+## DAN-001 independently scoped public RAG — October 18, 2026
+
+DANISAN (`DAN-001`) is incorporated into this **same** controlled public RAG from
+`entity/ENTITY-PASSPORT-DANISAN.md`, an approved first-party public source.
+The identity remains independent of Marii Cuadros and AIO CODE. The RAG neither
+owns the identity nor verifies brand contracts, photographer permissions,
+social-account ownership, external AI ranking or third-party entity recognition.
+
+The public index contains seven new DAN passport passages with exact path,
+section and pinned commit. Its current `entity_id_or_null` lookup recognizes
+`DAN-001` in both Python and browser retrieval. The finite answer policy adds
+three claims: identity, independent ownership boundary and a **declared**
+Instagram URL. For any unreviewed question the answer continues to abstain
+with `No hay evidencia suficiente`.
+
+The dated negative tests refuse to merge the model with Danisan Cárnicos,
+Danisan Design, the unrelated Apple Music artist, any fictional verified
+contract or hypothetical guarantees of AI Mode citations. New tests preserve
+the original eight reviewed claims and the pre-existing lexical gold fixture
+set; these are *regression checks*, not a third-party AI benchmark.
+
+The operator's private Entity Console packet, signature, contract, internal
+admin IDs and evidence images were **not** copied into the public corpus.
+The public browser RAG and owner-only optional generation remain separate
+from Hugging Face synchronization and from Google/Bing indexation.
+
+**Release discipline:** isolated PR → CI `validate` → founder approval for any
+public site deployment → inspect `/rag/` with DAN/negative examples → log the
+index source SHA and observation date. A green CI run does not prove Vercel
+production was deployed.
