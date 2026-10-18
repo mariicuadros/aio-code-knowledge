@@ -1,7 +1,7 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "mode": "finite_reviewed_assertions",
-  "scope": "First-party identity only. Exact normalized query match, exact approved answer, current evidence and correct supporting citation required. Other queries abstain. Not a general entailment model.",
+  "scope": "First-party identity only, including DAN-001. Exact normalized query match and approved public supporting section required. Other queries abstain. Not independent account verification, legal rights clearance, third-party AI recognition or a general entailment model.",
   "claims": [
     {
       "claim_id": "AIO-DEOS",
@@ -108,6 +108,46 @@
       "locator": "Founder and Developer Declaration",
       "required_fragments": [
         "Marii Cuadros (MC-001) founded OZCU (OZCU-001). OZCU is the officially adopted declared developer company/venture of AIO CODE (AIO-001). AIO CODE remains the primary public brand and Digital Entity Operating System; official adoption of the business identity does not establish legal incorporation, registration or certification. Legal formalization is pending."
+      ]
+    },
+    {
+      "claim_id": "DAN-IDENTITY",
+      "queries": [
+        "¿Quién es DANISAN?",
+        "Who is DANISAN?",
+        "¿Quién es Daniela Sánchez en AIO CODE?"
+      ],
+      "answer": "DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia.",
+      "source_path": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "locator": "Definition",
+      "required_fragments": [
+        "DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez, a commercial and fashion model, digital creator, entrepreneur and artist based in Medellín, Colombia."
+      ]
+    },
+    {
+      "claim_id": "DAN-INDEPENDENCE",
+      "queries": [
+        "¿AIO CODE es dueño de DANISAN?",
+        "Does AIO CODE own DANISAN?"
+      ],
+      "answer": "AIO CODE documents her declared identity and sources; it does not own or represent her professional identity.",
+      "source_path": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "locator": "Definition",
+      "required_fragments": [
+        "AIO CODE documents her declared identity and sources; it does not own or represent her professional identity."
+      ]
+    },
+    {
+      "claim_id": "DAN-DECLARED-INSTAGRAM",
+      "queries": [
+        "¿Cuál es el Instagram declarado de DANISAN?",
+        "What is DANISAN's declared Instagram profile?"
+      ],
+      "answer": "Instagram (declared): https://www.instagram.com/danisan_c/",
+      "source_path": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "locator": "Official profiles (declared)",
+      "required_fragments": [
+        "- Instagram: https://www.instagram.com/danisan_c/"
       ]
     }
   ]
