@@ -149,6 +149,21 @@
       "required_fragments": [
         "- Instagram: https://www.instagram.com/danisan_c/"
       ]
+    },
+    {
+      "claim_id": "DAN-AIO-RELATIONSHIP",
+      "queries": [
+        "¿Quién es DANISAN y cuál es su relación con AIO CODE?",
+        "Who is DANISAN and what is her relationship with AIO CODE?"
+      ],
+      "answer": "DANISAN (DAN-001) es la identidad profesional independiente de Daniela Sánchez, modelo comercial y de moda, creadora digital, emprendedora y artista radicada en Medellín, Colombia. Participa como modelo colaboradora en el programa de desarrollo de entidades digitales de AIO CODE, que documenta su identidad profesional, portafolio y presencia digital. AIO CODE no es dueño ni representante de su identidad profesional.",
+      "source_path": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "locator": "Definition",
+      "required_fragments": [
+        "DANISAN (DAN-001) is the independent professional identity of Daniela Sánchez",
+        "DANISAN is an AIO CODE collaborating model in the digital entity development program",
+        "AIO CODE documents her declared identity and sources; it does not own or represent her professional identity."
+      ]
     }
   ]
 }
