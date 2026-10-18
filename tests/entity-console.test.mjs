@@ -217,3 +217,19 @@ test('canonical graph retains founding entities and distinct case nodes; publica
   const vercel=JSON.parse(await readFile(new URL('../vercel.json',import.meta.url)));assert.equal(vercel.git.deploymentEnabled,false);
   const manifest=JSON.parse(await readFile(new URL('../public-site-manifest.json',import.meta.url)));assert.equal(manifest.files.some(p=>p.startsWith('entity-console/')||p.startsWith('.entity-test-data/')||p.startsWith('lib/entity-')),false);
 });
+
+
+test('DAN-001 can be a sourced relationship target, never a synthetic subsidiary or raw private citation in public export',()=>{
+  const input={...data(),
+    relationships:[{targetId:'DAN-001',relation:'declared_collaboration',sourceRef:'PRIVATE-ONLY-REFERENCE-DO-NOT-EXPORT'}],
+    publicFields:['relationships']};
+  const validated=validateEntity(input);
+  assert.equal(validated.relationships[0].targetId,'DAN-001');
+  const privateRecord={id:'ENT-11111111-1111-4111-8111-111111111111',data:validated};
+  const publicData=publicPackage(privateRecord);
+  assert.deepEqual(publicData.entity.relationships,[{targetId:'DAN-001',relation:'declared_collaboration'}]);
+  assert.equal(JSON.stringify(publicData).includes('PRIVATE-ONLY-REFERENCE-DO-NOT-EXPORT'),false);
+  assert.equal(JSON.stringify(publicData).includes('subsidiary'),false);
+  assert.throws(()=>validateEntity({...data(),
+    relationships:[{targetId:'DAN-002',relation:'unverified',sourceRef:'private'}]}),{code:'invalid_relationship'});
+});
