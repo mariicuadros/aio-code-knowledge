@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aio-code.vercel.app/schemas/agent-authorization-v0.1.schema.json",
+  "title": "AIO CODE agent-authorization-v0.1 v0.1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "recordId",
+    "responsibleEntityId",
+    "createdAt",
+    "revision",
+    "visibility",
+    "reviewStatus",
+    "evidenceRefs",
+    "kind",
+    "principalEntityId",
+    "agentId",
+    "workIds",
+    "permittedActions",
+    "validFrom",
+    "expiresAt",
+    "revokedAt",
+    "humanApprovalRequired",
+    "approvalEvidenceIds"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "0.1.0"
+    },
+    "recordId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]*[0-9]$"
+    },
+    "responsibleEntityId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]*[0-9]$"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "visibility": {
+      "enum": [
+        "private",
+        "approved_public"
+      ]
+    },
+    "reviewStatus": {
+      "enum": [
+        "draft",
+        "in_review",
+        "approved",
+        "withdrawn"
+      ]
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "kind": {
+      "const": "AgentAuthorization"
+    },
+    "principalEntityId": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9-]*[0-9]$"
+    },
+    "agentId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9-]*[0-9]$"
+      }
+    },
+    "permittedActions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "view_metadata",
+          "prepare_license",
+          "publish",
+          "remix"
+        ]
+      }
+    },
+    "validFrom": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "revokedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "humanApprovalRequired": {
+      "type": "boolean"
+    },
+    "approvalEvidenceIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
