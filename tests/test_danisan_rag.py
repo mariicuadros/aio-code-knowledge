@@ -28,7 +28,7 @@ class DanisanRagTests(unittest.TestCase):
 
     def test_danisan_reviewed_answers_are_cited_to_correct_section(self):
         claims = [c for c in self.policy["claims"] if c["claim_id"].startswith("DAN-")]
-        self.assertEqual(len(claims), 3)
+        self.assertEqual({c["claim_id"] for c in claims}, {"DAN-IDENTITY", "DAN-INDEPENDENCE", "DAN-DECLARED-INSTAGRAM", "DAN-AIO-RELATIONSHIP"})
         for claim in claims:
             for query in claim["queries"]:
                 with self.subTest(claim=claim["claim_id"], query=query):
