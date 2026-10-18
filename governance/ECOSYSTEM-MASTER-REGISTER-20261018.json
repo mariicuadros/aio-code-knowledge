@@ -1,0 +1,291 @@
+{
+  "register_id": "REG-DEOS-ECOSYSTEM-20261018-001",
+  "schema_version": "1.0.0",
+  "observed_on_utc": "2026-10-18",
+  "document_class": "internal_official_engineering_inventory_not_legal_registration",
+  "human_source": "governance/ECOSYSTEM-MASTER-REGISTER-20261018.md",
+  "definition": {
+    "product": "AIO CODE",
+    "category": "Digital Entity Operating System",
+    "acronym": "DEOS",
+    "research_methodology_role": "internal_component",
+    "computer_operating_system": false
+  },
+  "snapshot_scope": {
+    "immutable_snapshot": true,
+    "auto_refresh": false,
+    "founder_formal_signoff_recorded": false,
+    "phase_2_complete": false,
+    "frozen_core": [
+      "MC-001",
+      "AIO-001"
+    ],
+    "phase_1_observed_baseline": {
+      "observed": 14,
+      "possible": 49,
+      "status": "frozen_partial"
+    }
+  },
+  "canonical_graph": {
+    "path": "entity-graph.json",
+    "graph_version": "1.6",
+    "node_count": 6,
+    "edge_count": 10,
+    "verification": "source_file_inspected",
+    "entities": [
+      {
+        "id": "OZCU-001",
+        "name": "OZCU",
+        "graph_type": "Company",
+        "caveat": "venture_declared_legal_incorporation_pending"
+      },
+      {
+        "id": "MC-001",
+        "name": "Marii Cuadros",
+        "graph_type": "Person",
+        "state": "frozen_canonical"
+      },
+      {
+        "id": "AIO-001",
+        "name": "AIO CODE",
+        "graph_type": "DigitalEntityOperatingSystem",
+        "state": "frozen_canonical"
+      },
+      {
+        "id": "NUX-001",
+        "name": "NUX",
+        "graph_type": "DigitalCreativeEntity"
+      },
+      {
+        "id": "VOID-001",
+        "name": "VOID MODE",
+        "graph_type": "CreativeSystem"
+      },
+      {
+        "id": "DAN-001",
+        "name": "DANISAN",
+        "graph_type": "Person",
+        "caveat": "independent_identity_private_rights_scope_pending_corroboration"
+      }
+    ]
+  },
+  "github": {
+    "repositories": [
+      {
+        "name": "aio-code-knowledge",
+        "visibility": "public",
+        "branch": "main",
+        "observed_sha": "a52e2a62015e81bf7bcf8e111e1d67e13de38830",
+        "role": "canonical_public_backend_web_rag_governance",
+        "branch_protection": "verified_active"
+      },
+      {
+        "name": "aio-code-frontend",
+        "visibility": "private",
+        "branch": "codex/entity-console",
+        "observed_sha": "b5b721036ff1aa792422c6d041e7ef4414e7dbc9",
+        "role": "default_frontend_branch_not_lab_deployment"
+      },
+      {
+        "name": "aio-code-frontend",
+        "visibility": "private",
+        "branch": "codex/lab-oidc-20261011",
+        "observed_sha": "08f0df2df2d55d863f4e30f7fc0340c5615258cc",
+        "role": "deployed_oidc_console"
+      },
+      {
+        "name": "aio-code-vault",
+        "visibility": "private",
+        "branch": "main",
+        "observed_sha": "ed4551f95bf445aa8e277f5e5835187099d77226",
+        "role": "private_immutable_revisions_and_metrics",
+        "branch_protection": "not_verified"
+      },
+      {
+        "name": "marii-cuadros",
+        "visibility": "public",
+        "branch": "main",
+        "observed_sha": "a7dcbe830098d7b1e37ea4739684577d1ea62595",
+        "role": "profile_readme_documentary_drift_open"
+      }
+    ],
+    "unique_repository_count": 4
+  },
+  "vercel": {
+    "primary_project_count": 3,
+    "projects": [
+      {
+        "name": "aio-code",
+        "domain": "https://aio-code.vercel.app",
+        "deployment_id": "dpl_J71pqJA9SN44VS6kPwWdaMS8LDmS",
+        "deployed_sha": "2299c679086fb9ca4257a0d822ab46088dac65c1",
+        "state": "READY",
+        "purpose": "public_website",
+        "verification": "metadata_and_route_checks"
+      },
+      {
+        "name": "aio-code-api-lab",
+        "domain": "https://aio-code-api-lab.vercel.app",
+        "deployment_id": "dpl_FVSdYCF69j27cvD5nJReaaf7A363",
+        "deployed_sha": "bc11317dbf102694e087f4fe3e801291a9b26399",
+        "state": "READY",
+        "protection": "enabled_all",
+        "purpose": "private_api_lab",
+        "verification": "metadata_and_specific_implemented_E2E"
+      },
+      {
+        "name": "aio-code-console-lab",
+        "domain": "https://aio-code-console-lab.vercel.app",
+        "deployment_id": "dpl_BuV9MdtvPnytp6NLU8G41U168UTm",
+        "deployed_sha": "08f0df2df2d55d863f4e30f7fc0340c5615258cc",
+        "state": "READY",
+        "protection": "enabled_all_except_custom_domains",
+        "purpose": "private_oidc_console",
+        "verification": "metadata_and_specific_implemented_E2E"
+      }
+    ],
+    "other_legacy_projects": "review_before_any_change"
+  },
+  "hugging_face": {
+    "datasets": [
+      {
+        "id": "mariicuadros/aio-code-entities",
+        "last_updated_date": "2026-10-18",
+        "verified_rows": 6,
+        "verification": "viewer_and_readonly_audit"
+      },
+      {
+        "id": "mariicuadros/aio-code-journal",
+        "last_updated_date": "2026-10-18",
+        "full_append_only_history_verified": false,
+        "verification": "publication_job_success_and_hub_metadata"
+      }
+    ],
+    "export_source_count": 30,
+    "export_manifest": "data-export/export-manifest.json",
+    "sync": "manual_sha_gated",
+    "read_only_parity_run_id": 39082912903
+  },
+  "rag": {
+    "verification": "inspected_versioned_public_files",
+    "source_count": 19,
+    "passage_count": 189,
+    "reviewed_claim_count": 11,
+    "dan001_passage_count": 7,
+    "dan001_reviewed_claim_count": 3,
+    "manifest": "rag/corpus-manifest-v0.json",
+    "index": "rag/public-index-v0.json",
+    "answer_policy": "rag/answer-policy-v1.json",
+    "source_commit": "bcbd84fb6da6e148d9a6f9561a80ef64d5cf57f9",
+    "semantic_historical_overrides": 2,
+    "third_party_ai_recognition_claim": false
+  },
+  "entity_console": {
+    "role": "single_admin_private_mvp",
+    "verification": "verified_remote_specific_scenarios",
+    "lifecycle_actions": [
+      "create",
+      "edit",
+      "validate",
+      "approve",
+      "prepare_private_package",
+      "archive"
+    ],
+    "full_lifecycle_synthetic_versions": 6,
+    "negative_probe_positive_checks": 9,
+    "negative_probe_runs": 2,
+    "negative_probe_archived_final_count": 2,
+    "synthetic_publication_occurred": false,
+    "anonymous_read_denied": true,
+    "anonymous_write_denied": true,
+    "stale_patch_denied_409": true,
+    "changed_payload_idempotency_denied_409": true,
+    "remote_csrf_complete": false,
+    "distributed_rate_limit_verified": false,
+    "multi_tenant_verified": false,
+    "canonical_id_registration_implemented": false,
+    "automatic_publication_implemented": false
+  },
+  "additional_systems": [
+    {
+      "name": "Meta/Instagram",
+      "state": "implemented_limited",
+      "basis": "private_dated_snapshots_and_documented_authorized_lab_reads",
+      "missing": "repeated_current_cron_two_account_proof_and_ledger_reconciliation"
+    },
+    {
+      "name": "YouTube Analytics",
+      "state": "pending",
+      "missing": "authorized_connector_and_real_snapshot"
+    },
+    {
+      "name": "TikTok Analytics",
+      "state": "pending",
+      "missing": "authorized_connector_and_real_snapshot"
+    },
+    {
+      "name": "Brain/Ledger",
+      "state": "implemented_limited",
+      "basis": "seven_types_of_records_and_private_vault_snapshots",
+      "missing": "customer_ready_automation_not_verified"
+    },
+    {
+      "name": "Observatory",
+      "state": "implemented_limited",
+      "basis": "historical_manual_baselines_and_incident_tracking",
+      "missing": "comparable_dated_retest"
+    },
+    {
+      "name": "public_release_gate",
+      "state": "design_only",
+      "basis": "pure_tested_function_not_connected_to_publisher"
+    }
+  ],
+  "codex_handoff": {
+    "work_order": "audits/2026-10-18/CODEX-CANONICAL-REGISTRY-WORKORDER.md",
+    "first_task": "backend_deny_arbitrary_canonicalEntityId_on_normal_create_edit",
+    "issue_url": "https://github.com/mariicuadros/aio-code-frontend/issues/10",
+    "authorization": "open_pr_only_no_merge_no_deploy",
+    "core_freeze_enforced": true
+  },
+  "open_issues": [
+    {
+      "repo": "aio-code-frontend",
+      "number": 10,
+      "priority": "P0",
+      "category": "backend_canonical_assignment"
+    },
+    {
+      "repo": "aio-code-frontend",
+      "number": 7,
+      "priority": "P1",
+      "category": "release_gate_integration"
+    },
+    {
+      "repo": "aio-code-frontend",
+      "number": 6,
+      "priority": "P1",
+      "category": "remaining_remote_security_checks"
+    },
+    {
+      "repo": "aio-code-knowledge",
+      "number": 47,
+      "priority": "P1",
+      "category": "six_entity_historical_addendum"
+    },
+    {
+      "repo": "aio-code-knowledge",
+      "number": 7,
+      "priority": "P2",
+      "category": "release_deployment_ledger"
+    }
+  ],
+  "safety": {
+    "no_private_vault_content": true,
+    "no_tokens_or_signatures": true,
+    "no_public_release_permission_granted": true,
+    "new_clients_require_separate_authorization": true,
+    "external_recognition_not_inferred": true
+  },
+  "document_format": "dated_machine_readable_inventory_snapshot"
+}

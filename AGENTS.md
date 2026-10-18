@@ -3,6 +3,7 @@
 AIO CODE is a **Digital Entity Operating System (DEOS)**. Its research methodology is a component of this system, not its product category.
 
 Read `audits/2026-10-17/ECOSYSTEM-OFFICIAL-AUDIT.md` and `audits/2026-10-17/CODEX-IMPLEMENTATION-WORKORDER.md` before modifying the public system.
+For the latest **dated inventory** and the current P0/P1/P2 backlog, read `governance/ECOSYSTEM-MASTER-REGISTER-20261018.md` plus its `.json` snapshot. Do not mistake a dated registry for live telemetry; verify GitHub/Vercel/HF SHAs before future releases.
 
 ## Non-negotiable protection
 - MC-001 and AIO-001 **CANONICAL FROZEN** until an explicitly approved release after Phase 2 and Phase 3 are documented.
