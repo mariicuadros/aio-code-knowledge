@@ -71,10 +71,13 @@
       "maxDuration": 60
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/",
-      "destination": "/institutional-home/"
+      "src": "^/$",
+      "dest": "/institutional-home/index.html"
+    },
+    {
+      "handle": "filesystem"
     }
   ]
 }
