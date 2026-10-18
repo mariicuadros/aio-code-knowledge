@@ -1,10 +1,10 @@
 {
   "title": "AIO CODE controlled public RAG corpus",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "created": "2026-09-24",
   "status": "prototype_contract",
   "source_repository": "mariicuadros/aio-code-knowledge",
-  "purpose": "First-party public evidence reference for an AIO CODE operated, read-only assistant. Not a test of recognition by third-party AI.",
+  "purpose": "Controlled first-party public evidence for an AIO CODE read-only assistant, including approved independent entity DAN-001; not a test of recognition by third-party AI.",
   "policy": "Deny all paths except exact allowlist; resolve from a pinned repository commit; never infer third-party recognition from first-party records.",
   "allowlist": [
     {
@@ -132,6 +132,13 @@
       "visibility": "public",
       "canonical_or_historical": "canonical_current",
       "extract": "The eighteen creator-reported public asset categories with exact URLs and entity relationships; source status is not independent platform-account verification."
+    },
+    {
+      "path": "entity/ENTITY-PASSPORT-DANISAN.md",
+      "role": "independent_professional_identity_DAN-001",
+      "visibility": "public",
+      "canonical_or_historical": "canonical_current",
+      "extract": "Approved public passport sections only: first-party identity, declared social profiles and boundaries. Portfolio references are declarations, not proof of external contracts, verified rights or recognition."
     }
   ],
   "required_index_metadata": [
@@ -176,5 +183,5 @@
     "any path not in the exact allowlist"
   ],
   "next_gate": "Measure retrieval and answer support against rag/evaluation-v1.json before adding embeddings, a hosted model, or a public answer endpoint.",
-  "updated": "2026-09-27"
+  "updated": "2026-10-18"
 }
