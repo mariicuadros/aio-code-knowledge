@@ -1,6 +1,6 @@
 {
   "title": "AIO CODE controlled public RAG corpus",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "created": "2026-09-24",
   "status": "prototype_contract",
   "source_repository": "mariicuadros/aio-code-knowledge",
@@ -183,5 +183,21 @@
     "any path not in the exact allowlist"
   ],
   "next_gate": "Measure retrieval and answer support against rag/evaluation-v1.json before adding embeddings, a hosted model, or a public answer endpoint.",
-  "updated": "2026-10-18"
+  "updated": "2026-10-18",
+  "section_temporal_overrides": [
+    {
+      "source_path": "ENTITY-MASTER-RECORD.md",
+      "section_or_record_locator": "2. Canonical Entity Set",
+      "state": "superseded",
+      "superseded_by": "entity-graph.json",
+      "reason": "Snapshot dated 2026-10-09 describes five entities; after addition of independent DAN-001 the approved graph has six. The original historical text is retained without edits."
+    },
+    {
+      "source_path": "ENTITY-MASTER-RECORD.md",
+      "section_or_record_locator": "15. Related Documents",
+      "state": "superseded",
+      "superseded_by": "entity-graph.json",
+      "reason": "The closing Canonical Entity Set summary lists only five entities and is therefore historical. Source artifact remains unchanged."
+    }
+  ]
 }
