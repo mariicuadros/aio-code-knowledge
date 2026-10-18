@@ -406,6 +406,21 @@
       "case_id": "OZCU-INVALID-3",
       "claim_id": "OZCU-FOUNDER-DEVELOPER",
       "answer": "AIO CODE is the developer company of OZCU."
+    },
+    {
+      "case_id": "DAN-DRAFT-INVALID-1",
+      "claim_id": "DAN-IDENTITY",
+      "answer": "DANISAN is the unrelated Apple Music artist Danisan; these profiles all belong to the same person."
+    },
+    {
+      "case_id": "DAN-DRAFT-INVALID-2",
+      "claim_id": "DAN-INDEPENDENCE",
+      "answer": "AIO CODE owns DANISAN's image rights and exclusively represents the model."
+    },
+    {
+      "case_id": "DAN-DRAFT-INVALID-3",
+      "claim_id": "DAN-DECLARED-INSTAGRAM",
+      "answer": "Instagram (externally verified): https://www.instagram.com/danisan_c/"
     }
   ]
 }
