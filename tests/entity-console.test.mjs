@@ -218,7 +218,7 @@ test('canonical graph, deployment policy, public manifest remain unmodified',asy
 test('explicit canonical linking requires reviewed exact identity and resets review status',async t=>{
   const {service}=await setup(t);
   let e=await create(service);
-  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'SER-001'}),{code:'canonical_target_not_reviewed'});
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'BAD-999'}),{code:'canonical_target_not_reviewed'});
   await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_target_not_reviewed'});
   await assert.rejects(change(service,e,'edit',{data:{...e.data,canonicalEntityId:'DAN-001'}}),{code:'canonical_link_requires_reviewed_action'});
   e=await change(service,e,'edit',{data:{...e.data,canonicalName:'DANISAN',type:'person'}});
@@ -231,4 +231,15 @@ test('explicit canonical linking requires reviewed exact identity and resets rev
   const duplicate=await create(service);
   const renamed=await change(service,duplicate,'edit',{data:{...duplicate.data,canonicalName:'DANISAN',type:'person'}});
   await assert.rejects(change(service,renamed,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_link_conflict'});
+});
+
+test('Sergio reviewed target links only matching person identity, without public deployment',async t=>{
+ const {service}=await setup(t);
+ let r=await service.change({action:'create',key:randomUUID(),body:{data:{...data(),canonicalName:'Sergio Impulsa',type:'person',alternateNames:['Sergio Martín Contreras'],canonicalEntityId:null}}});
+ r=await change(service,r,'validate');
+ r=await change(service,r,'link_canonical',{canonicalEntityId:'SER-001'});
+ assert.equal(r.data.canonicalEntityId,'SER-001');
+ assert.equal(r.status,'draft');
+ assert.equal(r.publicUrl,null);
+ assert.equal(r.packageData,null);
 });
