@@ -260,3 +260,17 @@ test('an orphan reservation lock blocks ordinary writes without mutating the led
   await assert.rejects(new EntityService(new VaultStore('synthetic-read','synthetic-write')).change({id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:r.data}}),{code:'registry_history_invalid'});
   assert.equal(f.git.head,head);assert.deepEqual(f.git.contents(),before);
 });
+
+import { registryPlan } from '../lib/canonical-registry-service.mjs';
+test('historical reservation and bind replays respect current protected-ID policy',async t=>{
+  const f=fixture(t),a=await approve(f,request(f.git.addCase()));
+  let command=next(a.command,a.event,'reserve',{canonical_id:'DEMO-001'}),event=await f.run(command);
+  for(const action of ['reserve','bind']) {
+    if(action==='bind'){command=next(command,event,'bind');event=await f.run(command);}
+    const snapshot=await new CanonicalRegistryVaultStore({readToken:'synthetic-read',writeToken:'synthetic-write'}).snapshot({entries:f.git.entries()});
+    const before=f.git.contents();
+    assert.equal(registryPlan(snapshot,command,event.actor,new Set(),'2026-10-21T00:00:00Z').replayed,true);
+    assert.throws(()=>registryPlan(snapshot,command,event.actor,new Set(['DEMO-001']),'2026-10-21T00:00:00Z'),{code:'registry_id_unavailable'});
+    assert.deepEqual(f.git.contents(),before);
+  }
+});
