@@ -7,6 +7,7 @@
     "check:precontent": "node scripts/validate_precontent.mjs",
     "build": "node scripts/build_site.mjs",
     "indexnow": "node scripts/submit_indexnow.mjs",
+    "test:backend": "node --import ./tests/synthetic-network-guard.mjs --test tests/entity-console.test.mjs tests/canonical-registry.test.mjs tests/canonical-registry-trust.test.mjs tests/entity-public-release-gate.test.mjs",
     "test:instagram": "node --test tests/instagram-phase2.test.mjs"
   },
   "repository": {
