@@ -390,3 +390,20 @@ test('Vault optimistic retry rechecks the binding before any second commit (MOCK
   await assert.rejects(vault.append(candidate),{code:'invalid_canonical_link'});
   assert.equal(treeWrites,1);assert.equal(refWrites,1);
 });
+
+test('ordinary link_canonical is forbidden before reads, including historical keys and payload variants',async t=>{
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='synthetic-denial-only';
+  t.after(()=>{if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;});
+  const store={all(){throw Error('Storage must not be accessed');},append(){throw Error('No write');}};
+  for(const body of [{expectedVersion:1,canonicalEntityId:'DEMO-001'},{expectedVersion:1,role:'registrar',useAuthorized:true},{}]) {
+    await assert.rejects(new EntityService(store).change({id:'ENT-'+randomUUID(),action:'link_canonical',key:randomUUID(),body}),{code:'canonical_registrar_required',status:403});
+    for(const method of ['POST','PATCH']) {
+      const response=await handle(new Request('http://local/api/entities?id=ENT-'+randomUUID()+'&action=link_canonical',{
+        method,headers:{'x-aio-admin-token':'synthetic-denial-only','content-type':'application/json','idempotency-key':randomUUID()},body:JSON.stringify(body)
+      }),store);
+      assert.equal(response.status,403);
+      assert.deepEqual(await response.json(),{error:{code:'canonical_registrar_required'}});
+    }
+  }
+});
