@@ -16,19 +16,19 @@ test('persistent private create/read survives a fresh store instance',async t=>{
 test('idempotency is persistent and rejects changed payload',async t=>{const {dir,service}=await setup(t);const key=randomUUID(),body={data:data()};const r=await service.change({action:'create',key,body});assert.equal((await new EntityService(new LocalStore(dir)).change({action:'create',key,body})).id,r.id);await assert.rejects(service.change({action:'create',key,body:{data:{...data(),description:'Cambio'}}}),{code:'idempotency_conflict'});assert.equal((await service.list()).length,1);});
 test('canonical link is private and duplicate active links are rejected',async t=>{
   const {service}=await setup(t);
-  const input={...data(),canonicalEntityId:'DAN-001',useAuthorized:false,publicFields:[]};
+  const input={...data(),canonicalName:'DANISAN',type:'person',canonicalEntityId:'DAN-001',useAuthorized:false,publicFields:[]};
   const first=await service.change({action:'create',key:randomUUID(),body:{data:input}});
   assert.equal(first.data.canonicalEntityId,'DAN-001');
   assert.equal(publicPackage(first).entity.canonicalEntityId,undefined);
   await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:input}}),{code:'canonical_link_conflict'});
   const second=await create(service);
-  await assert.rejects(change(service,second,'edit',{data:input}),{code:'canonical_link_conflict'});
+  await assert.rejects(change(service,second,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_target_not_reviewed'});
   await assert.rejects(service.change({action:'create',key:randomUUID(),body:{data:{...data(),canonicalEntityId:'MC-001'}}}),{code:'invalid_canonical_link'});
   assert.equal((await service.list()).length,2);
 });
 test('local store atomically rejects concurrent canonical duplicate creates',async t=>{
   const {service}=await setup(t);
-  const entity={...data(),canonicalEntityId:'DEMO-002',useAuthorized:false,publicFields:[]};
+  const entity={...data(),canonicalName:'DANISAN',type:'person',canonicalEntityId:'DAN-001',useAuthorized:false,publicFields:[]};
   const results=await Promise.allSettled([1,2].map(()=>service.change({action:'create',key:randomUUID(),body:{data:entity}})));
   assert.equal(results.filter(r=>r.status==='fulfilled').length,1);
   assert.equal(results.filter(r=>r.status==='rejected'&&r.reason.code==='canonical_link_conflict').length,1);
@@ -36,7 +36,7 @@ test('local store atomically rejects concurrent canonical duplicate creates',asy
 });
 test('canonical export uses public ID and regenerates without losing approved source revision',async t=>{
   const {service}=await setup(t);
-  const input={...data(),canonicalEntityId:'DAN-001'};
+  const input={...data(),canonicalName:'DANISAN',type:'person',canonicalEntityId:'DAN-001'};
   let r=await service.change({action:'create',key:randomUUID(),body:{data:input}});
   r=await change(service,r,'validate');const approvedSource=r.version;
   r=await change(service,r,'approve');r=await change(service,r,'publish');
@@ -213,4 +213,33 @@ test('canonical graph, deployment policy, public manifest remain unmodified',asy
   assert.deepEqual(graph.nodes.map(n=>n.entity_id).sort(),[...CANONICAL_IDS].sort());
   const vercel=JSON.parse(await readFile(new URL('../vercel.json',import.meta.url)));assert.equal(vercel.git.deploymentEnabled,false);
   const manifest=JSON.parse(await readFile(new URL('../public-site-manifest.json',import.meta.url)));assert.equal(manifest.files.some(p=>p.startsWith('entity-console/')||p.startsWith('.entity-test-data/')||p.startsWith('lib/entity-')),false);
+});
+
+test('explicit canonical linking requires reviewed exact identity and resets review status',async t=>{
+  const {service}=await setup(t);
+  let e=await create(service);
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'BAD-999'}),{code:'canonical_target_not_reviewed'});
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_target_not_reviewed'});
+  await assert.rejects(change(service,e,'edit',{data:{...e.data,canonicalEntityId:'DAN-001'}}),{code:'canonical_link_requires_reviewed_action'});
+  e=await change(service,e,'edit',{data:{...e.data,canonicalName:'DANISAN',type:'person'}});
+  e=await change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'});
+  assert.equal(e.data.canonicalEntityId,'DAN-001');
+  assert.equal(e.status,'draft');
+  assert.equal(e.approvedVersion,null);
+  assert.equal(e.publicUrl,null);
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_already_linked'});
+  const duplicate=await create(service);
+  const renamed=await change(service,duplicate,'edit',{data:{...duplicate.data,canonicalName:'DANISAN',type:'person'}});
+  await assert.rejects(change(service,renamed,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_link_conflict'});
+});
+
+test('Sergio reviewed target links only matching person identity, without public deployment',async t=>{
+ const {service}=await setup(t);
+ let r=await service.change({action:'create',key:randomUUID(),body:{data:{...data(),canonicalName:'Sergio Impulsa',type:'person',alternateNames:['Sergio Martín Contreras'],canonicalEntityId:null}}});
+ r=await change(service,r,'validate');
+ r=await change(service,r,'link_canonical',{canonicalEntityId:'SER-001'});
+ assert.equal(r.data.canonicalEntityId,'SER-001');
+ assert.equal(r.status,'draft');
+ assert.equal(r.publicUrl,null);
+ assert.equal(r.packageData,null);
 });
