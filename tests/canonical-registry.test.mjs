@@ -185,3 +185,78 @@ test('withdrawn identities remain unavailable after bind and ordinary archive; p
   const other=await approve(f,request(f.git.addCase()));await rejection(f,next(other.command,other.event,'reserve',{canonical_id:'DEMO-001'}),'registry_id_unavailable');
   assert.equal((await service.get(original.id)).data.rightsHolder,'PRIVATE HOLDER CANARY');
 });
+
+test('historical ID remains occupied after latest revision omits or replaces it',async t=>{
+  for(const latestId of [null,'DEMO-008'])await t.test(String(latestId),async t=>{
+    const f=fixture(t),old=f.git.addCase({data:{canonicalEntityId:'DEMO-009'}});
+    const data={...old.data};if(latestId===null)delete data.canonicalEntityId;else data.canonicalEntityId=latestId;
+    f.git.addCase({...old,version:2,status:'archived',data});
+    const a=await approve(f,request(f.git.addCase()));
+    await rejection(f,next(a.command,a.event,'reserve',{canonical_id:'DEMO-009'}),'registry_id_unavailable');
+  });
+});
+
+test('a case with an omitted historical binding cannot request a second identity',async t=>{
+  const f=fixture(t),old=f.git.addCase({data:{canonicalEntityId:'DEMO-009'}});
+  const current=f.git.addCase({...old,version:2,data:{...old.data,canonicalEntityId:null}});
+  await rejection(f,request(current),'registry_case_already_linked');
+});
+
+test('reservation collision introduced between CAS attempts rejects binding without half-commit',async t=>{
+  const f=fixture(t),a=await approve(f,request(f.git.addCase()));
+  const c=next(a.command,a.event,'reserve',{canonical_id:'DEMO-001'}),e=await f.run(c);
+  f.git.beforeRef=async()=>{const old=f.git.addCase({data:{canonicalEntityId:'DEMO-001'}});f.git.addCase({...old,version:2,data:{...old.data,canonicalEntityId:null}});};
+  const refWrites=f.git.refWrites;
+  await assert.rejects(f.run(next(c,e,'bind')),{code:'canonical_link_conflict'});
+  assert.equal(f.git.refWrites,refWrites);
+  assert.equal(Object.keys(f.git.contents()).some(p=>p.includes('/requests/')&&p.endsWith('/00000004.json')),false);
+});
+
+test('ordinary store rejects a legacy link colliding with a reservation, even if the newest revision omits it',async t=>{
+  const f=fixture(t),a=await approve(f,request(f.git.addCase()));
+  await f.run(next(a.command,a.event,'reserve',{canonical_id:'DEMO-001'}));
+  const old=f.git.addCase({data:{canonicalEntityId:'DEMO-001'}});
+  const current=f.git.addCase({...old,version:2,data:{...old.data,canonicalEntityId:null}});
+  const before=f.git.contents(),head=f.git.head;
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  await assert.rejects(service.change({id:current.id,action:'edit',key:randomUUID(),body:{expectedVersion:2,data:current.data}}),{code:'canonical_link_conflict'});
+  assert.equal(f.git.head,head);assert.deepEqual(f.git.contents(),before);
+});
+
+test('ordinary CAS retry checks newly conflicting historical occupancy',async t=>{
+  const f=fixture(t),original=f.git.addCase({data:{canonicalEntityId:'DEMO-001'}});
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  f.git.beforeRef=async()=>{const old=f.git.addCase({data:{canonicalEntityId:'DEMO-001'}});f.git.addCase({...old,version:2,status:'archived',data:{...old.data,canonicalEntityId:null}});};
+  await assert.rejects(service.change({id:original.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:original.data}}),{code:'canonical_link_conflict'});
+  assert.equal(f.git.refWrites,0);assert.equal((await service.get(original.id)).version,1);
+});
+
+test('ordinary edit racing privileged bind preserves one coherent case and reservation',async t=>{
+  const f=fixture(t),original=f.git.addCase(),a=await approve(f,request(original));
+  const reserve=next(a.command,a.event,'reserve',{canonical_id:'DEMO-001'}),e=await f.run(reserve);
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  const outcomes=await Promise.allSettled([f.run(next(reserve,e,'bind')),service.change({id:original.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:{...original.data,description:'Concurrent synthetic edit'}}})]);
+  assert.equal(outcomes.filter(r=>r.status==='fulfilled').length,1);
+  assert.ok(['revision_conflict','registry_case_revision_conflict'].includes(outcomes.find(r=>r.status==='rejected').reason.code));
+  const snapshot=await new CanonicalRegistryVaultStore({readToken:'synthetic-read',writeToken:'synthetic-write'}).snapshot({entries:f.git.entries()});
+  assert.deepEqual(snapshot.reservations,['DEMO-001']);assert.equal((await service.get(original.id)).version,2);
+});
+
+test('unknown or mismatched historical case files fail closed before a reservation',async t=>{
+  for(const kind of ['unknown-path','wrong-case','duplicate-revision'])await t.test(kind,async t=>{
+    const f=fixture(t),original=f.git.addCase(),a=await approve(f,request(original));
+    const path='entity-console/v1/'+original.id+'/00000001.json';
+    if(kind==='unknown-path')f.git.seed('entity-console/v1/legacy.json',{canonicalEntityId:'DEMO-001'});
+    if(kind==='wrong-case')f.git.seed('entity-console/v1/ENT-'+randomUUID()+'/00000001.json',original);
+    if(kind==='duplicate-revision')f.git.seed(path,original);
+    await rejection(f,next(a.command,a.event,'reserve',{canonical_id:'DEMO-001'}),'vault_history_invalid');
+  });
+});
+
+test('an orphan reservation lock blocks ordinary writes without mutating the ledger',async t=>{
+  const f=fixture(t),r=f.git.addCase();
+  f.git.seed('canonical-registrations/v1/ids/DEMO-001.json',{schema_version:1,canonical_id:'DEMO-001',request_id:'REQ-'+randomUUID(),reserved_at:'2026-10-21T00:00:00Z'});
+  const before=f.git.contents(),head=f.git.head;
+  await assert.rejects(new EntityService(new VaultStore('synthetic-read','synthetic-write')).change({id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:r.data}}),{code:'registry_history_invalid'});
+  assert.equal(f.git.head,head);assert.deepEqual(f.git.contents(),before);
+});

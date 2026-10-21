@@ -424,7 +424,7 @@ test('unsafe historical edits and links cannot replay through service or either 
     const before=await store.all();
     await assert.rejects(service.change({id:source.id,action,key,body}),{code:action==='link_canonical'?'canonical_registrar_required':'invalid_canonical_link'});
     await assert.rejects(store.append(record),{code:'invalid_canonical_link'});
-    const vault=new VaultStore('synthetic-read','synthetic-write');vault.all=async()=>[source,record];
+    const vault=new VaultStore('synthetic-read','synthetic-write');vault.recordsFromSnapshot=async()=>[source,record];
     await assert.rejects(vault.append(record),{code:'invalid_canonical_link'});
     assert.deepEqual(await store.all(),before);
   }
@@ -432,14 +432,14 @@ test('unsafe historical edits and links cannot replay through service or either 
 });
 
 test('safe historical replay survives later revisions; absent predecessor and changed payload fail closed',async t=>{
-  const {store,service}=await setup(t);let r=await create(service);
+  const {store,service}=await setup(t);gitFixture(t);let r=await create(service);
   const input={id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:{...r.data,description:'Synthetic edited'}}};
   const edited=await service.change(input);await change(service,edited,'archive');
   const before=await store.all();assert.deepEqual(await service.change(input),edited);
   assert.deepEqual(await store.append(edited),edited);
-  const vault=new VaultStore('synthetic-read','synthetic-write');vault.all=async()=>before;
+  const vault=new VaultStore('synthetic-read','synthetic-write');vault.recordsFromSnapshot=async()=>before;
   assert.deepEqual(await vault.append(edited),edited);
-  vault.all=async()=>[edited];await assert.rejects(vault.append(edited),{code:'invalid_canonical_link'});
+  vault.recordsFromSnapshot=async()=>[edited];await assert.rejects(vault.append(edited),{code:'invalid_canonical_link'});
   await assert.rejects(service.change({...input,body:{...input.body,data:{...input.body.data,description:'Changed'}}}),{code:'idempotency_conflict'});
   assert.deepEqual(await store.all(),before);
 });
