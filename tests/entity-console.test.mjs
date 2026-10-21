@@ -465,3 +465,49 @@ test('safe lost acknowledgement resolves once without a second revision',async t
   const edited=await service.change(input);assert.equal(edited.version,2);assert.equal(f.git.refWrites,1);
   assert.deepEqual(await service.change(input),edited);assert.equal(f.git.refWrites,1);
 });
+
+test('legacy omission preserves linked and unlinked cases over authenticated PATCH and clears approval',async t=>{
+  const {store,service}=await setup(t);
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;process.env.AIO_DASHBOARD_ADMIN_TOKEN='synthetic-compatibility';
+  t.after(()=>{if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;});
+  for(const canonicalEntityId of [null,'DEMO-001']) {
+    let r=canonicalEntityId?await seedLinked(store,{...data(),canonicalEntityId}):await create(service);
+    r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'publish');
+    const input={...r.data,description:'Synthetic legacy-client edit'};delete input.canonicalEntityId;
+    const response=await handle(new Request('http://local/api/entities?id='+r.id,{method:'PATCH',headers:{
+      'x-aio-admin-token':'synthetic-compatibility','content-type':'application/json','idempotency-key':randomUUID()
+    },body:JSON.stringify({expectedVersion:r.version,data:input})}),store);
+    assert.equal(response.status,200);r=(await response.json()).data;
+    assert.equal(r.data.canonicalEntityId,canonicalEntityId);
+    for(const key of ['approvedVersion','approvedDataHash','packageData','publicUrl'])assert.equal(r[key],null);
+    if(canonicalEntityId) {
+      const before=await store.all();
+      for(const value of [null,'DEMO-002'])await assert.rejects(change(service,r,'edit',{data:{...r.data,canonicalEntityId:value}}),{code:'invalid_canonical_link'});
+      assert.deepEqual(await store.all(),before);
+    } else {r=await change(service,r,'edit',{data:{...r.data,canonicalEntityId:null}});assert.equal(r.data.canonicalEntityId,null);}
+    r=await change(service,r,'archive');const before=await store.all();
+    await assert.rejects(change(service,r,'edit',{data:input}),{code:'invalid_transition'});
+    assert.deepEqual(await store.all(),before);
+  }
+});
+
+test('historical archive reactivation replay is rejected without rewriting history',async t=>{
+  const {store,service}=await setup(t);let r=await create(service);r=await change(service,r,'archive');
+  const key=randomUUID(),body={expectedVersion:r.version,data:r.data},action='edit';
+  const unsafe={...r,version:r.version+1,eventId:randomUUID(),status:'draft',operationKey:hash(['admin-console',key]),
+    operationHash:hash({id:r.id,action,body}),activity:[...r.activity,{action,version:r.version+1}]};
+  await writeFile(join(store.directory,'event-'+unsafe.eventId+'.json'),JSON.stringify(unsafe));
+  const before=await store.all();await assert.rejects(service.change({id:r.id,action,key,body}),{code:'invalid_transition'});
+  await assert.rejects(store.append(unsafe),{code:'invalid_transition'});assert.deepEqual(await store.all(),before);
+});
+
+test('a stale approved hash cannot prepare a private package, including historical replay',async t=>{
+  const f=gitFixture(t),source=f.git.addCase({status:'approved',approvedVersion:1,approvedDataHash:hash('outdated')});
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  const key=randomUUID(),body={expectedVersion:source.version},action='publish';
+  await assert.rejects(service.change({id:source.id,action,key,body}),{code:'approval_required'});
+  const unsafe=f.git.addCase({...source,version:2,status:'pending_deployment',operationKey:hash(['admin-console',key]),
+    operationHash:hash({id:source.id,action,body}),activity:[{action,version:2}]});
+  const before=f.git.contents();await assert.rejects(service.change({id:source.id,action,key,body}),{code:'approval_required'});
+  assert.deepEqual(f.git.contents(),before);assert.equal(unsafe.publicUrl,null);assert.equal(f.git.refWrites,0);
+});
