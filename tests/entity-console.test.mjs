@@ -407,3 +407,61 @@ test('ordinary link_canonical is forbidden before reads, including historical ke
     }
   }
 });
+
+// All provider traffic is replaced by the in-memory Git implementation.
+import { fixture as gitFixture } from './canonical-registry-fixtures.mjs';
+import { hash } from '../lib/entity-domain.mjs';
+
+test('unsafe historical edits and links cannot replay through service or either store',async t=>{
+  const {store,service}=await setup(t);
+  const f=gitFixture(t),source=f.git.addCase();
+  await writeFile(join(store.directory,'event-'+source.eventId+'.json'),JSON.stringify(source));
+  for(const action of ['edit','link_canonical']) {
+    const key=randomUUID(),body=action==='edit'?{expectedVersion:1,data:{...source.data,canonicalEntityId:'DEMO-001'}}:{expectedVersion:1,canonicalEntityId:'DEMO-001'};
+    const record={...source,version:2,eventId:randomUUID(),data:{...source.data,canonicalEntityId:'DEMO-001'},
+      operationKey:hash(['admin-console',key]),operationHash:hash({id:source.id,action,body}),activity:[{action,version:2}]};
+    await writeFile(join(store.directory,'event-'+record.eventId+'.json'),JSON.stringify(record));
+    const before=await store.all();
+    await assert.rejects(service.change({id:source.id,action,key,body}),{code:action==='link_canonical'?'canonical_registrar_required':'invalid_canonical_link'});
+    await assert.rejects(store.append(record),{code:'invalid_canonical_link'});
+    const vault=new VaultStore('synthetic-read','synthetic-write');vault.all=async()=>[source,record];
+    await assert.rejects(vault.append(record),{code:'invalid_canonical_link'});
+    assert.deepEqual(await store.all(),before);
+  }
+  assert.equal(f.git.refWrites,0);
+});
+
+test('safe historical replay survives later revisions; absent predecessor and changed payload fail closed',async t=>{
+  const {store,service}=await setup(t);let r=await create(service);
+  const input={id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:{...r.data,description:'Synthetic edited'}}};
+  const edited=await service.change(input);await change(service,edited,'archive');
+  const before=await store.all();assert.deepEqual(await service.change(input),edited);
+  assert.deepEqual(await store.append(edited),edited);
+  const vault=new VaultStore('synthetic-read','synthetic-write');vault.all=async()=>before;
+  assert.deepEqual(await vault.append(edited),edited);
+  vault.all=async()=>[edited];await assert.rejects(vault.append(edited),{code:'invalid_canonical_link'});
+  await assert.rejects(service.change({...input,body:{...input.body,data:{...input.body.data,description:'Changed'}}}),{code:'idempotency_conflict'});
+  assert.deepEqual(await store.all(),before);
+});
+
+test('marker short-circuit and provider-error recovery recheck historical policy',async t=>{
+  for(const recovery of [false,true]) await t.test(recovery?'lost response recovery':'marker shortcut',async t=>{
+    const f=gitFixture(t),source=f.git.addCase();
+    const candidate={...source,version:2,eventId:randomUUID(),operationKey:hash(randomUUID()),operationHash:hash('synthetic-operation'),activity:[{action:'edit',version:2}]};
+    f.git.beforeRef=async()=>{
+      f.git.addCase({...candidate,data:{...source.data,canonicalEntityId:'DEMO-001'}});
+      f.git.seed('entity-console/v1/operations/'+candidate.operationKey+'.json',{hash:candidate.operationHash,id:source.id,version:2});
+      if(recovery)throw Error('Synthetic lost response');
+    };
+    await assert.rejects(new VaultStore('synthetic-read','synthetic-write').append(candidate),{code:'invalid_canonical_link'});
+    assert.equal(f.git.refWrites,0);
+  });
+});
+
+test('safe lost acknowledgement resolves once without a second revision',async t=>{
+  const f=gitFixture(t),source=f.git.addCase();f.git.failRef='after';
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  const input={id:source.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:source.data}};
+  const edited=await service.change(input);assert.equal(edited.version,2);assert.equal(f.git.refWrites,1);
+  assert.deepEqual(await service.change(input),edited);assert.equal(f.git.refWrites,1);
+});
