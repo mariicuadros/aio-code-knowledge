@@ -230,12 +230,13 @@ test('canonical graph, deployment policy, public manifest remain unmodified',asy
 test('explicit canonical linking requires reviewed exact identity and resets review status',async t=>{
   const {service}=await setup(t);
   let e=await create(service);
-  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'BAD-999'}),{code:'canonical_target_not_reviewed'});
-  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_target_not_reviewed'});
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'BAD-999'}),{code:'canonical_link_requires_reviewed_action'});
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_link_requires_reviewed_action'});
   await assert.rejects(change(service,e,'edit',{data:{...e.data,canonicalEntityId:'DAN-001'}}),{code:'canonical_link_requires_reviewed_action'});
   e=await change(service,e,'edit',{data:{...e.data,canonicalName:'DANISAN',type:'person'}});
   await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'}),{code:'canonical_link_requires_reviewed_action'});
   e=await change(service,e,'validate');
+  await assert.rejects(change(service,e,'link_canonical',{canonicalEntityId:'BAD-999'}),{code:'canonical_target_not_reviewed'});
   e=await change(service,e,'link_canonical',{canonicalEntityId:'DAN-001'});
   assert.equal(e.data.canonicalEntityId,'DAN-001');
   assert.equal(e.status,'draft');
