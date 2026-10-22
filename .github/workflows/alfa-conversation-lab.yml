@@ -1,0 +1,36 @@
+name: ALFA v0.2 conversation safety
+on:
+  pull_request:
+    paths:
+      - 'labs/alfa-conversation/**'
+      - 'labs/alfa-core/**'
+      - 'labs/deos-multiagent/**'
+      - 'lib/entity-domain.mjs'
+      - 'lib/public-identity-targets.mjs'
+      - '.github/workflows/alfa-conversation-lab.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  conversation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Conversation adversarial suite and simulator demo
+        run: |
+          node labs/alfa-conversation/runner.mjs test
+          node labs/alfa-conversation/runner.mjs demo
+      - name: Unchanged dependencies regression
+        run: |
+          node labs/alfa-core/runner.mjs test
+          node labs/deos-multiagent/run-isolated.mjs test
+      - name: Frozen core and repository integrity
+        run: |
+          python scripts/check_frozen_core.py
+          python scripts/audit_repository_integrity.py

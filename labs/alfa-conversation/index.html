@@ -1,0 +1,14 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>ALFA v0.2 · conversación simulada</title>
+<style>body{background:#101318;color:#eef1f6;font:17px/1.55 system-ui;max-width:1000px;margin:auto;padding:24px}button,input,textarea,select{font:inherit;padding:10px;margin:5px}button{cursor:pointer}button:disabled{opacity:.5}section{border:1px solid #536075;border-radius:8px;padding:18px;margin:18px 0}textarea{width:90%;min-height:90px}pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;font-size:13px}.note{color:#c1cbd9}#chat p{border-left:3px solid #89b9de;padding-left:12px}[hidden]{display:none!important}</style>
+<h1>ALFA v0.2 <small>· DEOS</small></h1><p class="note">Texto libre, simulador por reglas. No hay IA real conectada, claves ni llamadas externas. Use solo situaciones ficticias. El texto se mantiene en memoria temporal; no se guarda como expediente.</p>
+<section><label>Perfil sintético <select id="user"><option>A</option><option>B</option></select></label><button id="login">Iniciar sesión</button><button id="logout" disabled>Cerrar sesión</button><label>Entidad <select id="entity" disabled></select></label></section>
+<p id="status" role="status" aria-live="polite">Sin sesión</p>
+<section id="workspace" hidden><h2 id="name">ALFA</h2><div id="chat" role="log" aria-live="polite"></div>
+<label for="message">Cuénteme su objetivo ficticio</label><textarea id="message" maxlength="1200" placeholder="Soy cantante, quiero preparar mi primer lanzamiento. Llámate Luna y usa tono informal."></textarea>
+<button id="prepare">Revisar contexto del turno</button><button id="cancel">Cancelar turno</button>
+<section><h3>Contexto mínimo para este turno</h3><pre id="context"></pre><button id="consent" disabled>Consiento esta simulación local</button></section>
+<section><h3>Propuestas, todavía sin aplicar</h3><pre id="proposals"></pre><button id="apply" disabled>Confirmo aplicar estos cambios sintéticos</button></section>
+<details><summary>Operaciones deterministas de memoria (no ejecutadas por el modelo)</summary><label>Operación <select id="command"></select></label><button id="execute">Ejecutar operación elegida</button></details>
+<button id="preview">Preparar borrador JSON</button><button id="review" disabled>Confirmo revisión de este JSON</button>
+<details><summary>Memoria sintética y procedencia</summary><pre id="memory"></pre></details><h3>Borrador / campos pendientes</h3><pre id="draft"></pre></section>
+<p class="note">OpenAI desactivado. Ningún modelo concede derechos, aprueba contratos, asigna identificadores canónicos o publica.</p><script type="module" src="/ui.mjs"></script></html>
