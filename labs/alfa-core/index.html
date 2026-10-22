@@ -1,0 +1,10 @@
+<!doctype html><html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>ALFA · DEOS · laboratorio sintético</title>
+<style>body{background:#111;color:#eee;font:17px/1.5 system-ui;max-width:980px;margin:auto;padding:24px}button,input,select{font:inherit;padding:9px;margin:5px}button{cursor:pointer}section{border:1px solid #555;padding:18px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}#chat p{border-left:3px solid #888;padding-left:12px}.note{color:#ccc}input{width:min(90%,650px)}[hidden]{display:none!important}</style>
+<h1>ALFA <small>· una capacidad de DEOS</small></h1><p class="note">Laboratorio local. Solo personas, frases y datos ficticios del catálogo. Conversación determinista, sin modelos reales. El selector de usuario es una simulación, no autenticación de producción.</p>
+<section><label>Perfil sintético <select id="user"><option>A</option><option>B</option></select></label><button id="login">Iniciar sesión sintética</button><button id="logout" disabled>Cerrar sesión</button><label>Entidad <select id="entity" disabled></select></label></section>
+<p id="status" role="status" aria-live="polite">Sin sesión</p>
+<section id="workspace" hidden><h2 id="name">ALFA</h2><div id="chat" role="log" aria-live="polite"></div>
+<label for="message">Mensaje ficticio (el catálogo ofrece los textos aceptados)</label><input id="message" list="phrases" maxlength="160"><datalist id="phrases"></datalist><button id="send">Enviar</button><button id="preview">Preparar borrador</button><button id="review" disabled>Confirmo la revisión de este JSON</button>
+<details><summary>Frases disponibles</summary><div id="suggestions"></div></details>
+<h3>Memoria privada sintética y procedencia</h3><pre id="memory"></pre><h3>Borrador y cambios para revisión</h3><pre id="draft"></pre></section>
+<p class="note">No concede derechos, no aprueba contratos, no asigna IDs ni publica. No introducir datos reales.</p><script type="module" src="/ui.mjs"></script></html>

@@ -1,0 +1,33 @@
+name: ALFA Core synthetic integration
+on:
+  pull_request:
+    paths:
+      - 'labs/alfa-core/**'
+      - 'labs/deos-multiagent/**'
+      - 'lib/entity-domain.mjs'
+      - 'lib/public-identity-targets.mjs'
+      - '.github/workflows/alfa-core-lab.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Synthetic memory, sessions, contracts and real loopback HTTP
+        run: node labs/alfa-core/runner.mjs test
+      - name: Two-profile demo without model calls
+        run: node labs/alfa-core/runner.mjs demo
+      - name: ModelAdapter dependency regression
+        run: node labs/deos-multiagent/run-isolated.mjs test
+      - name: Frozen core and structural integrity
+        run: |
+          python scripts/check_frozen_core.py
+          python scripts/audit_repository_integrity.py
