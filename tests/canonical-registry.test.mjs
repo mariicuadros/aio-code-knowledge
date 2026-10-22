@@ -288,12 +288,18 @@ test('authorized auto reserve computes an ID inside the atomic registry planner'
   assert.equal(linked.data.canonicalEntityId,'DEMO-001');
 });
 
-test('two authorized auto reservations across independent writers choose distinct IDs',async t=>{
+test('concurrent authorized auto reservations fail closed on CAS collision then retry safely',async t=>{
   const f=fixture(t),a=await approve(f,request(f.git.addCase())),b=await approve(f,request(f.git.addCase()));
   const ca=next(a.command,a.event,'reserve',{canonical_id:null});
   const cb=next(b.command,b.event,'reserve',{canonical_id:null});
-  const results=await Promise.all([f.registry.change(ca,f.capability(ca)),f.makeRegistry().change(cb,f.capability(cb))]);
-  assert.deepEqual(new Set(results.map(e=>e.canonical_id)),new Set(['DEMO-001','DEMO-002']));
+  const results=await Promise.allSettled([f.registry.change(ca,f.capability(ca)),f.makeRegistry().change(cb,f.capability(cb))]);
+  assert.equal(results.filter(v=>v.status==='fulfilled').length,1);
+  assert.equal(results.filter(v=>v.status==='rejected').length,1);
+  assert.equal(results.find(v=>v.status==='rejected').reason.code,'registry_revision_conflict');
+  assert.equal(results.find(v=>v.status==='fulfilled').value.canonical_id,'DEMO-001');
+  const unsuccessful=results[0].status==='rejected'?ca:cb;
+  const recovered=await f.makeRegistry().change(unsuccessful,f.capability(unsuccessful));
+  assert.equal(recovered.canonical_id,'DEMO-002');
   assert.equal(Object.keys(f.git.contents()).filter(p=>p.startsWith('canonical-registrations/v1/ids/')).length,2);
 });
 
