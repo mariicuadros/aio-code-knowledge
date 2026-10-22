@@ -1,0 +1,26 @@
+{
+  "title": "AIO CODE — Public Editorial Collaborations",
+  "version": "1.0",
+  "updated": "2026-10-21",
+  "scope": "Editorial relationships only. No registration of canonical DEOS entities, entity IDs, company registry credentials, or sameAs assertions.",
+  "canonical_entity_graph": "entity-graph.json",
+  "records": [
+    {
+      "editorial_key": "sergio-impulsa",
+      "display_name": "Sergio Martín Contreras | Sergio Impulsa",
+      "type": "editorial_collaboration",
+      "relationship_to_aio_code": "brand_collaborator",
+      "status": "published",
+      "page_url": "https://aio-code.vercel.app/colaboraciones/sergio-impulsa/",
+      "source_publication_url": "https://mariicuadros.blogspot.com/2026/10/sergio-martin-contreras-sergio-impulsa.html",
+      "entity_id": null,
+      "record_gate": "Future canonical DEOS registration requires separate approved entity workflow.",
+      "related_names": [
+        "Sergio Impulsa, S. L.",
+        "UGE"
+      ],
+      "distinction": "Sergio the person, his personal brand, the Spanish limited company, and the UGE venture must not be collapsed into one legal or canonical identity.",
+      "documentary_basis": "Official DUE furnished to AIO CODE supports company identification and registered activity declarations. Its full content is private; final registry inscription authenticity has not been independently checked."
+    }
+  ]
+}
