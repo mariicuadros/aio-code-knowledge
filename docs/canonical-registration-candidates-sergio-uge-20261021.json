@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "status": "awaiting_independent_canonical_registrar",
+  "created_on": "2026-10-21",
+  "visibility": "review_proposal_noncanonical",
+  "notice": "These are candidate records and ARE NOT allocated canonical IDs, approved Vault revisions or published Entity Passports.",
+  "based_on_public_sources": [
+    "colaboraciones/sergio-impulsa/index.html",
+    "colaboraciones/registry.json"
+  ],
+  "canonical_entity_id": null,
+  "candidates": [
+    {
+      "candidate_key": "person-sergio-martin-contreras",
+      "canonical_name": "Sergio Martín Contreras",
+      "schema_type": "Person",
+      "public_identity_name": "Sergio Martín",
+      "alternate_names": [
+        "Sergio Impulsa (marca personal)"
+      ],
+      "public_home": "https://aio-code.vercel.app/colaboraciones/sergio-impulsa/",
+      "canonical_entity_id": null,
+      "evidence": "Professional identity and owner-approved editorial publication; personal brand name is not itself a second person.",
+      "proposed_relationships": [
+        {
+          "relation": "founder_and_administrator_of",
+          "target_candidate_key": "legal-sergio-impulsa-sl"
+        },
+        {
+          "relation": "promotes_entrepreneurship_venture",
+          "target_candidate_key": "venture-uge"
+        }
+      ]
+    },
+    {
+      "candidate_key": "legal-sergio-impulsa-sl",
+      "canonical_name": "SERGIO IMPULSA, S. L.",
+      "schema_type": "Organization",
+      "legal_name_in_DUE": "SERGIO IMPULSA",
+      "legal_form": "Sociedad de Responsabilidad Limitada",
+      "country": "ES",
+      "canonical_entity_id": null,
+      "evidence": "DUE dated 2026-10-14 shows tax ID, appointment of Sergio as shareholder-administrator, entry presentation with Mercantile Registry of Seville, and CNAE categories. Authenticity verification and final registration certificate still pending.",
+      "proposed_relationships": [
+        {
+          "relation": "represented_by",
+          "target_candidate_key": "person-sergio-martin-contreras"
+        }
+      ]
+    },
+    {
+      "candidate_key": "venture-uge",
+      "canonical_name": "UGE",
+      "expanded_name": "Unión General de Emprendedores",
+      "schema_type": "Project",
+      "canonical_entity_id": null,
+      "legal_registration_status": "not_documented_as_separate_company",
+      "evidence": "Owner communications and authorized editorial description, not a commercial registry filing.",
+      "proposed_relationships": [
+        {
+          "relation": "developed_by",
+          "target_candidate_key": "person-sergio-martin-contreras"
+        }
+      ]
+    }
+  ],
+  "registrar_gates": [
+    "Independent registrar must atomically allocate globally unique immutable canonical IDs; never manually reserve via editorial Git commit.",
+    "Confirm no earlier record/ID across active, archived, historical and other sources; cover cross-store uniqueness and race conditions.",
+    "Confirm identity/rights and exact scope of approval for public fields, personal portrait and entity-specific URLs.",
+    "Require separate immutable revision and human approval per candidate before public projection.",
+    "Keep DUE personally identifying details and financial/contact data out of the public projection.",
+    "For UGE do not claim registered company status or ownership of Sergio Impulsa S.L.",
+    "After registration, wire reviewed @id URL, JSON-LD, entity graph, passports and source maps in a single reviewed publication transaction."
+  ],
+  "registrar_engineering_dependency": "Draft backend PR #74 must be reviewed; its draft status does not authorize allocating public IDs."
+}
