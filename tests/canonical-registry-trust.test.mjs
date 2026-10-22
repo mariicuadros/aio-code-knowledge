@@ -256,3 +256,48 @@ for(const id of ['MC-001','AIO-001','DAN-001']) {
     await deniedUnchanged(f,()=>f.run(reserve),'registry_id_unavailable');
   });
 }
+
+test('managed trust boundary auto-reserves then binds with durable private receipts',async t=>{
+  const f=laboratory(t),record=f.git.addCase(),requestCmd=request(record),approval=await f.approve(requestCmd);
+  const reserve=next(approval.command,approval.event,'reserve',{canonical_id:null});
+  const ctx=f.context(reserve);
+  const reserved=await f.boundary.execute(reserve,ctx);
+  assert.equal(reserved.canonical_id,'DEMO-001');
+  assert.equal(reserved.publication_authorized,false);
+  assert.ok(f.git.contents()['canonical-registrations/v1/ids/DEMO-001.json']);
+  assert.deepEqual(await f.make().execute(reserve,ctx),reserved);
+  const bind=next(reserve,reserved,'bind');
+  const bound=await f.run(bind);
+  assert.equal(bound.canonical_id,'DEMO-001');
+  const cases=Object.values(f.git.contents()).map(JSON.parse);
+  const linked=cases.find(e=>e.id===record.id&&e.version===2);
+  assert.equal(linked.data.canonicalEntityId,'DEMO-001');
+  assert.equal(linked.packageData,null);
+  assert.equal(bound.publication_authorized,false);
+  assert.equal(Object.keys(f.git.contents()).filter(p=>p.startsWith(TRUST_PREFIX)).length,4);
+});
+
+test('ordinary operator is unable to auto-reserve even after independent review',async t=>{
+  const f=laboratory(t),approval=await f.approve(request(f.git.addCase()));
+  const reserve=next(approval.command,approval.event,'reserve',{canonical_id:null});
+  await deniedUnchanged(f,()=>f.boundary.execute(reserve,f.context(reserve,{roles:['operator']})));
+  assert.equal(Object.keys(f.git.contents()).filter(p=>p.startsWith('canonical-registrations/v1/ids/')).length,0);
+});
+
+test('managed trust rejects stale automatic-ID CAS and fresh command retries safely',async t=>{
+  const f=laboratory(t),a=await f.approve(request(f.git.addCase())),b=await f.approve(request(f.git.addCase()));
+  const ca=next(a.command,a.event,'reserve',{canonical_id:null});
+  const cb=next(b.command,b.event,'reserve',{canonical_id:null});
+  const contextA=f.context(ca,{subject:'synthetic-registrar-a'});
+  const contextB=f.context(cb,{subject:'synthetic-registrar-b'});
+  let winner;
+  f.git.beforeRef=async()=>{winner=await f.make().execute(cb,contextB);};
+  const originalWrites=f.git.refWrites;
+  await assert.rejects(()=>f.boundary.execute(ca,contextA),e=>e.code==='registry_revision_conflict');
+  assert.equal(winner.canonical_id,'DEMO-001');
+  assert.equal(f.git.refWrites,originalWrites+1);
+  assert.deepEqual(Object.keys(f.git.contents()).filter(p=>p.startsWith('canonical-registrations/v1/ids/')),['canonical-registrations/v1/ids/DEMO-001.json']);
+  const retry=await f.make().execute(ca,contextA);
+  assert.equal(retry.canonical_id,'DEMO-002');
+  assert.equal(Object.keys(f.git.contents()).filter(p=>p.startsWith('canonical-registrations/v1/ids/')).length,2);
+});
