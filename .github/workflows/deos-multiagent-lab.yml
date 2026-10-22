@@ -1,0 +1,25 @@
+name: DEOS offline multiagent laboratory
+on:
+  pull_request:
+    paths:
+      - 'labs/deos-multiagent/**'
+      - '.github/workflows/deos-multiagent-lab.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-offline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Run deterministic synthetic checks (no API credentials)
+        run: node --test labs/deos-multiagent/demo.test.mjs
+      - name: Demonstrate offline output
+        run: |
+          node labs/deos-multiagent/demo.mjs > /tmp/deos-offline.json
+          node --input-type=module -e "import fs from 'node:fs'; const r=JSON.parse(fs.readFileSync('/tmp/deos-offline.json')); if(r.provider_calls!==0||r.api_cost_usd!==0||r.publication!=='not_authorized')process.exit(1);"
