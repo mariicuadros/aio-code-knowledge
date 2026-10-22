@@ -274,3 +274,42 @@ test('historical reservation and bind replays respect current protected-ID polic
     assert.deepEqual(f.git.contents(),before);
   }
 });
+
+test('authorized auto reserve computes an ID inside the atomic registry planner',async t=>{
+  const f=fixture(t),record=f.git.addCase(),approved=await approve(f,request(record));
+  const cmd=next(approved.command,approved.event,'reserve',{canonical_id:null});
+  const reserved=await f.run(cmd);
+  assert.equal(reserved.status,'reserved');
+  assert.equal(reserved.canonical_id,'DEMO-001');
+  assert.ok(f.git.contents()['canonical-registrations/v1/ids/DEMO-001.json']);
+  assert.deepEqual(await f.makeRegistry().change(cmd,f.capability(cmd)),reserved);
+  await f.run(next(cmd,reserved,'bind'));
+  const linked=await new EntityService(new VaultStore('synthetic-read','')).get(record.id);
+  assert.equal(linked.data.canonicalEntityId,'DEMO-001');
+});
+
+test('concurrent authorized auto reservations fail closed on CAS collision then retry safely',async t=>{
+  const f=fixture(t),a=await approve(f,request(f.git.addCase())),b=await approve(f,request(f.git.addCase()));
+  const ca=next(a.command,a.event,'reserve',{canonical_id:null});
+  const cb=next(b.command,b.event,'reserve',{canonical_id:null});
+  const results=await Promise.allSettled([f.registry.change(ca,f.capability(ca)),f.makeRegistry().change(cb,f.capability(cb))]);
+  const accepted=results.filter(v=>v.status==='fulfilled').map(v=>v.value);
+  assert.ok(accepted.length>=1);
+  for(const failure of results.filter(v=>v.status==='rejected')) {
+    assert.equal(failure.reason.code,'registry_revision_conflict');
+  }
+  const retryCommands=[ca,cb].filter((_,i)=>results[i].status==='rejected');
+  for(const retryCommand of retryCommands) {
+    accepted.push(await f.makeRegistry().change(retryCommand,f.capability(retryCommand)));
+  }
+  assert.deepEqual(new Set(accepted.map(v=>v.canonical_id)),new Set(['DEMO-001','DEMO-002']));
+  assert.equal(Object.keys(f.git.contents()).filter(p=>p.startsWith('canonical-registrations/v1/ids/')).length,2);
+});
+
+test('manual duplicate reservations remain denied alongside auto selection',async t=>{
+  const f=fixture(t),a=await approve(f,request(f.git.addCase()));
+  await f.run(next(a.command,a.event,'reserve',{canonical_id:null}));
+  const b=await approve(f,request(f.git.addCase()));
+  await rejection(f,next(b.command,b.event,'reserve',{canonical_id:'DEMO-001'}),'registry_id_unavailable');
+  await rejection(f,next(b.command,b.event,'reserve',{canonical_id:123}),'registry_invalid_contract');
+});
