@@ -13,6 +13,16 @@ node labs/deos-multiagent/demo.mjs
 
 Todas las entradas tienen prefijos `SYN-CASE-` y `SYN-SRC-` y solo se aceptan URLs `https://example.invalid/...`. No se debe usar información de clientes reales. No hay red, lectura de secretos, escritura de archivos, publicación, registrador ni acceso al Vault. El resultado declara `model_calls: []`, `provider_calls: 0`, `api_cost_usd: 0`, `canonical_entity_id: null`.
 
+### Interfaz visual (local y gratuita)
+
+Desde la raíz del repositorio, iniciar un servidor local sin servicios externos:
+
+```bash
+python -m http.server 8000
+```
+
+Abrir `http://localhost:8000/labs/deos-multiagent/` y pulsar **Ejecutar ejemplo ficticio**. El navegador carga únicamente módulos del mismo servidor local; el CSP bloquea conexiones externas, recursos de terceros y formularios. No hay campos para introducir datos reales.
+
 ## Una interfaz; especialistas separados
 
 ```text
