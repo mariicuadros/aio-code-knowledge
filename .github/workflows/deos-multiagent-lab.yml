@@ -1,0 +1,29 @@
+name: DEOS offline multiagent laboratory
+on:
+  pull_request:
+    paths:
+      - 'labs/deos-multiagent/**'
+      - 'rag/retriever.mjs'
+      - '.github/workflows/deos-multiagent-lab.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Synthetic suite with no credentials, filesystem writes or network
+        run: node labs/deos-multiagent/run-isolated.mjs test
+      - name: Demonstrate offline output (no human approval manufactured)
+        run: node labs/deos-multiagent/run-isolated.mjs demo
+      - name: Preserve frozen core
+        run: python scripts/check_frozen_core.py
+      - name: Repository integrity
+        run: python scripts/audit_repository_integrity.py
