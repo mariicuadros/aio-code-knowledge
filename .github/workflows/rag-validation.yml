@@ -48,11 +48,8 @@ jobs:
           npm run check:gateway
           npm run check:precontent
           npm run test:instagram
-          node --test tests/entity-console.test.mjs
-          node --test tests/canonical-registry.test.mjs
-          node --test tests/canonical-registry-trust.test.mjs
+          npm run test:backend
           node --test tests/ecosystem-master-register.test.mjs
-          node --test tests/entity-public-release-gate.test.mjs
           node --test tests/public-entity-sync.test.mjs
           node --test tests/danisan-release-staging.test.mjs
           node --test tests/public-update-proposal.test.mjs

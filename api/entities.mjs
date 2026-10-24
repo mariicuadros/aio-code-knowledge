@@ -11,6 +11,7 @@ export async function handle(request,store) {
     windows.clear();windows.set(slot,hits+1);
     if(hits>=120) return json({error:{code:'rate_limited'}},429,{'retry-after':'60'});
     const url=new URL(request.url,'http://localhost'),id=url.searchParams.get('id'),action=url.searchParams.get('action');
+    if(action==='link_canonical') fail('canonical_registrar_required',403);
     const service=new EntityService(store||configuredStore());
     if(request.method==='GET') {
       if(action&&action!=='status') fail('invalid_action');

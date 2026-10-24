@@ -390,3 +390,124 @@ test('Vault optimistic retry rechecks the binding before any second commit (MOCK
   await assert.rejects(vault.append(candidate),{code:'invalid_canonical_link'});
   assert.equal(treeWrites,1);assert.equal(refWrites,1);
 });
+
+test('ordinary link_canonical is forbidden before reads, including historical keys and payload variants',async t=>{
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;
+  process.env.AIO_DASHBOARD_ADMIN_TOKEN='synthetic-denial-only';
+  t.after(()=>{if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;});
+  const store={all(){throw Error('Storage must not be accessed');},append(){throw Error('No write');}};
+  for(const body of [{expectedVersion:1,canonicalEntityId:'DEMO-001'},{expectedVersion:1,role:'registrar',useAuthorized:true},{}]) {
+    await assert.rejects(new EntityService(store).change({id:'ENT-'+randomUUID(),action:'link_canonical',key:randomUUID(),body}),{code:'canonical_registrar_required',status:403});
+    for(const method of ['POST','PATCH']) {
+      const response=await handle(new Request('http://local/api/entities?id=ENT-'+randomUUID()+'&action=link_canonical',{
+        method,headers:{'x-aio-admin-token':'synthetic-denial-only','content-type':'application/json','idempotency-key':randomUUID()},body:JSON.stringify(body)
+      }),store);
+      assert.equal(response.status,403);
+      assert.deepEqual(await response.json(),{error:{code:'canonical_registrar_required'}});
+    }
+  }
+});
+
+// All provider traffic is replaced by the in-memory Git implementation.
+import { fixture as gitFixture } from './canonical-registry-fixtures.mjs';
+import { hash } from '../lib/entity-domain.mjs';
+
+test('unsafe historical edits and links cannot replay through service or either store',async t=>{
+  const {store,service}=await setup(t);
+  const f=gitFixture(t),source=f.git.addCase();
+  await writeFile(join(store.directory,'event-'+source.eventId+'.json'),JSON.stringify(source));
+  for(const action of ['edit','link_canonical']) {
+    const key=randomUUID(),body=action==='edit'?{expectedVersion:1,data:{...source.data,canonicalEntityId:'DEMO-001'}}:{expectedVersion:1,canonicalEntityId:'DEMO-001'};
+    const record={...source,version:2,eventId:randomUUID(),data:{...source.data,canonicalEntityId:'DEMO-001'},
+      operationKey:hash(['admin-console',key]),operationHash:hash({id:source.id,action,body}),activity:[{action,version:2}]};
+    await writeFile(join(store.directory,'event-'+record.eventId+'.json'),JSON.stringify(record));
+    const before=await store.all();
+    await assert.rejects(service.change({id:source.id,action,key,body}),{code:action==='link_canonical'?'canonical_registrar_required':'invalid_canonical_link'});
+    await assert.rejects(store.append(record),{code:'invalid_canonical_link'});
+    const vault=new VaultStore('synthetic-read','synthetic-write');vault.recordsFromSnapshot=async()=>[source,record];
+    await assert.rejects(vault.append(record),{code:'invalid_canonical_link'});
+    assert.deepEqual(await store.all(),before);
+  }
+  assert.equal(f.git.refWrites,0);
+});
+
+test('safe historical replay survives later revisions; absent predecessor and changed payload fail closed',async t=>{
+  const {store,service}=await setup(t);gitFixture(t);let r=await create(service);
+  const input={id:r.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:{...r.data,description:'Synthetic edited'}}};
+  const edited=await service.change(input);await change(service,edited,'archive');
+  const before=await store.all();assert.deepEqual(await service.change(input),edited);
+  assert.deepEqual(await store.append(edited),edited);
+  const vault=new VaultStore('synthetic-read','synthetic-write');vault.recordsFromSnapshot=async()=>before;
+  assert.deepEqual(await vault.append(edited),edited);
+  vault.recordsFromSnapshot=async()=>[edited];await assert.rejects(vault.append(edited),{code:'invalid_canonical_link'});
+  await assert.rejects(service.change({...input,body:{...input.body,data:{...input.body.data,description:'Changed'}}}),{code:'idempotency_conflict'});
+  assert.deepEqual(await store.all(),before);
+});
+
+test('marker short-circuit and provider-error recovery recheck historical policy',async t=>{
+  for(const recovery of [false,true]) await t.test(recovery?'lost response recovery':'marker shortcut',async t=>{
+    const f=gitFixture(t),source=f.git.addCase();
+    const candidate={...source,version:2,eventId:randomUUID(),operationKey:hash(randomUUID()),operationHash:hash('synthetic-operation'),activity:[{action:'edit',version:2}]};
+    f.git.beforeRef=async()=>{
+      f.git.addCase({...candidate,data:{...source.data,canonicalEntityId:'DEMO-001'}});
+      f.git.seed('entity-console/v1/operations/'+candidate.operationKey+'.json',{hash:candidate.operationHash,id:source.id,version:2});
+      if(recovery)throw Error('Synthetic lost response');
+    };
+    await assert.rejects(new VaultStore('synthetic-read','synthetic-write').append(candidate),{code:'invalid_canonical_link'});
+    assert.equal(f.git.refWrites,0);
+  });
+});
+
+test('safe lost acknowledgement resolves once without a second revision',async t=>{
+  const f=gitFixture(t),source=f.git.addCase();f.git.failRef='after';
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  const input={id:source.id,action:'edit',key:randomUUID(),body:{expectedVersion:1,data:source.data}};
+  const edited=await service.change(input);assert.equal(edited.version,2);assert.equal(f.git.refWrites,1);
+  assert.deepEqual(await service.change(input),edited);assert.equal(f.git.refWrites,1);
+});
+
+test('legacy omission preserves linked and unlinked cases over authenticated PATCH and clears approval',async t=>{
+  const {store,service}=await setup(t);
+  const prior=process.env.AIO_DASHBOARD_ADMIN_TOKEN;process.env.AIO_DASHBOARD_ADMIN_TOKEN='synthetic-compatibility';
+  t.after(()=>{if(prior===undefined)delete process.env.AIO_DASHBOARD_ADMIN_TOKEN;else process.env.AIO_DASHBOARD_ADMIN_TOKEN=prior;});
+  for(const canonicalEntityId of [null,'DEMO-001']) {
+    let r=canonicalEntityId?await seedLinked(store,{...data(),canonicalEntityId}):await create(service);
+    r=await change(service,r,'validate');r=await change(service,r,'approve');r=await change(service,r,'publish');
+    const input={...r.data,description:'Synthetic legacy-client edit'};delete input.canonicalEntityId;
+    const response=await handle(new Request('http://local/api/entities?id='+r.id,{method:'PATCH',headers:{
+      'x-aio-admin-token':'synthetic-compatibility','content-type':'application/json','idempotency-key':randomUUID()
+    },body:JSON.stringify({expectedVersion:r.version,data:input})}),store);
+    assert.equal(response.status,200);r=(await response.json()).data;
+    assert.equal(r.data.canonicalEntityId,canonicalEntityId);
+    for(const key of ['approvedVersion','approvedDataHash','packageData','publicUrl'])assert.equal(r[key],null);
+    if(canonicalEntityId) {
+      const before=await store.all();
+      for(const value of [null,'DEMO-002'])await assert.rejects(change(service,r,'edit',{data:{...r.data,canonicalEntityId:value}}),{code:'invalid_canonical_link'});
+      assert.deepEqual(await store.all(),before);
+    } else {r=await change(service,r,'edit',{data:{...r.data,canonicalEntityId:null}});assert.equal(r.data.canonicalEntityId,null);}
+    r=await change(service,r,'archive');const before=await store.all();
+    await assert.rejects(change(service,r,'edit',{data:input}),{code:'invalid_transition'});
+    assert.deepEqual(await store.all(),before);
+  }
+});
+
+test('historical archive reactivation replay is rejected without rewriting history',async t=>{
+  const {store,service}=await setup(t);let r=await create(service);r=await change(service,r,'archive');
+  const key=randomUUID(),body={expectedVersion:r.version,data:r.data},action='edit';
+  const unsafe={...r,version:r.version+1,eventId:randomUUID(),status:'draft',operationKey:hash(['admin-console',key]),
+    operationHash:hash({id:r.id,action,body}),activity:[...r.activity,{action,version:r.version+1}]};
+  await writeFile(join(store.directory,'event-'+unsafe.eventId+'.json'),JSON.stringify(unsafe));
+  const before=await store.all();await assert.rejects(service.change({id:r.id,action,key,body}),{code:'invalid_transition'});
+  await assert.rejects(store.append(unsafe),{code:'invalid_transition'});assert.deepEqual(await store.all(),before);
+});
+
+test('a stale approved hash cannot prepare a private package, including historical replay',async t=>{
+  const f=gitFixture(t),source=f.git.addCase({status:'approved',approvedVersion:1,approvedDataHash:hash('outdated')});
+  const service=new EntityService(new VaultStore('synthetic-read','synthetic-write'));
+  const key=randomUUID(),body={expectedVersion:source.version},action='publish';
+  await assert.rejects(service.change({id:source.id,action,key,body}),{code:'approval_required'});
+  const unsafe=f.git.addCase({...source,version:2,status:'pending_deployment',operationKey:hash(['admin-console',key]),
+    operationHash:hash({id:source.id,action,body}),activity:[{action,version:2}]});
+  const before=f.git.contents();await assert.rejects(service.change({id:source.id,action,key,body}),{code:'approval_required'});
+  assert.deepEqual(f.git.contents(),before);assert.equal(unsafe.publicUrl,null);assert.equal(f.git.refWrites,0);
+});
